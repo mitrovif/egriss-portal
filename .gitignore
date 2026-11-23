@@ -1,0 +1,4 @@
+build/paths.local.json
+build/demo_template.html
+__pycache__/
+.DS_Store

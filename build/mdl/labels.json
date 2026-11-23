@@ -1,0 +1,2143 @@
+{
+ "1175:Intro_07_1": {
+  "name": "Intro_07_1",
+  "labl": "Population group",
+  "fid": "f5s",
+  "vid": "f5s_V1",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "Refugees"
+   ],
+   [
+    "2",
+    "Asylum-seekers"
+   ],
+   [
+    "3",
+    "Host community North"
+   ],
+   [
+    "4",
+    "Returnees"
+   ]
+  ]
+ },
+ "1175:BD01": {
+  "name": "BD01",
+  "labl": "What is the main source of drinking water used by members of your household?",
+  "fid": "f1s",
+  "vid": "f1s_V588",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "11",
+    "piped into dwelling"
+   ],
+   [
+    "12",
+    "piped to yard / plot"
+   ],
+   [
+    "13",
+    "piped to neighbour"
+   ],
+   [
+    "14",
+    "public tap / standpipe"
+   ],
+   [
+    "21",
+    "tube well / borehole / handpump"
+   ],
+   [
+    "31",
+    "protected well"
+   ],
+   [
+    "32",
+    "unprotected well"
+   ],
+   [
+    "41",
+    "protected spring"
+   ],
+   [
+    "42",
+    "unprotected spring"
+   ],
+   [
+    "51",
+    "rainwater"
+   ],
+   [
+    "61",
+    "tanker-truck from protected source"
+   ],
+   [
+    "62",
+    "tanker-truck from unprotected source"
+   ],
+   [
+    "71",
+    "cart with small tank"
+   ],
+   [
+    "72",
+    "water kiosk"
+   ],
+   [
+    "81",
+    "surface water (river, dam, lake, pond, stream, canal, irrigation channel)"
+   ],
+   [
+    "91",
+    "bottled water"
+   ],
+   [
+    "92",
+    "sachet water"
+   ],
+   [
+    "96",
+    "other: specify"
+   ]
+  ]
+ },
+ "1175:SAN01": {
+  "name": "SAN01",
+  "labl": "What kind of toilet facility do members of your household use most of the time?",
+  "fid": "f1s",
+  "vid": "f1s_V650",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "11",
+    "flush to piped sewer system"
+   ],
+   [
+    "12",
+    "flush to septic tank"
+   ],
+   [
+    "13",
+    "flush to pit latrine"
+   ],
+   [
+    "14",
+    "flush to open drain"
+   ],
+   [
+    "18",
+    "flush to dk where"
+   ],
+   [
+    "21",
+    "ventilated improved pit latrine"
+   ],
+   [
+    "22",
+    "pit latrine with slab"
+   ],
+   [
+    "23",
+    "pit latrine without slab"
+   ],
+   [
+    "31",
+    "composting toilet"
+   ],
+   [
+    "41",
+    "bucket"
+   ],
+   [
+    "51",
+    "hanging toilet / hanging latrine"
+   ],
+   [
+    "95",
+    "no facility / bush / field"
+   ],
+   [
+    "96",
+    "other: specify"
+   ]
+  ]
+ },
+ "1175:HE01": {
+  "name": "HE01",
+  "labl": "What source of electricity is used most of the time in this household?",
+  "fid": "f1s",
+  "vid": "f1s_V686",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "0",
+    "no electricity in household"
+   ],
+   [
+    "1",
+    "national grid connection from company"
+   ],
+   [
+    "2",
+    "local mini grid"
+   ],
+   [
+    "3",
+    "solar home system"
+   ],
+   [
+    "4",
+    "solar lantern"
+   ],
+   [
+    "5",
+    "electric generator"
+   ],
+   [
+    "6",
+    "rechargeable battery"
+   ],
+   [
+    "7",
+    "dry cell battery / torch"
+   ],
+   [
+    "96",
+    "other: specify"
+   ]
+  ]
+ },
+ "1175:HH_07b": {
+  "name": "HH_07b",
+  "labl": "Has [name]'s birth been registered with the [civil authorities]?",
+  "fid": "f2s",
+  "vid": "f2s_V41",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "yes"
+   ],
+   [
+    "2",
+    "no"
+   ],
+   [
+    "98",
+    "don't know"
+   ],
+   [
+    "99",
+    "refuse to answer"
+   ]
+  ]
+ },
+ "1175:HH_Educ02a": {
+  "name": "HH_Educ02a",
+  "labl": "[You/name] currently going school -If school holiday, about last school year",
+  "fid": "f2s",
+  "vid": "f2s_V90",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "yes"
+   ],
+   [
+    "2",
+    "no"
+   ],
+   [
+    "98",
+    "don't know"
+   ],
+   [
+    "99",
+    "refuse to answer"
+   ]
+  ]
+ },
+ "1175:ageYears": {
+  "name": "ageYears",
+  "labl": "Age in completed years",
+  "fid": "f2s",
+  "vid": "f2s_V13",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "00"
+   ],
+   [
+    "2",
+    "01"
+   ],
+   [
+    "3",
+    "02"
+   ],
+   [
+    "4",
+    "03"
+   ],
+   [
+    "5",
+    "04"
+   ],
+   [
+    "6",
+    "05"
+   ],
+   [
+    "7",
+    "06"
+   ],
+   [
+    "8",
+    "07"
+   ],
+   [
+    "9",
+    "08"
+   ],
+   [
+    "10",
+    "09"
+   ],
+   [
+    "11",
+    "10"
+   ],
+   [
+    "12",
+    "11"
+   ],
+   [
+    "13",
+    "12"
+   ],
+   [
+    "14",
+    "13"
+   ],
+   [
+    "15",
+    "14"
+   ],
+   [
+    "16",
+    "15"
+   ],
+   [
+    "17",
+    "16"
+   ],
+   [
+    "18",
+    "17"
+   ],
+   [
+    "19",
+    "18"
+   ],
+   [
+    "20",
+    "19"
+   ],
+   [
+    "21",
+    "20"
+   ],
+   [
+    "22",
+    "21"
+   ],
+   [
+    "23",
+    "22"
+   ],
+   [
+    "24",
+    "23"
+   ],
+   [
+    "25",
+    "24"
+   ],
+   [
+    "26",
+    "25"
+   ],
+   [
+    "27",
+    "26"
+   ],
+   [
+    "28",
+    "27"
+   ],
+   [
+    "29",
+    "28"
+   ],
+   [
+    "30",
+    "29"
+   ],
+   [
+    "31",
+    "30"
+   ],
+   [
+    "32",
+    "31"
+   ],
+   [
+    "33",
+    "32"
+   ],
+   [
+    "34",
+    "33"
+   ],
+   [
+    "35",
+    "34"
+   ],
+   [
+    "36",
+    "35"
+   ],
+   [
+    "37",
+    "36"
+   ],
+   [
+    "38",
+    "37"
+   ],
+   [
+    "39",
+    "38"
+   ],
+   [
+    "40",
+    "39"
+   ],
+   [
+    "41",
+    "40"
+   ],
+   [
+    "42",
+    "41"
+   ],
+   [
+    "43",
+    "42"
+   ],
+   [
+    "44",
+    "43"
+   ],
+   [
+    "45",
+    "44"
+   ],
+   [
+    "46",
+    "45"
+   ],
+   [
+    "47",
+    "46"
+   ],
+   [
+    "48",
+    "47"
+   ],
+   [
+    "49",
+    "48"
+   ],
+   [
+    "50",
+    "49"
+   ],
+   [
+    "51",
+    "50"
+   ],
+   [
+    "52",
+    "51"
+   ],
+   [
+    "53",
+    "52"
+   ],
+   [
+    "54",
+    "53"
+   ],
+   [
+    "55",
+    "54"
+   ],
+   [
+    "56",
+    "55"
+   ],
+   [
+    "57",
+    "56"
+   ],
+   [
+    "58",
+    "57"
+   ],
+   [
+    "59",
+    "58"
+   ],
+   [
+    "60",
+    "59"
+   ],
+   [
+    "61",
+    "60 or more"
+   ]
+  ]
+ },
+ "1175:wgh_samp_resc_pop": {
+  "name": "wgh_samp_resc_pop",
+  "labl": "HH weight population restructured",
+  "fid": "f2s",
+  "vid": "f2s_V143",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1175:EMP20": {
+  "name": "EMP20",
+  "labl": "During the past 30 days, did you look for additional or other paid work?",
+  "fid": "f3s",
+  "vid": "f3s_V308",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "yes"
+   ],
+   [
+    "2",
+    "no"
+   ]
+  ]
+ },
+ "1175:EMP22": {
+  "name": "EMP22",
+  "labl": "Could you start working more hours within the next 14 days?",
+  "fid": "f3s",
+  "vid": "f3s_V310",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "yes"
+   ],
+   [
+    "2",
+    "no"
+   ]
+  ]
+ },
+ "1175:Food_div1": {
+  "name": "Food_div1",
+  "labl": "Days most hh members ate cereals, grains, roots and tubers Rice(Past 7days)",
+  "fid": "f1s",
+  "vid": "f1s_V1098",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1175:Food_div2": {
+  "name": "Food_div2",
+  "labl": "Days most hh members ate ulses/ legumes / nuts: beans, cowpeas (Past 7days)",
+  "fid": "f1s",
+  "vid": "f1s_V1101",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1175:Food_div3": {
+  "name": "Food_div3",
+  "labl": "Days most hh members ate milk and other dairy products...(Past 7days)",
+  "fid": "f1s",
+  "vid": "f1s_V1104",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1175:Food_div4": {
+  "name": "Food_div4",
+  "labl": "Days most hh members ate meat, fish and eggs...(Past 7days)",
+  "fid": "f1s",
+  "vid": "f1s_V1107",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1175:Food_div5": {
+  "name": "Food_div5",
+  "labl": "Days most hh members ate vegetables and leaves: spinach, onion (Past 7days)",
+  "fid": "f1s",
+  "vid": "f1s_V1122",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1175:Food_div6": {
+  "name": "Food_div6",
+  "labl": "Days most hh members ate fruits (Past7 days)",
+  "fid": "f1s",
+  "vid": "f1s_V1131",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1175:Food_div7": {
+  "name": "Food_div7",
+  "labl": "Days most hh members ate oil/fat/butter: vegetable oil, palm oil(Past 7days)",
+  "fid": "f1s",
+  "vid": "f1s_V1137",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1175:Food_div8": {
+  "name": "Food_div8",
+  "labl": "Days most hh members ate sugar or sweet: sugar, honey, jam, cakes(Past 7days)",
+  "fid": "f1s",
+  "vid": "f1s_V1140",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1421:Intro_07": {
+  "name": "Intro_07",
+  "labl": "",
+  "fid": "f5s",
+  "vid": "f5s_V4",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "Refugees"
+   ],
+   [
+    "2",
+    "Host community"
+   ]
+  ]
+ },
+ "1421:BD01": {
+  "name": "BD01",
+  "labl": "What is the main source of drinking water used by members of your household?",
+  "fid": "f1s",
+  "vid": "f1s_V336",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "11",
+    "PIPED INTO DWELLING"
+   ],
+   [
+    "12",
+    "PIPED TO YARD / PLOT"
+   ],
+   [
+    "13",
+    "PIPED TO NEIGHBOUR"
+   ],
+   [
+    "14",
+    "PUBLIC TAP / STANDPIPE"
+   ],
+   [
+    "21",
+    "TUBE WELL / BOREHOLE/HANDPUMP"
+   ],
+   [
+    "31",
+    "PROTECTED WELL"
+   ],
+   [
+    "32",
+    "UNPROTECTED WELL"
+   ],
+   [
+    "41",
+    "PROTECTED SPRING"
+   ],
+   [
+    "42",
+    "UNPROTECTED SPRING"
+   ],
+   [
+    "51",
+    "RAINWATER"
+   ],
+   [
+    "61",
+    "TANKER-TRUCK FROM PROTECTED SOURCE"
+   ],
+   [
+    "62",
+    "TANKER-TRUCK FROM UNPROTECTED SOURCE"
+   ],
+   [
+    "71",
+    "CART WITH SMALL TANK"
+   ],
+   [
+    "72",
+    "WATER KIOSK"
+   ],
+   [
+    "81",
+    "SURFACE WATER (RIVER, DAM, LAKE, POND, STREAM, CANAL, IRRIGATION CHANNEL)"
+   ],
+   [
+    "82",
+    "(VOLUNTEED RESPONSE) THE SAME MAIN SOURCE AS FOR DRINKING WATER"
+   ],
+   [
+    "91",
+    "BOTTLED WATER"
+   ],
+   [
+    "92",
+    "SACHET WATER"
+   ],
+   [
+    "93",
+    "DON'T COLLECT WATER FROM ANOTHER SOURCE/NO OTHER SOURCE OF WATER"
+   ],
+   [
+    "96",
+    "OTHER (specify)"
+   ]
+  ]
+ },
+ "1421:SAN01": {
+  "name": "SAN01",
+  "labl": "What kind of toilet facility do members of your household use most of the time?",
+  "fid": "f1s",
+  "vid": "f1s_V355",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "11",
+    "FLUSH/ POUR FLUSH TO PIPED SEWER SYSTEM"
+   ],
+   [
+    "12",
+    "FLUSH/ POUR FLUSH TO SEPTIC TANK"
+   ],
+   [
+    "13",
+    "FLUSH/ POUR FLUSH TO PIT LATRINE"
+   ],
+   [
+    "14",
+    "FLUSH/ POUR FLUSH TO OPEN DRAIN"
+   ],
+   [
+    "18",
+    "FLUSH/ POUR FLUSH TO DK WHERE"
+   ],
+   [
+    "21",
+    "VENTILATED IMPROVED PIT LATRINE"
+   ],
+   [
+    "22",
+    "PIT LATRINE WITH SLAB"
+   ],
+   [
+    "23",
+    "PIT LATRINE WITHOUT SLAB /  OPEN PIT"
+   ],
+   [
+    "31",
+    "COMPOSTING TOILET"
+   ],
+   [
+    "41",
+    "BUCKET"
+   ],
+   [
+    "51",
+    "HANGING TOILET / HANGING LATRINE"
+   ],
+   [
+    "95",
+    "NO FACILITY / BUSH / FIELD"
+   ],
+   [
+    "96",
+    "OTHER (SPECIFY)"
+   ]
+  ]
+ },
+ "1421:C070101": {
+  "name": "C070101",
+  "labl": "Proportion of households with access to electricity from TIER 1 or above",
+  "fid": "f1s",
+  "vid": "f1s_V4134",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "0",
+    "No"
+   ],
+   [
+    "1",
+    "Yes"
+   ]
+  ]
+ },
+ "1421:HH_07b": {
+  "name": "HH_07b",
+  "labl": "Has [name]'s birth been registered with the [civil authorities]?",
+  "fid": "f2s",
+  "vid": "f2s_V65",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "Yes"
+   ],
+   [
+    "2",
+    "No"
+   ],
+   [
+    "98",
+    "Don't know"
+   ],
+   [
+    "99",
+    "Refuse to answer"
+   ]
+  ]
+ },
+ "1421:agetouse": {
+  "name": "agetouse",
+  "labl": "",
+  "fid": "f2s",
+  "vid": "f2s_V8",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "00"
+   ],
+   [
+    "2",
+    "01"
+   ],
+   [
+    "3",
+    "02"
+   ],
+   [
+    "4",
+    "03"
+   ],
+   [
+    "5",
+    "04"
+   ],
+   [
+    "6",
+    "05"
+   ],
+   [
+    "7",
+    "06"
+   ],
+   [
+    "8",
+    "07"
+   ],
+   [
+    "9",
+    "08"
+   ],
+   [
+    "10",
+    "09"
+   ],
+   [
+    "11",
+    "10"
+   ],
+   [
+    "12",
+    "11"
+   ],
+   [
+    "13",
+    "12"
+   ],
+   [
+    "14",
+    "13"
+   ],
+   [
+    "15",
+    "14"
+   ],
+   [
+    "16",
+    "15"
+   ],
+   [
+    "17",
+    "16"
+   ],
+   [
+    "18",
+    "17"
+   ],
+   [
+    "19",
+    "18"
+   ],
+   [
+    "20",
+    "19"
+   ],
+   [
+    "21",
+    "20"
+   ],
+   [
+    "22",
+    "21"
+   ],
+   [
+    "23",
+    "22"
+   ],
+   [
+    "24",
+    "23"
+   ],
+   [
+    "25",
+    "24"
+   ],
+   [
+    "26",
+    "25"
+   ],
+   [
+    "27",
+    "26"
+   ],
+   [
+    "28",
+    "27"
+   ],
+   [
+    "29",
+    "28"
+   ],
+   [
+    "30",
+    "29"
+   ],
+   [
+    "31",
+    "30"
+   ],
+   [
+    "32",
+    "31"
+   ],
+   [
+    "33",
+    "32"
+   ],
+   [
+    "34",
+    "33"
+   ],
+   [
+    "35",
+    "34"
+   ],
+   [
+    "36",
+    "35"
+   ],
+   [
+    "37",
+    "36"
+   ],
+   [
+    "38",
+    "37"
+   ],
+   [
+    "39",
+    "38"
+   ],
+   [
+    "40",
+    "39"
+   ],
+   [
+    "41",
+    "40"
+   ],
+   [
+    "42",
+    "41"
+   ],
+   [
+    "43",
+    "42"
+   ],
+   [
+    "44",
+    "43"
+   ],
+   [
+    "45",
+    "44"
+   ],
+   [
+    "46",
+    "45"
+   ],
+   [
+    "47",
+    "46"
+   ],
+   [
+    "48",
+    "47"
+   ],
+   [
+    "49",
+    "48"
+   ],
+   [
+    "50",
+    "49"
+   ],
+   [
+    "51",
+    "50"
+   ],
+   [
+    "52",
+    "51"
+   ],
+   [
+    "53",
+    "52"
+   ],
+   [
+    "54",
+    "53"
+   ],
+   [
+    "55",
+    "54"
+   ],
+   [
+    "56",
+    "55"
+   ],
+   [
+    "57",
+    "56"
+   ],
+   [
+    "58",
+    "57"
+   ],
+   [
+    "59",
+    "58"
+   ],
+   [
+    "60",
+    "59"
+   ],
+   [
+    "61",
+    "60 or more"
+   ]
+  ]
+ },
+ "1421:wgh_strata_spec": {
+  "name": "wgh_strata_spec",
+  "labl": "Sampling Strata Specific Weights (HH & Roster)",
+  "fid": "f2s",
+  "vid": "f2s_V15",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1421:EMP01": {
+  "name": "EMP01",
+  "labl": "Worked for someone else for pay (Past 7 days)",
+  "fid": "f3s",
+  "vid": "f3s_V241",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "Yes"
+   ],
+   [
+    "2",
+    "No"
+   ]
+  ]
+ },
+ "1421:EMP02": {
+  "name": "EMP02",
+  "labl": "Ran a business or other income-generating activity (Past 7 days)",
+  "fid": "f3s",
+  "vid": "f3s_V242",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "Yes"
+   ],
+   [
+    "2",
+    "No"
+   ]
+  ]
+ },
+ "1421:EMP03": {
+  "name": "EMP03",
+  "labl": "Helped in a family business of farm (Past 7 days)",
+  "fid": "f3s",
+  "vid": "f3s_V243",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "Yes"
+   ],
+   [
+    "2",
+    "No"
+   ]
+  ]
+ },
+ "1421:EMP04": {
+  "name": "EMP04",
+  "labl": "Had a paid job from which you were temporarily absent (Past 7 days)",
+  "fid": "f3s",
+  "vid": "f3s_V244",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "Yes"
+   ],
+   [
+    "2",
+    "No"
+   ]
+  ]
+ },
+ "1421:EMP05": {
+  "name": "EMP05",
+  "labl": "Had business/ in family business/farm - you were temporarily absent (Past 7 days",
+  "fid": "f3s",
+  "vid": "f3s_V245",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "Yes"
+   ],
+   [
+    "2",
+    "No"
+   ]
+  ]
+ },
+ "1421:EMP25a": {
+  "name": "EMP25a",
+  "labl": "During the past 30 days, did you do anything to find a paid job?",
+  "fid": "f3s",
+  "vid": "f3s_V295",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "Yes"
+   ],
+   [
+    "2",
+    "No"
+   ]
+  ]
+ },
+ "1421:EMP29": {
+  "name": "EMP29",
+  "labl": "Could you start working within the next 14 days if you were offered a job?",
+  "fid": "f3s",
+  "vid": "f3s_V300",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "Yes"
+   ],
+   [
+    "2",
+    "No"
+   ]
+  ]
+ },
+ "1421:Food11aa": {
+  "name": "Food11aa",
+  "labl": "Days most hh members ate cereals, grains, roots and tubers Rice(Past 7days)",
+  "fid": "f1s",
+  "vid": "f1s_V3548",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1421:Food12a": {
+  "name": "Food12a",
+  "labl": "Days most hh members ate ulses/ legumes / nuts: beans, cowpeas (Past 7days)",
+  "fid": "f1s",
+  "vid": "f1s_V3551",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1421:Food13a": {
+  "name": "Food13a",
+  "labl": "Days most hh members ate milk and other dairy products...(Past 7days)",
+  "fid": "f1s",
+  "vid": "f1s_V3554",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1421:Food14a": {
+  "name": "Food14a",
+  "labl": "Days most hh members ate goat, beef, chicken, pork, blood, fish, … (Past 7days)",
+  "fid": "f1s",
+  "vid": "f1s_V3557",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1421:Food15a": {
+  "name": "Food15a",
+  "labl": "Days most hh members ate vegetables and leaves: spinach, onion (Past 7days)",
+  "fid": "f1s",
+  "vid": "f1s_V3572",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1421:Food16a": {
+  "name": "Food16a",
+  "labl": "Days most hh members ate fruits: banana, apple, lemon, mango, ... (Past7 days)",
+  "fid": "f1s",
+  "vid": "f1s_V3581",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1421:Food17a": {
+  "name": "Food17a",
+  "labl": "Days most hh members ate oil/fat/butter: vegetable oil, palm oil... (Past 7days)",
+  "fid": "f1s",
+  "vid": "f1s_V3587",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1421:Food18a": {
+  "name": "Food18a",
+  "labl": "Days most hh members ate sugar or sweet: sugar, honey, jam, cake… (Past 7days)",
+  "fid": "f1s",
+  "vid": "f1s_V3590",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1175:HH_07a": {
+  "name": "HH_07a",
+  "labl": "Does name have a birth certificate?",
+  "fid": "f2s",
+  "vid": "f2s_V40",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "yes"
+   ],
+   [
+    "2",
+    "no"
+   ],
+   [
+    "98",
+    "don't know"
+   ],
+   [
+    "99",
+    "refuse to answer"
+   ]
+  ]
+ },
+ "1175:admin1": {
+  "name": "admin1",
+  "labl": "State",
+  "fid": "f1s",
+  "vid": "f1s_V5",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "Unity"
+   ],
+   [
+    "2",
+    "Upper Nile"
+   ],
+   [
+    "3",
+    "Central Equatoria"
+   ],
+   [
+    "4",
+    "Jonglei"
+   ],
+   [
+    "5",
+    "Western Equatoria"
+   ],
+   [
+    "6",
+    "Eastern Equatoria"
+   ]
+  ]
+ },
+ "1175:Intro_camp_label": {
+  "name": "Intro_camp_label",
+  "labl": "Intro_camp_label",
+  "fid": "f1s",
+  "vid": "f1s_V11",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "Ajuong Thok"
+   ],
+   [
+    "2",
+    "Doro"
+   ],
+   [
+    "3",
+    "EZO"
+   ],
+   [
+    "4",
+    "Gendrassa"
+   ],
+   [
+    "5",
+    "GOROM"
+   ],
+   [
+    "6",
+    "Kaya"
+   ],
+   [
+    "7",
+    "MAKPANDU"
+   ],
+   [
+    "8",
+    "Other"
+   ],
+   [
+    "9",
+    "Pamir"
+   ],
+   [
+    "10",
+    "Yida"
+   ],
+   [
+    "11",
+    "Yusuf Batil"
+   ]
+  ]
+ },
+ "1175:ID_00": {
+  "name": "ID_00",
+  "labl": "Of which country [are you/is name] a citizen?",
+  "fid": "f2s",
+  "vid": "f2s_V23",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "National of host country"
+   ],
+   [
+    "2",
+    "National of other country"
+   ],
+   [
+    "3",
+    "Stateless"
+   ],
+   [
+    "98",
+    "Don't know"
+   ],
+   [
+    "99",
+    "Refuse to answer"
+   ]
+  ]
+ },
+ "1175:ID_01a": {
+  "name": "ID_01a",
+  "labl": "While living in this country, have you ever had to flee home?",
+  "fid": "f2s",
+  "vid": "f2s_V24",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "yes"
+   ],
+   [
+    "2",
+    "no"
+   ],
+   [
+    "99",
+    "refused to answer"
+   ]
+  ]
+ },
+ "1175:ID_01b": {
+  "name": "ID_01b",
+  "labl": "While living abroad, have you ever had to flee home?",
+  "fid": "f2s",
+  "vid": "f2s_V25",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "yes"
+   ],
+   [
+    "2",
+    "no"
+   ],
+   [
+    "99",
+    "refused to answer"
+   ]
+  ]
+ },
+ "1175:ID_03": {
+  "name": "ID_03",
+  "labl": "After forced to leave home, did you/name have to cross an international border?",
+  "fid": "f2s",
+  "vid": "f2s_V27",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "yes"
+   ],
+   [
+    "2",
+    "no"
+   ],
+   [
+    "3",
+    "v.r.: I just went to another location in"
+   ],
+   [
+    "99",
+    "refused to answer"
+   ]
+  ]
+ },
+ "1175:ID_09": {
+  "name": "ID_09",
+  "labl": "Legal document",
+  "fid": "f2s",
+  "vid": "f2s_V34",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "No documents"
+   ],
+   [
+    "2",
+    "Student visa"
+   ],
+   [
+    "3",
+    "Work visa"
+   ],
+   [
+    "5",
+    "Humanitarian visa"
+   ],
+   [
+    "6",
+    "Regional free movement agreement (e.g. Mercosur, EU)"
+   ],
+   [
+    "7",
+    "Permanent resident"
+   ],
+   [
+    "8",
+    "Asylum applicant"
+   ],
+   [
+    "9",
+    "Recognized refugee"
+   ],
+   [
+    "10",
+    "Recognized stateless person"
+   ],
+   [
+    "11",
+    "Complementary and subsidiary protection"
+   ],
+   [
+    "12",
+    "Temporary protection"
+   ],
+   [
+    "13",
+    "Refugee enrollment document"
+   ],
+   [
+    "14",
+    "Other: specify"
+   ],
+   [
+    "98",
+    "Dont know"
+   ]
+  ]
+ },
+ "1421:HH_07a": {
+  "name": "HH_07a",
+  "labl": "Does [name] have a birth certificate?",
+  "fid": "f2s",
+  "vid": "f2s_V66",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "Yes"
+   ],
+   [
+    "2",
+    "No"
+   ],
+   [
+    "98",
+    "Don't know"
+   ],
+   [
+    "99",
+    "Refuse to answer"
+   ]
+  ]
+ },
+ "1421:wgh_prov_spec": {
+  "name": "wgh_prov_spec",
+  "labl": "Province Specific Weights (HH & Roster)",
+  "fid": "f1s",
+  "vid": "f1s_V11",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1421:Intro_03a_NUTS1": {
+  "name": "Intro_03a_NUTS1",
+  "labl": "",
+  "fid": "f1s",
+  "vid": "f1s_V5",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "Khyber-Pakhtunkhwa"
+   ],
+   [
+    "2",
+    "Punjab"
+   ],
+   [
+    "3",
+    "Sindh"
+   ],
+   [
+    "4",
+    "Balochistan"
+   ],
+   [
+    "5",
+    "Islamabad"
+   ]
+  ]
+ },
+ "1421:wgh_strata_spec_resp": {
+  "name": "wgh_strata_spec_resp",
+  "labl": "Sampling Strata Specific Weights Random Respondent",
+  "fid": "f3s",
+  "vid": "f3s_V13",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1421:labour_force": {
+  "name": "labour_force",
+  "labl": "",
+  "fid": "f3s",
+  "vid": "f3s_V1262",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1421:unemployed": {
+  "name": "unemployed",
+  "labl": "",
+  "fid": "f1s",
+  "vid": "f1s_V4111",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1421:employed": {
+  "name": "employed",
+  "labl": "",
+  "fid": "f3s",
+  "vid": "f3s_V1260",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1423:Intro_07": {
+  "name": "Intro_07",
+  "labl": "Intro_07 - Household category:",
+  "fid": "f1s",
+  "vid": "f1s_V4",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "Refugees"
+   ],
+   [
+    "2",
+    "Host Community"
+   ],
+   [
+    "3",
+    "Former Refugees"
+   ]
+  ]
+ },
+ "1423:BD01": {
+  "name": "BD01",
+  "labl": "BD01 - What is the main source of drinking water used by members of your household?",
+  "fid": "f1s",
+  "vid": "f1s_V976",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1423:SAN01": {
+  "name": "SAN01",
+  "labl": "SAN01 - What kind of toilet facility do members of your household use most of the time?",
+  "fid": "f1s",
+  "vid": "f1s_V1018",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1423:C070101": {
+  "name": "C070101",
+  "labl": "Proportion of households with access to electricity from TIER 1 or above",
+  "fid": "f1s",
+  "vid": "f1s_V2651",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "No"
+   ],
+   [
+    "0",
+    "Yes"
+   ]
+  ]
+ },
+ "1423:HH_07a": {
+  "name": "HH_07a",
+  "labl": "HH_07a - ${doyou1} have a birth certificate?",
+  "fid": "f2s",
+  "vid": "f2s_V90",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1423:HH_07b": {
+  "name": "HH_07b",
+  "labl": "HH_07b - Has ${your1}’s birth been registered with the Department of National Registration Passport and Citizenship (DNRPC) or the Ku ma REG?",
+  "fid": "f2s",
+  "vid": "f2s_V89",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1423:HH_Educ02a": {
+  "name": "HH_Educ02a",
+  "labl": "HH_Educ02a - ${areyou2} currently going to school?  If it is school holiday between two school years, tell us about the last school year.",
+  "fid": "f2s",
+  "vid": "f2s_V115",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1423:agetouse": {
+  "name": "agetouse",
+  "labl": "",
+  "fid": "f2s",
+  "vid": "f2s_V4",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "00"
+   ],
+   [
+    "2",
+    "01"
+   ],
+   [
+    "3",
+    "02"
+   ],
+   [
+    "4",
+    "03"
+   ],
+   [
+    "5",
+    "04"
+   ],
+   [
+    "6",
+    "05"
+   ],
+   [
+    "7",
+    "06"
+   ],
+   [
+    "8",
+    "07"
+   ],
+   [
+    "9",
+    "08"
+   ],
+   [
+    "10",
+    "09"
+   ],
+   [
+    "11",
+    "10"
+   ],
+   [
+    "12",
+    "11"
+   ],
+   [
+    "13",
+    "12"
+   ],
+   [
+    "14",
+    "13"
+   ],
+   [
+    "15",
+    "14"
+   ],
+   [
+    "16",
+    "15"
+   ],
+   [
+    "17",
+    "16"
+   ],
+   [
+    "18",
+    "17"
+   ],
+   [
+    "19",
+    "18"
+   ],
+   [
+    "20",
+    "19"
+   ],
+   [
+    "21",
+    "20"
+   ],
+   [
+    "22",
+    "21"
+   ],
+   [
+    "23",
+    "22"
+   ],
+   [
+    "24",
+    "23"
+   ],
+   [
+    "25",
+    "24"
+   ],
+   [
+    "26",
+    "25"
+   ],
+   [
+    "27",
+    "26"
+   ],
+   [
+    "28",
+    "27"
+   ],
+   [
+    "29",
+    "28"
+   ],
+   [
+    "30",
+    "29"
+   ],
+   [
+    "31",
+    "30"
+   ],
+   [
+    "32",
+    "31"
+   ],
+   [
+    "33",
+    "32"
+   ],
+   [
+    "34",
+    "33"
+   ],
+   [
+    "35",
+    "34"
+   ],
+   [
+    "36",
+    "35"
+   ],
+   [
+    "37",
+    "36"
+   ],
+   [
+    "38",
+    "37"
+   ],
+   [
+    "39",
+    "38"
+   ],
+   [
+    "40",
+    "39"
+   ],
+   [
+    "41",
+    "40"
+   ],
+   [
+    "42",
+    "41"
+   ],
+   [
+    "43",
+    "42"
+   ],
+   [
+    "44",
+    "43"
+   ],
+   [
+    "45",
+    "44"
+   ],
+   [
+    "46",
+    "45"
+   ],
+   [
+    "47",
+    "46"
+   ],
+   [
+    "48",
+    "47"
+   ],
+   [
+    "49",
+    "48"
+   ],
+   [
+    "50",
+    "49"
+   ],
+   [
+    "51",
+    "50"
+   ],
+   [
+    "52",
+    "51"
+   ],
+   [
+    "53",
+    "52"
+   ],
+   [
+    "54",
+    "53"
+   ],
+   [
+    "55",
+    "54"
+   ],
+   [
+    "56",
+    "55"
+   ],
+   [
+    "57",
+    "56"
+   ],
+   [
+    "58",
+    "57"
+   ],
+   [
+    "59",
+    "58"
+   ],
+   [
+    "60",
+    "59"
+   ],
+   [
+    "61",
+    "60 or more"
+   ]
+  ]
+ },
+ "1423:wgh_strata_spec": {
+  "name": "wgh_strata_spec",
+  "labl": "Sampling Strata Specific Weights",
+  "fid": "f1s",
+  "vid": "f1s_V10",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1423:Intro_03a_NUTS1": {
+  "name": "Intro_03a_NUTS1",
+  "labl": "Intro_03a_NUTS1 - NUTS 1:  Province",
+  "fid": "f1s",
+  "vid": "f1s_V5",
+  "qstn": "",
+  "universe": "",
+  "cats": [
+   [
+    "1",
+    "Luapula"
+   ],
+   [
+    "2",
+    "Lusaka"
+   ],
+   [
+    "3",
+    "North-Western"
+   ],
+   [
+    "4",
+    "Western"
+   ]
+  ]
+ },
+ "1423:Food11aa": {
+  "name": "Food11aa",
+  "labl": "Food11aa - How many days over the past 7 days, did most members of your household, more than half of them, eat any of the following food: Cereals, grains, roots and tubers Rice, pasta, bread, sorghum, millet, maize, potato, yam, cassava, white sweet potat",
+  "fid": "f1s",
+  "vid": "f1s_V1948",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1423:Food12a": {
+  "name": "Food12a",
+  "labl": "Food12a - How many days over the past 7 days, did most members of your household, more than half of them, eat any of the following food:    Pulses/ legumes / nuts: beans, cowpeas, peanuts, lentils, nut, soy, pigeon pea and / or other nuts",
+  "fid": "f1s",
+  "vid": "f1s_V1951",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1423:Food13a": {
+  "name": "Food13a",
+  "labl": "Food13a - And what about:    Milk and other dairy products: fresh milk / sour, yogurt, cheese, other dairy products. Exclude margarine / butter or small amounts of milk for tea / coffee.",
+  "fid": "f1s",
+  "vid": "f1s_V1954",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1423:Food14a": {
+  "name": "Food14a",
+  "labl": "Food14a - And what about:    Meat, fish and eggs:  goat, beef, chicken, pork, blood, fish, including canned tuna, escargot, and / or other seafood, eggs. Report ony meat and fish consumed in large quantities and not as a condiment.",
+  "fid": "f1s",
+  "vid": "f1s_V1957",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1423:Food15a": {
+  "name": "Food15a",
+  "labl": "Food15a - And what about: Vegetables and leaves: spinach, onion, tomatoes, carrots, peppers, green beans, lettuce, rape, cabbage, bean leaves, pumpkin leaves, cassava leaves, etc",
+  "fid": "f1s",
+  "vid": "f1s_V1972",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1423:Food16a": {
+  "name": "Food16a",
+  "labl": "Food16a - And what about: Fruits: banana, apple, lemon, mango, papaya,  guava, oranges, wild fruit, etc",
+  "fid": "f1s",
+  "vid": "f1s_V1981",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1423:Food17a": {
+  "name": "Food17a",
+  "labl": "Food17a - How many days over the past 7 days, did most members of your household, more than half of them, eat any of the following food:    Oil / fat / butter: vegetable oil, palm oil, shea butter, margarine, other fats / oil",
+  "fid": "f1s",
+  "vid": "f1s_V1987",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ },
+ "1423:Food18a": {
+  "name": "Food18a",
+  "labl": "Food18a - And what about: Sugar, or sweet: sugar, honey, jam, cakes, candy, cookies, pastries, cakes and other sweet, for example sugary drinks.",
+  "fid": "f1s",
+  "vid": "f1s_V1990",
+  "qstn": "",
+  "universe": "",
+  "cats": []
+ }
+}

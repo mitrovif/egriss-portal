@@ -1,0 +1,1661 @@
+{
+ "rows": [
+  {
+   "country": "Cameroon",
+   "sdg": "2.1.2",
+   "published": {
+    "g1": 51,
+    "g2": 32
+   },
+   "recalc": {
+    "g1": 50.78,
+    "g2": 32.08
+   },
+   "match": true,
+   "level": "household",
+   "vars": [
+    "rCSI_LEVEL"
+   ],
+   "numerator_codes": "3 = 19+: High",
+   "denominator": "all households (no missing values in rCSI_LEVEL)",
+   "weight": null,
+   "group_var": "HOUSEHOLD_STATUS",
+   "g1": "1 = Internally Displaced (IDP) Household",
+   "g2": "2 = Non-Displaced Household",
+   "n": {
+    "g1": 1274,
+    "g2": 1412
+   },
+   "file": "UNHCR_CMR_2024_PROFILING_data_household_v2.1.csv",
+   "variants_tried": [
+    {
+     "what": "household, weighted WEIGHT_FINAL",
+     "g1": 55.57,
+     "g2": 35.99
+    },
+    {
+     "what": "household, unweighted (MATCH)",
+     "g1": 50.78,
+     "g2": 32.08
+    },
+    {
+     "what": "person level: WEIGHT_FINAL x household size (members counted in individual file)",
+     "g1": 57.96,
+     "g2": 41.13
+    },
+    {
+     "what": "person level unweighted: household size",
+     "g1": 53.43,
+     "g2": 36.65
+    },
+    {
+     "what": "levels 2+3, weighted",
+     "g1": 95.54,
+     "g2": 86.84
+    }
+   ],
+   "notes": "Published 51/32 is reproduced only UNWEIGHTED (50.8/32.1). The published method text says \"rCSI level 3 weighted\"; with WEIGHT_FINAL the values are 55.6/36.0. rCSI is a coping-strategy index, not FIES (SDG 2.1.2 proper)."
+  },
+  {
+   "country": "Cameroon",
+   "sdg": "7.1.1",
+   "published": {
+    "g1": 95,
+    "g2": 93
+   },
+   "recalc": {
+    "g1": 94.95,
+    "g2": 93.34
+   },
+   "match": true,
+   "level": "household",
+   "vars": [
+    "AEQ0"
+   ],
+   "numerator_codes": "\"Yes\" (access to electricity from the public distribution network)",
+   "denominator": "all households (no missing)",
+   "weight": "WEIGHT_FINAL",
+   "group_var": "HOUSEHOLD_STATUS_SR",
+   "g1": "Internally Displaced (IDP) Household",
+   "g2": "Non-Displaced Household",
+   "n": {
+    "g1": 1017,
+    "g2": 1521
+   },
+   "file": "CMR_PROFILING_2025_round2_anon.zip :: UNHCR_CMR_2025_PROFILING_data_household_v2.1.csv (2025 round 2, NOT the 2024 file in disagg/cmr)",
+   "variants_tried": [
+    {
+     "what": "2025 file, AEQ0=Yes, WEIGHT_FINAL (MATCH)",
+     "g1": 94.95,
+     "g2": 93.34
+    },
+    {
+     "what": "2025 file, AEQ0=Yes, unweighted",
+     "g1": 93.31,
+     "g2": 92.37
+    },
+    {
+     "what": "2025 file, person level: WEIGHT_FINAL x IGQ5 household size",
+     "g1": 95.89,
+     "g2": 95.01
+    },
+    {
+     "what": "2024 file, S11Q0=1 (access to electricity in home), WEIGHT_FINAL",
+     "g1": 95.62,
+     "g2": 94.51
+    },
+    {
+     "what": "2024 file, S11Q0=1, unweighted",
+     "g1": 93.49,
+     "g2": 92.56
+    },
+    {
+     "what": "2024 file, S11Q1=1 main lighting source Electricity (ENEO), WEIGHT_FINAL",
+     "g1": 94.34,
+     "g2": 93.73
+    }
+   ],
+   "notes": "AEQ0 does not exist in the 2024 profiling file (disagg/cmr); it is in the 2025 round-2 file (catalogue 1467) found zipped under sdg_docs/pilot/data and read in memory. Year label 2025 is therefore right, but the source differs from the 2.1.2 row (2024 round). Grid access only, so it understates 7.1.1 (solar/generator not counted). Matches the earlier pilot output SDG_DEMONSTRATION_TABULATIONS.csv (95.0 / 93.3, n 1017 / 1521)."
+  },
+  {
+   "country": "DR Congo",
+   "sdg": "6.1.1",
+   "published": {
+    "g1": 30,
+    "g2": 38
+   },
+   "recalc": {
+    "g1": 29.68,
+    "g2": 38.42
+   },
+   "match": true,
+   "level": "household",
+   "vars": [
+    "s06q15_WaterSource"
+   ],
+   "numerator_codes": "1 Faucet in dwelling, 2 Faucet in yard/parcel, 3 Public faucet/fountain, 4 Faucet at neighbour's house, 5 Pumped well or borehole, 6 Protected well, 8 Protected spring, 10 Rainwater (11 Truck with tank, 12 Cart with small tank, 14 Bottled water also improved under JMP but have zero households)",
+   "denominator": "all households with a water source value (1 missing in whole file) and a group value",
+   "weight": null,
+   "group_var": "s00q0_HHtype_HHH",
+   "g1": "2 = IDP",
+   "g2": "1 = Host community",
+   "n": {
+    "g1": 1004,
+    "g2": 1429
+   },
+   "file": "UNHCR_COD_2023_KASAI_data_household_v2.1.dta (same data as the .csv)",
+   "variants_tried": [
+    {
+     "what": "JMP improved, group s00q0_HHtype_HHH, unweighted (MATCH)",
+     "g1": 29.68,
+     "g2": 38.42
+    },
+    {
+     "what": "same but excluding neighbour's faucet (code 4)",
+     "g1": 24.7,
+     "g2": 32.68
+    },
+    {
+     "what": "same but protected spring (8) not counted",
+     "g1": 15.24,
+     "g2": 23.3
+    },
+    {
+     "what": "JMP improved, group = sampling stratum s00q13_HHtype (2 IDP / 1 host)",
+     "g1": 33.1,
+     "g2": 35.63
+    },
+    {
+     "what": "JMP improved, weighted by sum of s07q00_Size* (not a usable household size: mostly 0)",
+     "g1": 23.83,
+     "g2": 37.97
+    }
+   ],
+   "notes": "Improved source only (no time/distance criterion although s06q16_WaterDistance exists), so this is \"improved\" not \"basic\". No weight variable found in the household file (search of names and labels for weight/pond/poids: ['s00q0_HHtype_RESP', 's00q18_Consent', 's01q13_Respondent', 's04q00_MatHealthRespondent', 's16q06a_Cooperative', 's16q06b_AtEase']), consistent with the \"unweighted\" note. 31 households have no s00q0_HHtype_HHH value and are dropped. The file also has returned IDPs (809) and repatriated refugees (796), not published."
+  },
+  {
+   "country": "DR Congo",
+   "sdg": "6.2.1",
+   "published": {
+    "g1": 8,
+    "g2": 6
+   },
+   "recalc": {
+    "g1": 8.47,
+    "g2": 6.16
+   },
+   "match": true,
+   "level": "household",
+   "vars": [
+    "s06q25_Toilet"
+   ],
+   "numerator_codes": "1 Manual flush / Flush, 2 Flush connected to a sewage system/septic tank/cistern, 3 Cistern, 4 Composting toilet",
+   "denominator": "all households with a toilet value (1 missing in whole file) and a group value",
+   "weight": null,
+   "group_var": "s00q0_HHtype_HHH",
+   "g1": "2 = IDP",
+   "g2": "1 = Host community",
+   "n": {
+    "g1": 1004,
+    "g2": 1429
+   },
+   "file": "UNHCR_COD_2023_KASAI_data_household_v2.1.dta (same data as the .csv)",
+   "variants_tried": [
+    {
+     "what": "codes 1-4, unweighted (MATCH)",
+     "g1": 8.47,
+     "g2": 6.16
+    },
+    {
+     "what": "codes 1-3 (flush only)",
+     "g1": 0.4,
+     "g2": 1.12
+    },
+    {
+     "what": "code 4 only (composting)",
+     "g1": 8.07,
+     "g2": 5.04
+    },
+    {
+     "what": "codes 1-4, group = s00q13_HHtype",
+     "g1": 6.74,
+     "g2": 8.66
+    }
+   ],
+   "notes": "Almost all of the numerator is code 4 \"Composting toilet\" (299 of 328 households in the whole file). The answer list has no \"pit latrine with slab\" option; code 8 \"Open hole\" (2,386 households) is treated as unimproved. Sharing (s06q26_ToiletShare) is ignored, so this is \"improved facility\", not \"basic/safely managed\"."
+  },
+  {
+   "country": "Mozambique",
+   "sdg": "1.4.2",
+   "published": {
+    "g1": 17,
+    "g2": 58
+   },
+   "recalc": {
+    "g1": 17.3,
+    "g2": 58.41
+   },
+   "match": true,
+   "level": "household (one row per @_parent_index; the file is person-level with household answers repeated on every member row)",
+   "vars": [
+    "S6Q5",
+    "S6Q2"
+   ],
+   "numerator_codes": "1 DUAT single / legal title, 2 DUAT collective, 3 Owners certificate (declaration de compra)",
+   "denominator": "households that were asked S6Q5, i.e. owners only (S6Q2 = Own); renters and \"Granted\" housing are excluded",
+   "weight": "my_weight",
+   "group_var": "hh_type",
+   "g1": "1 = IDPs in Camps",
+   "g2": "2 = Non-displaced Household",
+   "n": {
+    "g1": 396,
+    "g2": 1238
+   },
+   "file": "UNHCR_MOZ_2025_PROFILING_data_main_v2.1.csv",
+   "variants_tried": [
+    {
+     "what": "DUAT+owners certificate, owners only | household, weighted my_weight",
+     "g1": 17.3,
+     "g2": 58.41
+    },
+    {
+     "what": "DUAT+owners certificate, owners only | household, unweighted",
+     "g1": 17.17,
+     "g2": 65.51
+    },
+    {
+     "what": "DUAT+owners certificate, owners only | person rows, weighted my_weight",
+     "g1": 15.3,
+     "g2": 58.53
+    },
+    {
+     "what": "DUAT+owners certificate, owners only | person rows, unweighted",
+     "g1": 15.22,
+     "g2": 65.72
+    },
+    {
+     "what": "DUAT+owners certificate, all households in denominator | household, weighted my_weight",
+     "g1": 13.85,
+     "g2": 50.17
+    },
+    {
+     "what": "DUAT+owners certificate, all households in denominator | household, unweighted",
+     "g1": 13.74,
+     "g2": 54.65
+    },
+    {
+     "what": "DUAT+owners certificate, all households in denominator | person rows, weighted my_weight",
+     "g1": 12.34,
+     "g2": 51.19
+    },
+    {
+     "what": "DUAT+owners certificate, all households in denominator | person rows, unweighted",
+     "g1": 12.27,
+     "g2": 55.99
+    },
+    {
+     "what": "adding code 4 customary certificate, owners only | household, weighted my_weight",
+     "g1": 17.3,
+     "g2": 60.5
+    },
+    {
+     "what": "adding code 4 customary certificate, owners only | household, unweighted",
+     "g1": 17.17,
+     "g2": 68.26
+    },
+    {
+     "what": "adding code 4 customary certificate, owners only | person rows, weighted my_weight",
+     "g1": 15.3,
+     "g2": 60.43
+    },
+    {
+     "what": "adding code 4 customary certificate, owners only | person rows, unweighted",
+     "g1": 15.22,
+     "g2": 68.21
+    },
+    {
+     "what": "DUAT only (codes 1-2), owners only | household, weighted my_weight",
+     "g1": 15.54,
+     "g2": 38.33
+    },
+    {
+     "what": "DUAT only (codes 1-2), owners only | household, unweighted",
+     "g1": 15.4,
+     "g2": 42.41
+    },
+    {
+     "what": "DUAT only (codes 1-2), owners only | person rows, weighted my_weight",
+     "g1": 13.56,
+     "g2": 39.99
+    },
+    {
+     "what": "DUAT only (codes 1-2), owners only | person rows, unweighted",
+     "g1": 13.49,
+     "g2": 44.12
+    }
+   ],
+   "notes": "Match needs the owners-only denominator: 80% of camp IDP households and 83% of non-displaced households own. With all households in the denominator the values are 13.9 / 50.2. Not the SDG 1.4.2 definition (adult population with documentation and perceived security)."
+  },
+  {
+   "country": "Mozambique",
+   "sdg": "11.1.1",
+   "published": {
+    "g1": 12,
+    "g2": 2
+   },
+   "recalc": {
+    "g1": 11.82,
+    "g2": 1.68
+   },
+   "match": true,
+   "level": "household (one row per @_parent_index; the file is person-level with household answers repeated on every member row)",
+   "vars": [
+    "Calculated_HH_Size",
+    "S6Q4"
+   ],
+   "numerator_codes": "Calculated_HH_Size / S6Q4 > 3 (strictly more than 3 persons per room)",
+   "denominator": "households with at least one room reported (S6Q4 = 0 excluded: 12 camp, 1 non-displaced household)",
+   "weight": "my_weight",
+   "group_var": "hh_type",
+   "g1": "1 = IDPs in Camps",
+   "g2": "2 = Non-displaced Household",
+   "n": {
+    "g1": 483,
+    "g2": 1483
+   },
+   "file": "UNHCR_MOZ_2025_PROFILING_data_main_v2.1.csv",
+   "variants_tried": [
+    {
+     "what": ">3 per room, zero-room households excluded | household, weighted my_weight",
+     "g1": 11.82,
+     "g2": 1.68
+    },
+    {
+     "what": ">3 per room, zero-room households excluded | household, unweighted",
+     "g1": 11.8,
+     "g2": 1.35
+    },
+    {
+     "what": ">3 per room, zero-room households excluded | person rows, weighted my_weight",
+     "g1": 17.98,
+     "g2": 3.05
+    },
+    {
+     "what": ">3 per room, zero-room households excluded | person rows, unweighted",
+     "g1": 18.01,
+     "g2": 2.54
+    },
+    {
+     "what": ">3 per room, zero-room households counted as overcrowded | household, weighted my_weight",
+     "g1": 13.95,
+     "g2": 1.77
+    },
+    {
+     "what": ">3 per room, zero-room households counted as overcrowded | household, unweighted",
+     "g1": 13.94,
+     "g2": 1.42
+    },
+    {
+     "what": ">3 per room, zero rooms treated as 1 room | household, weighted my_weight",
+     "g1": 12.74,
+     "g2": 1.77
+    },
+    {
+     "what": ">3 per room, zero rooms treated as 1 room | household, unweighted",
+     "g1": 12.73,
+     "g2": 1.42
+    }
+   ],
+   "notes": "Rooms exclude kitchen and bathroom and include the living room. Overcrowding is one component of SDG 11.1.1 (slum/inadequate housing), not the whole indicator. If zero-room households are treated as 1 room or as overcrowded, camps become 12.7 or 13.9."
+  },
+  {
+   "country": "Mozambique",
+   "sdg": "7.1.1",
+   "published": {
+    "g1": 37,
+    "g2": 78
+   },
+   "recalc": {
+    "g1": 36.51,
+    "g2": 77.99
+   },
+   "match": true,
+   "level": "household (one row per @_parent_index; the file is person-level with household answers repeated on every member row)",
+   "vars": [
+    "S7Q11"
+   ],
+   "numerator_codes": "1 Yes, public electricity grid; 2 Yes, generator/solar",
+   "denominator": "all households (no missing)",
+   "weight": "my_weight",
+   "group_var": "hh_type",
+   "g1": "1 = IDPs in Camps",
+   "g2": "2 = Non-displaced Household",
+   "n": {
+    "g1": 495,
+    "g2": 1484
+   },
+   "file": "UNHCR_MOZ_2025_PROFILING_data_main_v2.1.csv",
+   "variants_tried": [
+    {
+     "what": "grid or generator/solar | household, weighted my_weight",
+     "g1": 36.51,
+     "g2": 77.99
+    },
+    {
+     "what": "grid or generator/solar | household, unweighted",
+     "g1": 36.57,
+     "g2": 84.43
+    },
+    {
+     "what": "grid or generator/solar | person rows, weighted my_weight",
+     "g1": 36.93,
+     "g2": 78.58
+    },
+    {
+     "what": "grid or generator/solar | person rows, unweighted",
+     "g1": 36.98,
+     "g2": 84.86
+    },
+    {
+     "what": "grid only | household, weighted my_weight",
+     "g1": 16.34,
+     "g2": 74.82
+    },
+    {
+     "what": "grid only | household, unweighted",
+     "g1": 16.36,
+     "g2": 82.14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "country": "Mozambique",
+   "sdg": "6.1.1",
+   "published": {
+    "g1": 67,
+    "g2": 82
+   },
+   "recalc": {
+    "g1": 66.66,
+    "g2": 81.9
+   },
+   "match": true,
+   "level": "household (one row per @_parent_index; the file is person-level with household answers repeated on every member row)",
+   "vars": [
+    "S7Q7",
+    "S7Q8"
+   ],
+   "numerator_codes": "S7Q7 anything except 6 Unprotected well and 8 River/dam/lake/ponds/stream/canal (so 96 \"Other\" is counted as improved) AND S7Q8 = 1 Less than 30 minutes",
+   "denominator": "all households (no missing)",
+   "weight": "my_weight",
+   "group_var": "hh_type",
+   "g1": "1 = IDPs in Camps",
+   "g2": "2 = Non-displaced Household",
+   "n": {
+    "g1": 495,
+    "g2": 1484
+   },
+   "file": "UNHCR_MOZ_2025_PROFILING_data_main_v2.1.csv",
+   "variants_tried": [
+    {
+     "what": "all sources except unprotected well and surface water (Other counted as improved) + under 30 min | household, weighted my_weight",
+     "g1": 66.66,
+     "g2": 81.9
+    },
+    {
+     "what": "all sources except unprotected well and surface water (Other counted as improved) + under 30 min | household, unweighted",
+     "g1": 66.67,
+     "g2": 85.04
+    },
+    {
+     "what": "all sources except unprotected well and surface water (Other counted as improved) + under 30 min | person rows, weighted my_weight",
+     "g1": 67.07,
+     "g2": 81.11
+    },
+    {
+     "what": "all sources except unprotected well and surface water (Other counted as improved) + under 30 min | person rows, unweighted",
+     "g1": 67.09,
+     "g2": 84.35
+    },
+    {
+     "what": "strict JMP improved (codes 1-5,7,9,10,11; Other not improved) + under 30 min | household, weighted my_weight",
+     "g1": 66.45,
+     "g2": 81.33
+    },
+    {
+     "what": "strict JMP improved (codes 1-5,7,9,10,11; Other not improved) + under 30 min | household, unweighted",
+     "g1": 66.46,
+     "g2": 84.37
+    },
+    {
+     "what": "strict JMP improved (codes 1-5,7,9,10,11; Other not improved) + under 30 min | person rows, weighted my_weight",
+     "g1": 67.02,
+     "g2": 80.51
+    },
+    {
+     "what": "strict JMP improved (codes 1-5,7,9,10,11; Other not improved) + under 30 min | person rows, unweighted",
+     "g1": 67.04,
+     "g2": 83.6
+    },
+    {
+     "what": "strict JMP improved, no time condition | household, weighted my_weight",
+     "g1": 86.05,
+     "g2": 92.46
+    },
+    {
+     "what": "strict JMP improved, no time condition | household, unweighted",
+     "g1": 86.06,
+     "g2": 93.73
+    }
+   ],
+   "notes": "Exact match (66.66 / 81.90) when code 96 \"Other\" is counted as improved on top of the JMP list (12 camp + 11 non-displaced households answer Other, before the time condition). All 128 combinations of the doubtful source codes were tested at household and person level: every combination that rounds to 67/82 adds either \"Other\" or surface water (or both) to the JMP list; \"Other\" is the plausible one, so this definition is INFERRED, not documented. Strict JMP improved gives 66.4 / 81.3 (66% / 81%), 1 point lower in each group. S7Q8 answer is \"Less than 30 minutes\" vs \"More than 30 minutes\": exactly 30 minutes cannot be separated, so \"30 minutes or less\" in the method text is approximate."
+  },
+  {
+   "country": "Mozambique",
+   "sdg": "16.1.4",
+   "published": {
+    "g1": 90,
+    "g2": 98
+   },
+   "recalc": {
+    "g1": 90.08,
+    "g2": 98.28
+   },
+   "match": true,
+   "level": "household (one row per @_parent_index; the file is person-level with household answers repeated on every member row)",
+   "vars": [
+    "S8Q2"
+   ],
+   "numerator_codes": "1 Very safe, 2 Fairly safe",
+   "denominator": "all households, including \"Don't know\" and \"Not applicable (never walks alone)\" (2 households in the non-displaced group, none in camps)",
+   "weight": "my_weight",
+   "group_var": "hh_type",
+   "g1": "1 = IDPs in Camps",
+   "g2": "2 = Non-displaced Household",
+   "n": {
+    "g1": 495,
+    "g2": 1484
+   },
+   "file": "UNHCR_MOZ_2025_PROFILING_data_main_v2.1.csv",
+   "variants_tried": [
+    {
+     "what": "very/fairly safe, all in denominator | household, weighted my_weight",
+     "g1": 90.08,
+     "g2": 98.28
+    },
+    {
+     "what": "very/fairly safe, all in denominator | household, unweighted",
+     "g1": 90.1,
+     "g2": 98.65
+    },
+    {
+     "what": "very/fairly safe, all in denominator | person rows, weighted my_weight",
+     "g1": 91.02,
+     "g2": 98.08
+    },
+    {
+     "what": "very/fairly safe, all in denominator | person rows, unweighted",
+     "g1": 91.02,
+     "g2": 98.54
+    },
+    {
+     "what": "excluding Don't know and Not applicable | household, weighted my_weight",
+     "g1": 90.08,
+     "g2": 98.39
+    },
+    {
+     "what": "excluding Don't know and Not applicable | household, unweighted",
+     "g1": 90.1,
+     "g2": 98.79
+    }
+   ],
+   "notes": "Question is about walking alone in the neighbourhood during the DAY and is answered once per household by the respondent; SDG 16.1.4 is about walking alone after dark, per adult."
+  },
+  {
+   "country": "Mozambique",
+   "sdg": "10.3.1",
+   "published": {
+    "g1": 6,
+    "g2": 5
+   },
+   "recalc": {
+    "g1": 6.25,
+    "g2": 5.1
+   },
+   "match": true,
+   "level": "household (one row per @_parent_index; the file is person-level with household answers repeated on every member row)",
+   "vars": [
+    "S11Q2"
+   ],
+   "numerator_codes": "any \"Yes\" answer: 2 verbal abuse/threats/physical abuse, 3 denied services, 4 denied housing, 5 denied employment, 6 exclusion from community activities, 96 Yes, other",
+   "denominator": "all households (no missing)",
+   "weight": "my_weight",
+   "group_var": "hh_type",
+   "g1": "1 = IDPs in Camps",
+   "g2": "2 = Non-displaced Household",
+   "n": {
+    "g1": 495,
+    "g2": 1484
+   },
+   "file": "UNHCR_MOZ_2025_PROFILING_data_main_v2.1.csv",
+   "variants_tried": [
+    {
+     "what": "any yes | household, weighted my_weight",
+     "g1": 6.25,
+     "g2": 5.1
+    },
+    {
+     "what": "any yes | household, unweighted",
+     "g1": 6.26,
+     "g2": 5.46
+    },
+    {
+     "what": "any yes | person rows, weighted my_weight",
+     "g1": 7.56,
+     "g2": 4.26
+    },
+    {
+     "what": "any yes | person rows, unweighted",
+     "g1": 7.59,
+     "g2": 4.6
+    }
+   ],
+   "notes": "Asked of the respondent only (\"have you personally experienced\"), repeated on every member row; household-weighted and household-unweighted both round to 6/5, person-row variants do not (8/5, 8/4)."
+  }
+ ],
+ "vars": {
+  "Cameroon:rCSI_LEVEL": {
+   "label": "rCSI_LEVEL: reduced Coping Strategy Index level",
+   "cats": [
+    [
+     "1",
+     "0-3: Low"
+    ],
+    [
+     "2",
+     "4-18: Medium"
+    ],
+    [
+     "3",
+     "19+: High"
+    ]
+   ],
+   "source": "Variables_List.xlsx (sheets Households_File_Var_List / Households_File_Var_Values), 2024 round"
+  },
+  "Cameroon:HOUSEHOLD_STATUS": {
+   "label": "Household status/Statut du ménage",
+   "cats": [
+    [
+     "1",
+     "Internally Displaced (IDP) Household, Ménage déplacé Interne (PDI)"
+    ],
+    [
+     "2",
+     "Non-Displaced Household, Ménage non-déplacé"
+    ],
+    [
+     "3",
+     "All household members are visitors, Tous les membres de ce ménage sont des visiteurs"
+    ],
+    [
+     "4",
+     "Neither an IDP nor a non-displaced, Ni PDI ni non-déplacé"
+    ]
+   ],
+   "source": "Variables_List.xlsx (sheets Households_File_Var_List / Households_File_Var_Values), 2024 round"
+  },
+  "Cameroon:WEIGHT_FINAL": {
+   "label": "WEIGHT_FINAL: Respondent final weight / Poids final du repondant",
+   "cats": [],
+   "source": "Variables_List.xlsx (sheets Households_File_Var_List / Households_File_Var_Values), 2024 round"
+  },
+  "Cameroon:S1Q1": {
+   "label": "S1Q1 : Division",
+   "cats": [
+    [
+     "CM00810",
+     "BAMBOUTOS"
+    ],
+    [
+     "CM00811",
+     "MENOUA"
+    ],
+    [
+     "CM00812",
+     "MIFI"
+    ],
+    [
+     "CM00813",
+     "NOUN"
+    ]
+   ],
+   "source": "Variables_List.xlsx (sheets Households_File_Var_List / Households_File_Var_Values), 2024 round"
+  },
+  "Cameroon:S11Q0": {
+   "label": "S11Q0 : Do you have access to electricity in your home?",
+   "cats": [
+    [
+     "1",
+     "Yes"
+    ],
+    [
+     "2",
+     "No"
+    ]
+   ],
+   "source": "Variables_List.xlsx (sheets Households_File_Var_List / Households_File_Var_Values), 2024 round"
+  },
+  "Cameroon:S11Q1": {
+   "label": "S11Q1 : What is your main lighting source?",
+   "cats": [
+    [
+     "1",
+     "Electricity (ENEO)"
+    ],
+    [
+     "2",
+     "Generator"
+    ],
+    [
+     "3",
+     "Solar energy"
+    ],
+    [
+     "4",
+     "Small power plant"
+    ],
+    [
+     "5",
+     "Gas lamp"
+    ],
+    [
+     "6",
+     "Oil lamp/storm lamp"
+    ],
+    [
+     "7",
+     "Rechargeable flashlight"
+    ],
+    [
+     "8",
+     "Solar lamp"
+    ],
+    [
+     "9",
+     "Battery-operated flashlight"
+    ],
+    [
+     "10",
+     "Candle"
+    ],
+    [
+     "11",
+     "Firewood/wood chips/sawdust/straw"
+    ],
+    [
+     "96",
+     "Other (Please specify)"
+    ]
+   ],
+   "source": "Variables_List.xlsx (sheets Households_File_Var_List / Households_File_Var_Values), 2024 round"
+  },
+  "Cameroon2025:AEQ0": {
+   "label": "AEQ0 :  Do you have access to electricity from the public distribution network (SONEL, ENEO) in your home?",
+   "cats": [
+    [
+     "",
+     "Yes"
+    ],
+    [
+     "",
+     "No"
+    ]
+   ],
+   "source": "UNHCR_CMR_2025_PROFILING_labels_household_v2.1.csv inside CMR_PROFILING_2025_round2_anon.zip; the CSV stores answer labels as text, numeric codes not read"
+  },
+  "Cameroon2025:HOUSEHOLD_STATUS_SR": {
+   "label": "Household status/Statut du ménage",
+   "cats": [
+    [
+     "",
+     "Non-Displaced Household, Ménage non-déplacé"
+    ],
+    [
+     "",
+     "Internally Displaced (IDP) Household, Ménage déplacé Interne (PDI)"
+    ]
+   ],
+   "source": "UNHCR_CMR_2025_PROFILING_labels_household_v2.1.csv inside CMR_PROFILING_2025_round2_anon.zip; the CSV stores answer labels as text, numeric codes not read"
+  },
+  "Cameroon2025:WEIGHT_FINAL": {
+   "label": "weighting raking ratio",
+   "cats": [],
+   "source": "UNHCR_CMR_2025_PROFILING_labels_household_v2.1.csv inside CMR_PROFILING_2025_round2_anon.zip; the CSV stores answer labels as text, numeric codes not read"
+  },
+  "Cameroon2025:LMQ1": {
+   "label": "LMQ1 : Division",
+   "cats": [
+    [
+     "",
+     "NOUN"
+    ],
+    [
+     "",
+     "MENOUA"
+    ],
+    [
+     "",
+     "BAMBOUTOS"
+    ],
+    [
+     "",
+     "MIFI"
+    ]
+   ],
+   "source": "UNHCR_CMR_2025_PROFILING_labels_household_v2.1.csv inside CMR_PROFILING_2025_round2_anon.zip; the CSV stores answer labels as text, numeric codes not read"
+  },
+  "Cameroon2025:IGQ5": {
+   "label": "IGQ5 : How many people, including yourself and visitors, currently live in this household?",
+   "cats": [],
+   "source": "UNHCR_CMR_2025_PROFILING_labels_household_v2.1.csv inside CMR_PROFILING_2025_round2_anon.zip; the CSV stores answer labels as text, numeric codes not read"
+  },
+  "DR Congo:s06q15_WaterSource": {
+   "label": "HOUSE: Primary source of drinking water for the household",
+   "cats": [
+    [
+     "1",
+     "Facuet in the dwelling"
+    ],
+    [
+     "2",
+     "Faucet in yard/parcel"
+    ],
+    [
+     "3",
+     "Public faucet/water fountain"
+    ],
+    [
+     "4",
+     "Faucet at neighbour's house"
+    ],
+    [
+     "5",
+     "Pumped well or borehole"
+    ],
+    [
+     "6",
+     "Protected well"
+    ],
+    [
+     "7",
+     "Unprotected well"
+    ],
+    [
+     "8",
+     "Protected spring"
+    ],
+    [
+     "9",
+     "Unprotected spring"
+    ],
+    [
+     "10",
+     "Rainwater"
+    ],
+    [
+     "11",
+     "Truck with tank"
+    ],
+    [
+     "12",
+     "Cart with small tank/barrel"
+    ],
+    [
+     "13",
+     "Surface water (river/dam/lake/pond/irrigation canal)"
+    ],
+    [
+     "14",
+     "Bottled water"
+    ],
+    [
+     "15",
+     "Other (please specify)"
+    ]
+   ],
+   "source": "UNHCR_COD_2023_KASAI_labels_household_v2.1.csv (label); value labels from the .dta"
+  },
+  "DR Congo:s06q25_Toilet": {
+   "label": "HOUSE: Types of sanitary facilities household uses",
+   "cats": [
+    [
+     "1",
+     "Manual fluss / Flush"
+    ],
+    [
+     "2",
+     "Flush connected to a sewage system/septic tank/cistern"
+    ],
+    [
+     "3",
+     "Cistern"
+    ],
+    [
+     "4",
+     "Composting toilet"
+    ],
+    [
+     "5",
+     "Bucket/Tin"
+    ],
+    [
+     "6",
+     "Hanging latrine/toilette"
+    ],
+    [
+     "7",
+     "No toilet/nature"
+    ],
+    [
+     "8",
+     "Open hole"
+    ],
+    [
+     "9",
+     "Other (specify)"
+    ]
+   ],
+   "source": "UNHCR_COD_2023_KASAI_labels_household_v2.1.csv (label); value labels from the .dta"
+  },
+  "DR Congo:s00q0_HHtype_HHH": {
+   "label": "ADMIN: Host, IDP, retIDP, repatref (from survey, based on HHH)",
+   "cats": [
+    [
+     "1",
+     "Host community"
+    ],
+    [
+     "2",
+     "IDP"
+    ],
+    [
+     "3",
+     "Returned IDP"
+    ],
+    [
+     "4",
+     "Repatriated refugee"
+    ]
+   ],
+   "source": "UNHCR_COD_2023_KASAI_labels_household_v2.1.csv (label); value labels from the .dta"
+  },
+  "DR Congo:s00q1_Province": {
+   "label": "ADMIN: Province",
+   "cats": [
+    [
+     "",
+     "KASAI"
+    ],
+    [
+     "",
+     "KASAI CENTRAL"
+    ],
+    [
+     "",
+     "KASAI ORIENTAL"
+    ]
+   ],
+   "source": "UNHCR_COD_2023_KASAI_labels_household_v2.1.csv (label); value labels from the .dta"
+  },
+  "Mozambique:S6Q5": {
+   "label": "S6Q5 : What documentation do you have to prove onwership?",
+   "cats": [
+    [
+     "1",
+     "DUAT single / legal title"
+    ],
+    [
+     "2",
+     "DUAT collective"
+    ],
+    [
+     "3",
+     "Owners certificate (declaration de compra)"
+    ],
+    [
+     "4",
+     "Verbal/writen certificate for long-term use or lease (customary law)"
+    ],
+    [
+     "5",
+     "No title/arrangement"
+    ],
+    [
+     "96",
+     "Other"
+    ]
+   ],
+   "source": "UNHCR_MOZ_2025_PROFILING_labels_main_v2.1.csv (label); answer codes from MOZ_2025_PROFILING_ANON.sav metadata (the CSV stores labels as text)"
+  },
+  "Mozambique:S6Q2": {
+   "label": "S6Q2 : Who owns the house that your household lives in?",
+   "cats": [
+    [
+     "1",
+     "Own"
+    ],
+    [
+     "2",
+     "Rented"
+    ],
+    [
+     "3",
+     "Granted"
+    ]
+   ],
+   "source": "UNHCR_MOZ_2025_PROFILING_labels_main_v2.1.csv (label); answer codes from MOZ_2025_PROFILING_ANON.sav metadata (the CSV stores labels as text)"
+  },
+  "Mozambique:S6Q4": {
+   "label": "S6Q4 : How many rooms does your house have? (excluding kitchen and bathroom, including living room)",
+   "cats": [],
+   "source": "UNHCR_MOZ_2025_PROFILING_labels_main_v2.1.csv (label); answer codes from MOZ_2025_PROFILING_ANON.sav metadata (the CSV stores labels as text)"
+  },
+  "Mozambique:Calculated_HH_Size": {
+   "label": "HH size",
+   "cats": [],
+   "source": "UNHCR_MOZ_2025_PROFILING_labels_main_v2.1.csv (label); answer codes from MOZ_2025_PROFILING_ANON.sav metadata (the CSV stores labels as text)"
+  },
+  "Mozambique:S7Q11": {
+   "label": "S7Q11 : Do you have access to electricity in your home?",
+   "cats": [
+    [
+     "1",
+     "Yes, public electricity grid"
+    ],
+    [
+     "2",
+     "Yes, generator/solar"
+    ],
+    [
+     "3",
+     "No, access to electricity"
+    ]
+   ],
+   "source": "UNHCR_MOZ_2025_PROFILING_labels_main_v2.1.csv (label); answer codes from MOZ_2025_PROFILING_ANON.sav metadata (the CSV stores labels as text)"
+  },
+  "Mozambique:S7Q7": {
+   "label": "S7Q7 : What is the main source of water for drinking?",
+   "cats": [
+    [
+     "1",
+     "Piped water into inside the house"
+    ],
+    [
+     "2",
+     "Piped water in yard/plot"
+    ],
+    [
+     "3",
+     "Public Tap/standpipe"
+    ],
+    [
+     "4",
+     "Piped water in neighbor's House"
+    ],
+    [
+     "5",
+     "Protected well"
+    ],
+    [
+     "6",
+     "Unprotected well"
+    ],
+    [
+     "7",
+     "Borehole with pump"
+    ],
+    [
+     "8",
+     "River/dam/lake/ponds/stream/canal/++"
+    ],
+    [
+     "9",
+     "Rainwater"
+    ],
+    [
+     "10",
+     "Tanker truck/cistern water"
+    ],
+    [
+     "11",
+     "Bottled water"
+    ],
+    [
+     "96",
+     "Other"
+    ]
+   ],
+   "source": "UNHCR_MOZ_2025_PROFILING_labels_main_v2.1.csv (label); answer codes from MOZ_2025_PROFILING_ANON.sav metadata (the CSV stores labels as text)"
+  },
+  "Mozambique:S7Q8": {
+   "label": "S7Q8 : How long does it take to go there, get water, and come back?",
+   "cats": [
+    [
+     "1",
+     "Less than 30 minutes"
+    ],
+    [
+     "2",
+     "Morethen 30 minutes"
+    ]
+   ],
+   "source": "UNHCR_MOZ_2025_PROFILING_labels_main_v2.1.csv (label); answer codes from MOZ_2025_PROFILING_ANON.sav metadata (the CSV stores labels as text)"
+  },
+  "Mozambique:S8Q2": {
+   "label": "S8Q2 : How safe do you and the members of your household feel walking alone in your neighborhood during the day?",
+   "cats": [
+    [
+     "1",
+     "Very safe"
+    ],
+    [
+     "2",
+     "Fairly safe"
+    ],
+    [
+     "3",
+     "Not safe"
+    ],
+    [
+     "4",
+     "Very dangerous (risk to life)"
+    ],
+    [
+     "5",
+     "Not applicable (never walks alone)"
+    ],
+    [
+     "99",
+     "Don’t know"
+    ]
+   ],
+   "source": "UNHCR_MOZ_2025_PROFILING_labels_main_v2.1.csv (label); answer codes from MOZ_2025_PROFILING_ANON.sav metadata (the CSV stores labels as text)"
+  },
+  "Mozambique:S11Q2": {
+   "label": "S11Q2 : In the last 12 months, have you personally experienced any discrimination or harassment?",
+   "cats": [
+    [
+     "1",
+     "No"
+    ],
+    [
+     "2",
+     "Yes, verbal abuse, threats, or physical abuse"
+    ],
+    [
+     "3",
+     "Yes, denied access to services (health, education, etc.)"
+    ],
+    [
+     "4",
+     "Yes, denied access to housing or shelter"
+    ],
+    [
+     "5",
+     "Yes, denied access to employment or livelihood opportunities"
+    ],
+    [
+     "6",
+     "Yes, exclusion from community activities or decision-making"
+    ],
+    [
+     "96",
+     "Yes, other"
+    ]
+   ],
+   "source": "UNHCR_MOZ_2025_PROFILING_labels_main_v2.1.csv (label); answer codes from MOZ_2025_PROFILING_ANON.sav metadata (the CSV stores labels as text)"
+  },
+  "Mozambique:hh_type": {
+   "label": "IDPs in camps, host, or non-displaced",
+   "cats": [
+    [
+     "1",
+     "IDPs in Camps"
+    ],
+    [
+     "2",
+     "Non-displaced Household"
+    ],
+    [
+     "3",
+     "IDPs in HC"
+    ]
+   ],
+   "source": "UNHCR_MOZ_2025_PROFILING_labels_main_v2.1.csv (label); answer codes from MOZ_2025_PROFILING_ANON.sav metadata (the CSV stores labels as text)"
+  },
+  "Mozambique:my_weight": {
+   "label": "Weights",
+   "cats": [],
+   "source": "UNHCR_MOZ_2025_PROFILING_labels_main_v2.1.csv (label); answer codes from MOZ_2025_PROFILING_ANON.sav metadata (the CSV stores labels as text)"
+  },
+  "Mozambique:S1Q2": {
+   "label": "S1Q2 : District",
+   "cats": [
+    [
+     "1",
+     "Cidade De Pemba"
+    ],
+    [
+     "2",
+     "Mecufi"
+    ],
+    [
+     "3",
+     "Metuge"
+    ]
+   ],
+   "source": "UNHCR_MOZ_2025_PROFILING_labels_main_v2.1.csv (label); answer codes from MOZ_2025_PROFILING_ANON.sav metadata (the CSV stores labels as text)"
+  },
+  "Mozambique:@_parent_index": {
+   "label": "_parent_index",
+   "cats": [],
+   "source": "UNHCR_MOZ_2025_PROFILING_labels_main_v2.1.csv (label); answer codes from MOZ_2025_PROFILING_ANON.sav metadata (the CSV stores labels as text)"
+  }
+ },
+ "areas": {
+  "CMR": {
+   "area_var": "S1Q1",
+   "unit": "division",
+   "names": {
+    "CM00810": "BAMBOUTOS",
+    "CM00811": "MENOUA",
+    "CM00812": "MIFI",
+    "CM00813": "NOUN"
+   },
+   "ind": {
+    "2.1.2": {
+     "CM00810|IDP household": [
+      53.6,
+      265
+     ],
+     "CM00810|Non-displaced household": [
+      28.5,
+      274
+     ],
+     "CM00811|IDP household": [
+      41.5,
+      258
+     ],
+     "CM00811|Non-displaced household": [
+      21.0,
+      291
+     ],
+     "CM00812|IDP household": [
+      74.0,
+      288
+     ],
+     "CM00812|Non-displaced household": [
+      55.6,
+      248
+     ],
+     "CM00813|IDP household": [
+      40.0,
+      463
+     ],
+     "CM00813|Non-displaced household": [
+      29.4,
+      599
+     ]
+    },
+    "7.1.1": {
+     "CM00810|IDP household": [
+      95.8,
+      221
+     ],
+     "CM00810|Non-displaced household": [
+      99.0,
+      282
+     ],
+     "CM00811|IDP household": [
+      97.9,
+      214
+     ],
+     "CM00811|Non-displaced household": [
+      99.3,
+      304
+     ],
+     "CM00812|IDP household": [
+      98.5,
+      222
+     ],
+     "CM00812|Non-displaced household": [
+      98.1,
+      268
+     ],
+     "CM00813|IDP household": [
+      90.1,
+      360
+     ],
+     "CM00813|Non-displaced household": [
+      89.1,
+      667
+     ]
+    }
+   },
+   "notes": "Keys are S1Q1 p-codes as stored in the 2024 file (names from Variables_List.xlsx). 2.1.2 unweighted (the matching definition). 7.1.1 comes from the 2025 round file where the division variable is LMQ1 (stored as names); mapped back to the 2024 codes by name; weighted WEIGHT_FINAL."
+  },
+  "COD": {
+   "area_var": "s00q1_Province",
+   "unit": "province",
+   "names": {},
+   "ind": {
+    "6.1.1": {
+     "KASAI|Host community": [
+      59.6,
+      389
+     ],
+     "KASAI|IDP": [
+      42.9,
+      310
+     ],
+     "KASAI|Returned IDP": [
+      36.2,
+      116
+     ],
+     "KASAI|Repatriated refugee": [
+      60.0,
+      475
+     ],
+     "KASAI CENTRAL|Host community": [
+      28.7,
+      942
+     ],
+     "KASAI CENTRAL|IDP": [
+      23.0,
+      609
+     ],
+     "KASAI CENTRAL|Returned IDP": [
+      29.4,
+      602
+     ],
+     "KASAI CENTRAL|Repatriated refugee": [
+      32.8,
+      317
+     ],
+     "KASAI ORIENTAL|Host community": [
+      49.5,
+      95
+     ],
+     "KASAI ORIENTAL|IDP": [
+      29.4,
+      85
+     ],
+     "KASAI ORIENTAL|Returned IDP": [
+      64.8,
+      91
+     ]
+    },
+    "6.2.1": {
+     "KASAI|Host community": [
+      3.9,
+      389
+     ],
+     "KASAI|IDP": [
+      11.0,
+      310
+     ],
+     "KASAI|Returned IDP": [
+      1.7,
+      116
+     ],
+     "KASAI|Repatriated refugee": [
+      5.7,
+      475
+     ],
+     "KASAI CENTRAL|Host community": [
+      7.5,
+      942
+     ],
+     "KASAI CENTRAL|IDP": [
+      7.9,
+      609
+     ],
+     "KASAI CENTRAL|Returned IDP": [
+      10.5,
+      602
+     ],
+     "KASAI CENTRAL|Repatriated refugee": [
+      13.6,
+      317
+     ],
+     "KASAI ORIENTAL|Host community": [
+      2.1,
+      95
+     ],
+     "KASAI ORIENTAL|IDP": [
+      3.5,
+      85
+     ],
+     "KASAI ORIENTAL|Returned IDP": [
+      18.7,
+      91
+     ]
+    }
+   },
+   "notes": "Unweighted households. Province stored as text; 7 households have an empty province and are left out."
+  },
+  "MOZ": {
+   "area_var": "S1Q2",
+   "unit": "district",
+   "names": {},
+   "ind": {
+    "1.4.2": {
+     "Cidade De Pemba|IDPs in HC": [
+      70.3,
+      267
+     ],
+     "Cidade De Pemba|Non-displaced Household": [
+      83.4,
+      770
+     ],
+     "Mecufi|IDPs in Camps": [
+      8.2,
+      110
+     ],
+     "Mecufi|IDPs in HC": [
+      0.0,
+      29
+     ],
+     "Mecufi|Non-displaced Household": [
+      41.7,
+      314
+     ],
+     "Metuge|IDPs in Camps": [
+      20.8,
+      286
+     ],
+     "Metuge|IDPs in HC": [
+      22.7,
+      361
+     ],
+     "Metuge|Non-displaced Household": [
+      24.7,
+      154
+     ]
+    },
+    "11.1.1": {
+     "Cidade De Pemba|IDPs in HC": [
+      2.9,
+      952
+     ],
+     "Cidade De Pemba|Non-displaced Household": [
+      0.6,
+      989
+     ],
+     "Mecufi|IDPs in Camps": [
+      5.3,
+      171
+     ],
+     "Mecufi|IDPs in HC": [
+      20.8,
+      38
+     ],
+     "Mecufi|Non-displaced Household": [
+      2.1,
+      326
+     ],
+     "Metuge|IDPs in Camps": [
+      15.4,
+      312
+     ],
+     "Metuge|IDPs in HC": [
+      8.2,
+      450
+     ],
+     "Metuge|Non-displaced Household": [
+      4.2,
+      168
+     ]
+    },
+    "7.1.1": {
+     "Cidade De Pemba|IDPs in HC": [
+      94.7,
+      952
+     ],
+     "Cidade De Pemba|Non-displaced Household": [
+      99.1,
+      989
+     ],
+     "Mecufi|IDPs in Camps": [
+      29.2,
+      171
+     ],
+     "Mecufi|IDPs in HC": [
+      23.8,
+      38
+     ],
+     "Mecufi|Non-displaced Household": [
+      42.9,
+      326
+     ],
+     "Metuge|IDPs in Camps": [
+      40.3,
+      324
+     ],
+     "Metuge|IDPs in HC": [
+      49.4,
+      457
+     ],
+     "Metuge|Non-displaced Household": [
+      78.7,
+      169
+     ]
+    },
+    "6.1.1": {
+     "Cidade De Pemba|IDPs in HC": [
+      88.5,
+      952
+     ],
+     "Cidade De Pemba|Non-displaced Household": [
+      92.2,
+      989
+     ],
+     "Mecufi|IDPs in Camps": [
+      60.8,
+      171
+     ],
+     "Mecufi|IDPs in HC": [
+      76.5,
+      38
+     ],
+     "Mecufi|Non-displaced Household": [
+      64.7,
+      326
+     ],
+     "Metuge|IDPs in Camps": [
+      69.7,
+      324
+     ],
+     "Metuge|IDPs in HC": [
+      63.9,
+      457
+     ],
+     "Metuge|Non-displaced Household": [
+      82.2,
+      169
+     ]
+    },
+    "16.1.4": {
+     "Cidade De Pemba|IDPs in HC": [
+      94.4,
+      952
+     ],
+     "Cidade De Pemba|Non-displaced Household": [
+      99.5,
+      989
+     ],
+     "Mecufi|IDPs in Camps": [
+      96.5,
+      171
+     ],
+     "Mecufi|IDPs in HC": [
+      97.4,
+      38
+     ],
+     "Mecufi|Non-displaced Household": [
+      96.3,
+      326
+     ],
+     "Metuge|IDPs in Camps": [
+      86.7,
+      324
+     ],
+     "Metuge|IDPs in HC": [
+      92.8,
+      457
+     ],
+     "Metuge|Non-displaced Household": [
+      98.2,
+      169
+     ]
+    },
+    "10.3.1": {
+     "Cidade De Pemba|IDPs in HC": [
+      3.2,
+      952
+     ],
+     "Cidade De Pemba|Non-displaced Household": [
+      6.3,
+      989
+     ],
+     "Mecufi|IDPs in Camps": [
+      1.8,
+      171
+     ],
+     "Mecufi|IDPs in HC": [
+      10.3,
+      38
+     ],
+     "Mecufi|Non-displaced Household": [
+      4.0,
+      326
+     ],
+     "Metuge|IDPs in Camps": [
+      8.6,
+      324
+     ],
+     "Metuge|IDPs in HC": [
+      6.3,
+      457
+     ],
+     "Metuge|Non-displaced Household": [
+      3.6,
+      169
+     ]
+    }
+   },
+   "notes": "Household level, weighted my_weight, n = unweighted households. Camp IDPs exist only in Mecufi and Metuge; Cidade de Pemba has none. \"IDPs in HC\" (IDPs in host community) cells are included for reference though not published. my_weight varies between members in 232 of 3426 households (it follows status_person); the first member row per household is used. Using the last row or the household mean changes values by at most a few hundredths of a point."
+  }
+ }
+}

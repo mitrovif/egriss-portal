@@ -1,0 +1,2299 @@
+{
+ "rows": [
+  {
+   "country": "Kenya",
+   "sdg": "6.1.1",
+   "published": {
+    "g1": 99,
+    "g2": 100
+   },
+   "recalc": {
+    "g1": 99.2,
+    "g2": 99.7
+   },
+   "match": true,
+   "level": "household",
+   "vars": [
+    "e09"
+   ],
+   "numerator_codes": "5 Protected Spring, 7 Protected Well, 9 Borehole/Tube well, 10 Piped into dwelling, 11 Piped to yard/plot, 12 Bottled water, 13 Rain/Harvested water, 14 Water Vendor, 15 Public tap/Standpipe (i.e. everything except 1-4 surface water, 6 unprotected spring, 8 unprotected well, 96 other)",
+   "denominator": "all households (no missing values in the variable)",
+   "weight": "weight",
+   "group_var": "sample",
+   "g1": "Refugees (sample=1)",
+   "g2": "Nationals (sample=0; core + wider host strata)",
+   "n": {
+    "g1": 2405,
+    "g2": 2433
+   },
+   "file": "hh.dta",
+   "variants_tried": [
+    {
+     "what": "same codes, unweighted",
+     "g1": 99.1,
+     "g2": 99.8
+    },
+    {
+     "what": "same codes, person-weighted (weight x hhsize)",
+     "g1": 99.3,
+     "g2": 99.7
+    },
+    {
+     "what": "strict JMP without 14 Water Vendor, weighted",
+     "g1": 91.9,
+     "g2": 85.3
+    },
+    {
+     "what": "strict JMP without 14 Water Vendor, unweighted",
+     "g1": 92.1,
+     "g2": 89.9
+    },
+    {
+     "what": "without vendor and bottled, weighted",
+     "g1": 90.5,
+     "g2": 80.4
+    }
+   ],
+   "notes": "Published value only reproduces if code 14 Water Vendor counts as improved (411 of 4838 households). Without it: 92% / 85%. Weighted and unweighted both round to 99 / 100, so the weight cannot be confirmed from this row alone."
+  },
+  {
+   "country": "Kenya",
+   "sdg": "6.2.1",
+   "published": {
+    "g1": 97,
+    "g2": 94
+   },
+   "recalc": {
+    "g1": 97.5,
+    "g2": 93.8
+   },
+   "match": true,
+   "level": "household",
+   "vars": [
+    "e10"
+   ],
+   "numerator_codes": "1 Flush to Main Sewer, 2 Flush to Septic tank, 3 Flush to Cess pool, 4 VIP Pit Latrin, 5 Pit latrine covered, 10 Flush to Bio-septic tank (not counted: 6 Pit Latrine uncovered, 7 Bucket latrine, 8 Open, 96 Other)",
+   "denominator": "all households (no missing values in the variable)",
+   "weight": "weight",
+   "group_var": "sample",
+   "g1": "Refugees (sample=1)",
+   "g2": "Nationals (sample=0; core + wider host strata)",
+   "n": {
+    "g1": 2405,
+    "g2": 2433
+   },
+   "file": "hh.dta",
+   "variants_tried": [
+    {
+     "what": "same codes, unweighted",
+     "g1": 97.7,
+     "g2": 96.3
+    },
+    {
+     "what": "same codes, person-weighted",
+     "g1": 98.4,
+     "g2": 94.0
+    },
+    {
+     "what": "without 10 bio-septic, weighted",
+     "g1": 97.4,
+     "g2": 93.4
+    },
+    {
+     "what": "without 5 covered pit, weighted",
+     "g1": 84.2,
+     "g2": 82.6
+    },
+    {
+     "what": "plus 6 uncovered pit, weighted",
+     "g1": 99.6,
+     "g2": 98.3
+    }
+   ],
+   "notes": "Refugee value is 97.498 before rounding, so it sits on the 97/98 boundary. Only the household-weighted variant gives 94 for nationals (unweighted 96)."
+  },
+  {
+   "country": "Kenya",
+   "sdg": "7.1.1",
+   "published": {
+    "g1": 99,
+    "g2": 98
+   },
+   "recalc": {
+    "g1": 99.1,
+    "g2": 98.1
+   },
+   "match": true,
+   "level": "household",
+   "vars": [
+    "electricity",
+    "e11"
+   ],
+   "numerator_codes": "electricity = 1 Yes",
+   "denominator": "all households (no missing values in the variable)",
+   "weight": null,
+   "group_var": "sample",
+   "g1": "Refugees (sample=1)",
+   "g2": "Nationals (sample=0; core + wider host strata)",
+   "n": {
+    "g1": 2405,
+    "g2": 2433
+   },
+   "file": "hh.dta",
+   "variants_tried": [
+    {
+     "what": "electricity=1, weighted (weight)",
+     "g1": 99.2,
+     "g2": 97.2
+    },
+    {
+     "what": "electricity=1, person-weighted",
+     "g1": 99.6,
+     "g2": 97.2
+    },
+    {
+     "what": "e11 = 1 Electricity, unweighted",
+     "g1": 99.1,
+     "g2": 98.1
+    },
+    {
+     "what": "e11 = 1 Electricity, weighted",
+     "g1": 99.2,
+     "g2": 97.2
+    },
+    {
+     "what": "e11 in 1 Electricity, 7 Solar, 12 Generator, weighted",
+     "g1": 99.2,
+     "g2": 97.5
+    },
+    {
+     "what": "e11 in 1, 7, 8 solar torch, 12, weighted",
+     "g1": 99.3,
+     "g2": 97.6
+    }
+   ],
+   "notes": "Variable is `electricity` (\"Household has access to electricity\"). It is identical record-for-record in its marginals to e11 = 1 (main lighting source is Electricity: 2386 nationals, 2384 refugees), so it is a lighting-source proxy and excludes solar. The published 99 / 98 reproduces UNWEIGHTED (99.1 / 98.1); with the sampling weight nationals come to 97.2 -> 97, which contradicts the method text \"electricity var, weight\". A weighted variant that also counts solar torch and generator lighting (e11 in 1,7,8,12) gives 99.3 / 97.6 -> 99 / 98 too, so the exact published recipe is ambiguous."
+  },
+  {
+   "country": "Somalia",
+   "sdg": "6.1.1",
+   "published": {
+    "g1": 84,
+    "g2": 89
+   },
+   "recalc": {
+    "g1": 84.4,
+    "g2": 88.6
+   },
+   "match": true,
+   "level": "household",
+   "vars": [
+    "drink_water"
+   ],
+   "numerator_codes": "1 Piped water into the home, 2 Piped water into compound, 3 Public tap, 4 Tubewell/borehole, 5 Protected dug well, 7 Protected spring, 9 Rainwater collection, 10 Bottled water, 12 Tanker-truck (not counted: 6, 8 unprotected, 11 Cart with small tank/drum, 13 surface water, 1000 Other)",
+   "denominator": "all households, including the 32 with no answer (counted as not improved)",
+   "weight": "weight",
+   "group_var": "ind",
+   "g1": "IDP Settlements (ind=4)",
+   "g2": "Host = Mogadishu + Other Urban + Rural (ind=1,2,3)",
+   "n": {
+    "g1": 431,
+    "g2": 3686
+   },
+   "file": "Output hh.dta",
+   "variants_tried": [
+    {
+     "what": "same codes, weight, missing excluded",
+     "g1": 84.5,
+     "g2": 89.2
+    },
+    {
+     "what": "same codes, unweighted, missing excluded",
+     "g1": 84.9,
+     "g2": 90.3
+    },
+    {
+     "what": "same codes, unweighted, missing in denominator",
+     "g1": 84.7,
+     "g2": 89.5
+    },
+    {
+     "what": "same codes, weight_adj, missing excluded",
+     "g1": 84.5,
+     "g2": 92.6
+    },
+    {
+     "what": "same codes, weight_cons, missing excluded",
+     "g1": 84.6,
+     "g2": 92.5
+    },
+    {
+     "what": "same codes, person-weighted (weight x hhsize), missing excluded",
+     "g1": 87.7,
+     "g2": 89.0
+    },
+    {
+     "what": "plus 11 Cart (full JMP delivered water), weight, missing excluded",
+     "g1": 86.3,
+     "g2": 92.6
+    },
+    {
+     "what": "without 10 bottled and 12 tanker, weight, missing excluded",
+     "g1": 64.8,
+     "g2": 68.2
+    }
+   ],
+   "notes": "Weight is `weight` (unadjusted household weight), not the survey's recommended weight_adj (with weight_adj host is 92.6). The code set equals the file's own recode `water` in 1-4. Exact match needs missing answers kept in the denominator (84.4 / 88.6); with missing excluded it is 84.5 / 89.2, which rounds to 85 / 89. Tanker-truck is counted improved but Cart with small tank/drum is not; with both (JMP delivered water) it is 86.3 / 92.6."
+  },
+  {
+   "country": "Somalia",
+   "sdg": "6.2.1",
+   "published": {
+    "g1": 24,
+    "g2": 81
+   },
+   "recalc": {
+    "g1": 24.3,
+    "g2": 80.6
+   },
+   "match": true,
+   "level": "household",
+   "vars": [
+    "toilet_type"
+   ],
+   "numerator_codes": "1 Water closet (flush), 2 Pit latrine; plus households with no answer (38) fall in the numerator because the rule is \"not 3 Public toilet, not 4 Open space, not 1000 Other\"",
+   "denominator": "all households",
+   "weight": "weight",
+   "group_var": "ind",
+   "g1": "IDP Settlements (ind=4)",
+   "g2": "Host = Mogadishu + Other Urban + Rural (ind=1,2,3)",
+   "n": {
+    "g1": 431,
+    "g2": 3686
+   },
+   "file": "Output hh.dta",
+   "variants_tried": [
+    {
+     "what": "1,2 only, weight, missing excluded",
+     "g1": 24.3,
+     "g2": 80.5
+    },
+    {
+     "what": "1,2 only, weight, missing in denominator as not improved",
+     "g1": 24.3,
+     "g2": 79.9
+    },
+    {
+     "what": "1,2 only, unweighted, missing excluded",
+     "g1": 33.3,
+     "g2": 82.5
+    },
+    {
+     "what": "1,2 only, weight_adj, missing excluded",
+     "g1": 24.3,
+     "g2": 86.9
+    },
+    {
+     "what": "1,2 only, weight_cons, missing excluded",
+     "g1": 32.9,
+     "g2": 87.1
+    },
+    {
+     "what": "1,2 only, person-weighted, missing excluded",
+     "g1": 29.2,
+     "g2": 81.5
+    },
+    {
+     "what": "1,2,1000 Other, weight, missing excluded",
+     "g1": 25.9,
+     "g2": 80.9
+    },
+    {
+     "what": "1,2,3 incl public toilet, weight, missing excluded",
+     "g1": 90.4,
+     "g2": 86.2
+    },
+    {
+     "what": "1 flush only, weight, missing excluded",
+     "g1": 0.7,
+     "g2": 10.2
+    }
+   ],
+   "notes": "The clean definition (1 flush + 2 pit latrine, `weight`, missing excluded) gives 24.3 / 80.5 -> 24 / 80, one point below the published host 81. The only variant found that rounds to 24 / 81 counts the 38 households with no answer as improved (24.3 / 80.6); that looks like a side effect of a \"not in unimproved codes\" rule, not a deliberate choice. Weight is the unadjusted `weight` (weight_adj gives host 86.9). Substantive caveats: the question has only five categories; 3 Public toilet is treated as unimproved although it says nothing about the facility type (251 of 430 IDP households use a public toilet, which is what drives the 24%); 2 Pit latrine is counted improved with no slab information."
+  },
+  {
+   "country": "Bangladesh",
+   "sdg": "2.1.2",
+   "published": {
+    "g1": 31,
+    "g2": 32
+   },
+   "recalc": {
+    "g1": 30.9,
+    "g2": 31.8
+   },
+   "match": true,
+   "level": "household",
+   "vars": [
+    "fs_fewer_meals_r3"
+   ],
+   "numerator_codes": "1 = Yes",
+   "denominator": "households with a Yes/No answer (48 with no answer excluded; no -97 Refused present)",
+   "weight": "hh_weight_r3",
+   "group_var": "settlement_type",
+   "g1": "Refugee camp (settlement_type=2, same households as stratum=3 Camp)",
+   "g2": "Host (settlement_type=1, high + low spillover)",
+   "n": {
+    "g1": 1436,
+    "g2": 2168
+   },
+   "file": "cbps_tracking_r3_basic needs.dta",
+   "variants_tried": [
+    {
+     "what": "unweighted, missing excluded",
+     "g1": 30.3,
+     "g2": 31.8
+    },
+    {
+     "what": "weighted, missing kept in denominator",
+     "g1": 30.4,
+     "g2": 31.4
+    },
+    {
+     "what": "unweighted, missing kept in denominator",
+     "g1": 29.8,
+     "g2": 31.4
+    }
+   ],
+   "notes": "Round 3 of the tracking survey (folder bgd_cbps2; folders bgd_cbps and bgd_cbps3 are empty). Variable exists only in round 3. The question stem (reference period) is not in the variable label; label is only \"Eat fewer meals than usual or skip meals?\". This is a single coping item, not FIES or FCS. Host split: {\"high-spillover host (stratum=1)\": [32.6, 1099], \"low-spillover host (stratum=2)\": [31.6, 1069]}"
+  },
+  {
+   "country": "Ecuador",
+   "sdg": "2.1.2",
+   "published": {
+    "g1": 42,
+    "g2": null
+   },
+   "recalc": {
+    "g1": 42.1,
+    "g2": null
+   },
+   "match": true,
+   "level": "household (one respondent per household, phone survey)",
+   "vars": [
+    "u04_01"
+   ],
+   "numerator_codes": "1 = si",
+   "denominator": "all 401 respondents in the wave 1 Venezuelan file (no missing)",
+   "weight": null,
+   "group_var": "venez",
+   "g1": "Venezuelans (venez=1, whole file)",
+   "g2": null,
+   "n": {
+    "g1": 401,
+    "g2": null
+   },
+   "file": "593_ph2w1_venezcasos_library.dta",
+   "variants_tried": [
+    {
+     "what": "wave 1 (u04_01), household weight w_hh_ph2w1",
+     "g1": 48.8,
+     "g2": null
+    },
+    {
+     "what": "wave 1 (u04_01), individual weight w_ind_ph2w1",
+     "g1": 46.0,
+     "g2": null
+    },
+    {
+     "what": "wave 2 (v04_01), unweighted, n=583",
+     "g1": 36.9,
+     "g2": null
+    },
+    {
+     "what": "wave 2 (v04_01), household weight w_hh_ph2w2",
+     "g1": 45.0,
+     "g2": null
+    },
+    {
+     "what": "wave 2 (v04_01), individual weight w_ind_ph2w2",
+     "g1": 41.4,
+     "g2": null
+    },
+    {
+     "what": "wave 3 (w04_01), unweighted, n=445",
+     "g1": 32.4,
+     "g2": null
+    },
+    {
+     "what": "wave 3 (w04_01), household weight w_hh_ph2w3",
+     "g1": 41.8,
+     "g2": null
+    },
+    {
+     "what": "wave 3 (w04_01), individual weight w_ind_ph2w3",
+     "g1": 37.1,
+     "g2": null
+    },
+    {
+     "what": "wave 4 (v04_01), unweighted, n=356",
+     "g1": 30.1,
+     "g2": null
+    },
+    {
+     "what": "wave 4 (v04_01), household weight w_hh_ph2w4",
+     "g1": 38.3,
+     "g2": null
+    },
+    {
+     "what": "wave 4 (v04_01), individual weight w_ind_ph2w4",
+     "g1": 33.1,
+     "g2": null
+    }
+   ],
+   "notes": "Phase 2 wave 1. u04_01 exists only in wave 1; the same question is v04_01 in waves 2 and 4 and w04_01 in wave 3 (37%, 32%, 30% unweighted). The file ships household and individual weights; weighted wave 1 is 48.8% (household) / 46.0% (individual), so the unweighted 42% understates the weighted estimate by 4-7 points. No host comparison in this file."
+  },
+  {
+   "country": "Nigeria",
+   "sdg": "4.1.2",
+   "published": {
+    "g1": 70,
+    "g2": 74
+   },
+   "recalc": {
+    "g1": 69.8,
+    "g2": 74.3
+   },
+   "match": true,
+   "level": "person (household members aged 6-17)",
+   "vars": [
+    "B_4_3_hhm_edu_current",
+    "B_1_1_hhm_age"
+   ],
+   "numerator_codes": "B_4_3_hhm_edu_current = 1 Yes",
+   "denominator": "members with age 6-17 and a Yes/No answer (9 with no answer excluded)",
+   "weight": "weight",
+   "group_var": "migr_idp",
+   "g1": "IDP (migr_idp=1)",
+   "g2": "Host community (migr_idp=0)",
+   "n": {
+    "g1": 3174,
+    "g2": 3408
+   },
+   "file": "1_cleanoutput/hhm.dta",
+   "variants_tried": [
+    {
+     "what": "ages 6-17, unweighted",
+     "g1": 67.1,
+     "g2": 79.6
+    },
+    {
+     "what": "ages 6-17, weighted, missing kept in denominator",
+     "g1": 69.8,
+     "g2": 74.2
+    },
+    {
+     "what": "ages 6-18, weighted",
+     "g1": 69.3,
+     "g2": 73.8
+    },
+    {
+     "what": "ages 6-14, weighted",
+     "g1": 69.8,
+     "g2": 73.2
+    },
+    {
+     "what": "ages 5-17, weighted",
+     "g1": 69.8,
+     "g2": 74.3
+    }
+   ],
+   "notes": "The variable is named B_4_3_hhm_edu_current in the file; \"B_4_3\" in the method text is a shorthand, not a variable name. The weight variable has no label. Unweighted the gap is much wider (67 / 80). The question is not asked of children aged 5 (all missing)."
+  }
+ ],
+ "vars": {
+  "Kenya:e09": {
+   "label": "Main source of drinking water",
+   "cats": [
+    [
+     "1",
+     "Pond"
+    ],
+    [
+     "2",
+     "Dam"
+    ],
+    [
+     "3",
+     "Lake"
+    ],
+    [
+     "4",
+     "Stream/ River"
+    ],
+    [
+     "5",
+     "Protected Spring"
+    ],
+    [
+     "6",
+     "Unprotected Spring"
+    ],
+    [
+     "7",
+     "Protected Well"
+    ],
+    [
+     "8",
+     "Unprotected Well"
+    ],
+    [
+     "9",
+     "Borehole/Tube well"
+    ],
+    [
+     "10",
+     "Piped into dwelling"
+    ],
+    [
+     "11",
+     "Piped  to yard/plot"
+    ],
+    [
+     "12",
+     "Bottled water"
+    ],
+    [
+     "13",
+     "Rain/Harvested water"
+    ],
+    [
+     "14",
+     "Water Vendor"
+    ],
+    [
+     "15",
+     "Public tap/Standpipe"
+    ]
+   ],
+   "source": "hh.dta"
+  },
+  "Kenya:e10": {
+   "label": "Toilet facility",
+   "cats": [
+    [
+     "1",
+     "Flush to Main Sewer"
+    ],
+    [
+     "2",
+     "Flush to Septic tank"
+    ],
+    [
+     "3",
+     "Flush to Cess pool"
+    ],
+    [
+     "4",
+     "VIP Pit Latrin"
+    ],
+    [
+     "5",
+     "Pit latrine covered"
+    ],
+    [
+     "6",
+     "Pit Latrine uncovered"
+    ],
+    [
+     "7",
+     "Bucket latrine"
+    ],
+    [
+     "8",
+     "Open"
+    ],
+    [
+     "10",
+     "Flush to Bio-septic tank"
+    ],
+    [
+     "96",
+     "Other"
+    ],
+    [
+     "a",
+     "Don't know"
+    ],
+    [
+     "b",
+     "Refused to answer"
+    ],
+    [
+     "c",
+     "Outlier set to missing"
+    ],
+    [
+     "e",
+     "Field skipped"
+    ],
+    [
+     "z",
+     "Not applicable/administered"
+    ]
+   ],
+   "source": "hh.dta"
+  },
+  "Kenya:e11": {
+   "label": "Main source of energy for lighting",
+   "cats": [
+    [
+     "1",
+     "Electricity"
+    ],
+    [
+     "2",
+     "Paraffin Pressure lamp"
+    ],
+    [
+     "3",
+     "Paraffin Lantern"
+    ],
+    [
+     "4",
+     "Paraffin Tin lamp"
+    ],
+    [
+     "5",
+     "Gas Lamp"
+    ],
+    [
+     "6",
+     "Fuel wood"
+    ],
+    [
+     "7",
+     "Solar"
+    ],
+    [
+     "8",
+     "Torch/Spotlight-Solar Charged"
+    ],
+    [
+     "9",
+     "Torch/Spot light-Dry cells"
+    ],
+    [
+     "10",
+     "Candle"
+    ],
+    [
+     "11",
+     "Battery(Car/Charged)"
+    ],
+    [
+     "12",
+     "Generator (Diesel/Petrol)"
+    ],
+    [
+     "96",
+     "Other (Specify)"
+    ],
+    [
+     "a",
+     "Don't know"
+    ],
+    [
+     "b",
+     "Refused to answer"
+    ]
+   ],
+   "source": "hh.dta"
+  },
+  "Kenya:electricity": {
+   "label": "Household has access to electricity",
+   "cats": [
+    [
+     "0",
+     "No"
+    ],
+    [
+     "1",
+     "Yes"
+    ],
+    [
+     "a",
+     "Don't know"
+    ],
+    [
+     "b",
+     "Refused"
+    ],
+    [
+     "c",
+     "Outlier set to missing"
+    ],
+    [
+     "z",
+     "Not applicable/administered"
+    ]
+   ],
+   "source": "hh.dta"
+  },
+  "Kenya:sample": {
+   "label": "Refugee/Nationals sample",
+   "cats": [
+    [
+     "0",
+     "Nationals"
+    ],
+    [
+     "1",
+     "Refugees"
+    ]
+   ],
+   "source": "hh.dta"
+  },
+  "Kenya:strata": {
+   "label": "Refugee/Core Host/Wider Host sampling frame",
+   "cats": [
+    [
+     "1",
+     "Refugee"
+    ],
+    [
+     "2",
+     "Core Host"
+    ],
+    [
+     "3",
+     "Wider Host"
+    ]
+   ],
+   "source": "hh.dta"
+  },
+  "Kenya:weight": {
+   "label": "Sampling weight",
+   "cats": [],
+   "source": "hh.dta"
+  },
+  "Kenya:hhsize": {
+   "label": "Total persons in household",
+   "cats": [
+    [
+     "11",
+     "11+"
+    ]
+   ],
+   "source": "hh.dta"
+  },
+  "Kenya:psu": {
+   "label": "Primary sampling units (EAs). For refugees EA=888",
+   "cats": [],
+   "source": "hh.dta"
+  },
+  "Somalia:drink_water": {
+   "label": "D.3 What is the main source of drinking water for the household?",
+   "cats": [
+    [
+     "1",
+     "Piped water into the home"
+    ],
+    [
+     "2",
+     "Piped water into compound"
+    ],
+    [
+     "3",
+     "Public tap"
+    ],
+    [
+     "4",
+     "Tubewell/borehole"
+    ],
+    [
+     "5",
+     "Protected dug well"
+    ],
+    [
+     "6",
+     "Unprotected dug well"
+    ],
+    [
+     "7",
+     "Protected spring"
+    ],
+    [
+     "8",
+     "Unprotected spring"
+    ],
+    [
+     "9",
+     "Rainwater collection"
+    ],
+    [
+     "10",
+     "Bottled water"
+    ],
+    [
+     "11",
+     "Cart with small tank/drum"
+    ],
+    [
+     "12",
+     "Tanker-truck"
+    ],
+    [
+     "13",
+     "surface water (river, dam, lake, pond, stream, canal, irrigation channels)"
+    ],
+    [
+     "1000",
+     "Other"
+    ]
+   ],
+   "source": "Output hh.dta"
+  },
+  "Somalia:water": {
+   "label": "Drinking water source of household",
+   "cats": [
+    [
+     "1",
+     "Piped water"
+    ],
+    [
+     "2",
+     "Public tap"
+    ],
+    [
+     "3",
+     "Borehole,protected well/spring, rainwater collection"
+    ],
+    [
+     "4",
+     "Tanker-truck, bottled water"
+    ],
+    [
+     "5",
+     "Unprotected well/spring, others"
+    ]
+   ],
+   "source": "Output hh.dta"
+  },
+  "Somalia:toilet_type": {
+   "label": "D.9 What type of toilet does your household use?",
+   "cats": [
+    [
+     "1",
+     "Water closet (flush)"
+    ],
+    [
+     "2",
+     "Pit latrine"
+    ],
+    [
+     "3",
+     "Public toilet"
+    ],
+    [
+     "4",
+     "Open space"
+    ],
+    [
+     "1000",
+     "Other"
+    ]
+   ],
+   "source": "Output hh.dta"
+  },
+  "Somalia:ind": {
+   "label": "Indicator: Mogadishu, Other Urban, Rural, IDP Settlements",
+   "cats": [
+    [
+     "1",
+     "Mogadishu"
+    ],
+    [
+     "2",
+     "Other Urban"
+    ],
+    [
+     "3",
+     "Rural"
+    ],
+    [
+     "4",
+     "IDP Settlements"
+    ]
+   ],
+   "source": "Output hh.dta"
+  },
+  "Somalia:reg_pess": {
+   "label": "Region (PESS)",
+   "cats": [
+    [
+     "1",
+     "Awdal"
+    ],
+    [
+     "2",
+     "Banadir"
+    ],
+    [
+     "3",
+     "Bari"
+    ],
+    [
+     "4",
+     "Mudug"
+    ],
+    [
+     "5",
+     "Nugaal"
+    ],
+    [
+     "6",
+     "Sanaag"
+    ],
+    [
+     "7",
+     "Sool"
+    ],
+    [
+     "8",
+     "Togdheer"
+    ],
+    [
+     "9",
+     "Woqooyi Galbeed"
+    ],
+    [
+     "10",
+     "Bakool"
+    ],
+    [
+     "11",
+     "Bay"
+    ],
+    [
+     "12",
+     "Galgaduud"
+    ],
+    [
+     "13",
+     "Gedo"
+    ],
+    [
+     "14",
+     "Hiraan"
+    ],
+    [
+     "15",
+     "Lower Juba"
+    ]
+   ],
+   "source": "Output hh.dta"
+  },
+  "Somalia:weight": {
+   "label": "Household weight (unadjusted)",
+   "cats": [],
+   "source": "Output hh.dta"
+  },
+  "Somalia:weight_adj": {
+   "label": "Household weight (adjusted)",
+   "cats": [],
+   "source": "Output hh.dta"
+  },
+  "Somalia:weight_cons": {
+   "label": "Household weights (adjusted bottom 25% hhs)",
+   "cats": [],
+   "source": "Output hh.dta"
+  },
+  "Somalia:hhsize": {
+   "label": "(count) hhmid",
+   "cats": [],
+   "source": "Output hh.dta"
+  },
+  "Bangladesh:fs_fewer_meals_r3": {
+   "label": "Eat fewer meals than usual or skip meals?",
+   "cats": [
+    [
+     "-97",
+     "Refused"
+    ],
+    [
+     "0",
+     "No"
+    ],
+    [
+     "1",
+     "Yes"
+    ],
+    [
+     "r",
+     "refused"
+    ]
+   ],
+   "source": "cbps_tracking_r3_basic needs.dta"
+  },
+  "Bangladesh:settlement_type": {
+   "label": "Settlement type:",
+   "cats": [
+    [
+     "1",
+     "Host"
+    ],
+    [
+     "2",
+     "Refugee camp"
+    ]
+   ],
+   "source": "cbps_tracking_r3_basic needs.dta"
+  },
+  "Bangladesh:stratum": {
+   "label": "Host stratum",
+   "cats": [
+    [
+     "1",
+     "High spillover (mauzas within 15 km distance [3-hour walking distance] from camps)"
+    ],
+    [
+     "2",
+     "Low spillover (mauzas located more than 15 km away from camps)"
+    ],
+    [
+     "3",
+     "Camp"
+    ]
+   ],
+   "source": "cbps_tracking_r3_basic needs.dta"
+  },
+  "Bangladesh:hh_weight_r3": {
+   "label": "COVID subsample HH weight after adjustments",
+   "cats": [],
+   "source": "cbps_tracking_r3_basic needs.dta"
+  },
+  "Bangladesh:upazila": {
+   "label": "Upazila:",
+   "cats": [
+    [
+     "0",
+     "CHAKARIA"
+    ],
+    [
+     "1",
+     "Cox's Bazar Sadar"
+    ],
+    [
+     "4",
+     "Pekua"
+    ],
+    [
+     "5",
+     "Ramu"
+    ],
+    [
+     "6",
+     "Teknaf"
+    ],
+    [
+     "7",
+     "UKHIA"
+    ],
+    [
+     "8",
+     "Naikhongchhori"
+    ]
+   ],
+   "source": "cbps_tracking_r3_basic needs.dta"
+  },
+  "Bangladesh:camp_upazila": {
+   "label": "(Camp) Upazila:",
+   "cats": [
+    [
+     "0",
+     "CHAKARIA"
+    ],
+    [
+     "1",
+     "Cox's Bazar Sadar"
+    ],
+    [
+     "4",
+     "Pekua"
+    ],
+    [
+     "5",
+     "Ramu"
+    ],
+    [
+     "6",
+     "Teknaf"
+    ],
+    [
+     "7",
+     "UKHIA"
+    ],
+    [
+     "8",
+     "Naikhongchhori"
+    ]
+   ],
+   "source": "cbps_tracking_r3_basic needs.dta"
+  },
+  "Ecuador:u04_01": {
+   "label": "4.01 ...últimos 30 días, su hogar se quedó sin alimentos?",
+   "cats": [
+    [
+     "1",
+     "si"
+    ],
+    [
+     "2",
+     "no"
+    ]
+   ],
+   "source": "593_ph2w1_venezcasos_library.dta"
+  },
+  "Ecuador:venez": {
+   "label": "Pais de nacimiento = Venezuela",
+   "cats": [
+    [
+     "1",
+     "Si"
+    ]
+   ],
+   "source": "593_ph2w1_venezcasos_library.dta"
+  },
+  "Ecuador:w_hh_ph2w1": {
+   "label": "Ponderador a nivel hogar",
+   "cats": [],
+   "source": "593_ph2w1_venezcasos_library.dta"
+  },
+  "Ecuador:w_ind_ph2w1": {
+   "label": "Ponderador a nivel individuo",
+   "cats": [],
+   "source": "593_ph2w1_venezcasos_library.dta"
+  },
+  "Ecuador:u03_05": {
+   "label": "3.05 ¿En qué Provincia vive usted actualmente?",
+   "cats": [
+    [
+     "1",
+     "azuay"
+    ],
+    [
+     "2",
+     "bolivar"
+    ],
+    [
+     "3",
+     "caÑar"
+    ],
+    [
+     "4",
+     "carchi"
+    ],
+    [
+     "5",
+     "chimborazo"
+    ],
+    [
+     "6",
+     "cotopaxi"
+    ],
+    [
+     "7",
+     "EL ORO"
+    ],
+    [
+     "8",
+     "esmeraldas"
+    ],
+    [
+     "9",
+     "galapagos"
+    ],
+    [
+     "50301",
+     "cabaÑas"
+    ],
+    [
+     "50302",
+     "SANTA ANA"
+    ],
+    [
+     "50303",
+     "sonsonate"
+    ],
+    [
+     "50304",
+     "chalatenango"
+    ],
+    [
+     "50305",
+     "LA LIBERTAD"
+    ],
+    [
+     "50306",
+     "SAN SALVADOR"
+    ]
+   ],
+   "source": "593_ph2w1_venezcasos_library.dta"
+  },
+  "Ecuador:u03_08": {
+   "label": "3.08 ¿Usted vive en zona … urbana? rural?",
+   "cats": [
+    [
+     "1",
+     "urbana"
+    ],
+    [
+     "2",
+     "rural"
+    ]
+   ],
+   "source": "593_ph2w1_venezcasos_library.dta"
+  },
+  "Nigeria:B_4_3_hhm_edu_current": {
+   "label": "B.4.3 Does %rostertitle% currently attend school or college?",
+   "cats": [
+    [
+     "0",
+     "No"
+    ],
+    [
+     "1",
+     "Yes"
+    ],
+    [
+     "a",
+     "Don't know"
+    ],
+    [
+     "b",
+     "Refused to respond"
+    ],
+    [
+     "z",
+     "Not Applicable"
+    ]
+   ],
+   "source": "1_cleanoutput/hhm.dta"
+  },
+  "Nigeria:B_1_1_hhm_age": {
+   "label": "B.1.1 What is the age in completed years?",
+   "cats": [
+    [
+     "a",
+     "Don't know"
+    ],
+    [
+     "b",
+     "Refused to respond"
+    ],
+    [
+     "z",
+     "Not Applicable"
+    ]
+   ],
+   "source": "1_cleanoutput/hhm.dta"
+  },
+  "Nigeria:migr_idp": {
+   "label": "Is this an IDP or host community household?",
+   "cats": [
+    [
+     "0",
+     "Host community"
+    ],
+    [
+     "1",
+     "IDP"
+    ],
+    [
+     "a",
+     "Don't know"
+    ],
+    [
+     "b",
+     "Refused to respond"
+    ],
+    [
+     "z",
+     "Not Applicable"
+    ]
+   ],
+   "source": "1_cleanoutput/hhm.dta"
+  },
+  "Nigeria:region": {
+   "label": "Which state are you in?",
+   "cats": [],
+   "source": "1_cleanoutput/hhm.dta"
+  },
+  "Nigeria:weight": {
+   "label": null,
+   "cats": [],
+   "source": "1_cleanoutput/hhm.dta"
+  },
+  "Nigeria:hhsize": {
+   "label": "Household size",
+   "cats": [],
+   "source": "1_cleanoutput/hhq.dta"
+  },
+  "Nigeria:C_1_11_water_home": {
+   "label": "C.1.11 What is the main source of drinking water for members of your household?",
+   "cats": [
+    [
+     "-99",
+     "-99. Refused to respond"
+    ],
+    [
+     "-98",
+     "-98. Don't know"
+    ],
+    [
+     "1",
+     "1. Piped water into dwelling"
+    ],
+    [
+     "2",
+     "2. Piped water to yard/plot"
+    ],
+    [
+     "3",
+     "3. Public tap/standpipe"
+    ],
+    [
+     "4",
+     "4. Tubewell/borehole"
+    ],
+    [
+     "5",
+     "5. Protected dug well"
+    ],
+    [
+     "6",
+     "6. Unprotected dug well"
+    ],
+    [
+     "7",
+     "7. Protected spring"
+    ],
+    [
+     "8",
+     "8. Unprotected spring"
+    ],
+    [
+     "9",
+     "9. Rainwater collection"
+    ],
+    [
+     "10",
+     "10. Bottled water/sachet water"
+    ],
+    [
+     "11",
+     "11. Cart with small tank/drum"
+    ],
+    [
+     "12",
+     "12. Tanker-truck"
+    ],
+    [
+     "13",
+     "13. Surface water (river, dam, lake,pond, stream, canal,irrigation channels)"
+    ]
+   ],
+   "source": "1_cleanoutput/hhq.dta"
+  },
+  "Nigeria:C_1_21_toilet": {
+   "label": "C.1.21 What kind of toilet facility do members of your household usually use?",
+   "cats": [
+    [
+     "-99",
+     "-99. Refused to respond"
+    ],
+    [
+     "-98",
+     "-98. Don't know"
+    ],
+    [
+     "1",
+     "1. Flush/pour flush to: piped sewer system"
+    ],
+    [
+     "2",
+     "2. Flush/pour flush to: septic tank"
+    ],
+    [
+     "3",
+     "3. Flush/pour flush to: pit latrine"
+    ],
+    [
+     "4",
+     "4. Flush/pour flush to: elsewhere"
+    ],
+    [
+     "5",
+     "5. Flush/pour flush to: unknown place/not sure/DK where"
+    ],
+    [
+     "6",
+     "6. Ventilated improved pit latrine (VIP)"
+    ],
+    [
+     "7",
+     "7. Pit latrine with slab"
+    ],
+    [
+     "8",
+     "8. Pit latrine without slab/open pit"
+    ],
+    [
+     "9",
+     "9. Composting toilet"
+    ],
+    [
+     "10",
+     "10. Bucket"
+    ],
+    [
+     "11",
+     "11. Hanging toilet/hanging latrine"
+    ],
+    [
+     "12",
+     "12. No facilities or bush or field"
+    ],
+    [
+     "13",
+     "13. Toilet on water"
+    ]
+   ],
+   "source": "1_cleanoutput/hhq.dta"
+  },
+  "Nigeria:C_1_17_light": {
+   "label": "C.1.17 What is the main source of lighting for this household?",
+   "cats": [
+    [
+     "1",
+     "1. National Grid connection / PHCN"
+    ],
+    [
+     "2",
+     "2. Local Mini Grid"
+    ],
+    [
+     "3",
+     "3. Diesel Generator (private electricity)"
+    ],
+    [
+     "4",
+     "4. Solar Home System"
+    ],
+    [
+     "5",
+     "5. Solar Lantern/Lighting System"
+    ],
+    [
+     "6",
+     "6. Rechargeable Battery (e.g., car battery)"
+    ],
+    [
+     "7",
+     "7. Torch"
+    ],
+    [
+     "8",
+     "8. Kerosene"
+    ],
+    [
+     "9",
+     "9. Gas"
+    ],
+    [
+     "10",
+     "10. Paraffin lantern"
+    ],
+    [
+     "11",
+     "11. Paraffin lamp"
+    ],
+    [
+     "12",
+     "12. Firewood"
+    ],
+    [
+     "13",
+     "13. Grass"
+    ],
+    [
+     "14",
+     "14. Candle wax"
+    ],
+    [
+     "15",
+     "15. Biogas"
+    ]
+   ],
+   "source": "1_cleanoutput/hhq.dta"
+  },
+  "Nigeria:watersource": {
+   "label": "C.1.11 Drinking water source",
+   "cats": [
+    [
+     "1",
+     "Improved Sources of Water"
+    ],
+    [
+     "2",
+     "Unimproved sources of water"
+    ]
+   ],
+   "source": "1_cleanoutput/hhq.dta"
+  },
+  "Nigeria:sanitation": {
+   "label": "Toilet Type",
+   "cats": [
+    [
+     "1",
+     "Improved sanitation facilities"
+    ],
+    [
+     "2",
+     "Unimproved sanitation facilities"
+    ]
+   ],
+   "source": "1_cleanoutput/hhq.dta"
+  },
+  "Nigeria:lighting": {
+   "label": "Source of Lighting",
+   "cats": [
+    [
+     "1",
+     "No Lighting"
+    ],
+    [
+     "2",
+     "Grass / Firewood"
+    ],
+    [
+     "3",
+     "Lamp / Candle / Torch"
+    ],
+    [
+     "5",
+     "Electricity"
+    ],
+    [
+     "6",
+     "Solar Power / Biogas"
+    ]
+   ],
+   "source": "1_cleanoutput/hhq.dta"
+  },
+  "Nigeria:C_1_22_share_facility": {
+   "label": "C.1.22 Do you share the toilet facility with other households?",
+   "cats": [
+    [
+     "0",
+     "0. No"
+    ],
+    [
+     "1",
+     "1. Yes"
+    ]
+   ],
+   "source": "1_cleanoutput/hhq.dta"
+  },
+  "Nigeria:hhq.weight": {
+   "label": null,
+   "cats": [],
+   "source": "1_cleanoutput/hhq.dta (household weight, no label stored)"
+  }
+ },
+ "areas": {
+  "KEN": {
+   "area_var": null,
+   "unit": null,
+   "note": "No geography in hh.dta or hhm.dta: the only location-like variables are strata (Refugee / Core Host / Wider Host) and psu (enumeration area id, 888 for all refugees). No county, town or camp variable.",
+   "ind": {},
+   "by_strata": {
+    "6.1.1": {
+     "Refugee": [
+      99.2,
+      2405
+     ],
+     "Core Host": [
+      99.9,
+      1221
+     ],
+     "Wider Host": [
+      99.7,
+      1212
+     ]
+    },
+    "6.2.1": {
+     "Refugee": [
+      97.5,
+      2405
+     ],
+     "Core Host": [
+      99.3,
+      1221
+     ],
+     "Wider Host": [
+      93.4,
+      1212
+     ]
+    },
+    "7.1.1 (unweighted)": {
+     "Refugee": [
+      99.1,
+      2405
+     ],
+     "Core Host": [
+      99.1,
+      1221
+     ],
+     "Wider Host": [
+      97.0,
+      1212
+     ]
+    }
+   }
+  },
+  "SOM": {
+   "area_var": "reg_pess",
+   "unit": "region (PESS)",
+   "idp_households_per_region": {
+    "Banadir": 215,
+    "Bari": 108,
+    "Mudug": 24,
+    "Togdheer": 12,
+    "Woqooyi Galbeed": 72
+   },
+   "note": "IDP settlements sampled in 5 regions; 3 have 50+ households (Banadir 215, Bari 108, Woqooyi Galbeed 72); Mudug (24) and Togdheer (12) are too small. Weighted with `weight`, same definitions as the national rows. Cells list [percent, unweighted households].",
+   "ind": {
+    "6.1.1": {
+     "Awdal|Host": [
+      74.9,
+      156
+     ],
+     "Banadir|Host": [
+      97.5,
+      816
+     ],
+     "Banadir|IDP": [
+      84.2,
+      215
+     ],
+     "Bari|Host": [
+      91.1,
+      446
+     ],
+     "Bari|IDP": [
+      75.6,
+      108
+     ],
+     "Mudug|Host": [
+      95.9,
+      241
+     ],
+     "Mudug|IDP": [
+      100.0,
+      24
+     ],
+     "Nugaal|Host": [
+      96.7,
+      110
+     ],
+     "Sanaag|Host": [
+      87.3,
+      258
+     ],
+     "Sool|Host": [
+      89.1,
+      152
+     ],
+     "Togdheer|Host": [
+      93.2,
+      312
+     ],
+     "Togdheer|IDP": [
+      83.3,
+      12
+     ],
+     "Woqooyi Galbeed|Host": [
+      82.2,
+      1195
+     ],
+     "Woqooyi Galbeed|IDP": [
+      87.0,
+      72
+     ]
+    },
+    "6.2.1": {
+     "Awdal|Host": [
+      48.4,
+      156
+     ],
+     "Banadir|Host": [
+      94.5,
+      816
+     ],
+     "Banadir|IDP": [
+      8.0,
+      215
+     ],
+     "Bari|Host": [
+      90.5,
+      446
+     ],
+     "Bari|IDP": [
+      42.1,
+      108
+     ],
+     "Mudug|Host": [
+      95.4,
+      241
+     ],
+     "Mudug|IDP": [
+      15.1,
+      24
+     ],
+     "Nugaal|Host": [
+      83.5,
+      110
+     ],
+     "Sanaag|Host": [
+      64.9,
+      258
+     ],
+     "Sool|Host": [
+      82.0,
+      152
+     ],
+     "Togdheer|Host": [
+      81.4,
+      312
+     ],
+     "Togdheer|IDP": [
+      41.7,
+      12
+     ],
+     "Woqooyi Galbeed|Host": [
+      76.3,
+      1195
+     ],
+     "Woqooyi Galbeed|IDP": [
+      68.8,
+      72
+     ]
+    },
+    "6.2.1 (clean: 1,2 only, missing excluded)": {
+     "Awdal|Host": [
+      47.0,
+      150
+     ],
+     "Banadir|Host": [
+      94.5,
+      815
+     ],
+     "Banadir|IDP": [
+      8.0,
+      215
+     ],
+     "Bari|Host": [
+      90.5,
+      445
+     ],
+     "Bari|IDP": [
+      42.1,
+      108
+     ],
+     "Mudug|Host": [
+      95.4,
+      241
+     ],
+     "Mudug|IDP": [
+      8.7,
+      23
+     ],
+     "Nugaal|Host": [
+      83.5,
+      110
+     ],
+     "Sanaag|Host": [
+      64.9,
+      258
+     ],
+     "Sool|Host": [
+      81.9,
+      151
+     ],
+     "Togdheer|Host": [
+      81.2,
+      310
+     ],
+     "Togdheer|IDP": [
+      41.7,
+      12
+     ],
+     "Woqooyi Galbeed|Host": [
+      76.0,
+      1169
+     ],
+     "Woqooyi Galbeed|IDP": [
+      68.8,
+      72
+     ]
+    }
+   }
+  },
+  "BGD": {
+   "area_var": "upazila (camp_upazila used where upazila is missing)",
+   "unit": "upazila",
+   "note": "Weighted hh_weight_r3, missing excluded. upazila is missing for 59 camp and 99 host households; camp_upazila fills all camp gaps (1399 of 1399 camp records with both variables agree). Host households without upazila are shown as Unknown. Camps exist only in Teknaf and Ukhia.",
+   "ind": {
+    "2.1.2": {
+     "CHAKARIA|Host": [
+      28.2,
+      410
+     ],
+     "Cox's Bazar Sadar|Host": [
+      34.6,
+      291
+     ],
+     "Naikhongchhori|Host": [
+      27.3,
+      54
+     ],
+     "Pekua|Host": [
+      36.3,
+      134
+     ],
+     "Ramu|Host": [
+      39.5,
+      161
+     ],
+     "Teknaf|Host": [
+      29.2,
+      517
+     ],
+     "Teknaf|Refugee camp": [
+      28.2,
+      234
+     ],
+     "UKHIA|Host": [
+      31.6,
+      503
+     ],
+     "UKHIA|Refugee camp": [
+      31.4,
+      1202
+     ],
+     "Unknown|Host": [
+      22.2,
+      98
+     ]
+    }
+   }
+  },
+  "NGA": {
+   "area_var": "region",
+   "unit": "state",
+   "note": "Sample is concentrated in Borno (about 82% of households); the other five states have small cells, several below 30. Weighted with `weight`. Cells list [percent, unweighted n].",
+   "ind": {
+    "4.1.2": {
+     "Adamawa|Host": [
+      77.6,
+      235
+     ],
+     "Adamawa|IDP": [
+      82.8,
+      252
+     ],
+     "Bauchi|Host": [
+      48.2,
+      80
+     ],
+     "Bauchi|IDP": [
+      43.5,
+      69
+     ],
+     "Borno|Host": [
+      76.9,
+      2806
+     ],
+     "Borno|IDP": [
+      70.1,
+      2575
+     ],
+     "Gombe|Host": [
+      93.7,
+      64
+     ],
+     "Gombe|IDP": [
+      80.5,
+      41
+     ],
+     "Taraba|Host": [
+      95.7,
+      27
+     ],
+     "Taraba|IDP": [
+      65.8,
+      71
+     ],
+     "Yobe|Host": [
+      83.9,
+      196
+     ],
+     "Yobe|IDP": [
+      73.5,
+      166
+     ]
+    }
+   },
+   "new": {
+    "6.1.1": {
+     "status": "new, not published",
+     "definition": "Improved drinking water (JMP incl. packaged and delivered): C_1_11_water_home in 1 Piped into dwelling, 2 Piped to yard/plot, 3 Public tap/standpipe, 4 Tubewell/borehole, 5 Protected dug well, 7 Protected spring, 9 Rainwater collection, 10 Bottled/sachet water, 11 Cart with small tank/drum, 12 Tanker-truck. Not improved: 6 Unprotected dug well, 8 Unprotected spring, 13 Surface water, 1000 Other. -98/-99 and missing excluded. Household level, weighted with `weight`.",
+     "vars": [
+      "C_1_11_water_home"
+     ],
+     "weight": "weight",
+     "level": "household",
+     "national": {
+      "IDP": [
+       95.8,
+       1437
+      ],
+      "Host": [
+       88.0,
+       1509
+      ]
+     },
+     "national_unweighted": {
+      "IDP": [
+       94.6,
+       1437
+      ],
+      "Host": [
+       94.4,
+       1509
+      ]
+     },
+     "cells": {
+      "Adamawa|Host": [
+       91.0,
+       114
+      ],
+      "Adamawa|IDP": [
+       96.2,
+       112
+      ],
+      "Bauchi|Host": [
+       36.0,
+       35
+      ],
+      "Bauchi|IDP": [
+       20.0,
+       20
+      ],
+      "Borno|Host": [
+       97.5,
+       1240
+      ],
+      "Borno|IDP": [
+       98.2,
+       1187
+      ],
+      "Gombe|Host": [
+       100.0,
+       25
+      ],
+      "Gombe|IDP": [
+       100.0,
+       12
+      ],
+      "Taraba|Host": [
+       90.4,
+       17
+      ],
+      "Taraba|IDP": [
+       91.2,
+       26
+      ],
+      "Yobe|Host": [
+       94.1,
+       78
+      ],
+      "Yobe|IDP": [
+       82.3,
+       80
+      ]
+     },
+     "answer_counts_unweighted": {
+      "1": 136,
+      "2": 100,
+      "3": 492,
+      "4": 1729,
+      "5": 150,
+      "6": 107,
+      "7": 3,
+      "8": 2,
+      "9": 4,
+      "10": 6,
+      "11": 53,
+      "12": 111,
+      "13": 24,
+      "1000": 29,
+      "nan": 1
+     },
+     "variants": [
+      {
+       "what": "without delivered water (11 cart, 12 tanker)",
+       "IDP": 90.2,
+       "Host": 83.0
+      },
+      {
+       "what": "file recode watersource = 1 Improved",
+       "IDP": 90.7,
+       "Host": 83.6
+      }
+     ]
+    },
+    "6.2.1": {
+     "status": "new, not published",
+     "definition": "Improved sanitation facility (JMP, sharing ignored): C_1_21_toilet in 1 Flush to piped sewer, 2 Flush to septic tank, 3 Flush to pit latrine, 5 Flush to unknown place, 6 VIP latrine, 7 Pit latrine with slab, 9 Composting toilet. Not improved: 4 Flush to elsewhere, 8 Pit latrine without slab/open pit, 10 Bucket, 11 Hanging toilet, 12 No facilities/bush/field, 13 Toilet on water, 1000 Other. -98/-99 and missing excluded. Household level, weighted with `weight`. Shared facilities (C_1_22_share_facility) are still counted, so this is \"improved facility\", not JMP \"at least basic\".",
+     "vars": [
+      "C_1_21_toilet"
+     ],
+     "weight": "weight",
+     "level": "household",
+     "national": {
+      "IDP": [
+       79.3,
+       1437
+      ],
+      "Host": [
+       77.3,
+       1509
+      ]
+     },
+     "national_unweighted": {
+      "IDP": [
+       72.5,
+       1437
+      ],
+      "Host": [
+       80.7,
+       1509
+      ]
+     },
+     "cells": {
+      "Adamawa|Host": [
+       85.3,
+       114
+      ],
+      "Adamawa|IDP": [
+       53.4,
+       112
+      ],
+      "Bauchi|Host": [
+       43.9,
+       35
+      ],
+      "Bauchi|IDP": [
+       35.0,
+       20
+      ],
+      "Borno|Host": [
+       86.7,
+       1240
+      ],
+      "Borno|IDP": [
+       84.6,
+       1187
+      ],
+      "Gombe|Host": [
+       76.2,
+       25
+      ],
+      "Gombe|IDP": [
+       75.0,
+       12
+      ],
+      "Taraba|Host": [
+       76.9,
+       17
+      ],
+      "Taraba|IDP": [
+       67.8,
+       26
+      ],
+      "Yobe|Host": [
+       60.1,
+       78
+      ],
+      "Yobe|IDP": [
+       41.4,
+       80
+      ]
+     },
+     "answer_counts_unweighted": {
+      "1": 92,
+      "2": 54,
+      "3": 491,
+      "4": 8,
+      "5": 6,
+      "6": 66,
+      "7": 1545,
+      "8": 596,
+      "9": 6,
+      "10": 4,
+      "12": 70,
+      "1000": 8,
+      "nan": 1
+     },
+     "variants": [
+      {
+       "what": "all flush codes 1-5 plus 6,7,9",
+       "IDP": 79.6,
+       "Host": 77.4
+      },
+      {
+       "what": "file recode sanitation = 1 Improved",
+       "IDP": 79.5,
+       "Host": 77.3
+      },
+      {
+       "what": "improved and not shared (C_1_22_share_facility = 0), i.e. at least basic",
+       "IDP": 23.9,
+       "Host": 50.0
+      }
+     ]
+    },
+    "7.1.1": {
+     "status": "new, not published",
+     "definition": "Electricity access, proxied by main source of lighting (no direct electricity question in the file): C_1_17_light in 1 National Grid connection / PHCN, 2 Local Mini Grid, 3 Diesel Generator (private electricity), 4 Solar Home System. Not counted: 5 Solar Lantern/Lighting System, 6 Rechargeable Battery, 7 Torch, 8 Kerosene, 9 Gas, 10-11 Paraffin, 12 Firewood, 13 Grass, 14 Candle wax, 15 Biogas, 16 No lighting, 1000 Other. Missing excluded. Household level, weighted with `weight`.",
+     "vars": [
+      "C_1_17_light"
+     ],
+     "weight": "weight",
+     "level": "household",
+     "national": {
+      "IDP": [
+       51.2,
+       1436
+      ],
+      "Host": [
+       68.9,
+       1509
+      ]
+     },
+     "national_unweighted": {
+      "IDP": [
+       37.0,
+       1436
+      ],
+      "Host": [
+       64.9,
+       1509
+      ]
+     },
+     "cells": {
+      "Adamawa|Host": [
+       69.5,
+       114
+      ],
+      "Adamawa|IDP": [
+       5.7,
+       112
+      ],
+      "Bauchi|Host": [
+       7.7,
+       35
+      ],
+      "Bauchi|IDP": [
+       0.0,
+       20
+      ],
+      "Borno|Host": [
+       80.8,
+       1240
+      ],
+      "Borno|IDP": [
+       53.5,
+       1186
+      ],
+      "Gombe|Host": [
+       92.1,
+       25
+      ],
+      "Gombe|IDP": [
+       66.7,
+       12
+      ],
+      "Taraba|Host": [
+       86.8,
+       17
+      ],
+      "Taraba|IDP": [
+       58.7,
+       26
+      ],
+      "Yobe|Host": [
+       70.7,
+       78
+      ],
+      "Yobe|IDP": [
+       32.0,
+       80
+      ]
+     },
+     "answer_counts_unweighted": {
+      "1": 1469,
+      "2": 38,
+      "3": 4,
+      "4": 1,
+      "5": 16,
+      "6": 1,
+      "7": 1114,
+      "8": 5,
+      "10": 16,
+      "11": 31,
+      "12": 16,
+      "16": 231,
+      "1000": 3,
+      "nan": 2
+     },
+     "variants": [
+      {
+       "what": "grid and mini-grid only (1,2)",
+       "IDP": 51.2,
+       "Host": 68.8
+      },
+      {
+       "what": "plus 5 solar lantern and 6 rechargeable battery (1-6)",
+       "IDP": 51.4,
+       "Host": 69.1
+      },
+      {
+       "what": "file recode lighting in 5 Electricity, 6 Solar Power / Biogas",
+       "IDP": 51.7,
+       "Host": 69.2
+      },
+      {
+       "what": "file recode lighting = 5 Electricity",
+       "IDP": 51.5,
+       "Host": 69.1
+      }
+     ]
+    }
+   }
+  }
+ }
+}

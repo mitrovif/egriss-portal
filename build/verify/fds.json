@@ -1,0 +1,1252 @@
+{
+ "SSD": {
+  "6.1.1": {
+   "national": {
+    "Host community North": [
+     87.5,
+     990
+    ],
+    "Refugees": [
+     97.4,
+     2068
+    ]
+   },
+   "areas": {
+    "Central Equatoria | Refugees": [
+     85.4,
+     114
+    ],
+    "Jonglei | Refugees": [
+     51.4,
+     35
+    ],
+    "Unity | Host community North": [
+     88.9,
+     489
+    ],
+    "Unity | Refugees": [
+     100.0,
+     575
+    ],
+    "Upper Nile | Host community North": [
+     86.7,
+     475
+    ],
+    "Upper Nile | Refugees": [
+     99.8,
+     991
+    ],
+    "Western Equatoria | Refugees": [
+     58.2,
+     285
+    ]
+   },
+   "camps": {
+    "Ajuong Thok": [
+     100.0,
+     228
+    ],
+    "Doro": [
+     100.0,
+     370
+    ],
+    "EZO": [
+     38.6,
+     65
+    ],
+    "GOROM": [
+     93.4,
+     72
+    ],
+    "Gendrassa": [
+     100.0,
+     59
+    ],
+    "Kaya": [
+     100.0,
+     217
+    ],
+    "MAKPANDU": [
+     80.5,
+     159
+    ],
+    "Other": [
+     54.5,
+     138
+    ],
+    "Pamir": [
+     100.0,
+     284
+    ],
+    "Yida": [
+     100.0,
+     63
+    ],
+    "Yusuf Batil": [
+     98.9,
+     345
+    ]
+   }
+  },
+  "6.2.1": {
+   "national": {
+    "Host community North": [
+     18.1,
+     990
+    ],
+    "Refugees": [
+     58.5,
+     2068
+    ]
+   },
+   "areas": {
+    "Central Equatoria | Refugees": [
+     30.5,
+     114
+    ],
+    "Jonglei | Refugees": [
+     11.4,
+     35
+    ],
+    "Unity | Host community North": [
+     24.3,
+     489
+    ],
+    "Unity | Refugees": [
+     62.7,
+     575
+    ],
+    "Upper Nile | Host community North": [
+     12.7,
+     475
+    ],
+    "Upper Nile | Refugees": [
+     58.7,
+     991
+    ],
+    "Western Equatoria | Refugees": [
+     62.3,
+     285
+    ]
+   },
+   "camps": {
+    "Ajuong Thok": [
+     68.8,
+     228
+    ],
+    "Doro": [
+     46.7,
+     370
+    ],
+    "EZO": [
+     49.4,
+     65
+    ],
+    "GOROM": [
+     27.3,
+     72
+    ],
+    "Gendrassa": [
+     48.1,
+     59
+    ],
+    "Kaya": [
+     76.7,
+     217
+    ],
+    "MAKPANDU": [
+     64.2,
+     159
+    ],
+    "Other": [
+     39.5,
+     138
+    ],
+    "Pamir": [
+     60.2,
+     284
+    ],
+    "Yida": [
+     53.6,
+     63
+    ],
+    "Yusuf Batil": [
+     74.9,
+     345
+    ]
+   }
+  },
+  "7.1.1": {
+   "national": {
+    "Host community North": [
+     1.2,
+     990
+    ],
+    "Refugees": [
+     0.7,
+     2068
+    ]
+   },
+   "areas": {
+    "Central Equatoria | Refugees": [
+     6.0,
+     114
+    ],
+    "Jonglei | Refugees": [
+     0.0,
+     35
+    ],
+    "Unity | Host community North": [
+     1.2,
+     489
+    ],
+    "Unity | Refugees": [
+     0.0,
+     575
+    ],
+    "Upper Nile | Host community North": [
+     1.3,
+     475
+    ],
+    "Upper Nile | Refugees": [
+     0.8,
+     991
+    ],
+    "Western Equatoria | Refugees": [
+     0.4,
+     285
+    ]
+   },
+   "camps": {
+    "Ajuong Thok": [
+     0.0,
+     228
+    ],
+    "Doro": [
+     1.4,
+     370
+    ],
+    "EZO": [
+     0.0,
+     65
+    ],
+    "GOROM": [
+     6.9,
+     72
+    ],
+    "Gendrassa": [
+     0.0,
+     59
+    ],
+    "Kaya": [
+     0.0,
+     217
+    ],
+    "MAKPANDU": [
+     0.6,
+     159
+    ],
+    "Other": [
+     2.5,
+     138
+    ],
+    "Pamir": [
+     0.0,
+     284
+    ],
+    "Yida": [
+     0.0,
+     63
+    ],
+    "Yusuf Batil": [
+     0.9,
+     345
+    ]
+   }
+  },
+  "2.1.2": {
+   "national": {
+    "Host community North": [
+     89.6,
+     983
+    ],
+    "Refugees": [
+     90.1,
+     2052
+    ]
+   },
+   "areas": {
+    "Central Equatoria | Refugees": [
+     70.8,
+     113
+    ],
+    "Jonglei | Refugees": [
+     100.0,
+     28
+    ],
+    "Unity | Host community North": [
+     87.9,
+     483
+    ],
+    "Unity | Refugees": [
+     94.3,
+     574
+    ],
+    "Upper Nile | Host community North": [
+     91.0,
+     474
+    ],
+    "Upper Nile | Refugees": [
+     88.9,
+     986
+    ],
+    "Western Equatoria | Refugees": [
+     86.8,
+     285
+    ]
+   },
+   "camps": {
+    "Ajuong Thok": [
+     93.2,
+     227
+    ],
+    "Doro": [
+     90.3,
+     365
+    ],
+    "EZO": [
+     90.6,
+     65
+    ],
+    "GOROM": [
+     74.8,
+     71
+    ],
+    "Gendrassa": [
+     79.5,
+     59
+    ],
+    "Kaya": [
+     91.9,
+     217
+    ],
+    "MAKPANDU": [
+     91.2,
+     159
+    ],
+    "Other": [
+     72.8,
+     131
+    ],
+    "Pamir": [
+     95.9,
+     284
+    ],
+    "Yida": [
+     93.3,
+     63
+    ],
+    "Yusuf Batil": [
+     89.2,
+     345
+    ]
+   }
+  },
+  "16.9.1": {
+   "national": {
+    "Host community North": [
+     57.2,
+     1168
+    ],
+    "Refugees": [
+     95.2,
+     2443
+    ]
+   },
+   "areas": {
+    "Central Equatoria | Refugees": [
+     97.6,
+     118
+    ],
+    "Jonglei | Refugees": [
+     73.7,
+     19
+    ],
+    "Unity | Host community North": [
+     63.4,
+     607
+    ],
+    "Unity | Refugees": [
+     92.3,
+     662
+    ],
+    "Upper Nile | Host community North": [
+     52.0,
+     525
+    ],
+    "Upper Nile | Refugees": [
+     97.8,
+     1210
+    ],
+    "Western Equatoria | Refugees": [
+     89.9,
+     308
+    ]
+   },
+   "camps": {
+    "Ajuong Thok": [
+     94.5,
+     235
+    ],
+    "Andari": [
+     100.0,
+     6
+    ],
+    "Doro": [
+     95.3,
+     457
+    ],
+    "EZO": [
+     92.8,
+     69
+    ],
+    "GOROM": [
+     97.7,
+     81
+    ],
+    "Gendrassa": [
+     100.0,
+     62
+    ],
+    "Gulumbi": [
+     100.0,
+     3
+    ],
+    "Kaya": [
+     99.9,
+     238
+    ],
+    "Lasu": [
+     100.0,
+     2
+    ],
+    "MAKPANDU": [
+     92.8,
+     166
+    ],
+    "Morobo": [
+     100.0,
+     10
+    ],
+    "Naandi": [
+     100.0,
+     4
+    ],
+    "Pamir": [
+     94.4,
+     361
+    ],
+    "Pochalla": [
+     73.7,
+     19
+    ],
+    "Source Yubu": [
+     76.5,
+     60
+    ],
+    "Tambura": [
+     100.0,
+     3
+    ],
+    "Yei Town": [
+     95.5,
+     22
+    ],
+    "Yida": [
+     82.3,
+     66
+    ],
+    "Yusuf Batil": [
+     99.8,
+     453
+    ]
+   },
+   "as_published": {
+    "Host community North": [
+     25.7,
+     678
+    ],
+    "Refugees": [
+     62.1,
+     306
+    ]
+   }
+  },
+  "4.1.2": {
+   "national": {
+    "Host community North": [
+     49.2,
+     2530
+    ],
+    "Refugees": [
+     81.0,
+     4965
+    ]
+   },
+   "areas": {
+    "Central Equatoria | Refugees": [
+     92.2,
+     253
+    ],
+    "Jonglei | Refugees": [
+     96.6,
+     59
+    ],
+    "Unity | Host community North": [
+     56.3,
+     1419
+    ],
+    "Unity | Refugees": [
+     85.1,
+     1486
+    ],
+    "Upper Nile | Host community North": [
+     41.3,
+     1019
+    ],
+    "Upper Nile | Refugees": [
+     79.0,
+     2457
+    ],
+    "Western Equatoria | Refugees": [
+     78.1,
+     502
+    ]
+   },
+   "camps": {
+    "Ajuong Thok": [
+     93.1,
+     594
+    ],
+    "Andari": [
+     72.7,
+     11
+    ],
+    "Doro": [
+     71.2,
+     895
+    ],
+    "EZO": [
+     84.7,
+     111
+    ],
+    "GOROM": [
+     94.8,
+     155
+    ],
+    "Gendrassa": [
+     91.8,
+     143
+    ],
+    "Gulumbi": [
+     88.9,
+     9
+    ],
+    "Kaya": [
+     84.8,
+     509
+    ],
+    "Lasu": [
+     100.0,
+     7
+    ],
+    "MAKPANDU": [
+     81.9,
+     271
+    ],
+    "Morobo": [
+     60.0,
+     10
+    ],
+    "Naandi": [
+     100.0,
+     4
+    ],
+    "Pamir": [
+     93.6,
+     710
+    ],
+    "Pochalla": [
+     96.6,
+     59
+    ],
+    "Source Yubu": [
+     59.5,
+     90
+    ],
+    "Tambura": [
+     73.3,
+     15
+    ],
+    "Yei Town": [
+     91.7,
+     72
+    ],
+    "Yida": [
+     49.9,
+     182
+    ],
+    "Yusuf Batil": [
+     83.5,
+     910
+    ]
+   },
+   "all_6_17_in_denominator": {
+    "Host community North": [
+     47.0,
+     2646
+    ],
+    "Refugees": [
+     75.5,
+     5391
+    ]
+   }
+  }
+ },
+ "PAK": {
+  "6.1.1": {
+   "national": {
+    "Host community": [
+     89.9,
+     1499
+    ],
+    "Refugees": [
+     92.2,
+     3519
+    ]
+   },
+   "areas": {
+    "Balochistan | Host community": [
+     73.1,
+     499
+    ],
+    "Balochistan | Refugees": [
+     89.2,
+     969
+    ],
+    "Islamabad | Refugees": [
+     89.9,
+     180
+    ],
+    "Khyber-Pakhtunkhwa | Host community": [
+     98.7,
+     604
+    ],
+    "Khyber-Pakhtunkhwa | Refugees": [
+     97.8,
+     966
+    ],
+    "Punjab | Host community": [
+     96.6,
+     394
+    ],
+    "Punjab | Refugees": [
+     96.3,
+     1010
+    ],
+    "Sindh | Refugees": [
+     86.0,
+     393
+    ]
+   },
+   "camps": {}
+  },
+  "6.2.1": {
+   "national": {
+    "Host community": [
+     94.6,
+     1499
+    ],
+    "Refugees": [
+     74.2,
+     3519
+    ]
+   },
+   "areas": {
+    "Balochistan | Host community": [
+     97.7,
+     499
+    ],
+    "Balochistan | Refugees": [
+     66.1,
+     969
+    ],
+    "Islamabad | Refugees": [
+     70.1,
+     180
+    ],
+    "Khyber-Pakhtunkhwa | Host community": [
+     92.3,
+     604
+    ],
+    "Khyber-Pakhtunkhwa | Refugees": [
+     88.3,
+     966
+    ],
+    "Punjab | Host community": [
+     95.5,
+     394
+    ],
+    "Punjab | Refugees": [
+     81.2,
+     1010
+    ],
+    "Sindh | Refugees": [
+     85.5,
+     393
+    ]
+   },
+   "camps": {}
+  },
+  "7.1.1": {
+   "national": {
+    "Host community": [
+     65.7,
+     1499
+    ],
+    "Refugees": [
+     62.1,
+     3519
+    ]
+   },
+   "areas": {
+    "Balochistan | Host community": [
+     43.4,
+     499
+    ],
+    "Balochistan | Refugees": [
+     52.4,
+     969
+    ],
+    "Islamabad | Refugees": [
+     53.1,
+     180
+    ],
+    "Khyber-Pakhtunkhwa | Host community": [
+     75.7,
+     604
+    ],
+    "Khyber-Pakhtunkhwa | Refugees": [
+     70.4,
+     966
+    ],
+    "Punjab | Host community": [
+     79.2,
+     394
+    ],
+    "Punjab | Refugees": [
+     75.5,
+     1010
+    ],
+    "Sindh | Refugees": [
+     89.8,
+     393
+    ]
+   },
+   "camps": {}
+  },
+  "2.1.2": {
+   "national": {
+    "Host community": [
+     33.5,
+     1499
+    ],
+    "Refugees": [
+     46.8,
+     3519
+    ]
+   },
+   "areas": {
+    "Balochistan | Host community": [
+     30.9,
+     499
+    ],
+    "Balochistan | Refugees": [
+     69.5,
+     969
+    ],
+    "Islamabad | Refugees": [
+     64.3,
+     180
+    ],
+    "Khyber-Pakhtunkhwa | Host community": [
+     34.7,
+     604
+    ],
+    "Khyber-Pakhtunkhwa | Refugees": [
+     23.6,
+     966
+    ],
+    "Punjab | Host community": [
+     38.4,
+     394
+    ],
+    "Punjab | Refugees": [
+     41.4,
+     1010
+    ],
+    "Sindh | Refugees": [
+     45.7,
+     393
+    ]
+   },
+   "camps": {}
+  },
+  "16.9.1": {
+   "national": {
+    "Host community": [
+     86.9,
+     1116
+    ],
+    "Refugees": [
+     47.1,
+     5332
+    ]
+   },
+   "areas": {
+    "Balochistan | Host community": [
+     91.2,
+     408
+    ],
+    "Balochistan | Refugees": [
+     71.4,
+     1294
+    ],
+    "Islamabad | Refugees": [
+     22.5,
+     367
+    ],
+    "Khyber-Pakhtunkhwa | Host community": [
+     82.2,
+     427
+    ],
+    "Khyber-Pakhtunkhwa | Refugees": [
+     44.1,
+     1584
+    ],
+    "Punjab | Host community": [
+     93.5,
+     281
+    ],
+    "Punjab | Refugees": [
+     21.6,
+     1736
+    ],
+    "Sindh | Refugees": [
+     38.9,
+     351
+    ]
+   },
+   "camps": {},
+   "as_published": {
+    "Host community": [
+     86.3,
+     1115
+    ],
+    "Refugees": [
+     44.1,
+     5326
+    ]
+   }
+  },
+  "8.5.2": {
+   "national": {
+    "Host community": [
+     8.9,
+     454
+    ],
+    "Refugees": [
+     10.8,
+     1412
+    ]
+   },
+   "areas": {
+    "Balochistan | Host community": [
+     8.1,
+     182
+    ],
+    "Balochistan | Refugees": [
+     18.5,
+     468
+    ],
+    "Islamabad | Refugees": [
+     2.5,
+     77
+    ],
+    "Khyber-Pakhtunkhwa | Host community": [
+     10.3,
+     179
+    ],
+    "Khyber-Pakhtunkhwa | Refugees": [
+     6.4,
+     392
+    ],
+    "Punjab | Host community": [
+     7.3,
+     93
+    ],
+    "Punjab | Refugees": [
+     1.6,
+     382
+    ],
+    "Sindh | Refugees": [
+     57.5,
+     93
+    ]
+   },
+   "camps": {},
+   "derived_in_file": {
+    "Host community": [
+     10.4,
+     433
+    ],
+    "Refugees": [
+     11.9,
+     1396
+    ]
+   }
+  }
+ },
+ "ZMB": {
+  "6.1.1": {
+   "national": {
+    "Former Refugees": [
+     92.7,
+     722
+    ],
+    "Host Community": [
+     75.2,
+     1211
+    ],
+    "Refugees": [
+     98.3,
+     2366
+    ]
+   },
+   "areas": {
+    "Luapula | Host Community": [
+     82.3,
+     398
+    ],
+    "Luapula | Refugees": [
+     99.9,
+     506
+    ],
+    "Lusaka | Refugees": [
+     98.2,
+     490
+    ],
+    "North-Western | Former Refugees": [
+     87.0,
+     398
+    ],
+    "North-Western | Host Community": [
+     86.1,
+     406
+    ],
+    "North-Western | Refugees": [
+     95.9,
+     653
+    ],
+    "Western | Former Refugees": [
+     99.8,
+     324
+    ],
+    "Western | Host Community": [
+     57.3,
+     407
+    ],
+    "Western | Refugees": [
+     99.4,
+     717
+    ]
+   },
+   "camps": {}
+  },
+  "6.2.1": {
+   "national": {
+    "Former Refugees": [
+     35.9,
+     722
+    ],
+    "Host Community": [
+     29.6,
+     1211
+    ],
+    "Refugees": [
+     75.9,
+     2366
+    ]
+   },
+   "areas": {
+    "Luapula | Host Community": [
+     23.3,
+     398
+    ],
+    "Luapula | Refugees": [
+     87.4,
+     506
+    ],
+    "Lusaka | Refugees": [
+     85.3,
+     490
+    ],
+    "North-Western | Former Refugees": [
+     33.8,
+     398
+    ],
+    "North-Western | Host Community": [
+     51.9,
+     406
+    ],
+    "North-Western | Refugees": [
+     59.9,
+     653
+    ],
+    "Western | Former Refugees": [
+     38.5,
+     324
+    ],
+    "Western | Host Community": [
+     13.6,
+     407
+    ],
+    "Western | Refugees": [
+     76.1,
+     717
+    ]
+   },
+   "camps": {}
+  },
+  "7.1.1": {
+   "national": {
+    "Former Refugees": [
+     7.6,
+     722
+    ],
+    "Host Community": [
+     12.9,
+     1201
+    ],
+    "Refugees": [
+     24.3,
+     2262
+    ]
+   },
+   "areas": {
+    "Luapula | Host Community": [
+     2.3,
+     398
+    ],
+    "Luapula | Refugees": [
+     5.5,
+     506
+    ],
+    "Lusaka | Refugees": [
+     52.8,
+     406
+    ],
+    "North-Western | Former Refugees": [
+     10.1,
+     398
+    ],
+    "North-Western | Host Community": [
+     29.1,
+     396
+    ],
+    "North-Western | Refugees": [
+     20.8,
+     653
+    ],
+    "Western | Former Refugees": [
+     4.5,
+     324
+    ],
+    "Western | Host Community": [
+     7.6,
+     407
+    ],
+    "Western | Refugees": [
+     24.3,
+     697
+    ]
+   },
+   "camps": {}
+  },
+  "2.1.2": {
+   "national": {
+    "Former Refugees": [
+     77.2,
+     722
+    ],
+    "Host Community": [
+     75.9,
+     1211
+    ],
+    "Refugees": [
+     76.5,
+     2366
+    ]
+   },
+   "areas": {
+    "Luapula | Host Community": [
+     79.6,
+     398
+    ],
+    "Luapula | Refugees": [
+     92.2,
+     506
+    ],
+    "Lusaka | Refugees": [
+     63.9,
+     490
+    ],
+    "North-Western | Former Refugees": [
+     73.6,
+     398
+    ],
+    "North-Western | Host Community": [
+     60.0,
+     406
+    ],
+    "North-Western | Refugees": [
+     78.9,
+     653
+    ],
+    "Western | Former Refugees": [
+     81.5,
+     324
+    ],
+    "Western | Host Community": [
+     88.2,
+     407
+    ],
+    "Western | Refugees": [
+     71.7,
+     717
+    ]
+   },
+   "camps": {}
+  },
+  "16.9.1": {
+   "national": {
+    "Former Refugees": [
+     37.9,
+     409
+    ],
+    "Host Community": [
+     24.1,
+     645
+    ],
+    "Refugees": [
+     72.4,
+     1257
+    ]
+   },
+   "areas": {
+    "Luapula | Host Community": [
+     18.1,
+     192
+    ],
+    "Luapula | Refugees": [
+     81.9,
+     383
+    ],
+    "Lusaka | Refugees": [
+     70.7,
+     224
+    ],
+    "North-Western | Former Refugees": [
+     48.4,
+     100
+    ],
+    "North-Western | Host Community": [
+     52.6,
+     137
+    ],
+    "North-Western | Refugees": [
+     77.1,
+     270
+    ],
+    "Western | Former Refugees": [
+     33.8,
+     309
+    ],
+    "Western | Host Community": [
+     13.5,
+     316
+    ],
+    "Western | Refugees": [
+     61.0,
+     380
+    ]
+   },
+   "camps": {}
+  },
+  "4.1.2": {
+   "national": {
+    "Former Refugees": [
+     84.4,
+     1149
+    ],
+    "Host Community": [
+     80.8,
+     1877
+    ],
+    "Refugees": [
+     87.8,
+     3372
+    ]
+   },
+   "areas": {
+    "Luapula | Host Community": [
+     76.1,
+     546
+    ],
+    "Luapula | Refugees": [
+     92.0,
+     859
+    ],
+    "Lusaka | Refugees": [
+     76.0,
+     600
+    ],
+    "North-Western | Former Refugees": [
+     81.5,
+     497
+    ],
+    "North-Western | Host Community": [
+     80.5,
+     514
+    ],
+    "North-Western | Refugees": [
+     84.0,
+     984
+    ],
+    "Western | Former Refugees": [
+     86.6,
+     652
+    ],
+    "Western | Host Community": [
+     83.9,
+     817
+    ],
+    "Western | Refugees": [
+     93.3,
+     929
+    ]
+   },
+   "camps": {}
+  }
+ }
+}

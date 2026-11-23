@@ -1,0 +1,1173 @@
+<title>GAIN Layers Demo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: the story's own index card on the left, the new layers stacked beside it; two further views show one layer in full. Single dark look, same as the GAIN story. */
+@font-face{font-family:"Obvia";src:url("data:font/otf;base64,__FONT__") format("opentype");font-weight:600;font-display:swap;unicode-range:U+0020,U+002C,U+002E,U+003A-003B,U+003F,U+0041-005A,U+0061-007A}
+:root{
+  color-scheme:dark;
+  --night:#0a1430; --panel:#1a2852; --well:#0f1b3d; --ink:#ffffff; --soft:#cfe0f4; --mute:#8db8e3; --dim:#8b98b3;
+  --line:rgba(207,224,244,.14); --line2:rgba(207,224,244,.3);
+  --teal:#4cc3c9; --tealhi:#8fe0e4; --gold:#e0a93b; --red:#f06667; --blue:#5b8fd9; --violet:#b48ef0;
+  --head:Obvia,Figtree,system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--night);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55}
+a{color:var(--teal)}a:hover{color:var(--tealhi)}
+button{font-family:inherit}
+:focus-visible{outline:3px solid rgba(91,143,217,.85);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:22px}
+.eyebrow{font:500 12px var(--mono);letter-spacing:.12em;color:var(--teal);text-transform:uppercase;margin:0}
+h1{margin:0;font:600 30px/1.2 var(--head);text-wrap:balance}
+h2{margin:0;font:600 19px/1.35 var(--head);text-wrap:balance}
+h3{margin:0;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+p{margin:0}
+.lede{color:var(--soft);max-width:68ch}
+.top{display:flex;flex-direction:column;gap:10px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--soft)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--line);padding-bottom:12px}
+.tab{min-height:40px;padding:0 16px;border-radius:3px;border:1px solid var(--line2);background:transparent;color:var(--soft);font:500 14px var(--body);cursor:pointer}
+.tab:hover{border-color:var(--teal);color:var(--teal)}
+.tab[aria-selected="true"]{background:var(--teal);border-color:var(--teal);color:var(--night);font-weight:600}
+.pill{display:inline-block;padding:2px 7px;border-radius:2px;font:500 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.pill.new{background:var(--teal);color:var(--night)}
+.pill.tbc{border:1px solid var(--gold);color:var(--gold)}
+.pill.flag{border:1px solid var(--red);color:var(--red)}
+.pill.ok{border:1px solid var(--teal);color:var(--teal)}
+.pill.draft{border:1px dashed var(--violet);color:var(--violet)}
+.pill.plain{border:1px solid var(--line2);color:var(--soft)}
+.pill.a-same{background:var(--teal);color:var(--night)}
+.pill.a-close{background:var(--blue);color:var(--ink)}
+.pill.a-partial{background:var(--gold);color:var(--night)}
+.pill.a-different{background:var(--red);color:var(--night)}
+code,.mono{font-family:var(--mono);font-size:.9em}
+code{background:rgba(207,224,244,.09);border:1px solid var(--line);border-radius:3px;padding:1px 5px;color:var(--tealhi);overflow-wrap:anywhere}
+
+/* view 1 */
+.two{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:22px;align-items:start}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:24px 26px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.colhead{display:flex;align-items:center;gap:10px;margin-bottom:-6px}
+.exmeta{font:400 11px var(--mono);color:var(--mute);letter-spacing:.04em}
+.cover{display:flex;gap:16px;align-items:flex-start}
+.cover img{width:104px;height:auto;border-radius:2px;border:1px solid var(--line2);flex-shrink:0}
+.tiles{display:flex;flex-wrap:wrap;gap:8px}
+.tile{display:inline-flex;align-items:center;min-height:32px;padding:4px 11px;border-radius:4px;background:rgba(207,224,244,.07);border:1px solid var(--line);font:500 13px var(--body)}
+.src{padding-top:10px;border-top:1px solid var(--line);font:400 11px var(--mono);color:var(--mute)}
+.actbtn{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:3px;border:1px solid var(--teal);background:transparent;color:var(--teal);text-decoration:none;font:500 14px var(--body);cursor:pointer}
+.actbtn:hover{border-color:var(--tealhi);color:var(--tealhi)}
+.layers{display:flex;flex-direction:column;gap:14px;min-width:0}
+.layer{background:var(--well);border:1px solid var(--line);border-radius:3px;padding:18px 20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.lhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.lhead h2{font-size:17px}
+.lnote{font-size:13px;color:var(--dim)}
+.rows{display:flex;flex-direction:column}
+.drow{display:grid;grid-template-columns:118px minmax(0,1fr) auto;gap:4px 14px;align-items:baseline;padding:10px 0;border-top:1px solid var(--line)}
+.drow:first-child{border-top:0}
+.dk{font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.dv{min-width:0}.dv b{font-weight:600}.dv small{display:block;color:var(--dim);font-size:13px}
+.dl{font-size:13px;white-space:nowrap}
+.ind{display:grid;grid-template-columns:64px minmax(0,1.2fr) minmax(0,1fr) auto;gap:6px 14px;align-items:center;padding:10px 0;border-top:1px solid var(--line);width:100%;background:none;border-left:0;border-right:0;border-bottom:0;color:inherit;text-align:left;cursor:pointer;font-size:14px}
+.ind:first-child{border-top:0}
+.ind:hover .iname{color:var(--teal)}
+.icode{font:500 13px var(--mono);color:var(--tealhi);font-variant-numeric:tabular-nums}
+.iname{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center}
+.bars{display:flex;flex-direction:column;gap:4px;min-width:0}
+.bar{display:grid;grid-template-columns:minmax(0,1fr) 38px;gap:8px;align-items:center}
+.track{height:8px;background:rgba(207,224,244,.1);border-radius:1px}
+.fill{height:8px;border-radius:1px;min-width:2px}
+.fill.r{background:var(--teal)}.fill.h{background:var(--dim)}
+.bv{font:500 12px var(--mono);font-variant-numeric:tabular-nums;text-align:right}
+.go{font:400 12px var(--mono);color:var(--mute)}
+.flow{display:flex;flex-wrap:wrap;gap:6px}
+.qchip{display:inline-flex;align-items:center;gap:7px;min-height:30px;padding:3px 9px;border-radius:3px;border:1px solid var(--line2);font:500 12px var(--mono);background:rgba(10,20,48,.5)}
+.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block}
+.d-same{background:var(--teal)}.d-close{background:var(--blue)}.d-partial{background:var(--gold)}.d-different{background:var(--red)}.d-none{background:transparent;box-shadow:inset 0 0 0 1px var(--dim)}
+.pop{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:4px 14px;align-items:baseline;padding:8px 0;border-top:1px solid var(--line)}
+.pop:first-child{border-top:0}
+.pv{font:600 15px var(--body);font-variant-numeric:tabular-nums;text-align:right}
+.oex{display:grid;grid-template-columns:44px minmax(0,1fr);gap:10px;padding:7px 0;font-size:13px;border-top:1px solid var(--line)}
+.oex span:first-child{font:500 12px var(--mono);color:var(--mute)}
+
+/* view 2 */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:38px;padding:0 13px;border-radius:3px;border:1px solid var(--line2);background:rgba(10,20,48,.6);color:var(--soft);font:500 13px var(--mono);cursor:pointer}
+.chip:hover{border-color:var(--teal)}
+.chip[aria-pressed="true"]{border-color:var(--teal);color:var(--night);background:var(--teal)}
+.recipe{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:start}
+.result{display:flex;flex-direction:column;gap:16px}
+.big{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+.bigv{font:600 46px/1 var(--body);font-variant-numeric:tabular-nums}
+.bigl{font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-top:8px}
+.frac{display:flex;flex-direction:column;gap:0;border:1px solid var(--line2);border-radius:3px;overflow:hidden}
+.frac div{padding:12px 14px}
+.frac .num{border-bottom:2px solid var(--teal)}
+.frac span{display:block;font:500 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:3px}
+.steps{display:flex;flex-direction:column}
+.step{display:grid;grid-template-columns:150px minmax(0,1fr);gap:4px 16px;padding:13px 0;border-top:1px solid var(--line)}
+.step:first-child{border-top:0;padding-top:0}
+.sk{font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute);padding-top:2px}
+.sv{min-width:0;display:flex;flex-direction:column;gap:6px}
+.sv small{color:var(--dim);font-size:13px}
+.flags{display:flex;flex-direction:column;gap:8px}
+.fl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:baseline;font-size:14px;color:var(--soft)}
+
+/* equation and metadata */
+.eqcard{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:24px 26px;display:flex;flex-direction:column;gap:20px;min-width:0}
+.eq{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
+.eqlhs{font:500 14px var(--mono);color:var(--mute)}
+.fracv{display:inline-flex;flex-direction:column;align-items:stretch;min-width:0;max-width:520px;flex:1 1 300px}
+.fracv .n,.fracv .d{padding:10px 14px;text-align:center;font-size:16px;line-height:1.4}
+.fracv .n{border-bottom:2px solid var(--ink)}
+.fracv small{display:block;font:500 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:2px}
+.eqop{font:500 20px var(--mono);color:var(--soft);white-space:nowrap}
+.eqres{display:flex;gap:22px}
+.est{background:var(--night);border:1px solid var(--line);border-radius:3px;padding:14px 16px;overflow-x:auto}
+.estrow{display:flex;align-items:center;gap:12px;font:400 14px var(--mono);color:var(--soft);white-space:nowrap}
+.estf{display:inline-flex;flex-direction:column;align-items:stretch}
+.estf span{padding:3px 8px;text-align:center}
+.estf span:first-child{border-bottom:1px solid var(--soft)}
+.est p{font:400 12px var(--mono);color:var(--dim);margin-top:10px;white-space:normal}
+.meta{width:100%;border-collapse:collapse;font-size:14px}
+.meta th{width:150px;text-align:left;vertical-align:top;font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute);padding:10px 14px 10px 0;border-top:1px solid var(--line)}
+.meta td{padding:9px 0;border-top:1px solid var(--line);vertical-align:top}
+.meta tr:first-child th,.meta tr:first-child td{border-top:0}
+.syn{margin:0;background:var(--night);border:1px solid var(--line);border-radius:3px;padding:14px 16px;font:400 12.5px/1.65 var(--mono);color:var(--soft);overflow-x:auto;white-space:pre}
+.syn .cm{color:var(--dim)}
+.syn .ph{color:var(--gold);border-bottom:1px dashed var(--gold)}
+.syn .kw{color:var(--tealhi)}
+@media (max-width:860px){.meta th{width:104px}.fracv .n,.fracv .d{font-size:15px}}
+
+/* structure */
+.stack{display:flex;flex-direction:column;gap:18px}
+.band{background:var(--well);border:1px solid var(--line);border-radius:3px;padding:18px 20px;display:flex;flex-direction:column;gap:12px}
+.band.core{background:var(--panel);border-color:rgba(76,195,201,.5)}
+.grid5{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.node{border:1px solid var(--line2);border-radius:3px;padding:11px 13px;background:rgba(10,20,48,.55);display:flex;flex-direction:column;gap:4px;min-width:0}
+.node b{font-weight:600;font-size:14px}.node small{color:var(--dim);font-size:12.5px;line-height:1.4}
+.node .k{font:500 11px var(--mono);color:var(--tealhi);overflow-wrap:anywhere}
+.conn{text-align:center;font:500 12px var(--mono);color:var(--mute);letter-spacing:.06em}
+.face{display:flex;flex-direction:column;gap:8px;min-width:0}
+.pages{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.pages li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:baseline;padding:7px 10px;border:1px solid var(--line);border-radius:3px;font-size:13.5px;background:rgba(10,20,48,.5)}
+.pages small{display:block;color:var(--dim);font-size:12px}
+/* bank + data */
+.stats{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:14px;color:var(--soft)}
+.stats b{font:600 20px var(--body);color:var(--ink);font-variant-numeric:tabular-nums;margin-right:6px}
+.search{min-height:38px;width:min(100%,320px);padding:0 12px;border-radius:3px;border:1px solid var(--line2);background:rgba(10,20,48,.6);color:var(--ink);font:400 14px var(--body)}
+.grp{display:flex;flex-direction:column;gap:6px}
+.grph{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;padding-top:10px;border-top:1px solid var(--line)}
+.grph b{font-size:15px}.grph span{font-size:13px;color:var(--mute)}
+.bq{display:grid;grid-template-columns:92px minmax(0,1fr);gap:4px 14px;padding:10px 12px;border:1px solid var(--line);border-radius:3px;background:var(--well)}
+.bq .l{display:flex;flex-direction:column;gap:5px;align-items:flex-start}
+.bq .t{min-width:0;display:flex;flex-direction:column;gap:5px}
+.bq .o{font-size:15px;line-height:1.45}
+.bq .e{font-size:13.5px;color:var(--soft);border-left:2px solid var(--violet);padding-left:10px}
+.bq details{font-size:13px;color:var(--dim)}.bq summary{cursor:pointer;color:var(--mute)}
+.tw{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;font-size:13.5px;min-width:640px}
+.tbl th{text-align:left;font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute);padding:8px 12px 8px 0;border-bottom:1px solid var(--line2)}
+.tbl td{padding:9px 12px 9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl td small{color:var(--dim)}
+@media (max-width:860px){.bq{grid-template-columns:minmax(0,1fr)}.bq .l{flex-direction:row;flex-wrap:wrap}}
+
+/* per-survey cards */
+.sv-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px}
+.svc{background:var(--well);border:1px solid var(--line);border-radius:3px;padding:16px 18px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.svc.old{opacity:.72}
+.svh{display:flex;flex-direction:column;gap:2px}
+.svh b{font:600 17px var(--head)}
+.svh span{font-size:13px;color:var(--mute)}
+.svr{display:flex;flex-direction:column;gap:5px}
+.svbar{display:grid;grid-template-columns:118px minmax(0,1fr) 40px;gap:8px;align-items:center;font-size:12.5px;color:var(--soft)}
+.how{display:flex;flex-direction:column}
+.howr{display:grid;grid-template-columns:96px minmax(0,1fr);gap:2px 12px;padding:8px 0;border-top:1px solid var(--line);font-size:13.5px}
+.howr .hk{font:500 10.5px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute);padding-top:3px}
+.howr .hv{min-width:0;display:flex;flex-direction:column;gap:4px}
+.vars{display:flex;flex-wrap:wrap;gap:4px}
+details.full{border:1px solid var(--line);border-radius:3px;background:var(--well)}
+details.full>summary{cursor:pointer;padding:14px 18px;font:500 14px var(--body);color:var(--teal)}
+details.full>div{padding:0 18px 18px}
+
+/* variable chips with hover card */
+.var{font-family:var(--mono);font-size:.9em;background:rgba(207,224,244,.09);border:1px solid var(--line);border-bottom:1px dashed var(--tealhi);border-radius:3px;padding:1px 5px;color:var(--tealhi);overflow-wrap:anywhere;cursor:help;text-decoration:none;display:inline-block;line-height:1.5}
+a.var{cursor:pointer}
+.var:hover,.var:focus-visible{border-color:var(--teal);color:var(--ink);background:rgba(76,195,201,.18)}
+#tip{position:fixed;z-index:50;width:min(340px,calc(100vw - 24px));background:#22346a;border:1px solid var(--teal);border-radius:4px;padding:13px 15px;box-shadow:0 10px 30px rgba(0,0,0,.5);pointer-events:none;display:flex;flex-direction:column;gap:8px;font-size:13.5px;line-height:1.45}
+#tip .tn{font:500 11px var(--mono);letter-spacing:.08em;color:var(--teal)}
+#tip .tq{font-size:15px;color:var(--ink)}
+#tip .tc{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 9px;font-size:12.5px;color:var(--soft)}
+#tip .tc b{font:500 12px var(--mono);color:var(--mute);text-align:right}
+#tip .ts{font-size:12px;color:var(--mute)}
+#tip .tw{font-size:12px;color:var(--gold);overflow:visible}
+
+/* globe */
+.gl{display:grid;grid-template-columns:minmax(0,280px) minmax(0,1fr) minmax(0,390px);gap:16px;align-items:start}
+.gside{background:var(--well);border:1px solid var(--line);border-radius:3px;padding:16px;display:flex;flex-direction:column;gap:12px;max-height:660px;overflow-y:auto;min-width:0}
+.gmid{display:flex;flex-direction:column;gap:10px;min-width:0}
+#globe{height:560px;width:100%;border:1px solid var(--line);border-radius:3px;background:radial-gradient(circle at 50% 45%,#14285a,#0a1430 72%);overflow:hidden;position:relative}
+#globe canvas{display:block}
+.gmsg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;color:var(--soft)}
+.ghover{min-height:22px;font:500 13px var(--mono);color:var(--soft);text-align:center}
+.clist{display:flex;flex-direction:column;gap:4px}
+.crow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:baseline;text-align:left;width:100%;min-height:32px;padding:5px 9px;border:1px solid var(--line);border-radius:3px;background:rgba(10,20,48,.5);color:var(--ink);font:400 13px var(--body);cursor:pointer}
+.crow:hover{border-color:var(--teal)}.crow[aria-pressed="true"]{border-color:var(--teal);background:rgba(76,195,201,.16)}
+.crow span:last-child{font:500 11px var(--mono);color:var(--mute)}
+.gsec{display:flex;flex-direction:column;gap:8px;padding-top:12px;border-top:1px solid var(--line)}
+.gsec:first-child{border-top:0;padding-top:0}
+.irow{display:flex;flex-direction:column;gap:5px;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px}
+.irow:first-child{border-top:0}
+.itop{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:8px;align-items:baseline}
+.itop b{font:600 14px var(--body);font-variant-numeric:tabular-nums;white-space:nowrap}
+.isub{font-size:12.5px;color:var(--dim);display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px}
+/* model matrix */
+.mstrip{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.mi{border:1px solid var(--line2);border-radius:3px;padding:10px 12px;background:rgba(10,20,48,.55);display:flex;flex-direction:column;gap:4px;font-size:13px;min-width:0}
+.mi.core{border-color:rgba(76,195,201,.6)}
+.mi .k{font:500 12px var(--mono);color:var(--tealhi)}
+.mi small{color:var(--dim);font-size:12px}
+.mx{border-collapse:separate;border-spacing:0;font-size:13px;min-width:980px;width:100%}
+.mx th{font:500 11px var(--mono);color:var(--mute);padding:6px 4px;text-align:center;vertical-align:bottom;border-bottom:1px solid var(--line2);white-space:nowrap}
+.mx th.core{color:var(--tealhi)}
+.mx th small{display:block;color:var(--dim);font-size:10px;margin-top:2px}
+.mx td{padding:3px 4px;text-align:center;border-bottom:1px solid var(--line)}
+.mx td.nm,.mx th.nm{text-align:left;position:sticky;left:0;background:var(--night);min-width:230px;max-width:280px;white-space:normal;z-index:1}
+.mx td.nm b{font-weight:600;display:block}.mx td.nm span{color:var(--dim);font-size:12px}
+.mx .gap{border-left:2px solid var(--line2)}
+.cell{width:30px;height:26px;border-radius:3px;border:1px solid transparent;cursor:pointer;font:600 11px var(--mono);color:var(--night);padding:0}
+.cell.same{background:var(--teal)}.cell.close{background:var(--blue);color:var(--ink)}.cell.partial{background:var(--gold)}.cell.different{background:var(--red)}
+.cell.other{background:rgba(207,224,244,.25);color:var(--ink)}
+.cell:hover,.cell[aria-pressed="true"]{border-color:var(--ink);box-shadow:0 0 0 2px var(--ink)}
+.nocell{color:rgba(207,224,244,.22)}
+.cz{display:inline-flex;gap:2px}.cz i{width:7px;height:14px;border-radius:1px;background:rgba(207,224,244,.14)}.cz i.on{background:var(--gold)}
+.cmp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:16px}
+@media (max-width:1000px){.gl{grid-template-columns:minmax(0,1fr)}.gside{max-height:none}#globe{height:420px}.cmp{grid-template-columns:minmax(0,1fr)}}
+
+/* sub-national */
+.sn{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:18px;align-items:start}
+.snmap{background:var(--well);border:1px solid var(--line);border-radius:3px;padding:14px}
+.snmap svg{display:block;width:100%;height:auto}
+.snmap .ar{stroke:var(--night);stroke-width:1.2;cursor:default}
+.snmap .ar.none{fill:#1c2a4d}
+.snmap text{font-family:var(--body);fill:var(--ink);paint-order:stroke;stroke:var(--night);stroke-width:3px;stroke-linejoin:round}
+.ramp{display:flex;align-items:center;gap:8px;font:400 11px var(--mono);color:var(--mute);margin-top:10px}
+.ramp i{flex:1;height:8px;border-radius:1px;background:linear-gradient(90deg,#27375f,#2f6f8f,#4cc3c9,#c9f4f6)}
+.snt{width:100%;border-collapse:collapse;font-size:13.5px}
+.snt th{text-align:left;font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute);padding:6px 10px 6px 0;border-bottom:1px solid var(--line2)}
+.snt td{padding:8px 10px 8px 0;border-bottom:1px solid var(--line);vertical-align:middle}
+.snt .v{font:600 14px var(--body);font-variant-numeric:tabular-nums;white-space:nowrap}
+.snt .n{font:400 11px var(--mono);color:var(--dim);white-space:nowrap}
+.mini{height:6px;background:rgba(207,224,244,.1);border-radius:1px;min-width:60px}
+.mini div{height:6px;border-radius:1px}
+@media (max-width:1000px){.sn{grid-template-columns:minmax(0,1fr)}}
+
+/* flow */
+.rail{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+.rstep{display:flex;flex-direction:column;gap:3px;text-align:left;padding:10px 12px;border:1px solid var(--line2);border-radius:3px;background:rgba(10,20,48,.55);color:var(--soft);cursor:pointer;min-width:0;font-family:var(--body)}
+.rstep:hover{border-color:var(--teal)}
+.rstep b{font:600 14px var(--head);color:var(--ink)}
+.rstep .rn{font:500 10px var(--mono);letter-spacing:.12em;color:var(--mute)}
+.rstep small{font-size:11.5px;color:var(--dim);line-height:1.3}
+.rstep[aria-current="step"]{background:var(--teal);border-color:var(--teal)}
+.rstep[aria-current="step"] b,.rstep[aria-current="step"] .rn,.rstep[aria-current="step"] small{color:var(--night)}
+.rstep.done{border-color:rgba(76,195,201,.55)}
+.fhead{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-left:3px solid var(--teal);border-radius:3px;background:var(--well)}
+.fhead h2{font-size:20px}
+.fhead .sits{font:500 11px var(--mono);letter-spacing:.06em;color:var(--mute)}
+.fgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}
+.fnav{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between}
+.pickrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;width:100%;text-align:left;padding:10px 12px;border:1px solid var(--teal);border-radius:3px;background:rgba(76,195,201,.1);color:var(--ink);font:500 14px var(--body);cursor:pointer}
+.pickrow:hover{background:rgba(76,195,201,.22)}
+.pickrow small{display:block;font-weight:400;color:var(--soft);font-size:12.5px}
+@media (max-width:1000px){.rail{grid-template-columns:repeat(2,minmax(0,1fr))}.fgrid{grid-template-columns:minmax(0,1fr)}}
+
+/* view 3 */
+.bar3{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:flex-end;justify-content:space-between}
+.ctl{display:flex;flex-direction:column;gap:6px}
+.inst{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;font-size:14px;color:var(--soft)}
+.qlist{display:flex;flex-direction:column;gap:10px}
+.q{border:1px solid var(--line);border-radius:3px;background:var(--well);padding:14px 16px;display:grid;grid-template-columns:86px minmax(0,1fr);gap:6px 16px}
+.q.focus{border-color:rgba(76,195,201,.5);background:var(--panel)}
+.qid{font:500 13px var(--mono);color:var(--tealhi)}
+.q:not(.focus) .qid{color:var(--mute)}
+.qbody{min-width:0;display:flex;flex-direction:column;gap:8px}
+.qtags{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.asprinted{border-left:2px solid var(--line2);padding:2px 0 2px 12px}
+.asprinted span,.tr span{display:block;font:500 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin-bottom:2px}
+.asprinted p{font-size:16px;line-height:1.45}
+.tr{border-left:2px solid var(--violet);padding:2px 0 2px 12px;color:var(--soft)}
+.tr span{color:var(--violet)}
+.opts{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:5px}
+.opts li{font-size:12.5px;padding:2px 8px;border-radius:2px;background:rgba(207,224,244,.07);border:1px solid var(--line);color:var(--soft);overflow-wrap:anywhere}
+.qmeta{font-size:13px;color:var(--dim)}
+.qmeta b{font-weight:500;color:var(--mute)}
+.slot{border:1px dashed var(--line2);border-radius:3px;padding:9px 12px;font-size:12.5px;color:var(--dim);display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
+.slot.held{border-color:rgba(240,102,103,.5)}
+
+@media (max-width:860px){
+  .two,.recipe{grid-template-columns:minmax(0,1fr)}
+  .ind{grid-template-columns:54px minmax(0,1fr)}.ind .bars{grid-column:1/-1}.ind .go{display:none}
+  .drow{grid-template-columns:minmax(0,1fr)}.step{grid-template-columns:minmax(0,1fr)}
+  .q{grid-template-columns:minmax(0,1fr)}
+  h1{font-size:25px}.bigv{font-size:38px}
+}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <p class="eyebrow">Demo for comments · GAIN story, SDG map, identification questions</p>
+    <h1>One record, three faces</h1>
+    <p class="lede">How the GAIN story, the SDG map and the identification questions work would fit together on one shared record. The example views use the South Sudan Forced Displacement Survey, which is in all three already.</p>
+    <div class="legend">
+      <span><i class="pill new">New</i> a layer the story does not have today</span>
+      <span><i class="pill tbc">To confirm</i> not recorded yet in our files</span>
+      <span><i class="pill flag">Check</i> differs from the official definition</span>
+      <span><i class="pill draft">Draft</i> unreviewed translation</span>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Views">
+    <button class="tab" role="tab" id="tab-globe" data-v="globe">Flow</button>
+    <button class="tab" role="tab" id="tab-structure" data-v="structure">Site structure</button>
+    <button class="tab" role="tab" id="tab-example" data-v="example">Example card</button>
+    <button class="tab" role="tab" id="tab-sdg" data-v="sdg">SDG calculation</button>
+    <button class="tab" role="tab" id="tab-subnat" data-v="subnat">Below country level</button>
+    <button class="tab" role="tab" id="tab-questions" data-v="questions">One questionnaire</button>
+    <button class="tab" role="tab" id="tab-model" data-v="model">Against the EGRISS model</button>
+    <button class="tab" role="tab" id="tab-bank" data-v="bank">Question bank</button>
+    <button class="tab" role="tab" id="tab-data" data-v="data">Data and requests</button>
+  </nav>
+
+  <!-- VIEW 1 -->
+  <section id="v-example" class="two">
+    <div class="card">
+      <div class="colhead"><h3>In the story today</h3></div>
+      <div class="cover">
+        <img src="data:image/jpeg;base64,__COVER__" alt="Cover of the FDS South Sudan report">
+        <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+          <span class="exmeta">GAIN 2025 · SOUTH SUDAN ↗ · INSTITUTION-LED</span>
+          <h2>FDS South Sudan</h2>
+          <span style="font-size:13px;color:var(--soft)">United Nations High Commissioner for Refugees (UNHCR)</span>
+        </div>
+      </div>
+      <p style="color:var(--soft)">The FDS is a socio-economic survey that aims to better understand living conditions of refugees (nationally representative sample) and the host population (those living close to refugees).</p>
+      <div><h3 style="margin-bottom:8px">How it counted</h3><div class="tiles"><span class="tile">Survey</span></div></div>
+      <div><h3 style="margin-bottom:8px">Who it covered</h3><div class="tiles"><span class="tile">Refugees</span></div></div>
+      <a class="actbtn" style="align-self:flex-start" href="https://microdata.unhcr.org/index.php/catalog/1175/download/3826" target="_blank" rel="noopener">Open the source ↗</a>
+      <div class="src">GAIN Survey 2025 · example 186 of 413</div>
+    </div>
+
+    <div class="layers">
+      <div class="layer">
+        <div class="lhead"><i class="pill new">New</i><h2>Where the data is</h2></div>
+        <div class="rows">
+          <div class="drow"><span class="dk">Microdata</span>
+            <span class="dv"><b>UNHCR Microdata Library</b>, catalogue entry 1175<small>Held by the producer. We link, we do not host. Licensed access: people apply to UNHCR through the library.</small></span>
+            <a class="dl" href="https://microdata.unhcr.org/index.php/catalog/1175" target="_blank" rel="noopener">Request there ↗</a></div>
+          <div class="drow"><span class="dk">Questionnaire</span>
+            <span class="dv"><b>UNHCR</b>, FDS questionnaire South Sudan 2023 (PDF)<small>Public. 14 questions transcribed in the question bank, 12 of them coded.</small></span>
+            <a class="dl" href="https://www.unhcr.org/sites/default/files/2025-11/unhcr-fds-questionnaire-south-sudan-2023.pdf" target="_blank" rel="noopener">Open ↗</a></div>
+          <div class="drow"><span class="dk">Report</span>
+            <span class="dv"><b>UNHCR Microdata Library</b>, document attached to the catalogue entry<small>This is the link the story card opens today.</small></span>
+            <a class="dl" href="https://microdata.unhcr.org/index.php/catalog/1175/download/3826" target="_blank" rel="noopener">Open ↗</a></div>
+          <div class="drow"><span class="dk">Hosted by EGRISS</span>
+            <span class="dv">Nothing. Not needed: every part has a home.<small>This row would show a file only where no one else hosts it and the producer has agreed.</small></span><span></span></div>
+        </div>
+      </div>
+
+      <div class="layer">
+        <div class="lhead"><i class="pill new">New</i><h2>SDG indicators calculated from this dataset</h2></div>
+        <p class="lnote">Refugees against the host population living near them, 2023. Select a row to see how it was calculated.</p>
+        <div class="rows" id="indrows"></div>
+        <div class="legend" style="font-size:12px"><span><i class="dot" style="background:var(--teal)"></i>Refugees</span><span><i class="dot" style="background:var(--dim)"></i>Host</span><span>◆ EGRISS priority indicator</span></div>
+      </div>
+
+      <div class="layer">
+        <div class="lhead"><i class="pill new">New</i><h2>How refugees were identified</h2></div>
+        <p style="color:var(--soft)">The SDG values use the survey's own population group variable, <code>Intro_07_1</code>: refugees, asylum-seekers and two host community groups. The questionnaire also asks the identification sequence below, per household member.</p>
+        <div class="flow" id="flow"></div>
+        <div class="legend" style="font-size:12px"><span><i class="dot d-same"></i>Same as EGRISS module</span><span><i class="dot d-close"></i>Close</span><span><i class="dot d-partial"></i>Partial</span><span><i class="dot d-none"></i>Not an identification item</span></div>
+        <button class="actbtn" style="align-self:flex-start" id="toq" type="button">See the questions as asked</button>
+      </div>
+
+      <div class="layer">
+        <div class="lhead"><h2>South Sudan in context</h2><span class="lnote">already on the country card</span></div>
+        <div class="rows">
+          <div class="pop"><span>Refugees</span><span class="pill ok">covered by this example</span><span class="pv">601,818</span></div>
+          <div class="pop"><span>Internally displaced people</span><span></span><span class="pv">1,277,527</span></div>
+          <div class="pop"><span>Stateless people</span><span></span><span class="pv">60,600</span></div>
+        </div>
+        <p class="lnote">End of 2025. UNHCR Refugee Data Finder; IDPs from IDMC.</p>
+        <h3>Other South Sudan examples</h3>
+        <div class="rows">
+          <div class="oex"><span>2025</span><span>Household Budget Survey 2025, National Bureau of Statistics <i class="pill plain">also in the question bank</i></span></div>
+          <div class="oex"><span>2025</span><span>MICS Round 7, National Bureau of Statistics</span></div>
+          <div class="oex"><span>2023</span><span>Thematic report of the Population Estimation Survey 2021, National Bureau of Statistics</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIEW 2 -->
+  <section id="v-sdg" hidden>
+    <div class="stack">
+      <div class="ctl"><h3>Choose an indicator</h3><div class="chips" id="indchips"></div></div>
+      <div id="sdghead"></div>
+      <div><h3 style="margin-bottom:4px" id="svtitle"></h3><p class="lnote" style="margin-bottom:10px">Point at a variable name to see the question as asked and its answer codes. Select it to open the holder's page for that variable.</p><div class="sv-list" id="svlist"></div></div>
+      <details class="full" id="fulldet"><summary>Full recipe for FDS South Sudan 2023: metadata and tabulation syntax</summary><div><div class="recipe" id="recipe"></div></div></details>
+    </div>
+  </section>
+
+  <!-- VIEW subnat -->
+  <section id="v-subnat" hidden>
+    <div class="stack">
+      <div class="bar3" style="justify-content:flex-start">
+        <div class="ctl"><h3>Survey</h3><div class="chips" id="snc"></div></div>
+        <div class="ctl"><h3>Indicator</h3><div class="chips" id="sni"></div></div>
+        <div class="ctl"><h3>Map shows</h3><div class="chips" id="sng"></div></div>
+      </div>
+      <p class="lnote" id="snnote"></p>
+      <div class="sn">
+        <div class="snmap"><div id="snsvg"></div><div class="ramp"><span>0%</span><i></i><span>100%</span><span style="margin-left:10px">dark = not sampled</span></div></div>
+        <div class="stack" style="gap:16px">
+          <div class="band"><h3 id="snth"></h3><div class="tw"><table class="snt" id="sntbl" style="min-width:420px"></table></div></div>
+          <div class="band" id="sncampband"><h3>Refugees by camp or settlement</h3><div class="tw"><table class="snt" id="sncamp" style="min-width:420px"></table></div></div>
+          <div class="band"><h3>Check against the published national value</h3><div id="sncheck"></div></div>
+        </div>
+      </div>
+      <div class="band">
+        <h3>What this is, and what it is not</h3>
+        <div class="flags">
+          <div class="fl"><i class="pill ok">Real</i><span>Calculated for this demo from the licensed survey files in the EGRISS data lake. Only area totals leave the file; no household record is shown.</span></div>
+          <div class="fl"><i class="pill plain">Note</i><span>These surveys release area names, not coordinates. Camp dots are placed at UNHCR's public site locations, taken from the country card.</span></div>
+          <div class="fl"><i class="pill tbc">To confirm</i><span>The surveys were designed for national or stratum estimates. Each cell shows its sample of households; cells under 50 are marked. Confidence intervals are not calculated yet.</span></div>
+          <div class="fl"><i class="pill plain">Note</i><span>A cluster-dot version needs a survey that releases shifted coordinates. Malawi DHS 2024 is in the data lake, but its GPS file is not; it has to be requested from the DHS Program.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIEW 3 -->
+  <section id="v-questions" hidden>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="bar3">
+        <div class="ctl"><h3>Questionnaire</h3><div class="chips" id="instchips"></div></div>
+        <div class="ctl"><h3>Translation shown</h3><div class="chips" id="langchips"></div></div>
+      </div>
+      <div class="inst" id="instinfo"></div>
+      <div class="qlist" id="qlist"></div>
+    </div>
+  </section>
+  <!-- VIEW globe -->
+  <section id="v-globe" hidden>
+    <div class="stack">
+      <nav class="rail" id="rail" aria-label="Steps of the flow"></nav>
+      <div id="flow1" class="stack">
+      <div class="ctl"><h3>Start on the globe. Choose a segment and a country, then zoom in.</h3><div class="chips" id="segchips"></div></div>
+      <div class="gl">
+        <aside class="gside" id="gleft"></aside>
+        <div class="gmid"><div style="position:relative"><div id="globe"></div><div class="gmsg" id="gmsg" style="pointer-events:none">Loading the globe…</div></div><div class="ghover" id="ghover">Drag to turn. Select a country.</div><button class="actbtn" id="zoombtn" type="button" style="align-self:center;background:var(--teal);color:var(--night);font-weight:600"></button></div>
+        <aside class="gside" id="gright"></aside>
+      </div>
+      </div>
+      <div id="fstage" class="stack" hidden></div>
+    </div>
+  </section>
+
+  <!-- VIEW model -->
+  <section id="v-model" hidden>
+    <div class="stack">
+      <div class="band core">
+        <div class="lhead"><h2>The EGRISS identification module</h2><span class="lnote">13 items, as defined in the identification questions repository. Teal border: core item.</span></div>
+        <div class="mstrip" id="mstrip"></div>
+      </div>
+      <div class="band">
+        <div class="lhead"><h2>Every questionnaire against the model</h2><span class="lnote" id="mxnote"></span></div>
+        <div class="legend" style="font-size:12px"><span><i class="sw" style="background:var(--teal)"></i>Same</span><span><i class="sw" style="background:var(--blue)"></i>Close</span><span><i class="sw" style="background:var(--gold)"></i>Partial</span><span><i class="sw" style="background:var(--red)"></i>Different</span><span>· not asked</span><span>number = questions coded to the item</span></div>
+        <div class="tw"><table class="mx" id="mx"></table></div>
+        <p class="lnote">Causes named: an automatic keyword match of the eight FrcFl causes in each questionnaire's wording (1 conflict, 2 violence, 3 persecution, 4 rights violations, 6 natural disasters, 7 man-made events). It is a first pass, not a coding. Causes 5 and 8 cannot be matched by keyword.</p>
+        <p class="lnote">The six codes on the right are used in the question bank but are not items of the module as the repository defines it. <code>CoOr</code> and <code>CitYN</code> look like earlier names for <code>LocLiv</code> and <code>CitLoc</code>. <i class="pill tbc">To confirm</i></p>
+      </div>
+      <div class="band" id="mdetail"></div>
+    </div>
+  </section>
+
+  <!-- VIEW structure -->
+  <section id="v-structure" hidden>
+    <div class="stack">
+      <div class="band core">
+        <div class="lhead"><h2>One shared record</h2><span class="lnote">plain CSV and JSON files, keyed by example ID and country code</span></div>
+        <div class="grid5">
+          <div class="node"><b>Examples</b><small>413 GAIN examples 2021 to 2025, with links and covers</small><span class="k">example_id</span><i class="pill ok" style="align-self:flex-start">Exists</i></div>
+          <div class="node"><b>Countries and populations</b><small>UNHCR, IDMC and DTM figures, maps and boundaries</small><span class="k">iso3</span><i class="pill ok" style="align-self:flex-start">Exists, fetched three times</i></div>
+          <div class="node"><b>Datasets and access</b><small>Who holds the microdata, questionnaire and report, and how to request them</small><span class="k">dataset_id → example_id</span><i class="pill new" style="align-self:flex-start">New</i></div>
+          <div class="node"><b>Indicator recipes</b><small>Per SDG value: numerator, denominator, variables, group variable, weight</small><span class="k">dataset_id + sdg</span><i class="pill tbc" style="align-self:flex-start">Exists as prose</i></div>
+          <div class="node"><b>Question bank</b><small>460 questions from 32 questionnaires, coded against the EGRISS module</small><span class="k">survey_id → dataset_id</span><i class="pill tbc" style="align-self:flex-start">Exists, not linked</i></div>
+        </div>
+      </div>
+      <div class="conn">▼ each site reads the same record and shows its own face of it ▼</div>
+      <div class="grid3">
+        <div class="band face">
+          <div class="lhead"><h2>GAIN story</h2><i class="pill plain">Flagship</i></div>
+          <p class="lnote">Shows everything about an example, and where the rest lives.</p>
+          <ul class="pages">
+            <li><span>The story<small>413 examples as points of light</small></span><i class="pill ok">Exists</i></li>
+            <li><span>Example card<small>Summary, method, groups, source link</small></span><i class="pill ok">Exists</i></li>
+            <li><span>Card layer: where the data is<small>Microdata, questionnaire, report, holder</small></span><i class="pill new">New</i></li>
+            <li><span>Card layer: SDG values<small>Opens the calculation on the SDG site</small></span><i class="pill new">New</i></li>
+            <li><span>Card layer: how people were identified<small>Opens the questionnaire in the question bank</small></span><i class="pill new">New</i></li>
+            <li><span>Country card<small>Examples by year, populations, maps</small></span><i class="pill ok">Exists</i></li>
+            <li><span>Dashboard and tracker</span><i class="pill ok">Exists</i></li>
+          </ul>
+        </div>
+        <div class="band face">
+          <div class="lhead"><h2>SDG map</h2></div>
+          <p class="lnote">Uses the data, and shows how each value was made.</p>
+          <ul class="pages">
+            <li><span>Map and globe<small>Countries shaded by strength of evidence</small></span><i class="pill ok">Exists</i></li>
+            <li><span>Country indicator cards<small>Value, population group, source</small></span><i class="pill ok">Exists</i></li>
+            <li><span>Calculation page per value<small>Equation, metadata, syntax, flags</small></span><i class="pill new">New</i></li>
+            <li><span>Identification step<small>Group variable, with a link to the questions asked</small></span><i class="pill new">New</i></li>
+            <li><span>Methodology record</span><i class="pill ok">Exists</i></li>
+            <li><span>Gaps and requests<small>Missing priority indicators, outreach targets</small></span><i class="pill tbc">Exists as files</i></li>
+          </ul>
+        </div>
+        <div class="band face">
+          <div class="lhead"><h2>Identification questions</h2></div>
+          <p class="lnote">Shows how the questions are asked and used.</p>
+          <ul class="pages">
+            <li><span>Causing events map<small>People displaced and events recorded, by cause</small></span><i class="pill ok">Exists</i></li>
+            <li><span>Crosswalk<small>Source categories to the eight response options</small></span><i class="pill ok">Exists</i></li>
+            <li><span>Localised question form</span><i class="pill ok">Exists</i></li>
+            <li><span>Question bank<small>One module item compared across surveys</small></span><i class="pill new">New</i></li>
+            <li><span>Questionnaire page<small>All questions in order, original excerpt, translation</small></span><i class="pill new">New</i></li>
+            <li><span>Contribute a questionnaire<small>Template and coding guide</small></span><i class="pill new">New</i></li>
+          </ul>
+        </div>
+      </div>
+      <div class="conn">▼ only where no one else holds the data ▼</div>
+      <div class="band">
+        <div class="lhead"><h2>Data portal</h2><i class="pill new">New</i><span class="lnote">a fallback, not a library</span></div>
+        <div class="grid5">
+          <div class="node"><b>1 · Linked elsewhere</b><small>The holder's microdata library has it. We link, people request there.</small></div>
+          <div class="node"><b>2 · Not hosted anywhere</b><small>We ask the producer to host it.</small></div>
+          <div class="node"><b>3 · Hosted by EGRISS</b><small>Only with the producer's permission, on their terms.</small></div>
+          <div class="node"><b>Request list</b><small>Ranked by how many SDG values and examples wait on each dataset.</small></div>
+        </div>
+        <p class="lnote">The process itself is to be designed with stakeholders.</p>
+      </div>
+      <div class="band">
+        <h3>How one example would be addressed across the sites (proposal)</h3>
+        <div class="grid3">
+          <div class="node"><span class="k">story/#example-186</span><small>FDS South Sudan, the card</small></div>
+          <div class="node"><span class="k">sdg/#SSD-6-1-1</span><small>The same dataset, one value explained</small></div>
+          <div class="node"><span class="k">questions/#FDS-SSD-2023</span><small>The same survey, its questions</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIEW bank -->
+  <section id="v-bank" hidden>
+    <div class="stack">
+      <div class="stats" id="bstats"></div>
+      <div class="ctl"><h3>How is this asked across surveys? Choose a module item</h3><div class="chips" id="bitems"></div></div>
+      <div class="bar3">
+        <div class="ctl"><h3>Alignment with the EGRISS module</h3><div class="chips" id="baligns"></div></div>
+        <div class="ctl"><label for="bsearch"><h3>Search the wording</h3></label><input class="search" id="bsearch" type="search" placeholder="for example: fuir, forced, seguridad"></div>
+      </div>
+      <p class="lnote" id="bcount"></p>
+      <div class="stack" id="blist" style="gap:10px"></div>
+    </div>
+  </section>
+
+  <!-- VIEW data -->
+  <section id="v-data" hidden>
+    <div class="stack">
+      <div class="band">
+        <div class="lhead"><h2>Datasets behind the calculated SDG values</h2></div>
+        <p class="lnote">One row per dataset. Holder and link are filled only where our files record them; the rest is the work of the access record.</p>
+        <div class="tw"><table class="tbl" id="dstbl"></table></div>
+      </div>
+      <div class="band">
+        <div class="lhead"><h2>Data we are asking for</h2><span class="lnote" id="askcount"></span></div>
+        <p class="lnote">From the three outreach lists in the SDG repository, shown as one request list.</p>
+        <div class="chips" id="askchips"></div>
+        <div class="tw"><table class="tbl" id="asktbl"></table></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/globe.gl@2.41.6/dist/globe.gl.min.js"></script>
+<div id="tip" role="tooltip" hidden></div>
+<script>
+const Q = __QDATA__;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const $ = id => document.getElementById(id);
+
+/* ---- variable chip + hover card ---- */
+function vchip(country, name){
+  const k = country+':'+name, d = Q.vq[k];
+  return d && d.url
+    ? `<a class="var" data-k="${esc(k)}" data-n="${esc(name)}" href="${esc(d.url)}" target="_blank" rel="noopener" aria-describedby="tip">${esc(name)}</a>`
+    : `<span class="var" tabindex="0" data-k="${esc(k)}" data-n="${esc(name)}" aria-describedby="tip">${esc(name)}</span>`;
+}
+function tipHtml(k, name){
+  const d = Q.vq[k];
+  if(!d) return `<span class="tn">${esc(name)}</span><span class="tq" style="color:var(--soft)">Question wording is not in our files yet.</span><span class="tw">To add from this survey's questionnaire or data dictionary.</span>`;
+  return `<span class="tn">${esc(name)}</span><span class="tq">${d.q?esc(d.q):'<span style="color:var(--soft)">No label in the data dictionary.</span>'}</span>`
+    + (d.cats.length?`<ul class="tc">${d.cats.map(c=>`<b>${esc(c[0])}</b><span>${esc(c[1])}</span>`).join('')}${d.more?`<b></b><span>and ${d.more} more</span>`:''}</ul>`:'')
+    + (d.note?`<span class="tw">${esc(d.note)}</span>`:'')
+    + (d.src?`<span class="ts">${esc(d.src)}${d.url?' · select to open the variable page':''}</span>`:'');
+}
+(function(){
+  const tip = $('tip'); let cur = null;
+  function place(el){
+    tip.innerHTML = tipHtml(el.dataset.k, el.dataset.n); tip.hidden = false;
+    const r = el.getBoundingClientRect(), w = tip.offsetWidth, hgt = tip.offsetHeight, vw = window.innerWidth, vh = window.innerHeight;
+    const left = Math.max(12, Math.min(r.left, vw - w - 12));
+    const top = (r.bottom + 8 + hgt > vh && r.top - 8 - hgt > 0) ? r.top - 8 - hgt : r.bottom + 8;
+    tip.style.left = left+'px'; tip.style.top = top+'px'; cur = el;
+  }
+  function hide(){ tip.hidden = true; cur = null }
+  document.addEventListener('pointerover', e=>{ const el = e.target.closest && e.target.closest('.var'); if(el) place(el); else if(cur) hide() });
+  document.addEventListener('focusin', e=>{ const el = e.target.closest && e.target.closest('.var'); if(el) place(el) });
+  document.addEventListener('focusout', hide);
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') hide() });
+  window.addEventListener('scroll', hide, {passive:true});
+})();
+
+/* ---- SDG recipes: values from gain_sdg_values_calculated.csv, method from GAIN_SDG_methodology_record.md ---- */
+const GROUP = 'Group variable <code>Intro_07</code> / <code>Intro_07_1</code>: refugees and host community (the file also has former refugees and returnees).';
+const IND = [
+ {c:'2.1.2', n:'Food insecurity', pri:false, r:90, h:90, out:'foodInsecure', label:'Percentage with a Food Consumption Score of 35 or less',
+  def:'WFP Food Consumption Score: days eaten in the last 7 for each of 8 food groups, multiplied by a weight (cereals 2, pulses 3, vegetables 1, fruit 1, meat and fish 4, dairy 4, sugar 0.5, oil 0.5) and summed. A score of 35 or less counts as food-insecure.',
+  num:'People in the group with a Food Consumption Score of 35 or less', den:'All people in the group', cond:'FCS ≤ 35', uni:'',
+  vars:['Food_div1','Food_div2','Food_div3','Food_div4','Food_div5','Food_div6','Food_div7','Food_div8'], level:'Household', levelTbc:true,
+  weight:'wgh_samp_resc_pop',
+  syn:['* cereals, pulses, dairy, meat and fish, vegetables, fruit, oil, sugar.','compute FCS = 2*Food_div1 + 3*Food_div2 + 4*Food_div3 + 4*Food_div4','            + 1*Food_div5 + 1*Food_div6 + 0.5*Food_div7 + 0.5*Food_div8.','recode FCS (lo thru 35 = 100) (else = 0) into foodInsecure.'],
+  flags:[['flag','The official SDG 2.1.2 is measured with the Food Insecurity Experience Scale. This value uses the Food Consumption Score, so it is a proxy.'],
+         ['plain','Not in the EGRISS priority set, which uses 2.2.1 (stunting). Kept as supplementary.']]},
+ {c:'4.1.2', n:'School attendance, ages 6 to 17', pri:false, r:81, h:47, out:'attending', label:'Percentage of children age 6-17 currently attending school',
+  def:'Children aged 6 to 17 who are currently attending school, as a share of all children aged 6 to 17.',
+  num:'Children aged 6 to 17 currently attending school', den:'All children aged 6 to 17', cond:'HH_Educ02a = yes', uni:'6 ≤ ageYears ≤ 17',
+  vars:['HH_Educ02a','ageYears'], level:'Household member (roster)', weight:null,
+  syn:['select if (ageYears >= 6 and ageYears <= 17).','recode HH_Educ02a (⟨yes code⟩ = 100) (else = 0) into attending.'],
+  flags:[['flag','The official SDG 4.1.2 is the completion rate. This value is current attendance, so the label should say attendance.'],
+         ['plain','Not in the EGRISS priority set, which uses 4.1.1 (learning proficiency).']]},
+ {c:'6.1.1', n:'Drinking water', pri:true, r:97, h:88, out:'improvedWater', label:'Percentage using improved sources of drinking water',
+  def:'WHO/UNICEF JMP ladder: share using an improved source (piped, borehole or tubewell, protected well or spring, rainwater, packaged or delivered water).',
+  num:'People in the group whose main drinking water source is improved', den:'All people in the group', cond:'BD01 ∈ improved', uni:'',
+  vars:['BD01'], level:'Household', levelTbc:true, weight:null,
+  syn:['* improved: piped and public tap (11 to 14), borehole (21), protected well (31), protected spring (41),','*           rainwater (51), tanker from protected source (61), cart (71), kiosk (72), packaged (91, 92).','recode BD01 (11 thru 14, 21, 31, 41, 51, 61, 71, 72, 91, 92 = 100) (else = 0) into improvedWater.'],
+  flags:[['flag','The official SDG 6.1.1 is safely managed water, which needs a water quality test. This survey cannot test water, so the value is the basic-water proxy and carries an asterisk on the map.'],
+         ['plain','Definition changed on 23 November 2026 to current JMP guidance: delivered water (tanker truck from a protected source, cart, kiosk) and packaged water now count as improved. South Sudan hosts move from 86% to 88%; Pakistan from 79% / 81% to 92% / 90%; Zambia does not change.'],['plain','No 30-minute rule is applied.']]},
+ {c:'6.2.1', n:'Sanitation', pri:false, r:58, h:18, out:'improvedSanitation', label:'Percentage using improved sanitation facilities',
+  def:'WHO/UNICEF JMP ladder: share using an improved facility (flush or pour-flush, ventilated improved pit, pit latrine with slab, composting toilet).',
+  num:'People in the group using an improved sanitation facility', den:'All people in the group', cond:'SAN01 ∈ improved', uni:'',
+  vars:['SAN01'], level:'Household', levelTbc:true, weight:null,
+  syn:['* improved: any flush toilet, ventilated improved pit, pit latrine with slab, composting toilet.','recode SAN01 (⟨codes of the improved facilities above⟩ = 100) (else = 0) into improvedSanitation.'],
+  flags:[['flag','The official SDG 6.2.1 is safely managed sanitation. This value is use of an improved facility.'],
+         ['plain','Found by recalculation: the published value counts every flush toilet (including flush to an open drain), ventilated and slab pit latrines and composting toilets. Shared facilities are not excluded.'],['flag','JMP treats a flush to an open drain as unimproved. Applying that lowers Pakistan from 74% to 72% for refugees and from 95% to 91% for hosts.']]},
+ {c:'7.1.1', n:'Access to electricity', pri:true, r:1, h:1, out:'electricity', label:'Percentage with access to electricity',
+  def:'Share of the population with access to electricity.',
+  num:'People in the group whose household has an electricity source (codes 1 to 6; none and torch excluded)', den:'All people in the group', cond:'HE01 ∈ 1..6', uni:'',
+  vars:['HE01'], level:'Household', levelTbc:true, weight:'wgh_samp_resc_pop',
+  syn:['recode HE01 (1 thru 6 = 100) (else = 0) into electricity.'], flags:[]},
+ {c:'16.9.1', n:'Birth registration, under 5', pri:true, r:62, h:27, out:'birthRegistered', label:'Percentage of children under age 5 whose births are registered',
+  def:'Children under 5 whose birth is registered, as a share of all children under 5.',
+  num:'Children under 5 whose birth is registered', den:'All children under 5', cond:'HH_07b = yes', uni:'ageYears < 5',
+  vars:['HH_07b','ageYears'], level:'Household member (roster), filtered to age under 5', weight:null,
+  syn:['select if (ageYears < 5).','recode HH_07b (⟨yes code⟩ = 100) (else = 0) into birthRegistered.'], flags:[]},
+ {c:'8.5.2', n:'Unemployment rate', pri:true, r:null, h:null, out:'', label:'',
+  def:'ILO: unemployed people divided by employed plus unemployed. Unemployed means not employed, actively looking for work and available to start.',
+  num:'People not employed, who looked for work and are available to start', den:'People employed plus people unemployed (the labour force)', cond:'unemployed', uni:'in labour force',
+  vars:['EMP20','EMP22'], level:'', weight:null, syn:null,
+  flags:[['flag','Not calculated for South Sudan. The first attempt gave 0 to 1%, because EMP20 and EMP22 measure underemployment of people who already work. The job-search question for people without work has to be located first.']]},
+];
+let curInd = '2.1.2';
+
+function barPair(r,h){
+  if(r==null) return '<span class="lnote">not calculated</span>';
+  return `<div class="bars"><div class="bar"><div class="track"><div class="fill r" style="width:${r}%"></div></div><span class="bv">${r}%</span></div>
+  <div class="bar"><div class="track"><div class="fill h" style="width:${h}%"></div></div><span class="bv" style="color:var(--dim)">${h}%</span></div></div>`;
+}
+function renderIndRows(){
+  $('indrows').innerHTML = IND.map(i=>`<button class="ind" type="button" data-c="${i.c}">
+    <span class="icode">${i.c}${i.pri?' ◆':''}</span>
+    <span class="iname">${esc(i.n)}${i.flags.some(f=>f[0]==='flag')?' <i class="pill flag">Check</i>':''}</span>
+    ${barPair(i.r,i.h)}<span class="go">how →</span></button>`).join('');
+  $('indrows').querySelectorAll('.ind').forEach(b=>b.onclick=()=>{curInd=b.dataset.c;location.hash='sdg';show('sdg')});
+}
+function synHtml(i){
+  const w = i.weight || '⟨weight variable⟩';
+  const L = [
+    `* GAIN SDG ${i.c}. ${i.n}. FDS South Sudan 2023.`,
+    `* Numerator:   ${i.num}.`,
+    `* Denominator: ${i.den}.`,
+    ``,
+    `get file = ⟨${i.level.startsWith('Household member')?'household member file':'household file'}⟩.`,
+    `weight by ${w}.`,
+    ``,
+    ...i.syn,
+    `variable labels ${i.out} "${i.label}".`,
+    ``,
+    `ctables`,
+    `  /table Intro_07 [c] by ${i.out} [s] [mean '' f5.1].`
+  ];
+  return L.map(l=>{
+    let s = esc(l).replace(/⟨([^⟩]*)⟩/g,'<span class="ph">$1</span>');
+    if(l.startsWith('*')) return `<span class="cm">${s}</span>`;
+    return s.replace(/^(\s*)(get file|weight by|select if|recode|compute|variable labels|ctables|\/table)/,'$1<span class="kw">$2</span>');
+  }).join('\n');
+}
+function renderSdg(){
+  $('indchips').innerHTML = Q.sdg.map(d=>`<button class="chip" type="button" id="chip-${d.c.replace(/\./g,'-')}" aria-pressed="${d.c===curInd}" data-c="${d.c}">${d.c}${d.pri?' ◆':''} · ${esc(d.n)}</button>`).join('');
+  $('indchips').querySelectorAll('.chip').forEach(b=>b.onclick=()=>{curInd=b.dataset.c;renderSdg()});
+  const d = Q.sdg.find(x=>x.c===curInd);
+  $('sdghead').innerHTML = `<div class="eqcard">
+    <div><p class="eyebrow">SDG ${d.c}${d.pri?' · ◆ EGRISS priority':' · supplementary'}</p><h2 style="font-size:22px;margin-top:6px">${esc(d.n)}</h2></div>
+    <div class="eq"><div class="fracv"><div class="n"><small>Numerator</small>${esc(d.num)}</div><div class="d"><small>Denominator</small>${esc(d.den)}</div></div><span class="eqop">× 100</span></div>
+    ${d.off?`<div class="fl"><i class="pill flag">Check</i><span>${esc(d.off)}</span></div>`:''}
+  </div>`;
+  $('svtitle').textContent = d.rows.length ? `How each survey measured it · ${d.rows.length} ${d.rows.length===1?'survey':'surveys'}` : 'No survey has a calculated value yet';
+  const bar=(lab,v,cls)=>`<div class="svbar"><span>${esc(lab)}</span><div class="track"><div class="fill ${cls}" style="width:${v}%"></div></div><span class="bv">${v}%</span></div>`;
+  const tbc='<i class="pill tbc">To confirm</i>';
+  $('svlist').innerHTML = d.rows.map(r=>`<article class="svc ${r.old?'old':''}">
+    <div class="svh"><b>${esc(r.country)}${r.year?' · '+esc(r.year):''}</b><span>${esc(r.fam)}</span></div>
+    <div class="svr">${bar(r.g1,r.r,'r')}${r.h!=null?bar(r.g2||'Host',r.h,'h'):`<span class="lnote">No comparison group in this survey</span>`}</div>
+    <div class="how">
+      <div class="howr"><span class="hk">Asked</span><div class="hv"><span>${esc(r.what)}</span><div class="vars">${r.vars.length?r.vars.map(v=>vchip(r.country,v)).join(''):`<span class="lnote">variable not named</span> ${tbc}`}</div></div></div>
+      <div class="howr"><span class="hk">Counted as</span><div class="hv"><span>${esc(r.rule)}</span></div></div>
+      <div class="howr"><span class="hk">Groups from</span><div class="hv">${r.gv?`<div class="vars">${vchip(r.country,r.gv)}</div>`:`<span>${r.h!=null?'The survey\'s sample strata':'The survey\'s sample'} <span class="lnote">(variable not named)</span></span>`}</div></div>
+      <div class="howr"><span class="hk">Weight</span><div class="hv">${r.w==='weighted'?`<span>Weighted <span class="lnote">(variable not named)</span></span>`:r.w==='unweighted'?`<span><i class="pill flag">Unweighted</i></span>`:r.w?`<div class="vars">${r.w.split(' / ').map(v=>vchip(r.country,v)).join(' ')}</div>`:`<span>${tbc}</span>`}</div></div>
+    </div>
+    ${r.old?`<div class="fl"><i class="pill plain">Before 2018</i><span>Outside the map's time scope.</span></div>`:''}
+    ${!r.year?`<div class="fl">${tbc}<span>Year not recorded.</span></div>`:''}
+  </article>`).join('');
+  const has = IND.some(x=>x.c===curInd);
+  $('fulldet').hidden = !has;
+  if(has) renderRecipe();
+}
+function renderRecipe(){
+  const i = IND.find(x=>x.c===curInd), done = i.r!=null;
+  const pillOf = k => k==='flag'?'<i class="pill flag">Check</i>':k==='tbc'?'<i class="pill tbc">To confirm</i>':'<i class="pill plain">Note</i>';
+  const tbc = '<i class="pill tbc">To confirm</i>';
+  const g = 'Intro_07 = g' + (i.uni?`, ${i.uni}`:'');
+  $('recipe').innerHTML = `
+  <div class="eqcard" style="grid-column:1/-1">
+    <div><p class="eyebrow">SDG ${i.c}${i.pri?' · ◆ EGRISS priority':''} · South Sudan 2023 · calculated from microdata</p><h2 style="font-size:22px;margin-top:6px">${esc(i.n)}</h2></div>
+    <div class="eq">
+      <div class="fracv"><div class="n"><small>Numerator</small>${esc(i.num)}</div><div class="d"><small>Denominator</small>${esc(i.den)}</div></div>
+      <span class="eqop">× 100 ${done?'=':''}</span>
+      ${done?`<div class="eqres">
+        <div><div class="bigv" style="color:var(--teal)">${i.r}%</div><div class="bigl">Refugees</div></div>
+        <div><div class="bigv" style="color:var(--soft)">${i.h}%</div><div class="bigl">Host population</div></div></div>`
+      :`<span class="pill flag">Not calculated</span>`}
+    </div>
+    <div class="est">
+      <div class="estrow"><span>${i.c}<sub>g</sub> =</span>
+        <span class="estf"><span>Σ w<sub>i</sub> · 1[ ${esc(i.cond)} ]</span><span>Σ w<sub>i</sub></span></span>
+        <span>× 100</span></div>
+      <p>summed over records i with ${esc(g)} · g = refugees, host community · w = ${i.weight?esc(i.weight):'survey weight (variable to confirm)'}</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Indicator metadata</h3>
+    <table class="meta">
+      <tr><th>Indicator</th><td>${esc(i.label||i.n)}</td></tr>
+      <tr><th>SDG reference</th><td>${i.c}${i.pri?' · EGRISS priority indicator':' · supplementary, not in the EGRISS priority set'}</td></tr>
+      <tr><th>Definition</th><td>${esc(i.def)}</td></tr>
+      <tr><th>Numerator</th><td>${esc(i.num)}</td></tr>
+      <tr><th>Denominator</th><td>${esc(i.den)}</td></tr>
+      <tr><th>Variables</th><td>${i.vars.map(v=>vchip('South Sudan',v)).join(' ')}${i.level?`<br><small style="color:var(--dim)">Asked at: ${esc(i.level)} ${i.levelTbc?tbc:''}</small>`:''}</td></tr>
+      <tr><th>Disaggregation</th><td>${vchip('South Sudan','Intro_07_1')}: refugees, asylum-seekers and two host community groups<br><small style="color:var(--dim)">The identification questions ID_00 to ID_09 are in the same file. Whether they give the same groups has not been compared yet.</small></td></tr>
+      <tr><th>Weight</th><td>${!done?'Not applicable':i.weight?vchip('South Sudan',i.weight):`Weighted ${tbc}<br><small style="color:var(--dim)">The values file says weighted but does not name the variable for this indicator.</small>`}</td></tr>
+      <tr><th>Comparison</th><td>Host population: people living close to refugees, sampled in the same survey. A national figure is not in this survey.</td></tr>
+      <tr><th>Dataset</th><td><a href="https://microdata.unhcr.org/index.php/catalog/1175" target="_blank" rel="noopener">UNHCR Microdata Library, catalogue entry 1175 ↗</a> · GAIN example 186</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Tabulation syntax</h3>
+    ${i.syn?`<pre class="syn">${synHtml(i)}</pre>
+    <p class="lnote">Written out from the methodology record in the layout of the MICS tabulation syntax files. It is not the script that produced the value: that script is not in the repository. Gold marks what the record does not state.</p>`
+    :`<p style="color:var(--soft)">No syntax: the indicator was not calculated for this survey.</p>`}
+    ${i.flags.length?`<h3 style="margin-top:6px">Read with care</h3><div class="flags">${i.flags.map(f=>`<div class="fl">${pillOf(f[0])}<span>${esc(f[1])}</span></div>`).join('')}</div>`:''}
+  </div>`;
+}
+
+/* ---- questions ---- */
+const ITEM = {FrcFl:'Forced to flee',CitYN:'Citizenship',Legal:'Legal document',AbleRet:'Able to return',Apply:'Applied for protection',IntApply:'Intended to apply',Outcome:'Outcome of application',FleeCross:'Crossed a border','12Mnths':'12 months abroad',CoOr:'Country of origin',ResMig:'Reason for migration',ResMov:'Reason for move',ArOr:'Arrival / origin',IDPLoc:'IDP location',IDPPost:'IDP after return',FleeLoc:'Where fled to',FrcOth:'Other forced reason'};
+const INST = {
+  ssd:{name:'FDS South Sudan 2023', lang:'English', status:'Published', pub:true,
+       info:'UNHCR Forced Displacement Survey · questionnaire is public on unhcr.org · GAIN example 186'},
+  mli:{name:'Mali EMOP 2026, displacement module', lang:'French', status:'Draft, not public', pub:false,
+       info:'INSTAT permanent modular household survey, module version 4 · first 12 of 32 questions shown · GAIN example 217'}
+};
+let curInst='ssd', curLang='en';
+try{ curLang = localStorage.getItem('gl-lang') || 'en' }catch(e){}
+
+function renderFlow(){
+  $('flow').innerHTML = Q.ssd.map(q=>`<span class="qchip" title="${esc(q.orig)}"><i class="dot d-${q.item==='none'?'none':q.align}"></i>${esc(q.id)}${q.item!=='none'?` · ${esc(ITEM[q.item]||q.item)}`:''}</span>`).join('');
+}
+function renderQ(){
+  $('instchips').innerHTML = Object.entries(INST).map(([k,v])=>`<button class="chip" type="button" id="inst-${k}" aria-pressed="${k===curInst}" data-k="${k}">${esc(v.name)}</button>`).join('');
+  $('instchips').querySelectorAll('.chip').forEach(b=>b.onclick=()=>{curInst=b.dataset.k;renderQ()});
+  $('langchips').innerHTML = [['en','English'],['fr','Français']].map(([k,v])=>`<button class="chip" type="button" id="lang-${k}" aria-pressed="${k===curLang}" data-k="${k}">${v}</button>`).join('');
+  $('langchips').querySelectorAll('.chip').forEach(b=>b.onclick=()=>{curLang=b.dataset.k;try{localStorage.setItem('gl-lang',curLang)}catch(e){};renderQ()});
+  const I = INST[curInst], list = Q[curInst];
+  const coded = list.filter(q=>q.item!=='none').length;
+  $('instinfo').innerHTML = `<i class="pill ${I.pub?'ok':'flag'}">${I.status}</i><span>Original language: ${I.lang}</span><span>${list.length} questions shown, ${coded} coded against the EGRISS module</span><span style="color:var(--dim)">${esc(I.info)}</span>`;
+  $('qlist').innerHTML = list.map(q=>{
+    const focus = q.item!=='none';
+    let tr = '';
+    if(curLang!==q.lang){
+      const t = curLang==='en' ? q.en : (q.fr||'');
+      const draft = curLang==='fr' || q.enBy!=='original';
+      if(t) tr = `<div class="tr"><span>${curLang==='en'?'English':'Français'} ${draft?'· <i class="pill draft">Draft</i>':''}</span><p>${esc(t)}</p></div>`;
+    }
+    const where = q.url ? `<a href="${esc(q.url)}#page=${esc(q.page)}" target="_blank" rel="noopener">Open the original at page ${esc(q.page)} ↗</a>` : `<span>${esc(q.loc)} · not public</span>`;
+    const slot = !focus ? '' : I.pub
+      ? `<div class="slot"><i class="pill plain">Excerpt</i><span>Image of this question as printed, cropped from page ${esc(q.page)}, goes here. The UNHCR site refused an automated download.</span></div>`
+      : `<div class="slot held"><i class="pill flag">Held</i><span>No image shown: draft questionnaire, needs the producer's agreement first.</span></div>`;
+    return `<article class="q ${focus?'focus':''}">
+      <div class="qid">${esc(q.id)}</div>
+      <div class="qbody">
+        ${focus?`<div class="qtags"><i class="pill plain">${esc(ITEM[q.item]||q.item)} · ${esc(q.item)}</i><i class="pill a-${q.align}">${esc(q.align)}</i>${q.disc!=='none'&&q.disc!=='n.a.'?`<span class="qmeta">differs on ${esc(q.disc)}</span>`:''}</div>`:''}
+        <div class="asprinted"><span>As printed · ${q.lang==='fr'?'French':'English'}</span><p>${esc(q.orig)}</p></div>
+        ${tr}
+        <ul class="opts">${q.opts.map(o=>`<li>${esc(o)}</li>`).join('')}</ul>
+        ${slot}
+        <div class="qmeta"><b>Asked of:</b> ${esc(q.uni)}</div>
+        ${q.note?`<div class="qmeta"><b>Coding note:</b> ${esc(q.note)}</div>`:''}
+        <div class="qmeta">${where}</div>
+      </div></article>`;
+  }).join('');
+}
+
+/* ---- question bank ---- */
+let bItem='FrcFl', bAlign='all', bText='';
+function renderBank(){
+  const B=Q.bank, coded=B.filter(r=>r[2]!=='none');
+  $('bstats').innerHTML=`<span><b>${B.length}</b>questions transcribed</span><span><b>${Q.surveys.length}</b>questionnaires</span><span><b>${new Set(Q.surveys.map(s=>s[0])).size}</b>countries or groups</span><span><b>${coded.length}</b>coded against the module</span>`;
+  const counts={}; coded.forEach(r=>counts[r[2]]=(counts[r[2]]||0)+1);
+  const items=Object.keys(counts).sort((a,b)=>counts[b]-counts[a]);
+  $('bitems').innerHTML=[['all','All coded',coded.length],['none','Not coded',B.length-coded.length]].concat(items.map(k=>[k,ITEM[k]||k,counts[k]]))
+    .map(([k,n,c])=>`<button class="chip" type="button" id="bi-${k}" aria-pressed="${k===bItem}" data-k="${k}">${esc(n)} · ${c}</button>`).join('');
+  $('bitems').querySelectorAll('.chip').forEach(b=>b.onclick=()=>{bItem=b.dataset.k;renderBank()});
+  $('baligns').innerHTML=['all','same','close','partial','different'].map(k=>`<button class="chip" type="button" id="ba-${k}" aria-pressed="${k===bAlign}" data-k="${k}">${k==='all'?'Any':k}</button>`).join('');
+  $('baligns').querySelectorAll('.chip').forEach(b=>b.onclick=()=>{bAlign=b.dataset.k;renderBank()});
+  const t=bText.trim().toLowerCase();
+  const hit=B.filter(r=>(bItem==='all'?r[2]!=='none':r[2]===bItem)&&(bAlign==='all'||r[3]===bAlign)&&(!t||(r[5]+' '+r[7]+' '+r[9]).toLowerCase().includes(t)));
+  const by=new Map(); hit.forEach(r=>{if(!by.has(r[0]))by.set(r[0],[]);by.get(r[0]).push(r)});
+  $('bcount').textContent=`${hit.length} questions in ${by.size} questionnaires`;
+  $('blist').innerHTML=[...by].map(([s,rs])=>`<div class="grp"><div class="grph"><b>${esc(Q.surveys[s][0])}</b><span>${esc(Q.surveys[s][1])}</span></div>${rs.map(r=>`
+    <div class="bq"><div class="l"><span class="qid">${esc(r[1])}</span>${r[2]!=='none'?`<i class="pill a-${r[3]}">${esc(r[3])}</i>`:''}${r[4]!=='n.a.'&&r[4]!=='none'?`<span class="qmeta">${esc(r[4])}</span>`:''}</div>
+      <div class="t"><div class="o">${esc(r[5])}</div>${r[7]?`<div class="e">${esc(r[7])} ${r[8]?'<i class="pill draft">Draft</i>':''}</div>`:''}
+      <details><summary>Response options and coding note</summary><p>${esc(r[9])}</p>${r[10]?`<p style="margin-top:6px">${esc(r[10])}</p>`:''}</details></div></div>`).join('')}</div>`).join('')
+    || '<p class="lnote">Nothing matches.</p>';
+}
+$('bsearch').addEventListener('input',e=>{bText=e.target.value;renderBank()});
+
+/* ---- data and requests ---- */
+const HOLD={'UNHCR SSD FDS':['UNHCR Microdata Library','https://microdata.unhcr.org/index.php/catalog/1175','GAIN example 186'],'UNHCR PAK FDS':['UNHCR Microdata Library','https://microdata.unhcr.org/index.php/catalog/1421','GAIN example 191']};
+let askF='all';
+function askKind(s){s=s.toLowerCase();return s.startsWith('done')?'done':s.startsWith('partial')?'partial':s.includes('low')?'low':'ask'}
+function renderData(){
+  $('dstbl').innerHTML='<tr><th>Dataset</th><th>Country</th><th>Year</th><th>SDG values</th><th>Holder</th><th>Access record</th></tr>'+Q.datasets.map(d=>{
+    const k=HOLD[d.src];
+    return `<tr><td><b style="font-weight:600">${esc(d.src)}</b></td><td>${esc(d.country)}</td><td>${esc(d.year||'')}${d.year?'':'<i class="pill tbc">To confirm</i>'}</td><td>${d.inds.map(x=>`<code>${x}</code>`).join(' ')}</td>
+    <td>${k?esc(k[0])+`<br><small>${k[2]}</small>`:'<i class="pill tbc">To confirm</i>'}</td>
+    <td>${k?`<i class="pill ok">Linked</i> <a href="${k[1]}" target="_blank" rel="noopener">open ↗</a>`:'<i class="pill plain">Link to add</i>'}</td></tr>`}).join('');
+  const kinds={all:'All',ask:'To reach out',partial:'Partly in hand',done:'Done',low:'Low priority'};
+  const n=k=>k==='all'?Q.asks.length:Q.asks.filter(a=>askKind(a.status)===k).length;
+  $('askchips').innerHTML=Object.entries(kinds).map(([k,v])=>`<button class="chip" type="button" id="ak-${k}" aria-pressed="${k===askF}" data-k="${k}">${v} · ${n(k)}</button>`).join('');
+  $('askchips').querySelectorAll('.chip').forEach(b=>b.onclick=()=>{askF=b.dataset.k;renderData()});
+  const rows=Q.asks.filter(a=>askF==='all'||askKind(a.status)===askF);
+  $('askcount').textContent=`${Q.asks.length} requests in ${new Set(Q.asks.map(a=>a.country)).size} countries`;
+  const pc={ask:'tbc',partial:'plain',done:'ok',low:'plain'};
+  $('asktbl').innerHTML='<tr><th>Country</th><th>What we need</th><th>Ask</th><th>Population</th><th>Status</th></tr>'+rows.map(a=>`<tr><td><b style="font-weight:600">${esc(a.country)}</b>${a.ex?`<br><small>${esc(a.ex)}</small>`:''}</td><td>${esc(a.what)}</td><td>${esc(a.who)}</td><td>${esc(a.pop)}</td><td><i class="pill ${pc[askKind(a.status)]}">${esc(a.status)}</i></td></tr>`).join('');
+}
+
+/* ---- model matrix ---- */
+const EXTRA=['CoOr','CitYN','ResMov','ResMig','ArOr','AbleRet'];
+const RANK={same:0,close:1,partial:2,different:3};
+let mSel=null;
+function bankFor(s,code){return Q.bank.filter(r=>r[0]===s&&r[2]===code)}
+function renderModel(){
+  $('mstrip').innerHTML=Q.model.map(m=>`<div class="mi ${m.core?'core':''}"><span class="k">${esc(m.code)} · ${esc(m.title)}</span><span>${esc(m.stem)}</span><small>${esc(m.skip)}${m.core?' · core':' · optional'}</small></div>`).join('');
+  const cols=Q.model.map(m=>m.code).concat(EXTRA);
+  const order=Q.surveys.map((s,i)=>i).sort((a,b)=>Q.surveys[a][0].localeCompare(Q.surveys[b][0]));
+  const cnt={}; cols.forEach(c=>cnt[c]=new Set(Q.bank.filter(r=>r[2]===c).map(r=>r[0])).size);
+  $('mxnote').textContent=`${Q.surveys.length} questionnaires, ${Q.bank.filter(r=>r[2]!=='none').length} coded questions`;
+  $('mx').innerHTML='<tr><th class="nm">Questionnaire</th>'+cols.map((c,j)=>{const m=Q.model.find(x=>x.code===c);return `<th class="${m&&m.core?'core':''} ${j===Q.model.length?'gap':''}" title="${esc(m?m.title:(ITEM[c]||c))}">${esc(c)}<small>${cnt[c]}/${Q.surveys.length}</small></th>`}).join('')+'<th class="gap">Causes named</th></tr>'
+   +order.map(s=>`<tr><td class="nm"><b>${esc(Q.surveys[s][0])}</b><span>${esc(Q.surveys[s][1])}</span></td>`+cols.map((c,j)=>{
+      const rs=bankFor(s,c); if(!rs.length) return `<td class="${j===Q.model.length?'gap':''}"><span class="nocell">·</span></td>`;
+      const best=rs.map(r=>r[3]).sort((a,b)=>(RANK[a]??9)-(RANK[b]??9))[0], cls=RANK[best]!=null?best:'other';
+      return `<td class="${j===Q.model.length?'gap':''}"><button class="cell ${cls}" type="button" id="c-${s}-${c}" data-s="${s}" data-c="${c}" aria-pressed="${mSel&&mSel[0]===s&&mSel[1]===c}" aria-label="${esc(Q.surveys[s][0])}, ${esc(c)}, ${esc(best)}">${rs.length}</button></td>`}).join('')
+      +`<td class="gap"><span class="cz" title="Causes 1, 2, 3, 4, 6, 7">${[1,2,3,4,6,7].map(k=>`<i class="${(Q.cause[s]||[]).includes(k)?'on':''}"></i>`).join('')}</span></td></tr>`).join('');
+  $('mx').querySelectorAll('.cell').forEach(b=>b.onclick=()=>{mSel=[+b.dataset.s,b.dataset.c];renderModel()});
+  if(!mSel){ $('mdetail').innerHTML='<p class="lnote">Select a coloured cell to compare that questionnaire\'s wording with the model item.</p>'; return }
+  const [s,c]=mSel, m=Q.model.find(x=>x.code===c), rs=bankFor(s,c);
+  $('mdetail').innerHTML=`<div class="lhead"><h2>${esc(Q.surveys[s][0])} · ${esc(c)}</h2><span class="lnote">${esc(Q.surveys[s][1])}</span></div>
+   <div class="cmp"><div class="mi ${m&&m.core?'core':''}"><h3>EGRISS model</h3>${m?`<span class="k">${esc(m.code)} · ${esc(m.title)}</span><span style="font-size:15px">${esc(m.stem)}</span><small>${esc(m.skip)}</small>${m.opts.length?`<ul class="opts">${m.opts.map(o=>`<li>${esc(o)}</li>`).join('')}</ul>`:''}`:`<span class="k">${esc(c)} · ${esc(ITEM[c]||c)}</span><span>Not an item of the module as defined in the repository.</span>`}</div>
+   <div class="stack" style="gap:8px"><h3>This questionnaire</h3>${rs.map(r=>`<div class="bq"><div class="l"><span class="qid">${esc(r[1])}</span><i class="pill a-${r[3]}">${esc(r[3])}</i>${r[4]!=='n.a.'&&r[4]!=='none'?`<span class="qmeta">${esc(r[4])}</span>`:''}</div>
+     <div class="t"><div class="o">${esc(r[5])}</div>${r[7]?`<div class="e">${esc(r[7])} ${r[8]?'<i class="pill draft">Draft</i>':''}</div>`:''}<div class="qmeta">${esc(r[9])}</div>${r[10]?`<div class="qmeta"><b>Coding note:</b> ${esc(r[10])}</div>`:''}</div></div>`).join('')}</div></div>`;
+}
+
+/* ---- shared globe ---- */
+const SEG={all:{n:'All in one',col:'#4cc3c9',t:'Everything the three sites hold for a country, on one card.'},
+           story:{n:'GAIN story',col:'#4cc3c9',t:'Where countries and institutions reported implementing the recommendations, 2021 to 2025.'},
+           sdg:{n:'SDG indicators',col:'#5b8fd9',t:'Where an SDG value exists for refugees, IDPs or stateless people, and how each survey produced it.'},
+           idq:{n:'Identification questions',col:'#e0a93b',t:'Where a questionnaire has been mapped against the EGRISS module, and which causes of displacement the evidence supports.'}};
+const CZ=['','Armed conflict or war','Widespread violence','Discrimination or persecution','Rights violations by authorities','Other threats of violence','Natural disasters','Man-made events','A different threat'];
+let seg='all', gSel='SSD', world=null, globeTried=false;
+const sdgRows=iso=>{const o=[];Q.sdg.forEach(d=>d.rows.forEach(r=>{if(r.iso===iso)o.push([d,r])}));return o};
+const nseg=iso=>['story','sdg','idq'].filter(s=>has(iso,s)).length;
+function has(iso,s){const c=Q.ctry[iso]; if(!c) return 0; if(s==='all') return nseg(iso); return s==='story'?c.ex.length:s==='sdg'?(sdgRows(iso).length+c.rep.length):c.sv.length}
+function gcol(f){const iso=f.properties.i; if(iso===gSel) return '#ffffff'; const n=has(iso,seg); if(!n) return '#33415f';
+  if(seg==='all') return n===3?'#e0a93b':n===2?'#4cc3c9':'#3b6f9a'; if(seg==='sdg') return sdgRows(iso).length?'#4cc3c9':'#5b8fd9'; return SEG[seg].col}
+function galt(f){const iso=f.properties.i; return iso===gSel?0.07:has(iso,seg)?0.025:0.008}
+function fly(iso){const c=Q.cent[iso]; if(world&&c){world.controls().autoRotate=false;world.pointOfView({lat:c[0],lng:c[1],altitude:1.5},900)}}
+function repaint(){ if(world) world.hexPolygonColor(gcol).hexPolygonAltitude(galt) }
+function pick(iso,move){ if(!Q.ctry[iso]||!has(iso,seg)) return; gSel=iso; fSrc=null; fInd=null; repaint(); if(move) fly(iso); renderGlobeSides() }
+function initGlobe(){
+  if(globeTried) return; globeTried=true;
+  const el=$('globe');
+  try{
+    if(typeof Globe==='undefined') throw new Error('library not loaded');
+    world=Globe()(el).width(el.clientWidth).height(el.clientHeight).backgroundColor('rgba(0,0,0,0)')
+      .showGlobe(true).showAtmosphere(true).atmosphereColor('#4cc3c9').atmosphereAltitude(0.16).globeImageUrl(null)
+      .hexPolygonsData(Q.geo).hexPolygonResolution(3).hexPolygonMargin(0.28).hexPolygonColor(gcol).hexPolygonAltitude(galt).hexPolygonsTransitionDuration(250)
+      .onHexPolygonHover(f=>{$('ghover').textContent=f?(f.properties.n+(has(f.properties.i,seg)?' · select to open':' · nothing in this segment')):'Drag to turn. Select a country.'})
+      .onHexPolygonClick(f=>{if(f)pick(f.properties.i,false)});
+    const gm=world.globeMaterial(); if(gm){gm.color&&gm.color.set('#0e2042'); if(gm.emissive)gm.emissive.set('#0a1830')}
+    const ct=world.controls(); ct.autoRotate=true; ct.autoRotateSpeed=0.3; ct.enableZoom=false;
+    el.addEventListener('pointerdown',()=>{ct.autoRotate=false});
+    world.pointOfView({lat:8,lng:28,altitude:1.75},0);
+    window.addEventListener('resize',()=>{world.width(el.clientWidth).height(el.clientHeight)});
+    $('gmsg').hidden=true;
+  }catch(e){ world=null; $('gmsg').textContent='The globe could not start here ('+e.message+'). The country lists on the left still work.' }
+}
+const PAGES={
+ story:[['The story, 413 examples','https://mitrovif.github.io/GAIN-story/',1],['Example and country cards','https://mitrovif.github.io/GAIN-story/',1],['Card layers: data, SDG values, identification','example',0]],
+ sdg:[['SDG map and globe','https://mitrovif.github.io/gain_sdg_workstream/globe.html',1],['Country indicator cards','https://mitrovif.github.io/gain_sdg_workstream/sdg-map.html',1],['Calculation per survey, with question wording','sdg',0],['Data and requests','data',0]],
+ idq:[['Causing events map','https://mitrovif.github.io/idq-map/map.html',1],['Crosswalk','https://mitrovif.github.io/idq-map/crosswalk.html',1],['Question form and builder','https://mitrovif.github.io/idq-map/questions.html',1],['Questionnaires against the model','model',0],['Question bank','bank',0]]};
+function pagesBlock(){
+  const ks = seg==='all'?['story','sdg','idq']:[seg];
+  return `<div class="gsec"><h3>Pages in this ${seg==='all'?'site':'segment'}</h3>${ks.map(k=>`${seg==='all'?`<span class="lnote">${SEG[k].n}</span>`:''}<ul class="pages">${PAGES[k].map(p=>p[2]
+    ?`<li><a href="${p[1]}" target="_blank" rel="noopener">${esc(p[0])} ↗</a><i class="pill ok">Exists</i></li>`
+    :`<li><button type="button" data-go="${p[1]}" style="background:none;border:0;padding:0;color:var(--teal);font:inherit;text-align:left;cursor:pointer">${esc(p[0])}</button><i class="pill new">New</i></li>`).join('')}</ul>`).join('')}</div>`;
+}
+let LASTB={story:'',sdg:'',idq:''};
+function renderGlobe(){
+  $('segchips').innerHTML=Object.entries(SEG).map(([k,v])=>`<button class="chip" type="button" id="seg-${k}" aria-pressed="${k===seg}" data-k="${k}">${v.n}</button>`).join('');
+  $('segchips').querySelectorAll('.chip').forEach(b=>b.onclick=()=>{seg=b.dataset.k; if(!has(gSel,seg)){const first=Object.keys(Q.ctry).filter(i=>has(i,seg)).sort((a,b)=>has(b,seg)-has(a,seg))[0]; gSel=first} repaint(); renderGlobe()});
+  initGlobe(); renderGlobeSides(); renderFlow();
+}
+function renderGlobeSides(){
+  const list=Object.keys(Q.ctry).filter(i=>has(i,seg)).sort((a,b)=>seg==='all'?(has(b,seg)-has(a,seg)||Q.ctry[a].n.localeCompare(Q.ctry[b].n)):Q.ctry[a].n.localeCompare(Q.ctry[b].n));
+  const unit=seg==='all'?'of 3 segments':seg==='story'?'examples':seg==='sdg'?'values':'questionnaires';
+  $('gleft').innerHTML=`<div class="gsec"><h2 style="font-size:17px">${SEG[seg].n}</h2><p class="lnote">${SEG[seg].t}</p>
+    ${seg==='all'?'<div class="legend" style="font-size:12px"><span><i class="sw" style="background:#e0a93b"></i>In all three</span><span><i class="sw" style="background:#4cc3c9"></i>In two</span><span><i class="sw" style="background:#3b6f9a"></i>In one</span></div>':seg==='sdg'?'<div class="legend" style="font-size:12px"><span><i class="sw" style="background:#4cc3c9"></i>Calculated from microdata</span><span><i class="sw" style="background:#5b8fd9"></i>From published reports only</span></div>':`<div class="legend" style="font-size:12px"><span><i class="sw" style="background:${SEG[seg].col}"></i>${seg==='story'?'Has GAIN examples':'Questionnaire in the bank'}</span></div>`}</div>
+    ${pagesBlock()}
+    <div class="gsec"><h3>${list.length} countries</h3><div class="clist">${list.map(i=>`<button class="crow" type="button" id="cr-${i}" data-i="${i}" aria-pressed="${i===gSel}"><span>${esc(Q.ctry[i].n)}</span><span>${has(i,seg)} ${has(i,seg)===1&&seg!=='all'?unit.slice(0,-1):unit}</span></button>`).join('')}</div>
+    ${seg==='idq'?'<p class="lnote">EHCVM 2026 covers 10 countries and is not placed on the globe yet.</p>':''}</div>`;
+  $('gleft').querySelectorAll('.crow').forEach(b=>b.onclick=()=>pick(b.dataset.i,true));
+  const c=Q.ctry[gSel]; if(!c){$('gright').innerHTML='';return}
+  const fmt=n=>Number(n).toLocaleString('en');
+  const bStory=()=>(c.pop?`<div class="gsec"><h3>Who lives there · end of ${c.pop[0]}</h3><div class="rows">${[['Refugees and asylum-seekers',c.pop[1]],['Internally displaced people',c.pop[2]],['Stateless people',c.pop[3]]].map(([l,v])=>`<div class="pop" style="grid-template-columns:minmax(0,1fr) auto"><span>${l}</span><span class="pv">${fmt(v)}</span></div>`).join('')}</div></div>`:'')
+     +`<div class="gsec"><h3>${c.ex.length} GAIN examples</h3><div class="rows">${c.ex.map(e=>`<div class="oex"><span>${e[1]}</span><span>${esc(e[2])}<br><small style="color:var(--dim)">${esc(e[3])}</small>${e[0]===186?' <button class="actbtn" style="min-height:30px;margin-top:6px;font-size:13px" type="button" data-go="example">Open the card with its layers</button>':''}</span></div>`).join('')}</div></div>`;
+  const bSdg=()=>{ const rows=sdgRows(gSel), by=new Map(); rows.forEach(([d,r])=>{const k=r.src; if(!by.has(k))by.set(k,[]); by.get(k).push([d,r])});
+    return [...by].map(([k,rs])=>{const r0=rs[0][1]; return `<div class="gsec"><h3>${esc(r0.fam)}${r0.year?' · '+esc(r0.year):''}</h3>
+      <div class="isub"><span>Groups from</span>${r0.gv?vchip(r0.country,r0.gv):'<span>the survey\'s sample</span>'}<span>· ${esc(r0.g1)}${r0.g2?' against '+esc(r0.g2.toLowerCase()):''}</span></div>
+      <div>${rs.map(([d,r])=>`<div class="irow"><div class="itop"><span class="icode">${d.c}${d.pri?' ◆':''}</span><span>${esc(d.n)}</span><b>${r.r}%${r.h!=null?` <span style="color:var(--dim);font-weight:400">· ${r.h}%</span>`:''}</b></div>
+        <div class="isub"><span>Asked: ${esc(r.what)}</span>${r.vars.map(v=>vchip(r.country,v)).join('')}</div>
+        <div class="isub"><span>Counted as: ${esc(r.rule)}</span></div>
+        <div class="isub"><span>Weight:</span>${r.w==='weighted'?'<span>weighted</span>':r.w==='unweighted'?'<i class="pill flag">Unweighted</i>':r.w?r.w.split(' / ').map(v=>vchip(r.country,v)).join(' '):'<i class="pill tbc">To confirm</i>'}</div></div>`).join('')}</div>
+      <p class="lnote">First figure: ${esc(r0.g1.toLowerCase())}. Second: ${r0.g2?esc(r0.g2.toLowerCase()):'no comparison group'}.</p></div>`}).join('')
+     +(c.rep.length?`<div class="gsec"><h3>From published reports · ${c.rep.length}</h3><div>${c.rep.map(r=>`<div class="irow"><div class="itop"><span class="icode">${esc(r[0])}</span><span>${esc(r[2])}</span><b>${esc(r[1])}</b></div><div class="isub"><span>${esc(r[3])}${r[4]?', p. '+esc(r[4]):''} · ${esc(r[5])}</span></div></div>`).join('')}</div><p class="lnote">Report values have a source and page, not a calculation.</p></div>`:'')
+     +(rows.length?`<div class="gsec"><button class="actbtn" style="align-self:flex-start" type="button" data-go="sdg">Compare surveys for one indicator</button></div>`:'');
+  };
+  const bIdq=()=>`<div class="gsec"><h3>Questionnaires mapped · ${c.sv.length}</h3>${c.sv.map(s=>{
+        const items=Q.model.map(m=>{const rs=bankFor(s,m.code); if(!rs.length) return ''; const best=rs.map(r=>r[3]).sort((a,b)=>(RANK[a]??9)-(RANK[b]??9))[0]; return `<span class="qchip"><i class="dot d-${RANK[best]!=null?best:'none'}"></i>${esc(m.code)}</span>`}).join('');
+        return `<div class="irow"><b style="font-weight:600">${esc(Q.surveys[s][1])}</b><div class="flow">${items||'<span class="lnote">No module item coded</span>'}</div>
+          <div class="isub"><span>${Q.model.filter(m=>bankFor(s,m.code).length).length} of 13 module items asked · ${Q.bank.filter(r=>r[0]===s).length} questions transcribed</span></div></div>`}).join('')}
+      <button class="actbtn" style="align-self:flex-start" type="button" data-go="model">Open the full mapping</button></div>`
+     +(c.cz.length?`<div class="gsec"><h3>Causes the evidence supports here</h3><div>${c.cz.map(z=>`<div class="irow"><div class="itop" style="grid-template-columns:20px minmax(0,1fr) auto"><span class="icode">${z[0]}</span><span>${CZ[z[0]]}</span><i class="pill ${z[1]==='RECOMMENDED'?'ok':z[1]==='LOW_SALIENCE'?'plain':'tbc'}">${z[1]==='RECOMMENDED'?'Give examples':z[1]==='LOW_SALIENCE'?'Little evidence':z[1]==='RESIDUAL'?'Always kept':'No evidence source'}</i></div>${z[2]?`<div class="isub"><span>${esc(z[2])}</span></div>`:''}</div>`).join('')}</div><p class="lnote">From the causing events analysis. It guides enumerator examples; the response options stay the same in every country.</p></div>`:'');
+  const head=(k)=>`<div class="gsec"><div class="lhead"><i class="sw" style="background:${SEG[k].col}"></i><h2 style="font-size:16px">${SEG[k].n}</h2></div></div>`;
+  LASTB={story:has(gSel,'story')?bStory():'',sdg:has(gSel,'sdg')?bSdg():'',idq:has(gSel,'idq')?bIdq():''};
+  $('zoombtn').textContent='Zoom in to '+c.n+' →';
+  const body = seg==='story'?bStory():seg==='sdg'?bSdg():seg==='idq'?bIdq()
+    : ['story','sdg','idq'].map(k=>has(gSel,k)?head(k)+(k==='story'?bStory():k==='sdg'?bSdg():bIdq()):`<div class="gsec"><div class="lhead"><i class="sw" style="background:#33415f"></i><h2 style="font-size:16px;color:var(--dim)">${SEG[k].n}</h2></div><p class="lnote">Nothing for this country yet.</p></div>`).join('');
+  $('gright').innerHTML=`<div class="gsec"><p class="eyebrow">${SEG[seg].n}</p><h2 style="font-size:22px">${esc(c.n)}</h2></div>`+body;
+  document.querySelectorAll('#gleft [data-go], #gright [data-go]').forEach(b=>b.onclick=()=>{const v=b.dataset.go; if(v==='model'){mSel=null} location.hash=v; show(v)});
+}
+
+/* ---- below country level ---- */
+let snC='PAK', snI='6.1.1', snG=0;
+const SNN={'6.1.1':'Improved drinking water source','6.2.1':'Improved sanitation facility','7.1.1':'Access to electricity'};
+const SND={'6.1.1':'Current JMP definition: piped water, public tap, borehole, protected well or spring, rainwater, delivered water (tanker from a protected source, cart, kiosk) and packaged water.','6.2.1':'Counted as improved: any flush toilet, ventilated or slab pit latrine, composting toilet. This is the definition that reproduces the published national values.','7.1.1':'Pakistan: the survey\'s own derived variable, tier 1 or above. South Sudan: any electricity source except none, torch and other.'};
+function ramp(v){const st=[[0,[39,55,95]],[45,[47,111,143]],[80,[76,195,201]],[100,[201,244,246]]]; for(let i=1;i<st.length;i++){ if(v<=st[i][0]){const a=st[i-1],b=st[i],t=(v-a[0])/(b[0]-a[0]); return 'rgb('+a[1].map((x,j)=>Math.round(x+(b[1][j]-x)*t)).join(',')+')'} } return 'rgb(201,244,246)'}
+function renderSub(){
+  const S=Q.sub, M=S.meta[snC], V=S.val[snC][snI], map=S.map[snC];
+  const chips=(id,arr,cur,set)=>{ $(id).innerHTML=arr.map(([k,n])=>`<button class="chip" type="button" id="${id}-${String(k).replace(/\./g,'-')}" aria-pressed="${k===cur}" data-k="${k}">${esc(n)}</button>`).join(''); $(id).querySelectorAll('.chip').forEach(b=>b.onclick=()=>{set(b.dataset.k);renderSub()}) };
+  chips('snc',Object.keys(S.meta).map(k=>[k,S.meta[k].name]),snC,k=>{snC=k});
+  chips('sni',Object.keys(SNN).map(k=>[k,k+' · '+SNN[k]]),snI,k=>{snI=k});
+  chips('sng',M.g.map((g,i)=>[String(i),g]),String(snG),k=>{snG=+k});
+  $('snnote').textContent=`${M.survey} · weighted share of households · ${M.wl}. ${SND[snI]}`;
+  const cell=(area,gi)=>V.areas[(M.alias[area]||area)+'|'+M.g[gi]];
+  const small=n=>n<50?' <i class="pill tbc">small</i>':'';
+  $('snsvg').innerHTML=`<svg viewBox="0 0 ${map.w} ${map.h}" role="img" aria-label="${esc(M.name)} by ${M.unit}, ${esc(SNN[snI])}, ${esc(M.g[snG])}">`
+    + map.areas.map(a=>{const c=cell(a.n,snG); return `<path class="ar ${c?'':'none'}" d="${a.d}" ${c?`fill="${ramp(c[0])}"`:''}><title>${esc(a.n)}: ${c?c[0]+'% of '+c[1]+' households':'not sampled for this group'}</title></path>`}).join('')
+    + map.areas.map(a=>{const c=cell(a.n,snG); if(!c) return ''; const isl=a.n.startsWith('Islamabad'), x=isl?a.cx+12:a.cx, y=isl?a.cy+4:a.cy, an=isl?'start':'middle'; return `<text x="${x}" y="${y}" text-anchor="${an}" font-size="15" font-weight="600">${Math.round(c[0])}%</text><text x="${x}" y="${y+14}" text-anchor="${an}" font-size="10" fill-opacity=".85">${esc(isl?'Islamabad':a.n)}</text>`}).join('')
+    + (snG===0?map.camps.map(c=>{const v=V.camps&&V.camps[c.k]; return v?`<circle cx="${c.x}" cy="${c.y}" r="5.5" fill="${ramp(v[0])}" stroke="#ffffff" stroke-width="1.5"><title>${esc(c.n)}: ${v[0]}% of ${v[1]} households</title></circle>`:''}).join(''):'')
+    + '</svg>';
+  const names=[...new Set(Object.keys(V.areas).map(k=>k.split('|')[0]))].sort();
+  $('snth').textContent=`${SNN[snI]} by ${M.unit}`;
+  const td=(c,col)=>c?`<td><span class="v">${c[0]}%</span> <span class="n">n=${c[1]}</span>${small(c[1])}<div class="mini"><div style="width:${c[0]}%;background:${col}"></div></div></td>`:'<td><span class="n">not sampled</span></td>';
+  $('sntbl').innerHTML=`<tr><th>${M.unit}</th><th>${esc(M.g[0])}</th><th>${esc(M.g[1])}</th></tr>`+names.map(a=>`<tr><td>${esc(a)}</td>${td(V.areas[a+'|'+M.g[0]],'var(--teal)')}${td(V.areas[a+'|'+M.g[1]],'var(--dim)')}</tr>`).join('');
+  const camps=V.camps?Object.entries(V.camps).sort((a,b)=>b[1][0]-a[1][0]):[];
+  $('sncampband').hidden=!camps.length;
+  $('sncamp').innerHTML='<tr><th>Camp</th><th>Refugees</th></tr>'+camps.map(([k,c])=>`<tr><td>${esc((map.camps.find(x=>x.k===k)||{n:k}).n)}</td>${td(c,'var(--teal)')}</tr>`).join('');
+  const pub=M.pub[snI], mine=[V.nat[M.g[0]][0],V.nat[M.g[1]][0]];
+  const diff=Math.max(Math.abs(mine[0]-pub[0]),Math.abs(mine[1]-pub[1]));
+  $('sncheck').innerHTML=`<table class="snt"><tr><th></th><th>${esc(M.g[0])}</th><th>${esc(M.g[1])}</th></tr>
+    <tr><td>This recalculation</td><td class="v">${mine[0]}%</td><td class="v">${mine[1]}%</td></tr>
+    <tr><td>On the SDG map</td><td class="v">${pub[0]}%</td><td class="v">${pub[1]}%</td></tr></table>
+    <div class="fl" style="margin-top:10px">${diff<=2?'<i class="pill ok">Matches</i><span>Within 2 points, so the area values rest on the same definition.</span>':diff<=5?'<i class="pill tbc">Close</i><span>Within 5 points. The classification of a few answer codes probably differs.</span>':'<i class="pill flag">Check</i><span>The recalculation does not reproduce the published value, so these area values are not on the same basis.</span>'}</div>`;
+}
+
+/* ---- the flow: world > country > survey > indicator > questions > data ---- */
+let fStep=1, fSrc=null, fInd=null, fMapInd='6.1.1';
+const STEPS=[['World','The shared globe','All three sites'],['Country','Zoomed map and country card','GAIN story'],['Survey','Example card with its layers','GAIN story'],['Indicator','How the value was calculated','SDG map'],['Questions','How people were identified','Identification questions'],['Data','Where it is, how to ask','Data portal']];
+const SRC_EX={'UNHCR SSD FDS':186,'UNHCR PAK FDS':191,'UNHCR ZAM FDS':289};
+function surveysOf(iso){const m=new Map(); sdgRows(iso).forEach(([d,r])=>{if(!m.has(r.src))m.set(r.src,[]);m.get(r.src).push([d,r])}); return m}
+function bankSurvey(iso,src){const c=Q.ctry[iso]; if(!c||!c.sv.length) return null; const fds=c.sv.find(s=>/Forced Displacement/i.test(Q.surveys[s][1])); return (src&&/FDS/.test(src)&&fds!=null)?fds:c.sv[0]}
+function ensure(){const m=surveysOf(gSel); if(!fSrc||!m.has(fSrc)) fSrc=[...m.keys()].sort((a,b)=>m.get(b).length-m.get(a).length)[0]||null; const rs=fSrc?m.get(fSrc):[]; if(!fInd||!rs.some(([d])=>d.c===fInd)) fInd=rs.length?(rs.find(([d])=>d.c==='6.1.1')||rs[0])[0].c:null}
+function goStep(n){
+  if(n===fStep) return;
+  if(fStep===1&&n>1&&world&&Q.cent[gSel]){ world.controls().autoRotate=false; world.pointOfView({lat:Q.cent[gSel][0],lng:Q.cent[gSel][1],altitude:0.45},900); setTimeout(()=>{fStep=n;renderFlow()},950); return }
+  if(n===1&&world&&Q.cent[gSel]) setTimeout(()=>world.pointOfView({lat:Q.cent[gSel][0],lng:Q.cent[gSel][1],altitude:1.6},900),50);
+  fStep=n; renderFlow(); $('rail').scrollIntoView({block:'start'});
+}
+function subSvg(iso,ind,gi){
+  const S=Q.sub, M=S.meta[iso], V=S.val[iso][ind], map=S.map[iso], cell=(a)=>V.areas[(M.alias[a]||a)+'|'+M.g[gi]];
+  return `<svg viewBox="0 0 ${map.w} ${map.h}" role="img" aria-label="${esc(M.name)} by ${M.unit}">`+map.areas.map(a=>{const c=cell(a.n); return `<path class="ar ${c?'':'none'}" d="${a.d}" ${c?`fill="${ramp(c[0])}"`:''}><title>${esc(a.n)}: ${c?c[0]+'% of '+c[1]+' households':'not sampled'}</title></path>`}).join('')
+   +map.areas.map(a=>{const c=cell(a.n); if(!c) return ''; const isl=a.n.startsWith('Islamabad'),x=isl?a.cx+12:a.cx,y=isl?a.cy+4:a.cy,an=isl?'start':'middle'; return `<text x="${x}" y="${y}" text-anchor="${an}" font-size="15" font-weight="600">${Math.round(c[0])}%</text><text x="${x}" y="${y+14}" text-anchor="${an}" font-size="10" fill-opacity=".85">${esc(isl?'Islamabad':a.n)}</text>`}).join('')
+   +(gi===0?map.camps.map(c=>{const v=V.camps&&V.camps[c.k]; return v?`<circle cx="${c.x}" cy="${c.y}" r="5.5" fill="${ramp(v[0])}" stroke="#ffffff" stroke-width="1.5"><title>${esc(c.n)}: ${v[0]}%</title></circle>`:''}).join(''):'')+'</svg>';
+}
+function outlineSvg(iso){
+  const f=Q.geo.find(x=>x.properties.i===iso); if(!f) return '';
+  const polys=f.geometry.type==='MultiPolygon'?f.geometry.coordinates:[f.geometry.coordinates];
+  const big=polys.map(p=>p[0]).sort((a,b)=>b.length-a.length).slice(0,4), all=big.flat(), lat0=all.reduce((s,q)=>s+q[1],0)/all.length, kx=Math.cos(lat0*Math.PI/180);
+  const xs=all.map(q=>q[0]*kx), ys=all.map(q=>q[1]), x0=Math.min(...xs), x1=Math.max(...xs), y0=Math.min(...ys), y1=Math.max(...ys), W=520, k=(W-20)/Math.max(x1-x0,1e-6), H=Math.round((y1-y0)*k+20);
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Outline of the country">`+big.map(r=>`<path class="ar" fill="#2f6f8f" d="M${r.map(q=>((q[0]*kx-x0)*k+10).toFixed(1)+' '+((y1-q[1])*k+10).toFixed(1)).join('L')}Z"/>`).join('')+'</svg>';
+}
+function fHead(n,exists,link){const s=STEPS[n-1]; return `<div class="fhead"><span class="rn eyebrow">Step ${n} of 6</span><h2>${esc(s[0])} · ${esc(Q.ctry[gSel].n)}</h2><span class="sits">SITS ON: ${esc(s[2]).toUpperCase()}</span>${exists?'<i class="pill ok">Page exists</i>':'<i class="pill new">New layer</i>'}${link?`<a href="${link}" target="_blank" rel="noopener" style="font-size:13px">Open the live page ↗</a>`:''}</div>`}
+function fNav(n,nextLabel){return `<div class="fnav"><button class="actbtn" type="button" data-step="${n-1}">← ${esc(STEPS[n-2][0])}</button>${n<6?`<button class="actbtn" type="button" data-step="${n+1}" style="background:var(--teal);color:var(--night);font-weight:600">${esc(nextLabel||STEPS[n][0])} →</button>`:`<button class="actbtn" type="button" data-step="1">Back to the world ↺</button>`}</div>`}
+function renderRail(){
+  $('rail').innerHTML=STEPS.map((s,i)=>`<button class="rstep ${i+1<fStep?'done':''}" type="button" id="rs-${i+1}" data-step="${i+1}" ${i+1===fStep?'aria-current="step"':''}><span class="rn">${i+1} · ${esc(s[2]).toUpperCase()}</span><b>${esc(s[0])}</b><small>${esc(s[1])}</small></button>`).join('');
+  $('rail').querySelectorAll('.rstep').forEach(b=>b.onclick=()=>goStep(+b.dataset.step));
+}
+function renderFlow(){
+  renderRail(); $('flow1').hidden=fStep!==1; $('fstage').hidden=fStep===1;
+  $('zoombtn').onclick=()=>goStep(2);
+  if(fStep===1) return;
+  ensure();
+  const iso=gSel, c=Q.ctry[iso], svs=surveysOf(iso), rows=fSrc?svs.get(fSrc):[], r0=rows.length?rows[0][1]:null, hasSub=!!Q.sub.map[iso], st=$('fstage');
+  const noSurvey=`<div class="band"><p style="color:var(--soft)">No survey with calculated values in ${esc(c.n)} yet. The flow continues for countries shaded teal in the SDG segment, for example South Sudan or Pakistan.</p></div>`;
+  let html='';
+  if(fStep===2){
+    html=fHead(2,true,'https://mitrovif.github.io/GAIN-story/#country-'+iso)
+     +`<div class="fgrid"><div class="stack" style="gap:12px"><div class="snmap">${hasSub?`<div class="chips" id="fmi" style="margin-bottom:10px">${Object.keys(SNN).map(k=>`<button class="chip" type="button" id="fmi-${k.replace(/\./g,'-')}" aria-pressed="${k===fMapInd}" data-k="${k}">${k} · ${esc(SNN[k])}</button>`).join('')}</div>${subSvg(iso,fMapInd,0)}<div class="ramp"><span>0%</span><i></i><span>100%</span><span style="margin-left:10px">dark = not sampled</span></div>`:outlineSvg(iso)}</div>
+       <p class="lnote">${hasSub?`<i class="pill new">New layer</i> Refugees by ${Q.sub.meta[iso].unit}, calculated from the ${esc(Q.sub.meta[iso].survey)}. ${Q.sub.map[iso].camps.length?'Dots are camps and settlements.':''} Today the country card shows populations and site locations here.`:'No values below country level for this country yet. The country card shows populations and site locations here today.'}</p>
+       ${svs.size?`<div class="band"><h3>Continue with a survey</h3>${[...svs].map(([k,rs])=>`<button class="pickrow" type="button" data-src="${esc(k)}"><span>${esc(rs[0][1].fam)}${rs[0][1].year?' · '+esc(rs[0][1].year):''}<small>${rs.length} SDG ${rs.length===1?'value':'values'} calculated from it</small></span><span>Open →</span></button>`).join('')}</div>`:''}</div>
+      <div class="gside" style="max-height:none">${['story','sdg','idq'].map(k=>`<div class="gsec"><div class="lhead"><i class="sw" style="background:${SEG[k].col}"></i><h2 style="font-size:16px">${SEG[k].n}</h2></div></div>${LASTB[k]||'<p class="lnote">Nothing for this country yet.</p>'}`).join('')}</div></div>`
+     +fNav(2,svs.size?'Survey':'Survey');
+  } else if(!r0){ html=fHead(fStep,false)+noSurvey+fNav(fStep);
+  } else if(fStep===3){
+    const exid=SRC_EX[fSrc], ex=c.ex.find(e=>e[0]===exid), hold=HOLD[fSrc], bs=bankSurvey(iso,fSrc);
+    html=fHead(3,true,'https://mitrovif.github.io/GAIN-story/')
+     +`<div class="fgrid"><div class="card"><div class="colhead"><h3>The example card, as in the story today</h3></div>
+        <div class="cover">${exid===186?document.querySelector('#v-example .cover img').outerHTML:''}<div style="display:flex;flex-direction:column;gap:6px;min-width:0"><span class="exmeta">${ex?`GAIN ${ex[1]} · EXAMPLE ${ex[0]}`:'NOT YET A GAIN EXAMPLE'} · ${esc(c.n).toUpperCase()}</span><h2>${esc(ex?ex[2]:r0.fam)}</h2><span style="font-size:13px;color:var(--soft)">${esc(ex?ex[3]:'')}</span></div></div>
+        <div><h3 style="margin-bottom:8px">How it counted</h3><div class="tiles"><span class="tile">Survey</span></div></div>
+        <div><h3 style="margin-bottom:8px">Who it covered</h3><div class="tiles"><span class="tile">${esc(r0.g1)}</span>${r0.g2?`<span class="tile">${esc(r0.g2)}</span>`:''}</div></div>
+        <div class="src">${esc(r0.fam)}${r0.year?' · '+esc(r0.year):''}</div></div>
+      <div class="layers">
+        <div class="layer"><div class="lhead"><i class="pill new">New</i><h2>Where the data is</h2></div><div class="rows">
+          <div class="drow"><span class="dk">Microdata</span><span class="dv">${hold?`<b>${esc(hold[0])}</b><small>Licensed: people apply to the holder. We link, we do not host.</small>`:`<i class="pill tbc">To confirm</i><small>Holder and link not recorded yet.</small>`}</span>${hold?`<a class="dl" href="${hold[1]}" target="_blank" rel="noopener">Request there ↗</a>`:'<span></span>'}</div>
+          <div class="drow"><span class="dk">Hosted by EGRISS</span><span class="dv">Nothing${hold?': it has a home.':'.'}</span><span></span></div></div>
+          <button class="actbtn" type="button" data-step="6" style="align-self:flex-start">Step 6: data and requests</button></div>
+        <div class="layer"><div class="lhead"><i class="pill new">New</i><h2>SDG values calculated from it</h2></div><div class="rows">${rows.map(([d,r])=>`<button class="ind" type="button" data-ind="${d.c}"><span class="icode">${d.c}${d.pri?' ◆':''}</span><span class="iname">${esc(d.n)}</span>${r.h!=null?barPair(r.r,r.h):`<div class="bars"><div class="bar"><div class="track"><div class="fill r" style="width:${r.r}%"></div></div><span class="bv">${r.r}%</span></div></div>`}<span class="go">how →</span></button>`).join('')}</div></div>
+        <div class="layer"><div class="lhead"><i class="pill new">New</i><h2>How people were identified</h2></div><p style="color:var(--soft)">Groups come from ${r0.gv?vchip(r0.country,r0.gv):'the survey\'s sample'}: ${esc(r0.g1.toLowerCase())}${r0.g2?' and '+esc(r0.g2.toLowerCase()):''}.${bs!=null?' Its questionnaire is mapped against the EGRISS module.':' Its questionnaire is not in the question bank yet.'}</p>
+          <button class="actbtn" type="button" data-step="5" style="align-self:flex-start">Step 5: the questions</button></div>
+      </div></div>`+fNav(3,'Indicator');
+  } else if(fStep===4){
+    const pr=rows.find(([d])=>d.c===fInd), d=pr[0], r=pr[1], sv=hasSub&&Q.sub.val[iso][fInd]?Q.sub.val[iso][fInd]:null, M=hasSub?Q.sub.meta[iso]:null;
+    html=fHead(4,false,'https://mitrovif.github.io/gain_sdg_workstream/sdg-map.html')
+     +`<div class="ctl"><h3>Indicators from this survey</h3><div class="chips">${rows.map(([x])=>`<button class="chip" type="button" data-ind="${x.c}" aria-pressed="${x.c===fInd}">${x.c}${x.pri?' ◆':''} · ${esc(x.n)}</button>`).join('')}</div></div>
+      <div class="eqcard"><div class="eq"><div class="fracv"><div class="n"><small>Numerator</small>${esc(d.num)}</div><div class="d"><small>Denominator</small>${esc(d.den)}</div></div><span class="eqop">× 100 =</span>
+        <div class="eqres"><div><div class="bigv" style="color:var(--teal)">${r.r}%</div><div class="bigl">${esc(r.g1)}</div></div>${r.h!=null?`<div><div class="bigv" style="color:var(--soft)">${r.h}%</div><div class="bigl">${esc(r.g2||'Host')}</div></div>`:''}</div></div>
+        ${d.off?`<div class="fl"><i class="pill flag">Check</i><span>${esc(d.off)}</span></div>`:''}</div>
+      <div class="fgrid"><div class="card"><h3>How this survey measured it</h3><div class="how">
+          <div class="howr"><span class="hk">Asked</span><div class="hv"><span>${esc(r.what)}</span><div class="vars">${r.vars.map(v=>vchip(r.country,v)).join('')||'<span class="lnote">variable not named</span>'}</div></div></div>
+          <div class="howr"><span class="hk">Counted as</span><div class="hv"><span>${esc(r.rule)}</span></div></div>
+          <div class="howr"><span class="hk">Groups from</span><div class="hv">${r.gv?`<div class="vars">${vchip(r.country,r.gv)}</div>`:'<span>the survey\'s sample</span>'}</div></div>
+          <div class="howr"><span class="hk">Weight</span><div class="hv">${r.w==='weighted'?'<span>Weighted <span class="lnote">(variable not named)</span></span>':r.w==='unweighted'?'<span><i class="pill flag">Unweighted</i></span>':r.w?`<div class="vars">${r.w.split(' / ').map(v=>vchip(r.country,v)).join(' ')}</div>`:'<i class="pill tbc">To confirm</i>'}</div></div></div>
+          <p class="lnote">Point at a variable to see the question as asked.</p></div>
+        <div class="card"><h3>Below country level</h3>${sv?`<div class="snmap" style="padding:8px">${subSvg(iso,fInd,0)}</div><table class="snt"><tr><th>${M.unit}</th><th>${esc(M.g[0])}</th><th>${esc(M.g[1])}</th></tr>${[...new Set(Object.keys(sv.areas).map(k=>k.split('|')[0]))].sort().map(a=>{const x=sv.areas[a+'|'+M.g[0]],y=sv.areas[a+'|'+M.g[1]];return `<tr><td>${esc(a)}</td><td>${x?`<span class="v">${x[0]}%</span> <span class="n">n=${x[1]}</span>`:'<span class="n">not sampled</span>'}</td><td>${y?`<span class="v">${y[0]}%</span> <span class="n">n=${y[1]}</span>`:'<span class="n">not sampled</span>'}</td></tr>`}).join('')}</table>`:'<p class="lnote">Not calculated below country level for this indicator or survey yet.</p>'}</div></div>`
+     +fNav(4,'Questions');
+  } else if(fStep===5){
+    const bs=bankSurvey(iso,fSrc);
+    html=fHead(5,false,'https://mitrovif.github.io/idq-map/questions.html')
+     +(bs==null?`<div class="band"><p style="color:var(--soft)">This survey's questionnaire is not in the question bank yet. Groups come from ${r0.gv?vchip(r0.country,r0.gv):'the survey\'s sample'}.</p></div>`
+      :`<div class="band"><div class="lhead"><h2>${esc(Q.surveys[bs][1])} against the EGRISS module</h2><span class="lnote">${Q.model.filter(m=>bankFor(bs,m.code).length).length} of 13 items asked</span></div>
+          <div class="mstrip">${Q.model.map(m=>{const rs=bankFor(bs,m.code), best=rs.length?rs.map(x=>x[3]).sort((a,b)=>(RANK[a]??9)-(RANK[b]??9))[0]:null; return `<div class="mi ${m.core?'core':''}" style="${rs.length?'':'opacity:.5'}"><span class="k">${esc(m.code)} · ${esc(m.title)}</span>${rs.length?`<span>${esc(rs[0][5])}</span><div class="qtags"><i class="pill a-${best}">${esc(best)}</i><span class="qmeta">${esc(rs[0][1])}</span></div>`:'<small>Not asked in this questionnaire</small>'}</div>`}).join('')}</div>
+          <p class="lnote">The SDG values use ${r0.gv?vchip(r0.country,r0.gv):'the sample'} to separate the groups, not these questions. Comparing the two is a check still to do.</p></div>
+        <div class="fnav" style="justify-content:flex-start"><button class="actbtn" type="button" data-go="model">All 32 questionnaires against the model</button><button class="actbtn" type="button" data-go="bank">Question bank</button></div>`)
+     +(c.cz.length?`<div class="band"><h3>Causes the evidence supports in ${esc(c.n)}</h3><div class="flow">${c.cz.filter(z=>z[1]==='RECOMMENDED').map(z=>`<span class="qchip">${z[0]} · ${CZ[z[0]]}</span>`).join('')||'<span class="lnote">None recommended.</span>'}</div><p class="lnote">From the causing events map: where enumerators need local examples.</p></div>`:'')
+     +fNav(5,'Data');
+  } else {
+    const hold=HOLD[fSrc], asks=Q.asks.filter(a=>a.country===c.n);
+    html=fHead(6,false)
+     +`<div class="fgrid"><div class="band"><h3>This dataset</h3><div class="rows">
+          <div class="drow"><span class="dk">Dataset</span><span class="dv"><b>${esc(r0.fam)}${r0.year?' · '+esc(r0.year):''}</b><small>${rows.length} SDG values depend on it</small></span><span></span></div>
+          <div class="drow"><span class="dk">Held by</span><span class="dv">${hold?esc(hold[0])+' · licensed access':'<i class="pill tbc">To confirm</i>'}</span>${hold?`<a class="dl" href="${hold[1]}" target="_blank" rel="noopener">Request there ↗</a>`:'<span></span>'}</div>
+          <div class="drow"><span class="dk">Status</span><span class="dv">${hold?'<i class="pill ok">Linked elsewhere</i>':'<i class="pill plain">Link to add</i>'}<small>1 linked elsewhere · 2 not hosted, ask the producer · 3 hosted by EGRISS with permission</small></span><span></span></div></div></div>
+        <div class="band"><h3>What we are asking for in ${esc(c.n)}</h3>${asks.length?`<div class="rows">${asks.map(a=>`<div class="drow" style="grid-template-columns:minmax(0,1fr) auto"><span class="dv">${esc(a.what)}<small>Ask: ${esc(a.who)} · ${esc(a.pop)}</small></span><i class="pill tbc">${esc(a.status)}</i></div>`).join('')}</div>`:'<p class="lnote">No open request for this country.</p>'}
+          <button class="actbtn" type="button" data-go="data" style="align-self:flex-start">Full request list</button></div></div>`
+     +fNav(6);
+  }
+  st.innerHTML=html;
+  st.querySelectorAll('[data-step]').forEach(b=>b.onclick=()=>goStep(+b.dataset.step));
+  st.querySelectorAll('[data-src]').forEach(b=>b.onclick=()=>{fSrc=b.dataset.src;fInd=null;goStep(3)});
+  st.querySelectorAll('[data-ind]').forEach(b=>b.onclick=()=>{fInd=b.dataset.ind; if(fStep===4) renderFlow(); else goStep(4)});
+  st.querySelectorAll('#fmi .chip').forEach(b=>b.onclick=()=>{fMapInd=b.dataset.k;renderFlow()});
+  st.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{const v=b.dataset.go; if(v==='model') mSel=null; location.hash=v; show(v)});
+}
+
+/* ---- views ---- */
+const VIEWS=['globe','structure','example','sdg','subnat','questions','model','bank','data'];
+function show(v){
+  if(!VIEWS.includes(v)) v='globe';
+  VIEWS.forEach(k=>{ $('v-'+k).hidden = k!==v; $('tab-'+k).setAttribute('aria-selected', k===v) });
+  if(v==='sdg') renderSdg();
+  if(v==='questions') renderQ();
+  if(v==='bank') renderBank();
+  if(v==='model') renderModel();
+  if(v==='subnat') renderSub();
+  if(v==='globe') renderGlobe();
+  if(v==='data') renderData();
+}
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{location.hash=t.dataset.v;show(t.dataset.v)});
+$('toq').onclick=()=>{curInst='ssd';location.hash='questions';show('questions')};
+window.addEventListener('hashchange',()=>show(location.hash.slice(1)));
+renderIndRows(); renderFlow(); show(location.hash.slice(1));
+</script>

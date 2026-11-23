@@ -1,0 +1,90 @@
+{
+ "Intro_07": [
+  [
+   "1",
+   "Refugee"
+  ],
+  [
+   "2",
+   "Asylum-seeker"
+  ],
+  [
+   "3",
+   "Host community member"
+  ],
+  [
+   "4",
+   "Former refugees"
+  ],
+  [
+   "1",
+   "Refugee"
+  ],
+  [
+   "2",
+   "Asylum-seeker"
+  ],
+  [
+   "3",
+   "Host community member"
+  ],
+  [
+   "4",
+   "Former refugees"
+  ]
+ ],
+ "HH_07b": [
+  [
+   "1",
+   "Yes"
+  ],
+  [
+   "2",
+   "No"
+  ],
+  [
+   "98",
+   "Don't know"
+  ],
+  [
+   "99",
+   "Refuse to answer"
+  ]
+ ],
+ "HH_07a": [
+  [
+   "1",
+   "Yes"
+  ],
+  [
+   "2",
+   "No"
+  ],
+  [
+   "98",
+   "Don't know"
+  ],
+  [
+   "99",
+   "Refuse to answer"
+  ]
+ ],
+ "HH_Educ02a": [
+  [
+   "1",
+   "Yes"
+  ],
+  [
+   "2",
+   "No"
+  ],
+  [
+   "98",
+   "Don't know"
+  ],
+  [
+   "99",
+   "Refuse to answer"
+  ]
+ ]
+}

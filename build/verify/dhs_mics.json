@@ -1,0 +1,1446 @@
+{
+ "rows": [
+  {
+   "country": "Malawi",
+   "sdg": "7.1.1",
+   "published": {
+    "g1": 25,
+    "g2": 16
+   },
+   "recalc": {
+    "g1": 25.23,
+    "g2": 15.84
+   },
+   "match": true,
+   "level": "household",
+   "vars": [
+    "hv206"
+   ],
+   "numerator_codes": "1 = yes",
+   "denominator": "all interviewed households (hv206 has no missing values)",
+   "weight": "shv005 for camp households, hv005 for all other households",
+   "group_var": "shcamps",
+   "g1": "1 = yes",
+   "g2": "0 = no",
+   "n": {
+    "g1": 681,
+    "g2": 22414
+   },
+   "file": "MWHR81FL.dta",
+   "variants_tried": [
+    {
+     "what": "household, unweighted",
+     "g1": 34.65,
+     "g2": 20.77
+    },
+    {
+     "what": "de jure persons (PR file, hv102=1), shv005/hv005",
+     "g1": 29.64,
+     "g2": 15.64
+    },
+    {
+     "what": "de facto persons (PR, hv103=1), shv005/hv005",
+     "g1": 29.66,
+     "g2": 15.75
+    },
+    {
+     "what": "all listed persons (PR), shv005/hv005",
+     "g1": 29.67,
+     "g2": 15.78
+    },
+    {
+     "what": "de jure persons, unweighted",
+     "g1": 38.84,
+     "g2": 20.61
+    },
+    {
+     "what": "household, hv005 only",
+     "g1": null,
+     "g2": 15.84
+    },
+    {
+     "what": "household, shv005 only",
+     "g1": 25.23,
+     "g2": null
+    }
+   ],
+   "notes": "Published value is the share of HOUSEHOLDS, not of population: the person-level value for the camp is about 30%, not 25%. hv005 is 0 for all 681 camp households and shv005 is 0 for all 22,414 non-camp households, so only one weight is usable per group: shv005 for the camp, hv005 for the rest. A single-weight run (hv005 only or shv005 only) cannot produce both columns. Person-level n: de jure camp 3545, other 94137.",
+   "match_note": "unambiguous at whole-percent rounding"
+  },
+  {
+   "country": "Malawi",
+   "sdg": "4.1.2",
+   "published": {
+    "g1": 87,
+    "g2": 86
+   },
+   "recalc": {
+    "g1": 86.68,
+    "g2": 86.37
+   },
+   "match": true,
+   "level": "person (household member)",
+   "vars": [
+    "hv121",
+    "hv105"
+   ],
+   "numerator_codes": "hv121 = 2 (attended at some time); code 1 does not occur in the file",
+   "denominator": "all listed household members aged 6-17 (hv105), no missing hv121 in that age range",
+   "weight": "shv005 for camp, hv005 for the rest",
+   "group_var": "shcamps",
+   "g1": "1 = yes",
+   "g2": "0 = no",
+   "n": {
+    "g1": 1229,
+    "g2": 32815
+   },
+   "file": "MWPR81FL.dta",
+   "variants_tried": [
+    {
+     "what": "all members 6-17, unweighted",
+     "g1": 88.85,
+     "g2": 87.65
+    },
+    {
+     "what": "de jure (hv102=1), weighted",
+     "g1": 86.68,
+     "g2": 86.39
+    },
+    {
+     "what": "de facto (hv103=1), weighted",
+     "g1": 86.66,
+     "g2": 86.39
+    },
+    {
+     "what": "hv121 == 1 only (currently attending), weighted",
+     "g1": 0.0,
+     "g2": 0.0
+    }
+   ],
+   "notes": "Weighted value matches; unweighted gives 89/88 so the published figure is weighted. De jure and de facto restrictions give the same rounded result. In this file hv121 only takes 0 and 2 among ages 6-17 (counts {\"2\": 29855, \"0\": 4189}); the stored label of code 2 is 'attended at some time' during the current school year, code 1 'currently attending' is unused, so the indicator is attendance at any time in the current school year, not attendance at the time of interview. hv005 is 0 for all 681 camp households and shv005 is 0 for all 22,414 non-camp households, so only one weight is usable per group: shv005 for the camp, hv005 for the rest. A single-weight run (hv005 only or shv005 only) cannot produce both columns.",
+   "match_note": "unambiguous at whole-percent rounding"
+  },
+  {
+   "country": "Malawi",
+   "sdg": "2.2.1",
+   "published": {
+    "g1": 34,
+    "g2": 38
+   },
+   "recalc": {
+    "g1": 34.38,
+    "g2": 37.78
+   },
+   "match": true,
+   "level": "person (child under 5)",
+   "vars": [
+    "hc70"
+   ],
+   "numerator_codes": "hc70 < -200 (height-for-age below -2 SD, WHO standard)",
+   "denominator": "children with a valid hc70 (not missing, not 9996/9997/9998 flagged)",
+   "weight": "shv005 for camp, hv005 for the rest",
+   "group_var": "shcamps",
+   "g1": "1 = yes",
+   "g2": "0 = no",
+   "n": {
+    "g1": 312,
+    "g2": 5806
+   },
+   "file": "MWPR81FL.dta",
+   "variants_tried": [
+    {
+     "what": "valid hc70, unweighted",
+     "g1": 33.65,
+     "g2": 35.95
+    },
+    {
+     "what": "valid hc70, de facto (hv103=1), weighted",
+     "g1": 34.38,
+     "g2": 37.78
+    },
+    {
+     "what": "valid hc70, de jure (hv102=1), weighted",
+     "g1": 34.38,
+     "g2": 37.71
+    },
+    {
+     "what": "hc70 not missing incl. flagged codes in denominator, weighted",
+     "g1": 34.21,
+     "g2": 37.57
+    },
+    {
+     "what": "all measured (hc13=0) incl. flagged/missing z-score in denominator, weighted",
+     "g1": 34.21,
+     "g2": 37.19
+    }
+   ],
+   "notes": "Weighted matches (34/38); unweighted gives 34/36 so the published host value is weighted. De facto restriction (DHS standard) gives the same rounded result (n camp 312, other 5764). Height was measured in a subsample of households only. hv005 is 0 for all 681 camp households and shv005 is 0 for all 22,414 non-camp households, so only one weight is usable per group: shv005 for the camp, hv005 for the rest. A single-weight run (hv005 only or shv005 only) cannot produce both columns.",
+   "match_note": "unambiguous at whole-percent rounding"
+  },
+  {
+   "country": "Lebanon",
+   "sdg": "6.1.1",
+   "published": {
+    "g1": 100,
+    "g2": null
+   },
+   "recalc": {
+    "g1": 99.83,
+    "g2": null
+   },
+   "match": true,
+   "level": "household (member-level gives the same rounded value)",
+   "vars": [
+    "WS1"
+   ],
+   "numerator_codes": "11,12,13,14 piped/public tap; 21 tube well; 31 protected well; 41 protected spring; 51 rainwater; 61 tanker-truck; 71 cart with small tank; 91 bottled water",
+   "denominator": "all completed households (HH9=1)",
+   "weight": "hhweight",
+   "group_var": null,
+   "g1": "whole sample (Palestinian refugees in Lebanon: camps and gatherings)",
+   "g2": null,
+   "n": {
+    "g1": 4747,
+    "g2": null
+   },
+   "file": "hh.sav",
+   "variants_tried": [
+    {
+     "what": "same definition, unweighted households",
+     "g1": 99.83
+    },
+    {
+     "what": "same definition, household members (hhweight x HH11)",
+     "g1": 99.78
+    },
+    {
+     "what": "MICS4-era improved: piped/tube well/protected/rainwater only (no bottled, tanker, cart), hhweight",
+     "g1": 47.03
+    },
+    {
+     "what": "previous + bottled (any), hhweight",
+     "g1": 72.16
+    },
+    {
+     "what": "MICS4 standard: previous + bottled only if WS2 is improved, hhweight",
+     "g1": 70.95
+    },
+    {
+     "what": "MICS4 standard, household members",
+     "g1": 71.73
+    }
+   ],
+   "notes": "100% is reproduced only when tanker-truck (61), cart (71) and bottled water (91) are counted as improved, i.e. the current JMP list with 'packaged/delivered' water, as the method record's section 2 states. Under the definition used by MICS4 in 2011 (tanker/cart unimproved, bottled conditional on WS2) the value is about 71%. Tanker-truck alone is about a quarter of households. Unweighted WS1 counts among completed households: {\"11\": 2132, \"12\": 28, \"13\": 22, \"14\": 50, \"21\": 4, \"31\": 58, \"41\": 14, \"42\": 4, \"51\": 6, \"61\": 1213, \"71\": 10, \"91\": 1202, \"96\": 4}. Weighted, unweighted, household-level and member-level all round to 100, so the weight and level cannot be told apart from the data for this row. hhweight is non-zero only for the 4,747 completed households (HH9=1); the other 443 rows have no answers.",
+   "match_note": "matches only with tanker/cart/bottled counted as improved"
+  },
+  {
+   "country": "Lebanon",
+   "sdg": "6.2.1",
+   "published": {
+    "g1": 98,
+    "g2": null
+   },
+   "recalc": {
+    "g1": 97.69,
+    "g2": null
+   },
+   "match": true,
+   "level": "household (member-level gives the same rounded value)",
+   "vars": [
+    "WS8",
+    "WS9"
+   ],
+   "numerator_codes": "WS8 in 11,12,13,15 (flush to sewer/septic/pit/unknown), 21 VIP, 22 pit latrine with slab AND WS9 = 2 (not shared)",
+   "denominator": "all completed households (HH9=1), WS8 'Other'/'Missing' kept in denominator",
+   "weight": "hhweight",
+   "group_var": null,
+   "g1": "whole sample (Palestinian refugees in Lebanon: camps and gatherings)",
+   "g2": null,
+   "n": {
+    "g1": 4747,
+    "g2": null
+   },
+   "file": "hh.sav",
+   "variants_tried": [
+    {
+     "what": "unweighted households",
+     "g1": 97.7
+    },
+    {
+     "what": "household members (hhweight x HH11)",
+     "g1": 97.71
+    },
+    {
+     "what": "also counting 14 flush to somewhere else as improved",
+     "g1": 97.78
+    },
+    {
+     "what": "improved type only, sharing ignored",
+     "g1": 98.14
+    },
+    {
+     "what": "WS8 missing (99) excluded from denominator",
+     "g1": 98.05
+    }
+   ],
+   "notes": "The shared-toilet variable is WS9 ('Toilet facility shared', 1 Yes / 2 No / 9 Missing); WS10 and WS11 only describe the 21 sharing households. All variants round to 98, so weight, level and the exact improved list cannot be told apart from the data. hhweight is non-zero only for the 4,747 completed households (HH9=1); the other 443 rows have no answers.",
+   "match_note": "unambiguous at whole-percent rounding"
+  },
+  {
+   "country": "Lebanon",
+   "sdg": "7.1.1",
+   "published": {
+    "g1": 100,
+    "g2": null
+   },
+   "recalc": {
+    "g1": 99.69,
+    "g2": null
+   },
+   "match": true,
+   "level": "household (member-level gives the same rounded value)",
+   "vars": [
+    "HC8A"
+   ],
+   "numerator_codes": "1 = Yes",
+   "denominator": "all completed households (HH9=1); HC8A has no missing among them",
+   "weight": "hhweight",
+   "group_var": null,
+   "g1": "whole sample (Palestinian refugees in Lebanon: camps and gatherings)",
+   "g2": null,
+   "n": {
+    "g1": 4747,
+    "g2": null
+   },
+   "file": "hh.sav",
+   "variants_tried": [
+    {
+     "what": "unweighted households",
+     "g1": 99.68
+    },
+    {
+     "what": "household members (hhweight x HH11)",
+     "g1": 99.69
+    }
+   ],
+   "notes": "99.7% before rounding. Weight and level cannot be told apart from the data. hhweight is non-zero only for the 4,747 completed households (HH9=1); the other 443 rows have no answers.",
+   "match_note": "unambiguous at whole-percent rounding"
+  },
+  {
+   "country": "Lebanon",
+   "sdg": "4.1.2",
+   "published": {
+    "g1": 84,
+    "g2": null
+   },
+   "recalc": {
+    "g1": 84.35,
+    "g2": null
+   },
+   "match": true,
+   "level": "person (household member)",
+   "vars": [
+    "ED5",
+    "HL6"
+   ],
+   "numerator_codes": "ED5 = 1 (Yes, attended school during current school year 2010-2011)",
+   "denominator": "household members aged 6-17 (HL6) with an ED5 answer (1 or 2); the 94 children who never attended school (ED3 = 2, ED5 skipped) or have ED3 missing are NOT in the denominator",
+   "weight": "hhweight (as carried in hl.sav)",
+   "group_var": null,
+   "g1": "whole sample (Palestinian refugees in Lebanon: camps and gatherings)",
+   "g2": null,
+   "n": {
+    "g1": 5528,
+    "g2": null
+   },
+   "file": "hl.sav",
+   "variants_tried": [
+    {
+     "what": "same, unweighted",
+     "g1": 84.33
+    },
+    {
+     "what": "denominator = ALL members 6-17 (never-attended counted as not attending), hhweight",
+     "g1": 82.81
+    },
+    {
+     "what": "denominator = all members 6-17, unweighted",
+     "g1": 82.92
+    },
+    {
+     "what": "ages 5-17, all members, hhweight",
+     "g1": 82.82
+    }
+   ],
+   "notes": "84% is reproduced only if children with ED5 blank are dropped; ED5 is blank by skip for children who never attended school (ED3 = 2). With the stated definition (all children 6-17 in the denominator, n=5622) the value is 82.81%, which rounds to 83. Weighted and unweighted round the same.",
+   "match_note": "matches only with never-attended children dropped from the denominator; stated definition gives 83"
+  },
+  {
+   "country": "Lebanon",
+   "sdg": "11.1.1",
+   "published": {
+    "g1": 19,
+    "g2": null
+   },
+   "recalc": {
+    "g1": 18.92,
+    "g2": null
+   },
+   "match": true,
+   "level": "household",
+   "vars": [
+    "HH11",
+    "HC2"
+   ],
+   "numerator_codes": "HH11 / HC2 > 3 (household members per room used for sleeping, strictly more than 3)",
+   "denominator": "completed households with HC2 reported (HC2 = 99 'Missing' excluded, 71 households)",
+   "weight": "hhweight",
+   "group_var": null,
+   "g1": "whole sample (Palestinian refugees in Lebanon: camps and gatherings)",
+   "g2": null,
+   "n": {
+    "g1": 4676,
+    "g2": null
+   },
+   "file": "hh.sav",
+   "variants_tried": [
+    {
+     "what": "unweighted households",
+     "g1": 18.91
+    },
+    {
+     "what": "HC2 missing kept in denominator as not overcrowded, hhweight",
+     "g1": 18.64
+    },
+    {
+     "what": "household members living in overcrowded households (hhweight x HH11)",
+     "g1": 27.02
+    },
+    {
+     "what": "3 or more per room (>=3), hhweight",
+     "g1": 34.27
+    }
+   ],
+   "notes": "The sleeping-rooms variable is HC2 ('Number of rooms used for sleeping'); household size is HH11 ('Number of HH members'). The published 19% is the share of HOUSEHOLDS; the share of household members is about 27%. Excluding or keeping the 71 households with HC2 missing both round to 19; weighted and unweighted round the same. hhweight is non-zero only for the 4,747 completed households (HH9=1); the other 443 rows have no answers.",
+   "match_note": "unambiguous at whole-percent rounding"
+  },
+  {
+   "country": "Lebanon",
+   "sdg": "16.9.1",
+   "published": {
+    "g1": 98,
+    "g2": null
+   },
+   "recalc": {
+    "g1": 97.82,
+    "g2": null
+   },
+   "match": true,
+   "level": "person (child under 5)",
+   "vars": [
+    "BR1",
+    "BR2"
+   ],
+   "numerator_codes": "BR1 = 1 (Yes, seen) or 2 (Yes, not seen): child has a birth certificate; BR2 = 1 (registered without certificate) NOT counted",
+   "denominator": "children under 5 with a completed under-5 questionnaire (UF9=1)",
+   "weight": "chweight",
+   "group_var": null,
+   "g1": "whole sample (Palestinian refugees in Lebanon: camps and gatherings)",
+   "g2": null,
+   "n": {
+    "g1": 1916,
+    "g2": null
+   },
+   "file": "ch.sav",
+   "variants_tried": [
+    {
+     "what": "same, unweighted",
+     "g1": 97.86
+    },
+    {
+     "what": "standard MICS: BR1 in (1,2) OR BR2 = 1, chweight",
+     "g1": 98.74
+    },
+    {
+     "what": "standard MICS, unweighted, completed interviews",
+     "g1": 98.75
+    },
+    {
+     "what": "standard MICS, unweighted, ALL 1,922 rows incl. 6 not-completed interviews as not registered",
+     "g1": 98.44
+    }
+   ],
+   "notes": "Not uniquely reproduced. The standard MICS definition the method text points to (certificate BR1 = 1/2 or registered BR2 = 1, chweight) gives 98.74%, which rounds to 99, one point above the published 98. Two variants round to 98: (a) birth certificate only (BR1 in 1,2), weighted 97.82 / unweighted 97.86; (b) the standard definition taken unweighted over all 1,922 rows including the 6 not-completed interviews, 98.44. Which one the pipeline used cannot be decided from the data; (a) is reported here as recalc. BR2 was asked only when BR1 = 3 (41 children: 17 registered, 24 not). chweight is non-zero only for UF9=1.",
+   "match_note": "ambiguous: matches only with a non-standard variant; standard definition gives 99"
+  }
+ ],
+ "vars": {
+  "Malawi:hv206": {
+   "label": "has electricity",
+   "cats": [
+    [
+     "0",
+     "no"
+    ],
+    [
+     "1",
+     "yes"
+    ]
+   ],
+   "n_cats_in_file": 2,
+   "source": "MWHR81FL.dta"
+  },
+  "Malawi:hv005": {
+   "label": "household sample weight (6 decimals)",
+   "cats": [],
+   "n_cats_in_file": 0,
+   "source": "MWHR81FL.dta"
+  },
+  "Malawi:shv005": {
+   "label": "household sample weight for refugee camp data (6 decimals)",
+   "cats": [],
+   "n_cats_in_file": 0,
+   "source": "MWHR81FL.dta"
+  },
+  "Malawi:shcamps": {
+   "label": "refugee camps",
+   "cats": [
+    [
+     "0",
+     "no"
+    ],
+    [
+     "1",
+     "yes"
+    ]
+   ],
+   "n_cats_in_file": 2,
+   "source": "MWHR81FL.dta"
+  },
+  "Malawi:shdistrict": {
+   "label": "district",
+   "cats": [
+    [
+     "1",
+     "chitipa"
+    ],
+    [
+     "2",
+     "karonga"
+    ],
+    [
+     "3",
+     "nkhata bay"
+    ],
+    [
+     "4",
+     "rumphi"
+    ],
+    [
+     "5",
+     "mzimba"
+    ],
+    [
+     "6",
+     "likoma"
+    ],
+    [
+     "7",
+     "mzuzu city"
+    ],
+    [
+     "8",
+     "kasungu"
+    ],
+    [
+     "9",
+     "nkhotakota"
+    ],
+    [
+     "10",
+     "ntchisi"
+    ],
+    [
+     "11",
+     "dowa"
+    ],
+    [
+     "12",
+     "dowa (camps)"
+    ],
+    [
+     "13",
+     "salima"
+    ],
+    [
+     "14",
+     "lilongwe"
+    ],
+    [
+     "15",
+     "mchinji"
+    ]
+   ],
+   "n_cats_in_file": 33,
+   "source": "MWHR81FL.dta"
+  },
+  "Malawi:hv012": {
+   "label": "number of de jure members",
+   "cats": [],
+   "n_cats_in_file": 0,
+   "source": "MWHR81FL.dta"
+  },
+  "Malawi:hv121": {
+   "label": "member attended school during current school year",
+   "cats": [
+    [
+     "0",
+     "no"
+    ],
+    [
+     "1",
+     "currently attending"
+    ],
+    [
+     "2",
+     "attended at some time"
+    ]
+   ],
+   "n_cats_in_file": 3,
+   "source": "MWPR81FL.dta"
+  },
+  "Malawi:hv105": {
+   "label": "age of household members",
+   "cats": [
+    [
+     "95",
+     "95+"
+    ],
+    [
+     "98",
+     "don't know"
+    ]
+   ],
+   "n_cats_in_file": 2,
+   "source": "MWPR81FL.dta"
+  },
+  "Malawi:hv102": {
+   "label": "usual resident",
+   "cats": [
+    [
+     "0",
+     "no"
+    ],
+    [
+     "1",
+     "yes"
+    ]
+   ],
+   "n_cats_in_file": 2,
+   "source": "MWPR81FL.dta"
+  },
+  "Malawi:hv103": {
+   "label": "stayed last night",
+   "cats": [
+    [
+     "0",
+     "no"
+    ],
+    [
+     "1",
+     "yes"
+    ]
+   ],
+   "n_cats_in_file": 2,
+   "source": "MWPR81FL.dta"
+  },
+  "Malawi:hc70": {
+   "label": "height/age standard deviation (new who)",
+   "cats": [
+    [
+     "9996",
+     "height out of plausible limits"
+    ],
+    [
+     "9997",
+     "age in days out of plausible limits"
+    ],
+    [
+     "9998",
+     "flagged cases"
+    ]
+   ],
+   "n_cats_in_file": 3,
+   "source": "MWPR81FL.dta"
+  },
+  "Malawi:hc13": {
+   "label": "result of measurement - height/weight",
+   "cats": [
+    [
+     "0",
+     "measured"
+    ],
+    [
+     "3",
+     "not present"
+    ],
+    [
+     "4",
+     "refused"
+    ],
+    [
+     "6",
+     "other"
+    ]
+   ],
+   "n_cats_in_file": 4,
+   "source": "MWPR81FL.dta"
+  },
+  "Lebanon:WS1": {
+   "label": "Main source of drinking water",
+   "cats": [
+    [
+     "11",
+     "Piped into dwelling"
+    ],
+    [
+     "12",
+     "Piped into compound, yard or plot"
+    ],
+    [
+     "13",
+     "Piped to neighbour"
+    ],
+    [
+     "14",
+     "Public tap / standpipe"
+    ],
+    [
+     "21",
+     "Tube well, Borehole"
+    ],
+    [
+     "31",
+     "Protected well"
+    ],
+    [
+     "32",
+     "Unprotected well"
+    ],
+    [
+     "41",
+     "Protected spring"
+    ],
+    [
+     "42",
+     "Unprotected spring"
+    ],
+    [
+     "51",
+     "Rainwater collection"
+    ],
+    [
+     "61",
+     "Tanker-truck"
+    ],
+    [
+     "71",
+     "Cart with small tank / drum"
+    ],
+    [
+     "81",
+     "Surface water (river, stream, dam, lake, pond, canal, irrigation channel)"
+    ],
+    [
+     "91",
+     "Bottled water"
+    ],
+    [
+     "96",
+     "Other"
+    ]
+   ],
+   "n_cats_in_file": 16,
+   "source": "hh.sav"
+  },
+  "Lebanon:WS2": {
+   "label": "Main source of water used for other purposes (if bottled water used for drinking)",
+   "cats": [
+    [
+     "11",
+     "Piped into dwelling"
+    ],
+    [
+     "12",
+     "Piped into compound, yard or plot"
+    ],
+    [
+     "13",
+     "Piped to neighbour"
+    ],
+    [
+     "14",
+     "Public tap / standpipe"
+    ],
+    [
+     "21",
+     "Tube well, Borehole"
+    ],
+    [
+     "31",
+     "Protected well"
+    ],
+    [
+     "32",
+     "Unprotected well"
+    ],
+    [
+     "41",
+     "Protected spring"
+    ],
+    [
+     "42",
+     "Unprotected spring"
+    ],
+    [
+     "51",
+     "Rainwater collection"
+    ],
+    [
+     "61",
+     "Tanker-truck"
+    ],
+    [
+     "71",
+     "Cart with small tank / drum"
+    ],
+    [
+     "81",
+     "Surface water (river, stream, dam, lake, pond, canal, irrigation channel)"
+    ],
+    [
+     "96",
+     "Other"
+    ],
+    [
+     "99",
+     "Missing"
+    ]
+   ],
+   "n_cats_in_file": 15,
+   "source": "hh.sav"
+  },
+  "Lebanon:WS8": {
+   "label": "Type of toilet facility",
+   "cats": [
+    [
+     "11",
+     "Flush to piped sewer system"
+    ],
+    [
+     "12",
+     "Flush to septic tank"
+    ],
+    [
+     "13",
+     "Flush to pit (latrine)"
+    ],
+    [
+     "14",
+     "Flush to somewhere else"
+    ],
+    [
+     "15",
+     "Flush to unknown place / Not sure / DK where"
+    ],
+    [
+     "21",
+     "Ventilated Improved Pit latrine (VIP)"
+    ],
+    [
+     "22",
+     "Pit latrine with slab"
+    ],
+    [
+     "23",
+     "Pit latrine without slab / Open pit"
+    ],
+    [
+     "41",
+     "Bucket"
+    ],
+    [
+     "51",
+     "Hanging toilet, Hanging latrine"
+    ],
+    [
+     "95",
+     "No facility, Bush, Field"
+    ],
+    [
+     "96",
+     "Other"
+    ],
+    [
+     "99",
+     "Missing"
+    ]
+   ],
+   "n_cats_in_file": 13,
+   "source": "hh.sav"
+  },
+  "Lebanon:WS9": {
+   "label": "Toilet facility shared",
+   "cats": [
+    [
+     "1",
+     "Yes"
+    ],
+    [
+     "2",
+     "No"
+    ],
+    [
+     "9",
+     "Missing"
+    ]
+   ],
+   "n_cats_in_file": 3,
+   "source": "hh.sav"
+  },
+  "Lebanon:HC8A": {
+   "label": "Electricity",
+   "cats": [
+    [
+     "1",
+     "Yes"
+    ],
+    [
+     "2",
+     "No"
+    ],
+    [
+     "9",
+     "Missing"
+    ]
+   ],
+   "n_cats_in_file": 3,
+   "source": "hh.sav"
+  },
+  "Lebanon:HC2": {
+   "label": "Number of rooms used for sleeping",
+   "cats": [
+    [
+     "99",
+     "Missing"
+    ]
+   ],
+   "n_cats_in_file": 1,
+   "source": "hh.sav"
+  },
+  "Lebanon:HH11": {
+   "label": "Number of HH members",
+   "cats": [],
+   "n_cats_in_file": 0,
+   "source": "hh.sav"
+  },
+  "Lebanon:HH9": {
+   "label": "Result of HH interview",
+   "cats": [
+    [
+     "1",
+     "Completed"
+    ],
+    [
+     "2",
+     "respondent at home at time of visit"
+    ],
+    [
+     "3",
+     "Entire household absent for extended period of time"
+    ],
+    [
+     "4",
+     "Refused"
+    ],
+    [
+     "5",
+     "Dwelling vacant / Address not a dwelling"
+    ],
+    [
+     "6",
+     "Dwelling destroyed"
+    ],
+    [
+     "7",
+     "Dwelling not found"
+    ],
+    [
+     "96",
+     "Other"
+    ]
+   ],
+   "n_cats_in_file": 8,
+   "source": "hh.sav"
+  },
+  "Lebanon:HH7": {
+   "label": "Region",
+   "cats": [
+    [
+     "1",
+     "Tripoli"
+    ],
+    [
+     "2",
+     "Beirut"
+    ],
+    [
+     "3",
+     "Beqaa"
+    ],
+    [
+     "4",
+     "Saida"
+    ],
+    [
+     "5",
+     "Tyre"
+    ]
+   ],
+   "n_cats_in_file": 5,
+   "source": "hh.sav"
+  },
+  "Lebanon:hhweight": {
+   "label": "Household sample weight",
+   "cats": [],
+   "n_cats_in_file": 0,
+   "source": "hh.sav"
+  },
+  "Lebanon:ED5": {
+   "label": "Attended school during current school year (2010-2011)",
+   "cats": [
+    [
+     "1",
+     "Yes"
+    ],
+    [
+     "2",
+     "No"
+    ],
+    [
+     "9",
+     "Missing"
+    ]
+   ],
+   "n_cats_in_file": 3,
+   "source": "hl.sav"
+  },
+  "Lebanon:ED3": {
+   "label": "Ever attended school or pre-school",
+   "cats": [
+    [
+     "1",
+     "Yes"
+    ],
+    [
+     "2",
+     "No"
+    ],
+    [
+     "9",
+     "Missing"
+    ]
+   ],
+   "n_cats_in_file": 3,
+   "source": "hl.sav"
+  },
+  "Lebanon:HL6": {
+   "label": "Age",
+   "cats": [
+    [
+     "95",
+     "95+"
+    ],
+    [
+     "98",
+     "DK"
+    ],
+    [
+     "99",
+     "Missing"
+    ]
+   ],
+   "n_cats_in_file": 3,
+   "source": "hl.sav"
+  },
+  "Lebanon:BR1": {
+   "label": "Birth certificate",
+   "cats": [
+    [
+     "1",
+     "Yes, seen"
+    ],
+    [
+     "2",
+     "Yes, not seen"
+    ],
+    [
+     "3",
+     "No"
+    ],
+    [
+     "8",
+     "DK"
+    ],
+    [
+     "9",
+     "Missing"
+    ]
+   ],
+   "n_cats_in_file": 5,
+   "source": "ch.sav"
+  },
+  "Lebanon:BR2": {
+   "label": "Birth registered",
+   "cats": [
+    [
+     "1",
+     "Yes"
+    ],
+    [
+     "2",
+     "No"
+    ],
+    [
+     "8",
+     "DK"
+    ],
+    [
+     "9",
+     "Missing"
+    ]
+   ],
+   "n_cats_in_file": 4,
+   "source": "ch.sav"
+  },
+  "Lebanon:UF9": {
+   "label": "Result of interview for children under 5",
+   "cats": [
+    [
+     "1",
+     "Completed"
+    ],
+    [
+     "2",
+     "Not at home"
+    ],
+    [
+     "3",
+     "Refused"
+    ],
+    [
+     "4",
+     "Partly completed"
+    ],
+    [
+     "5",
+     "Incapacitated"
+    ],
+    [
+     "96",
+     "Other"
+    ]
+   ],
+   "n_cats_in_file": 6,
+   "source": "ch.sav"
+  },
+  "Lebanon:AG2": {
+   "label": "Age of child",
+   "cats": [],
+   "n_cats_in_file": 0,
+   "source": "ch.sav"
+  },
+  "Lebanon:chweight": {
+   "label": "Children sample weight",
+   "cats": [],
+   "n_cats_in_file": 0,
+   "source": "ch.sav"
+  }
+ },
+ "areas": {
+  "LBN": {
+   "area_var": "HH7",
+   "unit": "region",
+   "ind": {
+    "6.1.1": {
+     "Tripoli|Palestinian refugees": [
+      99.73,
+      1214
+     ],
+     "Beirut|Palestinian refugees": [
+      100.0,
+      778
+     ],
+     "Beqaa|Palestinian refugees": [
+      99.57,
+      248
+     ],
+     "Saida|Palestinian refugees": [
+      100.0,
+      1517
+     ],
+     "Tyre|Palestinian refugees": [
+      99.58,
+      990
+     ]
+    },
+    "6.1.1 (MICS4 2011 definition: no tanker/cart, bottled only if WS2 improved)": {
+     "Tripoli|Palestinian refugees": [
+      97.48,
+      1214
+     ],
+     "Beirut|Palestinian refugees": [
+      23.64,
+      778
+     ],
+     "Beqaa|Palestinian refugees": [
+      58.79,
+      248
+     ],
+     "Saida|Palestinian refugees": [
+      98.21,
+      1517
+     ],
+     "Tyre|Palestinian refugees": [
+      42.8,
+      990
+     ]
+    },
+    "6.2.1": {
+     "Tripoli|Palestinian refugees": [
+      92.51,
+      1214
+     ],
+     "Beirut|Palestinian refugees": [
+      99.08,
+      778
+     ],
+     "Beqaa|Palestinian refugees": [
+      99.9,
+      248
+     ],
+     "Saida|Palestinian refugees": [
+      99.66,
+      1517
+     ],
+     "Tyre|Palestinian refugees": [
+      99.05,
+      990
+     ]
+    },
+    "7.1.1": {
+     "Tripoli|Palestinian refugees": [
+      99.27,
+      1214
+     ],
+     "Beirut|Palestinian refugees": [
+      100.0,
+      778
+     ],
+     "Beqaa|Palestinian refugees": [
+      100.0,
+      248
+     ],
+     "Saida|Palestinian refugees": [
+      99.58,
+      1517
+     ],
+     "Tyre|Palestinian refugees": [
+      100.0,
+      990
+     ]
+    },
+    "4.1.2": {
+     "Tripoli|Palestinian refugees": [
+      85.15,
+      1639
+     ],
+     "Beirut|Palestinian refugees": [
+      83.91,
+      813
+     ],
+     "Beqaa|Palestinian refugees": [
+      91.42,
+      246
+     ],
+     "Saida|Palestinian refugees": [
+      82.23,
+      1700
+     ],
+     "Tyre|Palestinian refugees": [
+      85.59,
+      1130
+     ]
+    },
+    "4.1.2 (all children 6-17 in denominator)": {
+     "Tripoli|Palestinian refugees": [
+      84.15,
+      1659
+     ],
+     "Beirut|Palestinian refugees": [
+      80.32,
+      846
+     ],
+     "Beqaa|Palestinian refugees": [
+      90.57,
+      248
+     ],
+     "Saida|Palestinian refugees": [
+      80.76,
+      1730
+     ],
+     "Tyre|Palestinian refugees": [
+      84.99,
+      1139
+     ]
+    },
+    "11.1.1": {
+     "Tripoli|Palestinian refugees": [
+      17.04,
+      1189
+     ],
+     "Beirut|Palestinian refugees": [
+      23.9,
+      767
+     ],
+     "Beqaa|Palestinian refugees": [
+      19.42,
+      248
+     ],
+     "Saida|Palestinian refugees": [
+      18.24,
+      1492
+     ],
+     "Tyre|Palestinian refugees": [
+      17.31,
+      980
+     ]
+    },
+    "11.1.1 (household members)": {
+     "Tripoli|Palestinian refugees": [
+      23.65,
+      1189
+     ],
+     "Beirut|Palestinian refugees": [
+      33.39,
+      767
+     ],
+     "Beqaa|Palestinian refugees": [
+      28.16,
+      248
+     ],
+     "Saida|Palestinian refugees": [
+      26.01,
+      1492
+     ],
+     "Tyre|Palestinian refugees": [
+      26.89,
+      980
+     ]
+    },
+    "16.9.1": {
+     "Tripoli|Palestinian refugees": [
+      96.66,
+      603
+     ],
+     "Beirut|Palestinian refugees": [
+      97.55,
+      309
+     ],
+     "Beqaa|Palestinian refugees": [
+      97.35,
+      98
+     ],
+     "Saida|Palestinian refugees": [
+      97.93,
+      547
+     ],
+     "Tyre|Palestinian refugees": [
+      100.0,
+      359
+     ]
+    },
+    "16.9.1 (standard: certificate or registered)": {
+     "Tripoli|Palestinian refugees": [
+      98.25,
+      603
+     ],
+     "Beirut|Palestinian refugees": [
+      97.93,
+      309
+     ],
+     "Beqaa|Palestinian refugees": [
+      98.44,
+      98
+     ],
+     "Saida|Palestinian refugees": [
+      99.05,
+      547
+     ],
+     "Tyre|Palestinian refugees": [
+      100.0,
+      359
+     ]
+    }
+   },
+   "weights": "hhweight for household and household-member indicators, chweight for 16.9.1; n is the unweighted denominator. Keys without a bracket use the definition that reproduces the published value; bracketed keys are the alternative definition.",
+   "ind_note": "for '11.1.1 (household members)' the n is still the number of households"
+  },
+  "MWI": {
+   "note": "Dowa outside camp",
+   "ind": {
+    "7.1.1": {
+     "Dowa (camp)": [
+      25.23,
+      681
+     ],
+     "Dowa (outside camp)": [
+      13.04,
+      749
+     ]
+    },
+    "7.1.1 (de jure persons)": {
+     "Dowa (camp)": [
+      29.64,
+      3545
+     ],
+     "Dowa (outside camp)": [
+      13.52,
+      3037
+     ]
+    },
+    "4.1.2": {
+     "Dowa (camp)": [
+      86.68,
+      1229
+     ],
+     "Dowa (outside camp)": [
+      86.17,
+      1048
+     ]
+    },
+    "2.2.1": {
+     "Dowa (camp)": [
+      34.38,
+      312
+     ],
+     "Dowa (outside camp)": [
+      41.86,
+      147
+     ]
+    }
+   },
+   "weights": "Dowa (camp) = shdistrict 12 = shcamps 1, weighted with shv005; Dowa (outside camp) = shdistrict 11, weighted with hv005; n is unweighted denominator"
+  }
+ }
+}
