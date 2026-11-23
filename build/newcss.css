@@ -193,3 +193,5 @@ button.czr:first-child{border-top:0}button.czr:hover{background:rgba(207,224,244
 .prt figcaption,.prn{font-size:11.5px;color:var(--soft)}
 .prn{margin:6px 0 2px}
 .prc{font-size:12px}.prc th,.prc td{vertical-align:top;white-space:normal;min-width:70px;max-width:340px}
+
+.stage[data-v="3d"]:not(.country)::after{content:"Drag to turn · scroll or pinch to zoom in";position:absolute;left:12px;bottom:9px;font-size:11.5px;color:var(--soft);opacity:.75;pointer-events:none}

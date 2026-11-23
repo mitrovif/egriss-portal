@@ -112,15 +112,17 @@ function beads(iso){ const c=Q.ctry[iso]; if(!c) return null;
 function mainGeom(iso){ const f=Q.geo.find(x=>x.properties.i===iso); if(!f) return null;
   const P=f.geometry.type==='MultiPolygon'?f.geometry.coordinates:[f.geometry.coordinates], ar=P.map(p=>d3.geoArea({type:'Polygon',coordinates:p})), mx=Math.max(...ar);
   return {type:'MultiPolygon',coordinates:P.filter((p,i)=>ar[i]>=mx*.15)} }
-function tween(dur,fn,done){
+function tween(dur,fn,done,ez){ ez=ez||d3.easeCubicInOut;
   let fin=false; const end=()=>{ if(fin) return; fin=true; fn(1); done&&done() };
   if(RM||document.hidden||typeof requestAnimationFrame==='undefined'){ end(); return }
   const t0=performance.now(); setTimeout(end,dur+400);
-  requestAnimationFrame(function step(now){ if(fin) return; const t=Math.min(1,(now-t0)/dur); if(t>=1){ end(); return } fn(d3.easeCubicInOut(t)); requestAnimationFrame(step) });
+  requestAnimationFrame(function step(now){ if(fin) return; const t=Math.min(1,(now-t0)/dur); if(t>=1){ end(); return } fn(ez(t)); requestAnimationFrame(step) });
 }
 const lerp=(a,b,t)=>a+(b-a)*t;
 function lerpLon(a,b,t){ let d=((b-a+540)%360)-180; return a+d*t }
 function gBase(){ const kO=Math.min(G.W,G.H)/2.45, kE=Math.min((G.W-24)/5.42,(G.H-60)/2.64); return view==='2d'?{rot:[0,0],k:kE,tr:[G.W/2,G.H/2+8],alpha:1,fade:0,m:0}:{rot:[G.rot[0],Math.max(-40,Math.min(40,G.rot[1]))],k:kO,tr:[G.W/2,G.H/2+14],alpha:0,fade:0,m:0} }
+const _po=d3.geoOrthographic(), _pe=d3.geoEqualEarth();
+function gInv(q){ const a=G.alpha, p=a<.01?_po:a>.99?_pe:null; if(!p) return null; return p.scale(G.k).translate(G.tr).rotate([G.rot[0],G.rot[1]]).invert(q) }
 function gProj(){ const a=G.alpha; G.mut(a); G.proj.scale(G.k).translate(G.tr).rotate([G.rot[0],G.rot[1]]).clipAngle(a>=.999?null:90+89.9*a) }
 function rgba(hex,al){ const n=parseInt(hex.slice(1),16); return `rgba(${n>>16},${(n>>8)&255},${n&255},${al})` }
 function draw(){
@@ -173,7 +175,7 @@ function draw(){
   }
 }
 const sstep=x=>{ x=Math.max(0,Math.min(1,x)); return x*x*(3-2*x) };
-function gTo(T,dur,done){
+function gTo(T,dur,done,ez){
   const S={rot:G.rot.slice(),k:G.k,tr:G.tr.slice(),alpha:G.alpha,fade:G.fade,m:G.m||0}, Tf=T.fade==null?S.fade:T.fade, Tm=T.m==null?S.m:T.m, Ta=T.alpha==null?S.alpha:T.alpha; busy=true;
   if(T.M) G.M=T.M;
   const glide=S.alpha<.5&&Ta<.5, deg=k=>G.W*57.3/k, x0=-S.rot[0], x1=x0+(((S.rot[0]-T.rot[0])%360+540)%360-180), y0=-S.rot[1], y1=-T.rot[1];
@@ -185,7 +187,7 @@ function gTo(T,dur,done){
     else { G.rot=[lerpLon(S.rot[0],T.rot[0],e),lerp(S.rot[1],T.rot[1],e)]; G.k=S.k*Math.pow(T.k/S.k,e) }
     G.tr=[lerp(S.tr[0],T.tr[0],e),lerp(S.tr[1],T.tr[1],e)]; G.alpha=lerp(S.alpha,Ta,e);
     G.fade=lerp(S.fade,Tf,inw?sstep((e-.3)/.55):sstep(e/.6));
-    G.m=lerp(S.m,Tm,unf?sstep((e-.45)/.55):sstep(e/.5)); draw() },()=>{ busy=false; done&&done() }) }
+    G.m=lerp(S.m,Tm,unf?sstep((e-.45)/.55):sstep(e/.5)); draw() },()=>{ busy=false; done&&done() },ez) }
 function flatProj(g,ext){ const b=d3.geoBounds(g), p=d3.geoMercator(); if(b[0][0]>b[1][0]) p.rotate([-d3.geoCentroid(g)[0],0]); return p.fitExtent(ext,g) }
 function targetFor(iso){
   const m=Q.cm[iso], g=mainGeom(iso); if(!g) return null; const c=d3.geoCentroid(g);
@@ -223,12 +225,33 @@ function initGlobe(){
      cs:Q.geo.map(f=>{const g=mainGeom(f.properties.i); return {f,iso:f.properties.i,cen:g?d3.geoCentroid(g):null,bb:d3.geoBounds(f),w:0}})};
   G.by={}; G.cs.forEach(c=>G.by[c.iso]=c); G.ic={}; SDGI.forEach(g=>{ const im=new Image(); im.onload=()=>{ if(layer==='sdg') draw() }; im.src='sdg/'+g+'.png'; G.ic[g]=im }); size(); Object.assign(G,gBase()); if(view==='3d') G.rot=[-28,-8];
   const find=(x,y)=>{ let best=null,bd=3; for(const h of G.hit){ const vx=h[3]-h[1], vy=h[4]-h[2], L=vx*vx+vy*vy||1, t=Math.max(0,Math.min(1,((x-h[1])*vx+(y-h[2])*vy)/L)), d=Math.hypot(x-h[1]-t*vx,y-h[2]-t*vy)-h[5]; if(d<bd){bd=d;best=h[0]} } if(best) return best;
-    if(G.alpha<.999&&Math.hypot(x-G.tr[0],y-G.tr[1])>G.k) return null; const ll=G.proj.invert([x,y]); if(!ll||isNaN(ll[0])) return null;
+    if(G.alpha<.999&&Math.hypot(x-G.tr[0],y-G.tr[1])>G.k) return null; const ll=gInv([x,y]); if(!ll||isNaN(ll[0])) return null;
     for(const c of G.cs){ const b=c.bb; if(ll[1]<b[0][1]||ll[1]>b[1][1]) continue; if(b[0][0]<=b[1][0]&&(ll[0]<b[0][0]||ll[0]>b[1][0])) continue; if(d3.geoContains(c.f,ll)) return c.iso } return null };
   let dn=null, moved=0;
-  cv.addEventListener('pointerdown',e=>{ if(level!=='world'||busy) return; G.spin=false; dn=[e.clientX,e.clientY]; moved=0 });
-  window.addEventListener('pointermove',e=>{ if(!dn||view!=='3d'||level!=='world') return; const dx=e.clientX-dn[0], dy=e.clientY-dn[1]; moved+=Math.abs(dx)+Math.abs(dy); dn=[e.clientX,e.clientY]; const s=57.3/G.k; G.rot=[G.rot[0]+dx*s,Math.max(-70,Math.min(70,G.rot[1]-dy*s))]; draw() });
-  window.addEventListener('pointerup',()=>{ dn=null });
+  cv.addEventListener('pointerdown',e=>{ if(level!=='world'||busy) return; G.spin=false; dn=[e.clientX,e.clientY]; moved=0; coast=false; vel=[0,0]; lastT=e.timeStamp });
+  window.addEventListener('pointermove',e=>{ if(!dn||view!=='3d'||level!=='world') return; const dx=e.clientX-dn[0], dy=e.clientY-dn[1]; if(pts.size>1) return; moved+=Math.abs(dx)+Math.abs(dy); dn=[e.clientX,e.clientY]; const s=57.3/G.k, dt=Math.max(8,e.timeStamp-lastT); lastT=e.timeStamp; vel=[lerp(vel[0],dx*s/dt,.5),lerp(vel[1],-dy*s/dt,.5)]; G.rot=[G.rot[0]+dx*s,Math.max(-70,Math.min(70,G.rot[1]-dy*s))]; draw() });
+  window.addEventListener('pointerup',e=>{ if(dn&&moved>6&&e.timeStamp-lastT<70&&Math.hypot(vel[0],vel[1])*G.k/57.3>.05){ coast=true; kick() } dn=null });
+  // scroll or pinch zooms; the globe leans toward the pointer, keeps a little momentum after a drag,
+  // and once a country with data fills the view it opens on its own
+  let kT=0, aim=null, vel=[0,0], coast=false, live=false, lastT=0; const pts=new Map(); let pin=null;
+  const centreIso=()=>{ const ll=gInv(G.tr); if(!ll||isNaN(ll[0])) return null; for(const c of G.cs){ if(has(c.iso,layer)&&d3.geoContains(c.f,ll)) return c.iso } return null };
+  const kick=()=>{ if(!live){ live=true; requestAnimationFrame(step) } };
+  function step(){ live=false; if(level!=='world'||busy||view!=='3d'){ kT=0; coast=false; return } let on=false;
+    if(kT){ const d=Math.log(kT/G.k); if(Math.abs(d)>.003){ const s=d*.17; G.k*=Math.exp(s); if(aim&&d>0){ const f=Math.min(.5,s*1.1); G.rot=[lerpLon(G.rot[0],-aim[0],f),lerp(G.rot[1],Math.max(-70,Math.min(70,-aim[1])),f)] } on=true } else { G.k=kT; kT=0; aim=null } }
+    if(coast){ G.rot=[G.rot[0]+vel[0]*16,Math.max(-70,Math.min(70,G.rot[1]+vel[1]*16))]; vel=[vel[0]*.94,vel[1]*.94]; if(Math.hypot(vel[0],vel[1])*G.k/57.3<.012) coast=false; else on=true }
+    draw();
+    if(kT&&kT>G.k){ const base=gBase().k, iso=centreIso(), T=iso&&targetFor(iso);
+      if(T&&G.k>=Math.max(base*1.7,Math.min(T.k*.55,base*4.5))){ kT=0; aim=null; coast=false; if(iso!==gSel){ gSel=iso; fSrc=fInd=fEx=fSv=mapInd=null; czSel=null; mapG=0; render() } tip.hidden=true; zoomIn(true); return } }
+    if(on) kick() }
+  const zoomBy=(f,x,y)=>{ const base=gBase().k, cur=kT||G.k; kT=Math.max(base,Math.min(base*9,cur*f)); G.spin=false;
+    if(f>1&&x!=null&&Math.hypot(x-G.tr[0],y-G.tr[1])<G.k){ const ll=gInv([x,y]); if(ll&&!isNaN(ll[0])) aim=ll } kick() };
+  cv.addEventListener('wheel',e=>{ if(level!=='world'||busy||view!=='3d') return; const out=e.deltaY>0; if(out&&(kT||G.k)<=gBase().k*1.002) return;   // at full view the page scrolls as usual
+    e.preventDefault(); const r=cv.getBoundingClientRect(); zoomBy(Math.exp(-Math.max(-60,Math.min(60,e.deltaY))*(e.ctrlKey?.014:.0028)),e.clientX-r.left,e.clientY-r.top) },{passive:false});
+  cv.addEventListener('pointerdown',e=>{ pts.set(e.pointerId,[e.clientX,e.clientY]); if(pts.size===2){ const [a,b]=[...pts.values()]; pin=[Math.hypot(a[0]-b[0],a[1]-b[1])||1,G.k]; dn=null } });
+  cv.addEventListener('pointermove',e=>{ if(!pts.has(e.pointerId)) return; pts.set(e.pointerId,[e.clientX,e.clientY]); if(pts.size===2&&pin&&level==='world'&&!busy&&view==='3d'){ const [a,b]=[...pts.values()], r=cv.getBoundingClientRect(), base=gBase().k; kT=Math.max(base,Math.min(base*9,pin[1]*Math.hypot(a[0]-b[0],a[1]-b[1])/pin[0])); if(kT>G.k){ const ll=gInv([(a[0]+b[0])/2-r.left,(a[1]+b[1])/2-r.top]); if(ll&&!isNaN(ll[0])) aim=ll } kick() } });
+  const up=e=>{ pts.delete(e.pointerId); if(pts.size<2) pin=null }; window.addEventListener('pointerup',up); window.addEventListener('pointercancel',up);
+  $('cmap').addEventListener('wheel',e=>{ if(level==='country'&&!busy&&e.ctrlKey&&e.deltaY>0){ e.preventDefault(); zoomOut() } },{passive:false});
+  box.dataset.v=view;
   cv.addEventListener('pointermove',e=>{ if(level!=='world'||busy||dn&&moved>6) return; const r=cv.getBoundingClientRect(), h=find(e.clientX-r.left,e.clientY-r.top);
     if(h!==hov){ hov=h; cv.style.cursor=h&&any(h)?'pointer':(view==='3d'?'grab':'default'); draw(); if(h){ tip.innerHTML=hoverCard(h); tip.hidden=false } else tip.hidden=true }
     if(h){ const w=tip.offsetWidth, hh=tip.offsetHeight; tip.style.left=Math.max(12,Math.min(e.clientX+16,window.innerWidth-w-12))+'px'; tip.style.top=Math.max(12,Math.min(e.clientY+16,window.innerHeight-hh-12))+'px' } });
@@ -244,11 +267,11 @@ function paintGlobe(){ weights(); if(lastLayer!==layer&&level==='world'&&!busy){
 function pick(iso,move){ if(!Q.ctry[iso]||!any(iso)||busy) return; gSel=iso; fSrc=fInd=fEx=fSv=mapInd=null; czSel=null; mapG=0; G.spin=false; render(); const p=$('panel'); p.classList.remove('slide'); void p.offsetWidth; p.classList.add('slide'); setTimeout(()=>p.classList.remove('slide'),600);
   if(move&&view==='3d'&&level==='world'){ const g=mainGeom(iso); { const go=layer==='sdg'&&has(iso,'sdg'); if(g&&!go){ const c=d3.geoCentroid(g); gTo({rot:[-c[0],Math.max(-40,Math.min(40,-c[1]))],k:G.k,tr:G.tr,alpha:0},[750,1500,1.8]) } } }
   if(level==='world'&&layer==='sdg'&&has(iso,'sdg')) zoomIn() }
-function setView(v){ if(v===view||busy) return; view=v; G.spin=false; render(); gTo(gBase(),950) }
-function zoomIn(){
+function setView(v){ if(v===view||busy) return; view=v; $('stage').dataset.v=v; G.spin=false; render(); gTo(gBase(),950) }
+function zoomIn(hand){
   if(level==='country') return; if(busy){ setTimeout(zoomIn,160); return } const T=targetFor(gSel), st=$('stage'); $('tip').hidden=true; hov=null;
   const land=()=>{ level='country'; setHash(); render(); st.classList.add('country','landing'); setTimeout(()=>st.classList.remove('landing'),1500) };
-  if(!T){ land(); return } gTo(T,[1450,2600],land);
+  if(!T){ land(); return } hand===true?gTo(T,[900,1900],land,d3.easeCubicOut):gTo(T,[1450,2600],land);
 }
 function zoomOut(){
   if(busy||level==='world') return; const st=$('stage'); st.classList.remove('country'); level='world'; setHash(); render();
