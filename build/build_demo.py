@@ -62,6 +62,26 @@ for x in rows:
                  x["response_options"], x["notes"], x["universe_skip"]])
 data["surveys"] = surveys; data["bank"] = bank
 
+# ---- the questions as printed: crops of the original questionnaire (PDF) or its rows (spreadsheet, text file) ----
+# made by mk_excerpts.py; keyed by the row number of the bank file
+for i, r in enumerate(bank): r.append(i)
+exc = {"img": [], "row": {}, "cell": {}, "file": {}}
+EXC_SKIP = {"14_UNHS_UGA"}   # only a data-dictionary print-out with case counts is on file, not the questionnaire
+_ef = os.path.join(os.path.dirname(os.path.abspath(__file__)), "excerpts.json")
+if os.path.exists(_ef):
+    _seen = {}
+    for sid, e in json.load(open(_ef)).items():
+        if sid not in sidx or sid in EXC_SKIP: continue
+        exc["file"][sidx[sid]] = [e.get("file", ""), e.get("kind", "")]
+        for k, v in e.get("rows", {}).items():
+            if v.get("img"):
+                if v["img"] not in _seen:
+                    _seen[v["img"]] = len(exc["img"]); exc["img"].append([v["img"], v.get("w", 0), v.get("h", 0), v.get("page", ""), v.get("file", "")])
+                exc["row"][int(k)] = _seen[v["img"]]
+            elif v.get("cells") and sum(len(c) for c in v["cells"]) > 1:   # a lone heading says nothing
+                exc["cell"][int(k)] = [v.get("where", ""), v["cells"], v.get("file", "")]
+data["exc"] = exc
+
 # ---- datasets behind calculated values, and outreach lists ----
 SDG = path("sdg") + "/data/"
 ds = {}

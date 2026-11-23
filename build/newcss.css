@@ -177,3 +177,19 @@ button.czr:first-child{border-top:0}button.czr:hover{background:rgba(207,224,244
 .mf.two .mfk{padding-top:2px}.mf.two .mfb{gap:6px}
 .mf.na{opacity:.5;padding-top:6px;padding-bottom:6px}.mf.na .route{display:none}
 @media (max-width:1000px){.mf.two{grid-template-columns:minmax(0,1fr)}}
+
+/* hand-over from globe to country map: the outline is already in place, the detail arrives after it */
+#gcv{transition:opacity .7s ease}#cmap{transition:opacity .6s ease}
+@keyframes arrive{from{opacity:0}}
+.stage.landing #cmap #m-idp,.stage.landing #cmap #m-adm{animation:arrive .7s ease .15s both}
+.stage.landing #cmap #m-pts,.stage.landing #cmap #m-cz{animation:arrive .8s ease .4s both}
+.stage.landing #cmap #m-camps,.stage.landing #cmap #m-lab{animation:arrive .7s ease .7s both}
+
+/* the question as printed */
+.prt{margin:8px 0 2px;display:flex;flex-direction:column;gap:4px}
+.prt a{display:block;max-height:300px;overflow:hidden;border:1px solid var(--line);border-radius:3px;background:#fff;position:relative}
+.prt a::after{content:"";position:absolute;inset:auto 0 0 0;height:26px;background:linear-gradient(rgba(255,255,255,0),rgba(255,255,255,.9));pointer-events:none}
+.prt img{display:block;width:100%;height:auto}
+.prt figcaption,.prn{font-size:11.5px;color:var(--soft)}
+.prn{margin:6px 0 2px}
+.prc{font-size:12px}.prc th,.prc td{vertical-align:top;white-space:normal;min-width:70px;max-width:340px}

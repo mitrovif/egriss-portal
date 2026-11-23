@@ -120,7 +120,7 @@ function tween(dur,fn,done){
 }
 const lerp=(a,b,t)=>a+(b-a)*t;
 function lerpLon(a,b,t){ let d=((b-a+540)%360)-180; return a+d*t }
-function gBase(){ const kO=Math.min(G.W,G.H)/2.45, kE=Math.min((G.W-24)/5.42,(G.H-60)/2.64); return view==='2d'?{rot:[0,0],k:kE,tr:[G.W/2,G.H/2+8],alpha:1,fade:0}:{rot:[G.rot[0],Math.max(-40,Math.min(40,G.rot[1]))],k:kO,tr:[G.W/2,G.H/2+14],alpha:0,fade:0} }
+function gBase(){ const kO=Math.min(G.W,G.H)/2.45, kE=Math.min((G.W-24)/5.42,(G.H-60)/2.64); return view==='2d'?{rot:[0,0],k:kE,tr:[G.W/2,G.H/2+8],alpha:1,fade:0,m:0}:{rot:[G.rot[0],Math.max(-40,Math.min(40,G.rot[1]))],k:kO,tr:[G.W/2,G.H/2+14],alpha:0,fade:0,m:0} }
 function gProj(){ const a=G.alpha; G.mut(a); G.proj.scale(G.k).translate(G.tr).rotate([G.rot[0],G.rot[1]]).clipAngle(a>=.999?null:90+89.9*a) }
 function rgba(hex,al){ const n=parseInt(hex.slice(1),16); return `rgba(${n>>16},${(n>>8)&255},${n&255},${al})` }
 function draw(){
@@ -140,8 +140,8 @@ function draw(){
     if(hov&&hov!==gSel){ const c=G.by[hov]; if(c&&!c.w){ ctx.beginPath(); P(c.f); ctx.strokeStyle='rgba(255,255,255,.55)'; ctx.lineWidth=1; ctx.stroke() } }
   }
   const s=G.by[gSel];
-  if(s){ ctx.globalAlpha=1; ctx.beginPath(); P(s.f);
-    ctx.fillStyle=d3.interpolateRgb(s.w?d3.interpolateRgb('#2a3f78',col)(.3+.55*s.w):'#3a4f8a','#16264f')(f); ctx.fill();
+  if(s){ ctx.globalAlpha=1; ctx.beginPath(); if(G.m>.002&&G.M&&a<.01) selPath(ctx,s.f); else P(s.f);
+    ctx.fillStyle=d3.interpolateRgb(s.w?d3.interpolateRgb('#2a3f78',col)(.3+.55*s.w):'#3a4f8a','#16264f')(f); ctx.fill('evenodd');
     ctx.save(); ctx.shadowColor='rgba(255,255,255,.75)'; ctx.shadowBlur=10*(1-f); ctx.strokeStyle=d3.interpolateRgb('#ffffff','rgba(207,224,244,0.45)')(f); ctx.lineWidth=lerp(1.8,1,f); ctx.stroke(); ctx.restore() }
   if(vis>.01){
     ctx.globalAlpha=vis;
@@ -172,15 +172,32 @@ function draw(){
     ctx.globalAlpha=1;
   }
 }
-function gTo(T,dur,done){ const S={rot:G.rot.slice(),k:G.k,tr:G.tr.slice(),alpha:G.alpha,fade:G.fade}; busy=true;
-  tween(dur,t=>{ G.rot=[lerpLon(S.rot[0],T.rot[0],t),lerp(S.rot[1],T.rot[1],t)]; G.k=lerp(S.k,T.k,t); G.tr=[lerp(S.tr[0],T.tr[0],t),lerp(S.tr[1],T.tr[1],t)]; G.alpha=lerp(S.alpha,T.alpha,t); G.fade=lerp(S.fade,T.fade==null?S.fade:T.fade,Math.min(1,t*1.6)); draw() },()=>{ busy=false; done&&done() }) }
+const sstep=x=>{ x=Math.max(0,Math.min(1,x)); return x*x*(3-2*x) };
+function gTo(T,dur,done){
+  const S={rot:G.rot.slice(),k:G.k,tr:G.tr.slice(),alpha:G.alpha,fade:G.fade,m:G.m||0}, Tf=T.fade==null?S.fade:T.fade, Tm=T.m==null?S.m:T.m, Ta=T.alpha==null?S.alpha:T.alpha; busy=true;
+  if(T.M) G.M=T.M;
+  const glide=S.alpha<.5&&Ta<.5, deg=k=>G.W*57.3/k, x0=-S.rot[0], x1=x0+(((S.rot[0]-T.rot[0])%360+540)%360-180), y0=-S.rot[1], y1=-T.rot[1];
+  const zi=d3.interpolateZoom.rho(1.2)([x0,y0,deg(S.k)],[x1,y1,deg(T.k)]), lim=Array.isArray(dur)?dur:null;
+  if(lim) dur=Math.max(lim[0],Math.min(lim[1],zi.duration*(lim[2]||1.05)));
+  const inw=Tf>S.fade, unf=Tm>S.m;
+  tween(dur,e=>{
+    if(glide){ const v=zi(e); G.rot=[-v[0],-v[1]]; G.k=deg(v[2]) }
+    else { G.rot=[lerpLon(S.rot[0],T.rot[0],e),lerp(S.rot[1],T.rot[1],e)]; G.k=S.k*Math.pow(T.k/S.k,e) }
+    G.tr=[lerp(S.tr[0],T.tr[0],e),lerp(S.tr[1],T.tr[1],e)]; G.alpha=lerp(S.alpha,Ta,e);
+    G.fade=lerp(S.fade,Tf,inw?sstep((e-.3)/.55):sstep(e/.6));
+    G.m=lerp(S.m,Tm,unf?sstep((e-.45)/.55):sstep(e/.5)); draw() },()=>{ busy=false; done&&done() }) }
+function flatProj(g,ext){ const b=d3.geoBounds(g), p=d3.geoMercator(); if(b[0][0]>b[1][0]) p.rotate([-d3.geoCentroid(g)[0],0]); return p.fitExtent(ext,g) }
 function targetFor(iso){
   const m=Q.cm[iso], g=mainGeom(iso); if(!g) return null; const c=d3.geoCentroid(g);
-  let ext=[[G.W*.2,G.H*.14],[G.W*.8,G.H*.86]];
-  if(m){ const s=Math.min(G.W/m.w,G.H/m.h), ox=(G.W-m.w*s)/2, oy=(G.H-m.h*s)/2, b=m.bb; ext=[[ox+b[0]*s,oy+b[2]*s],[ox+b[1]*s,oy+b[3]*s]] }
-  const p=d3.geoOrthographic().rotate([-c[0],-c[1]]).fitExtent(ext,g);
-  return {rot:[-c[0],-c[1]],k:p.scale(),tr:p.translate(),alpha:0,fade:1};
+  const vw=m?m.w:560, vh=m?m.h:520, s=Math.min(G.W/vw,G.H/vh), ox=(G.W-vw*s)/2, oy=(G.H-vh*s)/2, b=m?m.bb:[20,540,20,500];
+  const ext=[[ox+b[0]*s,oy+b[2]*s],[ox+b[1]*s,oy+b[3]*s]];
+  const p=d3.geoOrthographic().rotate([-c[0],-c[1]]).fitExtent(ext,g), M0=flatProj(g,ext); let M=M0, fits=1;
+  if(m){ const bb=d3.geoPath(M0).bounds(g), sx=(ext[1][0]-ext[0][0])/(bb[1][0]-bb[0][0]), sy=(ext[1][1]-ext[0][1])/(bb[1][1]-bb[0][1]);
+    fits=Math.max(sx,sy)/Math.min(sx,sy)<1.14?1:0; M=q=>{ const v=M0(q); return [ext[0][0]+(v[0]-bb[0][0])*sx,ext[0][1]+(v[1]-bb[0][1])*sy] } }
+  return {rot:[-c[0],-c[1]],k:p.scale(),tr:p.translate(),alpha:0,fade:1,m:fits,M};
 }
+function selPath(ctx,f){ const m=G.m, M=G.M, pr=G.proj, P=f.geometry.type==='MultiPolygon'?f.geometry.coordinates:[f.geometry.coordinates];
+  for(const poly of P) for(const ring of poly){ for(let i=0;i<ring.length;i++){ const a=pr(ring[i]), b=M(ring[i]), x=a[0]+(b[0]-a[0])*m, y=a[1]+(b[1]-a[1])*m; i?ctx.lineTo(x,y):ctx.moveTo(x,y) } ctx.closePath() } }
 const _gl={}; function goalsOf(iso){ return _gl[iso]||(_gl[iso]=[...new Set(sdgRows(iso).map(([d])=>goalOf(d.c)).concat((Q.ctry[iso]||{rep:[]}).rep.map(x=>goalOf(x[0]))))].filter(g=>SDGC[g]).sort((a,b)=>a-b)) }
 function weights(){ const v=G.cs.map(c=>{const b=beads(c.iso); return b?b.length:0}), mx=Math.max(2,...v); G.cs.forEach((c,i)=>c.w=v[i]?Math.max(.12,Math.min(1,v[i]/Math.min(mx,12))):0); G.maxTot=Math.max(1,...G.cs.map(c=>czTot(c.iso))) }
 function hoverCard(iso){
@@ -225,24 +242,24 @@ function initGlobe(){
 let lastLayer=null;
 function paintGlobe(){ weights(); if(lastLayer!==layer&&level==='world'&&!busy){ lastLayer=layer; grow=0; tween(700,t=>{ grow=t; if(!busy) draw() }) } else { lastLayer=layer; draw() } }
 function pick(iso,move){ if(!Q.ctry[iso]||!any(iso)||busy) return; gSel=iso; fSrc=fInd=fEx=fSv=mapInd=null; czSel=null; mapG=0; G.spin=false; render(); const p=$('panel'); p.classList.remove('slide'); void p.offsetWidth; p.classList.add('slide'); setTimeout(()=>p.classList.remove('slide'),600);
-  if(move&&view==='3d'&&level==='world'){ const g=mainGeom(iso); if(g){ const c=d3.geoCentroid(g); gTo({rot:[-c[0],Math.max(-40,Math.min(40,-c[1]))],k:G.k,tr:G.tr,alpha:0},layer==='sdg'?450:700) } }
+  if(move&&view==='3d'&&level==='world'){ const g=mainGeom(iso); { const go=layer==='sdg'&&has(iso,'sdg'); if(g&&!go){ const c=d3.geoCentroid(g); gTo({rot:[-c[0],Math.max(-40,Math.min(40,-c[1]))],k:G.k,tr:G.tr,alpha:0},[750,1500,1.8]) } } }
   if(level==='world'&&layer==='sdg'&&has(iso,'sdg')) zoomIn() }
 function setView(v){ if(v===view||busy) return; view=v; G.spin=false; render(); gTo(gBase(),950) }
 function zoomIn(){
   if(level==='country') return; if(busy){ setTimeout(zoomIn,160); return } const T=targetFor(gSel), st=$('stage'); $('tip').hidden=true; hov=null;
-  const land=()=>{ level='country'; setHash(); render(); st.classList.add('country') };
-  if(!T){ land(); return } gTo(T,1200,land);
+  const land=()=>{ level='country'; setHash(); render(); st.classList.add('country','landing'); setTimeout(()=>st.classList.remove('landing'),1500) };
+  if(!T){ land(); return } gTo(T,[1450,2600],land);
 }
 function zoomOut(){
   if(busy||level==='world') return; const st=$('stage'); st.classList.remove('country'); level='world'; setHash(); render();
-  setTimeout(()=>gTo(gBase(),1100),RM?0:280);
+  setTimeout(()=>gTo(gBase(),[1400,2400]),RM?0:90);
 }
 
 /* ---- the country map: drawn once per country, then recoloured so colours blend when the view is switched ---- */
 let mapIso=null;
 function outlineSvg(iso){
   const g=mainGeom(iso); if(!g) return '<p class="lnote" style="padding:20px">No map for this country yet.</p>';
-  const p=d3.geoMercator().fitExtent([[20,20],[540,500]],g);
+  const p=flatProj(g,[[20,20],[540,500]]);
   return `<svg viewBox="0 0 560 520" role="img" aria-label="Outline of the country"><path class="land" d="${d3.geoPath(p)(g)}"/></svg>`;
 }
 function buildCountryMap(iso){
@@ -489,8 +506,18 @@ function pSdg(){
 let czSel=null;
 const bestOf=rs=>rs.length?rs.map(r=>r[3]).sort((a,b)=>(RANK[a]??9)-(RANK[b]??9))[0]:null;
 const modDots=s=>`<span class="mdots" ${tipA('Module coverage','One square per module item, in order. Colour = how close the wording is; empty = not asked.')}>${Q.model.map(m=>{const b=bestOf(bankFor(s,m.code)); return `<i class="${b?'a-'+b:''} ${m.core?'core':''}"></i>`}).join('')}</span>`;
-const qBlock=r=>`<div class="bq"><div class="l"><span class="qid">${esc(r[1])}</span><i class="pill a-${r[3]}">${esc(r[3])}</i>${r[4]!=='n.a.'&&r[4]!=='none'?`<span class="qmeta">${esc(r[4])}</span>`:''}</div><div class="t"><div class="o">${esc(r[5])}</div>${r[7]&&r[7]!==r[5]?`<div class="e">${esc(r[7])} ${r[8]?'<i class="pill draft">Draft</i>':''}</div>`:''}${r[11]?`<div class="route">↳ ${esc(r[11])}</div>`:''}<details><summary>Response options and coding note</summary><p>${esc(r[9])}</p>${r[10]?`<p style="margin-top:6px">${esc(r[10])}</p>`:''}</details></div></div>`;
-function qOpen(s,iso,noBack){
+/* the question as printed: a crop of the original page, or the rows of the original file */
+function printed(r,seen){
+  const X=Q.exc, i=r[12], f=X.file[r[0]]; if(!f) return '';
+  if(X.row[i]!=null){ const k=X.row[i], g=X.img[k], pg=g[3]?'page '+g[3]:'';
+    if(seen){ if(seen.has(k)) return `<p class="prn">As printed: in the excerpt above${pg?' ('+pg+')':''}</p>`; seen.add(k) }
+    return `<figure class="prt"><a href="${g[0]}" target="_blank" rel="noopener" ${tipA('As printed','Open the excerpt at full size')}><img loading="lazy" src="${g[0]}" width="${g[1]}" height="${g[2]}" alt="The question as printed in the questionnaire${pg?', '+pg:''}"></a><figcaption>As printed · ${esc(g[4]||f[0])}${pg?' · '+pg:''}</figcaption></figure>` }
+  if(X.cell[i]){ const [wh,cs,fn]=X.cell[i];
+    return `<figure class="prt"><div class="tw"><table class="snt prc">${cs.map((row,n)=>`<tr>${row.map(c=>n?`<td>${esc(c).replace(/\n/g,'<br>')}</td>`:`<th>${esc(c)}</th>`).join('')}</tr>`).join('')}</table></div><figcaption>As written in the file · ${esc(fn||f[0])}${wh?' · '+esc(wh):''}</figcaption></figure>` }
+  return '';
+}
+const qBlock=(r,seen)=>`<div class="bq"><div class="l"><span class="qid">${esc(r[1])}</span><i class="pill a-${r[3]}">${esc(r[3])}</i>${r[4]!=='n.a.'&&r[4]!=='none'?`<span class="qmeta">${esc(r[4])}</span>`:''}</div><div class="t"><div class="o">${esc(r[5])}</div>${r[7]&&r[7]!==r[5]?`<div class="e">${esc(r[7])} ${r[8]?'<i class="pill draft">Draft</i>':''}</div>`:''}${r[11]?`<div class="route">↳ ${esc(r[11])}</div>`:''}${printed(r,seen)}<details><summary>Response options and coding note</summary><p>${esc(r[9])}</p>${r[10]?`<p style="margin-top:6px">${esc(r[10])}</p>`:''}</details></div></div>`;
+function qOpen(s,iso,noBack){ const seen=new Set(), nEx=Q.bank.filter(r=>r[0]===s&&r[2]!=='none'&&(Q.exc.row[r[12]]!=null||Q.exc.cell[r[12]])).length;
   const all=Q.bank.filter(r=>r[0]===s), coded=all.filter(r=>r[2]!=='none'), src=Object.keys(Q.link).find(k=>Q.link[k]===s), rows=src?surveysOf(iso).get(src):null, asked=itemsAsked(s), extra=EXTRA.filter(k=>bankFor(s,k).length);
   const langs=[...new Set(all.map(r=>r[6]).filter(Boolean))];
   return `<div class="exopen">${noBack?'':`<div>${act('svclose','','← All questionnaires','lk')}</div>`}
@@ -500,9 +527,9 @@ function qOpen(s,iso,noBack){
     <div><h3 style="margin-bottom:4px">The module, step by step, with this questionnaire's questions</h3>
       <div class="mflow2">${Q.model.map((m,i)=>{const rs=bankFor(s,m.code); return `<div class="mf two ${m.core?'core':''} ${rs.length?'':'na'}"><div class="mfk"><b>${i+1}</b><span>${esc(m.code)}</span></div>
         <div class="mfb"><span class="route">↳ ${esc(m.skip||'Ask all')}</span><b tabindex="0" style="cursor:help" ${tipA('Module wording'+(m.core?' · core':' · optional'),esc(m.stem)+(m.opts.length?'<br><br>'+m.opts.map(o=>esc(o)).join('<br>'):''))}>${esc(m.title)}${m.core?' <i class="pill ok">Core</i>':''}</b>
-          ${rs.length?rs.map(qBlock).join(''):'<span class="lnote">Not asked in this questionnaire.</span>'}</div></div>`}).join('')}</div></div>
-    ${extra.length?`<div><h3 style="margin-bottom:6px">Related questions outside the 13 module items</h3><div class="stack" style="gap:8px">${extra.map(k=>bankFor(s,k).map(r=>`<div><span class="lnote">${esc(k)} · ${esc(ITEM[k]||k)}</span>${qBlock(r)}</div>`).join('')).join('')}</div></div>`:''}
-    <p class="lnote">Only the identification part is shown; ${all.length-coded.length} other questions from this questionnaire are kept in the record. The original file and images of the questions as printed are still to add.</p>
+          ${rs.length?rs.map(r=>qBlock(r,seen)).join(''):'<span class="lnote">Not asked in this questionnaire.</span>'}</div></div>`}).join('')}</div></div>
+    ${extra.length?`<div><h3 style="margin-bottom:6px">Related questions outside the 13 module items</h3><div class="stack" style="gap:8px">${extra.map(k=>bankFor(s,k).map(r=>`<div><span class="lnote">${esc(k)} · ${esc(ITEM[k]||k)}</span>${qBlock(r,seen)}</div>`).join('')).join('')}</div></div>`:''}
+    <p class="lnote">Only the identification part is shown; ${all.length-coded.length} other questions from this questionnaire are kept in the record. ${nEx?(nEx===coded.length?'Each question is shown as it appears in the original questionnaire.':nEx+' of '+coded.length+' questions are shown as they appear in the original questionnaire; the others could not be located in the file.'):'The original questionnaire is not in our files yet, so the questions are shown as recorded in the question bank.'}</p>
     ${rows?`<div class="also"><span>Used for</span>${act('open-sdg',src,`SDG · ${rows.length} values calculated from this survey`,'mini',`style="--lc:${LAYER.sdg.col}"`)}</div>`:''}</div>`;
 }
 function pIdq(){

@@ -1,0 +1,6792 @@
+{
+ "01_ENAHOPV": {
+  "file": "CED-01A-1000-2024.pdf",
+  "kind": "pdf",
+  "rows": {
+   "17": {
+    "img": "excerpts/01_ENAHOPV/p01_a.jpg",
+    "w": 1100,
+    "h": 1424,
+    "page": 1,
+    "found": true
+   },
+   "13": {
+    "img": "excerpts/01_ENAHOPV/p01_a.jpg",
+    "w": 1100,
+    "h": 1424,
+    "page": 1,
+    "found": true
+   },
+   "14": {
+    "img": "excerpts/01_ENAHOPV/p01_a.jpg",
+    "w": 1100,
+    "h": 1424,
+    "page": 1,
+    "found": true
+   },
+   "18": {
+    "img": "excerpts/01_ENAHOPV/p01_a.jpg",
+    "w": 1100,
+    "h": 1424,
+    "page": 1,
+    "found": true
+   },
+   "15": {
+    "img": "excerpts/01_ENAHOPV/p01_a.jpg",
+    "w": 1100,
+    "h": 1424,
+    "page": 1,
+    "found": true
+   },
+   "19": {
+    "img": "excerpts/01_ENAHOPV/p01_a.jpg",
+    "w": 1100,
+    "h": 1424,
+    "page": 1,
+    "found": true
+   },
+   "20": {
+    "img": "excerpts/01_ENAHOPV/p01_a.jpg",
+    "w": 1100,
+    "h": 1424,
+    "page": 1,
+    "found": true
+   },
+   "16": {
+    "img": "excerpts/01_ENAHOPV/p01_a.jpg",
+    "w": 1100,
+    "h": 1424,
+    "page": 1,
+    "found": true
+   },
+   "21": {
+    "img": "excerpts/01_ENAHOPV/p01_a.jpg",
+    "w": 1100,
+    "h": 1424,
+    "page": 1,
+    "found": true
+   },
+   "22": {
+    "img": "excerpts/01_ENAHOPV/p02_a.jpg",
+    "w": 1100,
+    "h": 344,
+    "page": 2,
+    "found": true
+   }
+  }
+ },
+ "02_ECH_CR": {
+  "file": "Informe Acnur Módulo Migración de la Encuesta Continua de Hogares & cuestionarios (1).pdf",
+  "kind": "pdf",
+  "rows": {
+   "24": {
+    "img": "excerpts/02_ECH_CR/p48_a.jpg",
+    "w": 1100,
+    "h": 728,
+    "page": 48,
+    "found": true
+   },
+   "23": {
+    "img": "excerpts/02_ECH_CR/p55_a.jpg",
+    "w": 1100,
+    "h": 1381,
+    "page": 55,
+    "found": true
+   },
+   "30": {
+    "img": "excerpts/02_ECH_CR/p55_a.jpg",
+    "w": 1100,
+    "h": 1381,
+    "page": 55,
+    "found": true
+   },
+   "28": {
+    "img": "excerpts/02_ECH_CR/p55_a.jpg",
+    "w": 1100,
+    "h": 1381,
+    "page": 55,
+    "found": true
+   },
+   "29": {
+    "img": "excerpts/02_ECH_CR/p55_a.jpg",
+    "w": 1100,
+    "h": 1381,
+    "page": 55,
+    "found": true
+   },
+   "27": {
+    "img": "excerpts/02_ECH_CR/p55_a.jpg",
+    "w": 1100,
+    "h": 1381,
+    "page": 55,
+    "found": true
+   },
+   "26": {
+    "img": "excerpts/02_ECH_CR/p56_a.jpg",
+    "w": 1100,
+    "h": 471,
+    "page": 56,
+    "found": true
+   },
+   "25": {
+    "img": "excerpts/02_ECH_CR/p56_a.jpg",
+    "w": 1100,
+    "h": 471,
+    "page": 56,
+    "found": true
+   },
+   "31": {
+    "img": "excerpts/02_ECH_CR/p57_a.jpg",
+    "w": 1100,
+    "h": 782,
+    "page": 57,
+    "found": true
+   },
+   "32": {
+    "img": "excerpts/02_ECH_CR/p57_a.jpg",
+    "w": 1100,
+    "h": 782,
+    "page": 57,
+    "found": true
+   },
+   "33": {
+    "img": "excerpts/02_ECH_CR/p58_a.jpg",
+    "w": 1100,
+    "h": 507,
+    "page": 58,
+    "found": true
+   }
+  }
+ },
+ "03_EPHPM_HON": {
+  "file": "02. Boleta EPHPM 2024 Junio.pdf",
+  "kind": "pdf",
+  "rows": {
+   "54": {
+    "cells": [
+     [
+      "N°",
+      "PREGUNTA"
+     ],
+     [
+      "FD01",
+      "¿Alguna vez ha sido forzado u obligado a abandonar su hogar por…"
+     ],
+     [
+      "Sí",
+      "…...........1"
+     ],
+     [
+      "No",
+      "…...........2"
+     ]
+    ],
+    "where": "sheet M. Desplazados DOC-RE-FD-LS, A2:C3; AO4:AP5",
+    "file": "Questionnaire-2024_PD.xlsx",
+    "kind": "sheet"
+   },
+   "34": {
+    "img": "excerpts/03_EPHPM_HON/p10_a.jpg",
+    "w": 1100,
+    "h": 957,
+    "page": 10,
+    "found": true,
+    "file": "02. Boleta EPHPM 2024 Junio.pdf",
+    "kind": "pdf"
+   },
+   "35": {
+    "img": "excerpts/03_EPHPM_HON/p10_a.jpg",
+    "w": 1100,
+    "h": 957,
+    "page": 10,
+    "found": true,
+    "file": "02. Boleta EPHPM 2024 Junio.pdf",
+    "kind": "pdf"
+   },
+   "36": {
+    "img": "excerpts/03_EPHPM_HON/p10_a.jpg",
+    "w": 1100,
+    "h": 957,
+    "page": 10,
+    "found": true,
+    "file": "02. Boleta EPHPM 2024 Junio.pdf",
+    "kind": "pdf"
+   },
+   "37": {
+    "img": "excerpts/03_EPHPM_HON/p10_a.jpg",
+    "w": 1100,
+    "h": 957,
+    "page": 10,
+    "found": true,
+    "file": "02. Boleta EPHPM 2024 Junio.pdf",
+    "kind": "pdf"
+   },
+   "38": {
+    "img": "excerpts/03_EPHPM_HON/p10_a.jpg",
+    "w": 1100,
+    "h": 957,
+    "page": 10,
+    "found": true,
+    "file": "02. Boleta EPHPM 2024 Junio.pdf",
+    "kind": "pdf"
+   },
+   "39": {
+    "img": "excerpts/03_EPHPM_HON/p11_a.jpg",
+    "w": 1100,
+    "h": 297,
+    "page": 11,
+    "found": true,
+    "file": "02. Boleta EPHPM 2024 Junio.pdf",
+    "kind": "pdf"
+   },
+   "45": {
+    "img": "excerpts/03_EPHPM_HON/p28_a.jpg",
+    "w": 1100,
+    "h": 908,
+    "page": 28,
+    "found": true,
+    "file": "02. Boleta EPHPM 2024 Junio.pdf",
+    "kind": "pdf"
+   },
+   "46": {
+    "img": "excerpts/03_EPHPM_HON/p28_a.jpg",
+    "w": 1100,
+    "h": 908,
+    "page": 28,
+    "found": true,
+    "file": "02. Boleta EPHPM 2024 Junio.pdf",
+    "kind": "pdf"
+   },
+   "47": {
+    "img": "excerpts/03_EPHPM_HON/p28_a.jpg",
+    "w": 1100,
+    "h": 908,
+    "page": 28,
+    "found": true,
+    "file": "02. Boleta EPHPM 2024 Junio.pdf",
+    "kind": "pdf"
+   },
+   "48": {
+    "img": "excerpts/03_EPHPM_HON/p28_a.jpg",
+    "w": 1100,
+    "h": 908,
+    "page": 28,
+    "found": true,
+    "file": "02. Boleta EPHPM 2024 Junio.pdf",
+    "kind": "pdf"
+   },
+   "49": {
+    "img": "excerpts/03_EPHPM_HON/p28_a.jpg",
+    "w": 1100,
+    "h": 908,
+    "page": 28,
+    "found": true,
+    "file": "02. Boleta EPHPM 2024 Junio.pdf",
+    "kind": "pdf"
+   },
+   "50": {
+    "img": "excerpts/03_EPHPM_HON/p28_a.jpg",
+    "w": 1100,
+    "h": 908,
+    "page": 28,
+    "found": true,
+    "file": "02. Boleta EPHPM 2024 Junio.pdf",
+    "kind": "pdf"
+   },
+   "51": {
+    "img": "excerpts/03_EPHPM_HON/p28_a.jpg",
+    "w": 1100,
+    "h": 908,
+    "page": 28,
+    "found": true,
+    "file": "02. Boleta EPHPM 2024 Junio.pdf",
+    "kind": "pdf"
+   },
+   "52": {
+    "img": "excerpts/03_EPHPM_HON/p28_a.jpg",
+    "w": 1100,
+    "h": 908,
+    "page": 28,
+    "found": true,
+    "file": "02. Boleta EPHPM 2024 Junio.pdf",
+    "kind": "pdf"
+   },
+   "53": {
+    "img": "excerpts/03_EPHPM_HON/p28_a.jpg",
+    "w": 1100,
+    "h": 908,
+    "page": 28,
+    "found": true,
+    "file": "02. Boleta EPHPM 2024 Junio.pdf",
+    "kind": "pdf"
+   },
+   "40": {
+    "img": "excerpts/03_EPHPM_HON/p29_a.jpg",
+    "w": 1100,
+    "h": 665,
+    "page": 29,
+    "found": true,
+    "file": "02. Boleta EPHPM 2024 Junio.pdf",
+    "kind": "pdf"
+   },
+   "41": {
+    "img": "excerpts/03_EPHPM_HON/p29_a.jpg",
+    "w": 1100,
+    "h": 665,
+    "page": 29,
+    "found": true,
+    "file": "02. Boleta EPHPM 2024 Junio.pdf",
+    "kind": "pdf"
+   },
+   "42": {
+    "img": "excerpts/03_EPHPM_HON/p29_a.jpg",
+    "w": 1100,
+    "h": 665,
+    "page": 29,
+    "found": true,
+    "file": "02. Boleta EPHPM 2024 Junio.pdf",
+    "kind": "pdf"
+   },
+   "43": {
+    "img": "excerpts/03_EPHPM_HON/p29_a.jpg",
+    "w": 1100,
+    "h": 665,
+    "page": 29,
+    "found": true,
+    "file": "02. Boleta EPHPM 2024 Junio.pdf",
+    "kind": "pdf"
+   },
+   "44": {
+    "img": "excerpts/03_EPHPM_HON/p29_a.jpg",
+    "w": 1100,
+    "h": 665,
+    "page": 29,
+    "found": true,
+    "file": "02. Boleta EPHPM 2024 Junio.pdf",
+    "kind": "pdf"
+   }
+  },
+  "files": [
+   "02. Boleta EPHPM 2024 Junio.pdf",
+   "Questionnaire-2024_PD.xlsx"
+  ]
+ },
+ "05_ENVIPE_MEX": {
+  "file": "questionnaire_principal_envipe2023.pdf",
+  "kind": "pdf",
+  "rows": {
+   "66": {
+    "img": "excerpts/05_ENVIPE_MEX/p05_a.jpg",
+    "w": 1100,
+    "h": 527,
+    "page": 5,
+    "found": true
+   }
+  }
+ },
+ "06_ENADID_MEX": {
+  "file": "hogar_enadid23.pdf",
+  "kind": "pdf",
+  "rows": {
+   "67": {
+    "img": "excerpts/06_ENADID_MEX/p05_a.jpg",
+    "w": 1100,
+    "h": 497,
+    "page": 5,
+    "found": true
+   },
+   "68": {
+    "img": "excerpts/06_ENADID_MEX/p05_a.jpg",
+    "w": 1100,
+    "h": 497,
+    "page": 5,
+    "found": true
+   },
+   "69": {
+    "img": "excerpts/06_ENADID_MEX/p06_a.jpg",
+    "w": 1100,
+    "h": 512,
+    "page": 6,
+    "found": true
+   },
+   "70": {
+    "img": "excerpts/06_ENADID_MEX/p06_a.jpg",
+    "w": 1100,
+    "h": 512,
+    "page": 6,
+    "found": true
+   },
+   "71": {
+    "img": "excerpts/06_ENADID_MEX/p06_a.jpg",
+    "w": 1100,
+    "h": 512,
+    "page": 6,
+    "found": true
+   },
+   "72": {
+    "img": "excerpts/06_ENADID_MEX/p06_b.jpg",
+    "w": 1100,
+    "h": 443,
+    "page": 6,
+    "found": true
+   },
+   "73": {
+    "img": "excerpts/06_ENADID_MEX/p06_b.jpg",
+    "w": 1100,
+    "h": 443,
+    "page": 6,
+    "found": true
+   },
+   "74": {
+    "img": "excerpts/06_ENADID_MEX/p28_a.jpg",
+    "w": 1100,
+    "h": 506,
+    "page": 28,
+    "found": true
+   },
+   "75": {
+    "img": "excerpts/06_ENADID_MEX/p28_b.jpg",
+    "w": 1100,
+    "h": 785,
+    "page": 28,
+    "found": true
+   },
+   "76": {
+    "img": "excerpts/06_ENADID_MEX/p28_b.jpg",
+    "w": 1100,
+    "h": 785,
+    "page": 28,
+    "found": true
+   }
+  }
+ },
+ "07_LEONA_MMR": {
+  "file": "Asia_Myanmar Survey_ID Questions.docx",
+  "kind": "doc",
+  "rows": {
+   "77": {
+    "cells": [
+     [
+      "B.02"
+     ],
+     [
+      "Were you or any member of your current household forcibly displaced from another location at any time in the past?"
+     ],
+     [
+      "(Forcibly displaced people represent a group who are/have been forced to leave their homes \"as a result of persecution, conflict, generalized violence or human rights violations\")"
+     ]
+    ],
+    "where": "paragraph 4"
+   },
+   "78": {
+    "cells": [
+     [
+      "B.03"
+     ],
+     [
+      "Were you or any member of your current household previously displaced to another location – but have now permanently returned to this ward or village?"
+     ]
+    ],
+    "where": "paragraph 7"
+   },
+   "79": {
+    "cells": [
+     [
+      "B.04"
+     ],
+     [
+      "Do you or any member of your current household belong to a non-displaced stateless group?"
+     ]
+    ],
+    "where": "paragraph 9"
+   }
+  }
+ },
+ "08_EICVMB_BDI": {
+  "file": "EICVMB2019_QUEST PRINCIPAL MODELE CAPI FINAL.xlsx",
+  "kind": "sheet",
+  "rows": {
+   "80": {
+    "cells": [
+     [
+      "(1.05)"
+     ],
+     [
+      "Pour les personnes nées après 1980, est-ce que [NOM] dispose de extrait d' acte de naissance?"
+     ],
+     [
+      "1 Oui"
+     ],
+     [
+      "2 Non ►(1.07)"
+     ],
+     [
+      "3 NSP ►(1.07)"
+     ]
+    ],
+    "where": "sheet S01_Demo, L4:L16"
+   },
+   "81": {
+    "cells": [
+     [
+      "(1.15)"
+     ],
+     [
+      "De quelle nationalité est [NOM]?"
+     ],
+     [
+      "1=Burundi"
+     ],
+     [
+      "02.Rwanda"
+     ],
+     [
+      "03.Tanzanie"
+     ],
+     [
+      "04.RDC"
+     ],
+     [
+      "05.Kenya"
+     ],
+     [
+      "05.Ouganda"
+     ],
+     [
+      "07.Sud Soudan"
+     ],
+     [
+      "08. Autre Afrique"
+     ],
+     [
+      "09.Europe"
+     ],
+     [
+      "10.Amérique"
+     ],
+     [
+      "11 Inde"
+     ],
+     [
+      "12 Chine"
+     ],
+     [
+      "13. Autre pays d'Asie"
+     ],
+     [
+      "14. Océanie"
+     ]
+    ],
+    "where": "sheet S01_Demo, Z4:Z24"
+   },
+   "82": {
+    "cells": [
+     [
+      "(1.16)"
+     ],
+     [
+      "Dans quel pays est né (e ) [NOM]?"
+     ],
+     [
+      "1=Burundi"
+     ],
+     [
+      "02.Rwanda"
+     ],
+     [
+      "03.Tanzanie"
+     ],
+     [
+      "04.RDC"
+     ],
+     [
+      "05.Kenya"
+     ],
+     [
+      "05.Ouganda"
+     ],
+     [
+      "07.Sud Soudan"
+     ],
+     [
+      "08. Autre Afrique"
+     ],
+     [
+      "09.Europe"
+     ],
+     [
+      "10.Amérique"
+     ],
+     [
+      "11 Inde"
+     ],
+     [
+      "12 Chine"
+     ],
+     [
+      "13. Autre pays d'Asie"
+     ],
+     [
+      "14. Océanie"
+     ],
+     [
+      "si (1,16) ≠ 1► (1,19)"
+     ]
+    ],
+    "where": "sheet S01_Demo, AA4:AA26"
+   },
+   "83": {
+    "cells": [
+     [
+      "(1.18)"
+     ],
+     [
+      "[NOM] est-il né à [localité de résidence]?"
+     ],
+     [
+      "1 Oui"
+     ],
+     [
+      "2 Non ► (1,20)"
+     ]
+    ],
+    "where": "sheet S01_Demo, AC4:AC14"
+   },
+   "84": {
+    "cells": [
+     [
+      "(1.19)"
+     ],
+     [
+      "[NOM] a-t-il déjà vécu dans une autre localité pendant plus de 6 mois ?"
+     ],
+     [
+      "1 Oui"
+     ],
+     [
+      "2 Non ► (1,21c1)"
+     ]
+    ],
+    "where": "sheet S01_Demo, AD4:AD14"
+   },
+   "85": {
+    "cells": [
+     [
+      "(1.20)"
+     ],
+     [
+      "Quelle est la dernière localité où [NOM] a vécu avant de venir vivre ici?"
+     ],
+     [
+      "01 Bujumbura Mairie"
+     ],
+     [
+      "02 Autre urbain"
+     ],
+     [
+      "03 Milieu rural"
+     ],
+     [
+      "04.Rwanda"
+     ],
+     [
+      "05.Tanzanie"
+     ],
+     [
+      "06.Congolaise/RDC"
+     ],
+     [
+      "07.Kenya"
+     ],
+     [
+      "08.Ouganda"
+     ],
+     [
+      "09.Sud soudan"
+     ],
+     [
+      "10.Autres afrique"
+     ],
+     [
+      "11. Europe"
+     ],
+     [
+      "12.Amerique"
+     ],
+     [
+      "13.Asie"
+     ],
+     [
+      "14. Océanie"
+     ]
+    ],
+    "where": "sheet S01_Demo, AF4:AF22"
+   },
+   "86": {
+    "cells": [
+     [
+      "(1.21)"
+     ],
+     [
+      "Combien d'années [NOM] a vécu dans cette localité avant de venir vivre ici?"
+     ]
+    ],
+    "where": "sheet S01_Demo, AG4:AG5"
+   },
+   "87": {
+    "cells": [
+     [
+      "(I,21 a )"
+     ],
+     [
+      "[Nom],Depuis combien de temps (Nom) est-il/elle arrivé(e) Ici?"
+     ],
+     [
+      "►(1,21c1)"
+     ],
+     [
+      "Durée en années si >=2ans, en mois si < 2ans"
+     ],
+     [
+      "en mois",
+      "en années"
+     ]
+    ],
+    "where": "sheet S01_Demo, AH4:AI12"
+   },
+   "88": {
+    "cells": [
+     [
+      "(I,21b)"
+     ],
+     [
+      "[Nom], Depuis combien de temps (Nom) est-il/elle arrivé (e ) /retourné(e)/rapatrié (e ) au Burundi?"
+     ],
+     [
+      "Durée en années si >= 2 ans"
+     ],
+     [
+      "Durée en mois si < 2 ans"
+     ],
+     [
+      "en mois",
+      "en années"
+     ]
+    ],
+    "where": "sheet S01_Demo, AJ4:AK12"
+   },
+   "89": {
+    "cells": [
+     [
+      "(I,21c)"
+     ],
+     [
+      "Avez-vous de la famille dans votre pays de provenance?"
+     ],
+     [
+      "1 Oui"
+     ],
+     [
+      "2 Non"
+     ]
+    ],
+    "where": "sheet S01_Demo, AL4:AL14"
+   },
+   "90": {
+    "cells": [
+     [
+      "(I,21c1)"
+     ],
+     [
+      "Quel est le statut de résidence au cours des 7 dernières années de [Nom]"
+     ]
+    ],
+    "where": "sheet S01_Demo, AM4:AM5"
+   },
+   "91": {
+    "cells": [
+     [
+      "(I,21d)"
+     ],
+     [
+      "Pour les réfugiés âgés de 18 ans et plus"
+     ],
+     [
+      "Voulez-vous retourner dans votre pays de provinance?"
+     ],
+     [
+      "1 Oui"
+     ],
+     [
+      "2 Non"
+     ]
+    ],
+    "where": "sheet S01_Demo, AN4:AN14"
+   },
+   "92": {
+    "cells": [
+     [
+      "(I,21e)"
+     ],
+     [
+      "Est-ce que cette province est la première dans lequelle vous vivez depuis votre arrivée au Burundi?"
+     ],
+     [
+      "1 Oui ►(1,22)"
+     ],
+     [
+      "2 Non"
+     ]
+    ],
+    "where": "sheet S01_Demo, AO4:AO14"
+   },
+   "93": {
+    "cells": [
+     [
+      "(I,21f)"
+     ],
+     [
+      "Si non quelle était la première dans laquelle vous avez vécu à votre arrivée au Burundi?"
+     ]
+    ],
+    "where": "sheet S01_Demo, AP4:AP7"
+   },
+   "94": {
+    "cells": [
+     [
+      "(1.22)"
+     ],
+     [
+      "Quelle était la raison principale pour laquelle [NOM] est venu vivre dans cette localité?"
+     ],
+     [
+      "01 Envoyé par sa famille pour travailler"
+     ],
+     [
+      "02 Est venu avec son parent"
+     ],
+     [
+      "03 Suivre/rejoindre sa famille"
+     ],
+     [
+      "04 Manque d'emploi"
+     ],
+     [
+      "05 Meilleures Opportunités ici"
+     ],
+     [
+      "06 Affectation"
+     ],
+     [
+      "07 Manque de terres"
+     ],
+     [
+      "08 Ecole"
+     ],
+     [
+      "09 Marriage"
+     ],
+     [
+      "10 Divorce"
+     ],
+     [
+      "11 Perte du conjoint"
+     ],
+     [
+      "12 Maladie d'un membre du ménage"
+     ],
+     [
+      "13 Autres problemes de famille"
+     ],
+     [
+      "14 Conflits Armés"
+     ],
+     [
+      "15 Instabilité politique/Economique"
+     ],
+     [
+      "16 Innondation"
+     ],
+     [
+      "17 Glissement du terrain"
+     ],
+     [
+      "18 Secheresse"
+     ],
+     [
+      "19 Études terminées"
+     ],
+     [
+      "20 Autre (à préciser)"
+     ]
+    ],
+    "where": "sheet S01_Demo, AQ4:AQ27"
+   },
+   "95": {
+    "cells": [
+     [
+      "F00 : Votre ménage a-t-il migré au moins une fois au cours des 7 dernières années?"
+     ],
+     [
+      "1 = Oui, compléter le tableau ci-dessous, 2 = Non Poser la question sur l'émigration"
+     ]
+    ],
+    "where": "sheet S01_B Migration mén_Immigration, A37:F38"
+   },
+   "96": {
+    "cells": [
+     [
+      "F4"
+     ],
+     [
+      "Pourquoi votre ménage a-t-il changé de localité ?"
+     ],
+     [
+      "1 = Travail/affectation"
+     ],
+     [
+      "2=Recherche emploi"
+     ],
+     [
+      "3 = Problème de santé"
+     ],
+     [
+      "4 = Études"
+     ],
+     [
+      "5=Insécurité/alimentaire/"
+     ],
+     [
+      "famine"
+     ],
+     [
+      "6= Catastrophes naturelles"
+     ],
+     [
+      "7=Conflits/guerre/insécurité"
+     ],
+     [
+      "8=Conflits fonciers"
+     ],
+     [
+      "9 = Démenagement"
+     ],
+     [
+      "10= Autres (à préciser)"
+     ]
+    ],
+    "where": "sheet S01_B Migration mén_Immigration, D39:D41"
+   },
+   "97": {
+    "cells": [
+     [
+      "F5"
+     ],
+     [
+      "Est-ce que votre ménage envisage de changer de localité dans les 12 mois prochains?"
+     ],
+     [
+      "1 = Oui"
+     ],
+     [
+      "2 = Non ► G1"
+     ],
+     [
+      "8 = NSP ► G1"
+     ]
+    ],
+    "where": "sheet S01_B Migration mén_Immigration, E39:E41"
+   },
+   "98": {
+    "more": 2,
+    "cells": [
+     [
+      "Seulement les chefs des ménages réfugiés ou des retournés"
+     ],
+     [
+      "Réfléchissez à la vie que vous aviez eu auparavant avant de déménager au Burundi."
+     ],
+     [
+      "Est-ce que la composition de votre ménage a changé ?",
+      "Combien de personnes ne font plus partie de votre ménage ?",
+      "Pour quelles raisons ces personnes ne font plus partie de votre ménage?"
+     ],
+     [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     [
+      "1 Oui",
+      "Sont toujours à l’endroit du pays d’origine",
+      "Sont morts",
+      "Sont perdus",
+      "Sont emprisonnés"
+     ],
+     [
+      "2 Non ► E5"
+     ],
+     [
+      "CODE",
+      "NOMBRE",
+      "NOMBRE",
+      "NOMBRE",
+      "NOMBRE",
+      "NOMBRE"
+     ],
+     [
+      "E4",
+      "E5",
+      "E6"
+     ],
+     [
+      "(suite) Pour quelles raisons ces personnes ne font plus partie de votre ménage?",
+      "Combien de personnes ont rejoint votre ménage?",
+      "Quel était votre lien avec l'antécédant chef de ménage?",
+      "Avec qui êtes-vous arrivés?"
+     ],
+     [
+      "1= Tout le ménage est arrivé ensemble"
+     ],
+     [
+      "1=Moi-même le CM\n2=Epoux/se\n3=fils/fille\n4=petit fils/fille\n5=beau-fils/ fille\n6= parent du chef de ménage/ l’épouse\n7=sœur/ frère du chef de ménage/ l’épouse\n8=nièce/ neveu\n9=autre lien de parenté\n10=Sans lien de parenté\n11=Domestique\n12=N'était pas du ménage",
+      "2= chef de ménage et quelques membres de la famille"
+     ],
+     [
+      "F",
+      "G",
+      "X"
+     ],
+     [
+      "Travail/Etude",
+      "Ont formé leur propre ménage",
+      "Autre à préciser…………"
+     ],
+     [
+      "3=Quelques membres de la famille sans le chef de famille"
+     ],
+     [
+      "…"
+     ]
+    ],
+    "where": "sheet S01_B Migration mén_Immigration, A3:F30"
+   },
+   "99": {
+    "cells": [
+     [
+      "G1: Y a-t-il des membres de votre ménage qui ont quitté votre ménage pour une raison quelconque pour résider toujours dans le pays au cours des 7 dernières années? |___|"
+     ],
+     [
+      "1 = Oui, compléter le tableau ci-dessous, 2 = Non, aller à la section suivante"
+     ],
+     [
+      "G8"
+     ],
+     [
+      "Pourquoi (Nom) est-il/elle allé(e) s’installer ailleurs ?"
+     ],
+     [
+      "1 = Travail/affectation"
+     ],
+     [
+      "1=Travail/affectation"
+     ],
+     [
+      "2 = Recherche emploi"
+     ],
+     [
+      "3 = Problème de santé"
+     ],
+     [
+      "4=Études/formation\n5 = Problème dans le ménage"
+     ],
+     [
+      "6 = Suivre ou rejoindre la famille"
+     ],
+     [
+      "7= Recherche d’autonomie"
+     ],
+     [
+      "8=Mariage"
+     ],
+     [
+      "9=Crise/insécurité"
+     ],
+     [
+      "10 = Autre (à préciser….)"
+     ],
+     [
+      "CODE"
+     ]
+    ],
+    "where": "sheet S01_B Migration mén_Immigration, H2:M4; P5:P22"
+   }
+  }
+ },
+ "10_SESRE_ETH": {
+  "file": "sesre_questionnaire_english_version_nov_10_2022.xlsx",
+  "kind": "sheet",
+  "rows": {
+   "100": {
+    "cells": [
+     [
+      "10"
+     ],
+     [
+      "Sample type"
+     ],
+     [
+      "1 = Host community >> A1"
+     ],
+     [
+      "2 = Out of camp refugee >> A2"
+     ],
+     [
+      "3 = In-camp refugee >> A3"
+     ]
+    ],
+    "where": "sheet FORM0, A9:F13"
+   },
+   "101": {
+    "cells": [
+     [
+      "1108"
+     ],
+     [
+      "(REFUGEES ONLY)"
+     ],
+     [
+      "Country of birth"
+     ],
+     [
+      "[1] South Sudan"
+     ],
+     [
+      "[2] Somalia"
+     ],
+     [
+      "[3] Eritrea"
+     ],
+     [
+      "[4] Sudan"
+     ],
+     [
+      "[5] Yemen"
+     ],
+     [
+      "[6] Kenya"
+     ],
+     [
+      "[7] Ethiopia"
+     ],
+     [
+      "[8] Other country"
+     ],
+     [
+      "(specify)"
+     ]
+    ],
+    "where": "sheet FORM-1.1, A47:F67"
+   },
+   "102": {
+    "cells": [
+     [
+      "1109"
+     ],
+     [
+      "Country of citizenship"
+     ],
+     [
+      "[1] South Sudan"
+     ],
+     [
+      "[2] Somalia"
+     ],
+     [
+      "[3] Eritrea"
+     ],
+     [
+      "[4] Sudan"
+     ],
+     [
+      "[5] Yemen"
+     ],
+     [
+      "[6] Kenya"
+     ],
+     [
+      "[7] Ethiopia"
+     ],
+     [
+      "[8] Other country"
+     ],
+     [
+      "(specify)"
+     ],
+     [
+      "[9] No citizenship"
+     ]
+    ],
+    "where": "sheet FORM-1.1, G47:J68"
+   },
+   "103": {
+    "cells": [
+     [
+      "1110"
+     ],
+     [
+      "for all except code 7 in Q1108"
+     ],
+     [
+      "Date of Arrival in Ethiopia"
+     ],
+     [
+      "Year",
+      "Month"
+     ]
+    ],
+    "where": "sheet FORM-1.1, K47:P74"
+   },
+   "104": {
+    "cells": [
+     [
+      "1110A"
+     ],
+     [
+      "Refugees out of camp (A.A)"
+     ],
+     [
+      "When did you come to Addis Ababa?"
+     ],
+     [
+      "1=I have been in Addis for long (before November 2020)"
+     ],
+     [
+      "2=After November 2020 because of the conflict in North Ethiopia"
+     ],
+     [
+      "3=After November 2020(because of other reason(s))"
+     ]
+    ],
+    "where": "sheet FORM-1.1, Q47:S71"
+   },
+   "105": {
+    "cells": [
+     [
+      "1111"
+     ],
+     [
+      "Has [NAME] been registered upon arrival in [use date from 1110] to Ethiopia?"
+     ],
+     [
+      "1 = Yes"
+     ],
+     [
+      "2 = No"
+     ]
+    ],
+    "where": "sheet FORM-1.1, T47:Y57"
+   },
+   "106": {
+    "cells": [
+     [
+      "1112"
+     ],
+     [
+      "Is [NAME] registered with UNHCR/RRS?"
+     ],
+     [
+      "1 = Yes"
+     ],
+     [
+      "2 = No"
+     ]
+    ],
+    "where": "sheet FORM-1.1, Z47:AC57"
+   },
+   "107": {
+    "cells": [
+     [
+      "1113"
+     ],
+     [
+      "Date refugee status was received (year)"
+     ],
+     [
+      "Q1115"
+     ],
+     [
+      "Year",
+      "Month"
+     ]
+    ],
+    "where": "sheet FORM-1.1, AD47:AI74"
+   },
+   "108": {
+    "cells": [
+     [
+      "1114"
+     ],
+     [
+      "Why has [NAME] not registered ?"
+     ],
+     [
+      "a question"
+     ],
+     [
+      "1= Unaware of the process"
+     ],
+     [
+      "2= Cost, distance or difficulty"
+     ],
+     [
+      "of reaching the registration center"
+     ],
+     [
+      "3= Do not trust that data"
+     ],
+     [
+      "will be kept confidential"
+     ],
+     [
+      "4= See no benefit in registration"
+     ],
+     [
+      "5= Waiting for registration"
+     ],
+     [
+      "6= Not eligible"
+     ],
+     [
+      "7= Other (specify)"
+     ]
+    ],
+    "where": "sheet FORM-1.1, AJ47:AO64"
+   },
+   "109": {
+    "cells": [
+     [
+      "1115"
+     ],
+     [
+      "If Q1108 is code (!=7) Does [NAME] have any relative still living in [COUNTRY OF BIRTH ANSWER IN Q1108]?"
+     ],
+     [
+      "If Q1108 code 7 Does [NAME] have any relative still living in your parent’s country of birth?"
+     ],
+     [
+      "1 = Yes"
+     ],
+     [
+      "2 = No"
+     ]
+    ],
+    "where": "sheet FORM-1.1, AP47:AU61"
+   },
+   "110": {
+    "cells": [
+     [
+      "1116"
+     ],
+     [
+      "( REFUGEES ONLY )"
+     ],
+     [
+      "If Q1108 is code (!=7) Would [NAME] like to go back to your [COUNTRY OF BIRTH ANSWER IN Q1108]?"
+     ],
+     [
+      "If Q1108 code 7 Would [NAME] like to go back to your parent’s country of birth?"
+     ],
+     [
+      "1 = Yes, definitely"
+     ],
+     [
+      "2 = Yes, maybe/yes, it depends"
+     ],
+     [
+      "3 = No"
+     ]
+    ],
+    "where": "sheet FORM-1.1, A89:F103"
+   },
+   "111": {
+    "cells": [
+     [
+      "1116A"
+     ],
+     [
+      "If Q1116 is code 1 or 2: When do you think you can return?"
+     ],
+     [
+      "1=",
+      "In the next 6 months"
+     ],
+     [
+      "2=",
+      "In the next 7-12 months"
+     ],
+     [
+      "3=",
+      "In the next 1-5 years"
+     ],
+     [
+      "4=",
+      "In more than 5 years"
+     ],
+     [
+      "5=",
+      "I don’t know"
+     ]
+    ],
+    "where": "sheet FORM-1.1, G89:L102"
+   },
+   "112": {
+    "cells": [
+     [
+      "1117"
+     ],
+     [
+      "Why did you leave your [COUNTRY OF BIRTH ANSWER IN Q1108]? [main reason]"
+     ],
+     [
+      "1 = Security reasons, conflict"
+     ],
+     [
+      "2 = Violence"
+     ],
+     [
+      "3 = Human rights violations"
+     ],
+     [
+      "4 = Received personal threats"
+     ],
+     [
+      "5 = Natural or man-made disaster"
+     ],
+     [
+      "(e.g., drought, famine, or evictions)"
+     ],
+     [
+      "6 = Employment (incl. military service)"
+     ],
+     [
+      "7 = Education and training"
+     ],
+     [
+      "8 = Health"
+     ],
+     [
+      "9 = Political persecution"
+     ],
+     [
+      "10 = Hope to go to a Western country"
+     ],
+     [
+      "11 = Marriage, family"
+     ],
+     [
+      "reunification or family formation"
+     ],
+     [
+      "88 = Other (specify)"
+     ],
+     [
+      "89 = Born in Ethiopia/lived in Ethiopia"
+     ]
+    ],
+    "where": "sheet FORM-1.1, M89:R111"
+   },
+   "113": {
+    "cells": [
+     [
+      "1118"
+     ],
+     [
+      "Why did you choose Ethiopia? [main reason]"
+     ],
+     [
+      "1 = I can work here"
+     ],
+     [
+      "2 = To be in a closer vicinity with"
+     ],
+     [
+      "a family member/friend/relative"
+     ],
+     [
+      "3 = It is easy to move from Ethiopia"
+     ],
+     [
+      "to another country"
+     ],
+     [
+      "4 = To receive education"
+     ],
+     [
+      "5 = Ethiopia is my country of birth"
+     ],
+     [
+      "6 = It was the closest country"
+     ],
+     [
+      "to where I fled from"
+     ],
+     [
+      "7 = Marriage, family reunification"
+     ],
+     [
+      "or family formation"
+     ],
+     [
+      "8 = Better security/ peace, etc"
+     ],
+     [
+      "9 = Other (specify)"
+     ],
+     [
+      "89 = Born in Ethiopia/lived in Ethiopia"
+     ],
+     [
+      "my entire life"
+     ]
+    ],
+    "where": "sheet FORM-1.1, X89:AC110"
+   },
+   "114": {
+    "cells": [
+     [
+      "1119"
+     ],
+     [
+      "Does [NAME] have any intention of migrating abroad?"
+     ],
+     [
+      "1 = Yes"
+     ],
+     [
+      "2 = No"
+     ]
+    ],
+    "where": "sheet FORM-1.1, AG89:AL98"
+   },
+   "115": {
+    "cells": [
+     [
+      "1305"
+     ],
+     [
+      "For how many years has [NAME] lived in this area/community?\nIF LESS THAN 1 YEAR, RECORD…............. 00."
+     ],
+     [
+      "IF LIVED FROM 1 - 96\nYEARS RECORD THE NO. OF YEARS [NAME] LIVED"
+     ],
+     [
+      "IF LIVED 97 YEARS & MORE RECORD …... 97\nIF LIVED SINCE BIRTH, RECORD…............. 99."
+     ],
+     [
+      "IF > 5 YEARS"
+     ],
+     [
+      "skip to next Person"
+     ]
+    ],
+    "where": "sheet FORM-1.3, L3:P25"
+   },
+   "116": {
+    "cells": [
+     [
+      "1306"
+     ],
+     [
+      "ONLY IF CODE \"00 - 05\" for Q1305"
+     ],
+     [
+      "Where was [NAME] living before moving to this area or community?"
+     ],
+     [
+      "1 =",
+      "Within Ethiopia"
+     ],
+     [
+      "2 =",
+      "Outside Ethiopia"
+     ],
+     [
+      "Q1311"
+     ]
+    ],
+    "where": "sheet FORM-1.3, Q3:U21"
+   },
+   "117": {
+    "cells": [
+     [
+      "1311"
+     ],
+     [
+      "Why did [NAME] moved here?"
+     ],
+     [
+      "1 =",
+      "Parents moved"
+     ],
+     [
+      "2 =",
+      "To live with relatives"
+     ],
+     [
+      "3 =",
+      "School"
+     ],
+     [
+      "4 =",
+      "Marriage"
+     ],
+     [
+      "5 =",
+      "Family quarrel"
+     ],
+     [
+      "6 =",
+      "Divorce"
+     ],
+     [
+      "7 =",
+      "Return from work elsewhere"
+     ],
+     [
+      "8 =",
+      "Looking for work"
+     ],
+     [
+      "9 =",
+      "Start new job or business"
+     ],
+     [
+      "10 =",
+      "Looking for land to farm"
+     ],
+     [
+      "11 =",
+      "To recover from illness"
+     ],
+     [
+      "12 =",
+      "Conflict/Insecurity"
+     ],
+     [
+      "13 =",
+      "Natural disasters (flood, drought, etc)"
+     ],
+     [
+      "14 =",
+      "Death of a family member"
+     ],
+     [
+      "98 =",
+      "Other (Specify)"
+     ]
+    ],
+    "where": "sheet FORM-1.3, AV3:BA24"
+   },
+   "118": {
+    "cells": [
+     [
+      "1220"
+     ],
+     [
+      "(For refugees only)"
+     ],
+     [
+      "What was the status of your employment before displacement?"
+     ],
+     [
+      "1 =",
+      "Unemployed"
+     ],
+     [
+      "2 =",
+      "Wage employed"
+     ],
+     [
+      "3 =",
+      "Self-employed"
+     ],
+     [
+      "(non-agriculture business)"
+     ],
+     [
+      "4 =",
+      "Self-employed in agriculture"
+     ],
+     [
+      "5 =",
+      "Casual labor worker"
+     ],
+     [
+      "6 =",
+      "Student"
+     ],
+     [
+      "7 =",
+      "Other (specify)"
+     ],
+     [
+      "89 = Born in Ethiopia/lived in"
+     ]
+    ],
+    "where": "sheet FORM-1.2, AI76:AN92"
+   },
+   "119": {
+    "cells": [
+     [
+      "Displacement"
+     ]
+    ],
+    "where": "sheet FORM-6.4, B34:G34"
+   },
+   "120": {
+    "cells": [
+     [
+      "6601"
+     ],
+     [
+      "Where do you hope to be living in 3 years?"
+     ],
+     [
+      "1",
+      "Refugee camp in Ethiopia"
+     ],
+     [
+      "2",
+      "Addis Ababa"
+     ],
+     [
+      "3",
+      "Another city in Ethiopia"
+     ],
+     [
+      "4",
+      "Country of birth"
+     ],
+     [
+      "5",
+      "Another African Country"
+     ],
+     [
+      "6",
+      "US/Canada/Europe/Australia"
+     ],
+     [
+      "7",
+      "Other (specify)"
+     ]
+    ],
+    "where": "sheet FORM 6.6, D4:I18"
+   },
+   "121": {
+    "cells": [
+     [
+      "6901"
+     ],
+     [
+      "Are you currently living under the Out-Of Camp Policy (OCP)?"
+     ],
+     [
+      "1 = Yes"
+     ],
+     [
+      "2 = No",
+      "Q7101"
+     ]
+    ],
+    "where": "sheet FORM-6.9, A3:D11"
+   }
+  }
+ },
+ "12_HBS_SSD": {
+  "file": "SSD HH Budget survey 2025.pdf",
+  "kind": "pdf",
+  "rows": {
+   "122": {
+    "img": "excerpts/12_HBS_SSD/p11_a.jpg",
+    "w": 1100,
+    "h": 277,
+    "page": 11,
+    "found": true
+   },
+   "123": {
+    "img": "excerpts/12_HBS_SSD/p11_b.jpg",
+    "w": 1100,
+    "h": 257,
+    "page": 11,
+    "found": true
+   },
+   "124": {
+    "img": "excerpts/12_HBS_SSD/p12_a.jpg",
+    "w": 1100,
+    "h": 257,
+    "page": 12,
+    "found": true
+   },
+   "125": {
+    "img": "excerpts/12_HBS_SSD/p12_b.jpg",
+    "w": 1100,
+    "h": 574,
+    "page": 12,
+    "found": true
+   },
+   "126": {
+    "img": "excerpts/12_HBS_SSD/p12_b.jpg",
+    "w": 1100,
+    "h": 574,
+    "page": 12,
+    "found": true
+   },
+   "127": {
+    "img": "excerpts/12_HBS_SSD/p12_b.jpg",
+    "w": 1100,
+    "h": 574,
+    "page": 12,
+    "found": true
+   },
+   "128": {
+    "img": "excerpts/12_HBS_SSD/p12_b.jpg",
+    "w": 1100,
+    "h": 574,
+    "page": 12,
+    "found": true
+   },
+   "129": {
+    "img": "excerpts/12_HBS_SSD/p13_a.jpg",
+    "w": 1100,
+    "h": 1012,
+    "page": 13,
+    "found": true
+   },
+   "130": {
+    "img": "excerpts/12_HBS_SSD/p13_a.jpg",
+    "w": 1100,
+    "h": 1012,
+    "page": 13,
+    "found": true
+   },
+   "131": {
+    "img": "excerpts/12_HBS_SSD/p13_a.jpg",
+    "w": 1100,
+    "h": 1012,
+    "page": 13,
+    "found": true
+   },
+   "132": {
+    "img": "excerpts/12_HBS_SSD/p13_a.jpg",
+    "w": 1100,
+    "h": 1012,
+    "page": 13,
+    "found": true
+   },
+   "133": {
+    "img": "excerpts/12_HBS_SSD/p13_a.jpg",
+    "w": 1100,
+    "h": 1012,
+    "page": 13,
+    "found": true
+   },
+   "134": {
+    "img": "excerpts/12_HBS_SSD/p13_a.jpg",
+    "w": 1100,
+    "h": 1012,
+    "page": 13,
+    "found": true
+   },
+   "135": {
+    "img": "excerpts/12_HBS_SSD/p13_a.jpg",
+    "w": 1100,
+    "h": 1012,
+    "page": 13,
+    "found": true
+   },
+   "136": {
+    "img": "excerpts/12_HBS_SSD/p14_a.jpg",
+    "w": 1100,
+    "h": 276,
+    "page": 14,
+    "found": true
+   },
+   "137": {
+    "img": "excerpts/12_HBS_SSD/p14_b.jpg",
+    "w": 1100,
+    "h": 277,
+    "page": 14,
+    "found": true
+   },
+   "138": {
+    "img": "excerpts/12_HBS_SSD/p14_c.jpg",
+    "w": 1100,
+    "h": 235,
+    "page": 14,
+    "found": true
+   }
+  }
+ },
+ "14_UNHS_UGA": {
+  "file": "Questionnaire_ddi-documentation-english-80.pdf",
+  "kind": "pdf",
+  "rows": {
+   "139": {
+    "img": "excerpts/14_UNHS_UGA/p54_a.jpg",
+    "w": 1101,
+    "h": 1139,
+    "page": 54,
+    "found": true
+   },
+   "140": {
+    "img": "excerpts/14_UNHS_UGA/p60_a.jpg",
+    "w": 1101,
+    "h": 1139,
+    "page": 60,
+    "found": true
+   },
+   "141": {
+    "img": "excerpts/14_UNHS_UGA/p61_a.jpg",
+    "w": 1101,
+    "h": 1139,
+    "page": 61,
+    "found": true
+   },
+   "142": {
+    "img": "excerpts/14_UNHS_UGA/p65_a.jpg",
+    "w": 1101,
+    "h": 261,
+    "page": 65,
+    "found": true
+   },
+   "143": {
+    "img": "excerpts/14_UNHS_UGA/p66_a.jpg",
+    "w": 1101,
+    "h": 695,
+    "page": 66,
+    "found": true
+   },
+   "144": {
+    "img": "excerpts/14_UNHS_UGA/p71_a.jpg",
+    "w": 1101,
+    "h": 1138,
+    "page": 71,
+    "found": true
+   },
+   "145": {
+    "img": "excerpts/14_UNHS_UGA/p71_b.jpg",
+    "w": 1101,
+    "h": 337,
+    "page": 71,
+    "found": true
+   },
+   "146": {
+    "img": "excerpts/14_UNHS_UGA/p72_a.jpg",
+    "w": 1101,
+    "h": 610,
+    "page": 72,
+    "found": true
+   },
+   "147": {
+    "img": "excerpts/14_UNHS_UGA/p74_a.jpg",
+    "w": 1101,
+    "h": 795,
+    "page": 74,
+    "found": true
+   },
+   "148": {
+    "img": "excerpts/14_UNHS_UGA/p74_a.jpg",
+    "w": 1101,
+    "h": 795,
+    "page": 74,
+    "found": true
+   },
+   "149": {
+    "img": "excerpts/14_UNHS_UGA/p79_a.jpg",
+    "w": 1101,
+    "h": 1139,
+    "page": 79,
+    "found": true
+   }
+  }
+ },
+ "16_PHC_BDI": {
+  "file": "RGPHAE_VF QMO   QUESTIONNAIRE MENAGE ORDINAIRE TRADUIT EN KIRUNDI 12 juin 2024_VF.pdf",
+  "kind": "pdf",
+  "rows": {
+   "150": {
+    "img": "excerpts/16_PHC_BDI/p04_a.jpg",
+    "w": 1100,
+    "h": 270,
+    "page": 4,
+    "found": true
+   },
+   "151": {
+    "img": "excerpts/16_PHC_BDI/p04_a.jpg",
+    "w": 1100,
+    "h": 270,
+    "page": 4,
+    "found": true
+   },
+   "152": {
+    "img": "excerpts/16_PHC_BDI/p07_a.jpg",
+    "w": 1100,
+    "h": 269,
+    "page": 7,
+    "found": true
+   },
+   "153": {
+    "img": "excerpts/16_PHC_BDI/p07_a.jpg",
+    "w": 1100,
+    "h": 269,
+    "page": 7,
+    "found": true
+   },
+   "154": {
+    "img": "excerpts/16_PHC_BDI/p08_a.jpg",
+    "w": 1100,
+    "h": 311,
+    "page": 8,
+    "found": true
+   },
+   "155": {
+    "img": "excerpts/16_PHC_BDI/p08_a.jpg",
+    "w": 1100,
+    "h": 311,
+    "page": 8,
+    "found": true
+   },
+   "156": {
+    "img": "excerpts/16_PHC_BDI/p08_a.jpg",
+    "w": 1100,
+    "h": 311,
+    "page": 8,
+    "found": true
+   },
+   "157": {
+    "img": "excerpts/16_PHC_BDI/p08_a.jpg",
+    "w": 1100,
+    "h": 311,
+    "page": 8,
+    "found": true
+   },
+   "158": {
+    "img": "excerpts/16_PHC_BDI/p08_a.jpg",
+    "w": 1100,
+    "h": 311,
+    "page": 8,
+    "found": true
+   },
+   "159": {
+    "img": "excerpts/16_PHC_BDI/p08_a.jpg",
+    "w": 1100,
+    "h": 311,
+    "page": 8,
+    "found": true
+   },
+   "160": {
+    "img": "excerpts/16_PHC_BDI/p09_a.jpg",
+    "w": 1100,
+    "h": 594,
+    "page": 9,
+    "found": true
+   },
+   "161": {
+    "img": "excerpts/16_PHC_BDI/p09_a.jpg",
+    "w": 1100,
+    "h": 594,
+    "page": 9,
+    "found": true
+   },
+   "162": {
+    "img": "excerpts/16_PHC_BDI/p09_a.jpg",
+    "w": 1100,
+    "h": 594,
+    "page": 9,
+    "found": true
+   },
+   "163": {
+    "img": "excerpts/16_PHC_BDI/p09_a.jpg",
+    "w": 1100,
+    "h": 594,
+    "page": 9,
+    "found": true
+   },
+   "164": {
+    "img": "excerpts/16_PHC_BDI/p19_a.jpg",
+    "w": 1100,
+    "h": 227,
+    "page": 19,
+    "found": true
+   }
+  }
+ },
+ "17_PHC_DJI": {
+  "file": "QUEST_MÉNAGE ORDINAIRE_NOMADE_RGPH3 10042023.pdf",
+  "kind": "pdf",
+  "rows": {
+   "165": {
+    "img": "excerpts/17_PHC_DJI/p02_a.jpg",
+    "w": 1101,
+    "h": 1044,
+    "page": 2,
+    "found": true
+   },
+   "166": {
+    "img": "excerpts/17_PHC_DJI/p02_a.jpg",
+    "w": 1101,
+    "h": 1044,
+    "page": 2,
+    "found": true
+   },
+   "167": {
+    "img": "excerpts/17_PHC_DJI/p02_b.jpg",
+    "w": 1101,
+    "h": 759,
+    "page": 2,
+    "found": true
+   },
+   "169": {
+    "img": "excerpts/17_PHC_DJI/p02_c.jpg",
+    "w": 1101,
+    "h": 627,
+    "page": 2,
+    "found": true
+   },
+   "170": {
+    "img": "excerpts/17_PHC_DJI/p02_c.jpg",
+    "w": 1101,
+    "h": 627,
+    "page": 2,
+    "found": true
+   },
+   "171": {
+    "img": "excerpts/17_PHC_DJI/p02_c.jpg",
+    "w": 1101,
+    "h": 627,
+    "page": 2,
+    "found": true
+   },
+   "168": {
+    "img": "excerpts/17_PHC_DJI/p02_d.jpg",
+    "w": 1101,
+    "h": 942,
+    "page": 2,
+    "found": true
+   },
+   "172": {
+    "img": "excerpts/17_PHC_DJI/p03_a.jpg",
+    "w": 1100,
+    "h": 746,
+    "page": 3,
+    "found": true
+   },
+   "173": {
+    "img": "excerpts/17_PHC_DJI/p03_a.jpg",
+    "w": 1100,
+    "h": 746,
+    "page": 3,
+    "found": true
+   },
+   "174": {
+    "img": "excerpts/17_PHC_DJI/p03_a.jpg",
+    "w": 1100,
+    "h": 746,
+    "page": 3,
+    "found": true
+   },
+   "175": {
+    "img": "excerpts/17_PHC_DJI/p03_b.jpg",
+    "w": 1101,
+    "h": 1006,
+    "page": 3,
+    "found": true
+   },
+   "176": {
+    "img": "excerpts/17_PHC_DJI/p03_b.jpg",
+    "w": 1101,
+    "h": 1006,
+    "page": 3,
+    "found": true
+   },
+   "177": {
+    "img": "excerpts/17_PHC_DJI/p11_a.jpg",
+    "w": 1100,
+    "h": 295,
+    "page": 11,
+    "found": true
+   },
+   "178": {
+    "img": "excerpts/17_PHC_DJI/p11_b.jpg",
+    "w": 1101,
+    "h": 751,
+    "page": 11,
+    "found": true
+   }
+  }
+ },
+ "18_PHC_KEN": {
+  "file": "2019-Kenya-population-and-Housing-Census-Questionnaire.pdf",
+  "kind": "pdf",
+  "rows": {
+   "179": {
+    "img": "excerpts/18_PHC_KEN/p01_a.jpg",
+    "w": 1101,
+    "h": 710,
+    "page": 1,
+    "found": true
+   },
+   "180": {
+    "img": "excerpts/18_PHC_KEN/p01_b.jpg",
+    "w": 1101,
+    "h": 662,
+    "page": 1,
+    "found": true
+   },
+   "181": {
+    "img": "excerpts/18_PHC_KEN/p01_b.jpg",
+    "w": 1101,
+    "h": 662,
+    "page": 1,
+    "found": true
+   },
+   "182": {
+    "img": "excerpts/18_PHC_KEN/p01_c.jpg",
+    "w": 1101,
+    "h": 630,
+    "page": 1,
+    "found": true
+   },
+   "183": {
+    "img": "excerpts/18_PHC_KEN/p01_c.jpg",
+    "w": 1101,
+    "h": 630,
+    "page": 1,
+    "found": true
+   },
+   "184": {
+    "img": "excerpts/18_PHC_KEN/p02_a.jpg",
+    "w": 1101,
+    "h": 617,
+    "page": 2,
+    "found": true
+   }
+  }
+ },
+ "19_PHC_RWA": {
+  "file": "PHC2022_Privave HH_Questionnaire_English.pdf",
+  "kind": "pdf",
+  "rows": {
+   "185": {
+    "img": "excerpts/19_PHC_RWA/p03_a.jpg",
+    "w": 1100,
+    "h": 1574,
+    "page": 3,
+    "found": true
+   },
+   "186": {
+    "img": "excerpts/19_PHC_RWA/p03_a.jpg",
+    "w": 1100,
+    "h": 1574,
+    "page": 3,
+    "found": true
+   },
+   "187": {
+    "img": "excerpts/19_PHC_RWA/p03_a.jpg",
+    "w": 1100,
+    "h": 1574,
+    "page": 3,
+    "found": true
+   },
+   "188": {
+    "img": "excerpts/19_PHC_RWA/p03_a.jpg",
+    "w": 1100,
+    "h": 1574,
+    "page": 3,
+    "found": true
+   },
+   "189": {
+    "img": "excerpts/19_PHC_RWA/p03_a.jpg",
+    "w": 1100,
+    "h": 1574,
+    "page": 3,
+    "found": true
+   },
+   "190": {
+    "img": "excerpts/19_PHC_RWA/p04_a.jpg",
+    "w": 1100,
+    "h": 1516,
+    "page": 4,
+    "found": true
+   },
+   "191": {
+    "img": "excerpts/19_PHC_RWA/p04_a.jpg",
+    "w": 1100,
+    "h": 1516,
+    "page": 4,
+    "found": true
+   },
+   "192": {
+    "img": "excerpts/19_PHC_RWA/p04_a.jpg",
+    "w": 1100,
+    "h": 1516,
+    "page": 4,
+    "found": true
+   },
+   "193": {
+    "img": "excerpts/19_PHC_RWA/p04_a.jpg",
+    "w": 1100,
+    "h": 1516,
+    "page": 4,
+    "found": true
+   },
+   "194": {
+    "img": "excerpts/19_PHC_RWA/p04_a.jpg",
+    "w": 1100,
+    "h": 1516,
+    "page": 4,
+    "found": true
+   }
+  }
+ },
+ "20_PHC_UGA": {
+  "file": "National-Population-and-Housing-Census-2024-Questionnaire.pdf",
+  "kind": "pdf",
+  "rows": {
+   "195": {
+    "img": "excerpts/20_PHC_UGA/p04_a.jpg",
+    "w": 1101,
+    "h": 1059,
+    "page": 4,
+    "found": true
+   },
+   "196": {
+    "img": "excerpts/20_PHC_UGA/p04_a.jpg",
+    "w": 1101,
+    "h": 1059,
+    "page": 4,
+    "found": true
+   },
+   "197": {
+    "img": "excerpts/20_PHC_UGA/p05_a.jpg",
+    "w": 1101,
+    "h": 739,
+    "page": 5,
+    "found": true
+   },
+   "198": {
+    "img": "excerpts/20_PHC_UGA/p05_a.jpg",
+    "w": 1101,
+    "h": 739,
+    "page": 5,
+    "found": true
+   },
+   "199": {
+    "img": "excerpts/20_PHC_UGA/p05_a.jpg",
+    "w": 1101,
+    "h": 739,
+    "page": 5,
+    "found": true
+   },
+   "200": {
+    "img": "excerpts/20_PHC_UGA/p05_a.jpg",
+    "w": 1101,
+    "h": 739,
+    "page": 5,
+    "found": true
+   },
+   "201": {
+    "img": "excerpts/20_PHC_UGA/p05_a.jpg",
+    "w": 1101,
+    "h": 739,
+    "page": 5,
+    "found": true
+   },
+   "202": {
+    "img": "excerpts/20_PHC_UGA/p06_a.jpg",
+    "w": 1101,
+    "h": 874,
+    "page": 6,
+    "found": true
+   },
+   "203": {
+    "img": "excerpts/20_PHC_UGA/p06_a.jpg",
+    "w": 1101,
+    "h": 874,
+    "page": 6,
+    "found": true
+   },
+   "204": {
+    "img": "excerpts/20_PHC_UGA/p15_a.jpg",
+    "w": 1100,
+    "h": 1078,
+    "page": 15,
+    "found": true
+   }
+  }
+ },
+ "22_DS_MOZ": {
+  "file": "Profiling_QNR_Pemba_Nov 11_FINAL .xlsx",
+  "kind": "sheet",
+  "rows": {
+   "205": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::English",
+      "label::Portuguese"
+     ],
+     [
+      "select_multiple S2Q9",
+      "S2Q9",
+      "S2Q9 : What type of personal identification document does ${S2Q2} have?\nMultiple answers possible",
+      "S2Q9 : Que tipo de documento de identificação pessoal possui ${S2Q2}?\nÉ possível selecionar mais de uma opção."
+     ],
+     [
+      "S2Q9",
+      "1",
+      "None",
+      "Nenhum"
+     ],
+     [
+      "S2Q9",
+      "2",
+      "Birth Certificate",
+      "Certidão de nascimento"
+     ],
+     [
+      "S2Q9",
+      "3",
+      "National identity card",
+      "Bilhete de identidade (BI)"
+     ],
+     [
+      "S2Q9",
+      "4",
+      "Electoral card",
+      "Cartão eleitoral"
+     ],
+     [
+      "S2Q9",
+      "5",
+      "Bank Card",
+      "Cartão bancário"
+     ],
+     [
+      "S2Q9",
+      "6",
+      "Driving license",
+      "Carta de condução"
+     ],
+     [
+      "S2Q9",
+      "7",
+      "Passport",
+      "Passaporte"
+     ],
+     [
+      "S2Q9",
+      "96",
+      "Other",
+      "Outro"
+     ],
+     [
+      "S2Q9",
+      "99",
+      "Don't know",
+      "Não sabe"
+     ]
+    ],
+    "where": "sheet survey, row 38; sheet choices, rows 60-68"
+   },
+   "206": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::English",
+      "label::Portuguese"
+     ],
+     [
+      "select_one yesno",
+      "S3Q2",
+      "S3Q2 : Has ${S2Q2} ever lived anywhere else?",
+      "S3Q2 : O ${S2Q2} já alguma vez morou em algum outro lugar?"
+     ],
+     [
+      "yesno",
+      "yes",
+      "Yes",
+      "Sim"
+     ],
+     [
+      "yesno",
+      "no",
+      "No",
+      "Não"
+     ]
+    ],
+    "where": "sheet survey, row 50; sheet choices, rows 30-31"
+   },
+   "207": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::English",
+      "label::Portuguese",
+      "relevance"
+     ],
+     [
+      "select_one yesno",
+      "S3Q3",
+      "S3Q3 : Has ${S2Q2} ever left their home because they didn't feel safe?",
+      "S3Q3 : O ${S2Q2} já alguma vez saiu da sua casa porque não se sentia seguro?",
+      "${S3Q2} = 'yes'"
+     ],
+     [
+      "yesno",
+      "yes",
+      "Yes",
+      "Sim",
+      ""
+     ],
+     [
+      "yesno",
+      "no",
+      "No",
+      "Não",
+      ""
+     ]
+    ],
+    "where": "sheet survey, row 51; sheet choices, rows 30-31"
+   },
+   "208": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::English",
+      "label::Portuguese",
+      "relevance"
+     ],
+     [
+      "select_one yesno",
+      "S3Q4",
+      "S3Q4 : Has ${S2Q2} ever had to flee their home?",
+      "S3Q4 : O ${S2Q2} já alguma vez teve que fugir da sua casa?",
+      "${S3Q3} = ‘no’"
+     ],
+     [
+      "yesno",
+      "yes",
+      "Yes",
+      "Sim",
+      ""
+     ],
+     [
+      "yesno",
+      "no",
+      "No",
+      "Não",
+      ""
+     ]
+    ],
+    "where": "sheet survey, row 52; sheet choices, rows 30-31"
+   },
+   "209": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::English",
+      "label::Portuguese",
+      "relevance"
+     ],
+     [
+      "select_one S3Q5",
+      "S3Q5",
+      "S3Q5 : Tell me in which district ${S2Q2} was living before leaving because he/she didn't feel safe or ran away for the first time?",
+      "S3Q5 : Diga-me em que distrito ${S2Q1} estava morando antes de sair por não se sentir seguro ou fugir pela primeira vez?",
+      "${S3Q3} = 'yes' or ${S3Q4} = 'yes'"
+     ],
+     [
+      "S3Q5",
+      "MZ0101",
+      "Ancuabe",
+      "Ancuabe",
+      ""
+     ],
+     [
+      "S3Q5",
+      "MZ0102",
+      "Balama",
+      "Balama",
+      ""
+     ],
+     [
+      "S3Q5",
+      "MZ0103",
+      "Chiure",
+      "Chiure",
+      ""
+     ],
+     [
+      "S3Q5",
+      "MZ0104",
+      "Cidade De Pemba",
+      "Cidade De Pemba",
+      ""
+     ],
+     [
+      "S3Q5",
+      "MZ0105",
+      "Ibo",
+      "Ibo",
+      ""
+     ],
+     [
+      "S3Q5",
+      "MZ0106",
+      "Macomia",
+      "Macomia",
+      ""
+     ],
+     [
+      "S3Q5",
+      "MZ0107",
+      "Mecufi",
+      "Mecufi",
+      ""
+     ],
+     [
+      "S3Q5",
+      "MZ0108",
+      "Meluco",
+      "Meluco",
+      ""
+     ],
+     [
+      "S3Q5",
+      "MZ0109",
+      "Metuge",
+      "Metuge",
+      ""
+     ],
+     [
+      "S3Q5",
+      "MZ0110",
+      "Mocimboa Da Praia",
+      "Mocimboa Da Praia",
+      ""
+     ],
+     [
+      "S3Q5",
+      "MZ0111",
+      "Montepuez",
+      "Montepuez",
+      ""
+     ],
+     [
+      "S3Q5",
+      "MZ0112",
+      "Mueda",
+      "Mueda",
+      ""
+     ],
+     [
+      "S3Q5",
+      "MZ0113",
+      "Muidumbe",
+      "Muidumbe",
+      ""
+     ],
+     [
+      "S3Q5",
+      "MZ0114",
+      "Namuno",
+      "Namuno",
+      ""
+     ],
+     [
+      "S3Q5",
+      "MZ0115",
+      "Nangade",
+      "Nangade",
+      ""
+     ],
+     [
+      "S3Q5",
+      "MZ0116",
+      "Palma",
+      "Palma",
+      ""
+     ],
+     [
+      "S3Q5",
+      "MZ0118",
+      "Quissanga",
+      "Quissanga",
+      ""
+     ]
+    ],
+    "where": "sheet survey, row 53; sheet choices, rows 136-152"
+   },
+   "210": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::English",
+      "label::Portuguese",
+      "relevance"
+     ],
+     [
+      "select_one yesno",
+      "S3Q6",
+      "S3Q6 : Does ${S2Q2} currently live in the same place they lived before leaving because they didn't feel safe or ran away for the first time?",
+      "S3Q6 : O ${S2Q2} mora no momento no mesmo espaço onde morava antes de sair por não se sentir seguro ou fugir pela primeira vez?",
+      "${S3Q3} = 'yes' or ${S3Q4} = 'yes'"
+     ],
+     [
+      "yesno",
+      "yes",
+      "Yes",
+      "Sim",
+      ""
+     ],
+     [
+      "yesno",
+      "no",
+      "No",
+      "Não",
+      ""
+     ]
+    ],
+    "where": "sheet survey, row 54; sheet choices, rows 30-31"
+   },
+   "211": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::English",
+      "label::Portuguese",
+      "relevance"
+     ],
+     [
+      "integer",
+      "S3Q7",
+      "S3Q7 : How many times has ${S2Q2} left because they didn't feel safe or had to flee?",
+      "S3Q7 : Quantas vezes o ${S2Q2} saiu porque não se sentia seguro ou teve que fugir?",
+      "${S3Q3} = 'yes' or ${S3Q4} = 'yes'"
+     ]
+    ],
+    "where": "sheet survey, row 55"
+   },
+   "212": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::English",
+      "label::Portuguese",
+      "relevance"
+     ],
+     [
+      "date",
+      "S3Q8",
+      "S3Q8 : The last time ${S2Q2} left because they didn't feel safe or had to flee, what year was it?",
+      "S3Q8 : A última vez que o ${S2Q2} saiu porque não se sentia seguro ou teve que fugir, em que ano foi?",
+      "${S3Q3} = 'yes' or ${S3Q4} = 'yes'"
+     ]
+    ],
+    "where": "sheet survey, row 56"
+   },
+   "213": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::English",
+      "label::Portuguese",
+      "relevance"
+     ],
+     [
+      "select_one S3Q9",
+      "S3Q9",
+      "S3Q9 : The last time ${S2Q2} left because they didn't feel safe or had to flee, what was the main reason?",
+      "S3Q9 : A última vez que o ${S2Q2} saiu porque não se sentia seguro ou teve que fugir, qual foi o principal motivo?",
+      "${S3Q3} = 'yes' or ${S3Q4} = 'yes'"
+     ],
+     [
+      "S3Q9",
+      "1",
+      "Armed conflict, violence/attach on village",
+      "Conflito, insegurança, violência",
+      ""
+     ],
+     [
+      "S3Q9",
+      "2",
+      "Fear of violence, attacks etc",
+      "Medo de violência, ataques, etc.",
+      ""
+     ],
+     [
+      "S3Q9",
+      "3",
+      "Cyclones",
+      "Ciclones",
+      ""
+     ],
+     [
+      "S3Q9",
+      "4",
+      "Floods",
+      "Cheias",
+      ""
+     ],
+     [
+      "S3Q9",
+      "5",
+      "Drought",
+      "Seca",
+      ""
+     ],
+     [
+      "S3Q9",
+      "6",
+      "Other disasters (e.g., heavy rains, landslides, etc.)",
+      "Outros desastres (ex.: chuvas intensas, deslizamentos de terra, etc.)",
+      ""
+     ],
+     [
+      "S3Q9",
+      "7",
+      "Due to development projects",
+      "Devido a projectos de desenvolvimento",
+      ""
+     ],
+     [
+      "S3Q9",
+      "96",
+      "Other",
+      "Outro",
+      ""
+     ]
+    ],
+    "where": "sheet survey, row 57; sheet choices, rows 154-161"
+   },
+   "214": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::English",
+      "label::Portuguese",
+      "relevance"
+     ],
+     [
+      "date",
+      "S3Q10",
+      "S3Q10 : When did ${S2Q2} arrive to this specific dwelling?",
+      "S3Q10 : Quando é que ${S2Q2} chegou a esta habitação específica?",
+      "${S3Q3} = 'yes' or ${S3Q4} = 'yes'"
+     ]
+    ],
+    "where": "sheet survey, row 58"
+   },
+   "215": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::English",
+      "label::Portuguese",
+      "relevance"
+     ],
+     [
+      "select_one yesno",
+      "S3Q11",
+      "S3Q11 : Did ${S2Q2} come directly here after s/he had to flee (the most recent time)?",
+      "S3Q11 : ${S2Q2} veio diretamente para aqui depois de ter se deslocado (da última vez)?",
+      "${S3Q3} = 'yes' or ${S3Q4} = 'yes'"
+     ],
+     [
+      "yesno",
+      "yes",
+      "Yes",
+      "Sim",
+      ""
+     ],
+     [
+      "yesno",
+      "no",
+      "No",
+      "Não",
+      ""
+     ]
+    ],
+    "where": "sheet survey, row 59; sheet choices, rows 30-31"
+   },
+   "216": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::English",
+      "label::Portuguese",
+      "relevance"
+     ],
+     [
+      "select_one S3Q12",
+      "S3Q12",
+      "S3Q12 : Since ${S2Q2} did not come directly here, after fleeing, what was the last place of residence before moving here?",
+      "S3Q12 : Visto que ${S2Q2} não veio diretamente para aqui, depois de fugir, qual foi o último local de residência antes de se mudar para cá?",
+      "${S3Q11} = 'no'"
+     ],
+     [
+      "S3Q12",
+      "1",
+      "Somewhere else in the same neighbourhood or site",
+      "Noutro local no mesmo bairro ou sítio",
+      ""
+     ],
+     [
+      "S3Q12",
+      "2",
+      "Somwhere else within the City of Pemba",
+      "Noutro local dentro da Cidade de Pemba",
+      ""
+     ],
+     [
+      "S3Q12",
+      "3",
+      "Somewhere else within the same District (be it Pemba, Metuge or Mecufi)",
+      "Noutro local dentro do mesmo distrito (seja Pemba, Metuge ou Mecúfi)",
+      ""
+     ],
+     [
+      "S3Q12",
+      "96",
+      "Other",
+      "Outro",
+      ""
+     ]
+    ],
+    "where": "sheet survey, row 60; sheet choices, rows 163-166"
+   },
+   "217": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::English",
+      "label::Portuguese",
+      "relevance",
+      "constraint"
+     ],
+     [
+      "integer",
+      "S6Q20",
+      "S6Q20 : How many times did you or anyone else in your household visit the place your were displaced from in the past 12 months?",
+      "S6Q20 : Quantas vezes você ou alguém da sua casa visitou o lugar de onde foram deslocados nos últimos 12 meses?",
+      "${displacement_status_hh} = 'IDP Household'",
+      ". >= 0 and . <= 999"
+     ]
+    ],
+    "where": "sheet survey, row 129"
+   },
+   "218": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::English",
+      "label::Portuguese"
+     ],
+     [
+      "select_one yes_no_dk",
+      "S12Q2",
+      "S12Q2 : Would your household like to leave this place at some point?",
+      "S12Q2 : A sua família gostaria de deixar este lugar em algum momento?"
+     ],
+     [
+      "yes_no_dk",
+      "1",
+      "Yes",
+      "Sim"
+     ],
+     [
+      "yes_no_dk",
+      "0",
+      "No",
+      "Não"
+     ],
+     [
+      "yes_no_dk",
+      "99",
+      "Don’t know",
+      "Não sei"
+     ]
+    ],
+    "where": "sheet survey, row 199; sheet choices, rows 116-118"
+   },
+   "219": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::English",
+      "label::Portuguese",
+      "relevance"
+     ],
+     [
+      "select_one S12Q5",
+      "S12Q5",
+      "S12Q5 : Where would you like to go?",
+      "S12Q5 : Para onde gostaria de ir?",
+      "${S12Q2} = 1"
+     ],
+     [
+      "S12Q5",
+      "1",
+      "To the place I was displaced from/ Habitual residence",
+      "Para o lugar de onde fui deslocado / Residência habitual",
+      ""
+     ],
+     [
+      "S12Q5",
+      "2",
+      "To the place of my origin (if different from place of habitual residence)",
+      "Para o lugar da minha origem (se diferente do lugar de residência habitual)",
+      ""
+     ],
+     [
+      "S12Q5",
+      "3",
+      "To another place within the ditrsict",
+      "Para outro lugar dentro do distrito",
+      ""
+     ],
+     [
+      "S12Q5",
+      "4",
+      "To a different district or province",
+      "Para um distrito ou província diferente",
+      ""
+     ],
+     [
+      "S12Q5",
+      "5",
+      "Abroad – leaving Mozambique",
+      "Para o estrangeiro – sair de Moçambique",
+      ""
+     ],
+     [
+      "S12Q5",
+      "96",
+      "Other",
+      "Outro",
+      ""
+     ]
+    ],
+    "where": "sheet survey, row 202; sheet choices, rows 571-576"
+   },
+   "220": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::English",
+      "label::Portuguese",
+      "relevance"
+     ],
+     [
+      "select_one yesno",
+      "S12Q8",
+      "S12Q8 : Do you have any family members that are seperated from you because of the displacement (most recent)?",
+      "S12Q8 : Tem algum familiar que esteja separado de si devido ao deslocamento (mais recente)?",
+      "${displacement_status_hh} = 'IDP Household'"
+     ],
+     [
+      "yesno",
+      "yes",
+      "Yes",
+      "Sim",
+      ""
+     ],
+     [
+      "yesno",
+      "no",
+      "No",
+      "Não",
+      ""
+     ]
+    ],
+    "where": "sheet survey, row 205; sheet choices, rows 30-31"
+   }
+  }
+ },
+ "25_EMOP_MLI": {
+  "file": "EMOP_QUEST_edition14_Passage2_2025_Avril_27042025_PDI.docx",
+  "kind": "doc",
+  "rows": {
+   "221": {
+    "cells": [
+     [
+      "M07a. Nationalité",
+      "13= Nigeria"
+     ],
+     [
+      "1 = Malienne",
+      "14= Ghana"
+     ],
+     [
+      "2= Burkina Faso",
+      "15= Sierra Leone"
+     ],
+     [
+      "3= Côte d’Ivoire",
+      "16= Autre Afrique"
+     ],
+     [
+      "4= Guinée Bissau",
+      "17=France"
+     ],
+     [
+      "5= Niger",
+      "18=Autre Europe"
+     ],
+     [
+      "6= Senegal",
+      "19=Etats-Unis"
+     ],
+     [
+      "7= Togo",
+      "20=Autre Amérique"
+     ],
+     [
+      "8= Benin",
+      "21=Arabie Saudite"
+     ],
+     [
+      "9 = Guinée Conakry",
+      "22=Autre Asie"
+     ],
+     [
+      "10= Cap-Vert",
+      "23=Australie"
+     ],
+     [
+      "11= Liberia",
+      "24=Autre Océanie"
+     ],
+     [
+      "12= Gambie"
+     ]
+    ],
+    "where": "table 11, row 17",
+    "file": "EMOP_QUEST_edition14_Passage1_2025_vf_Nov2024.docx",
+    "kind": "doc"
+   },
+   "222": {
+    "cells": [
+     [
+      "M07b. [Nom] possède-t-il/elle une autre nationalité ?"
+     ],
+     [
+      "1 = Oui"
+     ],
+     [
+      "2 = Non"
+     ]
+    ],
+    "where": "table 11, row 18",
+    "file": "EMOP_QUEST_edition14_Passage1_2025_vf_Nov2024.docx",
+    "kind": "doc"
+   },
+   "223": {
+    "cells": [
+     [
+      "M10a. Lieu de naissance : Le pays\n(ref. Code liste pays du monde)"
+     ],
+     [
+      "Si M10a = Mali\nM10b. Lieu de naissance : Le cercle\n(ref. Code)"
+     ],
+     [
+      "Si M10a = Mali\nM10c. Lieu de naissance : La commune\n(ref. Code)"
+     ]
+    ],
+    "where": "table 11, rows 22-24",
+    "file": "EMOP_QUEST_edition14_Passage1_2025_vf_Nov2024.docx",
+    "kind": "doc"
+   },
+   "224": {
+    "cells": [
+     [
+      "M11a. Depuis combien de temps vous vivez/ ((Nom) vit) dans le pays… ?"
+     ],
+     [
+      "1 = Moins de 6 mois"
+     ],
+     [
+      "2 = 6 mois à moins de 12 mois"
+     ],
+     [
+      "3 = 1 an à moins de 5 ans"
+     ],
+     [
+      "4 = 5 ans à moins 10 ans"
+     ],
+     [
+      "5. = 10 ans ou plus"
+     ]
+    ],
+    "where": "table 11, row 25",
+    "file": "EMOP_QUEST_edition14_Passage1_2025_vf_Nov2024.docx",
+    "kind": "doc"
+   },
+   "225": {
+    "cells": [
+     [
+      "M11. [NOM] vit-il/elle depuis toujours de manière continue dans cette localité ?"
+     ],
+     [
+      "1 = Oui, depuis toujours"
+     ],
+     [
+      "2 = Non"
+     ],
+     [
+      "Attention ne pas tenir compte des deplacements de moins de 6 mois"
+     ]
+    ],
+    "where": "table 11, row 31",
+    "file": "EMOP_QUEST_edition14_Passage1_2025_vf_Nov2024.docx",
+    "kind": "doc"
+   },
+   "226": {
+    "cells": [
+     [
+      "M12. Depuis combien d’années [NOM] vit-il/elle dans la localité ?"
+     ]
+    ],
+    "where": "table 11, row 32",
+    "file": "EMOP_QUEST_edition14_Passage1_2025_vf_Nov2024.docx",
+    "kind": "doc"
+   },
+   "227": {
+    "cells": [
+     [
+      "M13. Où habitiez-vous avant de venir dans cette localité ?"
+     ],
+     [
+      "M13a. Le lieu"
+     ],
+     [
+      "1=Bamako 2=Capitale régionale 3=Autre Commune urbaine 4=Commune rurale"
+     ],
+     [
+      "5=Autres pays africain 6= Hors afrique"
+     ]
+    ],
+    "where": "table 11, row 33",
+    "file": "EMOP_QUEST_edition14_Passage1_2025_vf_Nov2024.docx",
+    "kind": "doc"
+   },
+   "228": {
+    "cells": [
+     [
+      "M14. Pourquoi êtes-vous venu principalement dans cette localité ?"
+     ],
+     [
+      "1=Pour suivre ou rejoindre la famille"
+     ],
+     [
+      "2=Pour poursuivre des études"
+     ],
+     [
+      "3=Pour y chercher un emploi"
+     ],
+     [
+      "4= Pour y occuper un emploi/commencer ou rejoindre une activité – déjà déterminé /Affectation de travail"
+     ],
+     [
+      "5=A cause de l’insecurité (Conflit intercommunautaire, Conflits armés/guerre, etc.)"
+     ],
+     [
+      "6=Apprendre un métier"
+     ],
+     [
+      "7=Pour les travaux champêtres"
+     ],
+     [
+      "8=Mariage"
+     ],
+     [
+      "9=Problème de santé"
+     ],
+     [
+      "10=Divorce / Séparation/ Veuvage"
+     ],
+     [
+      "11=Pour aider sa famille avec une activité commerciale"
+     ],
+     [
+      "12=Pour aider sa famille avec les tâches domestiques"
+     ],
+     [
+      "13=Perte de l’emploi ou fin de contrat"
+     ],
+     [
+      "14=Activité non rentable"
+     ],
+     [
+      "15=Désastres nature (Castatrophe naturel, innondation, etc.)"
+     ],
+     [
+      "16=Autres (à préciser)"
+     ]
+    ],
+    "where": "table 11, row 36",
+    "file": "EMOP_QUEST_edition14_Passage1_2025_vf_Nov2024.docx",
+    "kind": "doc"
+   },
+   "229": {
+    "cells": [
+     [
+      "M14a. Si M14 = 5 preciser la région de provenance\n1=Kayes 2=Koulikoro 3=Sikasso 4=Segou 5=Mopti 6=Tombouctou 7=Gao 8=Kidal 9=Taoudenni 10=Menaka 11=Nioro 12=Kita 13=Dioila 14=Nara 15=Bougouni 16=Koutiala 17=San 18=Douentza 19=Bandiagara 20=Bamako"
+     ]
+    ],
+    "where": "table 11, row 37",
+    "file": "EMOP_QUEST_edition14_Passage1_2025_vf_Nov2024.docx",
+    "kind": "doc"
+   },
+   "450": {
+    "cells": [
+     [
+      "M07a. Nationalité",
+      "13= Nigeria"
+     ],
+     [
+      "1 = Malienne",
+      "14= Ghana"
+     ],
+     [
+      "2= Burkina Faso",
+      "15= Sierra Leone"
+     ],
+     [
+      "3= Côte d’Ivoire",
+      "16= Autre Afrique"
+     ],
+     [
+      "4= Guinée Bissau",
+      "17=France"
+     ],
+     [
+      "5= Niger",
+      "18=Autre Europe"
+     ],
+     [
+      "6= Senegal",
+      "19=Etats-Unis"
+     ],
+     [
+      "7= Togo",
+      "20=Autre Amérique"
+     ],
+     [
+      "8= Benin",
+      "21=Arabie Saudite"
+     ],
+     [
+      "9 = Guinée Conakry",
+      "22=Autre Asie"
+     ],
+     [
+      "10= Cap-Vert",
+      "23=Australie"
+     ],
+     [
+      "11= Liberia",
+      "24=Autre Océanie"
+     ],
+     [
+      "12= Gambie"
+     ]
+    ],
+    "where": "table 10, row 20",
+    "file": "EMOP_QUEST_edition14_Passage2_2025_Avril_27042025_PDI.docx",
+    "kind": "doc"
+   },
+   "451": {
+    "cells": [
+     [
+      "PDI.1. Si M07a est différente de 1, Avez-vous des documents nécessaires pour vivre pour vivre légalement au Mali ?"
+     ],
+     [
+      "1=Oui"
+     ],
+     [
+      "2=Non"
+     ],
+     [
+      "LES QUESTIONS PDI.1 et PDI.2 concernent Tous les membres du ménage (PDI ou non PDI)"
+     ]
+    ],
+    "where": "table 10, row 21",
+    "file": "EMOP_QUEST_edition14_Passage2_2025_Avril_27042025_PDI.docx",
+    "kind": "doc"
+   },
+   "452": {
+    "cells": [
+     [
+      "M11. [NOM] vit-il/elle depuis toujours de manière continue dans cette localité?"
+     ],
+     [
+      "1 = Oui, depuis toujours"
+     ],
+     [
+      "2 = Non"
+     ],
+     [
+      "Attention ne pas tenir compte des déplacements de moins de 6 mois"
+     ]
+    ],
+    "where": "table 10, row 45",
+    "file": "EMOP_QUEST_edition14_Passage2_2025_Avril_27042025_PDI.docx",
+    "kind": "doc"
+   },
+   "453": {
+    "cells": [
+     [
+      "M13. Où habitiez-vous avant de venir dans cette localité?"
+     ],
+     [
+      "M13a. Le lieu"
+     ],
+     [
+      "1=Bamako 2=Capitale régionale 3=Autre Commune urbaine 4=Commune rurale 5=Autres pays africain 6= Hors Afrique"
+     ]
+    ],
+    "where": "table 10, row 47",
+    "file": "EMOP_QUEST_edition14_Passage2_2025_Avril_27042025_PDI.docx",
+    "kind": "doc"
+   },
+   "454": {
+    "cells": [
+     [
+      "PDI.4. Est-ce que [NOM] a quitté sa résidence précédente à cause d’une situation qui rendait impossible ou dangereux d’y rester ?"
+     ],
+     [
+      "1 = Oui"
+     ],
+     [
+      "2 = Non"
+     ]
+    ],
+    "where": "table 10, row 50",
+    "file": "EMOP_QUEST_edition14_Passage2_2025_Avril_27042025_PDI.docx",
+    "kind": "doc"
+   },
+   "455": {
+    "cells": [
+     [
+      "PDI.5. Est-ce que [NOM] aurait préféré rester dans sa résidence précédente si les conditions avaient été sûres et stables ?”"
+     ],
+     [
+      "1 = Oui"
+     ],
+     [
+      "2 = Non"
+     ]
+    ],
+    "where": "table 10, row 51",
+    "file": "EMOP_QUEST_edition14_Passage2_2025_Avril_27042025_PDI.docx",
+    "kind": "doc"
+   },
+   "456": {
+    "cells": [
+     [
+      "M14. Pourquoi êtes-vous venu principalement dans cette localité ?"
+     ],
+     [
+      "1=Pour suivre ou rejoindre la famille"
+     ],
+     [
+      "2=Pour poursuivre des études"
+     ],
+     [
+      "3=Pour y chercher un emploi"
+     ],
+     [
+      "4= Pour y occuper un emploi/commencer ou rejoindre une activité – déjà déterminé /Affectation de travail"
+     ],
+     [
+      "5="
+     ],
+     [
+      "5=Conflit armé/Guerre"
+     ],
+     [
+      "17=Violence intercommunautaire"
+     ],
+     [
+      "18=Violations des droits humains"
+     ],
+     [
+      "19=Expulsion"
+     ],
+     [
+      "6=Apprendre un métier"
+     ],
+     [
+      "7=Pour les travaux champêtres"
+     ],
+     [
+      "8=Mariage"
+     ],
+     [
+      "9=Problème de santé"
+     ],
+     [
+      "10=Divorce / Séparation/ Veuvage"
+     ],
+     [
+      "11=Pour aider sa famille avec une activité commerciale"
+     ],
+     [
+      "12=Pour aider sa famille avec les tâches domestiques"
+     ],
+     [
+      "13=Perte de l’emploi ou fin de contrat"
+     ],
+     [
+      "14=Activité non rentable"
+     ],
+     [
+      "15=Désastres nature (Catastrophe naturelle ou causée par l’homme, inondation, etc.)"
+     ],
+     [
+      "16=Autres raison (à préciser)"
+     ]
+    ],
+    "where": "table 10, row 52",
+    "file": "EMOP_QUEST_edition14_Passage2_2025_Avril_27042025_PDI.docx",
+    "kind": "doc"
+   },
+   "457": {
+    "cells": [
+     [
+      "PDI.6. Après avoir quitté votre résidence précédente, est-ce que [NOM] est allé vivre dans un autre pays (comme le Burkina Faso, l’Algérie, le Niger, le Sénégal, la Guinée, la Côte d’Ivoire ou la Mauritanie) avant de venir ici ?”"
+     ],
+     [
+      "1 = Oui"
+     ],
+     [
+      "2 = Non"
+     ]
+    ],
+    "where": "table 10, row 55",
+    "file": "EMOP_QUEST_edition14_Passage2_2025_Avril_27042025_PDI.docx",
+    "kind": "doc"
+   },
+   "458": {
+    "cells": [
+     [
+      "Si la réponse à la PDI.6 est “Oui”"
+     ],
+     [
+      "PDI.7. Combien de temps [NOM] est-il resté dans ce pays avant de revenir au Mali ?”"
+     ],
+     [
+      "1 = Moins de 12 mois"
+     ],
+     [
+      "2 = 12 mois ou plus"
+     ],
+     [
+      "8 = Ne sait pas"
+     ],
+     [
+      "9 = Refus de répondre"
+     ]
+    ],
+    "where": "table 10, row 56",
+    "file": "EMOP_QUEST_edition14_Passage2_2025_Avril_27042025_PDI.docx",
+    "kind": "doc"
+   },
+   "459": {
+    "cells": [
+     [
+      "Si la réponse à la PDI.6 est “Oui”"
+     ],
+     [
+      "PDI.8. Pendant son séjour dans ce pays, est-ce que [NOM] s’est officiellement enregistré auprès du gouvernement ou d’une organisation comme le HCR en tant que personne ayant fui le Mali et ayant besoin de protection ?”"
+     ],
+     [
+      "1 = Oui"
+     ],
+     [
+      "2 = Non"
+     ],
+     [
+      "8 = Ne sait pas"
+     ],
+     [
+      "9 = Refus de répondre"
+     ]
+    ],
+    "where": "table 10, row 57",
+    "file": "EMOP_QUEST_edition14_Passage2_2025_Avril_27042025_PDI.docx",
+    "kind": "doc"
+   }
+  },
+  "files": [
+   "EMOP_QUEST_edition14_Passage2_2025_Avril_27042025_PDI.docx",
+   "EMOP_QUEST_edition14_Passage1_2025_vf_Nov2024.docx"
+  ]
+ },
+ "25bis_EMOP_MLI": {
+  "file": "EMOP_QUEST_edition15_Passage1_2026_dec.pdf",
+  "kind": "pdf",
+  "rows": {
+   "230": {
+    "img": "excerpts/25bis_EMOP_MLI/p01_a.jpg",
+    "w": 1100,
+    "h": 1148,
+    "page": 1,
+    "found": true,
+    "file": "Module_MDF_Mali_EMOP_v4.pdf",
+    "kind": "pdf"
+   },
+   "231": {
+    "img": "excerpts/25bis_EMOP_MLI/p01_a.jpg",
+    "w": 1100,
+    "h": 1148,
+    "page": 1,
+    "found": true,
+    "file": "Module_MDF_Mali_EMOP_v4.pdf",
+    "kind": "pdf"
+   },
+   "232": {
+    "img": "excerpts/25bis_EMOP_MLI/p01_a.jpg",
+    "w": 1100,
+    "h": 1148,
+    "page": 1,
+    "found": true,
+    "file": "Module_MDF_Mali_EMOP_v4.pdf",
+    "kind": "pdf"
+   },
+   "233": {
+    "img": "excerpts/25bis_EMOP_MLI/p01_a.jpg",
+    "w": 1100,
+    "h": 1148,
+    "page": 1,
+    "found": true,
+    "file": "Module_MDF_Mali_EMOP_v4.pdf",
+    "kind": "pdf"
+   },
+   "234": {
+    "img": "excerpts/25bis_EMOP_MLI/p01_a.jpg",
+    "w": 1100,
+    "h": 1148,
+    "page": 1,
+    "found": true,
+    "file": "Module_MDF_Mali_EMOP_v4.pdf",
+    "kind": "pdf"
+   },
+   "235": {
+    "img": "excerpts/25bis_EMOP_MLI/p01_a.jpg",
+    "w": 1100,
+    "h": 1148,
+    "page": 1,
+    "found": true,
+    "file": "Module_MDF_Mali_EMOP_v4.pdf",
+    "kind": "pdf"
+   },
+   "236": {
+    "img": "excerpts/25bis_EMOP_MLI/p03_a.jpg",
+    "w": 1100,
+    "h": 1179,
+    "page": 3,
+    "found": true,
+    "file": "Module_MDF_Mali_EMOP_v4.pdf",
+    "kind": "pdf"
+   },
+   "237": {
+    "img": "excerpts/25bis_EMOP_MLI/p03_a.jpg",
+    "w": 1100,
+    "h": 1179,
+    "page": 3,
+    "found": true,
+    "file": "Module_MDF_Mali_EMOP_v4.pdf",
+    "kind": "pdf"
+   },
+   "238": {
+    "img": "excerpts/25bis_EMOP_MLI/p03_a.jpg",
+    "w": 1100,
+    "h": 1179,
+    "page": 3,
+    "found": true,
+    "file": "Module_MDF_Mali_EMOP_v4.pdf",
+    "kind": "pdf"
+   },
+   "239": {
+    "img": "excerpts/25bis_EMOP_MLI/p03_a.jpg",
+    "w": 1100,
+    "h": 1179,
+    "page": 3,
+    "found": true,
+    "file": "Module_MDF_Mali_EMOP_v4.pdf",
+    "kind": "pdf"
+   },
+   "240": {
+    "img": "excerpts/25bis_EMOP_MLI/p03_a.jpg",
+    "w": 1100,
+    "h": 1179,
+    "page": 3,
+    "found": true,
+    "file": "Module_MDF_Mali_EMOP_v4.pdf",
+    "kind": "pdf"
+   },
+   "241": {
+    "img": "excerpts/25bis_EMOP_MLI/p03_a.jpg",
+    "w": 1100,
+    "h": 1179,
+    "page": 3,
+    "found": true,
+    "file": "Module_MDF_Mali_EMOP_v4.pdf",
+    "kind": "pdf"
+   },
+   "242": {
+    "img": "excerpts/25bis_EMOP_MLI/p03_a.jpg",
+    "w": 1100,
+    "h": 1179,
+    "page": 3,
+    "found": true,
+    "file": "Module_MDF_Mali_EMOP_v4.pdf",
+    "kind": "pdf"
+   },
+   "243": {
+    "img": "excerpts/25bis_EMOP_MLI/p03_a.jpg",
+    "w": 1100,
+    "h": 1179,
+    "page": 3,
+    "found": true,
+    "file": "Module_MDF_Mali_EMOP_v4.pdf",
+    "kind": "pdf"
+   },
+   "244": {
+    "img": "excerpts/25bis_EMOP_MLI/p03_a.jpg",
+    "w": 1100,
+    "h": 1179,
+    "page": 3,
+    "found": true,
+    "file": "Module_MDF_Mali_EMOP_v4.pdf",
+    "kind": "pdf"
+   },
+   "245": {
+    "img": "excerpts/25bis_EMOP_MLI/p06_a.jpg",
+    "w": 1100,
+    "h": 202,
+    "page": 6,
+    "found": true,
+    "file": "EMOP_QUEST_edition15_Passage1_2026_dec.pdf",
+    "kind": "pdf"
+   },
+   "246": {
+    "img": "excerpts/25bis_EMOP_MLI/p12_a.jpg",
+    "w": 1100,
+    "h": 542,
+    "page": 12,
+    "found": true,
+    "file": "EMOP_QUEST_edition15_Passage1_2026_dec.pdf",
+    "kind": "pdf"
+   },
+   "247": {
+    "img": "excerpts/25bis_EMOP_MLI/p12_a.jpg",
+    "w": 1100,
+    "h": 542,
+    "page": 12,
+    "found": true,
+    "file": "EMOP_QUEST_edition15_Passage1_2026_dec.pdf",
+    "kind": "pdf"
+   },
+   "248": {
+    "img": "excerpts/25bis_EMOP_MLI/p12_a.jpg",
+    "w": 1100,
+    "h": 542,
+    "page": 12,
+    "found": true,
+    "file": "EMOP_QUEST_edition15_Passage1_2026_dec.pdf",
+    "kind": "pdf"
+   },
+   "249": {
+    "img": "excerpts/25bis_EMOP_MLI/p12_a.jpg",
+    "w": 1100,
+    "h": 542,
+    "page": 12,
+    "found": true,
+    "file": "EMOP_QUEST_edition15_Passage1_2026_dec.pdf",
+    "kind": "pdf"
+   },
+   "250": {
+    "img": "excerpts/25bis_EMOP_MLI/p13_a.jpg",
+    "w": 1100,
+    "h": 367,
+    "page": 13,
+    "found": true,
+    "file": "EMOP_QUEST_edition15_Passage1_2026_dec.pdf",
+    "kind": "pdf"
+   },
+   "251": {
+    "img": "excerpts/25bis_EMOP_MLI/p13_a.jpg",
+    "w": 1100,
+    "h": 367,
+    "page": 13,
+    "found": true,
+    "file": "EMOP_QUEST_edition15_Passage1_2026_dec.pdf",
+    "kind": "pdf"
+   },
+   "252": {
+    "img": "excerpts/25bis_EMOP_MLI/p14_a.jpg",
+    "w": 1100,
+    "h": 593,
+    "page": 14,
+    "found": true,
+    "file": "EMOP_QUEST_edition15_Passage1_2026_dec.pdf",
+    "kind": "pdf"
+   },
+   "253": {
+    "img": "excerpts/25bis_EMOP_MLI/p14_a.jpg",
+    "w": 1100,
+    "h": 593,
+    "page": 14,
+    "found": true,
+    "file": "EMOP_QUEST_edition15_Passage1_2026_dec.pdf",
+    "kind": "pdf"
+   },
+   "254": {
+    "img": "excerpts/25bis_EMOP_MLI/p14_a.jpg",
+    "w": 1100,
+    "h": 593,
+    "page": 14,
+    "found": true,
+    "file": "EMOP_QUEST_edition15_Passage1_2026_dec.pdf",
+    "kind": "pdf"
+   },
+   "255": {
+    "img": "excerpts/25bis_EMOP_MLI/p15_a.jpg",
+    "w": 1100,
+    "h": 461,
+    "page": 15,
+    "found": true,
+    "file": "EMOP_QUEST_edition15_Passage1_2026_dec.pdf",
+    "kind": "pdf"
+   },
+   "256": {
+    "img": "excerpts/25bis_EMOP_MLI/p15_a.jpg",
+    "w": 1100,
+    "h": 461,
+    "page": 15,
+    "found": true,
+    "file": "EMOP_QUEST_edition15_Passage1_2026_dec.pdf",
+    "kind": "pdf"
+   },
+   "257": {
+    "img": "excerpts/25bis_EMOP_MLI/p16_a.jpg",
+    "w": 1100,
+    "h": 451,
+    "page": 16,
+    "found": true,
+    "file": "EMOP_QUEST_edition15_Passage1_2026_dec.pdf",
+    "kind": "pdf"
+   },
+   "258": {
+    "img": "excerpts/25bis_EMOP_MLI/p16_a.jpg",
+    "w": 1100,
+    "h": 451,
+    "page": 16,
+    "found": true,
+    "file": "EMOP_QUEST_edition15_Passage1_2026_dec.pdf",
+    "kind": "pdf"
+   },
+   "259": {
+    "img": "excerpts/25bis_EMOP_MLI/p17_a.jpg",
+    "w": 1100,
+    "h": 553,
+    "page": 17,
+    "found": true,
+    "file": "EMOP_QUEST_edition15_Passage1_2026_dec.pdf",
+    "kind": "pdf"
+   },
+   "260": {
+    "img": "excerpts/25bis_EMOP_MLI/p17_a.jpg",
+    "w": 1100,
+    "h": 553,
+    "page": 17,
+    "found": true,
+    "file": "EMOP_QUEST_edition15_Passage1_2026_dec.pdf",
+    "kind": "pdf"
+   },
+   "261": {
+    "img": "excerpts/25bis_EMOP_MLI/p17_a.jpg",
+    "w": 1100,
+    "h": 553,
+    "page": 17,
+    "found": true,
+    "file": "EMOP_QUEST_edition15_Passage1_2026_dec.pdf",
+    "kind": "pdf"
+   }
+  },
+  "files": [
+   "EMOP_QUEST_edition15_Passage1_2026_dec.pdf",
+   "Module_MDF_Mali_EMOP_v4.pdf"
+  ]
+ },
+ "26_PHC_MLI": {
+  "file": "IMP_RGPH5_Questionnaire_Menag_Ordinaire_VF_SMAP_20MARS2021.pdf",
+  "kind": "pdf",
+  "rows": {
+   "262": {
+    "img": "excerpts/26_PHC_MLI/p02_a.jpg",
+    "w": 1101,
+    "h": 855,
+    "page": 2,
+    "found": true
+   },
+   "263": {
+    "img": "excerpts/26_PHC_MLI/p02_b.jpg",
+    "w": 1101,
+    "h": 757,
+    "page": 2,
+    "found": true
+   },
+   "264": {
+    "img": "excerpts/26_PHC_MLI/p02_b.jpg",
+    "w": 1101,
+    "h": 757,
+    "page": 2,
+    "found": true
+   },
+   "265": {
+    "img": "excerpts/26_PHC_MLI/p03_a.jpg",
+    "w": 1100,
+    "h": 876,
+    "page": 3,
+    "found": true
+   },
+   "266": {
+    "img": "excerpts/26_PHC_MLI/p03_a.jpg",
+    "w": 1100,
+    "h": 876,
+    "page": 3,
+    "found": true
+   },
+   "267": {
+    "img": "excerpts/26_PHC_MLI/p03_b.jpg",
+    "w": 1101,
+    "h": 951,
+    "page": 3,
+    "found": true
+   },
+   "268": {
+    "img": "excerpts/26_PHC_MLI/p03_b.jpg",
+    "w": 1101,
+    "h": 951,
+    "page": 3,
+    "found": true
+   },
+   "273": {
+    "img": "excerpts/26_PHC_MLI/p03_c.jpg",
+    "w": 1101,
+    "h": 770,
+    "page": 3,
+    "found": true
+   },
+   "269": {
+    "img": "excerpts/26_PHC_MLI/p05_a.jpg",
+    "w": 1101,
+    "h": 810,
+    "page": 5,
+    "found": true
+   },
+   "270": {
+    "img": "excerpts/26_PHC_MLI/p05_a.jpg",
+    "w": 1101,
+    "h": 810,
+    "page": 5,
+    "found": true
+   },
+   "271": {
+    "img": "excerpts/26_PHC_MLI/p05_b.jpg",
+    "w": 1101,
+    "h": 839,
+    "page": 5,
+    "found": true
+   },
+   "272": {
+    "img": "excerpts/26_PHC_MLI/p05_b.jpg",
+    "w": 1101,
+    "h": 839,
+    "page": 5,
+    "found": true
+   },
+   "274": {
+    "img": "excerpts/26_PHC_MLI/p06_a.jpg",
+    "w": 1100,
+    "h": 437,
+    "page": 6,
+    "found": true
+   },
+   "275": {
+    "img": "excerpts/26_PHC_MLI/p06_b.jpg",
+    "w": 1101,
+    "h": 779,
+    "page": 6,
+    "found": true
+   }
+  }
+ },
+ "28bis_MICS_BFA": {
+  "file": "MICS Module Déplacement Forcé.docx",
+  "kind": "doc",
+  "rows": {
+   "276": {
+    "cells": [
+     [
+      "Déplacement Forcé",
+      "WCA"
+     ],
+     [
+      "WCA1. Quelle est la principale nationalité de (nom du chef de ménage en HL2) ?",
+      "BURKINA FASO 1"
+     ],
+     [
+      "",
+      "PAYS 2 2"
+     ],
+     [
+      "",
+      "PAYS 3 3"
+     ],
+     [
+      "",
+      "AUTRE PAYS ……………………………6"
+     ],
+     [
+      "",
+      "AUCUNE NATIONALITE…………………7"
+     ],
+     [
+      "",
+      "NE SAIT PAS 8"
+     ]
+    ],
+    "where": "table 1, row 2"
+   },
+   "277": {
+    "cells": [
+     [
+      "Déplacement Forcé",
+      "WCA"
+     ],
+     [
+      "WCA2. Quel(s) document(s) d’identité possède actuellement (nom du chef de ménage en HL2) ?",
+      "Passeport A"
+     ],
+     [
+      "(Sélectionner tous ceux qui s'appliquent)",
+      "Carte d’identité nationale B"
+     ],
+     [
+      "",
+      "Acte de naissanc.e C"
+     ],
+     [
+      "",
+      "Carte d’identité de réfugié D"
+     ],
+     [
+      "",
+      "Attestation de réfugié E"
+     ],
+     [
+      "",
+      "Attestation de demandeur d’asile/réfugié F"
+     ],
+     [
+      "",
+      "Document de protectioN temporaire/humanitaire G"
+     ],
+     [
+      "",
+      "Aucun document I"
+     ],
+     [
+      "",
+      "Autre document officiel (préciser) x"
+     ]
+    ],
+    "where": "table 1, row 3"
+   },
+   "278": {
+    "cells": [
+     [
+      "Déplacement Forcé",
+      "WCA"
+     ],
+     [
+      "WCA3. Est-ce que (nom du chef de ménage en HL2) a déjà dû quitter un endroit où il/elle vivait parce qu’il/elle ne se sentait pas en sécurité ou que les conditions rendaient la vie impossible là-bas ?",
+      "OUI 1\nNON 2",
+      "2Fin"
+     ]
+    ],
+    "where": "table 1, row 4"
+   },
+   "279": {
+    "cells": [
+     [
+      "Déplacement Forcé",
+      "WCA"
+     ],
+     [
+      "WCA4. Quelle était la raison principale pour laquelle (nom du chef de ménage en HL2) a dû partir ?",
+      "Conflit armé/guerre/TERRORISME 1"
+     ],
+     [
+      "",
+      "Violence généralisée 2"
+     ],
+     [
+      "",
+      "Instabilité politique 3"
+     ],
+     [
+      "",
+      "Peur de la persécution 4"
+     ],
+     [
+      "",
+      "ATTEINTES AUX DROITS humains 5"
+     ],
+     [
+      "",
+      "Catastrophe naturelle (inondation, sécheresse, etc.) 6"
+     ],
+     [
+      "",
+      "Éviction forcée 7"
+     ],
+     [
+      "",
+      "Autre (préciser) 96"
+     ],
+     [
+      "",
+      ": ____________________________"
+     ]
+    ],
+    "where": "table 1, row 5"
+   },
+   "280": {
+    "cells": [
+     [
+      "Déplacement Forcé",
+      "WCA"
+     ],
+     [
+      "WCA4A. En quelle année a eu lieu ce départ (ou le départ le plus récent si cela s’est produit plusieurs fois) ?",
+      "ANNÉE.......................................................................__ __ __ __\nNSP 9998"
+     ]
+    ],
+    "where": "table 1, row 6"
+   },
+   "281": {
+    "cells": [
+     [
+      "Déplacement Forcé",
+      "WCA"
+     ],
+     [
+      "WCA5. Quel est le statut juridique actuel de (nom du chef de ménage en HL2) au Burkina Faso ?",
+      "Résident permanent 01"
+     ],
+     [
+      "",
+      "Réfugié reconnu 02"
+     ],
+     [
+      "",
+      "Demandeur d’asile 03"
+     ],
+     [
+      "",
+      "Bénéficiaire de protection temporaire 04"
+     ],
+     [
+      "",
+      "Détenteur de visa de travail/étude 05"
+     ],
+     [
+      "",
+      "Touriste/visiteur 06"
+     ],
+     [
+      "",
+      "Aucun statut juridique 07"
+     ],
+     [
+      "",
+      "Autre (préciser) 96"
+     ],
+     [
+      "",
+      ": ____________________________"
+     ],
+     [
+      "",
+      "Ne sait pas 98"
+     ]
+    ],
+    "where": "table 1, row 8"
+   },
+   "282": {
+    "cells": [
+     [
+      "Déplacement Forcé",
+      "WCA"
+     ],
+     [
+      "WCA6. Quand (nom du chef de ménage en HL2) a dû partir, s’est-il/elle déplacé(e) vers un autre pays ?",
+      "OUI 1\nNON 2",
+      "2Fin"
+     ]
+    ],
+    "where": "table 1, row 10"
+   },
+   "283": {
+    "cells": [
+     [
+      "Déplacement Forcé",
+      "WCA"
+     ],
+     [
+      "WCA7. Combien de temps (nom du chef de ménage en HL2) a-t-il/elle vécu dans l’autre pays ?",
+      "Moins de 6 mois 1"
+     ],
+     [
+      "",
+      "6 mois à moins d’1 an 2"
+     ],
+     [
+      "",
+      "1 an à moins de 5 ans 3"
+     ],
+     [
+      "",
+      "5 ans ou plus 4"
+     ],
+     [
+      "",
+      "Ne sait pas 8"
+     ]
+    ],
+    "where": "table 1, row 11"
+   },
+   "284": {
+    "cells": [
+     [
+      "Déplacement Forcé",
+      "WCA"
+     ],
+     [
+      "WCA8A. Est-ce que (nom du chef de ménage en HL2) s’est enregistré(e) auprès du HCR ou a demandé l’asile dans ce pays?",
+      "OUI 1\nNON 2",
+      "2WCA9"
+     ]
+    ],
+    "where": "table 1, row 12"
+   },
+   "285": {
+    "cells": [
+     [
+      "Déplacement Forcé",
+      "WCA"
+     ],
+     [
+      "WCA8B. Quelle réponse (nom du chef de ménage en HL2) a-t-il/elle reçue ?",
+      "Statut de réfugié accordé…………… 1"
+     ],
+     [
+      "",
+      "STATUT DE REFUGIE REFUSE 2"
+     ],
+     [
+      "",
+      "ATTEND TOUJOURS UNE REPONSE 3"
+     ],
+     [
+      "",
+      "Protection temporaire accordée 4"
+     ],
+     [
+      "",
+      "Ne sait pas 8"
+     ]
+    ],
+    "where": "table 1, row 13"
+   },
+   "286": {
+    "cells": [
+     [
+      "Déplacement Forcé",
+      "WCA"
+     ],
+     [
+      "WCA9. Est-ce que (nom du chef de ménage en HL2) vit actuellement dans son lieu d’origine (où il/elle vivait avant de partir contre sa volonté) ?",
+      "OUI 1\nNON 2",
+      "1Fin"
+     ]
+    ],
+    "where": "table 1, row 14"
+   },
+   "287": {
+    "cells": [
+     [
+      "Déplacement Forcé",
+      "WCA"
+     ],
+     [
+      "WCA10. Est-ce que (nom du chef de ménage en HL2) planifie-t-il/t-elle de revenir vivre dans la localité qu'il (elle) a dû quitter si les conditions le permettent ?",
+      "OUI 1\nNON 2"
+     ]
+    ],
+    "where": "table 1, row 15"
+   }
+  }
+ },
+ "32_EHCVM": {
+  "file": "EHCVM2026_MEN_08092025.xlsm",
+  "kind": "sheet",
+  "rows": {
+   "288": {
+    "cells": [
+     [
+      "07A.-",
+      "Situation du ménage",
+      "1 = Ménage résident\n2 = Ménage déplacés internes ou de réfugiés dans la communauté\n3 = Ménage dans un camp/site de déplacés internes ou de réfugiés",
+      "CODE:"
+     ]
+    ],
+    "where": "sheet S0_Cont, A10:L10"
+   },
+   "289": {
+    "cells": [
+     [
+      "(1.15)"
+     ],
+     [
+      "Est-ce que [NOM] est de nationalité [Indiquer le pays de l'enquête]?"
+     ]
+    ],
+    "where": "sheet S01_Demo, AA4:AA5"
+   },
+   "290": {
+    "cells": [
+     [
+      "(1.17)"
+     ],
+     [
+      "De quelle nationalité est [NOM]?"
+     ],
+     [
+      "01 Bénin 02 Burkina Faso"
+     ],
+     [
+      "03 Cap-vert 04 Côte d'ivoire"
+     ],
+     [
+      "05 Gambie 06 Ghana"
+     ],
+     [
+      "07 Guinée 08 Guinée Bissau"
+     ],
+     [
+      "09 Liberia 10 Mali"
+     ],
+     [
+      "11 Niger 12 Nigeria"
+     ],
+     [
+      "13 Sénégal 14 Sierra-leone"
+     ],
+     [
+      "15 Togo 16 Cameroun"
+     ],
+     [
+      "17 Centrafrique 18 Congo (République du)"
+     ],
+     [
+      "19 Gabon 20 Guinée Equatoriale"
+     ],
+     [
+      "21 Tchad 22 RDC"
+     ],
+     [
+      "23 Autre Afrique, préciser le pays"
+     ],
+     [
+      "24 Autre pays hors Afrique, préciser le pays"
+     ],
+     [
+      "28 Apatride (sans nationalité)"
+     ],
+     [
+      "26. Ne sait pas"
+     ]
+    ],
+    "where": "sheet S01_Demo, AC4:AC22"
+   },
+   "291": {
+    "cells": [
+     [
+      "(1.18)"
+     ],
+     [
+      "Dans quel pays est (née) [NOM] ?"
+     ],
+     [
+      "01 Bénin 02 Burkina Faso"
+     ],
+     [
+      "03 Cap-vert 04 Côte d'ivoire"
+     ],
+     [
+      "05 Gambie 06 Ghana"
+     ],
+     [
+      "07 Guinée 08 Guinée Bissau"
+     ],
+     [
+      "09 Liberia 10 Mali"
+     ],
+     [
+      "11 Niger 12 Nigeria"
+     ],
+     [
+      "13 Sénégal 14 Sierra-leone"
+     ],
+     [
+      "15 Togo 16 Cameroun"
+     ],
+     [
+      "17 Centrafrique 18 Congo (République du)"
+     ],
+     [
+      "19 Gabon 20 Guinée Equatoriale"
+     ],
+     [
+      "21 Tchad 22 RDC"
+     ],
+     [
+      "23 Autre Afrique, préciser le pays"
+     ],
+     [
+      "24 Autre pays hors Afrique, préciser le pays"
+     ]
+    ],
+    "where": "sheet S01_Demo, AD4:AD20"
+   },
+   "292": {
+    "cells": [
+     [
+      "(1.19)"
+     ],
+     [
+      "[NOM] est-il né à [localité de résidence]?"
+     ],
+     [
+      "1 Oui"
+     ],
+     [
+      "2 Non ► (1.21)"
+     ]
+    ],
+    "where": "sheet S01_Demo, AE4:AE14"
+   },
+   "293": {
+    "cells": [
+     [
+      "(1.20)"
+     ],
+     [
+      "[NOM] a-t-il déjà vécu ou résidé dans une autre localité pendant au moins de 6 mois ?"
+     ],
+     [
+      "1 Oui"
+     ],
+     [
+      "2 Non ► (1.24)"
+     ]
+    ],
+    "where": "sheet S01_Demo, AF4:AF14"
+   },
+   "294": {
+    "cells": [
+     [
+      "(1.21)"
+     ],
+     [
+      "Quelle est la dernière localité où [NOM] a vécu avant de venir vivre ici?\nPour les INS désireux d'intégrér des détails, il faut adapter les codes autres urbain et milieu rural avec les modalités du niveau administratif voulu"
+     ],
+     [
+      "0100 Capitale 0200 Autre urbain"
+     ],
+     [
+      "0300 Milieu rural"
+     ],
+     [
+      "0400 Bénin 0500 Burkina Faso"
+     ],
+     [
+      "0600 Cap-vert 0700 Cote d'ivoire"
+     ],
+     [
+      "0800 Gambie 0900 Ghana 1000 Guinée"
+     ],
+     [
+      "1100 Guinée Bissau 1200 Liberia"
+     ],
+     [
+      "1300 Mali 1400 Niger 1500 Nigeria"
+     ],
+     [
+      "1600 Sénégal 1700 Sierra-leone 1800 Togo"
+     ],
+     [
+      "2000 Cameroun"
+     ],
+     [
+      "2100 Centrafrique 2200 Congo (République du)"
+     ],
+     [
+      "2300 Gabon 2400 Guinée Equatoriale"
+     ],
+     [
+      "2500 Tchad 2600 RDC"
+     ],
+     [
+      "3000 Autre Afrique 4000 Autre pays hors Afrique"
+     ]
+    ],
+    "where": "sheet S01_Demo, AH4:AH22"
+   },
+   "295": {
+    "cells": [
+     [
+      "(1.23)"
+     ],
+     [
+      "Quelle était la raison principale pour laquelle [NOM] est venu vivre dans cette localité?"
+     ],
+     [
+      "01 Envoyé par sa famille pour travailler"
+     ],
+     [
+      "02 Est venu avec son parent"
+     ],
+     [
+      "03 Suivre/rejoindre sa famille"
+     ],
+     [
+      "04 Manque d'emploi"
+     ],
+     [
+      "05 Meilleures Opportunités ici"
+     ],
+     [
+      "06 Affectation"
+     ],
+     [
+      "07 Manque de terres"
+     ],
+     [
+      "08 Ecole"
+     ],
+     [
+      "09 Mariage"
+     ],
+     [
+      "10 Divorce"
+     ],
+     [
+      "11 Perte du conjoint"
+     ],
+     [
+      "12 Autres problèmes de famille"
+     ],
+     [
+      "13 Maladie d'un membre du ménage…"
+     ]
+    ],
+    "where": "sheet S01_Demo, AJ4:AJ8"
+   },
+   "296": {
+    "cells": [
+     [
+      "(1.54A) Est-ce qu’au moins une personne du ménage a déjà quitté l'endroit qu'elle habitait parce qu'elle ne se sentait pas en sécurité ?",
+      "1. Oui ► (1.55)",
+      "2. Non"
+     ]
+    ],
+    "where": "sheet S01BIS_PDI, A4:AD4"
+   },
+   "297": {
+    "cells": [
+     [
+      "(1.54B) Est-ce qu'au moins une personne du ménage a déjà quitté l'endroit où elle vivait à cause de conditions qui ont rendu la vie impossible dans cet endroit ?",
+      "1. Oui",
+      "2. Non ► (Section suivante)"
+     ]
+    ],
+    "where": "sheet S01BIS_PDI, A5:AD5"
+   },
+   "298": {
+    "cells": [
+     [
+      "Est-ce que [NOM] a dû quitter contre sa volonté l'endroit où il vivait?"
+     ],
+     [
+      "1 Oui"
+     ],
+     [
+      "2 Non ► (Personne suivante)"
+     ]
+    ],
+    "where": "sheet S01BIS_PDI, B8:B18"
+   },
+   "299": {
+    "cells": [
+     [
+      "Depuis sa naissance, combien de fois [NOM] a-t-il dû quitter l'endroit où il vivait pour des raisons indépendantes de sa volonté ?"
+     ],
+     [
+      "1 Une fois"
+     ],
+     [
+      "2 Deux fois"
+     ],
+     [
+      "3. Trois fois ou plus"
+     ]
+    ],
+    "where": "sheet S01BIS_PDI, C8:C19"
+   },
+   "300": {
+    "cells": [
+     [
+      "Quelle est la principale pièce d'identité que possède [NOM] ?"
+     ],
+     [
+      "1 Acte de naissance"
+     ],
+     [
+      "2 CNI"
+     ],
+     [
+      "3 Passeport"
+     ],
+     [
+      "4 Permis de conduire"
+     ],
+     [
+      "5 Carte d'électeur"
+     ],
+     [
+      "6 Certificat de résidence"
+     ],
+     [
+      "7 Certificat de nationalité"
+     ],
+     [
+      "9 Carte d'enregistrement HCR"
+     ],
+     [
+      "10 Document d'enregistrement avec autorisation"
+     ],
+     [
+      "11 Carte de séjour"
+     ],
+     [
+      "12 Permis de travail"
+     ],
+     [
+      "13 Document de demandeur d'asile"
+     ],
+     [
+      "14 Autre (à préciser)"
+     ],
+     [
+      "15 Aucune pièce d'identité"
+     ]
+    ],
+    "where": "sheet S01BIS_PDI, D8:D25"
+   },
+   "301": {
+    "cells": [
+     [
+      "[Pour le premier déplacement/fuite de [NOM], quand (mois et année) [NOM] a-t-il/elle fui pour la première fois ?"
+     ]
+    ],
+    "where": "sheet S01BIS_PDI, E8:F8"
+   },
+   "302": {
+    "cells": [
+     [
+      "(1.58b)"
+     ],
+     [
+      "Après avoir dû quitter l’endroit où il vivait contre sa volonté, [NOM] est-il allé dans un autre pays?"
+     ],
+     [
+      "1 Oui"
+     ],
+     [
+      "2 Non ► (1.60)"
+     ]
+    ],
+    "where": "sheet S01BIS_PDI, G7:G17"
+   },
+   "303": {
+    "cells": [
+     [
+      "[NOM] a-t-il vécu dans cet autre pays pendant plus de 6 mois au total?"
+     ],
+     [
+      "1 Oui"
+     ],
+     [
+      "2 Non"
+     ]
+    ],
+    "where": "sheet S01BIS_PDI, H8:H17"
+   },
+   "304": {
+    "cells": [
+     [
+      "Quel est le nom du pays, de la région, et de la commune dans lesquels vivaient [NOM] juste avant d'être forcé(e) de fuir(la première fois) ?"
+     ]
+    ],
+    "where": "sheet S01BIS_PDI, I8:K8"
+   },
+   "305": {
+    "cells": [
+     [
+      "Quelle est la principale raison qui a poussé [NOM] à quitter?"
+     ],
+     [
+      "1 Conflits Armés"
+     ],
+     [
+      "2 Instabilité politique"
+     ],
+     [
+      "3 Crainte d'être persécuté"
+     ],
+     [
+      "4 Violation des droits humains"
+     ],
+     [
+      "5 Tremblement de terre"
+     ],
+     [
+      "6 Inondation"
+     ],
+     [
+      "7 Incendie"
+     ],
+     [
+      "8 Sécheresse"
+     ],
+     [
+      "9 Autre désastre naturel (érosion côtière, vents violents, glissement de terrain, etc.)"
+     ],
+     [
+      "10 Eviction"
+     ],
+     [
+      "11 Autre (à préciser)"
+     ]
+    ],
+    "where": "sheet S01BIS_PDI, L8:L26"
+   },
+   "306": {
+    "cells": [
+     [
+      "[Pour ceux qui ont fui dans un autre pays - si 1.58b=Oui], Quel est le principal document qui permettait à [NOM] de séjourner à l'étranger?"
+     ],
+     [
+      "1 Acte de naissance"
+     ],
+     [
+      "2 CNI"
+     ],
+     [
+      "3 Passeport"
+     ],
+     [
+      "4 Permis de conduire"
+     ],
+     [
+      "5 Carte d'électeur"
+     ],
+     [
+      "6 Certificat de résidence"
+     ],
+     [
+      "7 Certificat de nationalité"
+     ],
+     [
+      "9 Carte d'enregistrement HCR"
+     ],
+     [
+      "10 Document d'enregistrement avec autorisation"
+     ],
+     [
+      "11 Carte de séjour"
+     ],
+     [
+      "12 Permis de travail"
+     ],
+     [
+      "13 Document de demandeur d'asile"
+     ],
+     [
+      "14 Autre (à préciser)"
+     ],
+     [
+      "15 Aucune pièce d'identité"
+     ]
+    ],
+    "where": "sheet S01BIS_PDI, M8:M25"
+   },
+   "307": {
+    "cells": [
+     [
+      "Le ménage dans lequel [NOM] vivait avant de fuir s’est-il séparé laissant certains membres derrière?"
+     ]
+    ],
+    "where": "sheet S01BIS_PDI, Q8:Q8"
+   },
+   "308": {
+    "cells": [
+     [
+      "[NOM] considère-t-il/t-elle le lieu actuel comme sa résidence permanente?"
+     ],
+     [
+      "1 Oui ► (1.71)"
+     ],
+     [
+      "2 Non"
+     ]
+    ],
+    "where": "sheet S01BIS_PDI, S8:S15"
+   },
+   "309": {
+    "cells": [
+     [
+      "[NOM] considère-t-il/t-elle avoir définitivement quitté le lieu de résidence qu'il/elle a dû fuir?"
+     ],
+     [
+      "1 Oui ► (1.71)"
+     ],
+     [
+      "2 Non"
+     ]
+    ],
+    "where": "sheet S01BIS_PDI, T8:T15"
+   },
+   "310": {
+    "cells": [
+     [
+      "[NOM] planifie t-il/t-elle de revenir dans la localité qu'il (elle) a du fuir dans les 12 prochains mois?"
+     ],
+     [
+      "1 Oui"
+     ],
+     [
+      "2 Non"
+     ],
+     [
+      "3 Ne sait pas"
+     ]
+    ],
+    "where": "sheet S01BIS_PDI, U8:U16"
+   },
+   "311": {
+    "cells": [
+     [
+      "Qu’est ce qui manque/a manqué à [NOM] pour pouvoir revenir à la localité qu'il/elle a dû quitter ? (Choisir les 2 raisons les plus importantes)"
+     ],
+     [
+      "1. Bonnes conditions de sécurité"
+     ],
+     [
+      "2. Impossible de récupérer la maison ou le terrain"
+     ],
+     [
+      "3. Pas d’accès à un nouveau logement"
+     ],
+     [
+      "4. Pas d’accès à une nouvelle terre / pâturages"
+     ],
+     [
+      "5. Pas d'accès aux outils de travail ou aux semis/bétail"
+     ],
+     [
+      "6. Pas de fonds de commerce / marchandises"
+     ],
+     [
+      "7. Plus d’amis ou de famille là-bas"
+     ],
+     [
+      "8. Pas d’école"
+     ],
+     [
+      "9. Pas de centre de santé"
+     ],
+     [
+      "10. Pas d’eau"
+     ],
+     [
+      "11. Pas de programme d’aide"
+     ],
+     [
+      "12. Pas de réseau de communication"
+     ],
+     [
+      "13. Vulnérabilité face aux aléas naturels"
+     ],
+     [
+      "14. Autre (à préciser)"
+     ],
+     [
+      "Première raison",
+      "Seconde raison"
+     ]
+    ],
+    "where": "sheet S01BIS_PDI, V8:W27"
+   },
+   "312": {
+    "cells": [
+     [
+      "[si 1.58b=Oui | Pour ceux qui ont fui dans un autre pays], [NOM] a-t-il demandé des papiers au HCR et/ou au gouvernement de ce pays pour pouvoir y rester?"
+     ],
+     [
+      "1 Oui ► (1.74)"
+     ],
+     [
+      "2 Non"
+     ]
+    ],
+    "where": "sheet S01BIS_PDI, X8:X15"
+   },
+   "313": {
+    "cells": [
+     [
+      "[NOM] avait ou a-t-il/t-elle l'intention de demander des papiers au HCR et/ou au gouvernement de ce pays pour pouvoir y rester?"
+     ],
+     [
+      "1 Oui"
+     ],
+     [
+      "2 Non"
+     ],
+     [
+      "► ► (1.76)"
+     ]
+    ],
+    "where": "sheet S01BIS_PDI, Y8:Y17"
+   },
+   "314": {
+    "cells": [
+     [
+      "Quelle réponse [NOM] a-t-il reçue du HCR ou du gouvernement?"
+     ],
+     [
+      "01. Statut de réfugié accordé"
+     ],
+     [
+      "02. Statut de réfugié refusé ► (1.76)"
+     ],
+     [
+      "03. En attente de réponse ► (1.76)"
+     ],
+     [
+      "96. Autre (à préciser) ► (1.76)"
+     ],
+     [
+      "98. Ne sais pas ► (1.76)"
+     ],
+     [
+      "99. Refus de répondre ► (1.76)"
+     ]
+    ],
+    "where": "sheet S01BIS_PDI, Z8:Z19"
+   },
+   "315": {
+    "cells": [
+     [
+      "[Pour ceux dont le statut de réfugié a été accordé], Quel est le numéro d'identification proGres de [NOM] (numéro d'identification sur la carte de réfugié)"
+     ]
+    ],
+    "where": "sheet S01BIS_PDI, AA8:AA8"
+   },
+   "316": {
+    "cells": [
+     [
+      "Quelle est la raison principale pour laquelle [NOM] est venu vivre dans cette localité?"
+     ],
+     [
+      "01 Est venu avec son parent"
+     ],
+     [
+      "02 Suivre/rejoindre sa famille ou les membres de la communauté"
+     ],
+     [
+      "03 Zone sécurisée"
+     ],
+     [
+      "04 Opportunités économiques"
+     ],
+     [
+      "05 Accès à l'éducation et aux services de santé"
+     ],
+     [
+      "06 Accès à une assistance humanitaire"
+     ],
+     [
+      "07 Camp de déplacés / refugiés"
+     ],
+     [
+      "08 Autre"
+     ]
+    ],
+    "where": "sheet S01BIS_PDI, AC8:AC21"
+   },
+   "317": {
+    "cells": [
+     [
+      "(1.80) Au cours des 5 dernières années, y a-t-il eu au moins une personne qui habitait votre ménage qui est partie hors du pays avec l’intention de ne plus revenir avant 6 mois ? (même si la personne est aujourd'hui décédée)",
+      "1. Oui",
+      "2. Non ► (Section suivante)"
+     ]
+    ],
+    "where": "sheet S01TER_MIGRA, B4:H4"
+   }
+  }
+ },
+ "34_GPHC_CMR": {
+  "file": "Ordinary Household Questionnaire.pdf",
+  "kind": "pdf",
+  "rows": {
+   "318": {
+    "img": "excerpts/34_GPHC_CMR/p03_a.jpg",
+    "w": 1100,
+    "h": 489,
+    "page": 3,
+    "found": true
+   },
+   "322": {
+    "img": "excerpts/34_GPHC_CMR/p04_a.jpg",
+    "w": 1100,
+    "h": 502,
+    "page": 4,
+    "found": true
+   },
+   "323": {
+    "img": "excerpts/34_GPHC_CMR/p04_a.jpg",
+    "w": 1100,
+    "h": 502,
+    "page": 4,
+    "found": true
+   },
+   "319": {
+    "img": "excerpts/34_GPHC_CMR/p04_a.jpg",
+    "w": 1100,
+    "h": 502,
+    "page": 4,
+    "found": true
+   },
+   "320": {
+    "img": "excerpts/34_GPHC_CMR/p04_a.jpg",
+    "w": 1100,
+    "h": 502,
+    "page": 4,
+    "found": true
+   },
+   "321": {
+    "img": "excerpts/34_GPHC_CMR/p04_a.jpg",
+    "w": 1100,
+    "h": 502,
+    "page": 4,
+    "found": true
+   },
+   "324": {
+    "img": "excerpts/34_GPHC_CMR/p04_a.jpg",
+    "w": 1100,
+    "h": 502,
+    "page": 4,
+    "found": true
+   },
+   "325": {
+    "img": "excerpts/34_GPHC_CMR/p04_a.jpg",
+    "w": 1100,
+    "h": 502,
+    "page": 4,
+    "found": true
+   },
+   "326": {
+    "img": "excerpts/34_GPHC_CMR/p13_a.jpg",
+    "w": 1100,
+    "h": 506,
+    "page": 13,
+    "found": true
+   },
+   "327": {
+    "img": "excerpts/34_GPHC_CMR/p13_a.jpg",
+    "w": 1100,
+    "h": 506,
+    "page": 13,
+    "found": true
+   }
+  }
+ },
+ "37_RGPH2024_MOR": {
+  "file": "Feuille MLF_Long RGPH 2024_Français 10052023.doc",
+  "kind": "doc",
+  "rows": {
+   "328": {
+    "cells": [
+     [
+      "nationalité"
+     ]
+    ],
+    "where": "paragraph 88"
+   },
+   "329": {
+    "cells": [
+     [
+      "Pays de nationalité"
+     ]
+    ],
+    "where": "paragraph 90"
+   },
+   "330": {
+    "cells": [
+     [
+      "(en année révolu)\nEst-ce que l’enfant est enregistré dans le registre d’état civil"
+     ],
+     [
+      "(Moins de 5 ans)"
+     ]
+    ],
+    "where": "paragraph 100"
+   },
+   "331": {
+    "cells": [
+     [
+      "Lieu de naissance"
+     ]
+    ],
+    "where": "paragraph 201"
+   },
+   "332": {
+    "cells": [
+     [
+      "Lieu de résidence avant la résidence actuelle"
+     ]
+    ],
+    "where": "paragraph 202"
+   },
+   "333": {
+    "cells": [
+     [
+      "Durée de résidence actuelle en année"
+     ]
+    ],
+    "where": "paragraph 203"
+   },
+   "334": {
+    "cells": [
+     [
+      "Lieu de résidence à la veille du confinement de la pandémie du COVID-19 (20 mars 2020)"
+     ]
+    ],
+    "where": "paragraph 216"
+   },
+   "335": {
+    "cells": [
+     [
+      "Avez-vous résidé à l'étranger pour une durée de 6 mois ou plus"
+     ]
+    ],
+    "where": "paragraph 217"
+   },
+   "336": {
+    "cells": [
+     [
+      "Raison d'immigration ou de migration de retour"
+     ],
+     [
+      "Travail"
+     ],
+     [
+      "Investissement/Affaire"
+     ],
+     [
+      "Etudes/fin d’études"
+     ],
+     [
+      "Raisons familiales"
+     ],
+     [
+      "Retraite"
+     ],
+     [
+      "Raisons de santé"
+     ],
+     [
+      "Non intégration/ Racisme"
+     ],
+     [
+      "Guerre/conflit/Insécurité"
+     ],
+     [
+      "Changement climatique (désertification, inondation,……)"
+     ],
+     [
+      "Autres"
+     ]
+    ],
+    "where": "paragraph 220"
+   },
+   "337": {
+    "cells": [
+     [
+      "Année de retours ou d’entrée"
+     ]
+    ],
+    "where": "paragraph 231"
+   },
+   "338": {
+    "cells": [
+     [
+      "MI0. Y-a-t-il une personne qui a été membre du ménage et partie à l'étranger durant les cinq dernières années ? |__|"
+     ]
+    ],
+    "where": "paragraph 446"
+   },
+   "339": {
+    "cells": [
+     [
+      "Raison de migration à l’étranger"
+     ]
+    ],
+    "where": "paragraph 458"
+   }
+  }
+ },
+ "38_MEDHIMS_MOR": {
+  "file": "MED-HIMS Manual 1 Light Model Questionnaires  Version 31 December 2018.pdf",
+  "kind": "pdf",
+  "rows": {
+   "340": {
+    "img": "excerpts/38_MEDHIMS_MOR/p37_a.jpg",
+    "w": 1100,
+    "h": 298,
+    "page": 37,
+    "found": true
+   },
+   "341": {
+    "img": "excerpts/38_MEDHIMS_MOR/p37_a.jpg",
+    "w": 1100,
+    "h": 298,
+    "page": 37,
+    "found": true
+   },
+   "342": {
+    "img": "excerpts/38_MEDHIMS_MOR/p37_a.jpg",
+    "w": 1100,
+    "h": 298,
+    "page": 37,
+    "found": true
+   },
+   "343": {
+    "img": "excerpts/38_MEDHIMS_MOR/p37_a.jpg",
+    "w": 1100,
+    "h": 298,
+    "page": 37,
+    "found": true
+   },
+   "344": {
+    "img": "excerpts/38_MEDHIMS_MOR/p39_a.jpg",
+    "w": 1100,
+    "h": 368,
+    "page": 39,
+    "found": true
+   },
+   "345": {
+    "img": "excerpts/38_MEDHIMS_MOR/p42_a.jpg",
+    "w": 1100,
+    "h": 536,
+    "page": 42,
+    "found": true
+   },
+   "346": {
+    "img": "excerpts/38_MEDHIMS_MOR/p42_a.jpg",
+    "w": 1100,
+    "h": 536,
+    "page": 42,
+    "found": true
+   },
+   "347": {
+    "img": "excerpts/38_MEDHIMS_MOR/p42_a.jpg",
+    "w": 1100,
+    "h": 536,
+    "page": 42,
+    "found": true
+   },
+   "348": {
+    "img": "excerpts/38_MEDHIMS_MOR/p42_a.jpg",
+    "w": 1100,
+    "h": 536,
+    "page": 42,
+    "found": true
+   },
+   "349": {
+    "img": "excerpts/38_MEDHIMS_MOR/p118_a.jpg",
+    "w": 1100,
+    "h": 626,
+    "page": 118,
+    "found": true
+   },
+   "350": {
+    "img": "excerpts/38_MEDHIMS_MOR/p118_a.jpg",
+    "w": 1100,
+    "h": 626,
+    "page": 118,
+    "found": true
+   },
+   "351": {
+    "img": "excerpts/38_MEDHIMS_MOR/p119_a.jpg",
+    "w": 1100,
+    "h": 376,
+    "page": 119,
+    "found": true
+   },
+   "352": {
+    "img": "excerpts/38_MEDHIMS_MOR/p119_b.jpg",
+    "w": 1100,
+    "h": 478,
+    "page": 119,
+    "found": true
+   },
+   "353": {
+    "img": "excerpts/38_MEDHIMS_MOR/p119_b.jpg",
+    "w": 1100,
+    "h": 478,
+    "page": 119,
+    "found": true
+   },
+   "354": {
+    "img": "excerpts/38_MEDHIMS_MOR/p119_b.jpg",
+    "w": 1100,
+    "h": 478,
+    "page": 119,
+    "found": true
+   },
+   "355": {
+    "img": "excerpts/38_MEDHIMS_MOR/p123_a.jpg",
+    "w": 1100,
+    "h": 592,
+    "page": 123,
+    "found": true
+   },
+   "356": {
+    "img": "excerpts/38_MEDHIMS_MOR/p123_a.jpg",
+    "w": 1100,
+    "h": 592,
+    "page": 123,
+    "found": true
+   },
+   "357": {
+    "img": "excerpts/38_MEDHIMS_MOR/p123_a.jpg",
+    "w": 1100,
+    "h": 592,
+    "page": 123,
+    "found": true
+   },
+   "358": {
+    "img": "excerpts/38_MEDHIMS_MOR/p127_a.jpg",
+    "w": 1100,
+    "h": 269,
+    "page": 127,
+    "found": true
+   },
+   "359": {
+    "img": "excerpts/38_MEDHIMS_MOR/p127_b.jpg",
+    "w": 1100,
+    "h": 314,
+    "page": 127,
+    "found": true
+   }
+  }
+ },
+ "40_SSESR_MOR": {
+  "file": "Instruction et Questionnaire Enquête Réfugiés au Maroc _28_ OCTOBRE 2022.docx",
+  "kind": "doc",
+  "rows": {
+   "360": {
+    "cells": [
+     [
+      "1.3",
+      "Pays de naissance",
+      "[1] Syrie",
+      "Notez le pays de naissance du réfugié."
+     ],
+     [
+      "",
+      "",
+      "[2] Yémen"
+     ],
+     [
+      "",
+      "",
+      "[3] Centrafrique"
+     ],
+     [
+      "",
+      "",
+      "[4] Côte d’Ivoire"
+     ],
+     [
+      "",
+      "",
+      "[5] Palestine"
+     ],
+     [
+      "",
+      "",
+      "[6] Sud Soudan"
+     ],
+     [
+      "",
+      "",
+      "[7] Cameroun"
+     ],
+     [
+      "",
+      "",
+      "[8] République Démocratique du Congo (RDC)"
+     ],
+     [
+      "",
+      "",
+      "[9] Guinée"
+     ],
+     [
+      "",
+      "",
+      "[10] Mali"
+     ],
+     [
+      "",
+      "",
+      "[11] Autre à préciser:………………………"
+     ]
+    ],
+    "where": "table 2, row 4"
+   },
+   "361": {
+    "cells": [
+     [
+      "1.4",
+      "Nationalité actuelle",
+      "[0] Apatride -----> Q1.6",
+      "Notez la nationalité actuelle déclarée du réfugié. Ne pas vérifier le passeport ou autre document de voyage du réfugié. Si le réfugié déclare ne pas avoir de nationalité notez « apatride »."
+     ],
+     [
+      "",
+      "",
+      "[1] Syrie"
+     ],
+     [
+      "",
+      "",
+      "[2] Yémen"
+     ],
+     [
+      "",
+      "",
+      "[3] Centrafrique"
+     ],
+     [
+      "",
+      "",
+      "[4] Côte d’Ivoire"
+     ],
+     [
+      "",
+      "",
+      "[5] Palestine"
+     ],
+     [
+      "",
+      "",
+      "[6] Sud Soudan"
+     ],
+     [
+      "",
+      "",
+      "[7] Cameroun"
+     ],
+     [
+      "",
+      "",
+      "[8] République Démocratique du Congo (RDC)"
+     ],
+     [
+      "",
+      "",
+      "[9] Guinée"
+     ],
+     [
+      "",
+      "",
+      "[10] Mali"
+     ],
+     [
+      "",
+      "",
+      "[11] Autre à préciser:……………………….."
+     ]
+    ],
+    "where": "table 2, row 5"
+   },
+   "362": {
+    "cells": [
+     [
+      "1.5",
+      "Avez-vous des documents prouvant votre nationalité actuelle ?",
+      "[0] Non\n[1] Oui",
+      "Demandez si le réfugié dispose d’un document prouvant sa nationalité actuelle (passeport ou autre), ici au Maroc ou dans son pays d’origine."
+     ]
+    ],
+    "where": "table 2, row 6"
+   },
+   "363": {
+    "cells": [
+     [
+      "1.9.1",
+      "Si [1], Avez-vous déjà fait des formalités pour obtenir la nationalité marocaine ?",
+      "[0] Non\n[1] Oui",
+      "Si le conjoint est de nationalité marocaine, on demande si le réfugié a fait des démarches pour avoir la nationalité marocaine."
+     ]
+    ],
+    "where": "table 2, row 11"
+   },
+   "364": {
+    "cells": [
+     [
+      "1.12.1",
+      "Parmi ces enfants, combien sont enregistrés ……… ?\n(une seule réponse possible ?)",
+      "A l’Etat civil: ………….",
+      "Notez le nombre d’enfants enregistrés dans l’Etat civil au Maroc ?)"
+     ]
+    ],
+    "where": "table 2, row 22"
+   },
+   "365": {
+    "cells": [
+     [
+      "1.22",
+      "Année d’entrée au Maroc?",
+      "Notez l’année de la dernière entrée au Maroc pour y résider."
+     ]
+    ],
+    "where": "table 2, row 67"
+   },
+   "366": {
+    "cells": [
+     [
+      "1.23",
+      "Principale raison du départ du pays d’origine?",
+      "[1] Emploi",
+      "Notez la principale raison qui a poussé le réfugié à quitter son pays d’origine."
+     ],
+     [
+      "",
+      "",
+      "[2] Éducation et formation"
+     ],
+     [
+      "",
+      "",
+      "[3] Mariage, regroupement familial ou formation de famille"
+     ],
+     [
+      "",
+      "",
+      "[4] Déplacement forcé (transit, réfugiés, demandeurs d'asile, statut de protection temporaire, trafic, traite, autres…)"
+     ],
+     [
+      "",
+      "",
+      "[5] Autre à préciser :………………."
+     ]
+    ],
+    "where": "table 2, row 68"
+   },
+   "367": {
+    "cells": [
+     [
+      "1.24",
+      "Point d’entrée au Maroc ?",
+      "[1] Aéroport -----> Q1. 26",
+      "Notez le point d’entrée du réfugié sur le territoire marocain. Le point d’entrée peut être un aéroport, un port, un post frontière terrestre avec la Mauritanie ou un point d’entrée terrestre ou maritime."
+     ],
+     [
+      "",
+      "",
+      "[2] Port -----> Q1. 26",
+      "Il ya lieu de préciser que le post frontière signifie une entrée légale, alors que les frontières se réfèrent à une entrée illégale."
+     ],
+     [
+      "",
+      "",
+      "[3] Post frontière avec la Mauritanie -------> Q1. 26"
+     ],
+     [
+      "",
+      "",
+      "[4] Mer"
+     ],
+     [
+      "",
+      "",
+      "[5] Frontières avec l’Algérie"
+     ],
+     [
+      "",
+      "",
+      "[6] Frontière avec la Mauritanie"
+     ]
+    ],
+    "where": "table 2, row 69"
+   },
+   "368": {
+    "cells": [
+     [
+      "1.27",
+      "Raison principale de changement de votre ville de résidence habituelle ?",
+      "[0] N’a pas changé de ville de résidence habituelle",
+      "Demander si le réfugié a changé de ville de résidence habituelle depuis son arrivée au Maroc et précisez la raison principale derrière ce changement."
+     ],
+     [
+      "",
+      "",
+      "[2] Coût de la vie"
+     ],
+     [
+      "",
+      "",
+      "[3] Qualité de la vie"
+     ],
+     [
+      "",
+      "",
+      "[4] Recherche de travail/ Opportunités de travail"
+     ],
+     [
+      "",
+      "",
+      "[5] Regroupement familial"
+     ],
+     [
+      "",
+      "",
+      "[6] Etudes / Formation"
+     ],
+     [
+      "",
+      "",
+      "[7] Proximité des services administratifs/UNHCR/ONGs"
+     ],
+     [
+      "",
+      "",
+      "[8] Sécurité"
+     ],
+     [
+      "",
+      "",
+      "[9] Transféré par les autorités"
+     ],
+     [
+      "",
+      "",
+      "[10] Autre à préciser:……………………."
+     ]
+    ],
+    "where": "table 2, row 72"
+   },
+   "369": {
+    "cells": [
+     [
+      "2 .4",
+      "Disposez-vous des documents suivants (au Maroc) ……………………………..?\n[0] Non ---> (Q 2.6) [1] Oui",
+      "Notez si le réfugié dispose au Maroc des documents suivants"
+     ],
+     [
+      "",
+      "",
+      "[1] Permis/ Titre de séjour Valide délivré par les autorités marocaines\n[2] Permis/ Titre de séjour expiré délivré par les autorités marocaines\n[3] Passeport National Valide ----> (Q 2.6)\n[4] Passeport National expiré ----> (Q 2.6)\n[5] Carte d’identité délivrée par un gouvernement valide ----> (Q 2.…"
+     ]
+    ],
+    "where": "table 2, rows 104-105"
+   },
+   "370": {
+    "cells": [
+     [
+      "2.5",
+      "Si [1] ou [2], Durée de validité du Permis / Titre de séjour en mois?",
+      "……………………………..Mois.",
+      "Précisez la durée de validité du permis/ Titre de séjour en mois pour les titres valides et expirés."
+     ]
+    ],
+    "where": "table 2, row 106"
+   },
+   "371": {
+    "cells": [
+     [
+      "2.6",
+      "Selon vous, quels sont les obstacles rencontrés pour l’obtention du permis /Titre de séjour valide?",
+      "[1] Difficulté d’avoir un contrat de travail",
+      "Demandez quels sont les obstacles que le réfugié a rencontrés pour l’obtention du permis/titre de séjour."
+     ],
+     [
+      "",
+      "",
+      "[2] Difficulté d’avoir un contrat de bail",
+      "Laissez le soin au réfugié de citer les obstacles en questions et cochez les cases correspondantes (choix multiples)."
+     ],
+     [
+      "",
+      "",
+      "[3] Difficulté d’avoir une attestation de sécurité sociale"
+     ],
+     [
+      "",
+      "",
+      "[4] Difficulté d’avoir le casier judiciaire"
+     ],
+     [
+      "",
+      "",
+      "[5] Migrant irrégulier de longue date (Avant 2019/2020)"
+     ],
+     [
+      "",
+      "",
+      "[6] Lourdeur des démarches administratives"
+     ],
+     [
+      "",
+      "",
+      "[7] Autres à préciser :…………………"
+     ]
+    ],
+    "where": "table 2, row 107"
+   },
+   "372": {
+    "cells": [
+     [
+      "5.3",
+      "Êtes-vous inscrit dans les registres sociaux nationaux (le registre National de la population et le registre social unifié?",
+      "[0] Non",
+      "Demandez si le réfugié est inscrit aux registres sociaux nationaux (le registre National de la population et le registre social unifié"
+     ],
+     [
+      "",
+      "",
+      "[1] Oui"
+     ],
+     [
+      "",
+      "",
+      "([2] ne sais pas de quoi il s’agit)"
+     ]
+    ],
+    "where": "table 2, row 174"
+   },
+   "373": {
+    "cells": [
+     [
+      "7.4",
+      "Quelle est votre intention future?",
+      "[1] Rester au Maroc",
+      "Notez l’intention future du réfugier quant à son projet migratoire."
+     ],
+     [
+      "",
+      "",
+      "[2] Retourner à mon pays d’origine"
+     ],
+     [
+      "",
+      "",
+      "[3] Partir en Europe"
+     ],
+     [
+      "",
+      "",
+      "[4] Partir au Canada ou USA"
+     ],
+     [
+      "",
+      "",
+      "[5] Partir aux pays du Golf"
+     ],
+     [
+      "",
+      "",
+      "[6] Partir en Afrique du Nord"
+     ],
+     [
+      "",
+      "",
+      "[7] Partir dans d’autres pays d’Afrique"
+     ],
+     [
+      "",
+      "",
+      "[8] Ne sais pas"
+     ],
+     [
+      "",
+      "",
+      "[9] Autres pays à préciser :…………………"
+     ]
+    ],
+    "where": "table 2, rows 218-226"
+   }
+  }
+ },
+ "41_UKR_IDP": {
+  "file": "Questionnaire No. 1-IDP (once a year) - EN[23].docx",
+  "kind": "doc",
+  "rows": {
+   "374": {
+    "cells": [
+     [
+      "1. Have you changed your place of residence (including temporarily) since February 2014?"
+     ],
+     [
+      "Yes",
+      "1"
+     ],
+     [
+      "No",
+      "2"
+     ],
+     [
+      "Don’t know",
+      "3"
+     ],
+     [
+      "If the answer to the question is \"No\" or \"Don’t know,\" the interview for this person ends."
+     ]
+    ],
+    "where": "table 2, rows 12-18"
+   },
+   "375": {
+    "cells": [
+     [
+      "2. Was this change of place of residence related to the armed conflict in Donbas, the annexation of Crimea\nor other circumstances arising from these events?"
+     ],
+     [
+      "Yes",
+      "1"
+     ],
+     [
+      "No",
+      "2"
+     ],
+     [
+      "Don’t know",
+      "3"
+     ],
+     [
+      "If the answer to the question is \"No\" or \"Don’t know,\" proceed to question 3 for this person. If the answer is \"Yes,\" proceed to question 2.1 for this person."
+     ]
+    ],
+    "where": "table 2, rows 19-25"
+   },
+   "376": {
+    "cells": [
+     [
+      "2.1. Indicate the date you left your place of residence (month, year). If there were several such relocations,"
+     ],
+     [
+      "please indicate the date when you were first forced to leave your place of residence, starting"
+     ],
+     [
+      "from February 2014."
+     ],
+     [
+      "month"
+     ],
+     [
+      "year"
+     ]
+    ],
+    "where": "table 2, rows 26-30"
+   },
+   "377": {
+    "cells": [
+     [
+      "2.2. Indicate the region where you permanently resided before February 2014."
+     ],
+     [
+      "name of region"
+     ]
+    ],
+    "where": "table 2, rows 32-34"
+   },
+   "378": {
+    "cells": [
+     [
+      "3. Have you changed your place of residence due to the full-scale invasion of the Russian Federation after 24 February 2022?"
+     ],
+     [
+      "Yes",
+      "1"
+     ],
+     [
+      "No",
+      "2"
+     ],
+     [
+      "Don’t know",
+      "3"
+     ],
+     [
+      "If the answer to the question is \"No\" or \"Don’t know,\" proceed to question 4 for this person.\nIf the answer is \"Yes,\" proceed to question 3.1 for this person."
+     ]
+    ],
+    "where": "table 3, rows 1-7"
+   },
+   "379": {
+    "cells": [
+     [
+      "3.1. Indicate the date you left your place of residence (month, year). If there were several such relocations,"
+     ],
+     [
+      "please indicate when you were first forced to leave your place of residence, starting"
+     ],
+     [
+      "from 24 February 2022."
+     ],
+     [
+      "month"
+     ],
+     [
+      "year"
+     ]
+    ],
+    "where": "table 3, rows 8-12"
+   },
+   "380": {
+    "cells": [
+     [
+      "3.2. Indicate the region where you permanently resided before 24 February 2022."
+     ],
+     [
+      "name of region"
+     ]
+    ],
+    "where": "table 3, rows 14-16"
+   },
+   "381": {
+    "cells": [
+     [
+      "3.3. Did you leave the territory of Ukraine after 24 February 2022 due to the full-scale invasion\nof the Russian Federation?"
+     ],
+     [
+      "Yes",
+      "1"
+     ],
+     [
+      "No",
+      "2"
+     ],
+     [
+      "Don’t know",
+      "3"
+     ],
+     [
+      "If the answer to the question is \"No\" or \"Don’t know,\" proceed to question 4 for this person.\nIf the answer is \"Yes,\" proceed to question 3.4 for this person."
+     ]
+    ],
+    "where": "table 3, rows 18-24"
+   },
+   "382": {
+    "cells": [
+     [
+      "3.4. Indicate which country you went to."
+     ],
+     [
+      "name of country"
+     ]
+    ],
+    "where": "table 3, rows 25-27"
+   },
+   "383": {
+    "cells": [
+     [
+      "3.5. Indicate the date of return to Ukraine (month, year)."
+     ],
+     [
+      "month"
+     ],
+     [
+      "year"
+     ]
+    ],
+    "where": "table 3, rows 29-33"
+   },
+   "384": {
+    "cells": [
+     [
+      "4. Have you returned to the place of residence where you lived before the forced displacement? If there were several\nsuch relocations, please answer in relation to the place of residence before the first of them."
+     ],
+     [
+      "Yes",
+      "1"
+     ],
+     [
+      "No",
+      "2"
+     ],
+     [
+      "If the answer to the question is \"No,\" the interview for this person ends.\nIf the answer is \"Yes,\" proceed to question 4.1 for this person."
+     ]
+    ],
+    "where": "table 3, rows 35-40"
+   },
+   "385": {
+    "cells": [
+     [
+      "4.1. Indicate the date of return to the place of residence (month, year)."
+     ],
+     [
+      "month"
+     ],
+     [
+      "year"
+     ]
+    ],
+    "where": "table 3, rows 41-45"
+   }
+  }
+ },
+ "21_DS_CMR": {
+  "file": "XLSForm_Questionnaire Profilage PESoP.xlsx",
+  "kind": "sheet",
+  "rows": {
+   "423": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::French",
+      "label::English"
+     ],
+     [
+      "select_one yesno",
+      "S2Q4",
+      "S2Q4 : ${S2Q1} est-il/elle Camerounais(e) ?",
+      "S2Q4 : Is ${S2Q1} Cameroonian?"
+     ],
+     [
+      "yesno",
+      "yes",
+      "Oui",
+      "Yes"
+     ],
+     [
+      "yesno",
+      "no",
+      "Non",
+      "No"
+     ]
+    ],
+    "where": "sheet survey, row 40; sheet choices, rows 51-52"
+   },
+   "424": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::French",
+      "label::English",
+      "relevance"
+     ],
+     [
+      "select_one yesno",
+      "S2Q5",
+      "S2Q5 : ${S2Q1} a-t-il/elle un permis de séjour valide ?",
+      "S2Q5 : Does ${S2Q1} have a valid residence permit?",
+      "${S2Q4} = 'no'"
+     ],
+     [
+      "yesno",
+      "yes",
+      "Oui",
+      "Yes",
+      ""
+     ],
+     [
+      "yesno",
+      "no",
+      "Non",
+      "No",
+      ""
+     ]
+    ],
+    "where": "sheet survey, row 41; sheet choices, rows 51-52"
+   },
+   "425": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::French",
+      "label::English"
+     ],
+     [
+      "select_one yesno",
+      "S2AQ1",
+      "S2AQ1 : ${S2Q1} a-t-il/elle toujours vécu à cette adresse ou dans ce lieu de résidence ?",
+      "S2AQ1 : Has ${S2Q1} always lived at this address or place of residence?"
+     ],
+     [
+      "yesno",
+      "yes",
+      "Oui",
+      "Yes"
+     ],
+     [
+      "yesno",
+      "no",
+      "Non",
+      "No"
+     ]
+    ],
+    "where": "sheet survey, row 43; sheet choices, rows 51-52"
+   },
+   "426": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::French",
+      "label::English",
+      "relevance"
+     ],
+     [
+      "select_one S2AQ2",
+      "S2AQ2",
+      "S2AQ2 : ${S2Q1} a-t-il/elle déménagé à l’intérieur du Cameroun, à l'extérieur du Cameroun, ou les deux ?",
+      "S2AQ2 : Has ${S2Q1} moved inside Cameroon, outside Cameroon, or both?",
+      "${S2AQ1} = 'no'"
+     ],
+     [
+      "S2AQ2",
+      "1",
+      "À l'intérieur du Cameroun",
+      "Inside Cameroon",
+      ""
+     ],
+     [
+      "S2AQ2",
+      "2",
+      "À l'extérieur du Cameroun",
+      "Outside Cameroon",
+      ""
+     ],
+     [
+      "S2AQ2",
+      "3",
+      "Les deux",
+      "Both",
+      ""
+     ]
+    ],
+    "where": "sheet survey, row 44; sheet choices, rows 70-72"
+   },
+   "427": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::French",
+      "label::English",
+      "relevance"
+     ],
+     [
+      "select_one S2AQ3",
+      "S2AQ3",
+      "S2AQ3 : En se référant uniquement aux mouvements à l'intérieur du Cameroun, citez toutes les raisons pour lesquelles ${S2Q1} a quitté son lieu de résidence. (Plusieurs réponses possibles)",
+      "S2AQ3 : Referring only to movements within Cameroon, list all the reasons why ${S2Q1} left his place of residence. (Several answers possible)",
+      "${S2AQ2} = 1 or ${S2AQ2} = 3"
+     ],
+     [
+      "S2AQ3",
+      "1",
+      "Conflit armé ou insécurité",
+      "Armed conflict or insecurity",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "2",
+      "Violations des droits de l'homme (y compris la discrimination)",
+      "Human rights violations (including discrimination)",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "3",
+      "Catastrophes naturelles ou d'origine humaine (inondations, glissements de terrain, etc.)",
+      "Natural or human-made disasters (floods, landslides, etc.)",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "4",
+      "Autres types de violence",
+      "Other types of violence",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "5",
+      "En raison de projets de développement",
+      "Due to development projects",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "6",
+      "Expulsé en raison de non-paiement",
+      "Evicted due to non-payment",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "7",
+      "Conflits familiaux non violents",
+      "Non-violent family conflicts",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "8",
+      "Mariage",
+      "Marriage",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "9",
+      "Réunification familiale",
+      "Family reunification",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "10",
+      "Transfert professionnel",
+      "Job transfer",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "11",
+      "Raisons de santé",
+      "Health reasons",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "12",
+      "Retraite",
+      "Retirement",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "13",
+      "Éducation et formation",
+      "Education and training",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "14",
+      "Contraintes économiques (ex. : coût de la vie élevé)",
+      "Economic constraints (e.g., high cost of living)",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "96",
+      "Autre",
+      "Other",
+      ""
+     ]
+    ],
+    "where": "sheet survey, row 45; sheet choices, rows 74-88"
+   },
+   "428": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::French",
+      "label::English",
+      "relevance",
+      "constraint"
+     ],
+     [
+      "date",
+      "S2AQ4",
+      "S2AQ4 : En quelle annee ${S2Q1} a-t-il/elle déménagé à cause de [Raisons] pour la premiere fois ?",
+      "S2AQ4 : In which year did ${S2Q1} move for the first time ?",
+      "${S2AQ2} = 1 or ${S2AQ2} = 3",
+      "int(today() - ${S2AQ4}) >= 0"
+     ]
+    ],
+    "where": "sheet survey, row 46"
+   },
+   "429": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::French",
+      "label::English",
+      "relevance",
+      "choice_filter"
+     ],
+     [
+      "select_one ADM1Code",
+      "S2AQ6",
+      "S2AQ6 : Dans quelle région ${S2Q1} résidait-il/elle juste avant de déménager en ${S2AQ4} ?",
+      "S2AQ6 : In which region did ${S2Q1} live just before moving in ${S2AQ4}?",
+      "${S2AQ2} = 1 or ${S2AQ2} = 3",
+      ""
+     ],
+     [
+      "select_one ADM2Code",
+      "S2AQ7",
+      "S2AQ7 : Dans quel département ${S2Q1} résidait-il/elle juste avant de déménager en ${S2AQ4} ?",
+      "S2AQ7 : In which division did ${S2Q1} reside just before moving in ${S2AQ4}?",
+      "${S2AQ2} = 1 or ${S2AQ2} = 3",
+      "region=${S2AQ6}"
+     ],
+     [
+      "select_one ADM3Code",
+      "S2AQ8",
+      "S2AQ8 : Dans quel arrondissement/commune ${S2Q1} résidait-il/elle juste avant de déménager en ${S2AQ4} ?",
+      "S2AQ8 : In which subdivision/council did ${S2Q1} reside just before moving in ${S2AQ4} ?",
+      "${S2AQ2} = 1 or ${S2AQ2} = 3",
+      "department=${S2AQ7}"
+     ]
+    ],
+    "where": "sheet survey, rows 48-50"
+   },
+   "430": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::French",
+      "label::English",
+      "relevance"
+     ],
+     [
+      "select_one S2AQ9",
+      "S2AQ9",
+      "S2AQ9 : ${S2Q1} avait il/elle l'intention de déménager de façon permanente ou temporaire ?",
+      "S2AQ9 : Did ${S2Q1} intend to move permanently or temporarily?",
+      "(${S2AQ2} = 1 or ${S2AQ2} = 3) and\n(\nselected(${S2AQ3}, '6') or selected(${S2AQ3}, '7') or selected(${S2AQ3}, '8') or\nselected(${S2AQ3}, '9') or selected(${S2AQ3}, '10') or selected(${S2AQ3}, '11') or\nselected(${S2AQ3}, '12') or selected(${S2AQ3}, '13') or selected(${S2AQ3}, '14') or\nselected(${S2AQ…"
+     ],
+     [
+      "S2AQ9",
+      "1",
+      "Permanente",
+      "Permanent",
+      ""
+     ],
+     [
+      "S2AQ9",
+      "2",
+      "Temporaire",
+      "Temporary",
+      ""
+     ]
+    ],
+    "where": "sheet survey, row 52; sheet choices, rows 1563-1564"
+   },
+   "431": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::French",
+      "label::English",
+      "relevance"
+     ],
+     [
+      "select_one yesno",
+      "S2AQ10",
+      "S2AQ10 : ${S2Q1} peut-il/elle retourner dans la localité où il/elle vivait juste avant d'être forcé(e) de fuir ou avant de déménager s'il/elle le voulait ?",
+      "S2AQ10 : ${S2Q1} Can he/she return to the locality where he/she lived just before being forced to flee or before moving, if he/she wanted to?",
+      "${S2AQ9} = 2"
+     ],
+     [
+      "yesno",
+      "yes",
+      "Oui",
+      "Yes",
+      ""
+     ],
+     [
+      "yesno",
+      "no",
+      "Non",
+      "No",
+      ""
+     ]
+    ],
+    "where": "sheet survey, row 53; sheet choices, rows 51-52"
+   },
+   "432": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::French",
+      "label::English",
+      "relevance"
+     ],
+     [
+      "select_one S2AQ3",
+      "S2AQ11",
+      "S2AQ11 : Pourquoi ${S2Q1} n'est-il/elle pas en mesure de retourner ?",
+      "S2AQ11 : Why is he/she unable to return?",
+      "${S2AQ10} = 'no'"
+     ],
+     [
+      "S2AQ3",
+      "1",
+      "Conflit armé ou insécurité",
+      "Armed conflict or insecurity",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "2",
+      "Violations des droits de l'homme (y compris la discrimination)",
+      "Human rights violations (including discrimination)",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "3",
+      "Catastrophes naturelles ou d'origine humaine (inondations, glissements de terrain, etc.)",
+      "Natural or human-made disasters (floods, landslides, etc.)",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "4",
+      "Autres types de violence",
+      "Other types of violence",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "5",
+      "En raison de projets de développement",
+      "Due to development projects",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "6",
+      "Expulsé en raison de non-paiement",
+      "Evicted due to non-payment",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "7",
+      "Conflits familiaux non violents",
+      "Non-violent family conflicts",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "8",
+      "Mariage",
+      "Marriage",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "9",
+      "Réunification familiale",
+      "Family reunification",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "10",
+      "Transfert professionnel",
+      "Job transfer",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "11",
+      "Raisons de santé",
+      "Health reasons",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "12",
+      "Retraite",
+      "Retirement",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "13",
+      "Éducation et formation",
+      "Education and training",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "14",
+      "Contraintes économiques (ex. : coût de la vie élevé)",
+      "Economic constraints (e.g., high cost of living)",
+      ""
+     ],
+     [
+      "S2AQ3",
+      "96",
+      "Autre",
+      "Other",
+      ""
+     ]
+    ],
+    "where": "sheet survey, row 54; sheet choices, rows 74-88"
+   },
+   "433": {
+    "cells": [
+     [
+      "type",
+      "name",
+      "label::French",
+      "label::English"
+     ],
+     [
+      "select_multiple S2Q12",
+      "S2Q12",
+      "S2Q12 : Quel type de document d'identification personnelle ${S2Q1} possède-t-il/elle ?",
+      "S2Q12 : What type of personal identification document does ${S2Q1} have?"
+     ],
+     [
+      "S2Q12",
+      "1",
+      "Carte nationale d'identité (CNI)",
+      "National Identity Card (NIC)"
+     ],
+     [
+      "S2Q12",
+      "2",
+      "Acte de naissance",
+      "Birth certificate"
+     ],
+     [
+      "S2Q12",
+      "3",
+      "Déclaration de naissance (pour les enfants de moins d'un an)",
+      "Birth declaration (for children under one year)"
+     ],
+     [
+      "S2Q12",
+      "4",
+      "Décision de justice",
+      "Court decision"
+     ],
+     [
+      "S2Q12",
+      "5",
+      "Aucun",
+      "None"
+     ],
+     [
+      "S2Q12",
+      "99",
+      "Ne sait pas",
+      "Do not know"
+     ]
+    ],
+    "where": "sheet survey, row 63; sheet choices, rows 1592-1597"
+   }
+  }
+ },
+ "11_KIHBS_KEN": {
+  "file": "KIHBS Q1A_Household Member Information  1.06.25.pdf",
+  "kind": "pdf",
+  "rows": {
+   "434": {
+    "img": "excerpts/11_KIHBS_KEN/p08_a.jpg",
+    "w": 1101,
+    "h": 701,
+    "page": 8,
+    "found": true
+   },
+   "435": {
+    "img": "excerpts/11_KIHBS_KEN/p08_a.jpg",
+    "w": 1101,
+    "h": 701,
+    "page": 8,
+    "found": true
+   },
+   "436": {
+    "img": "excerpts/11_KIHBS_KEN/p09_a.jpg",
+    "w": 1101,
+    "h": 756,
+    "page": 9,
+    "found": true
+   },
+   "437": {
+    "img": "excerpts/11_KIHBS_KEN/p09_a.jpg",
+    "w": 1101,
+    "h": 756,
+    "page": 9,
+    "found": true
+   },
+   "438": {
+    "img": "excerpts/11_KIHBS_KEN/p09_b.jpg",
+    "w": 1101,
+    "h": 772,
+    "page": 9,
+    "found": true
+   },
+   "439": {
+    "img": "excerpts/11_KIHBS_KEN/p09_b.jpg",
+    "w": 1101,
+    "h": 772,
+    "page": 9,
+    "found": true
+   },
+   "440": {
+    "img": "excerpts/11_KIHBS_KEN/p09_c.jpg",
+    "w": 1101,
+    "h": 707,
+    "page": 9,
+    "found": true
+   },
+   "441": {
+    "img": "excerpts/11_KIHBS_KEN/p09_c.jpg",
+    "w": 1101,
+    "h": 707,
+    "page": 9,
+    "found": true
+   },
+   "442": {
+    "img": "excerpts/11_KIHBS_KEN/p09_c.jpg",
+    "w": 1101,
+    "h": 707,
+    "page": 9,
+    "found": true
+   },
+   "443": {
+    "img": "excerpts/11_KIHBS_KEN/p10_a.jpg",
+    "w": 1101,
+    "h": 747,
+    "page": 10,
+    "found": true
+   },
+   "444": {
+    "img": "excerpts/11_KIHBS_KEN/p10_a.jpg",
+    "w": 1101,
+    "h": 747,
+    "page": 10,
+    "found": true
+   },
+   "445": {
+    "img": "excerpts/11_KIHBS_KEN/p10_b.jpg",
+    "w": 1101,
+    "h": 706,
+    "page": 10,
+    "found": true
+   },
+   "446": {
+    "img": "excerpts/11_KIHBS_KEN/p10_b.jpg",
+    "w": 1101,
+    "h": 706,
+    "page": 10,
+    "found": true
+   },
+   "447": {
+    "img": "excerpts/11_KIHBS_KEN/p10_c.jpg",
+    "w": 1101,
+    "h": 766,
+    "page": 10,
+    "found": true
+   },
+   "448": {
+    "img": "excerpts/11_KIHBS_KEN/p10_c.jpg",
+    "w": 1101,
+    "h": 766,
+    "page": 10,
+    "found": true
+   },
+   "449": {
+    "img": "excerpts/11_KIHBS_KEN/p11_a.jpg",
+    "w": 1101,
+    "h": 929,
+    "page": 11,
+    "found": true
+   }
+  }
+ }
+}

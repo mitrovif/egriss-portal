@@ -3,5 +3,6 @@
  "sdg": "~/path/to/gain_sdg_workstream",
  "idq": "~/path/to/idq-map",
  "bank": "~/path/to/question_bank_v1.csv",
- "roster": "~/path/to/analysis_ready_group_roster.csv"
+ "roster": "~/path/to/analysis_ready_group_roster.csv",
+ "originals": "~/path/to/All Surveys"
 }
