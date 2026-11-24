@@ -239,3 +239,6 @@ a.exr.reg{text-decoration:none}div.exr.reg{cursor:default}div.exr.reg:hover{tran
 .idr .c span{font:500 12px var(--body);color:var(--soft);line-height:1.3}
 .ind .go{min-width:52px;text-align:right}
 .idr{grid-template-columns:132px minmax(0,1fr)}
+
+.mf.two.na{padding-block:3px}.mf.two.na .mfb{flex-direction:row;flex-wrap:wrap;gap:4px 10px;align-items:baseline}.mf.two.na .route{display:none}.mf.two.na b{font-weight:500;color:var(--dim)}
+.mf.two{grid-template-columns:40px minmax(0,1fr)}.mf.two.na{padding-block:4px}
