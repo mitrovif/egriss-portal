@@ -582,9 +582,9 @@ a.exr.reg{text-decoration:none}div.exr.reg{cursor:default}div.exr.reg:hover{tran
   </section>
 
   <section class="stack" id="b-sdg" hidden>
-    <div class="sech"><h2>Across all countries: where values can go below country level</h2><i class="pill new">New</i></div>
+    <div class="sech"><h2>All countries: where values go below country level</h2></div>
     <div class="band"><div class="tw"><table class="tbl" id="disagg"></table></div><p class="lnote" id="disaggnote"></p></div>
-    <div class="sech"><h2>Across all countries: one indicator, every survey</h2><i class="pill new">New</i></div>
+    <div class="sech"><h2>All countries: one indicator, every survey</h2></div>
         <div class="stack">
       <div class="ctl"><h3>Choose an indicator</h3><div class="chips" id="indchips"></div></div>
       <div id="sdghead"></div>
@@ -594,24 +594,25 @@ a.exr.reg{text-decoration:none}div.exr.reg{cursor:default}div.exr.reg:hover{tran
   </section>
 
   <section class="stack" id="b-idq" hidden>
-    <div class="sech"><h2>The module: 13 questions and their skip logic</h2><i class="pill ok">Exists</i><span class="lnote">from the identification questions repository</span></div>
+    <div class="sech"><h2>The 13 EGRISS identification questions, in order</h2><span class="lnote">each with the rule for who is asked it</span></div>
     <div class="band"><div id="mflow"></div></div>
-    <div class="sech"><h2>Across all countries: every questionnaire against the EGRISS module</h2><i class="pill new">New</i></div>
+    <div class="sech"><h2>All questionnaires compared</h2></div>
         <div class="stack">
-      <div class="band core">
+      <div class="band core" hidden>
         <div class="lhead"><h2>The EGRISS identification module</h2><span class="lnote">13 items, as defined in the identification questions repository. Teal border: core item.</span></div>
         <div class="mstrip" id="mstrip"></div>
       </div>
       <div class="band">
-        <div class="lhead"><h2>Every questionnaire against the model</h2><span class="lnote" id="mxnote"></span></div>
-        <div class="legend" style="font-size:12px"><span><i class="sw" style="background:var(--teal)"></i>Same</span><span><i class="sw" style="background:var(--blue)"></i>Close</span><span><i class="sw" style="background:var(--gold)"></i>Partial</span><span><i class="sw" style="background:var(--red)"></i>Different</span><span>· not asked</span><span>number = questions coded to the item</span></div>
+        <div class="lhead"><h2>Which questionnaire asks which question</h2><span class="lnote" id="mxnote"></span></div>
+        <div class="legend" style="font-size:12px"><span><i class="sw" style="background:var(--teal)"></i>Same</span><span><i class="sw" style="background:var(--blue)"></i>Close</span><span><i class="sw" style="background:var(--gold)"></i>Partial</span><span><i class="sw" style="background:var(--red)"></i>Different</span><span>· not asked</span><span>number = questions in that questionnaire on the topic</span></div>
+          <p class="lnote">Select a coloured cell to compare that questionnaire's wording with the EGRISS question. The comparison opens under the table.</p>
         <div class="tw"><table class="mx" id="mx"></table></div>
-        <p class="lnote">Causes named: an automatic keyword match of the eight FrcFl causes in each questionnaire's wording (1 conflict, 2 violence, 3 persecution, 4 rights violations, 6 natural disasters, 7 man-made events). It is a first pass, not a coding. Causes 5 and 8 cannot be matched by keyword.</p>
-        <p class="lnote">The six codes on the right are used in the question bank but are not items of the module as the repository defines it. <code>CoOr</code> and <code>CitYN</code> look like earlier names for <code>LocLiv</code> and <code>CitLoc</code>. <i class="pill tbc">To confirm</i></p>
+        <p class="lnote">Reasons named: the reasons for fleeing that appear in each questionnaire's wording (1 conflict, 2 violence, 3 persecution, 4 rights violations, 6 natural disasters, 7 man-made events). Found by keyword search, so read it as a first indication.</p>
+        <p class="lnote">The six columns on the right are related topics that are not among the 13 EGRISS questions.</p>
       </div>
       <div class="band" id="mdetail"></div>
     </div>
-    <div class="sech" id="bankhead"><h2>Question bank: how each questionnaire asks it</h2><i class="pill new">New</i></div>
+    <div class="sech" id="bankhead"><h2>Question bank: how each questionnaire words it</h2></div>
         <div class="stack">
       <div class="stats" id="bstats"></div>
       <div class="ctl"><h3>How is this asked across surveys? Choose a module item</h3><div class="chips" id="bitems"></div></div>
@@ -625,9 +626,9 @@ a.exr.reg{text-decoration:none}div.exr.reg{cursor:default}div.exr.reg:hover{tran
   </section>
 </div>
 <div class="wrap" style="padding-top:0"><div class="legend">
-      <span><i class="pill ok">Exists</i> on a live site today</span>
-      <span><i class="pill new">New</i> not on any site yet</span>
-      <span><i class="pill tbc">To confirm</i> not recorded yet in our files</span>
+      <span> on a live site today</span>
+      <span> not on any site yet</span>
+      <span> not recorded yet in our files</span>
       <span><i class="pill flag">Check</i> read with care</span>
       <span><i class="pill draft">Draft</i> unreviewed translation</span>
     </div></div>
@@ -766,7 +767,7 @@ function renderSdg(){
   </div>`;
   $('svtitle').textContent = d.rows.length ? `How each survey measured it · ${d.rows.length} ${d.rows.length===1?'survey':'surveys'}` : 'No survey has a calculated value yet';
   const bar=(lab,v,cls)=>`<div class="svbar"><span>${esc(lab)}</span><div class="track"><div class="fill ${cls}" style="width:${v}%"></div></div><span class="bv">${v}%</span></div>`;
-  const tbc='<i class="pill tbc">To confirm</i>';
+  const tbc='';
   $('svlist').innerHTML = d.rows.map(r=>`<article class="svc ${r.old?'old':''}">
     <div class="svh"><b>${esc(r.country)}${r.year?' · '+esc(r.year):''}</b><span>${esc(r.fam)}</span></div>
     <div class="svr">${bar(r.g1,r.r,'r')}${r.h!=null?bar(r.g2||'Host',r.h,'h'):`<span class="lnote">No comparison group in this survey</span>`}</div>
@@ -785,8 +786,8 @@ function renderSdg(){
 }
 function renderRecipe(){
   const i = IND.find(x=>x.c===curInd), done = i.r!=null;
-  const pillOf = k => k==='flag'?'<i class="pill flag">Check</i>':k==='tbc'?'<i class="pill tbc">To confirm</i>':'<i class="pill plain">Note</i>';
-  const tbc = '<i class="pill tbc">To confirm</i>';
+  const pillOf = k => k==='flag'?'<i class="pill flag">Check</i>':k==='tbc'?'':'<i class="pill plain">Note</i>';
+  const tbc = '';
   const g = 'Intro_07 = g' + (i.uni?`, ${i.uni}`:'');
   $('recipe').innerHTML = `
   <div class="eqcard" style="grid-column:1/-1">
@@ -912,8 +913,8 @@ function askKind(s){s=s.toLowerCase();return s.startsWith('done')?'done':s.start
 function renderData(){
   $('dstbl').innerHTML='<tr><th>Dataset</th><th>Country</th><th>Year</th><th>SDG values</th><th>Holder</th><th>Access record</th></tr>'+Q.datasets.map(d=>{
     const k=HOLD[d.src];
-    return `<tr><td><b style="font-weight:600">${esc(d.src)}</b></td><td>${esc(d.country)}</td><td>${esc(d.year||'')}${d.year?'':'<i class="pill tbc">To confirm</i>'}</td><td>${d.inds.map(x=>`<code>${x}</code>`).join(' ')}</td>
-    <td>${k?esc(k[0])+`<br><small>${k[2]}</small>`:'<i class="pill tbc">To confirm</i>'}</td>
+    return `<tr><td><b style="font-weight:600">${esc(d.src)}</b></td><td>${esc(d.country)}</td><td>${esc(d.year||'')}${d.year?'':''}</td><td>${d.inds.map(x=>`<code>${x}</code>`).join(' ')}</td>
+    <td>${k?esc(k[0])+`<br><small>${k[2]}</small>`:''}</td>
     <td>${k?`<i class="pill ok">Linked</i> <a href="${k[1]}" target="_blank" rel="noopener">open ↗</a>`:'<i class="pill plain">Link to add</i>'}</td></tr>`}).join('');
   const kinds={all:'All',ask:'To reach out',partial:'Partly in hand',done:'Done',low:'Low priority'};
   const n=k=>k==='all'?Q.asks.length:Q.asks.filter(a=>askKind(a.status)===k).length;
@@ -936,17 +937,17 @@ function renderModel(){
   const order=Q.surveys.map((s,i)=>i).sort((a,b)=>Q.surveys[a][0].localeCompare(Q.surveys[b][0]));
   const cnt={}; cols.forEach(c=>cnt[c]=new Set(Q.bank.filter(r=>r[2]===c).map(r=>r[0])).size);
   $('mxnote').textContent=`${Q.surveys.length} questionnaires, ${Q.bank.filter(r=>r[2]!=='none').length} coded questions`;
-  $('mx').innerHTML='<tr><th class="nm">Questionnaire</th>'+cols.map((c,j)=>{const m=Q.model.find(x=>x.code===c);return `<th class="${m&&m.core?'core':''} ${j===Q.model.length?'gap':''}" title="${esc(m?m.title:(ITEM[c]||c))}">${esc(c)}<small>${cnt[c]}/${Q.surveys.length}</small></th>`}).join('')+'<th class="gap">Causes named</th></tr>'
+  $('mx').innerHTML='<tr><th class="nm">Questionnaire</th>'+cols.map((c,j)=>{const m=Q.model.find(x=>x.code===c);return `<th class="${m&&m.core?'core':''} ${j===Q.model.length?'gap':''}" title="${esc(m?m.title:(ITEM[c]||c))}">${esc(c)}<small>${cnt[c]}/${Q.surveys.length}</small></th>`}).join('')+'<th class="gap">Reasons named</th></tr>'
    +order.map(s=>`<tr><td class="nm"><b>${esc(Q.surveys[s][0])}</b><span>${esc(Q.surveys[s][1])}</span></td>`+cols.map((c,j)=>{
       const rs=bankFor(s,c); if(!rs.length) return `<td class="${j===Q.model.length?'gap':''}"><span class="nocell">·</span></td>`;
       const best=rs.map(r=>r[3]).sort((a,b)=>(RANK[a]??9)-(RANK[b]??9))[0], cls=RANK[best]!=null?best:'other';
       return `<td class="${j===Q.model.length?'gap':''}"><button class="cell ${cls}" type="button" id="c-${s}-${c}" data-s="${s}" data-c="${c}" aria-pressed="${mSel&&mSel[0]===s&&mSel[1]===c}" aria-label="${esc(Q.surveys[s][0])}, ${esc(c)}, ${esc(best)}">${rs.length}</button></td>`}).join('')
       +`<td class="gap"><span class="cz" title="Causes 1, 2, 3, 4, 6, 7">${[1,2,3,4,6,7].map(k=>`<i class="${(Q.cause[s]||[]).includes(k)?'on':''}"></i>`).join('')}</span></td></tr>`).join('');
-  $('mx').querySelectorAll('.cell').forEach(b=>b.onclick=()=>{mSel=[+b.dataset.s,b.dataset.c];renderModel()});
-  if(!mSel){ $('mdetail').innerHTML='<p class="lnote">Select a coloured cell to compare that questionnaire\'s wording with the model item.</p>'; return }
+  $('mx').querySelectorAll('.cell').forEach(b=>b.onclick=()=>{mSel=[+b.dataset.s,b.dataset.c];renderModel();$('mdetail').scrollIntoView({block:'center',behavior:'smooth'})});
+  if(!mSel){ $('mdetail').hidden=true; return } $('mdetail').hidden=false;
   const [s,c]=mSel, m=Q.model.find(x=>x.code===c), rs=bankFor(s,c);
   $('mdetail').innerHTML=`<div class="lhead"><h2>${esc(Q.surveys[s][0])} · ${esc(c)}</h2><span class="lnote">${esc(Q.surveys[s][1])}</span></div>
-   <div class="cmp"><div class="mi ${m&&m.core?'core':''}"><h3>EGRISS model</h3>${m?`<span class="k">${esc(m.code)} · ${esc(m.title)}</span><span style="font-size:15px">${esc(m.stem)}</span><small>${esc(m.skip)}</small>${m.opts.length?`<ul class="opts">${m.opts.map(o=>`<li>${esc(o)}</li>`).join('')}</ul>`:''}`:`<span class="k">${esc(c)} · ${esc(ITEM[c]||c)}</span><span>Not an item of the module as defined in the repository.</span>`}</div>
+   <div class="cmp"><div class="mi ${m&&m.core?'core':''}"><h3>EGRISS question</h3>${m?`<span class="k">${esc(m.code)} · ${esc(m.title)}</span><span style="font-size:15px">${esc(m.stem)}</span><small>${esc(m.skip)}</small>${m.opts.length?`<ul class="opts">${m.opts.map(o=>`<li>${esc(o)}</li>`).join('')}</ul>`:''}`:`<span class="k">${esc(c)} · ${esc(ITEM[c]||c)}</span><span>Not an item of the module as defined in the repository.</span>`}</div>
    <div class="stack" style="gap:8px"><h3>This questionnaire</h3>${rs.map(r=>`<div class="bq"><div class="l"><span class="qid">${esc(r[1])}</span><i class="pill a-${r[3]}">${esc(r[3])}</i>${r[4]!=='n.a.'&&r[4]!=='none'?`<span class="qmeta">${esc(r[4])}</span>`:''}</div>
      <div class="t"><div class="o">${esc(r[5])}</div>${r[7]?`<div class="e">${esc(r[7])} ${r[8]?'<i class="pill draft">Draft</i>':''}</div>`:''}<div class="qmeta">${esc(r[9])}</div>${r[10]?`<div class="qmeta"><b>Coding note:</b> ${esc(r[10])}</div>`:''}</div></div>`).join('')}</div></div>`;
 }
@@ -1296,7 +1297,7 @@ function czFocus(k){ const g=$('cmap').querySelector('#m-cz'); if(g) g.querySele
 function renderMapFoot(){
   const iso=gSel, m=Q.cm[iso], S=Q.sub, M=S.meta[iso], keys=subKeys(iso), V=mapInd&&S.val[iso]?S.val[iso][mapInd]:null, R=mapInd&&S.rep[iso]?S.rep[iso].ind[mapInd]:null;
   const g=m?m.pts.reduce((o,p)=>{const k=p[2]===0||p[2]===3?'r':p[2]===2?'i':'o'; o[k]++; return o},{r:0,i:0,o:0}):{r:0,i:0,o:0};
-  const pill=(cls,txt,title,body)=>`<i class="pill ${cls}" tabindex="0" ${tipA(title,body)}>${txt}</i>`;
+  const pill=(cls,txt,title,body)=>/^(Exists|New|To confirm)$/.test(txt)?'':`<i class="pill ${cls}" tabindex="0" ${tipA(title,body)}>${txt}</i>`;
   const NR=(!V&&!R&&mapInd&&mapInd!=='__cause'&&fSrc&&surveysOf(iso).get(fSrc)||[]).find(([d])=>d.c===mapInd);
   let leg='', notes=''; const rmp=(V||NR)?rampOf(mapInd):ramp, sg=layer==='sdg'&&m?swipeGroups():null;
   if(NR){ leg=`<span style="flex:1 1 200px"><span>0%</span><i style="flex:1;height:8px;border-radius:1px;background:linear-gradient(90deg,${[0,25,50,75,100].map(v=>rmp(v)).join(',')})"></i><span>100%</span></span>`; notes=pill('plain','National','One value for the whole country','This indicator has not been calculated below country level for this survey yet, so the map shows the national value.') }
@@ -1322,12 +1323,12 @@ const itemsAsked=bs=>Q.model.filter(m=>bankFor(bs,m.code).length);
 function identBand(iso,src,r0){
   const bs=Q.link[src];
   return `<div class="band" style="border-left:3px solid ${LAYER.idq.col}"><div class="lhead"><h2>Who is counted</h2><span class="lnote">how the groups were identified · shared with ID Questions</span></div>
-    <div class="how"><div class="howr"><span class="hk">Groups from</span><div class="hv">${r0.gv?`<div class="vars">${vchip(r0.country,r0.gv)}</div>`:'<span>The survey\'s sample <i class="pill tbc">To confirm</i></span>'}<span>${esc(r0.g1)}${r0.g2?' compared with '+esc(r0.g2.toLowerCase()):', no comparison group'}</span></div></div></div>
+    <div class="how"><div class="howr"><span class="hk">Groups from</span><div class="hv">${r0.gv?`<div class="vars">${vchip(r0.country,r0.gv)}</div>`:'<span>The survey\'s sample</span>'}<span>${esc(r0.g1)}${r0.g2?' compared with '+esc(r0.g2.toLowerCase()):', no comparison group'}</span></div></div></div>
     ${bs!=null?`<p style="margin-top:10px">The questionnaire asks ${itemsAsked(bs).length} of the 13 EGRISS identification questions, ${itemsAsked(bs).filter(m=>m.core).length} of the 5 core ones.</p><details class="idfold"><summary>Show the identification questions as asked</summary><div class="idq" style="margin-top:8px">${identList(bs)}</div></details>
       <p class="lnote">${Q.idcmp[src]?'':'Whether these questions give the same groups as the group variable has not been compared in this file.'}</p>
       ${Q.idcmp[src]?`<h3>Do the questions give the same groups?</h3><div class="tw"><table class="snt"><tr><th>Group in the sample</th><th>Question</th><th>Answers</th></tr>${Q.idcmp[src].map(x=>`<tr><td>${esc(x[0])}</td><td>${esc(x[1])}</td><td>${esc(x[2])}</td></tr>`).join('')}</table></div><p class="lnote">Counted in the survey file, unweighted. The sample group and the answers mostly agree for refugees; they do not for the host sample.</p>`:''}
       <div>${act('open-idq',bs,'Open in ID Questions →','lkbtn',`style="--lc:${LAYER.idq.col}"`)}</div>`
-     :`<div class="fl"><i class="pill tbc">To confirm</i><span>This survey's questionnaire is not in the question bank yet, so its identification questions cannot be shown.</span></div>`}</div>`;
+     :`<div class="fl"><span>This survey's questionnaire is not in the question bank yet, so its identification questions cannot be shown.</span></div>`}</div>`;
 }
 function areaTable(iso,ind){
   const S=Q.sub, M=S.meta[iso], V=S.val[iso][ind], small=n=>n<50?' <i class="pill tbc">small</i>':'';
@@ -1338,7 +1339,7 @@ function areaTable(iso,ind){
     <tr><td><b>National, recalculated</b></td><td class="v">${V.nat[M.g[0]][0]}%</td><td class="v">${V.nat[M.g[1]][0]}%</td></tr></table></div>
     ${camps.length?`<h3 style="margin-top:6px">Refugees by camp or settlement</h3><div class="tw"><table class="snt"><tr><th>Camp</th><th>Refugees</th></tr>${camps.map(([k,c])=>`<tr><td>${esc((S.map[iso].camps.find(x=>x.k===k)||{n:k}).n)}</td>${td(c)}</tr>`).join('')}</table></div>`:''}`;
 }
-function sits(L,exists,what){ const c=Q.ctry[gSel]; return `<div class="chead" style="--lc:${LAYER[L].col}"><div><p class="eyebrow" style="color:var(--lc)">${LAYER[L].n}</p><h2>${esc(c.n)}</h2></div><span style="margin-left:auto;display:flex;gap:10px;align-items:center">${exists?`<i class="pill ok" tabindex="0" ${tipA('Exists',esc(what))}>Exists</i>`:`<i class="pill new" tabindex="0" ${tipA('New',esc(what))}>New</i>`}<a href="${LAYER[L].live}" target="_blank" rel="noopener" style="font-size:13px">${LAYER[L].n} site ↗</a></span></div>`}
+function sits(L,exists,what){ const c=Q.ctry[gSel]; return `<div class="chead" style="--lc:${LAYER[L].col}"><div><p class="eyebrow" style="color:var(--lc)">${LAYER[L].n}</p><h2>${esc(c.n)}</h2></div><span style="margin-left:auto;display:flex;gap:10px;align-items:center"><a href="${LAYER[L].live}" target="_blank" rel="noopener" style="font-size:13px">${LAYER[L].n} site ↗</a></span></div>`}
 function elsewhere(iso){const o=LK.filter(L=>L!==layer&&has(iso,L)); return o.length?`<p class="lnote">It is in: ${o.map(L=>act('layer',L,LAYER[L].n,'lkbtn',`style="--lc:${LAYER[L].col}"`)).join(' ')}</p>`:''}
 
 /* ---- right panel at world level: the country card ---- */
@@ -1346,7 +1347,7 @@ const tiles=c=>c.pop?`<div class="ptiles">${[['Refugees and asylum-seekers',c.po
 function exCard(e,iso,btn){ const k=exLinks(iso,e[0]);
   return `<article class="exc ${btn&&e[0]===fEx?'cur':''}" ${e[10]?tipA('What it is',esc(e[10])+(e[10].length>=260?'…':'')):''}>${e[9]?`<img src="covers/ex${e[0]}.jpg" alt="" loading="lazy" onerror="this.style.visibility='hidden'">`:'<div class="noc">no cover</div>'}
     <div class="exb"><span class="exmeta">${e[1]} · ${e[5]==='C'?'COUNTRY-LED':'INSTITUTION-LED'} · EXAMPLE ${e[0]}</span><b>${esc(e[2])}</b><span class="org">${esc(e[3])}</span>
-    <div class="tags">${e[4]?'<i class="pill ok">Uses the Recommendations</i>':'<i class="pill plain">Not using or not known</i>'}${(e[6]?e[6].split(', '):[]).concat(e[7]?e[7].split(', '):[]).map(t=>`<i class="pill plain">${esc(t)}</i>`).join('')}${k.rows||k.rep?`<i class="pill" style="background:${LAYER.sdg.col};color:var(--night)">SDG values</i>`:''}${k.bs!=null?`<i class="pill" style="background:${LAYER.idq.col};color:var(--night)">Questionnaire</i>`:''}</div>
+    <div class="tags">${e[4]?'<i class="pill ok">Uses the Recommendations</i>':'<i class="pill plain">Not using or not known</i>'}${(e[6]?e[6].split(', '):[]).concat(e[7]?e[7].split(', '):[]).map(t=>`<i class="pill plain">${esc(t)}</i>`).join('')}${k.bs!=null?`<i class="pill" style="background:${LAYER.idq.col};color:var(--night)">Questionnaire</i>`:''}</div>
     <div class="exl">${e[8]?`<a href="${esc(e[8])}" target="_blank" rel="noopener">Open the source ↗</a>`:''}${btn?act('ex',e[0],e[0]===fEx?'Card open below ↓':'Open its card'):''}</div></div></article>` }
 const GN=['Refugees','Returnees','IDPs','Asylum-seekers','Stateless people','Others of concern'], GCOL=['#8fe0e4','#8b98b3','#f3cf7e','#8fe0e4','#b48ef0','#8b98b3'];
 function miniMap(iso){
@@ -1383,7 +1384,7 @@ const RECS={IRRS:'International Recommendations on Refugee Statistics (IRRS)',IR
 function exOpen(e,iso,noBack){ const k=exLinks(iso,e[0]), c=Q.ctry[iso], x=Q.gx[e[0]]||{}, pills=a=>a.map(t=>`<i class="pill plain">${esc(t)}</i>`).join(' ');
   const row=(k_,v,tip)=>v?`<tr><th>${k_}</th><td ${tip?tipA(k_,tip)+' tabindex="0" style="cursor:help"':''}>${v}</td></tr>`:'';
   const basis=b=>b==='title'?'Read from the title of the example.':b==='none'?'':b?'Assigned from: '+esc(b)+'.':'';
-  const also=[k.rows?act('open-sdg',k.src,`SDG · ${k.rows.length} values`,'mini',`style="--lc:${LAYER.sdg.col}"`):k.rep?act('open-sdg','__rep','SDG · values by state','mini',`style="--lc:${LAYER.sdg.col}"`):'',
+  const also=[false&&k.rows?act('open-sdg',k.src,`SDG · ${k.rows.length} values`,'mini',`style="--lc:${LAYER.sdg.col}"`):false&&k.rep?act('open-sdg','__rep','SDG · values by state','mini',`style="--lc:${LAYER.sdg.col}"`):'',
               k.bs!=null?act('open-idq',k.bs,`ID Questions · ${itemsAsked(k.bs).length} of 13 items`,'mini',`style="--lc:${LAYER.idq.col}"`):'', k.src?act('ds',k.src,'Dataset','mini','style="--lc:var(--line2)"'):''].filter(Boolean).join('');
   return `<div class="exopen">${noBack?'':`<div>${act('exclose','','← All examples','lk')}</div>`}
     <div class="cover full">${e[9]?`<a href="covers/ex${e[0]}.jpg" target="_blank" rel="noopener" ${tipA('Cover','Open the full-size cover')}><img src="covers/ex${e[0]}.jpg" alt="Cover of the example" onerror="this.parentNode.style.display='none'"></a>`:''}<div style="display:flex;flex-direction:column;gap:6px;min-width:0"><span class="exmeta">GAIN ${e[1]} · EXAMPLE ${e[0]} · ${esc(c.n).toUpperCase()}</span><h2>${esc(e[2])}</h2><span style="font-size:13.5px;color:var(--soft)">${esc(e[3])}</span>
@@ -1445,9 +1446,9 @@ function pWorld(){
       <div class="kex">${open?exOpen(open,gSel):`<div class="lhead"><h2>${c.ex.length} GAIN ${c.ex.length===1?'example':'examples'}</h2></div><p class="lnote">Point at one to see on the map who it covers. Select it to open its card.</p>
         <div class="exrows">${exRows(gSel)}</div>`}</div></div>` }
   else if(L==='sdg'){ const svs=surveysOf(gSel), keys=subKeys(gSel), goals=[...new Set(sdgRows(gSel).map(([d])=>goalOf(d.c)).concat(c.rep.map(x=>goalOf(x[0]))))].sort((a,b)=>a-b);
-    body=`<div class="band"><h3>Goals with a value for ${esc(c.n)}</h3><div class="goals">${goals.map(g=>SDGI.has(g)?`<img src="sdg/${g}.png" alt="SDG ${g}" ${tipA('Goal '+g,esc(SDGN[g]||''))}>`:`<span class="gt" style="background:${SDGC[g]}"><b>${g}</b></span>`).join('')}</div></div>`+[...svs].map(([k,rs])=>`<div class="band"><div class="lhead"><h2>${esc(rs[0][1].fam)}${rs[0][1].year?' · '+esc(rs[0][1].year):''}</h2><span class="lnote">calculated from microdata</span></div><div class="rows">${rs.map(([x,y])=>`<div class="ind sg" style="cursor:default;--gc:${gcolOf(x.c)}">${goalTile(x.c,x.pri)}<span class="iname">${esc(x.n)}${y.v&&y.v.st==='fix'?' <i class="pill flag">Corrected</i>':y.v&&y.v.st==='new'?' <i class="pill new">New</i>':''}</span>${y.h!=null?barPair(y.r,y.h):`<div class="bars"><div class="bar"><div class="track"><div class="fill r" style="width:${y.r}%"></div></div><span class="bv">${y.r}%</span></div></div>`}<span></span></div>`).join('')}</div><p class="lnote">First bar: ${esc(rs[0][1].g1.toLowerCase())}. Second: ${rs[0][1].g2?esc(rs[0][1].g2.toLowerCase()):'no comparison group'}. Zoom in for how each was calculated.</p></div>`).join('')
+    body=`<div class="band"><h3>Goals with a value for ${esc(c.n)}</h3><div class="goals">${goals.map(g=>SDGI.has(g)?`<img src="sdg/${g}.png" alt="SDG ${g}" ${tipA('Goal '+g,esc(SDGN[g]||''))}>`:`<span class="gt" style="background:${SDGC[g]}"><b>${g}</b></span>`).join('')}</div></div>`+[...svs].map(([k,rs])=>`<div class="band"><div class="lhead"><h2>${esc(rs[0][1].fam)}${rs[0][1].year?' · '+esc(rs[0][1].year):''}</h2><span class="lnote">calculated from microdata</span></div><div class="rows">${rs.map(([x,y])=>`<div class="ind sg" style="cursor:default;--gc:${gcolOf(x.c)}">${goalTile(x.c,x.pri)}<span class="iname">${esc(x.n)}${y.v&&y.v.st==='fix'?' <i class="pill flag">Corrected</i>':y.v&&y.v.st==='new'?'':''}</span>${y.h!=null?barPair(y.r,y.h):`<div class="bars"><div class="bar"><div class="track"><div class="fill r" style="width:${y.r}%"></div></div><span class="bv">${y.r}%</span></div></div>`}<span></span></div>`).join('')}</div><p class="lnote">First bar: ${esc(rs[0][1].g1.toLowerCase())}. Second: ${rs[0][1].g2?esc(rs[0][1].g2.toLowerCase()):'no comparison group'}. Zoom in for how each was calculated.</p></div>`).join('')
       +(c.rep.length?`<div class="band"><h3>${c.rep.length} from published reports</h3><div>${c.rep.map(x=>`<div class="irow" tabindex="0" ${tipA(x[3]+(x[4]?', page '+x[4]:''),esc(x[5]))}><div class="itop">${goalTile(x[0])}<span>${esc(x[2])}</span><b>${esc(x[1])}</b></div></div>`).join('')}</div></div>`:'')
-      +`<div class="fl">${keys.length?`<i class="pill new">New</i><span>Below country level: ${keys.length} ${keys.length===1?'indicator':'indicators'} by ${Q.sub.val[gSel]?Q.sub.meta[gSel].unit:Q.sub.rep[gSel].unit}, on the country map.</span>`:'<i class="pill plain">National</i><span>No values below country level yet.</span>'}</div>` }
+      +`<div class="fl">${keys.length?`<span>Below country level: ${keys.length} ${keys.length===1?'indicator':'indicators'} by ${Q.sub.val[gSel]?Q.sub.meta[gSel].unit:Q.sub.rep[gSel].unit}, on the country map.</span>`:'<i class="pill plain">National</i><span>No values below country level yet.</span>'}</div>` }
   else body=causesBlock(c)+`<div class="band"><h3>${c.sv.length?c.sv.length+' '+(c.sv.length===1?'questionnaire':'questionnaires')+' compared with the EGRISS questions':'No questionnaire compared yet'}</h3><div class="rows">${c.sv.map(s=>`<div class="oex" style="grid-template-columns:minmax(0,1fr) auto"><span style="font:inherit;color:inherit">${esc(Q.surveys[s][1])}</span><span>${itemsAsked(s).length} of 13 items</span></div>`).join('')}</div></div>`;
   return `<div class="chead" style="--lc:${LAYER[L].col}"><div><p class="eyebrow" style="color:var(--lc)">${LAYER[L].n} · country card</p><h2>${esc(c.n)}</h2></div>${dots(gSel)}${act('zoom','',`Open country map →`,'actbtn','style="margin-left:auto;background:var(--lc);border-color:var(--lc);color:var(--night);font-weight:600"')}</div>`
    +body
@@ -1458,7 +1459,7 @@ function pWorld(){
 
 /* ---- GAIN at country level ---- */
 function exLinks(iso,id){const src=Q.exsrc[id], rows=src?surveysOf(iso).get(src):null, rep=Q.sub.rep[iso]&&Q.sub.rep[iso].ex===id?Q.sub.rep[iso]:null; return {src,rows,rep,bs:src!=null?Q.link[src]:undefined,hold:src?HOLD[src]:null}}
-function exRows(iso){ const c=Q.ctry[iso]; return c.ex.map(e=>{const k=exLinks(iso,e[0]); return `<button class="exr" type="button" data-act="ex" data-v="${e[0]}" data-exh="${e[0]}">${e[9]?`<img class="th" src="covers/ex${e[0]}.jpg" alt="" loading="lazy" onerror="this.style.visibility='hidden'">`:'<span class="th none"></span>'}<span class="tt"><span class="yr">${e[1]}</span><b>${esc(e[2])}</b><small>${esc(e[3])}</small><small class="gr">${e[7]?esc(e[7]):'groups not recorded'}${recSet(e).length?' · '+recSet(e).join(' + '):''}</small></span><span class="mk"><i class="bd ${e[4]?'f':''}" ${tipA(e[4]?'Uses the Recommendations':'Not using them, or not known','')}></i>${k.rows||k.rep?`<i class="bd f" style="--c:${LAYER.sdg.col}"></i>`:''}${k.bs!=null?`<i class="bd f" style="--c:${LAYER.idq.col}"></i>`:''}</span></button>`}).join('') }
+function exRows(iso){ const c=Q.ctry[iso]; return c.ex.map(e=>{const k=exLinks(iso,e[0]); return `<button class="exr" type="button" data-act="ex" data-v="${e[0]}" data-exh="${e[0]}">${e[9]?`<img class="th" src="covers/ex${e[0]}.jpg" alt="" loading="lazy" onerror="this.style.visibility='hidden'">`:'<span class="th none"></span>'}<span class="tt"><span class="yr">${e[1]}</span><b>${esc(e[2])}</b><small>${esc(e[3])}</small><small class="gr">${e[7]?esc(e[7]):'groups not recorded'}${recSet(e).length?' · '+recSet(e).join(' + '):''}</small></span><span class="mk"><i class="bd ${e[4]?'f':''}" ${tipA(e[4]?'Uses the Recommendations':'Not using them, or not known','')}></i>${k.bs!=null?`<i class="bd f" style="--c:${LAYER.idq.col}"></i>`:''}</span></button>`}).join('') }
 function pGain(){
   const iso=gSel, c=Q.ctry[iso], open=fEx!=null?c.ex.find(e=>e[0]===fEx):null;
   const n=c.ex.reduce((o,e)=>{recSet(e).forEach(k=>o[k]=(o[k]||0)+1); return o},{});
@@ -1493,7 +1494,7 @@ function pSdg(){
       <div class="eqcard"><div class="eq"><div class="fracv"><div class="n"><small>Numerator</small>${esc(R.num)}</div><div class="d"><small>Denominator</small>${esc(R.den)}</div></div><span class="eqop">× 100 =</span><div class="eqres"><div><div class="bigv" style="color:var(--teal)">${R.all}%</div><div class="bigl">IDPs, seven states</div></div></div></div>
         <div class="fl"><i class="pill plain">Report</i><span>${esc(REP.src)}. ${esc(R.tbl)}. A published table: the variables behind it are not in our files.</span></div></div>
       <div class="band"><div class="lhead"><h3>By state</h3>${mapInd===k?'<i class="pill ok">On the map</i>':act('map',k,'Show on the map')}</div><div class="tw"><table class="snt"><tr><th>State</th><th>Value</th><th>Estimated ${R.nl}</th></tr>${Object.entries(R.vals).map(([s,v])=>`<tr><td>${esc(s)}</td><td class="v">${v[0]}%</td><td class="n">${fmt(v[1])}${v[1]<500?' <i class="pill tbc">small</i>':''}</td></tr>`).join('')}</table></div></div>
-      <div class="band" style="border-left:3px solid ${LAYER.idq.col}"><div class="lhead"><h2>Who is counted</h2></div><p style="color:var(--soft)">Displaced households in camps and host communities in the seven states surveyed. The report does not print the identification questions. <i class="pill tbc">To confirm</i></p></div>`;
+      <div class="band" style="border-left:3px solid ${LAYER.idq.col}"><div class="lhead"><h2>Who is counted</h2></div><p style="color:var(--soft)">Displaced households in camps and host communities in the seven states surveyed. The report does not print the identification questions.</p></div>`;
   } else if(fSrc) {
     const rows=svs.get(fSrc); if(!fInd||!rows.some(([d])=>d.c===fInd)) fInd=(rows.find(([d])=>d.c==='6.1.1')||rows[0])[0].c;
     const [d,r]=rows.find(([x])=>x.c===fInd), hasV=Q.sub.val[iso]&&Q.sub.val[iso][fInd], hold=HOLD[fSrc];
@@ -1542,13 +1543,13 @@ function qOpen(s,iso,noBack){ const seen=new Set(), nEx=Q.bank.filter(r=>r[0]===
           ${rs.length?rs.map(r=>qBlock(r,seen)).join(''):'<span class="lnote">Not asked</span>'}</div></div>`}).join('')}</div></div>
     ${extra.length?`<div><h3 style="margin-bottom:6px">Related questions outside the 13 EGRISS questions</h3><div class="stack" style="gap:8px">${extra.map(k=>bankFor(s,k).map(r=>`<div><span class="lnote">${esc(k)} · ${esc(ITEM[k]||k)}</span>${qBlock(r,seen)}</div>`).join('')).join('')}</div></div>`:''}
     <p class="lnote">Only the identification part is shown; ${all.length-coded.length} other questions from this questionnaire are kept in the record. ${nEx?(nEx===coded.length?'Each question is shown as it appears in the original questionnaire.':nEx+' of '+coded.length+' questions are shown as they appear in the original questionnaire; the others could not be located in the file.'):'The original questionnaire is not in our files yet, so the questions are shown as recorded in the question bank.'}</p>
-    ${rows?`<div class="also"><span>Used for</span>${act('open-sdg',src,`SDG · ${rows.length} values calculated from this survey`,'mini',`style="--lc:${LAYER.sdg.col}"`)}</div>`:''}</div>`;
+    ${false&&rows?`<div class="also"><span>Used for</span>${act('open-sdg',src,`SDG · ${rows.length} values calculated from this survey`,'mini',`style="--lc:${LAYER.sdg.col}"`)}</div>`:''}</div>`;
 }
 function pIdq(){
   const iso=gSel, c=Q.ctry[iso], one=c.sv.length===1, open=one?c.sv[0]:(fSv!=null&&c.sv.includes(fSv)?fSv:null);
   return sits('idq',false,'Causes of displacement exist on the live map; the questionnaire view is new.')+causesBlock(c,!!Q.cpts[iso])
    +(c.sv.length?`<div class="kex" style="--lc:${LAYER.idq.col}">${open!=null?qOpen(open,iso,one):`<div class="lhead"><h2>${c.sv.length} questionnaires compared with the EGRISS questions</h2></div><p class="lnote">Select one to see how it asks each question, in order.</p>
-        <div class="exrows" style="max-height:none">${c.sv.map(s=>{const src=Object.keys(Q.link).find(k=>Q.link[k]===s); return `<button class="exr" type="button" data-act="sv" data-v="${s}" style="grid-template-columns:minmax(0,1fr) auto"><span class="tt"><b>${esc(Q.surveys[s][1])}</b><small>Asks ${itemsAsked(s).length} of the 13 EGRISS questions · ${Q.bank.filter(r=>r[0]===s&&r[2]!=='none').length} identification questions recorded</small>${modDots(s)}</span><span class="mk">${src?`<i class="bd f" style="--c:${LAYER.sdg.col}" ${tipA('SDG','Values were calculated from this survey')}></i>`:''}</span></button>`}).join('')}</div>`}</div>`
+        <div class="exrows" style="max-height:none">${c.sv.map(s=>{const src=Object.keys(Q.link).find(k=>Q.link[k]===s); return `<button class="exr" type="button" data-act="sv" data-v="${s}" style="grid-template-columns:minmax(0,1fr) auto"><span class="tt"><b>${esc(Q.surveys[s][1])}</b><small>Asks ${itemsAsked(s).length} of the 13 EGRISS questions · ${Q.bank.filter(r=>r[0]===s&&r[2]!=='none').length} identification questions recorded</small>${modDots(s)}</span><span class="mk"></span></button>`}).join('')}</div>`}</div>`
      :`<div class="band"><p style="color:var(--soft)">No questionnaire from ${esc(c.n)} has been mapped against the module yet.</p></div>`);
 }
 function causes(c){return c.cz.length?`<div class="band"><h3>Causes the evidence supports in ${esc(c.n)}</h3><div class="flow">${c.cz.filter(z=>z[1]==='RECOMMENDED').map(z=>`<span class="qchip">${z[0]} · ${CZ[z[0]]}</span>`).join('')||'<span class="lnote">None recommended.</span>'}</div><p class="lnote">From the causing events map: where enumerators need local examples for the first module item.</p></div>`:''}
@@ -1557,7 +1558,7 @@ function causes(c){return c.cz.length?`<div class="band"><h3>Causes the evidence
 function renderDrawer(){
   const exOf=src=>Object.keys(Q.exsrc).find(k=>Q.exsrc[k]===src);
   const row=d=>{const k=HOLD[d.src], ex=exOf(d.src), bs=Q.link[d.src]; return `<div class="dsrow ${d.src===hitSrc?'hit':''}" id="ds-${esc(d.src).replace(/[^A-Za-z0-9]/g,'_')}"><b>${esc(d.src)}</b><small>${esc(d.country)}${d.year?' · '+esc(d.year):''}</small>
-      <span>${k?`${esc(k[0])} · <a href="${k[1]}" target="_blank" rel="noopener">Request or download ↗</a>`:'<i class="pill tbc">To confirm</i> Holder and link still to add'}</span>
+      <span>${k?`${esc(k[0])} · <a href="${k[1]}" target="_blank" rel="noopener">Request or download ↗</a>`:' Holder and link still to add'}</span>
       <small>Used by: ${d.inds.length} SDG ${d.inds.length===1?'value':'values'}${ex?' · GAIN example '+ex:''}${bs!=null?' · questionnaire in ID Questions':''}</small></div>`};
   const A=Q.datasets.filter(d=>HOLD[d.src]), C=Q.datasets.filter(d=>!HOLD[d.src]);
   $('drawer').innerHTML=`<button class="x" type="button" data-act="dsclose">Close ✕</button>
