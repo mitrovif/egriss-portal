@@ -497,9 +497,133 @@ function repCard(x){ const pg=x[9]||x[4];
     ${x[6]?`<figure class="prt"><a href="${x[6]}" target="_blank" rel="noopener" ${tipA('From the report','Open the page image at full size')}><img loading="lazy" src="${x[6]}" width="${x[7]}" height="${x[8]}" alt="Report page showing the value${pg?', page '+pg:''}"></a></figure>`:''}
     <p class="rsrc">${esc(x[11]||x[3])}${x[12]?' · '+esc(x[12]):''}${pg?' · page '+esc(pg):''}${x[10]?` · <a href="${esc(x[10])}" target="_blank" rel="noopener">Open the report ↗</a>`:''}</p></div>` }
 /* ---- small charts under the globe ---- */
-const FWC={IRRS:'#8db8e3',IRIS:'#3f78d6',IROSS:'#e3c3a0','Mixed use':'#d7dde6',Undetermined:'#8b98b3'}, LEADC={C:'#3f78d6',I:'#4cc3c9'};
+const FWC={IRRS:'#8db8e3',IRIS:'#3f78d6',IROSS:'#e3c3a0','Mixed use':'#d7dde6',Undetermined:'#8b98b3'}, LEADC={C:'#5b8fd9',I:'#4cc3c9'};
 const fwOf=e=>FWC[e[12]]?e[12]:'Undetermined';
 let zChart=null;
+/* ===== the story's dot charts: one dot per example, moving between the same layouts as in "Counted, and counting" ===== */
+const SXC={BLUE:'#5b8fd9',TEAL:'#4cc3c9',RED:'#f06667',FW:['#8db8e3','#3f78d6','#e3c3a0','#d7dde6','#6b7a99'],FWL:['#8db8e3','#3f78d6','#e3c3a0','#d7dde6','#8b98b3']};
+const SXK={cU:[SXC.BLUE,1],iU:[SXC.TEAL,1],cN:[SXC.BLUE,0],iN:[SXC.TEAL,0],lc:[SXC.RED,1],li:[SXC.TEAL,1],fw0:[SXC.FW[0],1],fw1:[SXC.FW[1],1],fw2:[SXC.FW[2],1],fw3:[SXC.FW[3],1],fw4:[SXC.FW[4],1],bg:['rgba(207,224,244,1)',1]};
+const SXFW=['IRRS','IRIS','IROSS','Mixed use','Undetermined'], SXSN=['Survey','Administrative data','Census','Data integration','Non-traditional','Tools and other'], SXSNS=['Survey','Admin','Census','Integr.','Non-trad.','Tools'], SXRG=['Africa','Europe','Americas','Asia and Oceania','Middle East'], SXRGS=['Africa','Europe','Amer.','Asia','M. East'], SXMXC=[[0,1,2],[0,1],[0,2],[1,2]], SXMXN=['All three combined','IRRS + IRIS','IRRS + IROSS','IRIS + IROSS'];
+let _sxr=null; const sxRows=()=>_sxr||(_sxr=Q.sx.map((r,i)=>({id:i,y:r[0],lead:r[1],fw:r[2],use:r[3],reg:r[4],src:r[5],mix:r[6],iso:r[7],title:r[8],org:r[9],country:r[10],pop:r[11]})));
+const sxHash=(i,k)=>{ const v=Math.sin(i*12.9898+k*78.233)*43758.5453; return v-Math.floor(v) };
+function sxTomb(n,per,p){ const R=per*p/2; let Hb=0, pts=[]; for(let guard=0;guard<400;guard++){ pts=[]; const rws=Math.ceil((Hb+R)/p)+1; for(let k=0;k<rws;k++){ const y=(k+.5)*p; for(let c=0;c<per;c++){ const x=(c-(per-1)/2)*p; if(y<=Hb||Math.hypot(x,y-Hb)<=R-.3*p) pts.push([x,y]) } } if(pts.length>=n) break; Hb+=p } return {pts,Hb,H:Hb+R} }
+function sxBuild(lay,yr,by,W,H,small){
+  const rows=sxRows(), pos=new Map(), deco=[], labels=[], g=small?{L:6,R:W-6,T:6,B:H-13}:{L:48,R:W-48,T:58,B:H-62};
+  const put=(id,j,o)=>pos.set(id*8+j,o), yN=yr==='all'?null:+yr, lab=(x,y,t,al,col,sz,sans)=>labels.push({x,y,t:String(t),al:al||'center',col:col||'#fff',sz,sans:!!sans});
+  let title='', legend=[], mode=yN?(yN===2025?'LATEST ROUND · GAIN 2025':'SINGLE ROUND · GAIN '+yN):'ALL ROUNDS · GAIN 2021–2025';
+  if(lay==='bars'){ mode='ALL ROUNDS · GAIN 2021–2025';
+    const band=(g.R-g.L)/5, per=4, pitch=Math.min(Math.min(64,band*.34)/4,(g.B-g.T-(small?6:40))/27), bw=per*pitch, gap=Math.max(small?2:6,pitch*.8);
+    [2021,2022,2023,2024,2025].forEach((y,i)=>{ const gx=g.L+band*i+band/2;
+      [0,1].forEach(ld=>{ const es=rows.filter(d=>d.y===y&&d.lead===ld).sort((a,b)=>(b.use-a.use)||(a.id-b.id)), xc=gx-bw/2-gap/2+ld*(bw+gap), T1=sxTomb(es.length,per,pitch), u=es.filter(d=>d.use).length, col=ld?SXC.TEAL:SXC.BLUE;
+        es.forEach((d,k)=>put(d.id,0,{x:xc+T1.pts[k][0],y:g.B-T1.pts[k][1],r:pitch*.36,k:d.use?(ld?'iU':'cU'):(ld?'iN':'cN')}));
+        if(es.length){ deco.push({t:'tomb',x:xc,w:bw+4,B:g.B+1,Hb:T1.Hb,fill:u?(u===es.length?T1.H:T1.pts[u-1][1]+pitch/2):0,c:col});
+          if(!small){ lab(xc,g.B-T1.H-14,es.length,'center',col,15); lab(xc,g.B+13,u,'center','rgba(255,255,255,.9)',12) } } });
+      lab(gx,g.B+(small?7:36),small?"'"+String(y).slice(2):y,'center','#fff',small?8:14) });
+    title='EXAMPLES BY YEAR AND LEAD · 2021–2025'; legend=[['cU','Country-led, using'],['iU','Institution-led, using'],['cN','Not using / did not know']];
+  } else if(lay==='donut'){
+    const byLead=by==='lead', ORD=[0,1,4,3,2], list=rows.filter(d=>d.use&&(yN==null||d.y===yN));
+    list.sort((a,b)=>byLead?((a.lead-b.lead)||(ORD.indexOf(a.fw)-ORD.indexOf(b.fw))||(a.id-b.id)):((ORD.indexOf(a.fw)-ORD.indexOf(b.fw))||(a.mix-b.mix)||(a.lead-b.lead)||(a.id-b.id)));
+    const N=list.length||1, cx=(g.L+g.R)/2, cy=(g.T+g.B)/2+(small?0:10), rO=small?Math.min((g.R-g.L)/2,(g.B-g.T)/2)-1:Math.max(70,Math.min((g.R-g.L)/2-190,(g.B-g.T)/2-24)), rowsN=N<=130?3:5;
+    let p=small?9:30, pts=[]; for(let guard=0;guard<200;guard++){ pts=[]; for(let q=0;q<rowsN;q++){ const rk=rO-(q+.5)*p; if(rk<p) continue; const nk=Math.floor(6.2832*rk/p); for(let m=0;m<nk;m++) pts.push([(m+.5+q*.33)/nk*6.2832,rk]) } if(pts.length>=N||p<=1.5) break; p-=.25 }
+    pts.sort((a,b)=>a[0]-b[0]);
+    list.forEach((d,k)=>{ const s=pts[Math.min(pts.length-1,Math.floor((k+.5)*pts.length/N))]; put(d.id,0,{x:cx+Math.sin(s[0])*s[1],y:cy-Math.cos(s[0])*s[1],r:p*.38,k:byLead?(d.lead?'li':'lc'):'fw'+d.fw,mx:!byLead&&d.fw===3&&d.mix>=0?SXMXC[d.mix]:null}) });
+    const band0=rO-rowsN*p-3, band1=rO+3, rin=band0-(small?7:26), nC=list.filter(d=>!d.lead).length, nI=list.length-nC;
+    const groups=byLead?[{n:nC,name:'Country-led',col:SXC.RED},{n:nI,name:'Institution-led',col:SXC.TEAL}]:ORD.map(fw=>({n:list.filter(d=>d.fw===fw).length,name:fw===3?'Mixed use':SXFW[fw],col:SXC.FWL[fw],fw}));
+    if(byLead){ let a=0; ORD.forEach(fw=>{ const n=list.filter(d=>d.fw===fw).length; if(n) deco.push({t:'arc',cx,cy,r:rin,a0:a/N,a1:(a+n)/N,c:SXC.FWL[fw],w:small?4:12,al:.3}); a+=n }) }
+    else { if(nC) deco.push({t:'arc',cx,cy,r:rin,a0:0,a1:nC/N,c:SXC.RED,w:small?5:22,al:1}); if(nI) deco.push({t:'arc',cx,cy,r:rin,a0:nC/N,a1:1,c:SXC.TEAL,w:small?5:22,al:1}) }
+    let acc=0; groups.forEach(gr=>{ if(!gr.n) return; const f0=acc/N, f1=(acc+gr.n)/N; acc+=gr.n; deco.push({t:'sector',cx,cy,r0:band0,r1:band1,a0:f0+.004,a1:f1-.004,c:gr.col});
+      if(small) return; const mid=(f0+f1)/2*6.2832, side=Math.sin(mid)>=0?1:-1, bx=cx+Math.sin(mid)*band1, by2=cy-Math.cos(mid)*band1, ex=cx+Math.sin(mid)*(band1+16), ey=cy-Math.cos(mid)*(band1+16), hx=Math.max(90,Math.min(W-90,side>0?Math.max(ex+14,cx+band1+74):Math.min(ex-14,cx-band1-74)));
+      deco.push({t:'leader',pts:[[bx,by2],[ex,ey],[hx,ey]],c:gr.col}); lab(hx+side*8,ey-7,gr.n,side>0?'left':'right',gr.col,24); lab(hx+side*8,ey+14,gr.name,side>0?'left':'right','#cfe0f4',12);
+      if(gr.fw===3) SXMXN.map((nm,m)=>[list.filter(d=>d.fw===3&&d.mix===m).length,nm]).filter(x=>x[0]).forEach((x,i)=>lab(hx+side*8,ey+30+i*14,x[0]+'  '+x[1],side>0?'left':'right','#cfe0f4',10.5)) });
+    lab(cx,cy-(small?0:6),list.length,'center','#fff',small?15:(list.length>99?54:64),true); if(!small) lab(cx,cy+34,'examples','center','#cfe0f4',12);
+    title='EXAMPLES USING THE RECOMMENDATIONS · '+(yN||'2021–2025')+(byLead?' · BY LEAD':' · BY RECOMMENDATIONS');
+    legend=byLead?[['','Circles: who led the example'],['lc','Country-led '+nC],['li','Institution-led '+nI],['','Faded inner ring: the Recommendations applied']]
+      :[['','Circles: Recommendations applied'],['fw0','IRRS'],['fw1','IRIS'],['fw2','IROSS'],['fw3','Mixed use (circle split)'],['fw4','Undetermined'],['','Inner ring: who led the example'],['lc','Country-led '+nC],['li','Institution-led '+nI]];
+  } else if(lay==='regions'){
+    const cats=[4,3,2,1,0], bk=cats.map(()=>[]); rows.forEach(d=>{ if((yN==null||d.y===yN)&&d.lead===0&&d.use&&d.reg>=0) bk[cats.indexOf(d.reg)].push(d) });
+    const maxN=Math.max(1,...bk.map(b=>b.length)), rowH=Math.min(small?19:76,(g.B-g.T+(small?10:0))/5), top=g.T+((g.B-g.T+(small?10:0))-rowH*5)/2, x0=g.L+(small?34:200), per2=maxN>40?4:2, pitch2=Math.min(16,rowH*.7/per2,(g.R-(small?16:50)-x0)/Math.ceil(maxN/per2));
+    bk.forEach((b,qi)=>{ b.sort((a,c)=>(a.y-c.y)||(a.id-c.id)); const yc=top+qi*rowH+rowH/2;
+      b.forEach((d,k)=>put(d.id,0,{x:x0+(Math.floor(k/per2)+.5)*pitch2,y:yc+(k%per2-(per2-1)/2)*pitch2,r:pitch2*.38,k:'cU'}));
+      const wv=Math.ceil(b.length/per2)*pitch2; if(b.length) deco.push({t:'pill',x:x0,y:yc-pitch2*per2/2-2,w:wv+4+pitch2/2,h:pitch2*per2+4,c:SXC.BLUE});
+      deco.push({t:'hit',reg:cats[qi],x0:0,x1:W,y0:yc-rowH/2,y1:yc+rowH/2});
+      lab(x0-(small?4:14),yc,small?SXRGS[cats[qi]]:SXRG[cats[qi]],'right','#cfe0f4',small?7.5:13,true); lab(x0+wv+(small?5:12),yc,b.length,'left','#fff',small?8:15) });
+    title='COUNTRY-LED EXAMPLES USING THE RECOMMENDATIONS, BY REGION · '+(yN||'2021–2025'); legend=[['cU','Country-led, using']];
+  } else if(lay==='sources'){ if(!yN) mode='ALL ROUNDS · GAIN 2024–2025';
+    const bk=SXSN.map(()=>[]); rows.forEach(d=>{ if((yN==null||d.y===yN)&&d.lead===0) d.src.forEach((c,j)=>{ if(bk[c]) bk[c].push([d,j]) }) });
+    const maxB=Math.max(1,...bk.map(b=>b.length)), band3=(g.R-g.L)/6, per3=maxB>45?6:4, pitch3=Math.min(18,Math.min(72,band3*.6)/per3,(g.B-g.T-(small?6:40))/(Math.ceil(maxB/per3)+per3/2));
+    bk.forEach((b,ci)=>{ b.sort((a,c)=>(c[0].use-a[0].use)||(a[0].y-c[0].y)||(a[0].id-c[0].id)); const xc=g.L+band3*ci+band3/2, u3=b.filter(it=>it[0].use).length, T3=sxTomb(b.length,per3,pitch3);
+      b.forEach((it,k)=>put(it[0].id,it[1],{x:xc+T3.pts[k][0],y:g.B-T3.pts[k][1],r:pitch3*.36,k:(it[0].use?'cU':'cN')+(it[0].src.length>1?'m':'')}));
+      if(b.length){ deco.push({t:'tomb',x:xc,w:per3*pitch3+4,B:g.B+1,Hb:T3.Hb,fill:u3?(u3===b.length?T3.H:T3.pts[u3-1][1]+pitch3/2):0,c:SXC.BLUE});
+        if(!small){ lab(xc,g.B-T3.H-14,b.length,'center',SXC.BLUE,15); lab(xc,g.B+13,u3,'center','rgba(255,255,255,.9)',12) } }
+      lab(xc,g.B+(small?7:36),small?SXSNS[ci]:SXSN[ci],'center','#fff',small?6.5:12,true) });
+    if(yN!=null&&yN<2024&&!small) lab((g.L+g.R)/2,g.T-18,'Data sources were first asked in GAIN 2024. Pick 2024, 2025 or All years.','center','#e0a93b',14,true);
+    title='DATA SOURCES OF COUNTRY-LED EXAMPLES · '+(yN||'2024–2025')+' · MULTIPLE CHOICE, ONE ENTRY PER ANSWER';
+    legend=[['cU','Example using the Recommendations'],['cN','Not using / did not know'],['cUm','White ring: reported several sources']];
+  }
+  return {pos,deco,labels,title,legend,mode};
+}
+function sxDot(ctx,x,y,r,key,mx,al){ if(al<.01) return; const m=key.length>2&&key.endsWith('m'), base=SXK[m?key.slice(0,-1):key]||SXK.cU; r=Math.max(.8,r); ctx.globalAlpha=al; ctx.beginPath(); ctx.arc(x,y,r,0,6.2832);
+  if(base[1]){ ctx.fillStyle=base[0]; ctx.fill() } else { ctx.strokeStyle=base[0]; ctx.lineWidth=Math.min(1.3,r*.5); ctx.stroke() }
+  if(mx) mx.forEach((f,i)=>{ ctx.beginPath(); ctx.moveTo(x,y); ctx.arc(x,y,r,-1.5708+i/mx.length*6.2832,-1.5708+(i+1)/mx.length*6.2832); ctx.closePath(); ctx.fillStyle=SXC.FW[f]; ctx.fill() });
+  if(m){ ctx.beginPath(); ctx.arc(x,y,r,0,6.2832); ctx.strokeStyle='rgba(255,255,255,.85)'; ctx.lineWidth=1; ctx.stroke() } }
+function sxDeco(ctx,d,al){ ctx.save(); const A=a=>a*6.2832-1.5708;
+  if(d.t==='tomb'){ const R=d.w/2, path=()=>{ ctx.beginPath(); ctx.moveTo(d.x-R,d.B); ctx.lineTo(d.x-R,d.B-d.Hb); ctx.arc(d.x,d.B-d.Hb,R,Math.PI,0); ctx.lineTo(d.x+R,d.B); ctx.closePath() };
+    if(d.fill>0){ ctx.save(); ctx.beginPath(); ctx.rect(d.x-R-2,d.B-d.fill,d.w+4,d.fill+2); ctx.clip(); path(); ctx.globalAlpha=.2*al; ctx.fillStyle=d.c; ctx.fill(); ctx.restore() }
+    path(); ctx.globalAlpha=.8*al; ctx.strokeStyle=d.c; ctx.lineWidth=1; ctx.setLineDash([3,3]); ctx.stroke() }
+  else if(d.t==='pill'){ const r=d.h/2; ctx.beginPath(); ctx.moveTo(d.x,d.y); ctx.lineTo(d.x+d.w-r,d.y); ctx.arc(d.x+d.w-r,d.y+r,r,-1.5708,1.5708); ctx.lineTo(d.x,d.y+d.h); ctx.closePath(); ctx.globalAlpha=.16*al; ctx.fillStyle=d.c; ctx.fill() }
+  else if(d.t==='sector'){ ctx.beginPath(); ctx.arc(d.cx,d.cy,d.r1,A(d.a0),A(d.a1)); ctx.arc(d.cx,d.cy,d.r0,A(d.a1),A(d.a0),true); ctx.closePath(); ctx.globalAlpha=.1*al; ctx.fillStyle=d.c; ctx.fill(); ctx.globalAlpha=.85*al; ctx.strokeStyle=d.c; ctx.lineWidth=1.2; ctx.stroke() }
+  else if(d.t==='arc'){ ctx.beginPath(); ctx.arc(d.cx,d.cy,d.r,A(d.a0)+.01,A(d.a1)-.01); ctx.globalAlpha=d.al*al; ctx.strokeStyle=d.c; ctx.lineWidth=d.w; ctx.stroke() }
+  else if(d.t==='leader'){ ctx.beginPath(); d.pts.forEach((q,i)=>i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1])); ctx.globalAlpha=.8*al; ctx.strokeStyle=d.c; ctx.lineWidth=1; ctx.stroke() }
+  ctx.restore() }
+function sxLabels(ctx,labels,al){ ctx.globalAlpha=al; ctx.textBaseline='middle'; labels.forEach(l=>{ ctx.font=(l.sans?(l.sz>30?'600 ':'400 ')+l.sz+'px Figtree, system-ui, sans-serif':'500 '+l.sz+'px "IBM Plex Mono", ui-monospace, monospace'); ctx.textAlign=l.al; ctx.fillStyle=l.col; ctx.fillText(l.t,l.x,l.y) }); ctx.globalAlpha=1 }
+function sxCanvas(cv,W,H){ const dpr=Math.min(2,window.devicePixelRatio||1); cv.width=W*dpr; cv.height=H*dpr; cv.style.width=W+'px'; cv.style.height=H+'px'; const ctx=cv.getContext('2d'); ctx.setTransform(dpr,0,0,dpr,0,0); return ctx }
+/* small still previews in the tiles under the globe */
+function sxThumbs(){ document.querySelectorAll('canvas[data-sx]').forEach(cv=>{ const W=Math.max(120,cv.parentNode.clientWidth), H=112, ctx=sxCanvas(cv,W,H), b=sxBuild(cv.dataset.sx,cv.dataset.yr||'2025','fw',W,H,true);
+  ctx.clearRect(0,0,W,H); b.deco.forEach(d=>sxDeco(ctx,d,1)); b.pos.forEach(o=>sxDot(ctx,o.x,o.y,o.r,o.k,o.mx,1)); sxLabels(ctx,b.labels,1) }) }
+/* the full interactive chart */
+const SX={lay:'bars',yr:'2025',by:'fw',P:null,hover:null,reg:null,raf:0,last:0,labA:0,key:'',b:null,W:0,H:0};
+function sxShell(){
+  const z=$('zoomer'), W=Math.max(320,Math.min(980,window.innerWidth-72)), H=Math.max(360,Math.min(600,window.innerHeight-250)); SX.W=W; SX.H=H;
+  const b=sxBuild(SX.lay,SX.yr,SX.by,W,H,false), seg=(a,v,t,on)=>`<button type="button" class="chip" data-act="${a}" data-v="${v}" aria-pressed="${on}">${t}</button>`;
+  z.innerHTML=`<div class="zbox sxbox" role="dialog" aria-modal="true" aria-label="GAIN examples, chart"><div class="zhead"><div><p class="eyebrow" style="color:${LAYER.gain.col}">${b.mode}</p><h2 style="font-size:15px;font-family:var(--mono);font-weight:500;letter-spacing:.06em;color:#8db8e3">${b.title}</h2></div><button type="button" class="x" data-act="zclose">Close ✕</button></div>
+    <div class="sxctl"><span>Show</span>${seg('sxl','bars','By year',SX.lay==='bars')}${seg('sxl','donut','Donut',SX.lay==='donut')}${seg('sxl','regions','Regions',SX.lay==='regions')}${seg('sxl','sources','Data sources',SX.lay==='sources')}
+      ${SX.lay!=='bars'?`<span style="margin-left:14px">Year</span>${seg('sxy','all','All years',SX.yr==='all')}${[2021,2022,2023,2024,2025].map(y=>seg('sxy',y,y,String(SX.yr)===String(y))).join('')}`:''}
+      ${SX.lay==='donut'?`<span style="margin-left:14px">Split by</span>${seg('sxb','fw','Recommendations',SX.by==='fw')}${seg('sxb','lead','Lead',SX.by==='lead')}`:''}</div>
+    <div class="sxwrap" style="width:${W}px;height:${H}px"><canvas id="sxcv" role="img" aria-label="${esc(b.title)}"></canvas><div id="sxpv" hidden></div></div>
+    <div class="zleg">${b.legend.map(l=>l[0]?`<span><i class="d ${SXK[l[0].replace(/m$/,'')][1]?'':'ring'}" style="--c:${SXK[l[0].replace(/m$/,'')][0]};${l[0].endsWith('m')&&l[0].length>2?'outline:1.5px solid #fff':''}"></i>${l[1]}</span>`:`<b>${l[1]}</b>`).join('')}<span><i class="d" style="--c:rgba(207,224,244,.3)"></i>Faint dots: other years or not in this chart</span></div>
+    <p class="lnote">One circle is one example. Point at a circle to see what it is; select it to open the example in its country.${SX.lay==='regions'?' Point at a region to pick it out.':''}</p></div>`;
+  z.hidden=false; const cv=$('sxcv'); SX.ctx=sxCanvas(cv,W,H); SX.b=b; SX.labA=0; SX.hover=null; SX.reg=null;
+  if(!SX.P){ SX.P=[]; sxRows().forEach(d=>{ const n=Math.max(1,d.lead===0?d.src.length:0); for(let j=0;j<n;j++) SX.P.push({id:d.id,j,x:sxHash(d.id,1)*W,y:-30-sxHash(d.id,2)*H*1.2,r:2,a:0,k:'cU',mx:null,rate:.05+sxHash(d.id*7+j,13)*.07}) }) }
+  cv.addEventListener('mousemove',sxMove); cv.addEventListener('mouseleave',()=>{ SX.hover=null; SX.reg=null; $('sxpv').hidden=true; cv.style.cursor='default' }); cv.addEventListener('click',sxTap);
+  if(!SX.raf){ SX.last=performance.now(); SX.raf=requestAnimationFrame(sxTick) }
+}
+function sxNearest(e){ const r=e.currentTarget.getBoundingClientRect(), x=e.clientX-r.left, y=e.clientY-r.top; let best=null, bd=1e9; for(const p of SX.P){ if(p.a<.12||p.j&&!SX.b.pos.has(p.id*8+p.j)) continue; const d=Math.hypot(p.x-x,p.y-y); if(d<Math.max(8,p.r+4)&&d<bd){ bd=d; best=p } } return [best,x,y] }
+function sxMove(e){ const [p,x,y]=sxNearest(e), cv=e.currentTarget, pv=$('sxpv'); let reg=null;
+  if(!p&&SX.lay==='regions'){ const h=SX.b.deco.find(d=>d.t==='hit'&&y>=d.y0&&y<d.y1); if(h) reg=h.reg } SX.reg=reg;
+  cv.style.cursor=p||reg!=null?'pointer':'default';
+  if(!p){ SX.hover=null; pv.hidden=true; return } if(SX.hover===p.id&&!pv.hidden) return; SX.hover=p.id;
+  const d=sxRows()[p.id], mixN=['IRRS + IRIS + IROSS','IRRS + IRIS','IRRS + IROSS','IRIS + IROSS'], rec=d.use?(d.fw===3?(d.mix>=0?mixN[d.mix]:'Mixed use'):SXFW[d.fw]):'';
+  pv.innerHTML=`<span class="exmeta">GAIN ${d.y} · ${esc(d.country||'Regional / global')} · ${d.lead?'Institution-led':'Country-led'}</span><b>${esc(d.title||'Untitled example')}</b><small>${esc(d.org||'Organisation not reported')}</small><div class="chips2">${(d.pop||'').split(' · ').filter(Boolean).slice(0,3).map(t=>`<i>${esc(t)}</i>`).join('')}${d.use?`<i class="rc" style="background:${SXC.FWL[d.fw]};color:#0a1430">${rec}</i>`:'<i class="off">Not using the Recommendations, or not known</i>'}</div><small class="hint">${d.iso&&Q.ctry[d.iso]?'Select the circle to open the example':'Regional or global example'}</small>`;
+  pv.hidden=false; const pw=Math.min(300,SX.W-24), ph=pv.offsetHeight||150; let px=p.x+20; if(px+pw>SX.W-8) px=p.x-20-pw; pv.style.width=pw+'px'; pv.style.left=Math.max(8,px)+'px'; pv.style.top=Math.max(8,Math.min(SX.H-ph-8,p.y-50))+'px' }
+function sxTap(e){ const [p]=sxNearest(e); if(!p) return; const d=sxRows()[p.id], iso=d.iso;
+  if(iso&&Q.ctry[iso]&&Q.ctry[iso].ex.some(x=>x[0]===d.id+1)){ zChart=null; Object.keys(GF).forEach(k=>GF[k]=null); layer='gain'; level='world'; chosen=true; gSel=iso; fSrc=fInd=fSv=mapInd=null; fEx=d.id+1; render(); const c=G.by[iso]; if(c&&c.cen&&view==='3d') gTo({rot:[-c.cen[0],Math.max(-40,Math.min(40,-c.cen[1]))],k:G.k,tr:G.tr,alpha:0},[750,1500,1.8]); $('panel').scrollIntoView({block:'start',behavior:RM?'auto':'smooth'}) }
+  else { const r=Q.reg.find(x=>x[0]===d.id+1); if(r&&r[5]) window.open(r[5],'_blank','noopener') } }
+function sxTick(now){ SX.raf=0; const z=$('zoomer'); if(z.hidden||zChart!=='sx'||!$('sxcv')) return; const dt=Math.min(64,now-SX.last); SX.last=now;
+  const b=SX.b, ctx=SX.ctx, W=SX.W, H=SX.H, first={}; SX.labA+=(1-SX.labA)*(RM?1:1-Math.pow(.9,dt/16.7));
+  ctx.setTransform(Math.min(2,window.devicePixelRatio||1),0,0,Math.min(2,window.devicePixelRatio||1),0,0); ctx.clearRect(0,0,W,H);
+  b.deco.forEach(d=>sxDeco(ctx,d,SX.labA));
+  const rows=sxRows(), ringE=SX.hover;
+  for(const p of SX.P){ const t=b.pos.get(p.id*8+p.j), k=RM?1:1-Math.pow(1-p.rate,dt/16.7); let tx,ty,tr,ta;
+    if(t){ tx=t.x; ty=t.y; tr=t.r; ta=SX.lay==='regions'&&SX.reg!=null&&rows[p.id].reg!==SX.reg?.18:1; p.k=t.k; p.mx=t.mx||null }
+    else if(p.j===0&&!b.pos.has(p.id*8)){ tx=sxHash(p.id,1)*W; ty=sxHash(p.id,2)*H; tr=1.1+sxHash(p.id,3)*1.3; ta=.16; if(p.a<.3) p.k='bg'; if(p.k!=='bg'&&Math.abs(p.a-ta)<.05) p.k='bg'; p.mx=null }
+    else { const f=first[p.id]; tx=f?f.x:p.x; ty=f?f.y:p.y; tr=p.r; ta=0 }
+    p.x+=(tx-p.x)*k; p.y+=(ty-p.y)*k; p.r+=(tr-p.r)*k; p.a+=(ta-p.a)*k; if(p.j===0) first[p.id]=p;
+    sxDot(ctx,p.x,p.y,p.r,p.k,p.a>.6?p.mx:null,p.a);
+    if(ringE===p.id&&p.a>.1&&(t||p.j===0)){ ctx.globalAlpha=1; ctx.beginPath(); ctx.arc(p.x,p.y,Math.max(6,p.r+4),0,6.2832); ctx.strokeStyle='#fff'; ctx.lineWidth=1.5; ctx.stroke() } }
+  sxLabels(ctx,b.labels,SX.labA);
+  if(SX.lay==='regions'&&SX.reg!=null){ const h=b.deco.find(d=>d.t==='hit'&&d.reg===SX.reg); if(h){ ctx.globalAlpha=.07; ctx.fillStyle='#fff'; ctx.fillRect(0,h.y0,W,h.y1-h.y0); ctx.globalAlpha=1 } }
+  SX.raf=requestAnimationFrame(sxTick) }
+
 /* GAIN charts, modelled on the story's: each is drawn small under the globe and large when enlarged */
 function gainCharts(big){
   const all=Object.keys(Q.ctry).flatMap(k=>Q.ctry[k].ex), X=gfOn()?all.filter(exOK):all;
@@ -521,12 +645,13 @@ function gainCharts(big){
   // regions, as the story: country-led examples that use the Recommendations
   const RN=['Africa','Europe','Americas','Asia and Oceania','Middle East'], RS=['Afr.','Eur.','Amer.','Asia','M.E.'], CU=X.filter(e=>e[4]&&e[5]==='C');
   const SRC=[['Survey','Survey','Survey'],['Administrative','Admin','Administrative data'],['Census','Census','Census'],['integration','Integ.','Data integration']];
+  const prev=(lay,yr)=>`<button type="button" class="sxt" data-act="zc" data-v="sx:${lay}:${yr}" aria-label="Open the interactive chart"><canvas data-sx="${lay}" data-yr="${yr}"></canvas></button>`;
   return [
-    ['year','Examples by year','Every GAIN example, by the round it was reported in.',cols(YS.map(y=>col("'"+String(y).slice(2),y,yrOff.filter(e=>+e[1]===y),'yr',y)))],
-    ['donut','Recommendations used','Examples that use the Recommendations, by which one.',donut],
+    ['sx:bars:all','By year and lead','',prev('bars','all')],
+    ['sx:donut:2025','Recommendations · 2025','',prev('donut','2025')],
+    ['sx:regions:2025','Regions · 2025','',prev('regions','2025')],
+    ['sx:sources:2025','Data sources · 2025','',prev('sources','2025')],
     ['trend','Trend by Recommendation','Examples using each Recommendation, 2021 to 2025.',trend],
-    ['region','By region','Country-led examples that use the Recommendations, by region.',cols([0,1,2,3,4].map(r=>col(RS[r],RN[r],CU.filter(e=>e[16]===r))))],
-    ['src','Data sources','Examples by the kind of data source. An example can use more than one.',cols(SRC.map(([k,l,f])=>col(l,f,X.filter(e=>(e[6]||'').includes(k)),'src',k)))],
     ['grp','Who is covered','Examples by population group. An example can cover more than one.',cols([['Refugees','Refugees','Refugees'],['IDPs','IDPs','IDPs'],['Stateless','Statel.','Stateless people']].map(([k,l,f])=>col(l,f,X.filter(e=>(e[7]||'').includes(k)),'grp',k)))]
   ];
 }
@@ -544,8 +669,9 @@ function sdgCharts(big){
   ];
 }
 function stripHtml(){ const cs=layer==='gain'?gainCharts(false):sdgCharts(false);
-  return cs.map(c=>`<div class="gtile t-${c[0]}"><div class="gth"><h4>${c[1]}</h4><button type="button" class="zbtn" data-act="zc" data-v="${c[0]}" aria-label="Enlarge: ${c[1]}" ${tipA('Enlarge','Open this chart at full size')}>⤢</button></div>${c[3]}</div>`).join('') }
+  return cs.map(c=>`<div class="gtile t-${c[0].split(':')[0]}"><div class="gth"><h4>${c[1]}</h4><button type="button" class="zbtn" data-act="zc" data-v="${c[0]}" aria-label="Enlarge: ${c[1]}" ${tipA('Enlarge','Open this chart at full size')}>⤢</button></div>${c[3]}</div>`).join('') }
 function renderZoom(){ const z=$('zoomer'); if(!zChart||level!=='world'||(layer!=='gain'&&layer!=='sdg')){ z.hidden=true; z.innerHTML=''; return }
+  if(zChart==='sx'){ if(layer!=='gain'){ zChart=null; z.hidden=true; return } sxShell(); return }
   const c=(layer==='gain'?gainCharts(true):sdgCharts(true)).find(x=>x[0]===zChart); if(!c){ zChart=null; z.hidden=true; return }
   z.innerHTML=`<div class="zbox" role="dialog" aria-modal="true" aria-label="${c[1]}"><div class="zhead"><div><p class="eyebrow" style="color:${LAYER[layer].col}">${LAYER[layer].n}</p><h2>${c[1]}</h2><p class="lnote" style="margin-top:4px">${c[2]}${layer==='gain'&&gfOn()?' Filtered: '+esc(gfText())+'.':''}</p></div><button type="button" class="x" data-act="zclose">Close ✕</button></div><div class="zbody big t-${c[0]}">${c[3]}</div>${layer==='gain'&&c[0]!=='donut'&&c[0]!=='trend'?GLEG:''}${layer==='gain'&&gfOn()?`<p class="lnote">${act('gf','clear','Clear filters','lk')}</p>`:''}</div>`;
   z.hidden=false }
@@ -725,11 +851,11 @@ function render(){
   if(level==='world'&&st.classList.contains('country')&&!busy){ st.classList.remove('country'); Object.assign(G,gBase()); draw() }
   if(level==='world'){ const allG=layer==='sdg'?[...new Set(Object.keys(Q.ctry).flatMap(k=>has(k,'sdg')?goalsOf(k):[]))].sort((a,b)=>a-b):[];
     $('stfoot').innerHTML=(layer==='sdg'?`<div class="goalbar">${allG.map(g=>`<button type="button" class="gbtn" data-act="goal" data-v="${g}" aria-pressed="${g===gGoal}" ${tipA('Goal '+g,esc(SDGN[g]||''))}>${SDGI.has(g)?`<img src="sdg/${g}.png" alt="Goal ${g}">`:`<span style="background:${SDGC[g]}">${g}</span>`}</button>`).join('')}${gGoal?act('goal',gGoal,'Show all goals','lk'):''}</div>`:'')
-     +(layer==='gain'?`<p class="lnote" style="margin:0;text-align:center">${gfOn()?`${Object.keys(Q.ctry).reduce((s,k)=>s+exF(k).length,0)} examples in ${Object.keys(Q.ctry).filter(k=>exF(k).length).length} countries match: ${esc(gfText())}. ${act('gf','clear','Clear filters','lk')}`:`One dot is one example: <i class="d" style="background:${LEADC.C}"></i> country-led and <i class="d" style="background:${LEADC.I}"></i> organisation-led examples that use the Recommendations; hollow = not using or not known. Select a column or a ring segment to filter the globe; ⤢ opens a chart at full size.`}</p>`:'')
+     +(layer==='gain'?`<div class="gfbar">${GFDEF.slice(0,2).map(d=>`<div><span>${d[1]}</span>${act('gf',d[0]+':','All','chip',`aria-pressed="${GF[d[0]]==null}"`)}${d[2].map(o=>act('gf',d[0]+':'+o[0],o[1],'chip',`aria-pressed="${String(GF[d[0]])===String(o[0])}"`)).join('')}</div>`).join('')}</div><p class="lnote" style="margin:0;text-align:center">${gfOn()?`${Object.keys(Q.ctry).reduce((s,k)=>s+exF(k).length,0)} examples in ${Object.keys(Q.ctry).filter(k=>exF(k).length).length} countries match: ${esc(gfText())}. ${act('gf','clear','Clear filters','lk')}`:'The first four charts are the ones from the story: select one to explore it, circle by circle. The buttons here filter the globe.'}</p>`:'')
      +`<div class="mleg" style="justify-content:center;margin-top:0">${layer==='gain'?'<span>Number = GAIN examples</span><span><i class="d" style="border:2.5px solid #4cc3c9"></i>Bright ring = share that use the Recommendations</span>':layer==='sdg'?(gGoal?`<span>Countries with a value under goal ${gGoal}: ${esc(SDGN[gGoal]||'')}</span>`:'<span>Country colour = the goal with most values</span><span>Number = SDG values</span><span>Select a goal to show only its countries</span>'):'<span>Number = questionnaires</span><span>Circle = people displaced, by main cause:</span>'+[1,2,6,7].map(k=>`<span><i class="d" style="background:${CAUSE_COL[k]}"></i>${CZ[k].toLowerCase()}</span>`).join('')}</div>` }
   else if(layer==='sdg'&&(!mapInd||mapInd==='__cause')&&subKeys(gSel).length&&!belowDone['auto'+gSel]){ mapInd=subKeys(gSel).includes('6.1.1')?'6.1.1':subKeys(gSel)[0]; belowDone['auto'+gSel]=1 }
   else if(layer==='idq'&&!mapInd&&Q.cpts[gSel]&&!belowDone['cz'+gSel]){ mapInd='__cause'; belowDone['cz'+gSel]=1 }
-  { const gm=$('gstrip'), on=level==='world'&&(layer==='gain'||layer==='sdg'); gm.hidden=!on; gm.className='gstrip '+layer; gm.innerHTML=on?stripHtml():''; $('stage').classList.toggle('joined',on); renderZoom() }
+  { const gm=$('gstrip'), on=level==='world'&&(layer==='gain'||layer==='sdg'); gm.hidden=!on; gm.className='gstrip '+layer; gm.innerHTML=on?stripHtml():''; $('stage').classList.toggle('joined',on); if(on&&layer==='gain') sxThumbs(); if(zChart!=='sx') renderZoom() }
   $('panel').style.setProperty('--lc',LAYER[layer].col);
   $('panel').innerHTML=level==='world'?(chosen?pWorld():pOverview()):layer==='gain'?pGain():layer==='sdg'?pSdg():pIdq();
   if(level==='country'){ paintMap(); renderMapFoot() }
@@ -748,7 +874,10 @@ document.addEventListener('click',e=>{
   else if(a==='zoom') zoomIn();
   else if(a==='zin'||a==='zout'){ if(G&&level==='world'&&view==='3d') G.zoomBy(a==='zin'?1.45:1/1.45) }
   else if(a==='gf'){ if(v==='clear') Object.keys(GF).forEach(k=>GF[k]=null); else { const [k,x]=v.split(':'); GF[k]=x===''?null:x } fEx=null; render() }
-  else if(a==='zc'){ zChart=v; renderZoom() }
+  else if(a==='zc'){ if(v.startsWith('sx:')){ const b=v.split(':'); SX.lay=b[1]; SX.yr=b[2]; SX.by='fw'; zChart='sx' } else zChart=v; renderZoom() }
+  else if(a==='sxl'){ SX.lay=v; renderZoom() }
+  else if(a==='sxy'){ SX.yr=v; renderZoom() }
+  else if(a==='sxb'){ SX.by=v; renderZoom() }
   else if(a==='zclose'){ zChart=null; renderZoom() }
   else if(a==='goal'){ gGoal=gGoal===+v?null:+v; render() }
   else if(a==='world') zoomOut();

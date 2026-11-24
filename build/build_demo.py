@@ -397,6 +397,19 @@ for _f in glob.glob(f"{REPO}/assets/*.json"):
     if isinstance(_d, list) and len(_d) > 300 and isinstance(_d[0], list) and len(_d[0]) == 4 and isinstance(_d[0][2], list):
         STREG = {i + 1: r[1] for i, r in enumerate(_d)}
 print("story regions for", len(STREG), "examples")
+# every example as the story's charts use it: year, lead, Recommendation, use, region, sources, mixed-use combination
+_ex2iso = {e["id"]: iso for iso, c in CJ.items() for e in c["examples"]}
+_l1 = _l2 = None
+for _f in glob.glob(f"{REPO}/assets/*.json"):
+    _d = json.load(open(_f))
+    if isinstance(_d, list) and len(_d) > 300 and isinstance(_d[0], list):
+        if len(_d[0]) == 4: _l2 = _d
+        elif len(_d[0]) >= 9: _l1 = _d
+import re as _re
+_m = _re.search(r"MIX\s*=\s*(\{[^}]*\})", open(f"{REPO}/Main.dc.html", encoding="utf-8", errors="ignore").read())
+_MIX = {int(k): v for k, v in json.loads(_m.group(1)).items()} if _m else {}
+data["sx"] = [[r[0], r[1], r[2], c[0], c[1], c[2], _MIX.get(i, -1), _ex2iso.get(i + 1, ""), short(r[5], 120), r[4], r[3], r[7]] for i, (r, c) in enumerate(zip(_l1, _l2))]
+print("story chart rows", len(data["sx"]), "mixed-use combinations", len(_MIX))
 for iso, c in CJ.items():
     d = C(iso, c["name"])
     d["ex"] = sorted([[e["id"], e["year"], short(e["title"], 110), e["org"], 1 if e.get("uses") else 0, "C" if e.get("lead") == "Country-led" else "I",
