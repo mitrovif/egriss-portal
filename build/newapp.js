@@ -128,7 +128,7 @@ function tween(dur,fn,done,ez){ ez=ez||d3.easeCubicInOut;
 }
 const lerp=(a,b,t)=>a+(b-a)*t;
 function lerpLon(a,b,t){ let d=((b-a+540)%360)-180; return a+d*t }
-function gBase(){ const kO=Math.min(G.W,G.H)/2.45, kE=Math.min((G.W-24)/5.42,(G.H-60)/2.64); return view==='2d'?{rot:[0,0],k:kE,tr:[G.W/2,G.H/2+8],alpha:1,fade:0,m:0}:{rot:[G.rot[0],Math.max(-40,Math.min(40,G.rot[1]))],k:kO,tr:[G.W/2,G.H/2+14],alpha:0,fade:0,m:0} }
+function gBase(){ const kO=Math.min(G.W,G.H)/2.45, kE=Math.min((G.W-24)/5.42,(G.H-60)/2.64); return view==='2d'?{rot:[0,0],k:kE,tr:[G.W/2,G.H/2+8],alpha:1,fade:0,m:0}:{rot:[G.rot[0],Math.max(-40,Math.min(40,G.rot[1]))],k:kO,tr:[G.W/2,G.H/2-26],alpha:0,fade:0,m:0} }
 const _po=d3.geoOrthographic(), _pe=d3.geoEqualEarth();
 function gInv(q){ const a=G.alpha, p=a<.01?_po:a>.99?_pe:null; if(!p) return null; return p.scale(G.k).translate(G.tr).rotate([G.rot[0],G.rot[1]]).invert(q) }
 function gProj(){ const a=G.alpha; G.mut(a); G.proj.scale(G.k).translate(G.tr).rotate([G.rot[0],G.rot[1]]).clipAngle(a>=.999?null:90+89.9*a) }
@@ -498,16 +498,14 @@ function repCard(x){ const pg=x[9]||x[4];
     <p class="rsrc">${esc(x[11]||x[3])}${x[12]?' · '+esc(x[12]):''}${pg?' · page '+esc(pg):''}${x[10]?` · <a href="${esc(x[10])}" target="_blank" rel="noopener">Open the report ↗</a>`:''}</p></div>` }
 /* ---- small charts under the globe ---- */
 function gainMinis(){
-  const X=Object.keys(Q.ctry).flatMap(k=>exF(k)); if(!X.length) return '';
-  const col=(lab,es,key,val)=>{ const u=es.filter(e=>e[4]).length, on=String(GF[key])===String(val);
-    return `<button type="button" class="dcol" data-act="gf" data-v="${key}:${on?'':val}" aria-pressed="${on}" ${tipA(lab,es.length+' examples, '+u+' using the Recommendations.<br>Select to '+(on?'clear this filter':'show only these on the globe')+'.')}><span class="dts">${'<i class="u"></i>'.repeat(u)+'<i></i>'.repeat(es.length-u)}</span><b>${es.length}</b><small>${lab}</small></button>` };
+  const X=Object.keys(Q.ctry).flatMap(k=>exF(k));
+  const col=(lab,full,es,key,val)=>{ const u=es.filter(e=>e[4]).length, on=String(GF[key])===String(val);
+    return `<button type="button" class="dcol" data-act="gf" data-v="${key}:${on?'':val}" aria-pressed="${on}" aria-label="${full}: ${es.length} examples" ${tipA(full,es.length+' examples, '+u+' using the Recommendations.<br>Select to '+(on?'clear this filter':'show only these on the globe')+'.')}><span class="dts">${'<i class="u"></i>'.repeat(u)+'<i></i>'.repeat(es.length-u)}</span><b>${es.length}</b><small>${lab}</small></button>` };
   const chart=(title,cols)=>`<div class="mchart"><h4>${title}</h4><div class="dcols">${cols.join('')}</div></div>`;
-  return `<div class="minis">`
-    +chart('By year',[2021,2022,2023,2024,2025].map(y=>col(y,X.filter(e=>+e[1]===y),'yr',y)))
-    +chart('By Recommendations',['IRRS','IRIS','IROSS'].map(r=>col(r,X.filter(e=>recSet(e).includes(r)),'rec',r)))
-    +chart('Who is covered',[['Refugees','Refugees'],['IDPs','IDPs'],['Stateless','Stateless']].map(([k,l])=>col(l,X.filter(e=>(e[7]||'').includes(k)),'grp',k)))
-    +chart('Data source',[['Survey','Survey'],['Census','Census'],['Administrative','Admin. data'],['integration','Integration']].map(([k,l])=>col(l,X.filter(e=>(e[6]||'').includes(k)),'src',k)))
-    +`<p class="lnote" style="flex-basis:100%;margin:0">One dot is one example${gfOn()?' matching the filters':' in a country'}. Filled = uses the Recommendations. An example can sit in more than one column.</p></div>`;
+  return chart('Year',[2021,2022,2023,2024,2025].map(y=>col("'"+String(y).slice(2),y,X.filter(e=>+e[1]===y),'yr',y)))
+    +chart('Recommendations',['IRRS','IRIS','IROSS'].map(r=>col(r,RECS[r]||r,X.filter(e=>recSet(e).includes(r)),'rec',r)))
+    +chart('Who is covered',[['Refugees','Ref.','Refugees'],['IDPs','IDPs','IDPs'],['Stateless','Statel.','Stateless people']].map(([k,l,f])=>col(l,f,X.filter(e=>(e[7]||'').includes(k)),'grp',k)))
+    +chart('Data source',[['Survey','Surv.','Survey'],['Census','Cens.','Census'],['Administrative','Admin','Administrative data'],['integration','Integ.','Data integration']].map(([k,l,f])=>col(l,f,X.filter(e=>(e[6]||'').includes(k)),'src',k)));
 }
 function goalCounts(iso){ const n={}; sdgRows(iso).forEach(([d])=>{const g=goalOf(d.c); n[g]=(n[g]||0)+1}); (Q.ctry[iso].rep||[]).forEach(x=>{const g=goalOf(x[0]); n[g]=(n[g]||0)+1}); return n }
 function wheelSvg(n,size,label){ const gs=Object.keys(n).map(Number).filter(g=>SDGC[g]).sort((a,b)=>a-b), tot=gs.reduce((s,g)=>s+n[g],0)||1; let off=25, s='';
@@ -696,10 +694,11 @@ function render(){
   if(level==='world'&&st.classList.contains('country')&&!busy){ st.classList.remove('country'); Object.assign(G,gBase()); draw() }
   if(level==='world'){ const allG=layer==='sdg'?[...new Set(Object.keys(Q.ctry).flatMap(k=>has(k,'sdg')?goalsOf(k):[]))].sort((a,b)=>a-b):[];
     $('stfoot').innerHTML=(layer==='sdg'?`<div class="goalbar">${allG.map(g=>`<button type="button" class="gbtn" data-act="goal" data-v="${g}" aria-pressed="${g===gGoal}" ${tipA('Goal '+g,esc(SDGN[g]||''))}>${SDGI.has(g)?`<img src="sdg/${g}.png" alt="Goal ${g}">`:`<span style="background:${SDGC[g]}">${g}</span>`}</button>`).join('')}${gGoal?act('goal',gGoal,'Show all goals','lk'):''}</div>`:'')
-     +(layer==='gain'?`<div class="gfbar">${GFDEF.map(d=>`<div><span>${d[1]}</span>${act('gf',d[0]+':','All','chip',`aria-pressed="${GF[d[0]]==null}"`)}${d[2].map(o=>act('gf',d[0]+':'+o[0],o[1],'chip',`aria-pressed="${String(GF[d[0]])===String(o[0])}"`)).join('')}</div>`).join('')}${gfOn()?`<p class="lnote" style="margin:0">${Object.keys(Q.ctry).reduce((s,k)=>s+exF(k).length,0)} examples in ${Object.keys(Q.ctry).filter(k=>exF(k).length).length} countries match. ${act('gf','clear','Clear filters','lk')}</p>`:''}</div>`:'')
-     +`<div class="mleg" style="justify-content:center;margin-top:0">${layer==='gain'?'<span>Number = GAIN examples</span><span><i class="d" style="border:2.5px solid #4cc3c9"></i>Bright ring = share that use the Recommendations</span>':layer==='sdg'?(gGoal?`<span>Countries with a value under goal ${gGoal}: ${esc(SDGN[gGoal]||'')}</span>`:'<span>Country colour = the goal with most values</span><span>Number = SDG values</span><span>Select a goal to show only its countries</span>'):'<span>Number = questionnaires</span><span>Circle = people displaced, by main cause:</span>'+[1,2,6,7].map(k=>`<span><i class="d" style="background:${CAUSE_COL[k]}"></i>${CZ[k].toLowerCase()}</span>`).join('')}</div>`+(layer==='gain'?gainMinis():layer==='sdg'?sdgMinis():'') }
+     +(layer==='gain'?`<p class="lnote" style="margin:0;text-align:center">${gfOn()?`${Object.keys(Q.ctry).reduce((s,k)=>s+exF(k).length,0)} examples in ${Object.keys(Q.ctry).filter(k=>exF(k).length).length} countries match: ${esc(gfText())}. ${act('gf','clear','Clear filters','lk')}`:'One dot in the charts is one example; filled = uses the Recommendations. Point at a chart to enlarge it, select a column to filter the globe.'}</p>`:'')
+     +`<div class="mleg" style="justify-content:center;margin-top:0">${layer==='gain'?'<span>Number = GAIN examples</span><span><i class="d" style="border:2.5px solid #4cc3c9"></i>Bright ring = share that use the Recommendations</span>':layer==='sdg'?(gGoal?`<span>Countries with a value under goal ${gGoal}: ${esc(SDGN[gGoal]||'')}</span>`:'<span>Country colour = the goal with most values</span><span>Number = SDG values</span><span>Select a goal to show only its countries</span>'):'<span>Number = questionnaires</span><span>Circle = people displaced, by main cause:</span>'+[1,2,6,7].map(k=>`<span><i class="d" style="background:${CAUSE_COL[k]}"></i>${CZ[k].toLowerCase()}</span>`).join('')}</div>`+(layer==='sdg'?sdgMinis():'') }
   else if(layer==='sdg'&&(!mapInd||mapInd==='__cause')&&subKeys(gSel).length&&!belowDone['auto'+gSel]){ mapInd=subKeys(gSel).includes('6.1.1')?'6.1.1':subKeys(gSel)[0]; belowDone['auto'+gSel]=1 }
   else if(layer==='idq'&&!mapInd&&Q.cpts[gSel]&&!belowDone['cz'+gSel]){ mapInd='__cause'; belowDone['cz'+gSel]=1 }
+  { const gm=$('gmini'), on=level==='world'&&layer==='gain'; gm.hidden=!on; gm.innerHTML=on?gainMinis():'' }
   $('panel').style.setProperty('--lc',LAYER[layer].col);
   $('panel').innerHTML=level==='world'?(chosen?pWorld():pOverview()):layer==='gain'?pGain():layer==='sdg'?pSdg():pIdq();
   if(level==='country'){ paintMap(); renderMapFoot() }
