@@ -225,6 +225,7 @@ WAS = {
  ("South Sudan", "4.1.2"): "Corrected on 23 November 2026, from 81% and 47%. The earlier host value used all children aged 6 to 17 as denominator, the refugee value only children with an answer.",
 }
 CAVE = {
+ ("South Sudan", "7.1.1"): "Checked against the answers: 99% of refugee households and 84% of host households say 'no electricity in household'; another 13% of host households use only a torch or dry-cell battery, which is not counted. The host sample is communities near the camps in the north, not the whole country.",
  ("Kenya", "7.1.1"): "Reproduced only without weights; weighted it is 99% and 97%. The variable is the main source of lighting being electricity, so solar is not counted.",
  ("Kenya", "6.1.1"): "Water bought from a vendor is counted as improved. Without it the values are 92% and 85%.",
  ("Somalia", "6.1.1"): "Tanker truck is counted as improved, cart with small tank is not. The unadjusted weight is used; with the adjusted weight the host value is 93%.",
@@ -419,10 +420,14 @@ for g in data["sdg"]:
         r["iso"] = name2iso.get(r["country"], "")
         if not r["iso"]: miss.add(r["country"])
         else: C(r["iso"])
+_rf = os.path.join(HERE, "reports.json"); RPT = json.load(open(_rf)) if os.path.exists(_rf) else {"rows": {}, "sources": {}}   # made by mk_reports.py
 for x in csv.DictReader(open(SDG + "gain_sdg_values_promoted.csv", encoding="utf-8-sig")):
     iso = name2iso.get(x["country"])
     if not iso: miss.add(x["country"]); continue
-    C(iso)["rep"].append([x["sdg"], x["value"], x["population"], x["source"], x["page"], x["method"]])
+    _rk = RPT["rows"].get("|".join([x["country"], x["sdg"], x["value"], x["source"], x["page"]]), {}); _rs = RPT["sources"].get(x["source"], {})
+    # 6 image, 7 width, 8 height, 9 page in the file, 10 link, 11 report title, 12 publisher and year, 13 what the page says when it differs
+    C(iso)["rep"].append([x["sdg"], x["value"], x["population"], x["source"], x["page"], x["method"], _rk.get("img", ""), _rk.get("w", 0), _rk.get("h", 0), _rk.get("page", ""),
+                          (_rs.get("url", "") + ("#page=%s" % _rk["page"] if _rs.get("url_kind") == "pdf" and _rk.get("page") else "")), _rs.get("title", ""), ", ".join(v for v in (_rs.get("publisher", ""), _rs.get("year", "")) if v), _rk.get("check", "")])
 for k, (cn, sv) in enumerate(surveys):
     iso = name2iso.get(cn)
     if iso: C(iso)["sv"].append(k)

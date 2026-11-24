@@ -1,0 +1,824 @@
+{
+ "rows": {
+  "Jordan|8.5.2|21.4%|Jordan DOS LFS 2024|": {
+   "img": "reports/jor_lfs2024_p001.jpg",
+   "w": 1100,
+   "h": 625,
+   "page": 1,
+   "found": true,
+   "src": "Jordan DOS LFS 2024"
+  },
+  "Egypt|1.2.1|65%|EVAR 2025 (WFP-CAPMAS)|29": {
+   "img": "reports/egy_evar2025_p029.jpg",
+   "w": 1101,
+   "h": 464,
+   "page": 29,
+   "found": true,
+   "src": "EVAR 2025 (WFP-CAPMAS)"
+  },
+  "Colombia|1.2.1|49.7%|DANE differential poverty 2024|3": {
+   "img": "reports/col_dane_pobreza2022_p003.jpg",
+   "w": 1100,
+   "h": 509,
+   "page": 3,
+   "found": true,
+   "src": "DANE differential poverty 2024",
+   "check": "49.7% is the 2022 figure for all victims in urban areas (cabeceras); displaced victims 51.9%. The 2024 bulletin gives 43.3% (victims) and 45.1% (displaced) for 2024."
+  },
+  "Honduras|1.2.1|45%|INE Estudio Poblacion Desplazada|6": {
+   "img": "reports/hnd_ine_desplazada2024_p006.jpg",
+   "w": 1100,
+   "h": 623,
+   "page": 6,
+   "found": true,
+   "src": "INE Estudio Poblacion Desplazada",
+   "check": "45% is extreme poverty (pobreza extrema) of the displaced, vs 43% non-displaced"
+  },
+  "Honduras|2.1.2|46%|INE Estudio Poblacion Desplazada|49": {
+   "img": "reports/hnd_ine_desplazada2024_p049.jpg",
+   "w": 1100,
+   "h": 645,
+   "page": 49,
+   "found": true,
+   "src": "INE Estudio Poblacion Desplazada"
+  },
+  "Honduras|4.1.2|80%|INE Estudio Poblacion Desplazada|37": {
+   "img": "reports/hnd_ine_desplazada2024_p037.jpg",
+   "w": 1100,
+   "h": 975,
+   "page": 37,
+   "found": true,
+   "src": "INE Estudio Poblacion Desplazada"
+  },
+  "Honduras|6.1.1|59%|INE Estudio Poblacion Desplazada|35": {
+   "img": "reports/hnd_ine_desplazada2024_p035.jpg",
+   "w": 1100,
+   "h": 601,
+   "page": 35,
+   "found": true,
+   "src": "INE Estudio Poblacion Desplazada",
+   "check": "On this page 59% is adequate solid-waste management among displaced people, not drinking water"
+  },
+  "Somalia|1.2.1|63%|WB-UNHCR JDC Somalia|37": {
+   "img": "reports/som_livelihoods_lost_p037.jpg",
+   "w": 1100,
+   "h": 660,
+   "page": 37,
+   "found": true,
+   "src": "WB-UNHCR JDC Somalia"
+  },
+  "Somalia|6.2.1|70%|WB-UNHCR JDC Somalia|31": {
+   "img": "reports/som_livelihoods_lost_p031.jpg",
+   "w": 1100,
+   "h": 682,
+   "page": 31,
+   "found": true,
+   "src": "WB-UNHCR JDC Somalia",
+   "check": "Page says more than 70 percent of Somali households have access to improved sanitation (refugees 61 percent); it is not an IDP open-defecation figure"
+  },
+  "Somalia|11.1.1|75%|WB-UNHCR JDC Somalia|24": {
+   "img": "reports/som_livelihoods_lost_p024.jpg",
+   "w": 1100,
+   "h": 396,
+   "page": 24,
+   "found": true,
+   "src": "WB-UNHCR JDC Somalia"
+  },
+  "State of Palestine|8.5.2|42.2%|PCBS|2": {
+   "img": "reports/pse_pcbs_refugeeday2026_p002.jpg",
+   "w": 1100,
+   "h": 724,
+   "page": 2,
+   "found": true,
+   "src": "PCBS",
+   "check": "On this page 42.2% is the share of refugees in the population of the State of Palestine (West Bank 26.3%, Gaza Strip 66.1%); the unemployment rate among refugees is 29.2% (West Bank, 2025)"
+  },
+  "Uganda|6.1.1|91%|UBOS|17": {
+   "img": "reports/uga_unhs2023_p017.jpg",
+   "w": 1100,
+   "h": 398,
+   "page": 17,
+   "found": true,
+   "src": "UBOS"
+  },
+  "United Kingdom|11.1.1|69%|Home Office integration report|3": {
+   "img": "reports/gbr_ons_resettled_refugees_p003.jpg",
+   "w": 1100,
+   "h": 682,
+   "page": 3,
+   "found": true,
+   "src": "Home Office integration report"
+  },
+  "Peru|6.1.1|89%|INEI Condiciones de Vida Poblacion Venezolana 2024|": {
+   "img": "reports/per_inei_venezolana2024_p020.jpg",
+   "w": 1100,
+   "h": 777,
+   "page": 20,
+   "found": true,
+   "src": "INEI Condiciones de Vida Poblacion Venezolana 2024"
+  },
+  "Peru|11.1.1|15%|INEI Condiciones de Vida Poblacion Venezolana 2024|20": {
+   "img": "reports/per_inei_venezolana2024_p020.jpg",
+   "w": 1100,
+   "h": 777,
+   "page": 20,
+   "found": true,
+   "src": "INEI Condiciones de Vida Poblacion Venezolana 2024"
+  },
+  "Uganda|4.1.2|71%|UBOS Uganda National Household Survey|36": {
+   "img": "reports/uga_unhs2023_p036.jpg",
+   "w": 1100,
+   "h": 599,
+   "page": 36,
+   "found": true,
+   "src": "UBOS Uganda National Household Survey"
+  },
+  "Egypt|2.1.2|58%|EVAR 2025 (WFP-CAPMAS)|30": {
+   "img": "reports/egy_evar2025_p030.jpg",
+   "w": 1100,
+   "h": 868,
+   "page": 30,
+   "found": true,
+   "src": "EVAR 2025 (WFP-CAPMAS)"
+  },
+  "Nigeria|7.1.1|61%|NBS Report of IDPs in Nigeria|28": {
+   "img": "reports/nga_nbs_idp2023_p028.jpg",
+   "w": 1100,
+   "h": 656,
+   "page": 28,
+   "found": true,
+   "src": "NBS Report of IDPs in Nigeria"
+  },
+  "Burkina Faso|1.2.1|93%|INSD ESEP-PDI|33": {
+   "img": "reports/bfa_esep_pdi_p033.jpg",
+   "w": 1100,
+   "h": 611,
+   "page": 33,
+   "found": true,
+   "src": "INSD ESEP-PDI"
+  },
+  "Burkina Faso|2.1.2|76%|INSD ESEP-PDI|37": {
+   "img": "reports/bfa_esep_pdi_p037.jpg",
+   "w": 1100,
+   "h": 251,
+   "page": 37,
+   "found": true,
+   "src": "INSD ESEP-PDI"
+  },
+  "Mexico|4.1.2|74%|ECADEFI Chihuahua 2021 (INEGI/JIPS/ACNUR)|48": {
+   "img": "reports/mex_ecadefi_chih2021_p048.jpg",
+   "w": 1100,
+   "h": 613,
+   "page": 48,
+   "found": true,
+   "src": "ECADEFI Chihuahua 2021 (INEGI/JIPS/ACNUR)"
+  },
+  "DR Congo|2.1.2|95%|INS/UNHCR ECVM-PDF 2024|166": {
+   "img": "reports/cod_ecvm2024_p198.jpg",
+   "w": 1100,
+   "h": 790,
+   "page": 198,
+   "found": true,
+   "src": "INS/UNHCR ECVM-PDF 2024"
+  },
+  "DR Congo|7.1.1|15%|INS/UNHCR ECVM-PDF 2024|157": {
+   "img": "reports/cod_ecvm2024_p189.jpg",
+   "w": 1100,
+   "h": 444,
+   "page": 189,
+   "found": true,
+   "src": "INS/UNHCR ECVM-PDF 2024"
+  },
+  "Kenya|7.1.1|97%|Shona Socioeconomic Survey 2024 (UNHCR)|35": {
+   "img": "reports/ken_shona2024_p047.jpg",
+   "w": 1100,
+   "h": 487,
+   "page": 47,
+   "found": true,
+   "src": "Shona Socioeconomic Survey 2024 (UNHCR)"
+  },
+  "Kenya|7.1.1|97%|Shona Socioeconomic Survey 2024|46": {
+   "img": "reports/ken_shona2024_p047.jpg",
+   "w": 1100,
+   "h": 487,
+   "page": 47,
+   "found": true,
+   "src": "Shona Socioeconomic Survey 2024"
+  },
+  "Malawi|6.1.1|30%|Malawi DHS 2024 / JDC Dzaleka|": {
+   "img": "reports/mwi_dzaleka_dhs2024_p014.jpg",
+   "w": 1100,
+   "h": 377,
+   "page": 14,
+   "found": true,
+   "src": "Malawi DHS 2024 / JDC Dzaleka"
+  },
+  "Malawi|6.2.1|76%|Malawi DHS 2024 / JDC Dzaleka|": {
+   "img": "reports/mwi_dzaleka_dhs2024_p015.jpg",
+   "w": 1100,
+   "h": 303,
+   "page": 15,
+   "found": true,
+   "src": "Malawi DHS 2024 / JDC Dzaleka"
+  },
+  "Malawi|16.9.1|92%|Malawi DHS 2024 / JDC Dzaleka|": {
+   "img": "reports/mwi_dzaleka_dhs2024_p017.jpg",
+   "w": 1100,
+   "h": 510,
+   "page": 17,
+   "found": true,
+   "src": "Malawi DHS 2024 / JDC Dzaleka"
+  },
+  "Uganda|6.2.1|29%|UDHS 2022 (Ch.20)|385": {
+   "img": "reports/uga_dhs2022_p385.jpg",
+   "w": 1100,
+   "h": 830,
+   "page": 385,
+   "found": true,
+   "src": "UDHS 2022 (Ch.20)"
+  },
+  "Uganda|7.1.1|4%|UDHS 2022 (Ch.20)|390": {
+   "img": "reports/uga_dhs2022_p390.jpg",
+   "w": 1100,
+   "h": 706,
+   "page": 390,
+   "found": true,
+   "src": "UDHS 2022 (Ch.20)"
+  },
+  "Lebanon|6.2.1|91%|Lebanon MICS 2023 Subnational|30": {
+   "img": "reports/lbn_mics2023_p030.jpg",
+   "w": 1100,
+   "h": 514,
+   "page": 30,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational"
+  },
+  "Lebanon|6.2.1|100%|Lebanon MICS 2023 Subnational|30": {
+   "img": "reports/lbn_mics2023_p030.jpg",
+   "w": 1100,
+   "h": 514,
+   "page": 30,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational"
+  },
+  "Lebanon|6.2.1|91%|Lebanon MICS 2023 Subnational (CAS)|30": {
+   "img": "reports/lbn_mics2023_p030.jpg",
+   "w": 1100,
+   "h": 514,
+   "page": 30,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational (CAS)"
+  },
+  "Lebanon|6.1.1|88%|Lebanon MICS 2023 Subnational|29": {
+   "img": "reports/lbn_mics2023_p029.jpg",
+   "w": 1100,
+   "h": 583,
+   "page": 29,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational"
+  },
+  "Lebanon|6.1.1|88%|Lebanon MICS 2023 Subnational (CAS)|29": {
+   "img": "reports/lbn_mics2023_p029.jpg",
+   "w": 1100,
+   "h": 583,
+   "page": 29,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational (CAS)"
+  },
+  "Rwanda|4.1.2|90%|NISR RPHC2022 Refugees Thematic|60": {
+   "img": "reports/rwa_rphc2022_refugees_p061.jpg",
+   "w": 1100,
+   "h": 681,
+   "page": 61,
+   "found": true,
+   "src": "NISR RPHC2022 Refugees Thematic"
+  },
+  "Rwanda|6.1.1|84%|NISR RPHC2022 Refugees Thematic|103": {
+   "img": "reports/rwa_rphc2022_refugees_p103.jpg",
+   "w": 1100,
+   "h": 613,
+   "page": 103,
+   "found": true,
+   "src": "NISR RPHC2022 Refugees Thematic"
+  },
+  "Rwanda|6.2.1|94%|NISR RPHC2022 Refugees Thematic|104": {
+   "img": "reports/rwa_rphc2022_refugees_p104.jpg",
+   "w": 1100,
+   "h": 681,
+   "page": 104,
+   "found": true,
+   "src": "NISR RPHC2022 Refugees Thematic"
+  },
+  "Rwanda|7.1.1|41%|NISR RPHC2022 Refugees Thematic|106": {
+   "img": "reports/rwa_rphc2022_refugees_p106.jpg",
+   "w": 1100,
+   "h": 682,
+   "page": 106,
+   "found": true,
+   "src": "NISR RPHC2022 Refugees Thematic"
+  },
+  "Rwanda|16.9.1|86%|NISR RPHC2022 Refugees Thematic|79": {
+   "img": "reports/rwa_rphc2022_refugees_p079.jpg",
+   "w": 1100,
+   "h": 682,
+   "page": 79,
+   "found": true,
+   "src": "NISR RPHC2022 Refugees Thematic"
+  },
+  "Morocco|6.1.1|99%|HCP Refugee Survey 2022|33": {
+   "img": "reports/mar_hcp_refugees2022_p033.jpg",
+   "w": 1100,
+   "h": 492,
+   "page": 33,
+   "found": true,
+   "src": "HCP Refugee Survey 2022",
+   "check": "Order in the sentence is electricity 99.4%, drinking water 99%, sanitation 96.9% (the csv note gives 99.4% for water)"
+  },
+  "Morocco|6.2.1|99%|HCP Refugee Survey 2022|33": {
+   "img": "reports/mar_hcp_refugees2022_p033.jpg",
+   "w": 1100,
+   "h": 492,
+   "page": 33,
+   "found": true,
+   "src": "HCP Refugee Survey 2022",
+   "check": "Page says 96.9% of refugees live in housing connected to the sanitation network, not 99%"
+  },
+  "Morocco|7.1.1|99%|HCP Refugee Survey 2022|33": {
+   "img": "reports/mar_hcp_refugees2022_p033.jpg",
+   "w": 1100,
+   "h": 492,
+   "page": 33,
+   "found": true,
+   "src": "HCP Refugee Survey 2022"
+  },
+  "Morocco|8.5.2|20%|HCP Refugee Survey 2022|18": {
+   "img": "reports/mar_hcp_refugees2022_p018.jpg",
+   "w": 1100,
+   "h": 523,
+   "page": 18,
+   "found": true,
+   "src": "HCP Refugee Survey 2022",
+   "check": "Page says about one refugee in five (19%) is looking for work"
+  },
+  "Kenya|6.1.1|87%|Shona Socioeconomic Survey 2024|44": {
+   "img": "reports/ken_shona2024_p044.jpg",
+   "w": 1100,
+   "h": 584,
+   "page": 44,
+   "found": true,
+   "src": "Shona Socioeconomic Survey 2024",
+   "check": "87.4 percent is the 2019 level (similar to urban Kenyans); the 2024 value for Shona households is 92.3 percent"
+  },
+  "Kenya|6.2.1|89%|Shona Socioeconomic Survey 2024|45": {
+   "img": "reports/ken_shona2024_p045.jpg",
+   "w": 1100,
+   "h": 886,
+   "page": 45,
+   "found": true,
+   "src": "Shona Socioeconomic Survey 2024",
+   "check": "89 percent is female-headed Shona households in 2024; the Shona community as a whole is 92 percent"
+  },
+  "Uganda|3.1.2|98%|Uganda DHS 2022 (UBOS)|388": {
+   "img": "reports/uga_dhs2022_p388.jpg",
+   "w": 1100,
+   "h": 645,
+   "page": 388,
+   "found": true,
+   "src": "Uganda DHS 2022 (UBOS)"
+  },
+  "Morocco|16.1.4|70%|Morocco HCP 2022 refugee study|": {
+   "img": "reports/mar_hcp_refugees2022_p013.jpg",
+   "w": 1100,
+   "h": 635,
+   "page": 13,
+   "found": true,
+   "src": "Morocco HCP 2022 refugee study"
+  },
+  "Nigeria|10.3.1|41%|Nigeria NBS IDP Survey 2023|18": {
+   "img": "reports/nga_nbs_idp2023_p019.jpg",
+   "w": 1100,
+   "h": 518,
+   "page": 19,
+   "found": true,
+   "src": "Nigeria NBS IDP Survey 2023"
+  },
+  "Italy|8.3.1|17%|FIERI-UNHCR refugee survey 2024 (Istat stats)|78": {
+   "img": "reports/ita_unhcr_refugees2025_p079.jpg",
+   "w": 1100,
+   "h": 960,
+   "page": 79,
+   "found": true,
+   "src": "FIERI-UNHCR refugee survey 2024 (Istat stats)"
+  },
+  "Italy|10.3.1|45%|FIERI-UNHCR refugee survey 2024 (Istat stats)|31": {
+   "img": "reports/ita_unhcr_refugees2025_p032.jpg",
+   "w": 1100,
+   "h": 433,
+   "page": 32,
+   "found": true,
+   "src": "FIERI-UNHCR refugee survey 2024 (Istat stats)"
+  },
+  "Italy|1.2.1|67%|FIERI-UNHCR refugee survey 2024 (Istat stats)|53": {
+   "img": "reports/ita_unhcr_refugees2025_p054.jpg",
+   "w": 1100,
+   "h": 666,
+   "page": 54,
+   "found": true,
+   "src": "FIERI-UNHCR refugee survey 2024 (Istat stats)"
+  },
+  "Lebanon|2.2.1|31%|Lebanon MICS 2023 Subnational (CAS)|": {
+   "img": "reports/lbn_mics2023_p021.jpg",
+   "w": 1100,
+   "h": 585,
+   "page": 21,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational (CAS)"
+  },
+  "Lebanon|2.2.1|12%|Lebanon MICS 2023 Subnational (CAS)|": {
+   "img": "reports/lbn_mics2023_p021.jpg",
+   "w": 1100,
+   "h": 585,
+   "page": 21,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational (CAS)"
+  },
+  "Lebanon|2.2.2|4%|Lebanon MICS 2023 Subnational (CAS)|": {
+   "img": "reports/lbn_mics2023_p021.jpg",
+   "w": 1100,
+   "h": 585,
+   "page": 21,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational (CAS)"
+  },
+  "Lebanon|2.2.2|3%|Lebanon MICS 2023 Subnational (CAS)|": {
+   "img": "reports/lbn_mics2023_p021.jpg",
+   "w": 1100,
+   "h": 585,
+   "page": 21,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational (CAS)"
+  },
+  "Lebanon|3.1.2|98%|Lebanon MICS 2023 Subnational (CAS)|": {
+   "img": "reports/lbn_mics2023_p019.jpg",
+   "w": 1100,
+   "h": 458,
+   "page": 19,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational (CAS)"
+  },
+  "Lebanon|3.1.2|99%|Lebanon MICS 2023 Subnational (CAS)|": {
+   "img": "reports/lbn_mics2023_p019.jpg",
+   "w": 1100,
+   "h": 458,
+   "page": 19,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational (CAS)"
+  },
+  "Lebanon|3.8.1|88%|Lebanon MICS 2023 Subnational (CAS)|": {
+   "img": "reports/lbn_mics2023_p019.jpg",
+   "w": 1100,
+   "h": 458,
+   "page": 19,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational (CAS)"
+  },
+  "Lebanon|3.8.1|85%|Lebanon MICS 2023 Subnational (CAS)|": {
+   "img": "reports/lbn_mics2023_p019.jpg",
+   "w": 1100,
+   "h": 458,
+   "page": 19,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational (CAS)"
+  },
+  "Lebanon|4.2.1|41%|Lebanon MICS 2023 Subnational (CAS)|": {
+   "img": "reports/lbn_mics2023_p025.jpg",
+   "w": 1100,
+   "h": 429,
+   "page": 25,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational (CAS)"
+  },
+  "Lebanon|4.2.1|63%|Lebanon MICS 2023 Subnational (CAS)|": {
+   "img": "reports/lbn_mics2023_p025.jpg",
+   "w": 1100,
+   "h": 429,
+   "page": 25,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational (CAS)"
+  },
+  "Lebanon|4.2.2|14%|Lebanon MICS 2023 Subnational (CAS)|": {
+   "img": "reports/lbn_mics2023_p033.jpg",
+   "w": 1100,
+   "h": 620,
+   "page": 33,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational (CAS)"
+  },
+  "Lebanon|4.2.2|68%|Lebanon MICS 2023 Subnational (CAS)|": {
+   "img": "reports/lbn_mics2023_p033.jpg",
+   "w": 1100,
+   "h": 620,
+   "page": 33,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational (CAS)"
+  },
+  "Lebanon|4.4.1|0%|Lebanon MICS 2023 Subnational (CAS)|": {
+   "img": "reports/lbn_mics2023_p015.jpg",
+   "w": 1100,
+   "h": 550,
+   "page": 15,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational (CAS)"
+  },
+  "Lebanon|4.4.1|10%|Lebanon MICS 2023 Subnational (CAS)|": {
+   "img": "reports/lbn_mics2023_p015.jpg",
+   "w": 1100,
+   "h": 550,
+   "page": 15,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational (CAS)"
+  },
+  "Lebanon|17.8.1|51%|Lebanon MICS 2023 Subnational (CAS)|": {
+   "img": "reports/lbn_mics2023_p015.jpg",
+   "w": 1100,
+   "h": 550,
+   "page": 15,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational (CAS)"
+  },
+  "Lebanon|17.8.1|90%|Lebanon MICS 2023 Subnational (CAS)|": {
+   "img": "reports/lbn_mics2023_p015.jpg",
+   "w": 1100,
+   "h": 550,
+   "page": 15,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational (CAS)"
+  },
+  "Lebanon|5.3.1|58%|Lebanon MICS 2023 Subnational (CAS)|": {
+   "img": "reports/lbn_mics2023_p038.jpg",
+   "w": 1100,
+   "h": 336,
+   "page": 38,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational (CAS)"
+  },
+  "Lebanon|5.3.1|25%|Lebanon MICS 2023 Subnational (CAS)|": {
+   "img": "reports/lbn_mics2023_p038.jpg",
+   "w": 1100,
+   "h": 336,
+   "page": 38,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational (CAS)"
+  },
+  "Lebanon|8.7.1|23%|Lebanon MICS 2023 Subnational (CAS)|": {
+   "img": "reports/lbn_mics2023_p040.jpg",
+   "w": 1100,
+   "h": 288,
+   "page": 40,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational (CAS)"
+  },
+  "Lebanon|8.7.1|9%|Lebanon MICS 2023 Subnational (CAS)|": {
+   "img": "reports/lbn_mics2023_p040.jpg",
+   "w": 1100,
+   "h": 288,
+   "page": 40,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational (CAS)"
+  },
+  "Lebanon|16.2.1|81%|Lebanon MICS 2023 Subnational (CAS)|": {
+   "img": "reports/lbn_mics2023_p043.jpg",
+   "w": 1100,
+   "h": 385,
+   "page": 43,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational (CAS)"
+  },
+  "Lebanon|16.2.1|82%|Lebanon MICS 2023 Subnational (CAS)|": {
+   "img": "reports/lbn_mics2023_p043.jpg",
+   "w": 1100,
+   "h": 385,
+   "page": 43,
+   "found": true,
+   "src": "Lebanon MICS 2023 Subnational (CAS)"
+  }
+ },
+ "sources": {
+  "Jordan DOS LFS 2024": {
+   "title": "Press Release. Department of Statistics: 21.4 Unemployment Rate for 2024",
+   "publisher": "Department of Statistics (DOS), Jordan",
+   "year": "2025",
+   "url": "https://dosweb.dos.gov.jo/labourforce/employment-and-unemployment/",
+   "url_kind": "landing",
+   "file": "Jordan_DOS_LFS_2024.pdf"
+  },
+  "EVAR 2025 (WFP-CAPMAS)": {
+   "title": "Egypt Vulnerability Assessment of Refugees (EVAR) 2025",
+   "publisher": "WFP, UNHCR and CAPMAS",
+   "year": "2025",
+   "url": "https://data.unhcr.org/en/documents/details/122243",
+   "url_kind": "landing",
+   "file": "Egypt_EVAR_2025_WFP_CAPMAS.pdf"
+  },
+  "DANE differential poverty 2024": {
+   "title": "Comunicado de prensa. Pobreza monetaria con enfoque diferencial (población víctima del conflicto), 2022",
+   "publisher": "DANE, Colombia",
+   "year": "2023",
+   "url": "https://www.dane.gov.co/files/operaciones/PM/cp-PMEnfoqueDiferencial-2022.pdf",
+   "url_kind": "pdf",
+   "file": "DANE_Poverty_DifferentialApproach_2022.pdf"
+  },
+  "INE Estudio Poblacion Desplazada": {
+   "title": "Población desplazada internamente en Honduras: Resultados de la Encuesta Permanente de Hogares de Propósitos Múltiples (EPHPM) 2024",
+   "publisher": "Instituto Nacional de Estadística (INE), Honduras",
+   "year": "2026",
+   "url": "https://ine.gob.hn/wp-content/uploads/2026/04/Estudio-Poblacion-Desplazada-Internamente-EPHPM-2024.pdf",
+   "url_kind": "pdf",
+   "file": "Estudio-Poblacion-Desplazada-Internamente-EPHPM-2024.pdf"
+  },
+  "WB-UNHCR JDC Somalia": {
+   "title": "Livelihoods Lost: Findings from two rounds of the Somalia Displacement Phone Survey (2022)",
+   "publisher": "World Bank, UNHCR and the World Bank-UNHCR Joint Data Center on Forced Displacement",
+   "year": "2024",
+   "url": "https://www.jointdatacenter.org/wp-content/uploads/2024/11/Somalia-displacement-report_FINAL.pdf",
+   "url_kind": "pdf",
+   "file": "Somalia_Livelihoods_Lost_displacement.pdf"
+  },
+  "PCBS": {
+   "title": "World Refugee Day, June 20th, 2026",
+   "publisher": "Palestinian Central Bureau of Statistics (PCBS)",
+   "year": "2026",
+   "url": "https://pcbs.gov.ps/media/l32ajxsb/worldrefugeedayinfograph2026e.pdf",
+   "url_kind": "pdf",
+   "file": "PCBS_WorldRefugeeDay_2026.pdf"
+  },
+  "UBOS": {
+   "title": "2023/24 Uganda National Household Survey Report",
+   "publisher": "Uganda Bureau of Statistics (UBOS)",
+   "year": "2025",
+   "url": "https://www.jointdatacenter.org/wp-content/uploads/2025/08/Uganda-National-Household-Survey-Report-20232024.pdf",
+   "url_kind": "pdf",
+   "file": "Uganda-National-Household-Survey-Report-20232024.pdf"
+  },
+  "UBOS Uganda National Household Survey": {
+   "title": "2023/24 Uganda National Household Survey Report",
+   "publisher": "Uganda Bureau of Statistics (UBOS)",
+   "year": "2025",
+   "url": "https://www.jointdatacenter.org/wp-content/uploads/2025/08/Uganda-National-Household-Survey-Report-20232024.pdf",
+   "url_kind": "pdf",
+   "file": "Uganda-National-Household-Survey-Report-20232024.pdf"
+  },
+  "Home Office integration report": {
+   "title": "Early integration outcomes for refugees resettled in England and Wales: 2015 to 2021",
+   "publisher": "Office for National Statistics (ONS)",
+   "year": "2023",
+   "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/articles/earlyintegrationoutcomesforrefugeesresettledinenglandandwales/2015to2021",
+   "url_kind": "landing",
+   "file": "pdf.pdf"
+  },
+  "INEI Condiciones de Vida Poblacion Venezolana 2024": {
+   "title": "Informe técnico de Condiciones de vida de la población venezolana en las ciudades de estudio, 2024",
+   "publisher": "Instituto Nacional de Estadística e Informática (INEI), Perú",
+   "year": "2025",
+   "url": "https://data.unhcr.org/es/documents/details/121970",
+   "url_kind": "landing",
+   "file": "Peru_INEI_CondicionesVida_Venezolana_2024.pdf"
+  },
+  "NBS Report of IDPs in Nigeria": {
+   "title": "Report of Internally Displaced Persons in Nigeria 2023",
+   "publisher": "National Bureau of Statistics (NBS), Nigeria",
+   "year": "2024",
+   "url": "https://egrisstats.org/wp-content/uploads/Nigeria-IDP-Survey-Report-3rd-December_Final.pdf",
+   "url_kind": "pdf",
+   "file": "Nigeria_NBS_IDP_Survey_Report.pdf"
+  },
+  "Nigeria NBS IDP Survey 2023": {
+   "title": "Report of Internally Displaced Persons in Nigeria 2023",
+   "publisher": "National Bureau of Statistics (NBS), Nigeria",
+   "year": "2024",
+   "url": "https://egrisstats.org/wp-content/uploads/Nigeria-IDP-Survey-Report-3rd-December_Final.pdf",
+   "url_kind": "pdf",
+   "file": "Nigeria_NBS_IDP_Survey_Report.pdf"
+  },
+  "INSD ESEP-PDI": {
+   "title": "Enquête Socioéconomique et de Protection des Populations Déplacées Internes et des Communautés Hôtes (ESEP-PDI): Rapport d’analyse",
+   "publisher": "Institut National de la Statistique et de la Démographie (INSD), Burkina Faso",
+   "year": "2026",
+   "url": "https://www.insd.bf/sites/default/files/2026-02/Rapport%20Analyse_ESEP-PDI.pdf",
+   "url_kind": "pdf",
+   "file": "Burkina_ESEP-PDI_AnalysisReport.pdf"
+  },
+  "ECADEFI Chihuahua 2021 (INEGI/JIPS/ACNUR)": {
+   "title": "Encuesta para Caracterizar a la población en situación de Desplazamiento Forzado Interno en el Estado de Chihuahua (ECADEFI-CHIH) 2021: Principales Resultados",
+   "publisher": "INEGI, México",
+   "year": "2022",
+   "url": "https://www.inegi.org.mx/programas/ecadefi/2021/",
+   "url_kind": "landing",
+   "file": "ecadefi_chih_2021_presentacion_ejecutiva.pdf"
+  },
+  "INS/UNHCR ECVM-PDF 2024": {
+   "title": "Enquête sur les Conditions de Vie des Ménages (ECVM-2024): Rapport final",
+   "publisher": "Institut National de la Statistique (INS), RDC",
+   "year": "2025",
+   "url": "https://www.ins.gouv.cd/publications/enquete-conditions-vie-menages-ecvm-2024",
+   "url_kind": "landing",
+   "file": "ECVM_RDC_2024_rapport_final.pdf"
+  },
+  "Moldova PHC 2024 (BNS)": {
+   "title": "Final Results of the 2024 Population and Housing Census: Migration Characteristics of the Population",
+   "publisher": "National Bureau of Statistics of the Republic of Moldova",
+   "year": "2025",
+   "url": "https://statistica.gov.md/en/final-results-of-the-2024-population-and-housing-census-migration-10121_61958.html",
+   "url_kind": "landing",
+   "file": ""
+  },
+  "Shona Socioeconomic Survey 2024 (UNHCR)": {
+   "title": "The Transformative Power of Citizenship: Findings from the 2024 Socioeconomic Study of the Shona Community in Kenya",
+   "publisher": "UNHCR",
+   "year": "2024",
+   "url": "https://data.unhcr.org/en/documents/details/111718",
+   "url_kind": "landing",
+   "file": "Shona%20report%202024%20_%20online%20version.pdf"
+  },
+  "Shona Socioeconomic Survey 2024": {
+   "title": "The Transformative Power of Citizenship: Findings from the 2024 Socioeconomic Study of the Shona Community in Kenya",
+   "publisher": "UNHCR",
+   "year": "2024",
+   "url": "https://data.unhcr.org/en/documents/details/111718",
+   "url_kind": "landing",
+   "file": "Shona%20report%202024%20_%20online%20version.pdf"
+  },
+  "Malawi DHS 2024 / JDC Dzaleka": {
+   "title": "Understanding the health, nutrition and population situation in Dzaleka Refugee Camp: A Comparative Analysis of Malawi Demographic and Health Survey Data",
+   "publisher": "National Statistical Office of Malawi and UNHCR, with the World Bank-UNHCR Joint Data Center",
+   "year": "2026",
+   "url": "https://www.jointdatacenter.org/wp-content/uploads/2026/07/Malawi-DHS-report-FINAL-.pdf",
+   "url_kind": "pdf",
+   "file": "Malawi-DHS-report-FINAL-.pdf"
+  },
+  "UDHS 2022 (Ch.20)": {
+   "title": "Uganda Demographic and Health Survey 2022: Main Report",
+   "publisher": "Uganda Bureau of Statistics (UBOS)",
+   "year": "2023",
+   "url": "https://www.ubos.org/wp-content/uploads/publications/UDHS-2022-Report.pdf",
+   "url_kind": "pdf",
+   "file": "UDHS-2022-Report.pdf"
+  },
+  "Uganda DHS 2022 (UBOS)": {
+   "title": "Uganda Demographic and Health Survey 2022: Main Report",
+   "publisher": "Uganda Bureau of Statistics (UBOS)",
+   "year": "2023",
+   "url": "https://www.ubos.org/wp-content/uploads/publications/UDHS-2022-Report.pdf",
+   "url_kind": "pdf",
+   "file": "UDHS-2022-Report.pdf"
+  },
+  "Lebanon MICS 2023 Subnational": {
+   "title": "Sub-National Lebanon 2023 Multiple Indicator Cluster Survey: Statistical Snapshots",
+   "publisher": "Central Administration of Statistics (CAS) and UNICEF",
+   "year": "2025",
+   "url": "https://mics.unicef.org/sites/mics/files/2025-12/Lebanon%20%28Subnational%29%20MICS%202023%20Statistical%20Snapshots_0.pdf",
+   "url_kind": "pdf",
+   "file": "Lebanon (Subnational) MICS 2023 Statistical Snapshots_0.pdf"
+  },
+  "Lebanon MICS 2023 Subnational (CAS)": {
+   "title": "Sub-National Lebanon 2023 Multiple Indicator Cluster Survey: Statistical Snapshots",
+   "publisher": "Central Administration of Statistics (CAS) and UNICEF",
+   "year": "2025",
+   "url": "https://mics.unicef.org/sites/mics/files/2025-12/Lebanon%20%28Subnational%29%20MICS%202023%20Statistical%20Snapshots_0.pdf",
+   "url_kind": "pdf",
+   "file": "Lebanon (Subnational) MICS 2023 Statistical Snapshots_0.pdf"
+  },
+  "NISR RPHC2022 Refugees Thematic": {
+   "title": "Fifth Rwanda Population and Housing Census, 2022. Thematic Report: Socio-economic status of refugees",
+   "publisher": "National Institute of Statistics of Rwanda (NISR)",
+   "year": "2024",
+   "url": "https://statistics.gov.rw/sites/default/files/documents/2025-02/RPHC2022_Refugees%20Thematic_report.pdf",
+   "url_kind": "pdf",
+   "file": "RPHC2022_Refugees_Thematic.pdf"
+  },
+  "HCP Refugee Survey 2022": {
+   "title": "Situation socioéconomique des réfugiés au Maroc : Analyse des résultats de l’Enquête de 2022",
+   "publisher": "Haut-Commissariat au Plan (HCP), Maroc",
+   "year": "2023",
+   "url": "https://m.hcp.ma/file/240805",
+   "url_kind": "pdf",
+   "file": "HCP_Refugees_2022.pdf"
+  },
+  "Morocco HCP 2022 refugee study": {
+   "title": "Situation socioéconomique des réfugiés au Maroc : Analyse des résultats de l’Enquête de 2022",
+   "publisher": "Haut-Commissariat au Plan (HCP), Maroc",
+   "year": "2023",
+   "url": "https://m.hcp.ma/file/240805",
+   "url_kind": "pdf",
+   "file": "HCP_Refugees_2022.pdf"
+  },
+  "FIERI-UNHCR refugee survey 2024 (Istat stats)": {
+   "title": "Integration between challenges and opportunities: A study on socio-economic conditions of refugees in Italy. Final Report",
+   "publisher": "UNHCR",
+   "year": "2025",
+   "url": "https://www.unhcr.org/sites/default/files/2025-06/study-of-socio-economic-conditions-of-refugees-in-italy.pdf",
+   "url_kind": "pdf",
+   "file": "UNHCR_socioeconomic_refugees_italy_2025.pdf"
+  }
+ }
+}

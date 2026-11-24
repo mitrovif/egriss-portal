@@ -4,5 +4,6 @@
  "idq": "~/path/to/idq-map",
  "bank": "~/path/to/question_bank_v1.csv",
  "roster": "~/path/to/analysis_ready_group_roster.csv",
- "originals": "~/path/to/All Surveys"
+ "originals": "~/path/to/All Surveys",
+ "reports_src": "~/path/to/report PDFs"
 }
