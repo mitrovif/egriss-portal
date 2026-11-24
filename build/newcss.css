@@ -384,6 +384,7 @@ a.exr.reg{text-decoration:none}div.exr.reg{cursor:default}div.exr.reg:hover{tran
 #cmap .land,#cmap2 .land,.kmap .land{stroke:none;filter:drop-shadow(0 0 8px rgba(76,195,201,.3))}
 #cmap .landline,#cmap2 .landline,.kmap .landline{fill:none;stroke:rgba(207,224,244,.75);stroke-width:1.1;pointer-events:none}
 #cmap text.nl,#cmap2 text.nl,.kmap text.nl{font:500 9.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;fill:rgba(207,224,244,.5)}
-#cmap #m-pts circle,#cmap2 #m-pts circle,.kmap .kp{stroke:#0a1430;stroke-width:1;paint-order:stroke}
+#cmap #m-pts [data-g],#cmap2 #m-pts [data-g],.kmap .kp{stroke:#0a1430;stroke-width:1;paint-order:stroke}
 #cmap #m-pts,#cmap2 #m-pts{filter:drop-shadow(0 0 2px rgba(10,20,48,.95))}
 .kmap .land{filter:none}.kmap text.nl{display:none}
+#cmap text.lv,#cmap2 text.lv{fill:#fff;paint-order:stroke;stroke:#0a1430;stroke-width:3.5px;stroke-linejoin:round}#cmap text.ln,#cmap2 text.ln{paint-order:stroke;stroke:rgba(10,20,48,.85);stroke-width:2.5px;stroke-linejoin:round}

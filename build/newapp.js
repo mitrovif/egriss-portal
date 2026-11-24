@@ -83,7 +83,7 @@ const any=iso=>LK.some(L=>has(iso,L));
 const subKeys=iso=>Q.sub.val[iso]?Object.keys(Q.sub.val[iso]):Q.sub.rep[iso]?Object.keys(Q.sub.rep[iso].ind):[];
 const SNS={'6.1.1':'Drinking water','6.2.1':'Sanitation','7.1.1':'Electricity','2.1.2':'Food insecurity','4.1.2':'School attendance','16.9.1':'Birth registration'};
 const subName=(iso,k)=>Q.sub.val[iso]?(k+' '+(SNS[k]||(Q.sdg.find(d=>d.c===k)||{n:''}).n)):Q.sub.rep[iso].ind[k].n;
-const _rg={}; function rampOf(code){ const g=goalOf(code), col=SDGC[g]; if(!col) return ramp; return _rg[g]||(_rg[g]=d3.scaleLinear().domain([0,55,100]).range(['#1c2850',d3.interpolateRgb('#1c2850',col)(.62),d3.interpolateRgb(col,'#ffffff')(.22)]).clamp(true)) }
+const _rg={}; function rampOf(code){ const g=goalOf(code), col=SDGC[g]; if(!col) return ramp; return _rg[g]||(_rg[g]=d3.scaleLinear().domain([0,50,85,100]).range(['#1c2850',d3.interpolateRgb('#1c2850',col)(.5),col,d3.interpolateRgb(col,'#ffffff')(.5)]).clamp(true)) }
 const gicon=(code,sz)=>SDGI.has(goalOf(code))?`<img class="gi" src="sdg/${goalOf(code)}.png" alt="" style="display:inline-block;vertical-align:-4px;margin-right:6px;width:${sz||18}px;height:${sz||18}px">`:'';
 function ramp(v){const st=[[0,[39,55,95]],[45,[47,111,143]],[80,[76,195,201]],[100,[201,244,246]]]; for(let i=1;i<st.length;i++){ if(v<=st[i][0]){const a=st[i-1],b=st[i],t=(v-a[0])/(b[0]-a[0]); return 'rgb('+a[1].map((x,j)=>Math.round(x+(b[1][j]-x)*t)).join(',')+')'} } return 'rgb(201,244,246)'}
 function idpCol(v,mx){const t=Math.sqrt(v/mx), a=[40,50,79], b=[224,169,59]; return 'rgb('+a.map((x,j)=>Math.round(x+(b[j]-x)*t)).join(',')+')'}
@@ -302,6 +302,10 @@ function outlineSvg(iso){
   return `<svg viewBox="0 0 560 520" role="img" aria-label="Outline of the country"><path class="land" d="${d3.geoPath(p)(g)}"/></svg>`;
 }
 /* relief, neighbours and outline shared by the country map and the small GAIN map (px keeps their ids apart) */
+/* a location mark: IDP locations are diamonds, every other group a circle, so the two do not differ by colour alone */
+const ptMark=(cls,p,r,attrs)=>p[2]===2?`<rect class="${cls}" data-g="2" data-n="${esc(p[4]||'')}" data-x="${p[0]}" data-y="${p[1]}" x="${(p[0]-r*.9).toFixed(1)}" y="${(p[1]-r*.9).toFixed(1)}" width="${(r*1.8).toFixed(1)}" height="${(r*1.8).toFixed(1)}" transform="rotate(45 ${p[0]} ${p[1]})" ${attrs}/>`:`<circle class="${cls}" data-g="${p[2]}" data-n="${esc(p[4]||'')}" cx="${p[0]}" cy="${p[1]}" r="${r}" ${attrs}/>`;
+function ptSize(el,r){ if(el.tagName==='rect'){ const x=+el.dataset.x, y=+el.dataset.y; el.setAttribute('x',x-r*.9); el.setAttribute('y',y-r*.9); el.setAttribute('width',r*1.8); el.setAttribute('height',r*1.8) } else el.setAttribute('r',r) }
+const diam='border-radius:1px;transform:rotate(45deg) scale(.82)';
 function relKit(iso,m,px){
   const rel=(cp,cls)=>m.rel?`<image class="relief ${cls}" href="relief/${iso}.jpg" x="0" y="0" width="${m.w}" height="${m.h}" preserveAspectRatio="none" clip-path="url(#rc${cp}${px}-${iso})" ${cls==='ov'?'':`filter="url(#rt${cp}${px}-${iso})"`}/>`:'', tint=(id,t)=>`<filter id="${id}" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%"><feComponentTransfer><feFuncR type="table" tableValues="${t[0]}"/><feFuncG type="table" tableValues="${t[1]}"/><feFuncB type="table" tableValues="${t[2]}"/></feComponentTransfer></filter>`;
   return {rel, head:`<defs><clipPath id="rcl${px}-${iso}"><path d="${m.land}"/></clipPath>${m.near?`<clipPath id="rcn${px}-${iso}"><path d="${m.near}"/></clipPath>`:''}${tint('rtl'+px+'-'+iso,['.02 .086 .27','.035 .149 .38','.11 .31 .60'])}${tint('rtn'+px+'-'+iso,['.02 .063 .17','.04 .11 .24','.11 .25 .42'])}</defs>${m.near?`<path class="near" d="${m.near}"/>${rel('n','nb')}<path class="nearline" d="${m.near}"/>`:''}<path class="land" d="${m.land}"/>${rel('l','base')}<path class="landline" d="${m.land}"/>`} }
@@ -315,7 +319,7 @@ function buildCountryMap(iso){
   else if(m.states){ const mx=Math.max(1,...m.states.map(a=>a[4])); s+=m.states.map(a=>a[4]?`<path class="ia" d="${a[0]}" fill="${idpCol(a[4],mx)}" ${tipA(a[1],fmt(a[4])+' internally displaced people')}/>`:'').join('') }
   s+='</g><g id="m-adm">'+(adm?adm.areas.map(a=>`<path class="ar" data-k="${esc(a.n)}" d="${a.d}"/>`).join(''):'')+(m.states?m.states.map(a=>`<path class="ar" data-k="${esc(a[1])}" d="${a[0]}"/>`).join(''):'')+'</g>';
   s+=rel('l','ov')+(m.nlab?'<g id="m-near">'+m.nlab.map(l=>`<text class="nl" x="${l[0]}" y="${l[1]}" text-anchor="middle">${esc(l[2])}</text>`).join('')+'</g>':'');
-  s+='<g id="m-pts">'+m.pts.map(p=>`<circle class="${pc(p[2])}" data-g="${p[2]}" data-n="${esc(p[4]||'')}" cx="${p[0]}" cy="${p[1]}" r="${m.pts.length>800?1.6:2.7}" ${p[4]?tipA(p[4],pn(p[2])):''}/>`).join('')+'</g>';
+  s+='<g id="m-pts">'+m.pts.map(p=>ptMark(pc(p[2]),p,m.pts.length>800?1.6:2.7,p[4]?tipA(p[4],pn(p[2])):'')).join('')+'</g>';
   s+='<g id="m-cz">'+(Q.cpts[iso]?(mx=>Q.cpts[iso].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="${(2+Math.sqrt(p[3]/mx)*15).toFixed(1)}" data-c="${p[2]}" fill="${CAUSE_COL[p[2]]}" fill-opacity=".5" stroke="${CAUSE_COL[p[2]]}" ${tipA(p[4],fmt(p[3])+' people displaced<br>'+CZ[p[2]]+(p[5]?' · '+esc(p[5]):''))}/>`).join(''))(Math.max(1,...Q.cpts[iso].map(p=>p[3]))):'')+'</g>';
   s+='<g id="m-camps">'+(adm?adm.camps.map(c=>`<circle data-k="${esc(c.k)}" data-n="${esc(c.n)}" cx="${c.x}" cy="${c.y}" r="5.5" stroke="#ffffff" stroke-width="1.5"/>`).join(''):'')+'</g><g id="m-lab">';
   const lab=(k,x,y,an,nm)=>`<text class="lv" data-k="${esc(k)}" x="${x}" y="${y}" text-anchor="${an}" font-size="15" font-weight="600"></text><text class="ln" data-k="${esc(k)}" x="${x}" y="${y+13}" text-anchor="${an}" font-size="10">${esc(nm)}</text>`;
@@ -335,7 +339,7 @@ function paintMap(){
   const m=Q.cm[iso], sw=$('swipe'), c2=$('cmap2'), sg=m&&layer==='sdg'?swipeGroups():null, code=mapInd&&mapInd!=='__cause'&&(sg||Q.sub.val[iso]&&Q.sub.val[iso][mapInd])?mapInd:null, bd=$('mapbadge');
   bd.hidden=!code; if(code) bd.innerHTML=`${gicon(code,40)}<span><b>${esc(code)}</b><small>${esc(SNS[code]||(Q.sdg.find(d=>d.c===code)||{n:''}).n)}</small></span>`;
   if(!m){ sw.hidden=true; c2.innerHTML=''; $('cmap').style.clipPath=''; return }
-  if($('cmap').dataset.cov){ $('cmap').querySelectorAll('#m-pts circle').forEach(p=>p.style.opacity=''); $('cmap').querySelectorAll('#m-camps circle').forEach(k=>k.style.fill=''); delete $('cmap').dataset.cov }
+  if($('cmap').dataset.cov){ $('cmap').querySelectorAll('#m-pts [data-g]').forEach(p=>p.style.opacity=''); $('cmap').querySelectorAll('#m-camps circle').forEach(k=>k.style.fill=''); delete $('cmap').dataset.cov }
   paintInto($('cmap'),sg?0:mapG);
   if(sg){ c2.innerHTML=$('cmap').innerHTML; paintInto(c2,Math.max(1,mapG)); sw.hidden=false; sw.querySelector('.sl').textContent=sg[0]; sw.querySelector('.sr').textContent=sg[1]; setSwipe(swX) }
   else { sw.hidden=true; c2.innerHTML=''; $('cmap').style.clipPath='' }
@@ -347,7 +351,7 @@ function paintInto(root,g){ const iso=gSel, m=Q.cm[iso];
   const top=m.states?new Set([...m.states].sort((a,b)=>b[4]-a[4]).slice(0,6).filter(a=>a[4]).map(a=>a[1])):null;
   const q=id=>root.querySelector('#'+id);
   q('m-idp').style.opacity=base?1:0; q('m-cz').style.opacity=cause?1:0; q('m-cz').style.pointerEvents=cause?'auto':'none'; czFocus(czSel); q('m-pts').style.opacity=base?.85:.28;
-  q('m-adm').style.pointerEvents=base&&m.states?'none':'auto';
+  q('m-adm').style.pointerEvents=base&&m.states?'none':'auto'; { const nl=q('m-near'); if(nl) nl.style.opacity=base?1:.4; const ov=root.querySelector('.relief.ov'); if(ov) ov.style.opacity=base||cause?'':.4 }
   q('m-adm').querySelectorAll('.ar').forEach(p=>{ const k=p.dataset.k, c=val(k); p.classList.toggle('on',!!c); if(c) p.style.fill=rmp(c[0]);
     p.setAttribute('data-tip',`<span class="tn">${esc(k)}</span>`+(c?`<span class="tq">${c[0]}%</span><span class="ts">${V?esc(SNN[mapInd])+' · '+esc(M.g[g])+' · '+c[1]+' households in the sample'+(c[1]<50?' (small)':''):esc(R.n)+' · '+fmt(c[1])+' '+R.nl}</span>`:`<span class="ts">${base?'No value shown: switch the map to an indicator':'No value for this area'}</span>`)) });
   q('m-camps').querySelectorAll('circle').forEach(c=>{ const v0=V&&g===0&&V.camps?V.camps[c.dataset.k]:null, v=v0&&v0[1]>=10?v0:null; c.style.opacity=v?1:0; c.style.pointerEvents=v?'auto':'none'; if(v){ c.style.fill=rmp(v[0]); c.setAttribute('data-tip',`<span class="tn">${esc(c.dataset.n)}</span><span class="tq">${v[0]}%</span><span class="ts">${esc(SNN[mapInd])} · refugees · ${v[1]} households in the sample</span>`) } });
@@ -361,13 +365,13 @@ function renderMapFoot(){
   const pill=(cls,txt,title,body)=>/^(Exists|New|To confirm)$/.test(txt)?'':`<i class="pill ${cls}" tabindex="0" ${tipA(title,body)}>${txt}</i>`;
   const NR=(!V&&!R&&mapInd&&mapInd!=='__cause'&&fSrc&&surveysOf(iso).get(fSrc)||[]).find(([d])=>d.c===mapInd);
   let leg='', notes=''; const rmp=(V||NR)?rampOf(mapInd):ramp, sg=layer==='sdg'&&m?swipeGroups():null;
-  if(NR){ leg=`<span style="flex:1 1 200px"><span>0%</span><i style="flex:1;height:8px;border-radius:1px;background:linear-gradient(90deg,${[0,25,50,75,100].map(v=>rmp(v)).join(',')})"></i><span>100%</span></span>`; notes=pill('plain','National','One value for the whole country','This indicator has not been calculated below country level for this survey yet, so the map shows the national value.') }
+  if(NR){ leg=`<span style="flex:1 1 200px"><span>0%</span><i style="flex:1;height:8px;border-radius:1px;background:linear-gradient(90deg,${[0,25,50,70,85,100].map(v=>rmp(v)+' '+v+'%').join(',')})"></i><span>100%</span></span>`; notes=pill('plain','National','One value for the whole country','This indicator has not been calculated below country level for this survey yet, so the map shows the national value.') }
   else if(mapInd==='__cause'){ const cs=[...new Set(Q.cpts[iso].map(p=>p[2]))].sort(); leg=cs.map(k=>`<span><i class="d" style="background:${CAUSE_COL[k]}"></i>${CZ[k]}</span>`).join('')+'<span>larger circle = more people</span>'; notes=pill('ok','Exists','Displacement by cause','Places where people were displaced, by cause, from the causing events analysis in the ID Questions repository. The '+Q.cpts[iso].length+' largest records are shown.') }
   else if(!mapInd){
-    leg=(g.r?`<span><i class="d" style="background:#7df3f7"></i>${fmt(g.r)} refugee locations</span>`:'')+(g.i?`<span><i class="d" style="background:#ffd166"></i>${fmt(g.i)} IDP locations</span>`:'')+(g.o?`<span><i class="d" style="background:#8b98b3"></i>${fmt(g.o)} other</span>`:'')+(m&&m.states?`<span><i class="g"></i>IDPs by ${esc(m.areas?m.lay.unit:m.lay.parent)}</span>`:'')||'<span>No locations recorded.</span>';
+    leg=(g.r?`<span><i class="d" style="background:#7df3f7"></i>${fmt(g.r)} refugee locations</span>`:'')+(g.i?`<span><i class="d" style="background:#ffd166;${diam}"></i>${fmt(g.i)} IDP locations</span>`:'')+(g.o?`<span><i class="d" style="background:#8b98b3"></i>${fmt(g.o)} other</span>`:'')+(m&&m.states?`<span><i class="g"></i>IDPs by ${esc(m.areas?m.lay.unit:m.lay.parent)}</span>`:'')||'<span>No locations recorded.</span>';
     notes=pill('ok','Exists','Population base','As on the GAIN country page. Locations from UNHCR.'+(m&&m.lay?' IDPs by '+esc(m.lay.unit)+' from '+esc(m.lay.who)+'. '+esc(m.lay.cover):''))+(m&&m.src?pill('plain','Source','Source of the IDP counts',esc(m.src)):'');
   } else {
-    leg=`<span style="flex:1 1 200px"><span>0%</span><i style="flex:1;height:8px;border-radius:1px;background:linear-gradient(90deg,${[0,25,50,75,100].map(v=>rmp(v)).join(',')})"></i><span>100%</span></span>${V&&V.camps&&(sg||mapG===0)?'<span><i class="d" style="background:#4cc3c9;outline:1.5px solid #fff"></i>camp</span>':''}`;
+    leg=`<span style="flex:1 1 200px"><span>0%</span><i style="flex:1;height:8px;border-radius:1px;background:linear-gradient(90deg,${[0,25,50,70,85,100].map(v=>rmp(v)+' '+v+'%').join(',')})"></i><span>100%</span></span>${V&&V.camps&&(sg||mapG===0)?'<span><i class="d" style="background:#4cc3c9;outline:1.5px solid #fff"></i>camp</span>':''}`;
     notes=V?pill('new','New','Calculated from microdata',esc(M.survey)+', by '+M.unit+(V.camps?' and by camp':'')+'. '+esc(M.wl)+'.')+pill('tbc','To confirm','Read with care','The survey was designed for national or stratum estimates. Small cells are marked; confidence intervals are not calculated yet.')
       :pill('new','New','From a published table','Share of '+esc(R.of)+'. '+esc(R.tbl)+'. Not calculated from microdata.')+(m&&m.areas?pill('plain','Levels','Two levels on one map','Population is counted by '+esc(m.lay.unit)+'; these values exist only by '+esc(m.lay.parent)+'.'):'')+pill('flag','Check','Not an SDG indicator','It is what the report tabulates by state. Katsina rests on very few households.');
   }
@@ -418,7 +422,7 @@ function miniMap(iso){
   else if(m.states){ const mx=Math.max(1,...m.states.map(a=>a[4])); s+=m.states.map(a=>a[4]?`<path class="ia" d="${a[0]}" fill="${idpCol(a[4],mx)}" ${tipA(a[1],fmt(a[4])+' internally displaced people')}/>`:'').join('') }
   s+='</g>'+K.rel('l','ov')+'<g>'+(adm?adm.areas.map(a=>`<path class="so ka" data-n="${esc(a.n)}" d="${a.d}"/>`).join(''):'')+(m.states?m.states.map(a=>`<path class="so ka" data-n="${esc(a[1])}" d="${a[0]}"/>`).join(''):'')+(m.areas?m.areas.map(a=>`<path class="so ka fine" data-n="${esc(a[1])}" d="${a[0]}"/>`).join(''):'')+'</g>';
   const big=m.pts.length>800;
-  s+='<g>'+m.pts.map(p=>`<circle class="kp" data-g="${p[2]}" data-n="${esc(p[4]||'')}" data-r="${big?1.8:3.3}" cx="${p[0]}" cy="${p[1]}" r="${big?1.8:3.3}" fill="${GCOL[p[2]]}" ${p[4]?tipA(p[4],GN[p[2]]+' location'):''}/>`).join('')+'</g>';
+  s+='<g>'+m.pts.map(p=>ptMark('kp',p,big?1.8:3.3,`data-r="${big?1.8:3.3}" fill="${GCOL[p[2]]}" ${p[4]?tipA(p[4],GN[p[2]]+' location'):''}`)).join('')+'</g>';
   s+='<g>'+(adm?adm.camps.map(c=>`<circle class="kc" cx="${c.x}" cy="${c.y}" r="9" ${tipA(c.n,'Sampled by this survey')}/>`).join(''):'')+'</g>';
   return s+'</svg>';
 }
@@ -428,16 +432,16 @@ function coverMap(id){
   const gs=e?(e[7]?e[7].split(', '):[]):null, idx=gs?new Set(gs.map(g=>GN.indexOf(g)).filter(i=>i>=0)):null, names=e&&e[11]?e[11].toLowerCase().split('|'):[];
   if(idx&&idx.has(0)) idx.add(3);
   const cnt=[0,0,0,0,0,0]; let lit=0;
-  root.querySelectorAll('.kp').forEach(p=>{ const g=+p.dataset.g; cnt[g]++; const on=!idx||idx.has(g)||(p.dataset.n&&names.includes(p.dataset.n.toLowerCase())); if(on&&idx) lit++; p.style.opacity=on?(idx?1:.8):.07; p.setAttribute('r',on&&idx?+p.dataset.r*1.35:p.dataset.r) });
+  root.querySelectorAll('.kp').forEach(p=>{ const g=+p.dataset.g; cnt[g]++; const on=!idx||idx.has(g)||(p.dataset.n&&names.includes(p.dataset.n.toLowerCase())); if(on&&idx) lit++; p.style.opacity=on?(idx?1:.8):.07; ptSize(p,on&&idx?+p.dataset.r*1.35:+p.dataset.r) });
   const idp=root.querySelector('.kidp'); if(idp) idp.style.opacity=!idx?1:idx.has(2)?1:.1;
   let named=0; root.querySelectorAll('.ka').forEach(p=>{ const on=names.includes(p.dataset.n.toLowerCase()); if(on) named++; p.classList.toggle('hit',on) });
   const src=e?Q.exsrc[e[0]]:null, sampled=!!(src&&Q.sub.val[iso]&&surveysOf(iso).has(src)); root.querySelectorAll('.kc').forEach(k=>k.style.opacity=sampled?1:0);
-  const row=(col,txt)=>`<span><i class="d" style="background:${col}"></i>${txt}</span>`;
-  if(!e){ leg.innerHTML=`<div class="mleg" style="margin-top:0">${cnt[0]+cnt[3]?row(GCOL[0],fmt(cnt[0]+cnt[3])+' refugee locations'):''}${cnt[2]?row(GCOL[2],fmt(cnt[2])+' IDP locations'):''}${cnt[4]?row(GCOL[4],fmt(cnt[4])+' stateless'):''}${m&&m.states?`<span><i class="g"></i>IDPs by ${esc(m.areas?m.lay.unit:m.lay.parent)}</span>`:''}</div>`
+  const row=(col,txt,dm)=>`<span><i class="d" style="background:${col};${dm?diam:''}"></i>${txt}</span>`;
+  if(!e){ leg.innerHTML=`<div class="mleg" style="margin-top:0">${cnt[0]+cnt[3]?row(GCOL[0],fmt(cnt[0]+cnt[3])+' refugee locations'):''}${cnt[2]?row(GCOL[2],fmt(cnt[2])+' IDP locations',1):''}${cnt[4]?row(GCOL[4],fmt(cnt[4])+' stateless'):''}${m&&m.states?`<span><i class="g"></i>IDPs by ${esc(m.areas?m.lay.unit:m.lay.parent)}</span>`:''}</div>`
       +(c.pop?`<p class="lnote">${fmt(c.pop[1])} refugees and asylum-seekers · ${fmt(c.pop[2])} internally displaced · ${fmt(c.pop[3])} stateless, end of ${c.pop[0]}</p>`:''); return }
   const miss=gs.filter(g=>{const i=GN.indexOf(g); return i<0||(!cnt[i]&&!(i===0&&cnt[3])&&!(i===2&&m&&m.states))});
   leg.innerHTML=`<p style="font-size:13px"><b style="font-weight:600">On the map:</b> ${gs.length?'where the groups this example covers are located':'this example does not record which groups it covers'}.</p>
-    <div class="mleg" style="margin-top:0">${gs.map(g=>{const i=GN.indexOf(g); return `<span><i class="d" style="background:${i>=0?GCOL[i]:'#8b98b3'}"></i>${esc(g)}</span>`}).join('')}${sampled?'<span><i class="d" style="border:2px solid #fff"></i>camps the survey sampled</span>':''}${named?`<span><i class="d" style="border:2px solid var(--gold)"></i>${esc(e[11].replace(/\|/g,', '))}</span>`:''}</div>
+    <div class="mleg" style="margin-top:0">${gs.map(g=>{const i=GN.indexOf(g); return `<span><i class="d" style="background:${i>=0?GCOL[i]:'#8b98b3'};${i===2?diam:''}"></i>${esc(g)}</span>`}).join('')}${sampled?'<span><i class="d" style="border:2px solid #fff"></i>camps the survey sampled</span>':''}${named?`<span><i class="d" style="border:2px solid var(--gold)"></i>${esc(e[11].replace(/\|/g,', '))}</span>`:''}</div>
     ${miss.length?`<p class="lnote">No mapped locations for: ${esc(miss.join(', ').toLowerCase())}.</p>`:''}`;
 }
 function recSet(e){ const x=Q.gx[e[0]]; if(x&&x.rc) return x.rc; const r=e[12]; if(r==='IRRS'||r==='IRIS'||r==='IROSS') return [r]; if(!e[4]) return []; const g=e[7]||''; const o=[]; if(/Refugees|Asylum/.test(g)) o.push('IRRS'); if(/IDPs/.test(g)) o.push('IRIS'); if(/Stateless/.test(g)) o.push('IROSS'); return r==='Mixed use'?o:[] }
@@ -941,7 +945,7 @@ function coverBig(id){
   const gs=e?(e[7]?e[7].split(', '):[]):null, idx=gs?new Set(gs.map(g=>GN.indexOf(g)).filter(i=>i>=0)):null, names=e&&e[11]?e[11].toLowerCase().split('|'):[];
   if(idx&&idx.has(0)) idx.add(3);
   root.dataset.cov=1; P.style.opacity=e?1:.85;
-  P.querySelectorAll('circle').forEach(p=>{ const on=!idx||idx.has(+p.dataset.g)||(p.dataset.n&&names.includes(p.dataset.n.toLowerCase())); p.style.opacity=on?'':.08 });
+  P.querySelectorAll('[data-g]').forEach(p=>{ const on=!idx||idx.has(+p.dataset.g)||(p.dataset.n&&names.includes(p.dataset.n.toLowerCase())); p.style.opacity=on?'':.08 });
   const idp=root.querySelector('#m-idp'); if(idp) idp.style.opacity=!idx||idx.has(2)?1:.1;
   const src=e?Q.exsrc[e[0]]:null, sampled=!!(src&&Q.sub.val[iso]&&surveysOf(iso).has(src));
   root.querySelectorAll('#m-camps circle').forEach(k=>{ k.style.opacity=sampled?1:0; k.style.fill=sampled?'transparent':'' });
