@@ -373,16 +373,43 @@ data["geo"] = feats; data["cent"] = cent
 CJ = json.load(open(f"{REPO}/assets/countries/countries.json"))["countries"]
 for iso, c in CJ.items(): name2iso[c["name"]] = iso
 name2iso.update({"DR Congo":"COD","State of Palestine":"PSE","Palestine":"PSE","Morocco (regional model)":"MAR","Türkiye":"TUR","Turkey":"TUR","Syria":"SYR","UK":"GBR","United Kingdom":"GBR","Tanzania":"TZA","Côte d'Ivoire":"CIV","Iran":"IRN"})
+# covers: the story keeps them under its own file names; the page uses covers/ex<number>.jpg
+import shutil, subprocess
+COVD = os.path.join(os.path.dirname(HERE), "covers")
+def cover_of(e):
+    src = os.path.join(REPO, e.get("cover") or "-")
+    if not os.path.isfile(src): return 0
+    dst = os.path.join(COVD, "ex%s.jpg" % e["id"])
+    if not os.path.exists(dst) or os.path.getmtime(dst) < os.path.getmtime(src): shutil.copyfile(src, dst)
+    return 1
 ctry = {}
 def C(iso, nm=None):
     return ctry.setdefault(iso, {"n": nm or (CJ.get(iso, {}).get("name")) or next((k for k, v in name2iso.items() if v == iso), iso), "ex": [], "pop": None, "rep": [], "sv": [], "cz": []})
 for iso, c in CJ.items():
     d = C(iso, c["name"])
     d["ex"] = sorted([[e["id"], e["year"], e["title"][:110], e["org"], 1 if e.get("uses") else 0, "C" if e.get("lead") == "Country-led" else "I",
-                       ", ".join(e.get("method") or []), ", ".join(e.get("groups") or []), e.get("link") or "", 1 if e.get("cover") and os.path.exists(os.path.join(HERE, "covers", "ex%s.jpg" % e["id"])) else 0, (e.get("note") or "")[:400], "|".join(dict.fromkeys((e.get("areas") or []) + (e.get("places") or []))), e.get("recs") or "", ", ".join(e.get("sources") or []), e.get("method_basis") or "", e.get("groups_basis") or ""] for e in c["examples"]], key=lambda e: (-e[1], e[2]))
+                       ", ".join(e.get("method") or []), ", ".join(e.get("groups") or []), e.get("link") or "", cover_of(e), (e.get("note") or "")[:400], "|".join(dict.fromkeys((e.get("areas") or []) + (e.get("places") or []))), e.get("recs") or "", ", ".join(e.get("sources") or []), e.get("method_basis") or "", e.get("groups_basis") or ""] for e in c["examples"]], key=lambda e: (-e[1], e[2]))
     yrs = sorted(c.get("population") or {})
     if yrs:
         pp = c["population"][yrs[-1]]; d["pop"] = [yrs[-1], pp.get("refugees",0)+pp.get("asylum",0), pp.get("idps",0), pp.get("stateless",0)]
+# regional and global examples: in the GAIN list without a country, so they are not on the map
+_in = {e["id"] for c in CJ.values() for e in c["examples"]}
+reg = []
+for r in csv.DictReader(open(f"{REPO}/pipeline/data/gain_examples.csv", encoding="utf-8-sig")):
+    n = int(r["roster_row"])
+    if n in _in: continue
+    st = r["cover_status"]; bad = st.startswith("rejected")
+    link = (r["replacement_url"] if r["replacement_match"] in ("exact", "related", "landing") and not bad else "") or r["source_url"] or (r["pipeline_url"] if r["pipeline_match"] == "exact" else "")
+    cov = 0; src = os.path.join(REPO, "pipeline", r["cover_file"] or "-")
+    if os.path.isfile(src) and st.split(":")[0].split(" ")[0] in ("ok", "held"):
+        dst = os.path.join(COVD, "ex%s.jpg" % n)
+        if not os.path.exists(dst) or os.path.getmtime(dst) < os.path.getmtime(src):
+            subprocess.run(["sips", "-s", "format", "jpeg", "-s", "formatOptions", "70", "-Z", "900", src, "--out", dst], capture_output=True)
+        cov = 1 if os.path.exists(dst) else 0
+    reg.append([n, r["gain_year"], r["title"][:140], re.sub(r"\(([^)]+)\)", lambda m: "(" + m.group(1).upper() + ")", re.sub(r"\b(Of|And|For|On|The|In)\b", lambda m: m.group(1).lower(), r["organisation"].title())), 1 if r["uses_recommendations"] == "yes" else 0, link, cov])
+reg.sort(key=lambda x: (-int(x[1] or 0), x[3]))
+data["reg"] = reg
+print("regional examples", len(reg), "links", sum(1 for x in reg if x[5]), "covers", sum(x[6] for x in reg))
 miss = set()
 for g in data["sdg"]:
     for r in g["rows"]:

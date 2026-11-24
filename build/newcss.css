@@ -195,3 +195,5 @@ button.czr:first-child{border-top:0}button.czr:hover{background:rgba(207,224,244
 .prc{font-size:12px}.prc th,.prc td{vertical-align:top;white-space:normal;min-width:70px;max-width:340px}
 
 .stage[data-v="3d"]:not(.country)::after{content:"Drag to turn · scroll or pinch to zoom in";position:absolute;left:12px;bottom:9px;font-size:11.5px;color:var(--soft);opacity:.75;pointer-events:none}
+
+a.exr.reg{text-decoration:none}div.exr.reg{cursor:default}div.exr.reg:hover{transform:none;border-color:var(--line);background:rgba(10,20,48,.5)}
