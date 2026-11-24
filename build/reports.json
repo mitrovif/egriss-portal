@@ -16,24 +16,6 @@
    "found": true,
    "src": "EVAR 2025 (WFP-CAPMAS)"
   },
-  "Colombia|1.2.1|49.7%|DANE differential poverty 2024|3": {
-   "img": "reports/col_dane_pobreza2022_p003.jpg",
-   "w": 1100,
-   "h": 509,
-   "page": 3,
-   "found": true,
-   "src": "DANE differential poverty 2024",
-   "check": "49.7% is the 2022 figure for all victims in urban areas (cabeceras); displaced victims 51.9%. The 2024 bulletin gives 43.3% (victims) and 45.1% (displaced) for 2024."
-  },
-  "Honduras|1.2.1|45%|INE Estudio Poblacion Desplazada|6": {
-   "img": "reports/hnd_ine_desplazada2024_p006.jpg",
-   "w": 1100,
-   "h": 623,
-   "page": 6,
-   "found": true,
-   "src": "INE Estudio Poblacion Desplazada",
-   "check": "45% is extreme poverty (pobreza extrema) of the displaced, vs 43% non-displaced"
-  },
   "Honduras|2.1.2|46%|INE Estudio Poblacion Desplazada|49": {
    "img": "reports/hnd_ine_desplazada2024_p049.jpg",
    "w": 1100,
@@ -50,15 +32,6 @@
    "found": true,
    "src": "INE Estudio Poblacion Desplazada"
   },
-  "Honduras|6.1.1|59%|INE Estudio Poblacion Desplazada|35": {
-   "img": "reports/hnd_ine_desplazada2024_p035.jpg",
-   "w": 1100,
-   "h": 601,
-   "page": 35,
-   "found": true,
-   "src": "INE Estudio Poblacion Desplazada",
-   "check": "On this page 59% is adequate solid-waste management among displaced people, not drinking water"
-  },
   "Somalia|1.2.1|63%|WB-UNHCR JDC Somalia|37": {
    "img": "reports/som_livelihoods_lost_p037.jpg",
    "w": 1100,
@@ -67,15 +40,6 @@
    "found": true,
    "src": "WB-UNHCR JDC Somalia"
   },
-  "Somalia|6.2.1|70%|WB-UNHCR JDC Somalia|31": {
-   "img": "reports/som_livelihoods_lost_p031.jpg",
-   "w": 1100,
-   "h": 682,
-   "page": 31,
-   "found": true,
-   "src": "WB-UNHCR JDC Somalia",
-   "check": "Page says more than 70 percent of Somali households have access to improved sanitation (refugees 61 percent); it is not an IDP open-defecation figure"
-  },
   "Somalia|11.1.1|75%|WB-UNHCR JDC Somalia|24": {
    "img": "reports/som_livelihoods_lost_p024.jpg",
    "w": 1100,
@@ -83,15 +47,6 @@
    "page": 24,
    "found": true,
    "src": "WB-UNHCR JDC Somalia"
-  },
-  "State of Palestine|8.5.2|42.2%|PCBS|2": {
-   "img": "reports/pse_pcbs_refugeeday2026_p002.jpg",
-   "w": 1100,
-   "h": 724,
-   "page": 2,
-   "found": true,
-   "src": "PCBS",
-   "check": "On this page 42.2% is the share of refugees in the population of the State of Palestine (West Bank 26.3%, Gaza Strip 66.1%); the unemployment rate among refugees is 29.2% (West Bank, 2025)"
   },
   "Uganda|6.1.1|91%|UBOS|17": {
    "img": "reports/uga_unhs2023_p017.jpg",
@@ -325,24 +280,6 @@
    "found": true,
    "src": "NISR RPHC2022 Refugees Thematic"
   },
-  "Morocco|6.1.1|99%|HCP Refugee Survey 2022|33": {
-   "img": "reports/mar_hcp_refugees2022_p033.jpg",
-   "w": 1100,
-   "h": 492,
-   "page": 33,
-   "found": true,
-   "src": "HCP Refugee Survey 2022",
-   "check": "Order in the sentence is electricity 99.4%, drinking water 99%, sanitation 96.9% (the csv note gives 99.4% for water)"
-  },
-  "Morocco|6.2.1|99%|HCP Refugee Survey 2022|33": {
-   "img": "reports/mar_hcp_refugees2022_p033.jpg",
-   "w": 1100,
-   "h": 492,
-   "page": 33,
-   "found": true,
-   "src": "HCP Refugee Survey 2022",
-   "check": "Page says 96.9% of refugees live in housing connected to the sanitation network, not 99%"
-  },
   "Morocco|7.1.1|99%|HCP Refugee Survey 2022|33": {
    "img": "reports/mar_hcp_refugees2022_p033.jpg",
    "w": 1100,
@@ -350,33 +287,6 @@
    "page": 33,
    "found": true,
    "src": "HCP Refugee Survey 2022"
-  },
-  "Morocco|8.5.2|20%|HCP Refugee Survey 2022|18": {
-   "img": "reports/mar_hcp_refugees2022_p018.jpg",
-   "w": 1100,
-   "h": 523,
-   "page": 18,
-   "found": true,
-   "src": "HCP Refugee Survey 2022",
-   "check": "Page says about one refugee in five (19%) is looking for work"
-  },
-  "Kenya|6.1.1|87%|Shona Socioeconomic Survey 2024|44": {
-   "img": "reports/ken_shona2024_p044.jpg",
-   "w": 1100,
-   "h": 584,
-   "page": 44,
-   "found": true,
-   "src": "Shona Socioeconomic Survey 2024",
-   "check": "87.4 percent is the 2019 level (similar to urban Kenyans); the 2024 value for Shona households is 92.3 percent"
-  },
-  "Kenya|6.2.1|89%|Shona Socioeconomic Survey 2024|45": {
-   "img": "reports/ken_shona2024_p045.jpg",
-   "w": 1100,
-   "h": 886,
-   "page": 45,
-   "found": true,
-   "src": "Shona Socioeconomic Survey 2024",
-   "check": "89 percent is female-headed Shona households in 2024; the Shona community as a whole is 92 percent"
   },
   "Uganda|3.1.2|98%|Uganda DHS 2022 (UBOS)|388": {
    "img": "reports/uga_dhs2022_p388.jpg",
@@ -601,6 +511,78 @@
    "page": 43,
    "found": true,
    "src": "Lebanon MICS 2023 Subnational (CAS)"
+  },
+  "Colombia|1.2.1|51.9%|DANE differential poverty 2022|3": {
+   "img": "reports/col_dane_pobreza2022_p003.jpg",
+   "w": 1100,
+   "h": 509,
+   "page": 3,
+   "found": true,
+   "src": "DANE differential poverty 2022"
+  },
+  "Honduras|1.2.1|45%|INE Estudio Poblacion Desplazada|6": {
+   "img": "reports/hnd_ine_desplazada2024_p006.jpg",
+   "w": 1100,
+   "h": 623,
+   "page": 6,
+   "found": true,
+   "src": "INE Estudio Poblacion Desplazada"
+  },
+  "Somalia|6.2.1|61%|WB-UNHCR JDC Somalia|31": {
+   "img": "reports/som_livelihoods_lost_p031.jpg",
+   "w": 1100,
+   "h": 682,
+   "page": 31,
+   "found": true,
+   "src": "WB-UNHCR JDC Somalia"
+  },
+  "State of Palestine|8.5.2|29.2%|PCBS|2": {
+   "img": "reports/pse_pcbs_refugeeday2026_p002.jpg",
+   "w": 1100,
+   "h": 724,
+   "page": 2,
+   "found": true,
+   "src": "PCBS"
+  },
+  "Morocco|6.1.1|99%|HCP Refugee Survey 2022|33": {
+   "img": "reports/mar_hcp_refugees2022_p033.jpg",
+   "w": 1100,
+   "h": 492,
+   "page": 33,
+   "found": true,
+   "src": "HCP Refugee Survey 2022"
+  },
+  "Morocco|6.2.1|97%|HCP Refugee Survey 2022|33": {
+   "img": "reports/mar_hcp_refugees2022_p033.jpg",
+   "w": 1100,
+   "h": 492,
+   "page": 33,
+   "found": true,
+   "src": "HCP Refugee Survey 2022"
+  },
+  "Morocco|8.5.2|19%|HCP Refugee Survey 2022|18": {
+   "img": "reports/mar_hcp_refugees2022_p018.jpg",
+   "w": 1100,
+   "h": 523,
+   "page": 18,
+   "found": true,
+   "src": "HCP Refugee Survey 2022"
+  },
+  "Kenya|6.1.1|92%|Shona Socioeconomic Survey 2024|44": {
+   "img": "reports/ken_shona2024_p044.jpg",
+   "w": 1100,
+   "h": 584,
+   "page": 44,
+   "found": true,
+   "src": "Shona Socioeconomic Survey 2024"
+  },
+  "Kenya|6.2.1|92%|Shona Socioeconomic Survey 2024|45": {
+   "img": "reports/ken_shona2024_p045.jpg",
+   "w": 1100,
+   "h": 886,
+   "page": 45,
+   "found": true,
+   "src": "Shona Socioeconomic Survey 2024"
   }
  },
  "sources": {
@@ -819,6 +801,14 @@
    "url": "https://www.unhcr.org/sites/default/files/2025-06/study-of-socio-economic-conditions-of-refugees-in-italy.pdf",
    "url_kind": "pdf",
    "file": "UNHCR_socioeconomic_refugees_italy_2025.pdf"
+  },
+  "DANE differential poverty 2022": {
+   "title": "Comunicado de prensa. Pobreza monetaria con enfoque diferencial (población víctima del conflicto), 2022",
+   "publisher": "DANE, Colombia",
+   "year": "2023",
+   "url": "https://www.dane.gov.co/files/operaciones/PM/cp-PMEnfoqueDiferencial-2022.pdf",
+   "url_kind": "pdf",
+   "file": "DANE_Poverty_DifferentialApproach_2022.pdf"
   }
  }
 }
