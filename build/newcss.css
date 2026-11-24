@@ -295,3 +295,22 @@ a.exr.reg{text-decoration:none}div.exr.reg{cursor:default}div.exr.reg:hover{tran
 #gmini .mchart:hover,#gmini .mchart:focus-within{border-radius:4px}
 #gmini .mchart h4{color:var(--soft)}
 #gmini .dcols{gap:4px}
+
+/* story charts in the row: donut and trend; SDG wheels in the same row */
+#gmini .dts{width:20px}#gmini .mchart{padding:4px 5px 3px}
+#gmini .dn{display:flex;align-items:center;gap:5px}
+#gmini .dkey{display:flex;flex-direction:column;gap:1px;font:500 6.5px var(--mono);color:var(--soft);white-space:nowrap}
+#gmini .dkey i{display:inline-block;width:5px;height:5px;border-radius:50%;margin-right:3px;vertical-align:-0.5px}
+#gmini .mchart.wide svg{display:block}
+#gmini.sdg{justify-content:flex-start;gap:4px;align-items:flex-end}
+#gmini.sdg .mchart{border-left:0}#gmini.sdg .mchart:hover,#gmini.sdg .mchart:focus-within{transform:none;background:none;border-color:transparent}
+#gmini.sdg .mchart:first-child:hover{transform:scale(1.7);background:rgba(10,20,48,.97);border-color:var(--line)}
+#gmini.sdg .wheelrow{flex:1 1 auto;min-width:0;align-items:stretch}
+#gmini.sdg .wheels{display:flex;flex-wrap:wrap;gap:1px 2px;justify-content:flex-start}
+#gmini.sdg .whb{padding:1px;transition:transform .2s ease,background .2s,opacity .2s;position:relative}
+#gmini.sdg .whb:hover,#gmini.sdg .whb:focus-visible{transform:scale(2.1);z-index:4;background:rgba(10,20,48,.97);border-color:var(--line);border-radius:50%}
+#gmini.sdg .whb svg{display:block}
+
+#gmini.sdg .whb{padding:0;border:0}#gmini.sdg .wheels{gap:3px}
+#gmini.sdg .wheelrow{align-items:flex-start}#gmini.sdg .mchart h4{align-self:flex-start}
+#gmini.gain .mchart{padding-inline:6px}#gmini.gain .dcol small{letter-spacing:-.02em}
