@@ -385,11 +385,11 @@ function areaTable(iso,ind){
     <tr><td><b>National, recalculated</b></td><td class="v">${V.nat[M.g[0]][0]}%</td><td class="v">${V.nat[M.g[1]][0]}%</td></tr></table></div>
     ${camps.length?`<h3 style="margin-top:6px">Refugees by camp or settlement</h3><div class="tw"><table class="snt"><tr><th>Camp</th><th>Refugees</th></tr>${camps.map(([k,c])=>`<tr><td>${esc((S.map[iso].camps.find(x=>x.k===k)||{n:k}).n)}</td>${td(c)}</tr>`).join('')}</table></div>`:''}`;
 }
-function sits(L,exists,what){return `<div class="sits" style="--lc:${LAYER[L].col}"><span>Layer</span><b style="font:600 16px var(--head)">${LAYER[L].n}</b>${exists?'<i class="pill ok">Exists</i>':'<i class="pill new">New</i>'}<span style="text-transform:none;letter-spacing:0;font:400 13px var(--body);color:var(--soft)">${what}</span><a href="${LAYER[L].live}" target="_blank" rel="noopener" style="font-size:13px;margin-left:auto">Live site ↗</a></div>`}
+function sits(L,exists,what){ const c=Q.ctry[gSel]; return `<div class="chead" style="--lc:${LAYER[L].col}"><div><p class="eyebrow" style="color:var(--lc)">${LAYER[L].n}</p><h2>${esc(c.n)}</h2></div><span style="margin-left:auto;display:flex;gap:10px;align-items:center">${exists?`<i class="pill ok" tabindex="0" ${tipA('Exists',esc(what))}>Exists</i>`:`<i class="pill new" tabindex="0" ${tipA('New',esc(what))}>New</i>`}<a href="${LAYER[L].live}" target="_blank" rel="noopener" style="font-size:13px">${LAYER[L].n} site ↗</a></span></div>`}
 function elsewhere(iso){const o=LK.filter(L=>L!==layer&&has(iso,L)); return o.length?`<p class="lnote">It is in: ${o.map(L=>act('layer',L,LAYER[L].n,'lkbtn',`style="--lc:${LAYER[L].col}"`)).join(' ')}</p>`:''}
 
 /* ---- right panel at world level: the country card ---- */
-const tiles=c=>c.pop?`<div class="ptiles">${[['Refugees and asylum-seekers',c.pop[1]],['Internally displaced',c.pop[2]],['Stateless',c.pop[3]]].map(([l,v])=>`<div><b>${fmt(v)}</b><span>${l}</span></div>`).join('')}</div><p class="lnote">End of ${c.pop[0]} · UNHCR and IDMC</p>`:'';
+const tiles=c=>c.pop?`<div class="ptiles">${[['Refugees and asylum-seekers',c.pop[1]],['Internally displaced',c.pop[2]],['Stateless',c.pop[3]]].map(([l,v])=>`<div><b>${v?fmt(v):'None reported'}</b><span>${l}</span></div>`).join('')}</div><p class="lnote">People in ${esc(c.n)} at the end of ${c.pop[0]}. Source: UNHCR and IDMC.</p>`:'';
 function exCard(e,iso,btn){ const k=exLinks(iso,e[0]);
   return `<article class="exc ${btn&&e[0]===fEx?'cur':''}" ${e[10]?tipA('What it is',esc(e[10])+(e[10].length>=260?'…':'')):''}>${e[9]?`<img src="covers/ex${e[0]}.jpg" alt="" loading="lazy" onerror="this.style.visibility='hidden'">`:'<div class="noc">no cover</div>'}
     <div class="exb"><span class="exmeta">${e[1]} · ${e[5]==='C'?'COUNTRY-LED':'INSTITUTION-LED'} · EXAMPLE ${e[0]}</span><b>${esc(e[2])}</b><span class="org">${esc(e[3])}</span>
@@ -509,11 +509,9 @@ function exRows(iso){ const c=Q.ctry[iso]; return c.ex.map(e=>{const k=exLinks(i
 function pGain(){
   const iso=gSel, c=Q.ctry[iso], open=fEx!=null?c.ex.find(e=>e[0]===fEx):null;
   const n=c.ex.reduce((o,e)=>{recSet(e).forEach(k=>o[k]=(o[k]||0)+1); return o},{});
-  return sits('gain',true,'The country page: map, populations and examples.')
-   +(c.ex.length?`<div class="kex">${open?exOpen(open,iso):`<div class="lhead"><h2>${c.ex.length} GAIN ${c.ex.length===1?'example':'examples'}</h2></div><p class="lnote">Point at one to see on the map who it covers. Select it to open its card.</p><div class="exrows" style="max-height:none">${exRows(iso)}</div>`}</div>`
-     :`<div class="band"><p style="color:var(--soft)">No GAIN example for ${esc(c.n)} yet.</p>${elsewhere(iso)}</div>`)
-   +(Object.keys(n).length?`<div class="band"><div class="recsum" style="border:0;padding:0"><h3>Recommendations used here</h3><div>${['IRRS','IRIS','IROSS'].filter(k=>n[k]).map(k=>`<span ${tipA(k,esc(RECS[k]))}><img src="recs/${k}.jpg" alt=""><b>${n[k]}</b><small>${k}</small></span>`).join('')}</div></div></div>`:'')
-   +(c.pop?`<div class="band">${tiles(c)}</div>`:'');
+  const A=(c.pop?`<div class="band">${tiles(c)}</div>`:'')+(Object.keys(n).length?`<div class="band"><div class="recsum" style="border:0;padding:0"><h3>Recommendations used in these examples</h3><div>${['IRRS','IRIS','IROSS'].filter(k=>n[k]).map(k=>`<span ${tipA(k,esc(RECS[k]))}><img src="recs/${k}.jpg" alt=""><b>${n[k]}</b><small>${k}</small></span>`).join('')}</div></div></div>`:''), B=(c.ex.length?`<div class="kex">${open?exOpen(open,iso):`<div class="lhead"><h2>${c.ex.length} GAIN ${c.ex.length===1?'example':'examples'}</h2></div><p class="lnote">Point at an example to see on the map who it covers. Select it for the details.</p><div class="exrows" style="max-height:none">${exRows(iso)}</div>`}</div>`
+     :`<div class="band"><p style="color:var(--soft)">No GAIN example for ${esc(c.n)} yet.</p>${elsewhere(iso)}</div>`);
+  return sits('gain',true,'The country page: map, populations and examples.')+(open?B+A:A+B);
 }
 function coverBig(id){
   if(level!=='country'||layer!=='gain'||mapInd) return; const root=$('cmap'), P=root.querySelector('#m-pts'); if(!P) return;
@@ -526,7 +524,7 @@ function coverBig(id){
   const src=e?Q.exsrc[e[0]]:null, sampled=!!(src&&Q.sub.val[iso]&&surveysOf(iso).has(src));
   root.querySelectorAll('#m-camps circle').forEach(k=>{ k.style.opacity=sampled?1:0; k.style.fill=sampled?'transparent':'' });
   let note=$('covnote'); if(!note){ note=document.createElement('p'); note.id='covnote'; note.className='lnote'; $('stfoot').appendChild(note) }
-  note.innerHTML=e?`<b style="font-weight:600;color:var(--soft)">On the map:</b> ${gs.length?'where the groups this example covers are located ('+esc(gs.join(', ').toLowerCase())+')':'this example does not record which groups it covers'}${sampled?'; white rings are the camps the survey sampled':''}.`:'';
+  note.innerHTML=e?`<b style="font-weight:600;color:var(--soft)">On the map:</b> ${gs.length?'where the groups this example covers are located ('+esc(gs.join(', ').toLowerCase().replace(/\bidps\b/g,'IDPs'))+')':'this example does not record which groups it covers'}${sampled?'; white rings are the camps the survey sampled':''}.`:'';
 }
 
 /* ---- SDG at country level ---- */

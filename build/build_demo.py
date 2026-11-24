@@ -382,16 +382,19 @@ def cover_of(e):
     dst = os.path.join(COVD, "ex%s.jpg" % e["id"])
     if not os.path.exists(dst) or os.path.getmtime(dst) < os.path.getmtime(src): shutil.copyfile(src, dst)
     return 1
+def short(s, n):
+    s = " ".join(s.split())
+    return s if len(s) <= n else s[:n].rsplit(" ", 1)[0].rstrip(",;:(") + "…"
 ctry = {}
 def C(iso, nm=None):
     return ctry.setdefault(iso, {"n": nm or (CJ.get(iso, {}).get("name")) or next((k for k, v in name2iso.items() if v == iso), iso), "ex": [], "pop": None, "rep": [], "sv": [], "cz": []})
 for iso, c in CJ.items():
     d = C(iso, c["name"])
-    d["ex"] = sorted([[e["id"], e["year"], e["title"][:110], e["org"], 1 if e.get("uses") else 0, "C" if e.get("lead") == "Country-led" else "I",
+    d["ex"] = sorted([[e["id"], e["year"], short(e["title"], 110), e["org"], 1 if e.get("uses") else 0, "C" if e.get("lead") == "Country-led" else "I",
                        ", ".join(e.get("method") or []), ", ".join(e.get("groups") or []), e.get("link") or "", cover_of(e), (e.get("note") or "")[:400], "|".join(dict.fromkeys((e.get("areas") or []) + (e.get("places") or []))), e.get("recs") or "", ", ".join(e.get("sources") or []), e.get("method_basis") or "", e.get("groups_basis") or ""] for e in c["examples"]], key=lambda e: (-e[1], e[2]))
     yrs = sorted(c.get("population") or {})
     if yrs:
-        pp = c["population"][yrs[-1]]; d["pop"] = [yrs[-1], pp.get("refugees",0)+pp.get("asylum",0), pp.get("idps",0), pp.get("stateless",0)]
+        pp = c["population"][yrs[-1]]; d["pop"] = [yrs[-1], pp.get("refugees",0)+pp.get("asylum",0), pp.get("idps",0) or (c.get("idmc") or {}).get(yrs[-1], 0), pp.get("stateless",0)]
 # regional and global examples: in the GAIN list without a country, so they are not on the map
 _in = {e["id"] for c in CJ.values() for e in c["examples"]}
 reg = []

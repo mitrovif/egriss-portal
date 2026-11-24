@@ -230,3 +230,7 @@ a.exr.reg{text-decoration:none}div.exr.reg{cursor:default}div.exr.reg:hover{tran
 .goalbar:has([aria-pressed="true"]) .gbtn[aria-pressed="false"]{opacity:.38}
 .cfind{width:100%;min-height:40px;padding:8px 12px;border:1px solid var(--line);border-radius:3px;background:rgba(10,20,48,.6);color:var(--ink);font:400 14px var(--body)}
 .cfind:focus-visible{outline:2px solid var(--teal);outline-offset:1px}.cfind::placeholder{color:var(--mute)}
+
+.exr .th{width:44px;height:58px;object-fit:cover;object-position:top;background:#fff}
+.exr .th.none{background:repeating-linear-gradient(135deg,#16264f 0 6px,#1a2c5a 6px 12px);border-style:dashed}
+.ptiles b{font-size:18px}
