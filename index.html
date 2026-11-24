@@ -513,6 +513,26 @@ button.czr:first-child{border-top:0}button.czr:hover{background:rgba(207,224,244
 .stage[data-v="3d"]:not(.country)::after{content:"Drag to turn · scroll or pinch to zoom in";position:absolute;left:12px;bottom:9px;font-size:11.5px;color:var(--soft);opacity:.75;pointer-events:none}
 
 a.exr.reg{text-decoration:none}div.exr.reg{cursor:default}div.exr.reg:hover{transform:none;border-color:var(--line);background:rgba(10,20,48,.5)}
+
+/* SDG map: second group under a draggable divider, goal badge, goal colours on chips and bars */
+#cmap2{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:none;opacity:0;pointer-events:none;transition:opacity .6s ease}
+#cmap2 svg{width:100%;height:100%}.stage.country #cmap2{opacity:1;pointer-events:auto}
+#cmap2 g,#cmap2 path,#cmap2 circle,#cmap2 text{transition:none}
+#cmap2 .ar{fill:#16264f;fill-opacity:0;stroke:rgba(207,224,244,.32);stroke-width:.7}#cmap2 .ar.on{fill-opacity:1;stroke:var(--night);stroke-width:1.2}
+#cmap2 text{pointer-events:none}#cmap2 text.ln{fill:var(--soft)}
+#swipe{position:absolute;top:0;bottom:0;width:28px;margin-left:-14px;cursor:ew-resize;z-index:3;touch-action:none;opacity:0;pointer-events:none;transition:opacity .5s ease}
+.stage.country #swipe:not([hidden]){opacity:1;pointer-events:auto}
+#swipe::before{content:"";position:absolute;left:13px;top:0;bottom:0;width:2px;background:#fff;box-shadow:0 0 8px rgba(0,0,0,.6)}
+#swipe i{position:absolute;left:0;top:50%;width:28px;height:28px;margin-top:-14px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.5)}
+#swipe i::after{content:"\2194";position:absolute;inset:0;display:grid;place-items:center;color:#0a1430;font:600 15px var(--body);font-style:normal}
+#swipe:focus-visible i{outline:2px solid var(--teal);outline-offset:2px}
+#swipe .sl,#swipe .sr{position:absolute;top:10px;white-space:nowrap;font:600 12px var(--body);color:#fff;background:rgba(10,20,48,.85);border:1px solid rgba(255,255,255,.35);border-radius:3px;padding:3px 8px}
+#swipe .sl{right:22px}#swipe .sr{left:22px}
+#mapbadge{position:absolute;left:12px;bottom:34px;z-index:2;display:flex;align-items:center;gap:4px;background:rgba(10,20,48,.82);border:1px solid var(--line);border-radius:4px;padding:6px 10px 6px 6px;pointer-events:none;opacity:0;transition:opacity .5s}
+.stage.country #mapbadge:not([hidden]){opacity:1}
+#mapbadge span{display:flex;flex-direction:column;line-height:1.25}#mapbadge b{font:600 13px var(--mono);color:#fff}#mapbadge small{font-size:12px;color:var(--soft);max-width:190px}
+.chip.gch{border-color:color-mix(in srgb,var(--gc) 55%,transparent)}.chip.gch[aria-pressed="true"]{background:var(--gc);border-color:var(--gc);color:#fff}
+.svc.sg .fill.r{background:var(--gc)}.svc.sg .fill.h{background:color-mix(in srgb,var(--gc) 45%,#8b98b3)}
 </style>
 <div class="wrap">
   <header class="top">
@@ -530,7 +550,7 @@ a.exr.reg{text-decoration:none}div.exr.reg{cursor:default}div.exr.reg:hover{tran
 
   <section class="cgrid" id="main">
     <div class="cmapcol">
-      <div class="stage" id="stage"><canvas id="gcv" role="img" aria-label="World: point at a country to list what it has, select it to open its card"></canvas><div id="cmap" class="snmap"></div></div>
+      <div class="stage" id="stage"><canvas id="gcv" role="img" aria-label="World: point at a country to list what it has, select it to open its card"></canvas><div id="cmap" class="snmap"></div><div id="cmap2" class="snmap"></div><div id="swipe" hidden role="slider" tabindex="0" aria-label="Divider between the two groups: drag left or right"><span class="sl"></span><span class="sr"></span><i></i></div><div id="mapbadge" hidden></div></div>
       <div id="stfoot"></div>
     </div>
     <aside class="cpanel stack" id="panel"></aside>
@@ -945,7 +965,7 @@ function tabTable(iso,ind){
   return `<div class="tw"><table class="snt"><tr><th>${esc(T.unit)}</th>${gs.map(g=>`<th>${esc(g)}</th>`).join('')}</tr>${areas.map(a=>`<tr><td>${esc(T.names[a]||a)}</td>${gs.map(g=>td(V[a+'|'+g])).join('')}</tr>`).join('')}</table></div>`;
 }
 function renderSdg(){
-  $('indchips').innerHTML = Q.sdg.map(d=>`<button class="chip" type="button" aria-pressed="${d.c===curInd}" data-c="${d.c}">${d.c}${d.pri?' ◆':''} · ${esc(d.n)}</button>`).join('');
+  $('indchips').innerHTML = Q.sdg.map(d=>`<button class="chip gch" type="button" aria-pressed="${d.c===curInd}" data-c="${d.c}" style="--gc:${gcolOf(d.c)}">${gicon(d.c)}${d.c}${d.pri?' ◆':''} · ${esc(d.n)}</button>`).join('');
   $('indchips').querySelectorAll('.chip').forEach(b=>b.onclick=()=>{curInd=b.dataset.c;renderSdg()});
   const d = Q.sdg.find(x=>x.c===curInd), nOk=d.rows.filter(r=>r.v&&(r.v.st==='ok'||r.v.st==='near')).length;
   $('sdghead').innerHTML = `<div class="eqcard" style="border-top:4px solid ${gcolOf(d.c)}">
@@ -956,7 +976,7 @@ function renderSdg(){
   </div>`;
   $('svtitle').textContent = d.rows.length ? `How each survey measured it · ${d.rows.length} ${d.rows.length===1?'survey':'surveys'} · ${nOk} reproduced from the file` : 'No survey has a calculated value yet';
   const bar=(lab,v,cls)=>`<div class="svbar"><span>${esc(lab)}</span><div class="track"><div class="fill ${cls}" style="width:${v}%"></div></div><span class="bv">${v}%</span></div>`;
-  $('svlist').innerHTML = d.rows.map(r=>`<article class="svc ${r.old?'old':''}">
+  $('svlist').innerHTML = d.rows.map(r=>`<article class="svc sg ${r.old?'old':''}" style="--gc:${gcolOf(d.c)}">
     <div class="svh"><b>${esc(r.country)}${r.year?' · '+esc(r.year):''}</b><span>${esc(r.fam)}</span></div>
     <div class="svr">${bar(r.g1,r.r,'r')}${r.h!=null?bar(r.g2||'Host',r.h,'h'):`<span class="lnote">No comparison group in this survey</span>`}</div>
     <div class="how">${howRows(r)}</div>${verLine(r)}
@@ -990,7 +1010,9 @@ function has(iso,L){const c=Q.ctry[iso]; if(!c) return 0; return L==='gain'?c.ex
 const any=iso=>LK.some(L=>has(iso,L));
 const subKeys=iso=>Q.sub.val[iso]?Object.keys(Q.sub.val[iso]):Q.sub.rep[iso]?Object.keys(Q.sub.rep[iso].ind):[];
 const SNS={'6.1.1':'Drinking water','6.2.1':'Sanitation','7.1.1':'Electricity','2.1.2':'Food insecurity','4.1.2':'School attendance','16.9.1':'Birth registration'};
-const subName=(iso,k)=>Q.sub.val[iso]?(k+' '+SNS[k]):Q.sub.rep[iso].ind[k].n;
+const subName=(iso,k)=>Q.sub.val[iso]?(k+' '+(SNS[k]||(Q.sdg.find(d=>d.c===k)||{n:''}).n)):Q.sub.rep[iso].ind[k].n;
+const _rg={}; function rampOf(code){ const g=goalOf(code), col=SDGC[g]; if(!col) return ramp; return _rg[g]||(_rg[g]=d3.scaleLinear().domain([0,55,100]).range(['#1c2850',d3.interpolateRgb('#1c2850',col)(.62),d3.interpolateRgb(col,'#ffffff')(.22)]).clamp(true)) }
+const gicon=(code,sz)=>SDGI.has(goalOf(code))?`<img class="gi" src="sdg/${goalOf(code)}.png" alt="" style="display:inline-block;vertical-align:-4px;margin-right:6px;width:${sz||18}px;height:${sz||18}px">`:'';
 function ramp(v){const st=[[0,[39,55,95]],[45,[47,111,143]],[80,[76,195,201]],[100,[201,244,246]]]; for(let i=1;i<st.length;i++){ if(v<=st[i][0]){const a=st[i-1],b=st[i],t=(v-a[0])/(b[0]-a[0]); return 'rgb('+a[1].map((x,j)=>Math.round(x+(b[1][j]-x)*t)).join(',')+')'} } return 'rgb(201,244,246)'}
 function idpCol(v,mx){const t=Math.sqrt(v/mx), a=[40,50,79], b=[224,169,59]; return 'rgb('+a.map((x,j)=>Math.round(x+(b[j]-x)*t)).join(',')+')'}
 const dots=iso=>`<span class="dots" title="In: ${LK.filter(L=>has(iso,L)).map(L=>LAYER[L].n).join(', ')||'no layer'}">${LK.map(L=>`<i style="${has(iso,L)?'background:'+LAYER[L].col:''}"></i>`).join('')}</span>`;
@@ -1160,6 +1182,10 @@ function initGlobe(){
   const up=e=>{ pts.delete(e.pointerId); if(pts.size<2) pin=null }; window.addEventListener('pointerup',up); window.addEventListener('pointercancel',up);
   $('cmap').addEventListener('wheel',e=>{ if(level==='country'&&!busy&&e.ctrlKey&&e.deltaY>0){ e.preventDefault(); zoomOut() } },{passive:false});
   box.dataset.v=view;
+  { const sw=$('swipe'); let on=false; const mv=e=>{ const r=box.getBoundingClientRect(); setSwipe((e.clientX-r.left)/r.width) };
+    sw.addEventListener('pointerdown',e=>{ on=true; sw.setPointerCapture(e.pointerId); mv(e); e.preventDefault() });
+    sw.addEventListener('pointermove',e=>{ if(on) mv(e) }); const off=()=>{ on=false }; sw.addEventListener('pointerup',off); sw.addEventListener('pointercancel',off);
+    sw.addEventListener('keydown',e=>{ if(e.key==='ArrowLeft'||e.key==='ArrowRight'){ setSwipe(swX+(e.key==='ArrowLeft'?-.04:.04)); e.preventDefault() } }) }
   cv.addEventListener('pointermove',e=>{ if(level!=='world'||busy||dn&&moved>6) return; const r=cv.getBoundingClientRect(), h=find(e.clientX-r.left,e.clientY-r.top);
     if(h!==hov){ hov=h; cv.style.cursor=h&&any(h)?'pointer':(view==='3d'?'grab':'default'); draw(); if(h){ tip.innerHTML=hoverCard(h); tip.hidden=false } else tip.hidden=true }
     if(h){ const w=tip.offsetWidth, hh=tip.offsetHeight; tip.style.left=Math.max(12,Math.min(e.clientX+16,window.innerWidth-w-12))+'px'; tip.style.top=Math.max(12,Math.min(e.clientY+16,window.innerHeight-hh-12))+'px' } });
@@ -1210,20 +1236,33 @@ function buildCountryMap(iso){
   s+=`</g><g id="m-nat" style="opacity:0"><text class="a" x="${(m.bb[0]+m.bb[1])/2}" y="${(m.bb[2]+m.bb[3])/2}" text-anchor="middle" font-size="44" font-weight="600"></text><text class="b" x="${(m.bb[0]+m.bb[1])/2}" y="${(m.bb[2]+m.bb[3])/2+22}" text-anchor="middle" font-size="13"></text>`;
   $('cmap').innerHTML=s+'</g></svg>';
 }
+function swipeGroups(){ const iso=gSel, S=Q.sub, V=mapInd&&S.val[iso]?S.val[iso][mapInd]:null, M=S.meta[iso];
+  if(V&&M.g.length>1) return [M.g[0],M.g[Math.max(1,mapG)]||M.g[1]];
+  const NR=(!V&&mapInd&&mapInd!=='__cause'&&fSrc&&!(S.rep[iso]&&S.rep[iso].ind[mapInd])&&surveysOf(iso).get(fSrc)||[]).find(([d])=>d.c===mapInd);
+  return NR&&NR[1].h!=null?[NR[1].g1,NR[1].g2||'Host']:null }
+let swX=.5;
+function setSwipe(x){ swX=Math.max(.04,Math.min(.96,x)); const p=(swX*100).toFixed(2)+'%'; $('cmap').style.clipPath=`inset(0 ${(100-swX*100).toFixed(2)}% 0 0)`; $('cmap2').style.clipPath=`inset(0 0 0 ${p})`; $('swipe').style.left=p }
 function paintMap(){
   const iso=gSel; if(mapIso!==iso) buildCountryMap(iso);
-  const m=Q.cm[iso]; if(!m) return;
+  const m=Q.cm[iso], sw=$('swipe'), c2=$('cmap2'), sg=m&&layer==='sdg'?swipeGroups():null, code=mapInd&&mapInd!=='__cause'&&(sg||Q.sub.val[iso]&&Q.sub.val[iso][mapInd])?mapInd:null, bd=$('mapbadge');
+  bd.hidden=!code; if(code) bd.innerHTML=`${gicon(code,40)}<span><b>${esc(code)}</b><small>${esc(SNS[code]||(Q.sdg.find(d=>d.c===code)||{n:''}).n)}</small></span>`;
+  if(!m){ sw.hidden=true; c2.innerHTML=''; $('cmap').style.clipPath=''; return }
   if($('cmap').dataset.cov){ $('cmap').querySelectorAll('#m-pts circle').forEach(p=>p.style.opacity=''); $('cmap').querySelectorAll('#m-camps circle').forEach(k=>k.style.fill=''); delete $('cmap').dataset.cov }
-  const S=Q.sub, M=S.meta[iso], V=mapInd&&S.val[iso]?S.val[iso][mapInd]:null, R=mapInd&&S.rep[iso]?S.rep[iso].ind[mapInd]:null, cause=mapInd==='__cause', NR=(!V&&!R&&!cause&&mapInd&&fSrc&&surveysOf(iso).get(fSrc)||[]).find(([d])=>d.c===mapInd), NV=NR?[NR[1].r,NR[1].h][mapG]:null, base=!V&&!R&&!cause&&NV==null, root=$('cmap');
-  const land=root.querySelector('.land'), nt=q0=>root.querySelector(q0); land.style.fill=NV!=null?ramp(NV):''; const natT=nt('#m-nat'); if(natT){ natT.style.opacity=NV!=null?1:0; if(NV!=null){ natT.querySelector('.a').textContent=NV+'%'; natT.querySelector('.b').textContent=[NR[1].g1,NR[1].g2||'Host'][mapG]+' · national value only' } }
-  const val=k=>V?V.areas[((M.alias||{})[k]||k)+'|'+M.g[mapG]]:R?R.vals[k]:null;
+  paintInto($('cmap'),sg?0:mapG);
+  if(sg){ c2.innerHTML=$('cmap').innerHTML; paintInto(c2,Math.max(1,mapG)); sw.hidden=false; sw.querySelector('.sl').textContent=sg[0]; sw.querySelector('.sr').textContent=sg[1]; setSwipe(swX) }
+  else { sw.hidden=true; c2.innerHTML=''; $('cmap').style.clipPath='' }
+}
+function paintInto(root,g){ const iso=gSel, m=Q.cm[iso];
+  const S=Q.sub, M=S.meta[iso], V=mapInd&&S.val[iso]?S.val[iso][mapInd]:null, R=mapInd&&S.rep[iso]?S.rep[iso].ind[mapInd]:null, cause=mapInd==='__cause', NR=(!V&&!R&&!cause&&mapInd&&fSrc&&surveysOf(iso).get(fSrc)||[]).find(([d])=>d.c===mapInd), NV=NR?[NR[1].r,NR[1].h][g]:null, base=!V&&!R&&!cause&&NV==null, rmp=(V||NR)?rampOf(mapInd):ramp;
+  const land=root.querySelector('.land'), nt=q0=>root.querySelector(q0); land.style.fill=NV!=null?rmp(NV):''; const natT=nt('#m-nat'); if(natT){ natT.style.opacity=NV!=null?1:0; if(NV!=null){ natT.querySelector('.a').textContent=NV+'%'; natT.querySelector('.b').textContent=[NR[1].g1,NR[1].g2||'Host'][g]+' · national value only' } }
+  const val=k=>V?V.areas[((M.alias||{})[k]||k)+'|'+M.g[g]]:R?R.vals[k]:null;
   const top=m.states?new Set([...m.states].sort((a,b)=>b[4]-a[4]).slice(0,6).filter(a=>a[4]).map(a=>a[1])):null;
   const q=id=>root.querySelector('#'+id);
   q('m-idp').style.opacity=base?1:0; q('m-cz').style.opacity=cause?1:0; q('m-cz').style.pointerEvents=cause?'auto':'none'; czFocus(czSel); q('m-pts').style.opacity=base?.85:.28;
   q('m-adm').style.pointerEvents=base&&m.states?'none':'auto';
-  q('m-adm').querySelectorAll('.ar').forEach(p=>{ const k=p.dataset.k, c=val(k); p.classList.toggle('on',!!c); if(c) p.style.fill=ramp(c[0]);
-    p.setAttribute('data-tip',`<span class="tn">${esc(k)}</span>`+(c?`<span class="tq">${c[0]}%</span><span class="ts">${V?esc(SNN[mapInd])+' · '+esc(M.g[mapG])+' · '+c[1]+' households in the sample'+(c[1]<50?' (small)':''):esc(R.n)+' · '+fmt(c[1])+' '+R.nl}</span>`:`<span class="ts">${base?'No value shown: switch the map to an indicator':'No value for this area'}</span>`)) });
-  q('m-camps').querySelectorAll('circle').forEach(c=>{ const v0=V&&mapG===0&&V.camps?V.camps[c.dataset.k]:null, v=v0&&v0[1]>=10?v0:null; c.style.opacity=v?1:0; c.style.pointerEvents=v?'auto':'none'; if(v){ c.style.fill=ramp(v[0]); c.setAttribute('data-tip',`<span class="tn">${esc(c.dataset.n)}</span><span class="tq">${v[0]}%</span><span class="ts">${esc(SNN[mapInd])} · refugees · ${v[1]} households in the sample</span>`) } });
+  q('m-adm').querySelectorAll('.ar').forEach(p=>{ const k=p.dataset.k, c=val(k); p.classList.toggle('on',!!c); if(c) p.style.fill=rmp(c[0]);
+    p.setAttribute('data-tip',`<span class="tn">${esc(k)}</span>`+(c?`<span class="tq">${c[0]}%</span><span class="ts">${V?esc(SNN[mapInd])+' · '+esc(M.g[g])+' · '+c[1]+' households in the sample'+(c[1]<50?' (small)':''):esc(R.n)+' · '+fmt(c[1])+' '+R.nl}</span>`:`<span class="ts">${base?'No value shown: switch the map to an indicator':'No value for this area'}</span>`)) });
+  q('m-camps').querySelectorAll('circle').forEach(c=>{ const v0=V&&g===0&&V.camps?V.camps[c.dataset.k]:null, v=v0&&v0[1]>=10?v0:null; c.style.opacity=v?1:0; c.style.pointerEvents=v?'auto':'none'; if(v){ c.style.fill=rmp(v[0]); c.setAttribute('data-tip',`<span class="tn">${esc(c.dataset.n)}</span><span class="tq">${v[0]}%</span><span class="ts">${esc(SNN[mapInd])} · refugees · ${v[1]} households in the sample</span>`) } });
   q('m-lab').querySelectorAll('.lv').forEach(t=>{ const c=val(t.dataset.k); t.textContent=c?Math.round(c[0])+'%':''; });
   q('m-lab').querySelectorAll('.ln').forEach(t=>{ const k=t.dataset.k, c=val(k), show=c||(base&&(top?top.has(k):!k.startsWith('Islamabad'))); t.style.opacity=show?(c?.9:.75):0; t.setAttribute('y',+t.previousSibling.getAttribute('y')+(c?13:0)) });
 }
@@ -1233,19 +1272,19 @@ function renderMapFoot(){
   const g=m?m.pts.reduce((o,p)=>{const k=p[2]===0||p[2]===3?'r':p[2]===2?'i':'o'; o[k]++; return o},{r:0,i:0,o:0}):{r:0,i:0,o:0};
   const pill=(cls,txt,title,body)=>`<i class="pill ${cls}" tabindex="0" ${tipA(title,body)}>${txt}</i>`;
   const NR=(!V&&!R&&mapInd&&mapInd!=='__cause'&&fSrc&&surveysOf(iso).get(fSrc)||[]).find(([d])=>d.c===mapInd);
-  let leg='', notes='';
-  if(NR){ leg=`<span style="flex:1 1 200px"><span>0%</span><i style="flex:1;height:8px;border-radius:1px;background:linear-gradient(90deg,#27375f,#2f6f8f,#4cc3c9,#c9f4f6)"></i><span>100%</span></span>`; notes=pill('plain','National','One value for the whole country','This indicator has not been calculated below country level for this survey yet, so the map shows the national value.') }
+  let leg='', notes=''; const rmp=(V||NR)?rampOf(mapInd):ramp, sg=layer==='sdg'&&m?swipeGroups():null;
+  if(NR){ leg=`<span style="flex:1 1 200px"><span>0%</span><i style="flex:1;height:8px;border-radius:1px;background:linear-gradient(90deg,${[0,25,50,75,100].map(v=>rmp(v)).join(',')})"></i><span>100%</span></span>`; notes=pill('plain','National','One value for the whole country','This indicator has not been calculated below country level for this survey yet, so the map shows the national value.') }
   else if(mapInd==='__cause'){ const cs=[...new Set(Q.cpts[iso].map(p=>p[2]))].sort(); leg=cs.map(k=>`<span><i class="d" style="background:${CAUSE_COL[k]}"></i>${CZ[k]}</span>`).join('')+'<span>larger circle = more people</span>'; notes=pill('ok','Exists','Displacement by cause','Places where people were displaced, by cause, from the causing events analysis in the ID Questions repository. The '+Q.cpts[iso].length+' largest records are shown.') }
   else if(!mapInd){
     leg=(g.r?`<span><i class="d" style="background:#8fe0e4"></i>${fmt(g.r)} refugee locations</span>`:'')+(g.i?`<span><i class="d" style="background:#f3cf7e"></i>${fmt(g.i)} IDP locations</span>`:'')+(g.o?`<span><i class="d" style="background:#8b98b3"></i>${fmt(g.o)} other</span>`:'')+(m&&m.states?`<span><i class="g"></i>IDPs by ${esc(m.areas?m.lay.unit:m.lay.parent)}</span>`:'')||'<span>No locations recorded.</span>';
     notes=pill('ok','Exists','Population base','As on the GAIN country page. Locations from UNHCR.'+(m&&m.lay?' IDPs by '+esc(m.lay.unit)+' from '+esc(m.lay.who)+'. '+esc(m.lay.cover):''))+(m&&m.src?pill('plain','Source','Source of the IDP counts',esc(m.src)):'');
   } else {
-    leg=`<span style="flex:1 1 200px"><span>0%</span><i style="flex:1;height:8px;border-radius:1px;background:linear-gradient(90deg,#27375f,#2f6f8f,#4cc3c9,#c9f4f6)"></i><span>100%</span></span>${V&&V.camps&&mapG===0?'<span><i class="d" style="background:#4cc3c9;outline:1.5px solid #fff"></i>camp</span>':''}`;
+    leg=`<span style="flex:1 1 200px"><span>0%</span><i style="flex:1;height:8px;border-radius:1px;background:linear-gradient(90deg,${[0,25,50,75,100].map(v=>rmp(v)).join(',')})"></i><span>100%</span></span>${V&&V.camps&&(sg||mapG===0)?'<span><i class="d" style="background:#4cc3c9;outline:1.5px solid #fff"></i>camp</span>':''}`;
     notes=V?pill('new','New','Calculated from microdata',esc(M.survey)+', by '+M.unit+(V.camps?' and by camp':'')+'. '+esc(M.wl)+'.')+pill('tbc','To confirm','Read with care','The survey was designed for national or stratum estimates. Small cells are marked; confidence intervals are not calculated yet.')
       :pill('new','New','From a published table','Share of '+esc(R.of)+'. '+esc(R.tbl)+'. Not calculated from microdata.')+(m&&m.areas?pill('plain','Levels','Two levels on one map','Population is counted by '+esc(m.lay.unit)+'; these values exist only by '+esc(m.lay.parent)+'.'):'')+pill('flag','Check','Not an SDG indicator','It is what the report tabulates by state. Katsina rests on very few households.');
   }
-  $('stfoot').innerHTML=`<div class="chips" id="mapchips">${act('map','','Population','chip',`aria-pressed="${!mapInd}"`)}${Q.cpts[iso]?act('map','__cause','Displaced by cause','chip',`aria-pressed="${mapInd==='__cause'}"`):''}${keys.map(k=>act('map',k,esc(subName(iso,k)),'chip',`aria-pressed="${k===mapInd}"`)).join('')}${NR?act('map',mapInd,esc(mapInd+' '+NR[0].n),'chip','aria-pressed="true"'):''}${V||NR&&NR[1].h!=null?`<span class="lnote" style="align-self:center;margin:0 2px 0 8px">for</span>`+(V?M.g:[NR[1].g1,NR[1].g2||'Host']).map((x,i)=>act('mapg',i,esc(x),'chip',`aria-pressed="${i===mapG}"`)).join(''):''}</div>
-    <div class="mleg">${leg}<span style="margin-left:auto;gap:5px">${notes}</span></div>`;
+  $('stfoot').innerHTML=`<div class="chips" id="mapchips">${act('map','','Population','chip',`aria-pressed="${!mapInd}"`)}${Q.cpts[iso]?act('map','__cause','Displaced by cause','chip',`aria-pressed="${mapInd==='__cause'}"`):''}${keys.map(k=>act('map',k,(Q.sub.val[iso]?gicon(k):'')+esc(subName(iso,k)),'chip gch',`aria-pressed="${k===mapInd}" style="--gc:${Q.sub.val[iso]?gcolOf(k):'var(--teal)'}"`)).join('')}${NR?act('map',mapInd,gicon(mapInd)+esc(mapInd+' '+NR[0].n),'chip gch',`aria-pressed="true" style="--gc:${gcolOf(mapInd)}"`):''}${sg?(V&&M.g.length>2?`<span class="lnote" style="align-self:center;margin:0 2px 0 8px">${esc(M.g[0])} compared with</span>`+M.g.slice(1).map((x,i)=>act('mapg',i+1,esc(x),'chip',`aria-pressed="${i+1===Math.max(1,mapG)}"`)).join(''):''):V||NR&&NR[1].h!=null?`<span class="lnote" style="align-self:center;margin:0 2px 0 8px">for</span>`+(V?M.g:[NR[1].g1,NR[1].g2||'Host']).map((x,i)=>act('mapg',i,esc(x),'chip',`aria-pressed="${i===mapG}"`)).join(''):''}</div>
+    ${sg?`<p class="lnote" style="margin:0">Drag the divider on the map: ${esc(sg[0])} on the left, ${esc(sg[1])} on the right.</p>`:''}<div class="mleg">${leg}<span style="margin-left:auto;gap:5px">${notes}</span></div>`;
 }
 
 /* ---- shared pieces used by more than one layer ---- */

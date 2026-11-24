@@ -197,3 +197,23 @@ button.czr:first-child{border-top:0}button.czr:hover{background:rgba(207,224,244
 .stage[data-v="3d"]:not(.country)::after{content:"Drag to turn · scroll or pinch to zoom in";position:absolute;left:12px;bottom:9px;font-size:11.5px;color:var(--soft);opacity:.75;pointer-events:none}
 
 a.exr.reg{text-decoration:none}div.exr.reg{cursor:default}div.exr.reg:hover{transform:none;border-color:var(--line);background:rgba(10,20,48,.5)}
+
+/* SDG map: second group under a draggable divider, goal badge, goal colours on chips and bars */
+#cmap2{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:none;opacity:0;pointer-events:none;transition:opacity .6s ease}
+#cmap2 svg{width:100%;height:100%}.stage.country #cmap2{opacity:1;pointer-events:auto}
+#cmap2 g,#cmap2 path,#cmap2 circle,#cmap2 text{transition:none}
+#cmap2 .ar{fill:#16264f;fill-opacity:0;stroke:rgba(207,224,244,.32);stroke-width:.7}#cmap2 .ar.on{fill-opacity:1;stroke:var(--night);stroke-width:1.2}
+#cmap2 text{pointer-events:none}#cmap2 text.ln{fill:var(--soft)}
+#swipe{position:absolute;top:0;bottom:0;width:28px;margin-left:-14px;cursor:ew-resize;z-index:3;touch-action:none;opacity:0;pointer-events:none;transition:opacity .5s ease}
+.stage.country #swipe:not([hidden]){opacity:1;pointer-events:auto}
+#swipe::before{content:"";position:absolute;left:13px;top:0;bottom:0;width:2px;background:#fff;box-shadow:0 0 8px rgba(0,0,0,.6)}
+#swipe i{position:absolute;left:0;top:50%;width:28px;height:28px;margin-top:-14px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.5)}
+#swipe i::after{content:"\2194";position:absolute;inset:0;display:grid;place-items:center;color:#0a1430;font:600 15px var(--body);font-style:normal}
+#swipe:focus-visible i{outline:2px solid var(--teal);outline-offset:2px}
+#swipe .sl,#swipe .sr{position:absolute;top:10px;white-space:nowrap;font:600 12px var(--body);color:#fff;background:rgba(10,20,48,.85);border:1px solid rgba(255,255,255,.35);border-radius:3px;padding:3px 8px}
+#swipe .sl{right:22px}#swipe .sr{left:22px}
+#mapbadge{position:absolute;left:12px;bottom:34px;z-index:2;display:flex;align-items:center;gap:4px;background:rgba(10,20,48,.82);border:1px solid var(--line);border-radius:4px;padding:6px 10px 6px 6px;pointer-events:none;opacity:0;transition:opacity .5s}
+.stage.country #mapbadge:not([hidden]){opacity:1}
+#mapbadge span{display:flex;flex-direction:column;line-height:1.25}#mapbadge b{font:600 13px var(--mono);color:#fff}#mapbadge small{font-size:12px;color:var(--soft);max-width:190px}
+.chip.gch{border-color:color-mix(in srgb,var(--gc) 55%,transparent)}.chip.gch[aria-pressed="true"]{background:var(--gc);border-color:var(--gc);color:#fff}
+.svc.sg .fill.r{background:var(--gc)}.svc.sg .fill.h{background:color-mix(in srgb,var(--gc) 45%,#8b98b3)}
