@@ -580,21 +580,21 @@ function sxDeco(ctx,d,al){ ctx.save(); const A=a=>a*6.2832-1.5708;
 function sxLabels(ctx,labels,al){ ctx.globalAlpha=al; ctx.textBaseline='middle'; labels.forEach(l=>{ ctx.font=(l.sans?(l.sz>30?'600 ':'400 ')+l.sz+'px Figtree, system-ui, sans-serif':'500 '+l.sz+'px "IBM Plex Mono", ui-monospace, monospace'); ctx.textAlign=l.al; ctx.fillStyle=l.col; if(l.rot){ ctx.save(); ctx.translate(l.x,l.y); ctx.rotate(l.rot*Math.PI/180); ctx.fillText(l.t,0,0); ctx.restore() } else ctx.fillText(l.t,l.x,l.y) }); ctx.globalAlpha=1 }
 function sxCanvas(cv,W,H){ const dpr=Math.min(2,window.devicePixelRatio||1); cv.width=W*dpr; cv.height=H*dpr; cv.style.width=W+'px'; cv.style.height=H+'px'; const ctx=cv.getContext('2d'); ctx.setTransform(dpr,0,0,dpr,0,0); return ctx }
 /* small still previews in the tiles under the globe */
-function sxThumbs(){ document.querySelectorAll('canvas[data-sx]').forEach(cv=>{ const W=Math.max(120,cv.parentNode.clientWidth), H=112, ctx=sxCanvas(cv,W,H), b=sxBuild(cv.dataset.sx,cv.dataset.yr||'2025','fw',W,H,true);
+function sxThumbs(){ document.querySelectorAll('canvas[data-sx]').forEach(cv=>{ const W=Math.max(120,cv.parentNode.clientWidth), H=118, ctx=sxCanvas(cv,W,H), b=sxBuild(cv.dataset.sx,cv.dataset.yr||'2025','fw',W,H,true);
   ctx.clearRect(0,0,W,H); b.deco.forEach(d=>sxDeco(ctx,d,1)); b.pos.forEach(o=>sxDot(ctx,o.x,o.y,o.r,o.k,o.mx,1)); sxLabels(ctx,b.labels,1) }) }
 /* the full interactive chart */
 const SX={lay:'bars',yr:'2025',by:'fw',P:null,hover:null,reg:null,raf:0,last:0,labA:0,key:'',b:null,W:0,H:0};
 function sxShell(){
-  const z=$('zoomer'), W=Math.max(320,Math.min(980,window.innerWidth-72)), H=Math.max(360,Math.min(600,window.innerHeight-250)); SX.W=W; SX.H=H;
+  const z=$('zoomer'), [W,H]=chSize(); SX.W=W; SX.H=H;
   const b=sxBuild(SX.lay,SX.yr,SX.by,W,H,false), seg=(a,v,t,on)=>`<button type="button" class="chip" data-act="${a}" data-v="${v}" aria-pressed="${on}">${t}</button>`;
-  z.innerHTML=`<div class="zbox sxbox" role="dialog" aria-modal="true" aria-label="GAIN examples, chart"><div class="zhead"><div><p class="eyebrow" style="color:${LAYER.gain.col}">${b.mode}</p><h2 style="font-size:15px;font-family:var(--mono);font-weight:500;letter-spacing:.06em;color:#8db8e3">${b.title}</h2></div><button type="button" class="x" data-act="zclose">Close ✕</button></div>
+  z.innerHTML=`<div class="zbox sxbox" role="dialog" aria-modal="true" aria-label="GAIN examples, chart"><div class="zhead"><div><p class="eyebrow" style="color:${LAYER.gain.col}">${b.mode}</p><h2 style="font-size:15px;font-family:var(--mono);font-weight:500;letter-spacing:.06em;color:#8db8e3">${b.title}</h2></div><span class="zact">${act('ztab','',zTab?'Show as chart':'Show as table','chip',`aria-pressed="${zTab}"`)}<button type="button" class="x" data-act="zclose">Close ✕</button></span></div>
     <div class="sxctl"><span>Show</span>${seg('sxl','bars','By year',SX.lay==='bars')}${seg('sxl','donut','Donut',SX.lay==='donut')}${seg('sxl','regions','Regions',SX.lay==='regions')}${seg('sxl','sources','Data sources',SX.lay==='sources')}
       ${SX.lay!=='bars'?`<span style="margin-left:14px">Year</span>${seg('sxy','all','All years',SX.yr==='all')}${[2021,2022,2023,2024,2025].map(y=>seg('sxy',y,y,String(SX.yr)===String(y))).join('')}`:''}
       ${SX.lay==='donut'?`<span style="margin-left:14px">Split by</span>${seg('sxb','fw','Recommendations',SX.by==='fw')}${seg('sxb','lead','Lead',SX.by==='lead')}`:''}</div>
-    <div class="sxwrap" style="width:${W}px;height:${H}px"><canvas id="sxcv" role="img" aria-label="${esc(b.title)}"></canvas><div id="sxpv" hidden></div></div>
+    ${zTab?sxTable(W,H):`<div class="sxwrap" style="width:${W}px;height:${H}px"><canvas id="sxcv" role="img" aria-label="${esc(b.title)}"></canvas><div id="sxpv" hidden></div></div>`}
     <div class="zleg">${b.legend.map(l=>l[0]?`<span><i class="d ${SXK[l[0].replace(/m$/,'')][1]?'':'ring'}" style="--c:${SXK[l[0].replace(/m$/,'')][0]};${l[0].endsWith('m')&&l[0].length>2?'outline:1.5px solid #fff':''}"></i>${l[1]}</span>`:`<b>${l[1]}</b>`).join('')}<span><i class="d" style="--c:rgba(207,224,244,.3)"></i>Faint dots: other years or not in this chart</span></div>
-    <p class="lnote">One circle is one example. Point at a circle to see what it is; select it to open the example in its country.${SX.lay==='regions'?' Point at a region to pick it out.':''}</p></div>`;
-  z.hidden=false; const cv=$('sxcv'); SX.ctx=sxCanvas(cv,W,H); SX.b=b; SX.labA=0; SX.hover=null; SX.reg=null;
+    <p class="lnote">One circle is one example. Point at a circle to read it. Select it to open the example in its country.${SX.lay==='regions'?' Point at a region to pick it out.':''}</p></div>`;
+  z.hidden=false; if(zTab) return; const cv=$('sxcv'); SX.ctx=sxCanvas(cv,W,H); SX.b=b; SX.labA=0; SX.hover=null; SX.reg=null;
   if(!SX.P){ SX.P=[]; sxRows().forEach(d=>{ const n=Math.max(1,d.lead===0?d.src.length:0); for(let j=0;j<n;j++) SX.P.push({id:d.id,j,x:sxHash(d.id,1)*W,y:-30-sxHash(d.id,2)*H*1.2,r:2,a:0,k:'cU',mx:null,rate:.05+sxHash(d.id*7+j,13)*.07}) }) }
   cv.addEventListener('mousemove',sxMove); cv.addEventListener('mouseleave',()=>{ SX.hover=null; SX.reg=null; $('sxpv').hidden=true; cv.style.cursor='default' }); cv.addEventListener('click',sxTap);
   if(!SX.raf){ SX.last=performance.now(); SX.raf=requestAnimationFrame(sxTick) }
@@ -607,7 +607,8 @@ function sxMove(e){ const [p,x,y]=sxNearest(e), cv=e.currentTarget, pv=$('sxpv')
   const d=sxRows()[p.id], mixN=['IRRS + IRIS + IROSS','IRRS + IRIS','IRRS + IROSS','IRIS + IROSS'], rec=d.use?(d.fw===3?(d.mix>=0?mixN[d.mix]:'Mixed use'):SXFW[d.fw]):'';
   pv.innerHTML=`<span class="exmeta">GAIN ${d.y} · ${esc(d.country||'Regional / global')} · ${d.lead?'Institution-led':'Country-led'}</span><b>${esc(d.title||'Untitled example')}</b><small>${esc(d.org||'Organisation not reported')}</small><div class="chips2">${(d.pop||'').split(' · ').filter(Boolean).slice(0,3).map(t=>`<i>${esc(t)}</i>`).join('')}${d.use?`<i class="rc" style="background:${SXC.FWL[d.fw]};color:#0a1430">${rec}</i>`:'<i class="off">Not using the Recommendations, or not known</i>'}</div><small class="hint">${d.iso&&Q.ctry[d.iso]?'Select the circle to open the example':'Regional or global example'}</small>`;
   pv.hidden=false; const pw=Math.min(300,SX.W-24), ph=pv.offsetHeight||150; let px=p.x+20; if(px+pw>SX.W-8) px=p.x-20-pw; pv.style.width=pw+'px'; pv.style.left=Math.max(8,px)+'px'; pv.style.top=Math.max(8,Math.min(SX.H-ph-8,p.y-50))+'px' }
-function sxTap(e){ const [p]=sxNearest(e); if(!p) return; const d=sxRows()[p.id], iso=d.iso;
+function sxTap(e){ const [p]=sxNearest(e); if(p) sxOpen(p.id) }
+function sxOpen(id){ const d=sxRows()[id], iso=d.iso;
   if(iso&&Q.ctry[iso]&&Q.ctry[iso].ex.some(x=>x[0]===d.id+1)){ zChart=null; Object.keys(GF).forEach(k=>GF[k]=null); layer='gain'; level='world'; chosen=true; gSel=iso; fSrc=fInd=fSv=mapInd=null; fEx=d.id+1; render(); const c=G.by[iso]; if(c&&c.cen&&view==='3d') gTo({rot:[-c.cen[0],Math.max(-40,Math.min(40,-c.cen[1]))],k:G.k,tr:G.tr,alpha:0},[750,1500,1.8]); $('panel').scrollIntoView({block:'start',behavior:RM?'auto':'smooth'}) }
   else { const r=Q.reg.find(x=>x[0]===d.id+1); if(r&&r[5]) window.open(r[5],'_blank','noopener') } }
 function sxTick(now){ SX.raf=0; const z=$('zoomer'); if(z.hidden||zChart!=='sx'||!$('sxcv')) return; const dt=Math.min(64,now-SX.last); SX.last=now;
@@ -661,7 +662,7 @@ const GLEG=`<div class="zleg"><span><i class="d" style="background:${LEADC.C}"><
 function ixInit(){ if(ixInit.done) return; ixInit.done=1; Object.keys(IXA).forEach(k=>SXK['a_'+k]=[IXA[k],1]); CAUSE_COL.forEach((c,k)=>{ if(c) SXK['z'+k]=[c,1] }) }
 
 /* ===== ID Questions as the same kind of chart: one circle per identification question, or per country and reason ===== */
-const IXA={same:'#4cc3c9',close:'#5b8fd9',partial:'#e0a93b',different:'#f06667',other:'#8b98b3'}, IXAN={same:'Same wording',close:'Close',partial:'Partial',different:'Different',other:'Not rated'};
+const IXA={same:'#4cc3c9',close:'#5b8fd9',partial:'#e0a93b',different:'#f06667',other:'#8b98b3'}, IXAN={same:'Same wording',close:'Close wording',partial:'Partial match',different:'Different wording',other:'Not rated'};
 let _ixr=null, _ixo=null;
 function ixRows(){ ixInit(); if(_ixr) return _ixr; const sv2iso={}; Object.keys(Q.ctry).forEach(k=>Q.ctry[k].sv.forEach(s=>{ if(sv2iso[s]==null) sv2iso[s]=k }));
   _ixo=Q.model.map(m=>m.code).concat(EXTRA);
@@ -670,52 +671,53 @@ function ixRows(){ ixInit(); if(_ixr) return _ixr; const sv2iso={}; Object.keys(
   _ixr=q.concat(c); _ixr.forEach((d,i)=>d.id=i); return _ixr }
 function ixBuild(lay,W,H,small){
   let hc=null, zb=0; const rows=ixRows(), pos=new Map(), deco=[], labels=[], put=(id,o)=>pos.set(id,o), lab=(x,y,t,al,col,sz,sans,rot)=>labels.push({x,y,t:String(t),al:al||'center',col:col||'#fff',sz,sans:!!sans,rot:rot||0});
-  const qs=rows.filter(d=>d.t==='q'), AO=['same','close','partial','different','other']; let cols=null, zone=0, title='', legend=AO.filter(a=>qs.some(d=>d.al===a)).map(a=>['a_'+a,IXAN[a]]), mode=qs.length+' IDENTIFICATION QUESTIONS · '+new Set(qs.map(d=>d.s)).size+' QUESTIONNAIRES';
-  if(lay==='items'){ const g=small?{L:6,R:W-6,T:6,B:H-13}:{L:124,R:W-30,T:44,B:H-128};
-    const codes=_ixo.filter((c,i)=>i<Q.model.length||qs.some(d=>d.item===c)), nM=Q.model.length, gapX=small?5:26, band=(g.R-g.L-gapX)/codes.length, per=small?2:3, cols=codes.map(c=>qs.filter(d=>d.item===c).sort((a,b)=>AO.indexOf(a.al)-AO.indexOf(b.al)||a.s-b.s));
+  const nar=!small&&W<560, qs=rows.filter(d=>d.t==='q'), AO=['same','close','partial','different','other']; let cols=null, zone=0, title='', legend=AO.filter(a=>qs.some(d=>d.al===a)).map(a=>['a_'+a,IXAN[a]+' ('+qs.filter(d=>d.al===a).length+')']), mode=qs.length+' IDENTIFICATION QUESTIONS · '+new Set(qs.map(d=>d.s)).size+' QUESTIONNAIRES';
+  if(lay==='items'){ const g=small?{L:6,R:W-6,T:6,B:H-13}:nar?{L:8,R:W-8,T:44,B:H-34}:{L:124,R:W-30,T:44,B:H-128};
+    const codes=_ixo.filter((c,i)=>i<Q.model.length||qs.some(d=>d.item===c)), nM=Q.model.length, gapX=small?5:nar?10:26, band=(g.R-g.L-gapX)/codes.length, per=small||nar?2:3, cols=codes.map(c=>qs.filter(d=>d.item===c).sort((a,b)=>AO.indexOf(a.al)-AO.indexOf(b.al)||a.s-b.s));
     const maxB=Math.max(1,...cols.map(c=>c.length)), pitch=Math.min(small?4.6:15,band*.82/per,(g.B-g.T-(small?4:26))/(Math.ceil(maxB/per)+per/2));
     hc=[]; zb=g.B;
     cols.forEach((b,i)=>{ const xc=g.L+band*i+band/2+(i>=nM?gapX:0), T1=sxTomb(b.length,per,pitch), m=Q.model[i]; hc.push({code:codes[i],i,x0:xc-band/2,x1:xc+band/2});
       b.forEach((d,k)=>put(d.id,{x:xc+T1.pts[k][0],y:g.B-T1.pts[k][1],r:pitch*.37,k:'a_'+d.al}));
-      deco.push({t:'tomb',x:xc,w:per*pitch+4,B:g.B+1,Hb:Math.max(T1.Hb,b.length?0:pitch),fill:0,c:m&&m.core?'#4cc3c9':'#8db8e3'});
-      if(small){ lab(xc,g.B+7,i<nM?i+1:'+','center',m&&m.core?'#4cc3c9':'#b8c4d9',7) }
-      else { lab(xc,g.B-T1.H-12,b.length,'center','#fff',13); lab(xc,g.B+14,i<nM?i+1:'',' center'.trim(),m&&m.core?'#4cc3c9':'#b8c4d9',13); lab(xc+4,g.B+(i<nM?30:16),(m?m.title:(ITEM[codes[i]]||codes[i]))+(m&&m.core?' · core':''),'right','#cfe0f4',11,true,-38) } });
-    if(!small){ lab(g.L,g.T-22,'The 13 EGRISS questions, in order','left','#8db8e3',11); lab(g.L+band*nM+gapX,g.T-22,'Related topics','left','#8db8e3',11) }
+      deco.push({t:'tomb',x:xc,w:per*pitch+4,B:g.B+1,Hb:Math.max(T1.Hb,b.length?0:pitch),fill:0,c:m&&m.core?CC.teal:CC.mute});
+      if(small){ lab(xc,g.B+7,i<nM?i+1:'+','center',m&&m.core?CC.teal:CC.dim,7) }
+      else { lab(xc,g.B-T1.H-12,b.length,'center','#fff',12.5); lab(xc,g.B+14,i<nM?i+1:'abcdefgh'[i-nM],'center',m&&m.core?CC.teal:CC.dim,nar?10:13); if(!nar) lab(xc+4,g.B+(i<nM?30:16),(m?m.title:(ITEM[codes[i]]||codes[i]))+(m&&m.core?' · core':''),'right',CC.soft,11,true,-38) } });
+    if(!small){ lab(g.L,g.T-22,nar?'The 13 questions':'The 13 EGRISS questions, in order','left',CC.mute,11); lab(g.L+band*nM+gapX,g.T-22,nar?'Related':'Related topics, not part of the 13','left',CC.mute,11) }
     title='HOW QUESTIONNAIRES ASK EACH EGRISS QUESTION';
     return {pos,deco,labels,title,legend,mode,cols:hc,zone:zb,below:1};
-  } else if(lay==='surveys'){ const g=small?{L:6,R:W-6,T:5,B:H-5}:{L:Math.min(270,W*.3),R:W-112,T:124,B:H-12};
-    const codes=_ixo.filter((c,i)=>i<Q.model.length||qs.some(d=>d.item===c)), nM=Q.model.length, gapX=small?4:18, colW=(g.R-g.L-gapX)/codes.length;
+  } else if(lay==='surveys'){ const g=small?{L:6,R:W-6,T:5,B:H-5}:nar?{L:116,R:W-8,T:34,B:H-8}:{L:Math.min(270,W*.3),R:W-150,T:124,B:H-12};
+    const codes=_ixo.filter((c,i)=>i<Q.model.length||qs.some(d=>d.item===c)), nM=Q.model.length, gapX=small?4:nar?8:18, colW=(g.R-g.L-gapX)/codes.length;
     const sv=[...new Set(qs.map(d=>d.s))].sort((a,b)=>(Q.surveys[a][0]+Q.surveys[a][1]).localeCompare(Q.surveys[b][0]+Q.surveys[b][1])), rowH=(g.B-g.T)/sv.length, rr=Math.min(rowH,colW)*(small?.3:.36), X=i=>g.L+colW*i+colW/2+(i>=nM?gapX:0);
     cols=codes.map((c,i)=>({code:c,i,x0:X(i)-colW/2,x1:X(i)+colW/2})); zone=g.T;
-    codes.forEach((c,i)=>{ const m=Q.model[i], col=m&&m.core?'#4cc3c9':'#8db8e3'; deco.push({t:'leader',pts:[[X(i),g.T-4],[X(i),g.B]],c:m&&m.core?'rgba(76,195,201,.34)':'rgba(141,184,227,.16)'});
-      if(!small){ lab(X(i),g.T-14,i<nM?i+1:'+','center',col,12); lab(X(i)+3,g.T-28,(m?m.title:(ITEM[c]||c)),'left',m&&m.core?'#4cc3c9':'#cfe0f4',11,true,-40) } });
+    codes.forEach((c,i)=>{ const m=Q.model[i], col=m&&m.core?CC.teal:CC.mute; deco.push({t:'leader',pts:[[X(i),g.T-4],[X(i),g.B]],c:m&&m.core?'rgba(76,195,201,.34)':'rgba(141,184,227,.16)'});
+      if(!small){ if(!nar||i%2===0||i>=nM) lab(X(i),g.T-14,i<nM?i+1:'abcdefgh'[i-nM],'center',col,nar?9:12); if(!nar) lab(X(i)+3,g.T-28,(m?m.title:(ITEM[c]||c)),'left',m&&m.core?CC.teal:CC.soft,11,true,-40) } });
     sv.forEach((s,r)=>{ const yc=g.T+rowH*r+rowH/2, mine=qs.filter(d=>d.s===s), has=codes.map(c=>mine.filter(d=>d.item===c)), on=has.map((b,i)=>b.length?i:-1).filter(i=>i>=0);
       if(on.length) deco.push({t:'leader',pts:[[X(on[0]),yc],[X(on[on.length-1]),yc]],c:'rgba(207,224,244,.45)'});
       has.forEach((b,i)=>{ const step=Math.min(rr*2+1,(colW-4)/Math.max(1,b.length)); b.forEach((d,k)=>put(d.id,{x:X(i)+(k-(b.length-1)/2)*step,y:yc,r:rr,k:'a_'+d.al})) });
       deco.push({t:'hit',reg:s,x0:0,x1:W,y0:yc-rowH/2,y1:yc+rowH/2});
-      if(!small){ const nm=Q.surveys[s][0]+' · '+Q.surveys[s][1], mx=Math.floor((g.L-22)/6.1); lab(g.L-14,yc,nm.length>mx?nm.slice(0,mx-1)+'…':nm,'right','#cfe0f4',11,true); lab(g.R+10,yc,new Set(mine.filter(d=>d.ord<nM).map(d=>d.item)).size+' of '+nM,'left','#b8c4d9',10.5) } });
-    if(!small) lab(g.L-14,g.T-14,'Questionnaire','right','#8db8e3',11);
+      if(!small){ const nm=Q.surveys[s][0]+' · '+Q.surveys[s][1], mx=Math.floor((g.L-22)/6.1); lab(g.L-14,yc,nm.length>mx?nm.slice(0,mx-1)+'…':nm,'right',CC.soft,11,true); if(!nar){ const nr=new Set(mine.filter(d=>d.ord>=nM).map(d=>d.item)).size; lab(g.R+10,yc,new Set(mine.filter(d=>d.ord<nM).map(d=>d.item)).size+' of '+nM+(nr?' · '+nr+' related':''),'left',CC.dim,11) } } });
+    if(!small&&!nar){ lab(g.L-14,g.T-14,'Questionnaire','right',CC.mute,11); lab(g.R+10,g.T-14,'a–'+'abcdefgh'[codes.length-nM-1]+' = related topics','left',CC.mute,11) }
     title='EVERY QUESTIONNAIRE AGAINST THE 13 EGRISS QUESTIONS';
   } else if(lay==='match'){ const g=small?{L:6,R:W-6,T:6,B:H-6}:{L:48,R:W-48,T:50,B:H-40};
-    const list=qs.slice().sort((a,b)=>AO.indexOf(a.al)-AO.indexOf(b.al)||(b.core-a.core)||a.ord-b.ord||a.s-b.s), N=list.length||1, cx=(g.L+g.R)/2, cy=(g.T+g.B)/2, rO=small?Math.min((g.R-g.L)/2,(g.B-g.T)/2)-1:Math.max(70,Math.min((g.R-g.L)/2-190,(g.B-g.T)/2-20)), rowsN=N<=130?3:5;
+    const list=qs.slice().sort((a,b)=>AO.indexOf(a.al)-AO.indexOf(b.al)||(b.core-a.core)||a.ord-b.ord||a.s-b.s), N=list.length||1, cx=(g.L+g.R)/2, cy=(g.T+g.B)/2, rO=small?Math.min((g.R-g.L)/2,(g.B-g.T)/2)-1:nar?Math.min((W-16)/2,(g.B-g.T)/2-8):Math.max(70,Math.min((g.R-g.L)/2-190,(g.B-g.T)/2-20)), rowsN=N<=130?3:5;
     let p=small?9:30, pts=[]; for(let guard=0;guard<200;guard++){ pts=[]; for(let q=0;q<rowsN;q++){ const rk=rO-(q+.5)*p; if(rk<p) continue; const nk=Math.floor(6.2832*rk/p); for(let m=0;m<nk;m++) pts.push([(m+.5+q*.33)/nk*6.2832,rk]) } if(pts.length>=N||p<=1.5) break; p-=.25 }
     pts.sort((a,b)=>a[0]-b[0]); list.forEach((d,k)=>{ const s=pts[Math.min(pts.length-1,Math.floor((k+.5)*pts.length/N))]; put(d.id,{x:cx+Math.sin(s[0])*s[1],y:cy-Math.cos(s[0])*s[1],r:p*.38,k:'a_'+d.al}) });
     const band0=rO-rowsN*p-3, band1=rO+3, rin=band0-(small?7:26); let acc=0;
     AO.forEach(a=>{ const sub=list.filter(d=>d.al===a), n=sub.length; if(!n) return; const f0=acc/N, f1=(acc+n)/N, nc=sub.filter(d=>d.core).length; 
-      if(nc) deco.push({t:'arc',cx,cy,r:rin,a0:f0,a1:f0+nc/N,c:'#4cc3c9',w:small?5:20,al:1}); if(n-nc) deco.push({t:'arc',cx,cy,r:rin,a0:f0+nc/N,a1:f1,c:'#8b98b3',w:small?5:20,al:.55});
-      acc+=n; deco.push({t:'sector',cx,cy,r0:band0,r1:band1,a0:f0+.004,a1:f1-.004,c:IXA[a]}); if(small) return;
+      if(nc) deco.push({t:'arc',cx,cy,r:rin,a0:f0,a1:f0+nc/N,c:CC.teal,w:small?5:20,al:1}); if(n-nc) deco.push({t:'arc',cx,cy,r:rin,a0:f0+nc/N,a1:f1,c:CC.grey,w:small?5:20,al:.55});
+      acc+=n; deco.push({t:'sector',cx,cy,r0:band0,r1:band1,a0:f0+.004,a1:f1-.004,c:IXA[a]}); if(small||nar) return;
       const mid=(f0+f1)/2*6.2832, side=Math.sin(mid)>=0?1:-1, bx=cx+Math.sin(mid)*band1, by2=cy-Math.cos(mid)*band1, ex=cx+Math.sin(mid)*(band1+16), ey=cy-Math.cos(mid)*(band1+16), hx=Math.max(90,Math.min(W-90,side>0?Math.max(ex+14,cx+band1+74):Math.min(ex-14,cx-band1-74)));
-      deco.push({t:'leader',pts:[[bx,by2],[ex,ey],[hx,ey]],c:IXA[a]}); lab(hx+side*8,ey-7,n,side>0?'left':'right',IXA[a],24); lab(hx+side*8,ey+14,IXAN[a],side>0?'left':'right','#cfe0f4',12); lab(hx+side*8,ey+29,nc+' on core questions',side>0?'left':'right','#b8c4d9',10.5) });
-    lab(cx,cy-(small?0:6),list.length,'center','#fff',small?15:(list.length>99?54:64),true); if(!small) lab(cx,cy+34,'questions','center','#cfe0f4',12);
+      deco.push({t:'leader',pts:[[bx,by2],[ex,ey],[hx,ey]],c:IXA[a]}); lab(hx+side*8,ey-7,n,side>0?'left':'right',IXA[a],24); lab(hx+side*8,ey+14,IXAN[a],side>0?'left':'right',CC.soft,12.5); lab(hx+side*8,ey+29,nc+' on core questions',side>0?'left':'right',CC.dim,11) });
+    lab(cx,cy-(small?0:6),list.length,'center','#fff',small?15:nar?36:(list.length>99?54:64),true); if(!small) lab(cx,cy+(nar?24:34),'questions','center',CC.soft,12.5);
     title='HOW CLOSE THE WORDING IS TO THE EGRISS QUESTION'; legend=legend.concat([['','Inner ring'],['iU','On one of the 5 core questions'],['fw4','On an optional question or related topic']]);
-  } else if(lay==='reasons'){ const g=small?{L:6,R:W-6,T:6,B:H-13}:{L:48,R:W-48,T:50,B:H-78};
-    const cs=rows.filter(d=>d.t==='c'), ks=[...new Set(cs.map(d=>d.cz))].sort((a,b)=>a-b), band=(g.R-g.L)/ks.length, per=small?5:8, cols=ks.map(k=>cs.filter(d=>d.cz===k).sort((a,b)=>b.n-a.n)), maxB=Math.max(1,...cols.map(c=>c.length)), pitch=Math.min(small?4.6:17,band*.7/per,(g.B-g.T-(small?4:30))/(Math.ceil(maxB/per)+per/2));
+  } else if(lay==='reasons'){ const g=small?{L:6,R:W-6,T:6,B:H-13}:nar?{L:6,R:W-6,T:40,B:H-30}:{L:48,R:W-48,T:50,B:H-78};
+    const cs=rows.filter(d=>d.t==='c'), ks=[...new Set(cs.map(d=>d.cz))].sort((a,b)=>a-b), band=(g.R-g.L)/ks.length, per=small?5:nar?6:8, cols=ks.map(k=>cs.filter(d=>d.cz===k).sort((a,b)=>b.n-a.n)), maxB=Math.max(1,...cols.map(c=>c.length)), pitch=Math.min(small?4.6:17,band*.7/per,(g.B-g.T-(small?4:30))/(Math.ceil(maxB/per)+per/2));
     cols.forEach((b,i)=>{ const xc=g.L+band*i+band/2, T1=sxTomb(b.length,per,pitch), k=ks[i];
       b.forEach((d,j)=>put(d.id,{x:xc+T1.pts[j][0],y:g.B-T1.pts[j][1],r:pitch*.37,k:'z'+k}));
       deco.push({t:'tomb',x:xc,w:per*pitch+4,B:g.B+1,Hb:T1.Hb,fill:0,c:CAUSE_COL[k]});
       if(small) lab(xc,g.B+7,b.length,'center',CAUSE_COL[k],7.5);
-      else { lab(xc,g.B-T1.H-13,b.length+' countries','center',CAUSE_COL[k],14); lab(xc,g.B+18,CZ[k],'center','#fff',12.5,true); lab(xc,g.B+36,fmt(b.reduce((s,d)=>s+d.n,0))+' people displaced','center','#b8c4d9',11) } });
-    title='REASONS FOR DISPLACEMENT · ONE CIRCLE PER COUNTRY WHERE THE REASON IS RECORDED'; mode='REASONS FOR DISPLACEMENT · '+new Set(cs.map(d=>d.iso)).size+' COUNTRIES'; legend=ks.map(k=>['z'+k,CZ[k]]);
+      else if(nar) lab(xc,g.B+14,b.length,'center',CAUSE_COL[k],12.5);
+      else { lab(xc,g.B-T1.H-13,b.length+' countries','center',CAUSE_COL[k],15); lab(xc,g.B+18,CZ[k],'center','#fff',12.5,true); lab(xc,g.B+36,fmt(b.reduce((s,d)=>s+d.n,0))+' people displaced','center',CC.dim,11) } });
+    title='REASONS FOR DISPLACEMENT'; mode=new Set(cs.map(d=>d.iso)).size+' COUNTRIES · ONE CIRCLE PER COUNTRY AND REASON'; legend=ks.map(k=>['z'+k,CZ[k]+' ('+cols[ks.indexOf(k)].length+')']);
   }
   return {pos,deco,labels,title,legend,mode,cols,zone};
 }
@@ -723,14 +725,14 @@ function ixThumbs(){ document.querySelectorAll('canvas[data-ix]').forEach(cv=>{ 
   ctx.clearRect(0,0,W,H); b.deco.forEach(d=>sxDeco(ctx,d,1)); b.pos.forEach(o=>sxDot(ctx,o.x,o.y,o.r,o.k,null,1)); sxLabels(ctx,b.labels,1) }) }
 const IX={lay:'items',P:null,hover:null,reg:null,raf:0,last:0,labA:0,b:null,W:0,H:0};
 function ixShell(){
-  const z=$('zoomer'), W=Math.max(320,Math.min(1000,window.innerWidth-72)), H=Math.max(380,Math.min(620,window.innerHeight-230)); IX.W=W; IX.H=H;
+  const z=$('zoomer'), [W,H]=chSize(IX.lay==='surveys'); IX.W=W; IX.H=H;
   const b=ixBuild(IX.lay,W,H,false), seg=(v,t)=>`<button type="button" class="chip" data-act="ixl" data-v="${v}" aria-pressed="${IX.lay===v}">${t}</button>`;
-  z.innerHTML=`<div class="zbox sxbox" role="dialog" aria-modal="true" aria-label="Identification questions, chart"><div class="zhead"><div><p class="eyebrow" style="color:${LAYER.idq.col}">${b.mode}</p><h2 style="font-size:15px;font-family:var(--mono);font-weight:500;letter-spacing:.06em;color:#8db8e3">${b.title}</h2></div><button type="button" class="x" data-act="zclose">Close ✕</button></div>
-    <div class="sxctl"><span>Show</span>${seg('items','By EGRISS question')}${seg('surveys','Questionnaire by question')}${seg('match','Wording match')}${seg('reasons','Reasons for displacement')}</div>
-    <div class="sxwrap" style="width:${W}px;height:${H}px"><canvas id="ixcv" role="img" aria-label="${esc(b.title)}"></canvas><div id="sxpv" hidden></div></div>
+  z.innerHTML=`<div class="zbox sxbox" role="dialog" aria-modal="true" aria-label="Identification questions, chart"><div class="zhead"><div><p class="eyebrow" style="color:${LAYER.idq.col}">${b.mode}</p><h2 style="font-size:15px;font-family:var(--mono);font-weight:500;letter-spacing:.06em;color:#8db8e3">${b.title}</h2></div><span class="zact">${act('ztab','',zTab?'Show as chart':'Show as table','chip',`aria-pressed="${zTab}"`)}<button type="button" class="x" data-act="zclose">Close ✕</button></span></div>
+    <div class="sxctl"><span>Show</span>${seg('items','By EGRISS question')}${seg('surveys','Coverage grid')}${seg('match','Wording match')}${seg('reasons','Reasons for displacement')}</div>
+    ${zTab?ixTable(W,H):`<div class="sxwrap" style="width:${W}px;height:${H}px"><canvas id="ixcv" role="img" aria-label="${esc(b.title)}"></canvas><div id="sxpv" hidden></div></div>`}
     <div class="zleg">${b.legend.map(l=>l[0]?`<span><i class="d" style="--c:${SXK[l[0]][0]}"></i>${l[1]}</span>`:`<b>${l[1]}</b>`).join('')}</div>
-    <p class="lnote">${IX.lay==='reasons'?'One circle is one country where that reason is recorded, largest first. Point at a circle for the country; select it to open its page.':'One circle is one identification question in one questionnaire. Point at a circle to read the question as printed; select it to open that questionnaire.'+(IX.lay==='surveys'?' Each line is one questionnaire, read across the 13 questions; a gap means the question is not asked. Point at a name at the top to read the EGRISS question.':IX.lay==='items'?' Point at a name under a column to read the EGRISS question.':'')}</p></div>`;
-  z.hidden=false; const cv=$('ixcv'); IX.ctx=sxCanvas(cv,W,H); IX.b=b; IX.labA=0; IX.hover=null; IX.reg=null; IX.col=null; IX.hk=null;
+    <p class="lnote">${IX.lay==='reasons'?'One circle is one country where that reason is recorded, largest first. Point at a circle to read it. Select it to open the country.':'One circle is one identification question in one questionnaire. Point at a circle to read it. Select it to open that questionnaire.'+(IX.lay==='surveys'?' Each line is one questionnaire, read across the 13 questions; a gap means the question is not asked. Point at a name or number at the top to read the EGRISS question.':IX.lay==='items'?' Point at a name or number under a column to read the EGRISS question.':'')}</p></div>`;
+  z.hidden=false; if(zTab) return; const cv=$('ixcv'); cv.addEventListener('pointerdown',e=>{ IX.touch=e.pointerType!=='mouse' }); IX.ctx=sxCanvas(cv,W,H); IX.b=b; IX.labA=0; IX.hover=null; IX.reg=null; IX.col=null; IX.hk=null;
   if(!IX.P) IX.P=ixRows().map(d=>({id:d.id,x:sxHash(d.id,1)*W,y:-30-sxHash(d.id,2)*H,r:2,a:0,k:'a_close',rate:.05+sxHash(d.id,13)*.07}));
   cv.addEventListener('mousemove',ixMove); cv.addEventListener('mouseleave',()=>{ IX.hover=null; IX.reg=null; IX.col=null; IX.hk=null; $('sxpv').hidden=true; cv.style.cursor='default' }); cv.addEventListener('click',ixTap);
   if(!IX.raf){ IX.last=performance.now(); IX.raf=requestAnimationFrame(ixTick) }
@@ -738,7 +740,7 @@ function ixShell(){
 function ixNearest(e){ const r=e.currentTarget.getBoundingClientRect(), x=e.clientX-r.left, y=e.clientY-r.top; let best=null, bd=1e9; for(const p of IX.P){ if(p.a<.12||!IX.b.pos.has(p.id)) continue; const d=Math.hypot(p.x-x,p.y-y); if(d<Math.max(8,p.r+4)&&d<bd){ bd=d; best=p } } return [best,x,y] }
 const cut=(t,n)=>t.length>n?t.slice(0,n-1)+'…':t;
 function ixQCard(code){ const i=_ixo.indexOf(code), m=Q.model.find(x=>x.code===code), qs=ixRows().filter(d=>d.t==='q'&&d.item===code), nS=new Set(qs.map(d=>d.s)).size, AO=['same','close','partial','different','other'];
-  return `<span class="exmeta" style="color:${m&&m.core?'#4cc3c9':'#8db8e3'}">${m?'EGRISS QUESTION '+(i+1)+' OF '+Q.model.length+(m.core?' · CORE':' · OPTIONAL'):'RELATED TOPIC · NOT ONE OF THE 13 QUESTIONS'}</span><b class="long">${esc(m?m.stem:(ITEM[code]||code))}</b>`
+  return `<span class="exmeta" style="color:${m&&m.core?CC.teal:CC.mute}">${m?'EGRISS QUESTION '+(i+1)+' OF '+Q.model.length+(m.core?' · CORE':' · OPTIONAL'):'RELATED TOPIC · NOT ONE OF THE 13 QUESTIONS'}</span><b class="long">${esc(m?m.stem:(ITEM[code]||code))}</b>`
     +(m&&m.opts&&m.opts.length?`<small>Answers: ${esc(cut(m.opts.join(' · '),230))}</small>`:'')+(m?`<small>Routing: ${esc(m.skip)}</small>`:'')
     +`<div class="chips2"><i>${nS} of ${Q.surveys.length} questionnaires ask it</i>${AO.map(a=>[a,qs.filter(d=>d.al===a).length]).filter(x=>x[1]).map(x=>`<i class="rc" style="background:${IXA[x[0]]};color:#0a1430">${x[1]} ${IXAN[x[0]].toLowerCase()}</i>`).join('')}</div>` }
 function ixMove(e){ const [p,x,y]=ixNearest(e), cv=e.currentTarget, pv=$('sxpv'), b=IX.b; let reg=null, col=null;
@@ -747,11 +749,12 @@ function ixMove(e){ const [p,x,y]=ixNearest(e), cv=e.currentTarget, pv=$('sxpv')
   IX.reg=reg; IX.col=col; cv.style.cursor=p?'pointer':'default';
   const head=!p&&col&&(b.below?y>b.zone:y<b.zone), key=p?'p'+p.id:head?'c'+col:null;
   if(!key){ IX.hover=null; IX.hk=null; pv.hidden=true; return } IX.hover=p?p.id:null;
-  if(IX.hk!==key||pv.hidden){ IX.hk=key; const d=p?ixRows()[p.id]:null;
-    pv.innerHTML=!p?ixQCard(col):d.t==='q'?`<span class="exmeta">${esc(Q.surveys[d.s][0])} · ${esc(Q.surveys[d.s][1])}</span><b class="long">${esc(d.text||'')}</b>${d.opt?`<small>Answers and routing: ${esc(cut(d.opt,200))}</small>`:''}${d.who?`<small>Asked of: ${esc(cut(d.who,140))}</small>`:''}<small>EGRISS question: ${esc(d.title)}${d.core?' (core)':''} · ${esc(d.qid)}</small><div class="chips2"><i class="rc" style="background:${IXA[d.al]};color:#0a1430">${IXAN[d.al]}</i></div><small class="hint">${d.iso?'Select the circle to open this questionnaire':'This questionnaire covers several countries and has no country page'}</small>`
-    :`<span class="exmeta">REASON FOR DISPLACEMENT</span><b>${esc(Q.ctry[d.iso].n)}</b><small>${esc(CZ[d.cz])}</small><div class="chips2"><i class="rc" style="background:${CAUSE_COL[d.cz]};color:#0a1430">${fmt(d.n)} people displaced</i></div><small class="hint">Select the circle to open the country</small>`; pv.hidden=false }
+  if(IX.hk!==key||pv.hidden){ IX.hk=key; IX.hkT=performance.now(); const d=p?ixRows()[p.id]:null;
+    pv.innerHTML=!p?ixQCard(col):d.t==='q'?`<span class="exmeta">${esc(Q.surveys[d.s][0])} · ${esc(Q.surveys[d.s][1])}</span><b class="long">${esc(d.text||'')}</b>${d.opt?`<small>Answers and routing: ${esc(cut(d.opt,200))}</small>`:''}${d.who?`<small>Asked of: ${esc(cut(d.who,140))}</small>`:''}<small>EGRISS question: ${esc(d.title)}${d.core?' (core)':''} · ${esc(d.qid)}</small><div class="chips2"><i class="rc" style="background:${IXA[d.al]};color:#0a1430">${IXAN[d.al]}</i></div><small class="hint">${d.iso?TCH()+' to open this questionnaire':'This questionnaire covers several countries and has no country page'}</small>`
+    :`<span class="exmeta">REASON FOR DISPLACEMENT</span><b>${esc(Q.ctry[d.iso].n)}</b><small>${esc(CZ[d.cz])}</small><div class="chips2"><i class="rc" style="background:${CAUSE_COL[d.cz]};color:#0a1430">${fmt(d.n)} people displaced</i></div><small class="hint">${TCH()} to open the country</small>`; pv.hidden=false }
   const ax=p?p.x:x, ay=p?p.y:y, pw=Math.min(p?330:380,IX.W-24), ph=pv.offsetHeight||150; let px=ax+20; if(px+pw>IX.W-8) px=ax-20-pw; pv.style.width=pw+'px'; pv.style.left=Math.max(8,px)+'px'; pv.style.top=Math.max(8,Math.min(IX.H-ph-8,b.below&&!p?ay-ph-14:ay-(p?50:-18)))+'px' }
-function ixTap(e){ const [p]=ixNearest(e); if(!p) return; const d=ixRows()[p.id]; if(!d.iso||!Q.ctry[d.iso]) return;
+function ixTap(e){ const [p]=ixNearest(e); if(!p||(IX.touch&&performance.now()-(IX.hkT||0)<700)) return; ixOpen(p.id) }
+function ixOpen(id){ const d=ixRows()[id]; if(!d.iso||!Q.ctry[d.iso]) return;
   zChart=null; layer='idq'; chosen=true; gSel=d.iso; fSrc=fInd=fEx=mapInd=null; czSel=null; fSv=d.t==='q'?d.s:null; if(d.t==='c'&&Q.cpts[d.iso]){ mapInd='__cause'; czSel=d.cz } level='country'; setHash(); render(); window.scrollTo({top:0,behavior:RM?'auto':'smooth'}) }
 function ixTick(now){ IX.raf=0; const z=$('zoomer'); if(z.hidden||zChart!=='ix'||!$('ixcv')) return; const dt=Math.min(64,now-IX.last); IX.last=now;
   const b=IX.b, ctx=IX.ctx, W=IX.W, H=IX.H, rows=ixRows(), dpr=Math.min(2,window.devicePixelRatio||1); IX.labA+=(1-IX.labA)*(RM?1:1-Math.pow(.9,dt/16.7));
@@ -765,53 +768,69 @@ function ixTick(now){ IX.raf=0; const z=$('zoomer'); if(z.hidden||zChart!=='ix'|
 
 /* ===== SDG values as the same kind of chart: one circle per value, in the colour of its goal ===== */
 let _gxr=null; const _gxi={};
+const CC={soft:'#cfe0f4',mute:'#8db8e3',dim:'#b8c4d9',grey:'#8b98b3',axis:'#5f7199',teal:'#4cc3c9'};
+const chSize=tall=>{ const W=Math.max(300,Math.min(1000,window.innerWidth-(window.innerWidth<600?56:72))), H=Math.max(380,Math.min(620,window.innerHeight-290)); return [W,W<560?Math.min(H,tall?520:380):H] };
+const TCH=()=>GX.touch||IX.touch?'Tap again':'Select the circle';
+const _glt={}; function gLite(g){ if(_glt[g]) return _glt[g]; const lum=c=>{ const f=v=>{ v/=255; return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4) }; return .2126*f(c.r)+.7152*f(c.g)+.0722*f(c.b) }; let c=d3.rgb(SDGC[g]); for(let i=0;i<14&&(lum(c)+.05)/.0635<4.6;i++) c=d3.rgb(d3.interpolateRgb(c,'#ffffff')(.1)); return _glt[g]=c.formatHex() }
+const SDGBAD=new Set(['1.2.1','2.1.1','2.1.2','2.2.1','2.2.2','8.5.2','10.3.1','11.1.1','16.1.3']);
+let zTab=false;
+const zTable=(W,H,head,rows)=>`<div class="ztab" style="width:${W}px;max-height:${H}px" tabindex="0" role="region" aria-label="The chart as a table"><table><thead><tr>${head.map(h=>`<th scope="col">${h}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+const zOpen=(a,id,t)=>`<button type="button" class="lk" data-act="${a}" data-v="${id}">${esc(t)}</button>`;
+function gxTable(W,H){ const R=gxRows().filter(d=>(!gGoal||d.g===gGoal)&&(GX.lay!=='gap'||(d.t==='c'&&d.h!=null)));
+  return zTable(W,H,['Goal','Indicator','Country','Value','Comparison group','Source'],R.map(d=>[d.g+' · '+esc(SDGN[d.g]||''),esc(d.code+' '+d.name),zOpen('gxo',d.id,Q.ctry[d.iso].n),d.t==='c'?esc(d.g1)+' '+d.r+'%':esc(d.val+(d.grp?' · '+d.grp:'')),d.t==='c'&&d.h!=null?esc(d.g2||'')+' '+d.h+'%':'',esc(d.from)+(d.t==='c'?' · calculated':' · published report')])) }
+function ixTable(W,H){ const R=ixRows();
+  return IX.lay==='reasons'?zTable(W,H,['Country','Reason for displacement','People displaced'],R.filter(d=>d.t==='c').sort((a,b)=>a.cz-b.cz||b.n-a.n).map(d=>[zOpen('ixo',d.id,Q.ctry[d.iso].n),esc(CZ[d.cz]),fmt(d.n)]))
+    :zTable(W,H,['Questionnaire','EGRISS question','Wording','Question as printed'],R.filter(d=>d.t==='q').sort((a,b)=>a.ord-b.ord||a.s-b.s).map(d=>{ const nm=Q.surveys[d.s][0]+' · '+Q.surveys[d.s][1]; return [d.iso?zOpen('ixo',d.id,nm):esc(nm),(d.ord<Q.model.length?(d.ord+1)+'. ':'Related: ')+esc(d.title),IXAN[d.al],esc(d.text||'')] })) }
+function sxTable(W,H){ const R=sxRows().filter(d=>SX.lay==='bars'||SX.yr==='all'||String(d.y)===String(SX.yr));
+  return zTable(W,H,['Year','Country','Example','Organisation','Led by','Recommendations'],R.map(d=>[d.y,esc(d.country||'Regional / global'),d.iso&&Q.ctry[d.iso]?zOpen('sxo',d.id,d.title||'Untitled example'):esc(d.title||'Untitled example'),esc(d.org||''),d.lead?'Institution':'Country',d.use?SXFW[d.fw]:'Not used or not known'])) }
 function gxImg(g){ if(_gxi[g]) return _gxi[g]; const im=new Image(); im.onload=()=>{ im.ok=1; if(typeof gxThumbs==='function'&&layer==='sdg'&&level==='world') gxThumbs() }; im.src='sdg/'+g+'.png'; return _gxi[g]=im }
-function gxRows(){ if(_gxr) return _gxr; Object.keys(SDGC).forEach(g=>{ SXK['g'+g]=[SDGC[g],1]; SXK['o'+g]=[SDGC[g],0] }); const o=[];
+function gxRows(){ if(_gxr) return _gxr; Object.keys(SDGC).forEach(g=>{ SXK['g'+g]=[gLite(g),1]; SXK['o'+g]=[gLite(g),0] }); SXK.gen1=[CC.soft,1]; SXK.gen0=[CC.soft,0]; const o=[];
   Q.sdg.forEach(d=>d.rows.forEach(r=>{ if(r.iso&&Q.ctry[r.iso]&&SDGC[goalOf(d.c)]) o.push({t:'c',code:d.c,g:goalOf(d.c),name:d.n,iso:r.iso,r:r.r,h:r.h,g1:r.g1,g2:r.g2,src:r.src,from:r.fam+(r.year?' · '+r.year:''),pri:!!d.pri}) }));
-  Object.keys(Q.ctry).forEach(k=>Q.ctry[k].rep.forEach(x=>{ if(SDGC[goalOf(x[0])]) o.push({t:'r',code:x[0],g:goalOf(x[0]),name:(Q.sdg.find(d=>d.c===x[0])||{}).n||SNN[x[0]]||'Indicator '+x[0],iso:k,val:x[1],grp:x[2],from:x[11]||x[3]}) }));
+  Object.keys(Q.ctry).forEach(k=>Q.ctry[k].rep.forEach(x=>{ if(SDGC[goalOf(x[0])]) o.push({t:'r',code:x[0],g:goalOf(x[0]),name:(Q.sdg.find(d=>d.c===x[0])||{}).n||SNN[x[0]]||'',iso:k,val:x[1],grp:x[2],from:x[11]||x[3]}) }));
   o.sort((a,b)=>a.g-b.g||a.code.localeCompare(b.code,undefined,{numeric:true})||(a.t<b.t?-1:a.t>b.t?1:0)||Q.ctry[a.iso].n.localeCompare(Q.ctry[b.iso].n)); o.forEach((d,i)=>d.id=i); return _gxr=o }
-const gxKey=d=>(d.t==='c'?'g':'o')+d.g;
+const gxKey=d=>(d.t==='c'?'g':'o')+d.g, gxBad=d=>SDGBAD.has(d.code);
 function gxBuild(lay,W,H,small){
   const rows=gxRows(), pos=new Map(), deco=[], labels=[], put=(id,o)=>pos.set(id,o), lab=(x,y,t,al,col,sz,sans,rot)=>labels.push({x,y,t:String(t),al:al||'center',col:col||'#fff',sz,sans:!!sans,rot:rot||0});
-  const gs=[...new Set(rows.map(d=>d.g))].sort((a,b)=>a-b), nC=rows.filter(d=>d.t==='c').length, nCtry=new Set(rows.map(d=>d.iso)).size;
-  let title='', mode=rows.length+' SDG VALUES · '+gs.length+' GOALS · '+nCtry+' COUNTRIES', legend=[['g6','Calculated from the survey file ('+nC+')'],['o6','Read from a published report ('+(rows.length-nC)+')']], note='';
-  if(lay==='goals'){ const g=small?{L:4,R:W-4,T:6,B:H-15}:{L:40,R:W-40,T:46,B:H-74};
-    const band=(g.R-g.L)/gs.length, per=small?2:5, cols=gs.map(k=>rows.filter(d=>d.g===k)), maxB=Math.max(1,...cols.map(c=>c.length)), pitch=Math.min(small?4.4:15,band*.8/per,(g.B-g.T-(small?4:26))/(Math.ceil(maxB/per)+per/2));
+  const nar=!small&&W<560, gs=[...new Set(rows.map(d=>d.g))].sort((a,b)=>a-b), nC=rows.filter(d=>d.t==='c').length, nCtry=new Set(rows.map(d=>d.iso)).size;
+  let title='', mode=rows.length+' SDG VALUES · '+gs.length+' GOALS · '+nCtry+' COUNTRIES', legend=[['','Colour = the goal'],['gen1','Calculated from the survey file ('+nC+')'],['gen0','From a published report ('+(rows.length-nC)+')']], note='';
+  if(lay==='goals'){ const g=small?{L:4,R:W-4,T:6,B:H-15}:nar?{L:6,R:W-6,T:40,B:H-50}:{L:40,R:W-40,T:46,B:H-74};
+    const band=(g.R-g.L)/gs.length, per=small?2:5, cols=gs.map(k=>rows.filter(d=>d.g===k)), maxB=Math.max(1,...cols.map(c=>c.length)), pitch=Math.min(small?4.4:24,band*.8/per,(g.B-g.T-(small?4:26))/(Math.ceil(maxB/per)+per/2));
     cols.forEach((b,i)=>{ const xc=g.L+band*i+band/2, T1=sxTomb(b.length,per,pitch), k=gs[i];
       b.forEach((d,j)=>put(d.id,{x:xc+T1.pts[j][0],y:g.B-T1.pts[j][1],r:pitch*.37,k:gxKey(d)}));
-      deco.push({t:'tomb',x:xc,w:per*pitch+4,B:g.B+1,Hb:T1.Hb,fill:0,c:SDGC[k]}); deco.push({t:'hitx',reg:k,x0:xc-band/2,x1:xc+band/2});
-      if(small) lab(xc,g.B+8,k,'center',SDGC[k],8);
-      else { lab(xc,g.B-T1.H-12,b.length,'center','#fff',13); const s=Math.min(46,band-10); if(SDGI.has(k)) deco.push({t:'img',g:k,x:xc-s/2,y:g.B+10,s}); else lab(xc,g.B+30,k,'center',SDGC[k],20); } });
-    title='VALUES UNDER EACH GOAL'; note='Point at a goal to pick it out.';
-  } else if(lay==='countries'){ const g=small?{L:6,R:W-6,T:5,B:H-5}:{L:40,R:W-40,T:40,B:H-20};
-    const cs=[...new Set(rows.map(d=>d.iso))].map(k=>[k,rows.filter(d=>d.iso===k)]).sort((a,b)=>b[1].length-a[1].length||Q.ctry[a[0]].n.localeCompare(Q.ctry[b[0]].n)), rowH=(g.B-g.T)/cs.length, x0=g.L+(small?0:190), maxN=Math.max(1,...cs.map(c=>c[1].length)), pitch=Math.min(17,rowH*.86,(g.R-(small?2:44)-x0)/maxN);
+      deco.push({t:'tomb',x:xc,w:per*pitch+4,B:g.B+1,Hb:T1.Hb,fill:0,c:gLite(k)}); deco.push({t:'hitx',reg:k,x0:xc-band/2,x1:xc+band/2});
+      if(small) lab(xc,g.B+8,k,'center',gLite(k),8);
+      else { lab(xc,g.B-T1.H-12,b.length,'center','#fff',12.5); const s=Math.min(46,band-(nar?3:10)); if(SDGI.has(k)) deco.push({t:'img',g:k,x:xc-s/2,y:g.B+10,s}); else lab(xc,g.B+30,k,'center',gLite(k),20); } });
+    title='NUMBER OF VALUES PER GOAL'; note='Point at a goal to pick it out.';
+  } else if(lay==='countries'){ const g=small?{L:6,R:W-6,T:5,B:H-5}:nar?{L:4,R:W-4,T:30,B:H-10}:{L:40,R:W-40,T:40,B:H-20};
+    const cs=[...new Set(rows.map(d=>d.iso))].map(k=>[k,rows.filter(d=>d.iso===k)]).sort((a,b)=>b[1].length-a[1].length||Q.ctry[a[0]].n.localeCompare(Q.ctry[b[0]].n)), rowH=(g.B-g.T)/cs.length, x0=g.L+(small?0:nar?112:190), maxN=Math.max(1,...cs.map(c=>c[1].length)), pitch=Math.min(17,rowH*.86,(g.R-(small?2:nar?24:44)-x0)/maxN);
     cs.forEach(([k,b],i)=>{ const yc=g.T+rowH*i+rowH/2;
       b.forEach((d,j)=>put(d.id,{x:x0+(j+.5)*pitch,y:yc,r:pitch*.38,k:gxKey(d)}));
       deco.push({t:'pill',x:x0-2,y:yc-pitch/2-1,w:b.length*pitch+4+pitch/2,h:pitch+2,c:'#7aa7e6'}); deco.push({t:'hit',reg:k,x0:0,x1:W,y0:yc-rowH/2,y1:yc+rowH/2});
-      if(!small){ lab(x0-12,yc,Q.ctry[k].n,'right','#cfe0f4',11.5,true); lab(x0+b.length*pitch+12,yc,b.length,'left','#fff',11) } });
+      if(!small){ lab(x0-(nar?6:12),yc,nar?cut(Q.ctry[k].n,17):Q.ctry[k].n,'right',CC.soft,11,true); lab(x0+b.length*pitch+12,yc,b.length,'left','#fff',11) } });
     title='VALUES IN EACH COUNTRY · IN THE ORDER OF THE GOALS'; note='Point at a row to pick out one country.';
   } else if(lay==='wheel'){ const g=small?{L:6,R:W-6,T:6,B:H-6}:{L:48,R:W-48,T:50,B:H-40};
-    const N=rows.length||1, cx=(g.L+g.R)/2, cy=(g.T+g.B)/2, rO=small?Math.min((g.R-g.L)/2,(g.B-g.T)/2)-1:Math.max(70,Math.min((g.R-g.L)/2-200,(g.B-g.T)/2-20)), rowsN=3;
+    const N=rows.length||1, cx=(g.L+g.R)/2, cy=(g.T+g.B)/2, rO=small?Math.min((g.R-g.L)/2,(g.B-g.T)/2)-1:nar?Math.min((W-16)/2,(g.B-g.T)/2-8):Math.max(70,Math.min((g.R-g.L)/2-200,(g.B-g.T)/2-20)), rowsN=3;
     let p=small?9:30, pts=[]; for(let guard=0;guard<200;guard++){ pts=[]; for(let q=0;q<rowsN;q++){ const rk=rO-(q+.5)*p; if(rk<p) continue; const nk=Math.floor(6.2832*rk/p); for(let m=0;m<nk;m++) pts.push([(m+.5+q*.33)/nk*6.2832,rk]) } if(pts.length>=N||p<=1.5) break; p-=.25 }
     pts.sort((a,b)=>a[0]-b[0]); rows.forEach((d,k)=>{ const s=pts[Math.min(pts.length-1,Math.floor((k+.5)*pts.length/N))]; put(d.id,{x:cx+Math.sin(s[0])*s[1],y:cy-Math.cos(s[0])*s[1],r:p*.38,k:gxKey(d)}) });
     const band0=rO-rowsN*p-3, band1=rO+3, rin=band0-(small?6:22); let acc=0; const LB=[];
     gs.forEach(k=>{ const sub=rows.filter(d=>d.g===k), n=sub.length, f0=acc/N, f1=(acc+n)/N, nc=sub.filter(d=>d.t==='c').length; acc+=n;
-      deco.push({t:'arc',cx,cy,r:rin,a0:f0,a1:f1,c:SDGC[k],w:small?5:18,al:.3}); if(nc) deco.push({t:'arc',cx,cy,r:rin,a0:f0,a1:f0+nc/N,c:SDGC[k],w:small?5:18,al:1});
-      deco.push({t:'sector',cx,cy,r0:band0,r1:band1,a0:f0+.003,a1:f1-.003,c:SDGC[k],reg:k}); if(small) return;
+      deco.push({t:'arc',cx,cy,r:rin,a0:f0,a1:f1,c:gLite(k),w:small?5:18,al:.3}); if(nc) deco.push({t:'arc',cx,cy,r:rin,a0:f0,a1:f0+nc/N,c:gLite(k),w:small?5:18,al:1});
+      deco.push({t:'sector',cx,cy,r0:band0,r1:band1,a0:f0+.003,a1:f1-.003,c:gLite(k),reg:k}); if(nar) legend.push(['g'+k,'Goal '+k+' · '+(SDGN[k]||'')+' ('+n+')']); if(small||nar) return;
       const mid=(f0+f1)/2*6.2832, side=Math.sin(mid)>=0?1:-1, bx=cx+Math.sin(mid)*band1, by2=cy-Math.cos(mid)*band1, ex=cx+Math.sin(mid)*(band1+16), ey0=cy-Math.cos(mid)*(band1+16), hx=Math.max(120,Math.min(W-120,side>0?Math.max(ex+14,cx+band1+60):Math.min(ex-14,cx-band1-60))), e0=ey0; LB.push({k,n,side,bx,by2,ex,e0,hx,y:e0}) });
     [1,-1].forEach(sd=>{ const L=LB.filter(l=>l.side===sd).sort((a,b)=>a.y-b.y), gap=34; L.forEach((l,i)=>{ l.y=Math.max(l.y,i?L[i-1].y+gap:16) }); for(let i=L.length-1;i>=0;i--) L[i].y=Math.min(L[i].y,i===L.length-1?H-24:L[i+1].y-gap);
-      L.forEach(l=>{ deco.push({t:'leader',pts:[[l.bx,l.by2],[l.ex,l.e0],[l.hx,l.y]],c:SDGC[l.k]}); lab(l.hx+sd*8,l.y-6,l.n+'  ·  Goal '+l.k,sd>0?'left':'right',SDGC[l.k],15); lab(l.hx+sd*8,l.y+11,SDGN[l.k]||'',sd>0?'left':'right','#cfe0f4',11.5,true) }) });
-    lab(cx,cy-(small?0:6),rows.length,'center','#fff',small?15:60,true); if(!small) lab(cx,cy+34,'values','center','#cfe0f4',12);
-    title='THE GOALS THE VALUES FALL UNDER'; legend=legend.concat([['','Inner ring'],['g6','Bright: calculated · faint: from reports']]); note='';
-  } else if(lay==='gap'){ const pr=rows.filter(d=>d.t==='c'&&d.h!=null), S=small?Math.min(W-12,H-12):Math.min(W-220,H-110), x0=(W-S)/2+(small?0:10), y1=small?(H+S)/2:H-62, X=v=>x0+v/100*S, Y=v=>y1-v/100*S;
-    const seen={}; pr.forEach(d=>{ const key=Math.round(d.h/2)+'|'+Math.round(d.r/2), n=seen[key]=(seen[key]||0)+1; put(d.id,{x:X(d.h)+(n-1)*(small?2:5),y:Y(d.r)-(n-1)*(small?2:5),r:small?2.6:6.5,k:gxKey(d)}) });
-    deco.push({t:'leader',pts:[[X(0),Y(0)],[X(100),Y(0)]],c:'#5f7199'}); deco.push({t:'leader',pts:[[X(0),Y(0)],[X(0),Y(100)]],c:'#5f7199'}); deco.push({t:'leader',pts:[[X(0),Y(0)],[X(100),Y(100)]],c:'#8db8e3',dash:1});
+      L.forEach(l=>{ deco.push({t:'leader',pts:[[l.bx,l.by2],[l.ex,l.e0],[l.hx,l.y]],c:gLite(l.k)}); lab(l.hx+sd*8,l.y-6,l.n+'  ·  Goal '+l.k,sd>0?'left':'right',gLite(l.k),15); lab(l.hx+sd*8,l.y+11,SDGN[l.k]||'',sd>0?'left':'right',CC.soft,11,true) }) });
+    lab(cx,cy-(small?0:6),rows.length,'center','#fff',small?15:nar?40:60,true); if(!small) lab(cx,cy+(nar?24:34),'values','center',CC.soft,12.5);
+    title='VALUES BY GOAL'; legend=legend.concat([['','Inner ring'],['gen1','Bright: calculated · faint: from a published report']]); note='';
+  } else if(lay==='gap'){ const pr=rows.filter(d=>d.t==='c'&&d.h!=null), S=small?Math.min(W-12,H-12):nar?Math.min(W-64,H-120):Math.min(W-220,H-110), x0=(W-S)/2+(small?0:nar?18:10), y1=small?(H+S)/2:H-62, X=v=>x0+v/100*S, Y=v=>y1-v/100*S;
+    const seen={}; pr.forEach(d=>{ const key=Math.round(d.h/2)+'|'+Math.round(d.r/2), n=seen[key]=(seen[key]||0)+1; put(d.id,{x:X(d.h)+(n-1)*(small?2:5),y:Y(d.r)-(n-1)*(small?2:5),r:small?2.6:nar?5:6.5,k:gxKey(d)+(gxBad(d)?'m':'')}) });
+    deco.push({t:'leader',pts:[[X(0),Y(0)],[X(100),Y(0)]],c:CC.axis}); deco.push({t:'leader',pts:[[X(0),Y(0)],[X(0),Y(100)]],c:CC.axis}); deco.push({t:'leader',pts:[[X(0),Y(0)],[X(100),Y(100)]],c:CC.mute,dash:1});
     if(!small){ [25,50,75,100].forEach(v=>{ deco.push({t:'leader',pts:[[X(v),Y(0)],[X(v),Y(100)]],c:'rgba(141,184,227,.22)'}); deco.push({t:'leader',pts:[[X(0),Y(v)],[X(100),Y(v)]],c:'rgba(141,184,227,.22)'}) });
-      [0,25,50,75,100].forEach(v=>{ lab(X(v),y1+14,v+'%','center','#b8c4d9',11); lab(x0-10,Y(v),v+'%','right','#b8c4d9',11) });
-      lab(X(50),y1+36,'Host community or comparison group','center','#cfe0f4',12.5,true); lab(x0-52,Y(50),'Refugees, IDPs or stateless people','center','#cfe0f4',12.5,true,-90);
-      lab(X(100)+10,Y(100)+2,'Equal','left','#8db8e3',11); lab(X(22),Y(90),'Higher among displaced people','center','#8b98b3',11,true); lab(X(78),Y(8),'Higher in the comparison group','center','#8b98b3',11,true) }
-    title='DISPLACED PEOPLE AGAINST THE COMPARISON GROUP'; mode=pr.length+' VALUES WITH A COMPARISON GROUP · '+new Set(pr.map(d=>d.iso)).size+' COUNTRIES'; legend=gs.filter(k=>pr.some(d=>d.g===k)).map(k=>['g'+k,'Goal '+k+' · '+(SDGN[k]||'')]);
-    note='Each circle is one indicator in one survey: across is the comparison group, up is the displaced group. Higher is not always better, for example for food insecurity.';
+      [0,25,50,75,100].forEach(v=>{ lab(X(v),y1+14,v+'%','center',CC.dim,11); lab(x0-10,Y(v),v+'%','right',CC.dim,11) });
+      if(nar){ lab(X(50),y1+34,'Host community (comparison group) →','center',CC.soft,11,true); lab(x0,Y(100)-16,'↑ Displaced people','left',CC.soft,11,true) }
+      else { lab(X(50),y1+36,'Host community (comparison group)','center',CC.soft,12.5,true); lab(x0-52,Y(50),'Refugees, IDPs or stateless people','center',CC.soft,12.5,true,-90);
+        lab(X(100)+10,Y(100)+2,'Equal','left',CC.mute,11); lab(X(22),Y(90),'Higher among displaced people','center',CC.grey,11,true); lab(X(78),Y(8),'Higher in the host community','center',CC.grey,11,true) } }
+    title='DISPLACED PEOPLE COMPARED WITH THE HOST COMMUNITY'; mode=pr.length+' VALUES WITH A COMPARISON GROUP · '+new Set(pr.map(d=>d.iso)).size+' COUNTRIES'; legend=gs.filter(k=>pr.some(d=>d.g===k)).map(k=>['g'+k,'Goal '+k+' · '+(SDGN[k]||'')]).concat([['gen1m','White outline: a higher value is worse ('+[...new Set(pr.filter(gxBad).map(d=>d.name.toLowerCase()))].join(', ')+')']]);
+    note='Across is the host community or the survey\'s comparison group; up is the displaced group. For circles with a white outline, being above the line means displaced people are worse off.';
   }
   return {pos,deco,labels,title,legend,mode,note};
 }
@@ -822,30 +841,31 @@ function gxThumbs(){ document.querySelectorAll('canvas[data-gx]').forEach(cv=>{ 
   ctx.clearRect(0,0,W,H); b.deco.forEach(d=>gxDeco(ctx,d,1)); b.pos.forEach((o,id)=>sxDot(ctx,o.x,o.y,o.r,o.k,null,gGoal&&gxRows()[id].g!==gGoal?.2:1)); sxLabels(ctx,b.labels,1) }) }
 const GX={lay:'goals',P:null,hover:null,reg:null,raf:0,last:0,labA:0,b:null,W:0,H:0};
 function gxShell(){
-  const z=$('zoomer'), W=Math.max(320,Math.min(1000,window.innerWidth-72)), H=Math.max(380,Math.min(620,window.innerHeight-250)); GX.W=W; GX.H=H;
+  const z=$('zoomer'), [W,H]=chSize(GX.lay==='countries'); GX.W=W; GX.H=H;
   const b=gxBuild(GX.lay,W,H,false), seg=(v,t)=>`<button type="button" class="chip" data-act="gxl" data-v="${v}" aria-pressed="${GX.lay===v}">${t}</button>`;
-  z.innerHTML=`<div class="zbox sxbox" role="dialog" aria-modal="true" aria-label="SDG values, chart"><div class="zhead"><div><p class="eyebrow" style="color:${LAYER.sdg.col}">${b.mode}</p><h2 style="font-size:15px;font-family:var(--mono);font-weight:500;letter-spacing:.06em;color:#8db8e3">${b.title}</h2></div><button type="button" class="x" data-act="zclose">Close ✕</button></div>
-    <div class="sxctl"><span>Show</span>${seg('goals','By goal')}${seg('countries','By country')}${seg('wheel','Goal wheel')}${seg('gap','Displaced against host')}${gGoal?`<span style="margin-left:14px">Goal ${gGoal} picked out</span>${act('goal',gGoal,'Show all goals','chip')}`:''}</div>
-    <div class="sxwrap" style="width:${W}px;height:${H}px"><canvas id="gxcv" role="img" aria-label="${esc(b.title)}"></canvas><div id="sxpv" hidden></div></div>
-    <div class="zleg">${b.legend.map(l=>l[0]?`<span><i class="d ${SXK[l[0]][1]?'':'ring'}" style="--c:${GX.lay==='gap'?SXK[l[0]][0]:'#cfe0f4'}"></i>${l[1]}</span>`:`<b>${l[1]}</b>`).join('')}${GX.lay==='gap'?'':'<span>Colour = the goal</span>'}</div>
-    <p class="lnote">One circle is one value for one country. Point at a circle to read it; select it to open the country. ${b.note}</p></div>`;
-  z.hidden=false; const cv=$('gxcv'); GX.ctx=sxCanvas(cv,W,H); GX.b=b; GX.labA=0; GX.hover=null; GX.reg=null;
+  z.innerHTML=`<div class="zbox sxbox" role="dialog" aria-modal="true" aria-label="SDG values, chart"><div class="zhead"><div><p class="eyebrow" style="color:${LAYER.sdg.col}">${b.mode}</p><h2 style="font-size:15px;font-family:var(--mono);font-weight:500;letter-spacing:.06em;color:#8db8e3">${b.title}</h2></div><span class="zact">${act('ztab','',zTab?'Show as chart':'Show as table','chip',`aria-pressed="${zTab}"`)}<button type="button" class="x" data-act="zclose">Close ✕</button></span></div>
+    <div class="sxctl"><span>Show</span>${seg('goals','By goal')}${seg('countries','By country')}${seg('wheel','Goal wheel')}${seg('gap','Displaced and host')}${gGoal?`<span style="margin-left:14px">Goal ${gGoal} picked out</span>${act('goal',gGoal,'Show all goals','chip')}`:''}</div>
+    ${zTab?gxTable(W,H):`<div class="sxwrap" style="width:${W}px;height:${H}px"><canvas id="gxcv" role="img" aria-label="${esc(b.title)}"></canvas><div id="sxpv" hidden></div></div>`}
+    <div class="zleg">${b.legend.map(l=>l[0]?`<span><i class="d ${SXK[l[0].replace(/m$/,'')][1]?'':'ring'}" style="--c:${SXK[l[0].replace(/m$/,'')][0]};${l[0].endsWith('m')?'outline:1.5px solid #fff':''}"></i>${l[1]}</span>`:`<b>${l[1]}</b>`).join('')}</div>
+    <p class="lnote">One circle is one value for one country. Point at a circle to read it. Select it to open the country. ${b.note}</p></div>`;
+  z.hidden=false; if(zTab) return; const cv=$('gxcv'); cv.addEventListener('pointerdown',e=>{ GX.touch=e.pointerType!=='mouse' }); GX.ctx=sxCanvas(cv,W,H); GX.b=b; GX.labA=0; GX.hover=null; GX.reg=null;
   if(!GX.P) GX.P=gxRows().map(d=>({id:d.id,x:sxHash(d.id,1)*W,y:-30-sxHash(d.id,2)*H,r:2,a:0,k:gxKey(d),rate:.05+sxHash(d.id,13)*.07}));
   cv.addEventListener('mousemove',gxMove); cv.addEventListener('mouseleave',()=>{ GX.hover=null; GX.reg=null; $('sxpv').hidden=true; cv.style.cursor='default' }); cv.addEventListener('click',gxTap);
   if(!GX.raf){ GX.last=performance.now(); GX.raf=requestAnimationFrame(gxTick) }
 }
-function gxNearest(e){ const r=e.currentTarget.getBoundingClientRect(), x=e.clientX-r.left, y=e.clientY-r.top; let best=null, bd=1e9; for(const p of GX.P){ if(p.a<.15||!GX.b.pos.has(p.id)) continue; const d=Math.hypot(p.x-x,p.y-y); if(d<Math.max(8,p.r+4)&&d<bd){ bd=d; best=p } } return [best,x,y] }
+function gxNearest(e){ const r=e.currentTarget.getBoundingClientRect(), x=e.clientX-r.left, y=e.clientY-r.top; let best=null, bd=1e9; for(const p of GX.P){ if(p.a<.12||!GX.b.pos.has(p.id)) continue; const d=Math.hypot(p.x-x,p.y-y); if(d<Math.max(8,p.r+4)&&d<bd){ bd=d; best=p } } return [best,x,y] }
 function gxMove(e){ const [p,x,y]=gxNearest(e), cv=e.currentTarget, pv=$('sxpv'), b=GX.b; let reg=null;
   if(GX.lay==='countries'){ const h=b.deco.find(d=>d.t==='hit'&&y>=d.y0&&y<d.y1); if(h) reg=h.reg } else if(GX.lay==='goals'){ const h=b.deco.find(d=>d.t==='hitx'&&x>=d.x0&&x<d.x1); if(h) reg=h.reg }
   GX.reg=reg; cv.style.cursor=p?'pointer':'default';
-  if(!p){ GX.hover=null; pv.hidden=true; return } if(GX.hover===p.id&&!pv.hidden) return; GX.hover=p.id; const d=gxRows()[p.id], col=SDGC[d.g];
+  if(!p){ GX.hover=null; pv.hidden=true; return } if(GX.hover===p.id&&!pv.hidden) return; GX.hover=p.id; GX.hkT=performance.now(); const d=gxRows()[p.id], col=gLite(d.g);
   pv.innerHTML=`<span class="exmeta" style="color:${col}">GOAL ${d.g} · ${esc(SDGN[d.g]||'')}</span><b>${esc(Q.ctry[d.iso].n)} · ${esc(d.code)} ${esc(d.name)}</b>`
-    +(d.t==='c'?`<div class="chips2"><i class="rc" style="background:${col};color:#0a1430">${esc(d.g1)} ${d.r}%</i>${d.h!=null?`<i>${esc(d.g2||'Comparison group')} ${d.h}%</i>`:''}</div><small>${esc(d.from)} · calculated from the survey file</small>`
-      :`<div class="chips2"><i class="rc" style="background:none;box-shadow:inset 0 0 0 1.5px ${col};color:#fff">${esc(d.val)}${d.grp?' · '+esc(d.grp):''}</i></div><small>${esc(d.from)} · read from the published report</small>`)
-    +`<small class="hint">Select the circle to open ${esc(Q.ctry[d.iso].n)}</small>`;
+    +(d.t==='c'?`<div class="chips2"><i class="rc" style="background:${col};color:#0a1430">${esc(d.g1)} ${d.r}%</i>${d.h!=null?`<i>${esc(d.g2||'Comparison group')} ${d.h}%</i>`:''}</div>${gxBad(d)?'<small>For this indicator a higher value is worse.</small>':''}<small>${esc(d.from)} · calculated from the survey file</small>`
+      :`<div class="chips2"><i class="rc" style="background:none;box-shadow:inset 0 0 0 1.5px ${col};color:#fff">${esc(d.val)}${d.grp?' · '+esc(d.grp):''}</i></div><small>${esc(d.from)} · from a published report</small>`)
+    +`<small class="hint">${TCH()} to open ${esc(Q.ctry[d.iso].n)}</small>`;
   pv.hidden=false; const pw=Math.min(320,GX.W-24), ph=pv.offsetHeight||150; let px=p.x+20; if(px+pw>GX.W-8) px=p.x-20-pw; pv.style.width=pw+'px'; pv.style.left=Math.max(8,px)+'px'; pv.style.top=Math.max(8,Math.min(GX.H-ph-8,p.y-50))+'px' }
-function gxTap(e){ const [p]=gxNearest(e); if(!p) return; const d=gxRows()[p.id]; if(!Q.ctry[d.iso]) return;
-  zChart=null; layer='sdg'; chosen=true; gSel=d.iso; fEx=fSv=null; czSel=null; mapInd=null; mapG=0; fSrc=d.t==='c'?d.src:null; fInd=d.t==='c'?d.code:null; if(d.t==='c'&&Q.sub.val[d.iso]&&Q.sub.val[d.iso][d.code]) mapInd=d.code; level='country'; setHash(); render(); window.scrollTo({top:0,behavior:RM?'auto':'smooth'}) }
+function gxTap(e){ const [p]=gxNearest(e); if(!p||(GX.touch&&performance.now()-(GX.hkT||0)<700)) return; gxOpen(p.id) }
+function gxOpen(id){ const d=gxRows()[id]; if(!Q.ctry[d.iso]) return;
+  zChart=null; layer='sdg'; chosen=true; gSel=d.iso; fEx=fSv=null; czSel=null; mapInd=null; mapG=0; fSrc=d.t==='c'?d.src:null; fInd=d.t==='c'?d.code:null; if(d.t==='c'&&Q.sub.val[d.iso]&&Q.sub.val[d.iso][d.code]) mapInd=d.code; level='country'; setHash(); render(); const rc=d.t==='r'&&document.querySelector('.rcard'); if(rc) rc.scrollIntoView({block:'center'}); else window.scrollTo({top:0,behavior:RM?'auto':'smooth'}) }
 function gxTick(now){ GX.raf=0; const z=$('zoomer'); if(z.hidden||zChart!=='gx'||!$('gxcv')) return; const dt=Math.min(64,now-GX.last); GX.last=now;
   const b=GX.b, ctx=GX.ctx, W=GX.W, H=GX.H, rows=gxRows(), dpr=Math.min(2,window.devicePixelRatio||1); GX.labA+=(1-GX.labA)*(RM?1:1-Math.pow(.9,dt/16.7));
   ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,W,H); b.deco.forEach(d=>gxDeco(ctx,d,GX.labA));
@@ -866,10 +886,10 @@ function sdgCharts(big){
   const pv=(lay,t)=>['gx:'+lay,t,'',`<button type="button" class="sxt" data-act="zc" data-v="gx:${lay}" aria-label="Open the interactive chart"><canvas data-gx="${lay}"></canvas></button>`];
   if(big) return [    ['ctry','Goals covered, country by country','One ring per country, split by goal. The number is how many values the country has.',`<div class="wheels">${list.map(([k,n,c])=>`<button type="button" class="whb ${gGoal&&!n[gGoal]?'dim':''}" data-act="pick" data-v="${k}" aria-label="${esc(Q.ctry[k].n)}: ${c} values" ${tipA(Q.ctry[k].n,c+(c===1?' value':' values')+' · '+Object.keys(n).map(Number).sort((a,b)=>a-b).map(g=>'goal '+g+(n[g]>1?' ×'+n[g]:'')).join(', ')+'<br>Select to open the country.')}>${wheelSvg(n,big?62:34,c)}<small>${esc(Q.ctry[k].n)}</small></button>`).join('')}</div>`]
   ];
-  return [pv('goals','By goal'),pv('countries','By country'),pv('wheel','Goal wheel'),pv('gap','Displaced against host')].concat([['ctry','Goals covered, country by country','',`<div class="wheels">${list.map(([k,n,c])=>`<button type="button" class="whb ${gGoal&&!n[gGoal]?'dim':''}" data-act="pick" data-v="${k}" aria-label="${esc(Q.ctry[k].n)}: ${c} values" ${tipA(Q.ctry[k].n,c+(c===1?' value':' values')+'<br>Select to open the country.')}>${wheelSvg(n,34,c)}<small>${esc(Q.ctry[k].n)}</small></button>`).join('')}</div>`]]);
+  return [pv('goals','By goal'),pv('countries','By country'),pv('wheel','Goal wheel'),pv('gap','Displaced and host')].concat([['ctry','Goals covered, country by country','',`<div class="wheels">${list.map(([k,n,c])=>`<button type="button" class="whb ${gGoal&&!n[gGoal]?'dim':''}" data-act="pick" data-v="${k}" aria-label="${esc(Q.ctry[k].n)}: ${c} values" ${tipA(Q.ctry[k].n,c+(c===1?' value':' values')+'<br>Select to open the country.')}>${wheelSvg(n,34,c)}<small>${esc(Q.ctry[k].n)}</small></button>`).join('')}</div>`]]);
 }
 function stripHtml(){ const pv=(lay)=>`<button type="button" class="sxt" data-act="zc" data-v="ix:${lay}" aria-label="Open the interactive chart"><canvas data-ix="${lay}"></canvas></button>`;
-  const cs=layer==='gain'?gainCharts(false):layer==='sdg'?sdgCharts(false):[['ix:items','By EGRISS question','',pv('items')],['ix:surveys','Questionnaire by question','',pv('surveys')],['ix:match','Wording match','',pv('match')],['ix:reasons','Reasons for displacement','',pv('reasons')]];
+  const cs=layer==='gain'?gainCharts(false):layer==='sdg'?sdgCharts(false):[['ix:items','By EGRISS question','',pv('items')],['ix:surveys','Coverage grid','',pv('surveys')],['ix:match','Wording match','',pv('match')],['ix:reasons','Reasons for displacement','',pv('reasons')]];
   return cs.map(c=>`<div class="gtile t-${c[0].split(':')[0]}"><div class="gth"><h4>${c[1]}</h4><button type="button" class="zbtn" data-act="zc" data-v="${c[0]}" aria-label="Enlarge: ${c[1]}" ${tipA('Enlarge','Open this chart at full size')}>⤢</button></div>${c[3]}</div>`).join('') }
 function renderZoom(){ const z=$('zoomer'); if(!zChart||level!=='world'){ z.hidden=true; z.innerHTML=''; return }
   if(zChart==='ix'){ if(layer!=='idq'){ zChart=null; z.hidden=true; return } ixShell(); return }
@@ -1084,6 +1104,8 @@ document.addEventListener('click',e=>{
   else if(a==='sxy'){ SX.yr=v; renderZoom() }
   else if(a==='sxb'){ SX.by=v; renderZoom() }
   else if(a==='zclose'){ zChart=null; renderZoom() }
+  else if(a==='ztab'){ zTab=!zTab; renderZoom() }
+  else if(a==='gxo') gxOpen(+v); else if(a==='ixo') ixOpen(+v); else if(a==='sxo') sxOpen(+v);
   else if(a==='goal'){ gGoal=gGoal===+v?null:+v; render() }
   else if(a==='world') zoomOut();
   else if(a==='view') setView(v);
