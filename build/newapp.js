@@ -496,6 +496,30 @@ function repCard(x){ const pg=x[9]||x[4];
     ${x[13]?`<div class="fl"><i class="pill flag">Check</i><span>The report page says something different: ${esc(x[13])}</span></div>`:''}
     ${x[6]?`<figure class="prt"><a href="${x[6]}" target="_blank" rel="noopener" ${tipA('From the report','Open the page image at full size')}><img loading="lazy" src="${x[6]}" width="${x[7]}" height="${x[8]}" alt="Report page showing the value${pg?', page '+pg:''}"></a></figure>`:''}
     <p class="rsrc">${esc(x[11]||x[3])}${x[12]?' · '+esc(x[12]):''}${pg?' · page '+esc(pg):''}${x[10]?` · <a href="${esc(x[10])}" target="_blank" rel="noopener">Open the report ↗</a>`:''}</p></div>` }
+/* ---- small charts under the globe ---- */
+function gainMinis(){
+  const X=Object.keys(Q.ctry).flatMap(k=>exF(k)); if(!X.length) return '';
+  const col=(lab,es,key,val)=>{ const u=es.filter(e=>e[4]).length, on=String(GF[key])===String(val);
+    return `<button type="button" class="dcol" data-act="gf" data-v="${key}:${on?'':val}" aria-pressed="${on}" ${tipA(lab,es.length+' examples, '+u+' using the Recommendations.<br>Select to '+(on?'clear this filter':'show only these on the globe')+'.')}><span class="dts">${'<i class="u"></i>'.repeat(u)+'<i></i>'.repeat(es.length-u)}</span><b>${es.length}</b><small>${lab}</small></button>` };
+  const chart=(title,cols)=>`<div class="mchart"><h4>${title}</h4><div class="dcols">${cols.join('')}</div></div>`;
+  return `<div class="minis">`
+    +chart('By year',[2021,2022,2023,2024,2025].map(y=>col(y,X.filter(e=>+e[1]===y),'yr',y)))
+    +chart('By Recommendations',['IRRS','IRIS','IROSS'].map(r=>col(r,X.filter(e=>recSet(e).includes(r)),'rec',r)))
+    +chart('Who is covered',[['Refugees','Refugees'],['IDPs','IDPs'],['Stateless','Stateless']].map(([k,l])=>col(l,X.filter(e=>(e[7]||'').includes(k)),'grp',k)))
+    +chart('Data source',[['Survey','Survey'],['Census','Census'],['Administrative','Admin. data'],['integration','Integration']].map(([k,l])=>col(l,X.filter(e=>(e[6]||'').includes(k)),'src',k)))
+    +`<p class="lnote" style="flex-basis:100%;margin:0">One dot is one example${gfOn()?' matching the filters':' in a country'}. Filled = uses the Recommendations. An example can sit in more than one column.</p></div>`;
+}
+function goalCounts(iso){ const n={}; sdgRows(iso).forEach(([d])=>{const g=goalOf(d.c); n[g]=(n[g]||0)+1}); (Q.ctry[iso].rep||[]).forEach(x=>{const g=goalOf(x[0]); n[g]=(n[g]||0)+1}); return n }
+function wheelSvg(n,size,label){ const gs=Object.keys(n).map(Number).filter(g=>SDGC[g]).sort((a,b)=>a-b), tot=gs.reduce((s,g)=>s+n[g],0)||1; let off=25, s='';
+  gs.forEach(g=>{ const len=n[g]/tot*100, gap=gs.length>1?1.2:0; s+=`<circle cx="21" cy="21" r="15.9155" fill="none" stroke="${SDGC[g]}" stroke-width="6.5" stroke-dasharray="${Math.max(.5,len-gap).toFixed(2)} ${(100-Math.max(.5,len-gap)).toFixed(2)}" stroke-dashoffset="${off.toFixed(2)}" opacity="${gGoal&&gGoal!==g?.22:1}"/>`; off-=len });
+  return `<svg viewBox="0 0 42 42" width="${size}" height="${size}" aria-hidden="true">${s}<text x="21" y="21" text-anchor="middle" dominant-baseline="central" font-size="${size>70?11:12}" font-weight="600" fill="#fff">${label}</text></svg>` }
+function sdgMinis(){
+  const list=Object.keys(Q.ctry).filter(k=>has(k,'sdg')).map(k=>[k,goalCounts(k)]).map(([k,n])=>[k,n,Object.values(n).reduce((a,b)=>a+b,0)]).filter(x=>x[2]).sort((a,b)=>b[2]-a[2]||Q.ctry[a[0]].n.localeCompare(Q.ctry[b[0]].n));
+  const all={}; list.forEach(([k,n])=>Object.keys(n).forEach(g=>all[g]=(all[g]||0)+n[g])); const tot=Object.values(all).reduce((a,b)=>a+b,0);
+  return `<div class="minis"><div class="mchart" style="flex:0 0 auto"><h4>All countries</h4><div class="wall">${wheelSvg(all,104,tot)}<span><b>${tot} values</b><small>${Object.keys(all).length} goals · ${list.length} countries</small></span></div></div>
+    <div class="mchart" style="flex:1 1 100%"><h4>Goals covered, country by country</h4><div class="wheels">${list.map(([k,n,c])=>`<button type="button" class="whb ${gGoal&&!n[gGoal]?'dim':''}" data-act="pick" data-v="${k}" ${tipA(Q.ctry[k].n,c+(c===1?' value':' values')+' · '+Object.keys(n).map(Number).sort((a,b)=>a-b).map(g=>'goal '+g+(n[g]>1?' ×'+n[g]:'')).join(', '))}>${wheelSvg(n,46,c)}<small>${esc(Q.ctry[k].n)}</small></button>`).join('')}</div></div>
+    <p class="lnote" style="flex-basis:100%;margin:0">Each ring is split by goal, in the goal's colour; the number is how many values the country has. Select a ring to open the country.</p></div>`;
+}
 function pWorld(){
   const c=Q.ctry[gSel], L=layer, list=Object.keys(Q.ctry).filter(i=>has(i,L)).sort((a,b)=>Q.ctry[a].n.localeCompare(Q.ctry[b].n));
   const cnt=i=>L==='gain'?Q.ctry[i].ex.length+' ex.':L==='sdg'?(sdgRows(i).length+Q.ctry[i].rep.length)+' values':(Q.ctry[i].sv.length?Q.ctry[i].sv.length+' quest.':'causes');
@@ -673,7 +697,7 @@ function render(){
   if(level==='world'){ const allG=layer==='sdg'?[...new Set(Object.keys(Q.ctry).flatMap(k=>has(k,'sdg')?goalsOf(k):[]))].sort((a,b)=>a-b):[];
     $('stfoot').innerHTML=(layer==='sdg'?`<div class="goalbar">${allG.map(g=>`<button type="button" class="gbtn" data-act="goal" data-v="${g}" aria-pressed="${g===gGoal}" ${tipA('Goal '+g,esc(SDGN[g]||''))}>${SDGI.has(g)?`<img src="sdg/${g}.png" alt="Goal ${g}">`:`<span style="background:${SDGC[g]}">${g}</span>`}</button>`).join('')}${gGoal?act('goal',gGoal,'Show all goals','lk'):''}</div>`:'')
      +(layer==='gain'?`<div class="gfbar">${GFDEF.map(d=>`<div><span>${d[1]}</span>${act('gf',d[0]+':','All','chip',`aria-pressed="${GF[d[0]]==null}"`)}${d[2].map(o=>act('gf',d[0]+':'+o[0],o[1],'chip',`aria-pressed="${String(GF[d[0]])===String(o[0])}"`)).join('')}</div>`).join('')}${gfOn()?`<p class="lnote" style="margin:0">${Object.keys(Q.ctry).reduce((s,k)=>s+exF(k).length,0)} examples in ${Object.keys(Q.ctry).filter(k=>exF(k).length).length} countries match. ${act('gf','clear','Clear filters','lk')}</p>`:''}</div>`:'')
-     +`<div class="mleg" style="justify-content:center;margin-top:0">${layer==='gain'?'<span>Number = GAIN examples</span><span><i class="d" style="border:2.5px solid #4cc3c9"></i>Bright ring = share that use the Recommendations</span>':layer==='sdg'?(gGoal?`<span>Countries with a value under goal ${gGoal}: ${esc(SDGN[gGoal]||'')}</span>`:'<span>Country colour = the goal with most values</span><span>Number = SDG values</span><span>Select a goal to show only its countries</span>'):'<span>Number = questionnaires</span><span>Circle = people displaced, by main cause:</span>'+[1,2,6,7].map(k=>`<span><i class="d" style="background:${CAUSE_COL[k]}"></i>${CZ[k].toLowerCase()}</span>`).join('')}</div>` }
+     +`<div class="mleg" style="justify-content:center;margin-top:0">${layer==='gain'?'<span>Number = GAIN examples</span><span><i class="d" style="border:2.5px solid #4cc3c9"></i>Bright ring = share that use the Recommendations</span>':layer==='sdg'?(gGoal?`<span>Countries with a value under goal ${gGoal}: ${esc(SDGN[gGoal]||'')}</span>`:'<span>Country colour = the goal with most values</span><span>Number = SDG values</span><span>Select a goal to show only its countries</span>'):'<span>Number = questionnaires</span><span>Circle = people displaced, by main cause:</span>'+[1,2,6,7].map(k=>`<span><i class="d" style="background:${CAUSE_COL[k]}"></i>${CZ[k].toLowerCase()}</span>`).join('')}</div>`+(layer==='gain'?gainMinis():layer==='sdg'?sdgMinis():'') }
   else if(layer==='sdg'&&(!mapInd||mapInd==='__cause')&&subKeys(gSel).length&&!belowDone['auto'+gSel]){ mapInd=subKeys(gSel).includes('6.1.1')?'6.1.1':subKeys(gSel)[0]; belowDone['auto'+gSel]=1 }
   else if(layer==='idq'&&!mapInd&&Q.cpts[gSel]&&!belowDone['cz'+gSel]){ mapInd='__cause'; belowDone['cz'+gSel]=1 }
   $('panel').style.setProperty('--lc',LAYER[layer].col);
