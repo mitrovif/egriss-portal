@@ -73,7 +73,7 @@ const goalTile=(code,pri,big)=>{ const g=goalOf(code), tip=tipA('Goal '+g+' · '
   return SDGI.has(g)?`<span class="gt img ${big?'big':''}" ${tip}><img src="sdg/${g}.png" alt="SDG ${g}: ${esc(SDGN[g]||'')}"><small>${esc(code)}${pri?' ◆':''}</small></span>`
     :`<span class="gt ${big?'big':''}" style="background:${gcolOf(code)}" ${tip}><b>${g}</b><small>${esc(code)}${pri?' ◆':''}</small></span>` };
 const COVER186='data:image/jpeg;base64,__COVER__';
-let layer='gain', level='world', view='3d', gSel='SSD';
+let layer='gain', level='world', view='3d', gSel='SSD', chosen=false, gGoal=null;
 let fSrc=null, fInd=null, fEx=null, fSv=null, mapInd=null, mapG=0, hitSrc=null, belowDone={};
 const fmt=n=>Number(n).toLocaleString('en');
 const sdgRows=iso=>{const o=[];Q.sdg.forEach(d=>d.rows.forEach(r=>{if(r.iso===iso)o.push([d,r])}));return o};
@@ -129,7 +129,7 @@ function gProj(){ const a=G.alpha; G.mut(a); G.proj.scale(G.k).translate(G.tr).r
 function rgba(hex,al){ const n=parseInt(hex.slice(1),16); return `rgba(${n>>16},${(n>>8)&255},${n&255},${al})` }
 function draw(){
   if(!G) return; gProj();
-  const ctx=G.ctx, W=G.W, H=G.H, a=G.alpha, f=G.fade, P=G.path, cx=G.tr[0], cy=G.tr[1], R=G.k, glob=1-a, col=LAYER[layer].col, TAU=6.2832;
+  const ctx=G.ctx, W=G.W, H=G.H, a=G.alpha, f=G.fade, P=G.path, cx=G.tr[0], cy=G.tr[1], R=G.k, glob=1-a, col=LAYER[layer].col, TAU=6.2832, selIso=(chosen||level==='country'||G.fade>0)?gSel:null, sdgL=layer==='sdg', cof=c=>!sdgL?col:gGoal?(goalsOf(c.iso).includes(gGoal)?SDGC[gGoal]:null):(SDGC[leadGoal(c.iso)]||col);
   ctx.setTransform(G.dpr,0,0,G.dpr,0,0); ctx.clearRect(0,0,W,H);
   const vis=1-f;
   if(vis>.01){
@@ -140,23 +140,23 @@ function draw(){
     ctx.fillStyle=og; ctx.beginPath(); P({type:'Sphere'}); ctx.fill();
     ctx.strokeStyle='rgba(207,224,244,0.08)'; ctx.lineWidth=.7; ctx.beginPath(); P(G.gr); ctx.stroke();
     ctx.fillStyle='#2a3f78'; ctx.strokeStyle='rgba(217,226,239,0.16)'; ctx.lineWidth=.6; ctx.beginPath(); for(const c of G.cs) if(!c.w) P(c.f); ctx.fill(); ctx.stroke();
-    for(const c of G.cs){ if(!c.w||c.iso===gSel) continue; ctx.beginPath(); P(c.f); ctx.fillStyle=rgba(col,.26+.5*c.w); ctx.fill(); ctx.strokeStyle=c.iso===hov?'rgba(255,255,255,.9)':rgba(col,.8); ctx.lineWidth=c.iso===hov?1.4:.8; ctx.stroke() }
-    if(hov&&hov!==gSel){ const c=G.by[hov]; if(c&&!c.w){ ctx.beginPath(); P(c.f); ctx.strokeStyle='rgba(255,255,255,.55)'; ctx.lineWidth=1; ctx.stroke() } }
+    for(const c of G.cs){ if(!c.w||c.iso===selIso) continue; const cc=cof(c); ctx.beginPath(); P(c.f); ctx.fillStyle=cc?rgba(cc,sdgL?.78:.26+.5*c.w):'#2a3f78'; ctx.fill(); ctx.strokeStyle=c.iso===hov?'rgba(255,255,255,.9)':cc?rgba(cc,.9):'rgba(217,226,239,0.16)'; ctx.lineWidth=c.iso===hov?1.4:.8; ctx.stroke() }
+    if(hov&&hov!==selIso){ const c=G.by[hov]; if(c&&!c.w){ ctx.beginPath(); P(c.f); ctx.strokeStyle='rgba(255,255,255,.55)'; ctx.lineWidth=1; ctx.stroke() } }
   }
-  const s=G.by[gSel];
+  const s=G.by[selIso];
   if(s){ ctx.globalAlpha=1; ctx.beginPath(); if(G.m>.002&&G.M&&a<.01) selPath(ctx,s.f); else P(s.f);
-    ctx.fillStyle=d3.interpolateRgb(s.w?d3.interpolateRgb('#2a3f78',col)(.3+.55*s.w):'#3a4f8a','#16264f')(f); ctx.fill('evenodd');
+    ctx.fillStyle=d3.interpolateRgb(s.w&&cof(s)?d3.interpolateRgb('#2a3f78',cof(s))(sdgL?.85:.3+.55*s.w):'#3a4f8a','#16264f')(f); ctx.fill('evenodd');
     ctx.save(); ctx.shadowColor='rgba(255,255,255,.75)'; ctx.shadowBlur=10*(1-f); ctx.strokeStyle=d3.interpolateRgb('#ffffff','rgba(207,224,244,0.45)')(f); ctx.lineWidth=lerp(1.8,1,f); ctx.stroke(); ctx.restore() }
   if(vis>.01){
     ctx.globalAlpha=vis;
     if(glob>.02){ ctx.save(); ctx.globalAlpha=vis*glob; ctx.beginPath(); ctx.arc(cx,cy,R,0,TAU); ctx.clip(); const sh=ctx.createRadialGradient(cx-R*.3,cy-R*.35,R*.2,cx,cy,R*1.02); sh.addColorStop(0,'rgba(255,255,255,0.06)'); sh.addColorStop(.6,'rgba(5,10,30,0)'); sh.addColorStop(1,'rgba(5,10,30,0.55)'); ctx.fillStyle=sh; ctx.fillRect(cx-R,cy-R,2*R,2*R); ctx.restore() }
     // marks: one bead per example, value or questionnaire, rising from the country
     const ctr=[-G.rot[0],-G.rot[1]], list=[];
-    for(const c of G.cs){ if(!c.cen) continue; const b=beads(c.iso), tot=layer==='idq'?czTot(c.iso):0; if(!b&&!tot) continue;
+    for(const c of G.cs){ if(!c.cen) continue; const b=beads(c.iso), tot=layer==='idq'?czTot(c.iso):0; if(!b&&!tot) continue; if(sdgL&&gGoal&&!goalsOf(c.iso).includes(gGoal)) continue;
       const dist=d3.geoDistance(c.cen,ctr); if(a<.999&&dist>1.45) continue; const p=G.proj(c.cen); if(!p) continue; list.push([c,b,tot,p,dist]) }
     // marks: one badge per country. Number = examples, values or questionnaires; ring = the filled share
-    list.sort((x,y)=>(y[0].iso===gSel||y[0].iso===hov?-1:0)-(x[0].iso===gSel||x[0].iso===hov?-1:0)||(y[1]?y[1].length:0)-(x[1]?x[1].length:0)); G.hit=[]; const placed=[], later=[];
-    for(const it of list){ const [c,b,tot,p,dist]=it, edge=a<.999?Math.max(0,Math.min(1,(1.45-dist)/.25)):1, on=c.iso===hov||c.iso===gSel;
+    list.sort((x,y)=>(y[0].iso===selIso||y[0].iso===hov?-1:0)-(x[0].iso===selIso||x[0].iso===hov?-1:0)||(y[1]?y[1].length:0)-(x[1]?x[1].length:0)); G.hit=[]; const placed=[], later=[];
+    for(const it of list){ const [c,b,tot,p,dist]=it, edge=a<.999?Math.max(0,Math.min(1,(1.45-dist)/.25)):1, on=c.iso===hov||c.iso===selIso;
       if(tot){ const r=Math.max(.1,(3+Math.sqrt(tot/G.maxTot)*20)*grow), top=czTop(c.iso); ctx.globalAlpha=vis*edge; ctx.beginPath(); ctx.arc(p[0],p[1],r,0,TAU); ctx.fillStyle=rgba(CAUSE_COL[top[0]],on?.7:.42); ctx.fill(); ctx.strokeStyle=rgba(CAUSE_COL[top[0]],.95); ctx.lineWidth=on?1.6:.9; ctx.stroke(); if(!b&&edge>.5) G.hit.push([c.iso,p[0],p[1],p[0],p[1],r]) }
       if(!b) continue; const n=b.length, r=((on?11:8)+Math.min(1,n/14)*(on?5:6))*grow;
       const clash=!on&&placed.some(q=>Math.hypot(q[0]-p[0],q[1]-p[1])<q[2]+r-1); if(!clash) placed.push([p[0],p[1],r]);
@@ -202,6 +202,7 @@ function targetFor(iso){
 }
 function selPath(ctx,f){ const m=G.m, M=G.M, pr=G.proj, P=f.geometry.type==='MultiPolygon'?f.geometry.coordinates:[f.geometry.coordinates];
   for(const poly of P) for(const ring of poly){ for(let i=0;i<ring.length;i++){ const a=pr(ring[i]), b=M(ring[i]), x=a[0]+(b[0]-a[0])*m, y=a[1]+(b[1]-a[1])*m; i?ctx.lineTo(x,y):ctx.moveTo(x,y) } ctx.closePath() } }
+const _lg={}; function leadGoal(iso){ if(iso in _lg) return _lg[iso]; const n={}; sdgRows(iso).forEach(([d])=>{const g=goalOf(d.c); n[g]=(n[g]||0)+1}); ((Q.ctry[iso]||{rep:[]}).rep||[]).forEach(x=>{const g=goalOf(x[0]); n[g]=(n[g]||0)+1}); return _lg[iso]=+(Object.keys(n).filter(g=>SDGC[g]).sort((a,b)=>n[b]-n[a]||a-b)[0]||0) }
 const _gl={}; function goalsOf(iso){ return _gl[iso]||(_gl[iso]=[...new Set(sdgRows(iso).map(([d])=>goalOf(d.c)).concat((Q.ctry[iso]||{rep:[]}).rep.map(x=>goalOf(x[0]))))].filter(g=>SDGC[g]).sort((a,b)=>a-b)) }
 function weights(){ const v=G.cs.map(c=>{const b=beads(c.iso); return b?b.length:0}), mx=Math.max(2,...v); G.cs.forEach((c,i)=>c.w=v[i]?Math.max(.12,Math.min(1,v[i]/Math.min(mx,12))):0); G.maxTot=Math.max(1,...G.cs.map(c=>czTot(c.iso))) }
 function hoverCard(iso){
@@ -245,7 +246,7 @@ function initGlobe(){
     if(kT&&kT>G.k){ const base=gBase().k, iso=centreIso(), T=iso&&targetFor(iso);
       if(T&&G.k>=Math.max(base*1.7,Math.min(T.k*.55,base*4.5))){ kT=0; aim=null; coast=false; if(iso!==gSel){ gSel=iso; fSrc=fInd=fEx=fSv=mapInd=null; czSel=null; mapG=0; render() } tip.hidden=true; zoomIn(true); return } }
     if(on) kick() }
-  const zoomBy=(f,x,y)=>{ const base=gBase().k, cur=kT||G.k; kT=Math.max(base,Math.min(base*9,cur*f)); G.spin=false;
+  G.zoomBy=(f)=>zoomBy(f); const zoomBy=(f,x,y)=>{ const base=gBase().k, cur=kT||G.k; kT=Math.max(base,Math.min(base*9,cur*f)); G.spin=false;
     if(f>1&&x!=null&&Math.hypot(x-G.tr[0],y-G.tr[1])<G.k){ const ll=gInv([x,y]); if(ll&&!isNaN(ll[0])) aim=ll } kick() };
   cv.addEventListener('wheel',e=>{ if(level!=='world'||busy||view!=='3d') return; const out=e.deltaY>0; if(out&&(kT||G.k)<=gBase().k*1.002) return;   // at full view the page scrolls as usual
     e.preventDefault(); const r=cv.getBoundingClientRect(); zoomBy(Math.exp(-Math.max(-60,Math.min(60,e.deltaY))*(e.ctrlKey?.014:.0028)),e.clientX-r.left,e.clientY-r.top) },{passive:false});
@@ -270,12 +271,12 @@ function initGlobe(){
 }
 let lastLayer=null;
 function paintGlobe(){ weights(); if(lastLayer!==layer&&level==='world'&&!busy){ lastLayer=layer; grow=0; tween(700,t=>{ grow=t; if(!busy) draw() }) } else { lastLayer=layer; draw() } }
-function pick(iso,move){ if(!Q.ctry[iso]||!any(iso)||busy) return; gSel=iso; fSrc=fInd=fEx=fSv=mapInd=null; czSel=null; mapG=0; G.spin=false; render(); const p=$('panel'); p.classList.remove('slide'); void p.offsetWidth; p.classList.add('slide'); setTimeout(()=>p.classList.remove('slide'),600);
+function pick(iso,move){ if(!Q.ctry[iso]||!any(iso)||busy) return; chosen=true; gSel=iso; fSrc=fInd=fEx=fSv=mapInd=null; czSel=null; mapG=0; G.spin=false; render(); const p=$('panel'); p.classList.remove('slide'); void p.offsetWidth; p.classList.add('slide'); setTimeout(()=>p.classList.remove('slide'),600);
   if(move&&view==='3d'&&level==='world'){ const g=mainGeom(iso); { const go=layer==='sdg'&&has(iso,'sdg'); if(g&&!go){ const c=d3.geoCentroid(g); gTo({rot:[-c[0],Math.max(-40,Math.min(40,-c[1]))],k:G.k,tr:G.tr,alpha:0},[750,1500,1.8]) } } }
   if(level==='world'&&layer==='sdg'&&has(iso,'sdg')) zoomIn() }
 function setView(v){ if(v===view||busy) return; view=v; $('stage').dataset.v=v; G.spin=false; render(); gTo(gBase(),950) }
 function zoomIn(hand){
-  if(level==='country') return; if(busy){ setTimeout(zoomIn,160); return } const T=targetFor(gSel), st=$('stage'); $('tip').hidden=true; hov=null;
+  if(level==='country') return; chosen=true; if(busy){ setTimeout(zoomIn,160); return } const T=targetFor(gSel), st=$('stage'); $('tip').hidden=true; hov=null;
   const land=()=>{ level='country'; setHash(); render(); st.classList.add('country','landing'); setTimeout(()=>st.classList.remove('landing'),1500) };
   if(!T){ land(); return } hand===true?gTo(T,[900,1900],land,d3.easeCubicOut):gTo(T,[1450,2600],land);
 }
@@ -464,6 +465,23 @@ function causesBlock(c,inter){
     <div>${cz.map(z=>{const sub=Q.subr[z[0]]||[]; return `<${inter?`button type="button" data-act="cz" data-v="${z[0]}" data-czh="${z[0]}" aria-pressed="${czSel===z[0]}"`:'div tabindex="0"'} class="czr" ${tipA(z[0]+' · '+CZ[z[0]],(z[2]?'<b>In the sources:</b> '+esc(z[2])+'<br>':'')+(sub.length?'<b>How people say it:</b><br>'+sub.slice(0,4).map(x=>'“'+esc(x[2])+'”').join('<br>'):''))}><span class="czn"><i class="sw" style="background:${CAUSE_COL[z[0]]}"></i>${z[0]} · ${CZ[z[0]]}</span><span class="czb"><i style="width:${z[3]?Math.max(2,z[3]/mx*100):0}%;background:${CAUSE_COL[z[0]]}"></i></span><span class="czv">${z[3]?fmt(z[3]):'–'}</span><i class="pill ${st[z[1]][0]}">${st[z[1]][1]}</i></${inter?'button':'div'}>`}).join('')}</div>
     <p class="lnote">From the causing events analysis (IDMC, UCDP, ACLED and others). Point at a cause for local examples and the ways respondents phrase it${inter?'; select it to show only that cause on the map':''}. The answer options stay the same in every country; the evidence guides enumerator examples.</p></div>`;
 }
+function regBlock(){ return Q.reg.length?`<details class="band"><summary style="cursor:pointer"><h3 style="display:inline">${Q.reg.length} regional and global examples</h3> <span class="lnote">from organisations, not tied to one country</span></summary><div class="exrows" style="max-height:420px;overflow-y:auto;margin-top:10px">${Q.reg.map(e=>`<${e[5]?`a href="${esc(e[5])}" target="_blank" rel="noopener"`:'div'} class="exr reg">${e[6]?`<img class="th" src="covers/ex${e[0]}.jpg" alt="" loading="lazy" onerror="this.style.visibility='hidden'">`:'<span class="th none"></span>'}<span class="tt"><span class="yr">${e[1]}</span><b>${esc(e[2])}</b><small>${esc(e[3])}</small></span><span class="mk">${e[5]?'<small style="color:var(--tealhi)">Open ↗</small>':''}</span></${e[5]?'a':'div'}>`).join('')}</div></details>`:'' }
+const OVER={gain:['Examples of refugee, IDP and statelessness statistics','What countries and organisations reported to the GAIN survey, 2021 to 2025.'],sdg:['SDG indicators for displaced people','Values for refugees, IDPs and stateless people next to the host population, with how each one was calculated.'],idq:['How surveys identify refugees and IDPs','Questionnaires compared with the EGRISS identification questions, and the reasons people were displaced.']};
+function pOverview(){
+  const L=layer, list=Object.keys(Q.ctry).filter(i=>has(i,L)).sort((a,b)=>Q.ctry[a].n.localeCompare(Q.ctry[b].n));
+  const cnt=i=>L==='gain'?Q.ctry[i].ex.length+(Q.ctry[i].ex.length===1?' example':' examples'):L==='sdg'?(n=>n+(n===1?' value':' values'))(sdgRows(i).length+Q.ctry[i].rep.length):(Q.ctry[i].sv.length?Q.ctry[i].sv.length+(Q.ctry[i].sv.length===1?' questionnaire':' questionnaires'):'reasons for displacement');
+  const nEx=list.reduce((s,i)=>s+Q.ctry[i].ex.length,0), nUse=list.reduce((s,i)=>s+Q.ctry[i].ex.filter(e=>e[4]).length,0)+Q.reg.filter(e=>e[4]).length;
+  const tiles=L==='gain'?[[nEx+Q.reg.length,'examples'],[list.length,'countries'],[nUse,'use the Recommendations']]
+    :L==='sdg'?[[list.reduce((s,i)=>s+sdgRows(i).length+Q.ctry[i].rep.length,0),'values'],[list.length,'countries'],[Q.sdg.filter(d=>d.rows.length).length,'indicators calculated from survey files']]
+    :[[Q.surveys.length,'questionnaires compared'],[list.filter(i=>Q.ctry[i].sv.length).length,'countries with a questionnaire'],[list.filter(i=>Q.ctry[i].cz.some(z=>z[3]>0)).length,'countries with reasons for displacement']];
+  return `<div class="chead" style="--lc:${LAYER[L].col}"><div><p class="eyebrow" style="color:var(--lc)">${LAYER[L].n}</p><h2>${OVER[L][0]}</h2></div></div>
+   <div class="band"><p style="color:var(--soft)">${OVER[L][1]}</p><div class="ptiles" style="margin-top:12px">${tiles.map(x=>`<div><b>${fmt(x[0])}</b><span>${x[1]}</span></div>`).join('')}</div></div>
+   <div class="band"><h3>Choose a country</h3><p class="lnote" style="margin:4px 0 10px">Select one on the globe, or find it here.</p><input id="cfind" class="cfind" type="search" placeholder="Type a country name" aria-label="Find a country" autocomplete="off">
+     <div class="clist" id="cfl" style="max-height:330px;overflow-y:auto;margin-top:10px">${list.map(i=>`<button class="crow" type="button" data-act="pick" data-v="${i}"><span>${esc(Q.ctry[i].n)}</span><span>${cnt(i)}</span></button>`).join('')}</div><p class="lnote" id="cfnone" hidden style="margin-top:8px">No country with that name in ${LAYER[L].n}. Check the spelling or try another layer.</p>
+     ${L==='idq'?'<p class="lnote" style="margin-top:8px">EHCVM 2026 covers 10 countries and is not on the map yet.</p>':''}</div>`
+   +(L==='gain'?regBlock():'');
+}
+document.addEventListener('input',e=>{ if(e.target.id!=='cfind') return; const q=e.target.value.trim().toLowerCase(); let n=0; $('cfl').querySelectorAll('.crow').forEach(b=>{ const on=b.firstChild.textContent.toLowerCase().includes(q); b.hidden=!on; n+=on }); $('cfnone').hidden=n>0 });
 function pWorld(){
   const c=Q.ctry[gSel], L=layer, list=Object.keys(Q.ctry).filter(i=>has(i,L)).sort((a,b)=>Q.ctry[a].n.localeCompare(Q.ctry[b].n));
   const cnt=i=>L==='gain'?Q.ctry[i].ex.length+' ex.':L==='sdg'?(sdgRows(i).length+Q.ctry[i].rep.length)+' values':(Q.ctry[i].sv.length?Q.ctry[i].sv.length+' quest.':'causes');
@@ -478,9 +496,9 @@ function pWorld(){
       +(c.rep.length?`<div class="band"><h3>${c.rep.length} from published reports</h3><div>${c.rep.map(x=>`<div class="irow" tabindex="0" ${tipA(x[3]+(x[4]?', page '+x[4]:''),esc(x[5]))}><div class="itop">${goalTile(x[0])}<span>${esc(x[2])}</span><b>${esc(x[1])}</b></div></div>`).join('')}</div></div>`:'')
       +`<div class="fl">${keys.length?`<i class="pill new">New</i><span>Below country level: ${keys.length} ${keys.length===1?'indicator':'indicators'} by ${Q.sub.val[gSel]?Q.sub.meta[gSel].unit:Q.sub.rep[gSel].unit}, on the country map.</span>`:'<i class="pill plain">National</i><span>No values below country level yet.</span>'}</div>` }
   else body=causesBlock(c)+`<div class="band"><h3>${c.sv.length?c.sv.length+' '+(c.sv.length===1?'questionnaire':'questionnaires')+' mapped against the module':'No questionnaire mapped yet'}</h3><div class="rows">${c.sv.map(s=>`<div class="oex" style="grid-template-columns:minmax(0,1fr) auto"><span style="font:inherit;color:inherit">${esc(Q.surveys[s][1])}</span><span>${itemsAsked(s).length} of 13 items</span></div>`).join('')}</div></div>`;
-  return `<div class="chead" style="--lc:${LAYER[L].col}"><div><p class="eyebrow" style="color:var(--lc)">${LAYER[L].n} · country card</p><h2>${esc(c.n)}</h2></div>${dots(gSel)}${act('zoom','',`Zoom in →`,'actbtn','style="margin-left:auto;background:var(--lc);border-color:var(--lc);color:var(--night);font-weight:600"')}</div>`
+  return `<div class="chead" style="--lc:${LAYER[L].col}"><div><p class="eyebrow" style="color:var(--lc)">${LAYER[L].n} · country card</p><h2>${esc(c.n)}</h2></div>${dots(gSel)}${act('zoom','',`Open country map →`,'actbtn','style="margin-left:auto;background:var(--lc);border-color:var(--lc);color:var(--night);font-weight:600"')}</div>`
    +body
-   +(L==='gain'&&Q.reg.length?`<details class="band"><summary style="cursor:pointer"><h3 style="display:inline">${Q.reg.length} regional and global examples</h3> <span class="lnote">from organisations, not tied to one country</span></summary><div class="exrows" style="max-height:420px;overflow-y:auto;margin-top:10px">${Q.reg.map(e=>`<${e[5]?`a href="${esc(e[5])}" target="_blank" rel="noopener"`:'div'} class="exr reg">${e[6]?`<img class="th" src="covers/ex${e[0]}.jpg" alt="" loading="lazy" onerror="this.style.visibility='hidden'">`:'<span class="th none"></span>'}<span class="tt"><span class="yr">${e[1]}</span><b>${esc(e[2])}</b><small>${esc(e[3])}</small></span><span class="mk">${e[5]?'<small style="color:var(--tealhi)">Open ↗</small>':''}</span></${e[5]?'a':'div'}>`).join('')}</div></details>`:'')
+   +(L==='gain'?regBlock():'')
    +`<details class="band"><summary style="cursor:pointer"><h3 style="display:inline">Browse the ${list.length} countries in ${LAYER[L].n}</h3></summary><div class="clist" style="max-height:300px;overflow-y:auto;margin-top:10px">${list.map(i=>`<button class="crow" type="button" data-act="pick" data-v="${i}" aria-pressed="${i===gSel}"><span>${esc(Q.ctry[i].n)}</span><span>${cnt(i)}</span></button>`).join('')}</div>
       ${L==='idq'?'<p class="lnote">EHCVM 2026 covers 10 countries and is not placed on the map yet.</p>':''}</details>`;
 }
@@ -633,20 +651,22 @@ function render(){
   const c=Q.ctry[gSel];
   const STORY='https://mitrovif.github.io/GAIN-story/';
   $('crumb').innerHTML=`<a href="${STORY}" target="_blank" rel="noopener" style="font-size:13px" ${tipA('Counted, and counting','The story runs as it is today and ends on its globe. This portal picks up from that globe.')}>← The story</a><span class="sep">|</span>`+(level==='world'
-    ?`<b>World</b><span class="sep">›</span><span>${esc(c.n)} selected</span><span style="margin-left:auto;display:flex;gap:6px;align-items:center">${act('view','3d','Globe','chip',`aria-pressed="${view==='3d'}"`)}${act('view','2d','Flat map','chip',`aria-pressed="${view==='2d'}"`)}</span>`
+    ?`<b>World</b>${chosen?`<span class="sep">›</span><span>${esc(c.n)}</span>`:''}<span style="margin-left:auto;display:flex;gap:6px;align-items:center">${act('view','3d','Globe','chip',`aria-pressed="${view==='3d'}"`)}${act('view','2d','Flat map','chip',`aria-pressed="${view==='2d'}"`)}</span>`
     :`${act('world','','World','lk')}<span class="sep">›</span><b>${esc(c.n)}</b>${dots(gSel)}<span style="margin-left:auto">${act('world','','← Back to the world','lkbtn')}</span>`);
   initGlobe(); paintGlobe();
   if(hov&&!$('tip').hidden&&level==='world') $('tip').innerHTML=hoverCard(hov);
   const st=$('stage');
   if(level==='country'&&!st.classList.contains('country')&&!busy){ const T=targetFor(gSel); if(T){ Object.assign(G,T); draw() } st.classList.add('country') }
   if(level==='world'&&st.classList.contains('country')&&!busy){ st.classList.remove('country'); Object.assign(G,gBase()); draw() }
-  if(level==='world') $('stfoot').innerHTML=`<div class="mleg" style="justify-content:center;margin-top:0">${layer==='gain'?'<span>number = GAIN examples in the country</span><span><i class="d" style="border:2.5px solid #4cc3c9"></i>bright part of the ring = share that use the Recommendations</span>':layer==='sdg'?'<span>number = SDG values for the country</span><span>ring colours = the goals those values belong to</span>':'<span>number = questionnaires mapped</span><span>circle = people displaced, coloured by main cause:</span>'+[1,2,6,7].map(k=>`<span><i class="d" style="background:${CAUSE_COL[k]}"></i>${CZ[k].toLowerCase()}</span>`).join('')}</div><p class="lnote" style="text-align:center">${view==='3d'?'Drag to turn. ':''}Point at a country to list everything it has; ${layer==='sdg'?'select it to go straight to its values':'select it to open its card'}.</p>`;
+  if(level==='world'){ const allG=layer==='sdg'?[...new Set(Object.keys(Q.ctry).flatMap(k=>has(k,'sdg')?goalsOf(k):[]))].sort((a,b)=>a-b):[];
+    $('stfoot').innerHTML=(layer==='sdg'?`<div class="goalbar">${allG.map(g=>`<button type="button" class="gbtn" data-act="goal" data-v="${g}" aria-pressed="${g===gGoal}" ${tipA('Goal '+g,esc(SDGN[g]||''))}>${SDGI.has(g)?`<img src="sdg/${g}.png" alt="Goal ${g}">`:`<span style="background:${SDGC[g]}">${g}</span>`}</button>`).join('')}${gGoal?act('goal',gGoal,'Show all goals','lk'):''}</div>`:'')
+     +`<div class="mleg" style="justify-content:center;margin-top:0">${layer==='gain'?'<span>Number = GAIN examples</span><span><i class="d" style="border:2.5px solid #4cc3c9"></i>Bright ring = share that use the Recommendations</span>':layer==='sdg'?(gGoal?`<span>Countries with a value under goal ${gGoal}: ${esc(SDGN[gGoal]||'')}</span>`:'<span>Country colour = the goal with most values</span><span>Number = SDG values</span><span>Select a goal to show only its countries</span>'):'<span>Number = questionnaires</span><span>Circle = people displaced, by main cause:</span>'+[1,2,6,7].map(k=>`<span><i class="d" style="background:${CAUSE_COL[k]}"></i>${CZ[k].toLowerCase()}</span>`).join('')}</div>` }
   else if(layer==='sdg'&&(!mapInd||mapInd==='__cause')&&subKeys(gSel).length&&!belowDone['auto'+gSel]){ mapInd=subKeys(gSel).includes('6.1.1')?'6.1.1':subKeys(gSel)[0]; belowDone['auto'+gSel]=1 }
   else if(layer==='idq'&&!mapInd&&Q.cpts[gSel]&&!belowDone['cz'+gSel]){ mapInd='__cause'; belowDone['cz'+gSel]=1 }
   $('panel').style.setProperty('--lc',LAYER[layer].col);
-  $('panel').innerHTML=level==='world'?pWorld():layer==='gain'?pGain():layer==='sdg'?pSdg():pIdq();
+  $('panel').innerHTML=level==='world'?(chosen?pWorld():pOverview()):layer==='gain'?pGain():layer==='sdg'?pSdg():pIdq();
   if(level==='country'){ paintMap(); renderMapFoot() }
-  if(level==='world'&&layer==='gain') coverMap(fEx);
+  if(level==='world'&&layer==='gain'&&chosen) coverMap(fEx);
   if(level==='country'&&layer==='gain') coverBig(fEx);
   const bs=level==='world'&&layer==='sdg', bi=level==='world'&&layer==='idq';
   $('b-sdg').hidden=!bs; $('b-idq').hidden=!bi;
@@ -659,6 +679,8 @@ document.addEventListener('click',e=>{
   if(a==='layer'){ if(v===layer) return; layer=v; enterLayer(); render(); const p=$('panel'); p.classList.remove('fade'); void p.offsetWidth; p.classList.add('fade'); setTimeout(()=>p.classList.remove('fade'),450) }
   else if(a==='pick') pick(v,true);
   else if(a==='zoom') zoomIn();
+  else if(a==='zin'||a==='zout'){ if(G&&level==='world'&&view==='3d') G.zoomBy(a==='zin'?1.45:1/1.45) }
+  else if(a==='goal'){ gGoal=gGoal===+v?null:+v; render() }
   else if(a==='world') zoomOut();
   else if(a==='view') setView(v);
   else if(a==='map'){ mapInd=v||null; if(mapInd&&Q.sub.val[gSel]&&layer==='sdg'&&fSrc!=='__rep'){ const rows=fSrc&&surveysOf(gSel).get(fSrc); if(rows&&rows.some(([d])=>d.c===mapInd)) fInd=mapInd } render() }
@@ -677,7 +699,7 @@ document.addEventListener('click',e=>{
   else if(a==='bank'){ bItem=v; bAlign='all'; renderBank(); $('bankhead').scrollIntoView({behavior:RM?'auto':'smooth',block:'start'}) }
 });
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') $('drawer').hidden=true });
-function fromHash(){ const [L,iso]=location.hash.slice(1).split('/'); if(LAYER[L]) layer=L; if(iso&&Q.ctry[iso]){ gSel=iso; level='country' } else level='world' }
+function fromHash(){ const [L,iso]=location.hash.slice(1).split('/'); if(LAYER[L]) layer=L; if(iso&&Q.ctry[iso]){ gSel=iso; level='country'; chosen=true } else level='world' }
 window.addEventListener('hashchange',()=>{fromHash();render()});
 fromHash(); render();
 

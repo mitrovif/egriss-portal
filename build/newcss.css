@@ -217,3 +217,16 @@ a.exr.reg{text-decoration:none}div.exr.reg{cursor:default}div.exr.reg:hover{tran
 #mapbadge span{display:flex;flex-direction:column;line-height:1.25}#mapbadge b{font:600 13px var(--mono);color:#fff}#mapbadge small{font-size:12px;color:var(--soft);max-width:190px}
 .chip.gch{border-color:color-mix(in srgb,var(--gc) 55%,transparent)}.chip.gch[aria-pressed="true"]{background:var(--gc);border-color:var(--gc);color:#fff}
 .svc.sg .fill.r{background:var(--gc)}.svc.sg .fill.h{background:color-mix(in srgb,var(--gc) 45%,#8b98b3)}
+
+/* world page: zoom buttons, goal filter, country finder */
+#zctl{position:absolute;right:12px;top:12px;z-index:2;display:flex;flex-direction:column;gap:4px}
+#zctl button{width:36px;height:36px;border:1px solid var(--line);border-radius:4px;background:rgba(10,20,48,.85);color:#fff;font:600 20px var(--body);line-height:1;cursor:pointer}
+#zctl button:hover,#zctl button:focus-visible{border-color:var(--teal);background:rgba(76,195,201,.18)}
+.stage.country #zctl,.stage[data-v="2d"] #zctl{display:none}
+.goalbar{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;align-items:center}
+.gbtn{padding:0;border:2px solid transparent;border-radius:4px;background:none;cursor:pointer;line-height:0;opacity:.92;transition:transform .15s,opacity .15s}
+.gbtn img,.gbtn span{display:grid;place-items:center;width:38px;height:38px;border-radius:2px;color:#fff;font:600 14px var(--body)}
+.gbtn:hover{transform:translateY(-2px);opacity:1}.gbtn[aria-pressed="true"]{border-color:#fff;opacity:1}
+.goalbar:has([aria-pressed="true"]) .gbtn[aria-pressed="false"]{opacity:.38}
+.cfind{width:100%;min-height:40px;padding:8px 12px;border:1px solid var(--line);border-radius:3px;background:rgba(10,20,48,.6);color:var(--ink);font:400 14px var(--body)}
+.cfind:focus-visible{outline:2px solid var(--teal);outline-offset:1px}.cfind::placeholder{color:var(--mute)}
