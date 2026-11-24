@@ -128,7 +128,7 @@ function tween(dur,fn,done,ez){ ez=ez||d3.easeCubicInOut;
 }
 const lerp=(a,b,t)=>a+(b-a)*t;
 function lerpLon(a,b,t){ let d=((b-a+540)%360)-180; return a+d*t }
-function gBase(){ const kO=Math.min(G.W,G.H)/2.45, kE=Math.min((G.W-24)/5.42,(G.H-60)/2.64); return view==='2d'?{rot:[0,0],k:kE,tr:[G.W/2,G.H/2+8],alpha:1,fade:0,m:0}:{rot:[G.rot[0],Math.max(-40,Math.min(40,G.rot[1]))],k:kO,tr:[G.W/2,G.H/2-26],alpha:0,fade:0,m:0} }
+function gBase(){ const kO=Math.min(G.W,G.H)/2.45, kE=Math.min((G.W-24)/5.42,(G.H-60)/2.64); return view==='2d'?{rot:[0,0],k:kE,tr:[G.W/2,G.H/2+8],alpha:1,fade:0,m:0}:{rot:[G.rot[0],Math.max(-40,Math.min(40,G.rot[1]))],k:kO,tr:[G.W/2,G.H/2+6],alpha:0,fade:0,m:0} }
 const _po=d3.geoOrthographic(), _pe=d3.geoEqualEarth();
 function gInv(q){ const a=G.alpha, p=a<.01?_po:a>.99?_pe:null; if(!p) return null; return p.scale(G.k).translate(G.tr).rotate([G.rot[0],G.rot[1]]).invert(q) }
 function gProj(){ const a=G.alpha; G.mut(a); G.proj.scale(G.k).translate(G.tr).rotate([G.rot[0],G.rot[1]]).clipAngle(a>=.999?null:90+89.9*a) }
@@ -499,38 +499,56 @@ function repCard(x){ const pg=x[9]||x[4];
 /* ---- small charts under the globe ---- */
 const FWC={IRRS:'#8db8e3',IRIS:'#3f78d6',IROSS:'#e3c3a0','Mixed use':'#d7dde6',Undetermined:'#8b98b3'}, LEADC={C:'#3f78d6',I:'#4cc3c9'};
 const fwOf=e=>FWC[e[12]]?e[12]:'Undetermined';
-function gainMinis(){
+let zChart=null;
+/* GAIN charts, modelled on the story's: each is drawn small under the globe and large when enlarged */
+function gainCharts(big){
   const all=Object.keys(Q.ctry).flatMap(k=>Q.ctry[k].ex), X=gfOn()?all.filter(exOK):all;
-  const yrOff=(yr=>{ const keep=GF.yr; GF.yr=null; const r=gfOn()?all.filter(exOK):all; GF.yr=keep; return r })();   // year charts ignore the year filter
-  const col=(lab,full,es,key,val,story)=>{ const u=es.filter(e=>e[4]).length, on=String(GF[key])===String(val);
-    const dots=story?es.filter(e=>e[4]&&e[5]==='C').map(()=>'<i class="u" style="background:'+LEADC.C+'"></i>').join('')+es.filter(e=>e[4]&&e[5]==='I').map(()=>'<i class="u" style="background:'+LEADC.I+'"></i>').join('')+'<i></i>'.repeat(es.length-u)
-      :'<i class="u"></i>'.repeat(u)+'<i></i>'.repeat(es.length-u);
-    return `<button type="button" class="dcol" data-act="gf" data-v="${key}:${on?'':val}" aria-pressed="${on}" aria-label="${full}: ${es.length} examples" ${tipA(full,es.length+' examples, '+u+' using the Recommendations'+(story?' ('+es.filter(e=>e[4]&&e[5]==='C').length+' country-led, '+es.filter(e=>e[4]&&e[5]==='I').length+' organisation-led)':'')+'.<br>Select to '+(on?'clear this filter':'show only these on the globe')+'.')}><span class="dts">${dots}</span><b>${es.length}</b><small>${lab}</small></button>` };
-  const chart=(title,body,cls)=>`<div class="mchart ${cls||''}"><h4>${title}</h4>${body}</div>`;
-  // donut, as in the story: examples that use the Recommendations, by which one
+  const yrOff=(()=>{ const keep=GF.yr; GF.yr=null; const r=gfOn()?all.filter(exOK):all; GF.yr=keep; return r })();
+  const dotsOf=es=>{ const c=es.filter(e=>e[4]&&e[5]==='C').length, i=es.filter(e=>e[4]&&e[5]==='I').length; return `<i class="u" style="background:${LEADC.C}"></i>`.repeat(c)+`<i class="u" style="background:${LEADC.I}"></i>`.repeat(i)+'<i></i>'.repeat(es.length-c-i) };
+  const tipOf=(full,es,on,key)=>tipA(full,es.length+' examples: '+es.filter(e=>e[4]&&e[5]==='C').length+' country-led and '+es.filter(e=>e[4]&&e[5]==='I').length+' organisation-led using the Recommendations, '+es.filter(e=>!e[4]).length+' not using or not known.'+(key?'<br>Select to '+(on?'clear this filter':'show only these on the globe')+'.':''));
+  const col=(lab,full,es,key,val)=>{ const on=key&&String(GF[key])===String(val);
+    return `<${key?`button type="button" data-act="gf" data-v="${key}:${on?'':val}" aria-pressed="${on}"`:'div'} class="dcol" aria-label="${full}: ${es.length} examples" ${tipOf(full,es,on,key)}><span class="dts">${dotsOf(es)}</span><b>${es.length}</b><small>${big?full:lab}</small></${key?'button':'div'}>` };
+  const cols=a=>`<div class="dcols">${a.join('')}</div>`;
+  const YS=[2021,2022,2023,2024,2025];
+  // donut: examples that use the Recommendations, by which one
   const U=X.filter(e=>e[4]), order=['IRRS','IRIS','Mixed use','IROSS','Undetermined'], nfw=k=>U.filter(e=>fwOf(e)===k).length; let off=25, segs='';
-  order.forEach(k=>{ const n=nfw(k); if(!n) return; const len=n/(U.length||1)*100, d=Math.max(.5,len-1.2), act=FWC[k]&&k.length<6?`data-act="gf" data-v="rec:${GF.rec===k?'':k}" style="cursor:pointer"`:'';
+  order.forEach(k=>{ const n=nfw(k); if(!n) return; const len=n/(U.length||1)*100, d=Math.max(.5,len-1.2), act=k.length<6?`data-act="gf" data-v="rec:${GF.rec===k?'':k}" style="cursor:pointer"`:'';
     segs+=`<circle cx="21" cy="21" r="15.9155" fill="none" stroke="${FWC[k]}" stroke-width="6.5" stroke-dasharray="${d.toFixed(2)} ${(100-d).toFixed(2)}" stroke-dashoffset="${off.toFixed(2)}" ${act} ${tipA(k,n+' of '+U.length+' examples that use the Recommendations'+(RECS[k]?'<br>'+esc(RECS[k]):''))}/>`; off-=len });
-  const donut=`<svg viewBox="0 0 42 42" width="58" height="58" role="img" aria-label="Examples using the Recommendations, by Recommendation">${segs}<text x="21" y="21" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="600" fill="#fff">${U.length}</text></svg><div class="dkey">${order.filter(k=>nfw(k)).map(k=>`<span><i style="background:${FWC[k]}"></i>${k==='Mixed use'?'Mixed':k==='Undetermined'?'Undet.':k} ${nfw(k)}</span>`).join('')}</div>`;
-  // trend, as in the story: one line per Recommendation, 2021 to 2025
-  const YS=[2021,2022,2023,2024,2025], Uy=yrOff.filter(e=>e[4]), ser=['IRRS','IRIS','IROSS','Mixed use'].map(k=>[k,YS.map(y=>Uy.filter(e=>+e[1]===y&&fwOf(e)===k).length)]), mx=Math.max(1,...ser.flatMap(s=>s[1])), px=i=>4+i*17, py=v=>40-v/mx*36;
-  const trend=`<svg viewBox="0 0 76 52" width="76" height="52" role="img" aria-label="Examples using each Recommendation, by year">${[0,.5,1].map(f=>`<line x1="4" x2="72" y1="${py(mx*f)}" y2="${py(mx*f)}" stroke="rgba(255,255,255,.1)" stroke-width=".5"/>`).join('')}${ser.map(([k,v])=>`<polyline points="${v.map((n,i)=>px(i)+','+py(n).toFixed(1)).join(' ')}" fill="none" stroke="${FWC[k]}" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" ${tipA(k,YS.map((y,i)=>y+': '+v[i]).join(' · '))}/><circle cx="${px(4)}" cy="${py(v[4]).toFixed(1)}" r="1.8" fill="${FWC[k]}"/>`).join('')}<text x="4" y="50" font-size="5.5" fill="#8b98b3">'21</text><text x="72" y="50" font-size="5.5" fill="#8b98b3" text-anchor="end">'25</text><text x="38" y="50" font-size="5.5" fill="#8b98b3" text-anchor="middle">max ${mx}</text></svg>`;
-  return chart('By year',`<div class="dcols">${YS.map(y=>col("'"+String(y).slice(2),y,yrOff.filter(e=>+e[1]===y),'yr',y,true)).join('')}</div>`)
-    +chart('Recommendations',`<div class="dn">${donut}</div>`,'wide')
-    +chart('Trend',trend,'wide')
-    +chart('Who is covered',`<div class="dcols">${[['Refugees','Ref.','Refugees'],['IDPs','IDPs','IDPs'],['Stateless','Statel.','Stateless people']].map(([k,l,f])=>col(l,f,X.filter(e=>(e[7]||'').includes(k)),'grp',k)).join('')}</div>`)
-    +chart('Data source',`<div class="dcols">${[['Survey','Surv.','Survey'],['Census','Cens.','Census'],['Administrative','Admin','Administrative data'],['integration','Integ.','Data integration']].map(([k,l,f])=>col(l,f,X.filter(e=>(e[6]||'').includes(k)),'src',k)).join('')}</div>`);
+  const dz=big?230:72, donut=`<div class="dn"><svg viewBox="0 0 42 42" width="${dz}" height="${dz}" role="img" aria-label="Examples using the Recommendations, by Recommendation">${segs}<text x="21" y="${big?19.5:21}" text-anchor="middle" dominant-baseline="central" font-size="${big?9:10}" font-weight="600" fill="#fff">${U.length}</text>${big?'<text x="21" y="26" text-anchor="middle" font-size="2.6" fill="#b8c4d9">use the Recommendations</text>':''}</svg><div class="dkey">${order.filter(k=>nfw(k)).map(k=>`<span><i style="background:${FWC[k]}"></i>${big?(k+(RECS[k]?' · '+esc(RECS[k]):'')):(k==='Mixed use'?'Mixed':k==='Undetermined'?'Undet.':k)} <b>${nfw(k)}</b></span>`).join('')}</div></div>`;
+  // trend: one line per Recommendation
+  const Uy=yrOff.filter(e=>e[4]), ser=['IRRS','IRIS','IROSS','Mixed use'].map(k=>[k,YS.map(y=>Uy.filter(e=>+e[1]===y&&fwOf(e)===k).length)]), mx=Math.max(1,...ser.flatMap(s=>s[1])), W=big?520:150, H=big?250:92, L=big?30:16, R=big?70:8, T=10, B=big?26:16, px=i=>L+i*(W-L-R)/4, py=v=>H-B-v/mx*(H-T-B);
+  const trend=`<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Examples using each Recommendation, by year">${[0,.5,1].map(f=>`<line x1="${L}" x2="${W-R}" y1="${py(mx*f)}" y2="${py(mx*f)}" stroke="rgba(255,255,255,.12)" stroke-width="1"/><text x="${L-4}" y="${py(mx*f)+3}" text-anchor="end" font-size="${big?11:8}" fill="#8b98b3">${Math.round(mx*f)}</text>`).join('')}${YS.map((y,i)=>`<text x="${px(i)}" y="${H-(big?8:4)}" text-anchor="middle" font-size="${big?11:8}" fill="#8b98b3">${big?y:"'"+String(y).slice(2)}</text>`).join('')}${ser.map(([k,v])=>`<polyline points="${v.map((n,i)=>px(i).toFixed(1)+','+py(n).toFixed(1)).join(' ')}" fill="none" stroke="${FWC[k]}" stroke-width="${big?2.6:2}" stroke-linejoin="round" stroke-linecap="round" ${tipA(k,YS.map((y,i)=>y+': '+v[i]).join(' · '))}/>${v.map((n,i)=>`<circle cx="${px(i).toFixed(1)}" cy="${py(n).toFixed(1)}" r="${big?3.5:2.2}" fill="${FWC[k]}" ${tipA(k+' · '+YS[i],n+' examples')}/>`).join('')}`).join('')}${big?(()=>{ const L2=ser.map(([k,v])=>[k,v[4],py(v[4])+4]).sort((a,b)=>a[2]-b[2]); for(let i=1;i<L2.length;i++) if(L2[i][2]-L2[i-1][2]<15) L2[i][2]=L2[i-1][2]+15; return L2.map(x=>`<text x="${px(4)+8}" y="${x[2]}" font-size="12" fill="${FWC[x[0]]}">${x[0]==='Mixed use'?'Mixed':x[0]} ${x[1]}</text>`).join('') })():''}</svg>${big?'':`<div class="dkey row">${ser.map(([k])=>`<span><i style="background:${FWC[k]}"></i>${k==='Mixed use'?'Mixed':k}</span>`).join('')}</div>`}`;
+  // regions, as the story: country-led examples that use the Recommendations
+  const RN=['Africa','Europe','Americas','Asia and Oceania','Middle East'], RS=['Afr.','Eur.','Amer.','Asia','M.E.'], CU=X.filter(e=>e[4]&&e[5]==='C');
+  const SRC=[['Survey','Survey','Survey'],['Administrative','Admin','Administrative data'],['Census','Census','Census'],['integration','Integ.','Data integration']];
+  return [
+    ['year','Examples by year','Every GAIN example, by the round it was reported in.',cols(YS.map(y=>col("'"+String(y).slice(2),y,yrOff.filter(e=>+e[1]===y),'yr',y)))],
+    ['donut','Recommendations used','Examples that use the Recommendations, by which one.',donut],
+    ['trend','Trend by Recommendation','Examples using each Recommendation, 2021 to 2025.',trend],
+    ['region','By region','Country-led examples that use the Recommendations, by region.',cols([0,1,2,3,4].map(r=>col(RS[r],RN[r],CU.filter(e=>e[16]===r))))],
+    ['src','Data sources','Examples by the kind of data source. An example can use more than one.',cols(SRC.map(([k,l,f])=>col(l,f,X.filter(e=>(e[6]||'').includes(k)),'src',k)))],
+    ['grp','Who is covered','Examples by population group. An example can cover more than one.',cols([['Refugees','Refugees','Refugees'],['IDPs','IDPs','IDPs'],['Stateless','Statel.','Stateless people']].map(([k,l,f])=>col(l,f,X.filter(e=>(e[7]||'').includes(k)),'grp',k)))]
+  ];
 }
+const GLEG=`<div class="zleg"><span><i class="d" style="background:${LEADC.C}"></i>Country-led, using the Recommendations</span><span><i class="d" style="background:${LEADC.I}"></i>Organisation-led, using</span><span><i class="d" style="box-shadow:inset 0 0 0 1.5px #4cc3c9"></i>Not using, or not known</span><span>One dot = one example</span></div>`;
 function goalCounts(iso){ const n={}; sdgRows(iso).forEach(([d])=>{const g=goalOf(d.c); n[g]=(n[g]||0)+1}); (Q.ctry[iso].rep||[]).forEach(x=>{const g=goalOf(x[0]); n[g]=(n[g]||0)+1}); return n }
 function wheelSvg(n,size,label){ const gs=Object.keys(n).map(Number).filter(g=>SDGC[g]).sort((a,b)=>a-b), tot=gs.reduce((s,g)=>s+n[g],0)||1; let off=25, s='';
   gs.forEach(g=>{ const len=n[g]/tot*100, gap=gs.length>1?1.2:0; s+=`<circle cx="21" cy="21" r="15.9155" fill="none" stroke="${SDGC[g]}" stroke-width="6.5" stroke-dasharray="${Math.max(.5,len-gap).toFixed(2)} ${(100-Math.max(.5,len-gap)).toFixed(2)}" stroke-dashoffset="${off.toFixed(2)}" opacity="${gGoal&&gGoal!==g?.22:1}"/>`; off-=len });
   return `<svg viewBox="0 0 42 42" width="${size}" height="${size}" aria-hidden="true">${s}<text x="21" y="21" text-anchor="middle" dominant-baseline="central" font-size="${size>70?11:12}" font-weight="600" fill="#fff">${label}</text></svg>` }
-function sdgMinis(){
+function sdgCharts(big){
   const list=Object.keys(Q.ctry).filter(k=>has(k,'sdg')).map(k=>[k,goalCounts(k)]).map(([k,n])=>[k,n,Object.values(n).reduce((a,b)=>a+b,0)]).filter(x=>x[2]).sort((a,b)=>b[2]-a[2]||Q.ctry[a[0]].n.localeCompare(Q.ctry[b[0]].n));
-  const all={}; list.forEach(([k,n])=>Object.keys(n).forEach(g=>all[g]=(all[g]||0)+n[g])); const tot=Object.values(all).reduce((a,b)=>a+b,0);
-  return `<div class="mchart"><h4>All</h4><span ${tipA('All countries',tot+' values under '+Object.keys(all).length+' goals in '+list.length+' countries')}>${wheelSvg(all,64,tot)}</span></div>
-    <div class="mchart wheelrow"><h4>Country by country</h4><div class="wheels">${list.map(([k,n,c])=>`<button type="button" class="whb ${gGoal&&!n[gGoal]?'dim':''}" data-act="pick" data-v="${k}" aria-label="${esc(Q.ctry[k].n)}: ${c} values" ${tipA(Q.ctry[k].n,c+(c===1?' value':' values')+' · '+Object.keys(n).map(Number).sort((a,b)=>a-b).map(g=>'goal '+g+(n[g]>1?' ×'+n[g]:'')).join(', ')+'<br>Select to open the country.')}>${wheelSvg(n,24,c)}</button>`).join('')}</div></div>`;
+  const all={}; list.forEach(([k,n])=>Object.keys(n).forEach(g=>all[g]=(all[g]||0)+n[g])); const tot=Object.values(all).reduce((a,b)=>a+b,0), gs=Object.keys(all).map(Number).sort((a,b)=>a-b);
+  return [
+    ['all','All countries',tot+' values under '+gs.length+' goals in '+list.length+' countries.',`<div class="dn">${wheelSvg(all,big?230:78,tot)}<div class="dkey">${gs.map(g=>`<span><i style="background:${SDGC[g]}"></i>${big?'Goal '+g+' · '+esc(SDGN[g]||''):g} <b>${all[g]}</b></span>`).join('')}</div></div>`],
+    ['ctry','Goals covered, country by country','One ring per country, split by goal. The number is how many values the country has.',`<div class="wheels">${list.map(([k,n,c])=>`<button type="button" class="whb ${gGoal&&!n[gGoal]?'dim':''}" data-act="pick" data-v="${k}" aria-label="${esc(Q.ctry[k].n)}: ${c} values" ${tipA(Q.ctry[k].n,c+(c===1?' value':' values')+' · '+Object.keys(n).map(Number).sort((a,b)=>a-b).map(g=>'goal '+g+(n[g]>1?' ×'+n[g]:'')).join(', ')+'<br>Select to open the country.')}>${wheelSvg(n,big?62:34,c)}<small>${esc(Q.ctry[k].n)}</small></button>`).join('')}</div>`]
+  ];
 }
+function stripHtml(){ const cs=layer==='gain'?gainCharts(false):sdgCharts(false);
+  return cs.map(c=>`<div class="gtile t-${c[0]}"><div class="gth"><h4>${c[1]}</h4><button type="button" class="zbtn" data-act="zc" data-v="${c[0]}" aria-label="Enlarge: ${c[1]}" ${tipA('Enlarge','Open this chart at full size')}>⤢</button></div>${c[3]}</div>`).join('') }
+function renderZoom(){ const z=$('zoomer'); if(!zChart||level!=='world'||(layer!=='gain'&&layer!=='sdg')){ z.hidden=true; z.innerHTML=''; return }
+  const c=(layer==='gain'?gainCharts(true):sdgCharts(true)).find(x=>x[0]===zChart); if(!c){ zChart=null; z.hidden=true; return }
+  z.innerHTML=`<div class="zbox" role="dialog" aria-modal="true" aria-label="${c[1]}"><div class="zhead"><div><p class="eyebrow" style="color:${LAYER[layer].col}">${LAYER[layer].n}</p><h2>${c[1]}</h2><p class="lnote" style="margin-top:4px">${c[2]}${layer==='gain'&&gfOn()?' Filtered: '+esc(gfText())+'.':''}</p></div><button type="button" class="x" data-act="zclose">Close ✕</button></div><div class="zbody big t-${c[0]}">${c[3]}</div>${layer==='gain'&&c[0]!=='donut'&&c[0]!=='trend'?GLEG:''}${layer==='gain'&&gfOn()?`<p class="lnote">${act('gf','clear','Clear filters','lk')}</p>`:''}</div>`;
+  z.hidden=false }
 function pWorld(){
   const c=Q.ctry[gSel], L=layer, list=Object.keys(Q.ctry).filter(i=>has(i,L)).sort((a,b)=>Q.ctry[a].n.localeCompare(Q.ctry[b].n));
   const cnt=i=>L==='gain'?Q.ctry[i].ex.length+' ex.':L==='sdg'?(sdgRows(i).length+Q.ctry[i].rep.length)+' values':(Q.ctry[i].sv.length?Q.ctry[i].sv.length+' quest.':'causes');
@@ -707,11 +725,11 @@ function render(){
   if(level==='world'&&st.classList.contains('country')&&!busy){ st.classList.remove('country'); Object.assign(G,gBase()); draw() }
   if(level==='world'){ const allG=layer==='sdg'?[...new Set(Object.keys(Q.ctry).flatMap(k=>has(k,'sdg')?goalsOf(k):[]))].sort((a,b)=>a-b):[];
     $('stfoot').innerHTML=(layer==='sdg'?`<div class="goalbar">${allG.map(g=>`<button type="button" class="gbtn" data-act="goal" data-v="${g}" aria-pressed="${g===gGoal}" ${tipA('Goal '+g,esc(SDGN[g]||''))}>${SDGI.has(g)?`<img src="sdg/${g}.png" alt="Goal ${g}">`:`<span style="background:${SDGC[g]}">${g}</span>`}</button>`).join('')}${gGoal?act('goal',gGoal,'Show all goals','lk'):''}</div>`:'')
-     +(layer==='gain'?`<p class="lnote" style="margin:0;text-align:center">${gfOn()?`${Object.keys(Q.ctry).reduce((s,k)=>s+exF(k).length,0)} examples in ${Object.keys(Q.ctry).filter(k=>exF(k).length).length} countries match: ${esc(gfText())}. ${act('gf','clear','Clear filters','lk')}`:`One dot is one example. By year: <i class="d" style="background:${LEADC.C}"></i> country-led and <i class="d" style="background:${LEADC.I}"></i> organisation-led examples that use the Recommendations; hollow = not using or not known. Point at a chart to enlarge it; select a column or a ring segment to filter the globe.`}</p>`:'')
-     +`<div class="mleg" style="justify-content:center;margin-top:0">${layer==='gain'?'<span>Number = GAIN examples</span><span><i class="d" style="border:2.5px solid #4cc3c9"></i>Bright ring = share that use the Recommendations</span>':layer==='sdg'?(gGoal?`<span>Countries with a value under goal ${gGoal}: ${esc(SDGN[gGoal]||'')}</span>`:'<span>Country colour = the goal with most values</span><span>Number = SDG values</span><span>Rings: one per country, split by goal</span><span>Select a goal to show only its countries</span>'):'<span>Number = questionnaires</span><span>Circle = people displaced, by main cause:</span>'+[1,2,6,7].map(k=>`<span><i class="d" style="background:${CAUSE_COL[k]}"></i>${CZ[k].toLowerCase()}</span>`).join('')}</div>` }
+     +(layer==='gain'?`<p class="lnote" style="margin:0;text-align:center">${gfOn()?`${Object.keys(Q.ctry).reduce((s,k)=>s+exF(k).length,0)} examples in ${Object.keys(Q.ctry).filter(k=>exF(k).length).length} countries match: ${esc(gfText())}. ${act('gf','clear','Clear filters','lk')}`:`One dot is one example: <i class="d" style="background:${LEADC.C}"></i> country-led and <i class="d" style="background:${LEADC.I}"></i> organisation-led examples that use the Recommendations; hollow = not using or not known. Select a column or a ring segment to filter the globe; ⤢ opens a chart at full size.`}</p>`:'')
+     +`<div class="mleg" style="justify-content:center;margin-top:0">${layer==='gain'?'<span>Number = GAIN examples</span><span><i class="d" style="border:2.5px solid #4cc3c9"></i>Bright ring = share that use the Recommendations</span>':layer==='sdg'?(gGoal?`<span>Countries with a value under goal ${gGoal}: ${esc(SDGN[gGoal]||'')}</span>`:'<span>Country colour = the goal with most values</span><span>Number = SDG values</span><span>Select a goal to show only its countries</span>'):'<span>Number = questionnaires</span><span>Circle = people displaced, by main cause:</span>'+[1,2,6,7].map(k=>`<span><i class="d" style="background:${CAUSE_COL[k]}"></i>${CZ[k].toLowerCase()}</span>`).join('')}</div>` }
   else if(layer==='sdg'&&(!mapInd||mapInd==='__cause')&&subKeys(gSel).length&&!belowDone['auto'+gSel]){ mapInd=subKeys(gSel).includes('6.1.1')?'6.1.1':subKeys(gSel)[0]; belowDone['auto'+gSel]=1 }
   else if(layer==='idq'&&!mapInd&&Q.cpts[gSel]&&!belowDone['cz'+gSel]){ mapInd='__cause'; belowDone['cz'+gSel]=1 }
-  { const gm=$('gmini'), on=level==='world'&&(layer==='gain'||layer==='sdg'); gm.hidden=!on; gm.className=layer; gm.innerHTML=on?(layer==='gain'?gainMinis():sdgMinis()):'' }
+  { const gm=$('gstrip'), on=level==='world'&&(layer==='gain'||layer==='sdg'); gm.hidden=!on; gm.className='gstrip '+layer; gm.innerHTML=on?stripHtml():''; $('stage').classList.toggle('joined',on); renderZoom() }
   $('panel').style.setProperty('--lc',LAYER[layer].col);
   $('panel').innerHTML=level==='world'?(chosen?pWorld():pOverview()):layer==='gain'?pGain():layer==='sdg'?pSdg():pIdq();
   if(level==='country'){ paintMap(); renderMapFoot() }
@@ -730,6 +748,8 @@ document.addEventListener('click',e=>{
   else if(a==='zoom') zoomIn();
   else if(a==='zin'||a==='zout'){ if(G&&level==='world'&&view==='3d') G.zoomBy(a==='zin'?1.45:1/1.45) }
   else if(a==='gf'){ if(v==='clear') Object.keys(GF).forEach(k=>GF[k]=null); else { const [k,x]=v.split(':'); GF[k]=x===''?null:x } fEx=null; render() }
+  else if(a==='zc'){ zChart=v; renderZoom() }
+  else if(a==='zclose'){ zChart=null; renderZoom() }
   else if(a==='goal'){ gGoal=gGoal===+v?null:+v; render() }
   else if(a==='world') zoomOut();
   else if(a==='view') setView(v);
@@ -753,3 +773,6 @@ function fromHash(){ const [L,iso]=location.hash.slice(1).split('/'); if(LAYER[L
 window.addEventListener('hashchange',()=>{fromHash();render()});
 fromHash(); render();
 
+
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&zChart){ zChart=null; renderZoom() } });
+document.addEventListener('click',e=>{ if(e.target&&e.target.id==='zoomer'){ zChart=null; renderZoom() } });

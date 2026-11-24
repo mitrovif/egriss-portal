@@ -389,10 +389,18 @@ def short(s, n):
 ctry = {}
 def C(iso, nm=None):
     return ctry.setdefault(iso, {"n": nm or (CJ.get(iso, {}).get("name")) or next((k for k, v in name2iso.items() if v == iso), iso), "ex": [], "pop": None, "rep": [], "sv": [], "cz": []})
+# the story's own region of each example (0 Africa, 1 Europe, 2 Americas, 3 Asia and Oceania, 4 Middle East), from its chart data
+import glob
+STREG = {}
+for _f in glob.glob(f"{REPO}/assets/*.json"):
+    _d = json.load(open(_f))
+    if isinstance(_d, list) and len(_d) > 300 and isinstance(_d[0], list) and len(_d[0]) == 4 and isinstance(_d[0][2], list):
+        STREG = {i + 1: r[1] for i, r in enumerate(_d)}
+print("story regions for", len(STREG), "examples")
 for iso, c in CJ.items():
     d = C(iso, c["name"])
     d["ex"] = sorted([[e["id"], e["year"], short(e["title"], 110), e["org"], 1 if e.get("uses") else 0, "C" if e.get("lead") == "Country-led" else "I",
-                       ", ".join(e.get("method") or []), ", ".join(e.get("groups") or []), e.get("link") or "", cover_of(e), (e.get("note") or "")[:400], "|".join(dict.fromkeys((e.get("areas") or []) + (e.get("places") or []))), e.get("recs") or "", ", ".join(e.get("sources") or []), e.get("method_basis") or "", e.get("groups_basis") or ""] for e in c["examples"]], key=lambda e: (-e[1], e[2]))
+                       ", ".join(e.get("method") or []), ", ".join(e.get("groups") or []), e.get("link") or "", cover_of(e), (e.get("note") or "")[:400], "|".join(dict.fromkeys((e.get("areas") or []) + (e.get("places") or []))), e.get("recs") or "", ", ".join(e.get("sources") or []), e.get("method_basis") or "", e.get("groups_basis") or "", STREG.get(e["id"], -1)] for e in c["examples"]], key=lambda e: (-e[1], e[2]))
     yrs = sorted(c.get("population") or {})
     if yrs:
         pp = c["population"][yrs[-1]]; d["pop"] = [yrs[-1], pp.get("refugees",0)+pp.get("asylum",0), pp.get("idps",0) or (c.get("idmc") or {}).get(yrs[-1], 0), pp.get("stateless",0)]
