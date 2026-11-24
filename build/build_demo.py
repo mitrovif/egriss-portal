@@ -529,6 +529,18 @@ for iso, m in cm.items():
     if iso not in FULL and "states" in m:
         for st in m["states"]: st[0] = slim(st[0])
 for m_ in cm.values(): m_["bb"] = [round(v, 1) for v in cmaps.bbox(m_["land"])]
+def slim_near(d, w, h):
+    # neighbours are background: whole pixels, and only rings that reach the frame
+    out = []
+    for part in d.split("M")[1:]:
+        last = None; seg = []
+        for xy in part.replace("Z", "").split("L"):
+            a, b = xy.split(); v = (max(-30, min(w + 30, round(float(a)))), max(-30, min(h + 30, round(float(b)))))
+            if not last or abs(v[0] - last[0]) + abs(v[1] - last[1]) >= 2: seg.append(v); last = v
+        if len(seg) > 3 and any(0 <= x <= w and 0 <= y <= h for x, y in seg): out.append("M" + "L".join("%d %d" % v for v in seg) + "Z")
+    return "".join(out)
+for m_ in cm.values():
+    if m_.get("near"): m_["near"] = slim_near(m_["near"], float(m_["w"]), float(m_["h"]))
 data["cm"] = cm
 # displacement by cause, placed on the same country maps
 dpts = {}

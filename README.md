@@ -62,3 +62,7 @@ This writes `index.html`.
 - Identification module, causes of displacement and displacement points: the identification questions map (`idq-map`).
 - Administrative boundaries in `build/bounds/`: geoBoundaries.
 - Question wording for the Forced Displacement Surveys: UNHCR Microdata Library, catalogue entries 1175, 1421 and 1423.
+
+## Country map relief
+
+`relief/` holds one grey shaded-relief image per country, baked by `build/mk_relief.py` from the Natural Earth 10m "Gray Earth with Shaded Relief" raster (public domain, naturalearthdata.com). The raster itself is not kept here. Neighbouring countries and their labels come from the GAIN story country files.

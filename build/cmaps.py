@@ -78,6 +78,8 @@ def build(isos, full=("SSD", "PAK", "MOZ")):
         if not cj.get("land"): continue
         named = iso in full or len(cj["pts"]) <= 120
         m = {"w": cj["w"], "h": cj["h"], "land": cj["land"], "pts": [q if named else q[:4] for q in cj["pts"]]}
+        if cj.get("near"): m["near"] = cj["near"]; m["nlab"] = cj.get("nlab") or []
+        if os.path.exists(os.path.join(HERE, "..", "relief", iso + ".jpg")): m["rel"] = 1
         if "states" in cj and cj.get("areas"):
             tot = {}
             for a in cj["areas"]: tot[a[3]] = tot.get(a[3], 0) + (a[4] or 0)

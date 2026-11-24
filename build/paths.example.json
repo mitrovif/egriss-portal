@@ -1,9 +1,10 @@
 {
- "gain_story": "~/path/to/GAIN-story",
- "sdg": "~/path/to/gain_sdg_workstream",
- "idq": "~/path/to/idq-map",
- "bank": "~/path/to/question_bank_v1.csv",
- "roster": "~/path/to/analysis_ready_group_roster.csv",
- "originals": "~/path/to/All Surveys",
- "reports_src": "~/path/to/report PDFs"
+  "gain_story": "~/path/to/GAIN-story",
+  "sdg": "~/path/to/gain_sdg_workstream",
+  "idq": "~/path/to/idq-map",
+  "bank": "~/path/to/question_bank_v1.csv",
+  "roster": "~/path/to/analysis_ready_group_roster.csv",
+  "originals": "~/path/to/All Surveys",
+  "reports_src": "~/path/to/report PDFs",
+  "relief_src": "/path/to/GRAY_HR_SR.tif (Natural Earth 10m Gray Earth with Shaded Relief; only needed to re-bake relief/)"
 }

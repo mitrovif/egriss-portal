@@ -377,3 +377,10 @@ a.exr.reg{text-decoration:none}div.exr.reg{cursor:default}div.exr.reg:hover{tran
 .ztab td{padding:7px 10px;border-top:1px solid var(--line);color:var(--soft);vertical-align:top}.ztab td .lk{text-align:left;color:#fff;text-decoration:underline;text-underline-offset:3px;background:none;border:0;padding:0;font:inherit;cursor:pointer}.ztab td .lk:hover,.ztab td .lk:focus-visible{color:var(--teal)}
 .gstrip.sdg{grid-template-columns:repeat(2,minmax(0,1fr))}.gstrip.sdg .gtile:nth-child(odd){border-left:0}.gstrip.sdg .gtile:nth-child(even){border-left:1px solid var(--line)}
 @media (max-width:600px){.zbox.sxbox{padding:12px 10px}.zact{flex-direction:column-reverse;align-items:flex-end}}
+
+#cmap .near,#cmap2 .near{fill:#101c40;stroke:none}
+#cmap .nearline,#cmap2 .nearline{fill:none;stroke:rgba(207,224,244,.24);stroke-width:.8}
+#cmap .relief,#cmap2 .relief{pointer-events:none}#cmap .relief.ov,#cmap2 .relief.ov{mix-blend-mode:soft-light;opacity:.75}
+#cmap .land,#cmap2 .land{stroke:none;filter:drop-shadow(0 0 8px rgba(76,195,201,.3))}
+#cmap .landline,#cmap2 .landline{fill:none;stroke:rgba(207,224,244,.75);stroke-width:1.1;pointer-events:none}
+#cmap text.nl,#cmap2 text.nl{font:500 9.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;fill:rgba(207,224,244,.5)}
