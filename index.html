@@ -1483,18 +1483,18 @@ function paintMap(){
   bd.hidden=!code; if(code) bd.innerHTML=`${gicon(code,40)}<span><b>${esc(code)}</b><small>${esc(SNS[code]||(Q.sdg.find(d=>d.c===code)||{n:''}).n)}</small></span>`;
   if(!m){ sw.hidden=true; c2.innerHTML=''; $('cmap').style.clipPath=''; return }
   if($('cmap').dataset.cov){ $('cmap').querySelectorAll('#m-pts [data-g]').forEach(p=>p.style.opacity=''); $('cmap').querySelectorAll('#m-camps circle').forEach(k=>k.style.fill=''); delete $('cmap').dataset.cov }
-  paintInto($('cmap'),sg?0:mapG);
-  if(sg){ c2.innerHTML=$('cmap').innerHTML; paintInto(c2,Math.max(1,mapG)); sw.hidden=false; sw.querySelector('.sl').textContent=sg[0]; sw.querySelector('.sr').textContent=sg[1]; setSwipe(swX) }
+  paintInto($('cmap'),sg?0:mapG,sg?-1:0);
+  if(sg){ c2.innerHTML=$('cmap').innerHTML; paintInto(c2,Math.max(1,mapG),1); sw.hidden=false; sw.querySelector('.sl').textContent=sg[0]; sw.querySelector('.sr').textContent=sg[1]; setSwipe(swX) }
   else { sw.hidden=true; c2.innerHTML=''; $('cmap').style.clipPath='' }
 }
-function paintInto(root,g){ const iso=gSel, m=Q.cm[iso];
+function paintInto(root,g,side){ const iso=gSel, m=Q.cm[iso];
   const S=Q.sub, M=S.meta[iso], V=mapInd&&S.val[iso]?S.val[iso][mapInd]:null, R=mapInd&&S.rep[iso]?S.rep[iso].ind[mapInd]:null, cause=mapInd==='__cause', NR=(!V&&!R&&!cause&&mapInd&&fSrc&&surveysOf(iso).get(fSrc)||[]).find(([d])=>d.c===mapInd), NV=NR?[NR[1].r,NR[1].h][g]:null, base=!V&&!R&&!cause&&NV==null, rmp=(V||NR)?rampOf(mapInd):ramp;
-  const land=root.querySelector('.land'), nt=q0=>root.querySelector(q0); land.style.fill=NV!=null?rmp(NV):''; const natT=nt('#m-nat'); if(natT){ natT.style.opacity=NV!=null?1:0; if(NV!=null){ natT.querySelector('.a').textContent=NV+'%'; natT.querySelector('.b').textContent=[NR[1].g1,NR[1].g2||'Host'][g]+' · national value only' } }
+  const land=root.querySelector('.land'), nt=q0=>root.querySelector(q0); land.style.fill=NV!=null?rmp(NV):''; const natT=nt('#m-nat'); if(natT){ const nx=(m.bb[0]+m.bb[1])/2+(side||0)*(m.bb[1]-m.bb[0])*.24; natT.querySelectorAll('text').forEach(t=>t.setAttribute('x',nx)); natT.style.opacity=NV!=null?1:0; if(NV!=null){ natT.querySelector('.a').textContent=NV+'%'; natT.querySelector('.b').textContent=[NR[1].g1,NR[1].g2||'Host'][g]+(side?'':' · national value only') } }
   const val=k=>V?V.areas[((M.alias||{})[k]||k)+'|'+M.g[g]]:R?R.vals[k]:null;
   const top=m.states?new Set([...m.states].sort((a,b)=>b[4]-a[4]).slice(0,6).filter(a=>a[4]).map(a=>a[1])):null;
   const q=id=>root.querySelector('#'+id);
   q('m-idp').style.opacity=base?1:0; q('m-cz').style.opacity=cause?1:0; q('m-cz').style.pointerEvents=cause?'auto':'none'; czFocus(czSel); q('m-pts').style.opacity=base?.85:.28;
-  q('m-adm').style.pointerEvents=base&&m.states?'none':'auto'; { const nl=q('m-near'); if(nl) nl.style.opacity=base?1:.4; const ov=root.querySelector('.relief.ov'); if(ov) ov.style.opacity=base||cause?'':.4 }
+  q('m-adm').style.pointerEvents=base&&m.states?'none':'auto'; { const nl=q('m-near'); if(nl) nl.style.opacity=base?1:.4; const ov=root.querySelector('.relief.ov'); if(ov) ov.style.opacity=base||cause?'':.4; const rb=root.querySelector('.relief.base'); if(rb) rb.style.opacity=NV!=null?0:'' }
   q('m-adm').querySelectorAll('.ar').forEach(p=>{ const k=p.dataset.k, c=val(k); p.classList.toggle('on',!!c); if(c) p.style.fill=rmp(c[0]);
     p.setAttribute('data-tip',`<span class="tn">${esc(k)}</span>`+(c?`<span class="tq">${c[0]}%</span><span class="ts">${V?esc(SNN[mapInd])+' · '+esc(M.g[g])+' · '+c[1]+' households in the sample'+(c[1]<50?' (small)':''):esc(R.n)+' · '+fmt(c[1])+' '+R.nl}</span>`:`<span class="ts">${base?'No value shown: switch the map to an indicator':'No value for this area'}</span>`)) });
   q('m-camps').querySelectorAll('circle').forEach(c=>{ const v0=V&&g===0&&V.camps?V.camps[c.dataset.k]:null, v=v0&&v0[1]>=10?v0:null; c.style.opacity=v?1:0; c.style.pointerEvents=v?'auto':'none'; if(v){ c.style.fill=rmp(v[0]); c.setAttribute('data-tip',`<span class="tn">${esc(c.dataset.n)}</span><span class="tq">${v[0]}%</span><span class="ts">${esc(SNN[mapInd])} · refugees · ${v[1]} households in the sample</span>`) } });
