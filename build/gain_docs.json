@@ -1,0 +1,5390 @@
+{
+"scanned": "2026-11-25",
+"note": "Public links only; found by keyword on link text and address, not checked by a person.",
+"rows": [
+{
+"id": 2,
+"year": 2024,
+"country": "Rwanda",
+"title": "Refugees Thematic report published",
+"org": "Director of Census",
+"types": [
+"Census"
+],
+"url": "https://statistics.gov.rw/sites/default/files/documents/2025-02/RPHC2022_Refugees%20Thematic_report.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://statistics.gov.rw/sites/default/files/documents/2025-02/RPHC2022_Refugees%20Thematic_report.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 3,
+"year": 2025,
+"country": "Iraq",
+"title": "Refugees socio economic survey, planned to be implemented before the end of 2025",
+"org": "Kurdistan Region Statistics Office",
+"types": [
+"Survey"
+],
+"url": "https://iraq.unfpa.org/en/publications/demographic-survey-kurdistan-region-iraq",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://iraq.unfpa.org/en/publications/demographic-survey-kurdistan-region-iraq?page=1",
+"Next"
+],
+[
+"https://web2.unfpa.org/help/hotline.cfm",
+"Report wrongdoing"
+]
+]
+},
+"checked": {}
+},
+{
+"id": 5,
+"year": 2024,
+"country": "Lebanon",
+"title": "Disaster Risk Management",
+"org": "Ministry of Social Affairs",
+"types": [
+"Administrative data"
+],
+"url": "https://data.unhcr.org/en/documents/details/111483",
+"http": "200",
+"status": "page read",
+"data_access": "licensed, on request",
+"found": {
+"data": [
+[
+"https://microdata.unhcr.org/",
+"Microdata Library"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://microdata.unhcr.org/",
+"Microdata Library"
+]
+]
+}
+},
+{
+"id": 6,
+"year": 2025,
+"country": "United Kingdom",
+"title": "Estimating the unauthorised UK population by bringing together publicly available data sources from HO and MoJ websites…",
+"org": "Office for National Statistics (ONS)",
+"types": [
+"Administrative data",
+"Census"
+],
+"url": "https://www.ons.gov.uk/census",
+"http": "200",
+"status": "page read",
+"data_access": "licensed, on request",
+"found": {
+"data": [
+[
+"https://www.ons.gov.uk/datasets/create",
+"Create a custom dataset"
+],
+[
+"https://www.ons.gov.uk/census/2011census/2011censusdata/2011censusadhoctables",
+"Request a 2011 census dataset"
+]
+],
+"report": [
+[
+"https://www.ons.gov.uk/census/censustransformationprogramme/census2021outputs/releaseplans",
+"Results and timeline"
+],
+[
+"https://www.ons.gov.uk/feedback",
+"Report a problem with this page"
+]
+],
+"method": [
+[
+"https://www.ons.gov.uk/methodology",
+"Methodology"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://www.ons.gov.uk/census/2011census/2011censusdata/2011censusadhoctables",
+"Request a 2011 census dataset"
+]
+],
+"report": [
+[
+"https://www.ons.gov.uk/census/censustransformationprogramme/census2021outputs/releaseplans",
+"Results and timeline"
+]
+]
+}
+},
+{
+"id": 8,
+"year": 2024,
+"country": "Morocco",
+"title": "2024 General Population and Housing Census - Suryve Data",
+"org": "High Commission for Planning",
+"types": [
+"Survey",
+"Administrative data"
+],
+"url": "https://resultats2024.rgphapps.ma/",
+"http": "200",
+"status": "page read",
+"found": {}
+},
+{
+"id": 9,
+"year": 2025,
+"country": "",
+"title": "UNRWA digital identity verification 2025: Resident population estimate of Palestine Refugees in Lebanon",
+"org": "United Nations Relief and Works Agency for Palestine Refugees in the…",
+"types": [
+"Administrative data"
+],
+"url": "https://www.unrwa.org/resources/reports/palestinian-population-lebanon-findings-unrwa-digital-identity-verification",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.unrwa.org/Colonna_Report",
+"Colonna Report"
+],
+[
+"https://www.unrwa.org/news-reports",
+"Newsroom"
+],
+[
+"https://www.unrwa.org/news-reports/press-releases",
+"Press Releases"
+],
+[
+"https://www.unrwa.org/news-reports/blog",
+"Blog"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.unrwa.org/Colonna_Report",
+"Colonna Report"
+]
+]
+}
+},
+{
+"id": 11,
+"year": 2024,
+"country": "Morocco",
+"title": "General Population and Housing Census of 2024",
+"org": "High Commission for Planning",
+"types": [
+"Census"
+],
+"url": "https://www.hcp.ma/file/248404/",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.hcp.ma/file/248404/",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 12,
+"year": 2025,
+"country": "Netherlands",
+"title": "Report on asylum migrants (asylum seekers with a residence permit)",
+"org": "Statistics Netherlands",
+"types": [
+"Administrative data"
+],
+"url": "https://www.cbs.nl/nl-nl/publicatie/2025/16/asiel-en-integratie-2025-2014-eerste-helft-2024",
+"http": "200",
+"status": "page read",
+"data_access": "public",
+"found": {
+"data": [
+[
+"https://www.cbs.nl/nl-nl/onze-diensten/open-data/statline-als-open-data",
+"Open data"
+],
+[
+"https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/publicaties/recent",
+"Aanvullend statistisch onderzoek"
+],
+[
+"https://www.cbs.nl/nl-nl/onze-diensten/open-data",
+"Open data"
+],
+[
+"https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/microdata-zelf-onderzoek-doen",
+"Microdata"
+]
+],
+"report": [
+[
+"https://www.cbs.nl/en-gb/publication/2025/16/asylum-and-integration-2025-2014-july-2024",
+"Taal: English (EN)"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.cbs.nl/en-gb/publication/2025/16/asylum-and-integration-2025-2014-july-2024",
+"Taal: English (EN)"
+]
+]
+}
+},
+{
+"id": 14,
+"year": 2024,
+"country": "Morocco",
+"title": "Survey on migrants' experiences on migration routes, assistance needs, abuses and risks, migrant smuggling…",
+"org": "High Commission for Planning",
+"types": [
+"Survey"
+],
+"url": "https://www.hcp.ma/file/230790/",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.hcp.ma/file/230790/",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 15,
+"year": 2025,
+"country": "Kenya",
+"title": "2025 Mini DHS",
+"org": "Kenya National Bureau of Statistics",
+"types": [
+"Survey"
+],
+"url": "https://www.knbs.or.ke/reports/kdhs-2022/",
+"http": "200",
+"status": "page read",
+"data_access": "public",
+"found": {
+"data": [
+[
+"https://www.knbs.or.ke/wp-content/uploads/2023/08/KDHS-2022-Main-Reports.zip",
+"Main Reports (35 MB)"
+],
+[
+"https://www.knbs.or.ke/wp-content/uploads/2023/08/Kenya-Demographic-and-Health-Survey-2022-County-Fact-Sheets.zip",
+"County Fact Sheets (8.6 MB)"
+],
+[
+"https://kenya.opendataforafrica.org/",
+"Kenya Open Data Portal"
+]
+],
+"report": [
+[
+"https://www.knbs.or.ke/all-reports/",
+"All Reports"
+],
+[
+"https://www.knbs.or.ke/all-reports/producer-price-indices/",
+"Producer Price Indices"
+],
+[
+"https://www.knbs.or.ke/quarterly-gdp/",
+"Quarterly GDP Reports"
+],
+[
+"https://www.knbs.or.ke/button/quarterly-bop/",
+"Quarterly BOP Reports"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.knbs.or.ke/wp-content/uploads/2023/08/KDHS-2022-Main-Reports.zip",
+"Main Reports (35 MB)"
+],
+[
+"https://www.knbs.or.ke/wp-content/uploads/2023/08/Kenya-Demographic-and-Health-Survey-2022-County-Fact-Sheets.zip",
+"County Fact Sheets (8.6 MB)"
+]
+]
+}
+},
+{
+"id": 16,
+"year": 2025,
+"country": "Liberia",
+"title": "We are working to coordinates with line agencies involve with refugees/people in need of international protection…",
+"org": "Liberia Institute of Statistics and Geo-Information Services (LISGIS)",
+"types": [
+"Administrative data",
+"Data integration"
+],
+"url": "https://www.microdata.lisgislr.org/index.php/home",
+"http": "200",
+"status": "page read",
+"found": {
+"data": [
+[
+"https://www.microdata.lisgislr.org/index.php/catalog/?tab_type=survey",
+"Microdata"
+],
+[
+"https://www.microdata.lisgislr.org/index.php",
+"LISGIS Microdata Catalog"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://www.microdata.lisgislr.org/index.php/catalog/?tab_type=survey",
+"Microdata"
+]
+]
+}
+},
+{
+"id": 18,
+"year": 2025,
+"country": "",
+"title": "Organize a webinar on international mobility in 2025",
+"org": "Economic Community of West African States (ECOWAS)",
+"types": [
+"Survey",
+"Administrative data"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 20,
+"year": 2024,
+"country": "Sri Lanka",
+"title": "Ongoing Examples",
+"org": "Department of Census and Statistics",
+"types": [
+"Survey",
+"Administrative data",
+"Census"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 21,
+"year": 2025,
+"country": "",
+"title": "Organize a webinar on IDPs and Refugees in 2026",
+"org": "Economic Community of West African States (ECOWAS)",
+"types": [
+"Survey"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 23,
+"year": 2024,
+"country": "France",
+"title": "Planning the new edition of a survey (ELIPA 3)",
+"org": "General Directorate for Foreign Nationals in France",
+"types": [
+"Survey",
+"Administrative data",
+"Data integration"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 24,
+"year": 2025,
+"country": "",
+"title": "The next editions of regional reports will focus attention on the internal and external movements of people",
+"org": "Economic Community of West African States (ECOWAS)",
+"types": [
+"Survey",
+"Administrative data"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 26,
+"year": 2025,
+"country": "Chad",
+"title": "ECOSIT, General Population and Housing Census currently being prepared.",
+"org": "National Institute of Statistics, Economic and Demographic Studies…",
+"types": [
+"Administrative data",
+"Census"
+],
+"url": "https://formation.inseed.td/docs/MANUEL_DU_SUPERVISEUR _RGPH-3_12042026.pdf",
+"http": "000",
+"status": "not reachable"
+},
+{
+"id": 29,
+"year": 2024,
+"country": "Germany",
+"title": "Proof of Concept: Estimating employment rates for refugees by statistically matching administrative and survey data",
+"org": "Federal Statistical Office of Germany (DESTATIS)",
+"types": [
+"Data integration"
+],
+"url": "https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/_inhalt.html",
+"http": "200",
+"status": "page read",
+"data_access": "public",
+"found": {
+"data": [
+[
+"https://www.destatis.de/DE/Service/OpenData/_inhalt.html",
+"Open Data"
+],
+[
+"https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/Publikationen/Downloads-Migration/statistischer-bericht-einbuergerungen-2010210257005.xlsx?__blob=publicationFile&v=5",
+"Statistischer Bericht - Einbürgerungsstatistiken: Antragstellungen, Verfahrenserledigungen, Einbürgerungen - 2025 (xlsx,"
+],
+[
+"https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/Publikationen/Downloads-Migration/statistischer-bericht-schutzsuchende-2010240257005.xlsx?__blob=publicationFile&v=3",
+"Statistischer Bericht - Schutzsuchende - 2025 (xlsx, 3MB, Datei ist nicht barrierefrei)"
+],
+[
+"https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/Publikationen/Downloads-Migration/statistischer-bericht-einwanderungsgeschichte-erst-5122126257005.xlsx?__blob=publicationFile&v=2",
+"Statistischer Bericht - Mikrozensus - Bevölkerung nach Einwanderungsgeschichte - Erstergebnisse 2025 (xlsx, 18MB, Datei "
+]
+],
+"report": [
+[
+"https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/_inhalt.html#sprg416494",
+"Qualitätsberichte"
+],
+[
+"https://www.bpb.de/kurz-knapp/zahlen-und-fakten/sozialbericht-2024/553012/bevoelkerung-und-demografie/",
+"Kapitel 1.2"
+],
+[
+"https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/Publikationen/Downloads-Migration/statistischer-bericht-einwanderungsgeschichte-erst-5122126257005.html",
+"Statistischen Bericht"
+],
+[
+"https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/Publikationen/Downloads-Migration/statistischer-bericht-migrationshintergrund-erst-2010220257005.html",
+"Statistischen Bericht"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/Publikationen/Downloads-Migration/statistischer-bericht-einbuergerungen-2010210257005.xlsx?__blob=publicationFile&v=5",
+"Statistischer Bericht - Einbürgerungsstatistiken: Antragstellungen, Verfahrenserledigungen, Einbürgerungen - 2025 (xlsx,"
+],
+[
+"https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/Publikationen/Downloads-Migration/statistischer-bericht-schutzsuchende-2010240257005.xlsx?__blob=publicationFile&v=3",
+"Statistischer Bericht - Schutzsuchende - 2025 (xlsx, 3MB, Datei ist nicht barrierefrei)"
+],
+[
+"https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/Publikationen/Downloads-Migration/statistischer-bericht-einwanderungsgeschichte-erst-5122126257005.xlsx?__blob=publicationFile&v=2",
+"Statistischer Bericht - Mikrozensus - Bevölkerung nach Einwanderungsgeschichte - Erstergebnisse 2025 (xlsx, 18MB, Datei "
+]
+]
+}
+},
+{
+"id": 30,
+"year": 2024,
+"country": "Djibouti",
+"title": "3rd Population and Housing Census (RGPH-3) that was completed in the summer of this year, 2024.",
+"org": "National Institute of Statistics (INSTAD)",
+"types": [
+"Census"
+],
+"url": "https://firebasestorage.googleapis.com/v0/b/instad-dj.appspot.com/o/D%C3%A9mographie%2F0%2FTome%2014_Profil%20des%20r%C3%A9fugi%C3%A9s%20et%20des%20demandeurs%20d'asile_Rapport%20Provisoire_15072025.pdf?alt=media&token=ecc9d430-38e0-45e0-99dc-d77791454e42",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://firebasestorage.googleapis.com/v0/b/instad-dj.appspot.com/o/D%C3%A9mographie%2F0%2FTome%2014_Profil%20des%20r%C3%A9fugi%C3%A9s%20et%20des%20demandeurs%20d'asile_Rapport%20Provisoire_15072025.pdf?alt=media&token=ecc9d430-38e0-45e0-99dc-d77791454e42",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 31,
+"year": 2025,
+"country": "Kyrgyzstan",
+"title": "Forms for departmental reporting on migration indicators have been developed and approved, including data on population…",
+"org": "National Statistical Committee of Kyrgyzstan",
+"types": [
+"Survey",
+"Administrative data",
+"Census"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 33,
+"year": 2024,
+"country": "Djibouti",
+"title": "5th Djibouti Households' Living Condition Survey (EDAM-5) which is currently in preparation",
+"org": "National Institute of Statistics (INSTAD)",
+"types": [
+"Survey"
+],
+"url": "https://edam-2024-0kd2xs9.gamma.site/",
+"http": "200",
+"status": "page read",
+"found": {}
+},
+{
+"id": 34,
+"year": 2025,
+"country": "South Africa",
+"title": "Concept note about IDP in Census 2022",
+"org": "Statistics South Africa",
+"types": [
+"Census"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 36,
+"year": 2024,
+"country": "Djibouti",
+"title": "Quarterly Labour Force Survey currently in preparation with the support of ILO",
+"org": "National Institute of Statistics (INSTAD)",
+"types": [
+"Survey"
+],
+"url": "https://firebasestorage.googleapis.com/v0/b/instad-dj.appspot.com/o/Sociale%2F0%2FRapport%20EDST_T4_2025_VF.pdf?alt=media&token=699191a4-e130-42a7-a1ea-e1c379190dd8",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://firebasestorage.googleapis.com/v0/b/instad-dj.appspot.com/o/Sociale%2F0%2FRapport%20EDST_T4_2025_VF.pdf?alt=media&token=699191a4-e130-42a7-a1ea-e1c379190dd8",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 37,
+"year": 2025,
+"country": "Belarus",
+"title": "Foreign citizens and stateless persons permanently or temporarily residing or temporarily staying in the Republic of…",
+"org": "National Statistical Committee of the Republic of Belarus",
+"types": [
+"Administrative data",
+"Census"
+],
+"url": "https://www.belstat.gov.by/upload/iblock/48a/twytvykdto5c4e7tzsjdc60ak8p7vyn6.pdf",
+"http": "000",
+"status": "not reachable"
+},
+{
+"id": 38,
+"year": 2024,
+"country": "Nigeria",
+"title": "Survey in Nigeria on IDPS",
+"org": "Energy Commission of Nigeria Abuja",
+"types": [
+"Survey"
+],
+"url": "http://necal.energy.gov.ng/",
+"http": "200",
+"status": "page read",
+"found": {}
+},
+{
+"id": 39,
+"year": 2025,
+"country": "Egypt",
+"title": "The Joint Assessment between the World Food Programme (WFP) and the United Nations High Commissioner for Refugees…",
+"org": "Central Agency for Public Mobilization and Statistics, Egypt",
+"types": [
+"Survey"
+],
+"url": "https://data.unhcr.org/en/documents/details/122243",
+"http": "200",
+"status": "page read",
+"data_access": "licensed, on request",
+"found": {
+"data": [
+[
+"https://microdata.unhcr.org/",
+"Microdata Library"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://microdata.unhcr.org/",
+"Microdata Library"
+]
+]
+}
+},
+{
+"id": 40,
+"year": 2024,
+"country": "Djibouti",
+"title": "Administrative databases of Ministry of the Interior - continous work",
+"org": "Na",
+"types": [
+"Survey",
+"Administrative data",
+"Census",
+"Data integration"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 45,
+"year": 2024,
+"country": "Nigeria",
+"title": "The NBS has implemented the first ever Survey on IDPs in seven selected states of Nigeria",
+"org": "National Bureau of Statistics Real Sector and Household Statistics…",
+"types": [
+"Survey",
+"Administrative data"
+],
+"url": "https://microdata.nigerianstat.gov.ng/index.php/catalog",
+"http": "200",
+"status": "page read",
+"data_access": "public",
+"found": {
+"data": [
+[
+"https://microdata.nigerianstat.gov.ng/index.php/catalog/?view=v",
+"Variable view"
+],
+[
+"https://microdata.nigerianstat.gov.ng/index.php/catalog/173/get-microdata",
+"Public use data files"
+],
+[
+"https://microdata.nigerianstat.gov.ng/index.php/catalog/152/get-microdata",
+"Public use data files"
+],
+[
+"https://microdata.nigerianstat.gov.ng/index.php/catalog/151/get-microdata",
+"Public use data files"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://microdata.nigerianstat.gov.ng/index.php/catalog/?view=v",
+"Variable view"
+],
+[
+"https://microdata.nigerianstat.gov.ng/index.php/catalog/173/get-microdata",
+"Public use data files"
+],
+[
+"https://microdata.nigerianstat.gov.ng/index.php/catalog/152/get-microdata",
+"Public use data files"
+],
+[
+"https://microdata.nigerianstat.gov.ng/index.php/catalog/151/get-microdata",
+"Public use data files"
+]
+]
+}
+},
+{
+"id": 48,
+"year": 2024,
+"country": "Nigeria",
+"title": "partnering with International Organization to carryout administrative data collection IDPs in affected states of Nigeria",
+"org": "National Bureau of Statistics Real Sector and Household Statistics…",
+"types": [
+"Survey",
+"Administrative data"
+],
+"url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/182",
+"http": "200",
+"status": "page read",
+"catalogue": "https://microdata.nigerianstat.gov.ng/index.php/catalog/182",
+"found": {
+"data": [
+[
+"https://microdata.nigerianstat.gov.ng/index.php/catalog/182/download/1395/Demographic%20Bulletin%20Datasheet.xlsx",
+"Demographic Bulletin 2023 Datasheet"
+],
+[
+"https://microdata.nigerianstat.gov.ng/index.php",
+"National Bureau of Statistics | Microdata Catalog"
+],
+[
+"https://microdata.nigerianstat.gov.ng/index.php/catalog/182/download/1392",
+"https://microdata.nigerianstat.gov.ng/index.php/catalog/182/download/1392"
+],
+[
+"https://microdata.nigerianstat.gov.ng/index.php/catalog/182/download/1395",
+"https://microdata.nigerianstat.gov.ng/index.php/catalog/182/download/1395"
+]
+],
+"report": [
+[
+"https://microdata.nigerianstat.gov.ng/index.php/catalog/182/download/1392/Demographic%20Bulletin%202023.pdf",
+"Demographic Bulletin 2023"
+]
+],
+"method": [
+[
+"https://microdata.nigerianstat.gov.ng/index.php/metadata/export/182/json",
+"JSON"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://microdata.nigerianstat.gov.ng/index.php/catalog/182/download/1395/Demographic%20Bulletin%20Datasheet.xlsx",
+"Demographic Bulletin 2023 Datasheet"
+]
+],
+"report": [
+[
+"https://microdata.nigerianstat.gov.ng/index.php/catalog/182/download/1392/Demographic%20Bulletin%202023.pdf",
+"Demographic Bulletin 2023"
+]
+],
+"method": [
+[
+"https://microdata.nigerianstat.gov.ng/index.php/metadata/export/182/json",
+"JSON"
+]
+]
+}
+},
+{
+"id": 51,
+"year": 2024,
+"country": "Honduras",
+"title": "INE Honduras in 2023 and 2024 has been collecting statistics on forced displacement in Honduras.",
+"org": "Instituto Nacional de Estadística",
+"types": [
+"Survey"
+],
+"url": "https://ine.gob.hn/wp-content/uploads/2026/04/Estudio-Poblacion-Desplazada-Internamente-EPHPM-2024.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://ine.gob.hn/wp-content/uploads/2026/04/Estudio-Poblacion-Desplazada-Internamente-EPHPM-2024.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 52,
+"year": 2025,
+"country": "Haiti",
+"title": "Internal displacement exercises due to disasters and violence, especially in Haiti through the DTMParticipation in the…",
+"org": "International Organization for Migration (IOM)",
+"types": [
+"Survey"
+],
+"url": "https://reliefweb.int/report/haiti/haiti-report-internal-displacement-situation-haiti-round-10-june-2025",
+"http": "200",
+"status": "page read",
+"found": {
+"data": [
+[
+"https://data.humdata.org/dataset/cod-ps-hti",
+"for Haitian population figures: see UNFPA estimates, 2024"
+]
+],
+"report": [
+[
+"https://dtm.iom.int/reports/haiti-report-displacement-situation-haiti-round-10-june-2025",
+"View original"
+],
+[
+"https://reliefweb.int/attachments/be5aef71-8057-430b-a438-274909af366d/Displacement%20situation%20in%20Haiti%20-%20Round%2010%20-%20June%202025_3.pdf",
+"Download Report (PDF | 6.62 MB)"
+],
+[
+"https://reliefweb.int/updates?list=Situation%20Report%20Updates&advanced-search=%28F10%29",
+"Situation Report"
+],
+[
+"https://reliefweb.int/report/somalia/snapshot-somalia-health-cluster-response-october-2026",
+"Snapshot for Somalia Health Cluster Response - October 2026"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://dtm.iom.int/reports/haiti-report-displacement-situation-haiti-round-10-june-2025",
+"View original"
+],
+[
+"https://reliefweb.int/attachments/be5aef71-8057-430b-a438-274909af366d/Displacement%20situation%20in%20Haiti%20-%20Round%2010%20-%20June%202025_3.pdf",
+"Download Report (PDF | 6.62 MB)"
+]
+]
+}
+},
+{
+"id": 54,
+"year": 2024,
+"country": "Honduras",
+"title": "By 2025, it is planned to continue collecting statistics to identify PDI",
+"org": "Instituto Nacional de Estadística",
+"types": [
+"Survey",
+"Census"
+],
+"url": "https://ine.gob.hn/wp-content/uploads/2026/04/Estudio-Poblacion-Desplazada-Internamente-EPHPM-2024.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://ine.gob.hn/wp-content/uploads/2026/04/Estudio-Poblacion-Desplazada-Internamente-EPHPM-2024.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 55,
+"year": 2025,
+"country": "Haiti",
+"title": "Monthly monitoring of internal displacement in Haiti",
+"org": "International Organization for Migration (IOM)",
+"types": [
+"Survey"
+],
+"url": "https://dtm.iom.int/haiti",
+"http": "403",
+"status": "refused automated access"
+},
+{
+"id": 57,
+"year": 2024,
+"country": "Honduras",
+"title": "In the 2025 National Population and Housing Census, there is a question: What was the reason why [NAME] came to live in…",
+"org": "Instituto Nacional de Estadística",
+"types": [
+"Census"
+],
+"url": "https://ine.gob.hn/wp-content/uploads/2026/04/Estudio-Poblacion-Desplazada-Internamente-EPHPM-2024.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://ine.gob.hn/wp-content/uploads/2026/04/Estudio-Poblacion-Desplazada-Internamente-EPHPM-2024.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 58,
+"year": 2024,
+"country": "Honduras",
+"title": "Honduras, leads the working group for the Practical Guide for the production of harmonized statistics on forced…",
+"org": "Instituto Nacional de Estadística",
+"types": [
+"Survey",
+"Administrative data",
+"Census"
+],
+"url": "https://rtc-cea.cepal.org/es/documento/guia-practica-para-la-produccion-de-estadisticas-armonizadas-sobre-desplazamiento-forzado",
+"http": "403",
+"status": "refused automated access"
+},
+{
+"id": 59,
+"year": 2025,
+"country": "State of Palestine",
+"title": "Listing the population in gaza strip 2026.",
+"org": "Palestinian Central Bureau of Statistics (PCBS)",
+"types": [
+"Survey",
+"Administrative data",
+"Census"
+],
+"url": "https://www.pcbs.gov.ps/",
+"http": "200",
+"status": "page read",
+"data_access": "public",
+"found": {
+"data": [
+[
+"https://www.pcbs.gov.ps/media/4a0pboo1/life-expectancy-at-birth-in-palestine.xlsx",
+"Life Expectancy At Birth In Palestine"
+],
+[
+"https://www.pcbs.gov.ps/media/mjuiee2o/estimated-population-growth-rate-in-palestine.xlsx",
+"Estimated Population Growth Rate In Palestine"
+],
+[
+"https://www.pcbs.gov.ps/media/jtyhnter/sex-ratio-in-palestine.xlsx",
+"Sex Ratio In Palestine"
+],
+[
+"https://www.pcbs.gov.ps/media/f4np1lnh/projected-population-in-the-palestine.xlsx",
+"Projected Population In The Palestine"
+]
+],
+"report": [
+[
+"https://www.pcbs.gov.ps/en/press-releases/?postId=23457&title=Press_Release_on_the_Results_of_the_Labour_Force_Survey__in_the_West_Bank_Fourth_Quarter__October___December__2025__Round",
+"3/31/2026"
+],
+[
+"https://www.pcbs.gov.ps/media/050dp4lf/book2756.pdf",
+"Read More"
+],
+[
+"https://www.pcbs.gov.ps/media/jk2jkgar/cci102026e.pdf",
+"Read More"
+],
+[
+"https://www.pcbs.gov.ps/media/tjqbhdyv/regextrade092026e.pdf",
+"Read More"
+]
+],
+"method": [
+[
+"https://www.pcbs.gov.ps/media/yvqat0b4/numbers-of-population-projections_en.doc",
+"Methodology"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://www.pcbs.gov.ps/media/4a0pboo1/life-expectancy-at-birth-in-palestine.xlsx",
+"Life Expectancy At Birth In Palestine"
+],
+[
+"https://www.pcbs.gov.ps/media/mjuiee2o/estimated-population-growth-rate-in-palestine.xlsx",
+"Estimated Population Growth Rate In Palestine"
+],
+[
+"https://www.pcbs.gov.ps/media/jtyhnter/sex-ratio-in-palestine.xlsx",
+"Sex Ratio In Palestine"
+],
+[
+"https://www.pcbs.gov.ps/media/f4np1lnh/projected-population-in-the-palestine.xlsx",
+"Projected Population In The Palestine"
+]
+]
+}
+},
+{
+"id": 61,
+"year": 2024,
+"country": "Honduras",
+"title": "At the end of the 2025 CENSUS, data will be available to analyze the variables of interest linked to the causes of…",
+"org": "Instituto Nacional de Estadística",
+"types": [
+"Survey",
+"Census"
+],
+"url": "https://ine.gob.hn/wp-content/uploads/2026/04/Estudio-Poblacion-Desplazada-Internamente-EPHPM-2024.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://ine.gob.hn/wp-content/uploads/2026/04/Estudio-Poblacion-Desplazada-Internamente-EPHPM-2024.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 62,
+"year": 2025,
+"country": "State of Palestine",
+"title": "Multi-indicator cluster survey (mics)",
+"org": "Palestinian Central Bureau of Statistics (PCBS)",
+"types": [
+"Survey"
+],
+"url": "https://microdata.pcbs.gov.ps/PCBS-Metadata-en-v5.2/index.php/catalog/708",
+"http": "200",
+"status": "page read",
+"catalogue": "https://microdata.pcbs.gov.ps/PCBS-Metadata-en-v5.2/index.php/catalog/708",
+"found": {
+"questionnaire": [
+[
+"https://microdata.pcbs.gov.ps/PCBS-Metadata-en-v5.2/index.php/catalog/708#metadata-questionnaires",
+"Questionnaires"
+]
+],
+"data": [
+[
+"https://microdata.pcbs.gov.ps/PCBS-Metadata-en-v5.2/index.php/catalog/708/get-microdata",
+"Get Microdata"
+],
+[
+"https://microdata.pcbs.gov.ps/PCBS-Metadata-en-v5.2/index.php/catalog/708/data-dictionary",
+"Data Description"
+],
+[
+"https://microdata.pcbs.gov.ps/PCBS-Metadata-en-v5.2/index.php/catalog/708/download/3187",
+"https://microdata.pcbs.gov.ps/PCBS-Metadata-en-v5.2/index.php/catalog/708/download/3187"
+],
+[
+"https://microdata.pcbs.gov.ps/PCBS-Metadata-en-v5.2/index.php/catalog/708/download/3188",
+"https://microdata.pcbs.gov.ps/PCBS-Metadata-en-v5.2/index.php/catalog/708/download/3188"
+]
+],
+"report": [
+[
+"https://pcbs.gov.ps/Portals/_Rainbow/Documents/PCBS-SHORT VERSION-Dissemination Policy.pdf",
+"Dissemination Policy"
+],
+[
+"https://www.pcbs.gov.ps/Downloads/book2552.pdf",
+"Download"
+]
+],
+"method": [
+[
+"https://microdata.pcbs.gov.ps/PCBS-Metadata-en-v5.2/index.php",
+"Palestinian Central Bureau of Statistics"
+],
+[
+"https://microdata.pcbs.gov.ps/PCBS-Metadata-en-v5.2/index.php/citations",
+"Citations"
+],
+[
+"http://microdata.pcbs.gov.ps/PCBS-Metadata-ar-v5.2/index.php/catalog",
+"المسوح بالعربية"
+],
+[
+"https://microdata.pcbs.gov.ps/PCBS-Metadata-en-v5.2/index.php/catalog",
+"Central Data Catalog"
+]
+]
+},
+"checked": {
+"questionnaire": [
+[
+"https://microdata.pcbs.gov.ps/PCBS-Metadata-en-v5.2/index.php/catalog/708#metadata-questionnaires",
+"Questionnaires"
+]
+],
+"data": [
+[
+"https://microdata.pcbs.gov.ps/PCBS-Metadata-en-v5.2/index.php/catalog/708/get-microdata",
+"Get Microdata"
+],
+[
+"https://microdata.pcbs.gov.ps/PCBS-Metadata-en-v5.2/index.php/catalog/708/download/3187",
+"https://microdata.pcbs.gov.ps/PCBS-Metadata-en-v5.2/index.php/catalog/708/download/3187"
+],
+[
+"https://microdata.pcbs.gov.ps/PCBS-Metadata-en-v5.2/index.php/catalog/708/download/3188",
+"https://microdata.pcbs.gov.ps/PCBS-Metadata-en-v5.2/index.php/catalog/708/download/3188"
+]
+],
+"method": [
+[
+"https://microdata.pcbs.gov.ps/PCBS-Metadata-en-v5.2/index.php/catalog/708/data-dictionary",
+"Data Description"
+]
+]
+}
+},
+{
+"id": 64,
+"year": 2024,
+"country": "Thailand",
+"title": "Thailand 2025 Population and Housing Census",
+"org": "United Nations High Commissioner for Refugees (UNHCR)",
+"types": [
+"Census"
+],
+"url": "https://www.nso.go.th/nsoweb/main/summano/aE",
+"http": "200",
+"status": "page read",
+"found": {
+"questionnaire": [
+[
+"https://www.nso.go.th/nsoweb/questionnaire",
+"แบบสอบถาม"
+]
+],
+"report": [
+[
+"https://www.nso.go.th/nsoweb/storage/title_presentation/2026/20260720083156_80642.pdf",
+"รายงานผลเบื้องต้น"
+]
+]
+},
+"checked": {
+"questionnaire": [
+[
+"https://www.nso.go.th/nsoweb/questionnaire",
+"แบบสอบถาม"
+]
+],
+"report": [
+[
+"https://www.nso.go.th/nsoweb/storage/title_presentation/2026/20260720083156_80642.pdf",
+"รายงานผลเบื้องต้น"
+]
+]
+}
+},
+{
+"id": 65,
+"year": 2025,
+"country": "Liechtenstein",
+"title": "Asylum Statistics 2023",
+"org": "Office of Statistics Liechtenstein",
+"types": [
+"Administrative data"
+],
+"url": "https://www.statistikportal.li/de/publikation/asylwesen-2023/2023/01/v-1/p30362/pdf",
+"http": "403",
+"status": "refused automated access"
+},
+{
+"id": 67,
+"year": 2024,
+"country": "Indonesia",
+"title": "Indonesia 2025 Intercensal Population Survey (SUPAS)",
+"org": "United Nations High Commissioner for Refugees (UNHCR)",
+"types": [
+"Survey"
+],
+"url": "https://www.bps.go.id/en/publication/2026/06/30/bdc814f38edf0a941f4f9d34/penduduk-dan-indikator-kependudukan-hasil-survei-penduduk-antar-sensus-2025.html",
+"http": "403",
+"status": "refused automated access"
+},
+{
+"id": 68,
+"year": 2025,
+"country": "Liechtenstein",
+"title": "Asylum Statistics 2024",
+"org": "Office of Statistics Liechtenstein",
+"types": [
+"Administrative data"
+],
+"url": "https://www.statistikportal.li/de/publikation/asylwesen-2024/2024/01/v-1/p32568/pdf",
+"http": "403",
+"status": "refused automated access"
+},
+{
+"id": 71,
+"year": 2025,
+"country": "Afghanistan",
+"title": "I use geospatial analytics to explore the relationship with displaced persons and poverty to support Poverty and Equity…",
+"org": "World Bank (WB)",
+"types": [
+"Survey",
+"Administrative data",
+"Census",
+"Data integration"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 73,
+"year": 2024,
+"country": "Peru",
+"title": "We manage a specific database for shelters in direct care with the Refugee population.",
+"org": "Scalabrini International Migration Network",
+"types": [
+"Administrative data"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 74,
+"year": 2025,
+"country": "Cameroon",
+"title": "We used Administrative data (ministry of Education) to estimate mismatch between language of school curriculum and…",
+"org": "World Bank (WB)",
+"types": [
+"Survey",
+"Administrative data",
+"Data integration"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 76,
+"year": 2024,
+"country": "United Kingdom",
+"title": "Irregular Migration to the UK Estimates, (includes asylum seekers and irregular migrants who are undocumented refugees).",
+"org": "Office for National Statistics (ONS)",
+"types": [
+"Survey",
+"Administrative data",
+"Census",
+"Data integration"
+],
+"url": "https://www.gov.uk/government/statistics/irregular-migration-to-the-uk-year-ending-june-2024",
+"http": "200",
+"status": "page read",
+"data_access": "licensed, on request",
+"found": {
+"data": [
+[
+"https://www.gov.uk/government/statistical-data-sets/irregular-migration-detailed-dataset-and-summary-tables",
+"Irregular migration detailed dataset and summary tables"
+]
+],
+"report": [
+[
+"https://www.gov.uk/government/publications/home-office-irregular-migration-to-the-uk-statistics-user-guide",
+"Home Office irregular migration to the UK statistics: user guide"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://www.gov.uk/government/statistical-data-sets/irregular-migration-detailed-dataset-and-summary-tables",
+"Irregular migration detailed dataset and summary tables"
+]
+],
+"method": [
+[
+"https://www.gov.uk/government/publications/home-office-irregular-migration-to-the-uk-statistics-user-guide",
+"Home Office irregular migration to the UK statistics: user guide"
+]
+]
+}
+},
+{
+"id": 77,
+"year": 2025,
+"country": "Cameroon",
+"title": "Using accessibility models to estimate country of origin of refugees",
+"org": "World Bank (WB)",
+"types": [
+"Administrative data"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 79,
+"year": 2024,
+"country": "Burkina Faso",
+"title": "Support to Burkina Faso NSO on Socio-Economic Module for Regional Protection Monitoring (P21)",
+"org": "United Nations High Commissioner for Refugees (UNHCR)",
+"types": [
+"Survey",
+"Administrative data"
+],
+"url": "https://microdata.unhcr.org/index.php/catalog/1466/pdf-documentation",
+"http": "200",
+"status": "page read",
+"catalogue": "https://microdata.unhcr.org/index.php/catalog/1466",
+"found": {
+"data": [
+[
+"https://microdata.unhcr.org/index.php",
+"Microdata Library"
+],
+[
+"https://microdata.unhcr.org/index.php/catalog/1466/get-microdata",
+"Get Microdata"
+],
+[
+"https://microdata.unhcr.org/index.php/catalog/1466/data-dictionary",
+"Data Dictionary"
+],
+[
+"https://microdata.unhcr.org/index.php/catalog/1466/download/4333",
+"https://microdata.unhcr.org/index.php/catalog/1466/download/4333"
+]
+],
+"report": [
+[
+"https://www.unhcr.org/igo-reporting-misconduct/",
+"Report misconduct or abuse"
+],
+[
+"https://www.unhcr.org/stay-informed.html",
+"Subscribe to our newsletter"
+]
+],
+"method": [
+[
+"https://microdata.unhcr.org/index.php/catalog/1466/pdf-documentation",
+"Documentation in PDF"
+],
+[
+"https://microdata.unhcr.org/index.php/metadata/export/1466/ddi",
+"DDI/XML"
+],
+[
+"https://microdata.unhcr.org/index.php/metadata/export/1466/json",
+"JSON"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://microdata.unhcr.org/index.php/catalog/1466/get-microdata",
+"Get Microdata"
+]
+],
+"method": [
+[
+"https://microdata.unhcr.org/index.php/catalog/1466/data-dictionary",
+"Data Dictionary"
+]
+],
+"report": [
+[
+"https://microdata.unhcr.org/index.php/catalog/1466/pdf-documentation",
+"Documentation in PDF"
+]
+]
+}
+},
+{
+"id": 80,
+"year": 2025,
+"country": "Chad",
+"title": "Estimating market access of refugee camps/sites",
+"org": "World Bank (WB)",
+"types": [
+"Survey",
+"Data integration"
+],
+"url": "https://www.jointdatacenter.org/wp-content/uploads/2022/08/WB_CHAD_EN_ONLINE.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.jointdatacenter.org/wp-content/uploads/2022/08/WB_CHAD_EN_ONLINE.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 82,
+"year": 2024,
+"country": "Mali",
+"title": "EMOP",
+"org": "United Nations High Commissioner for Refugees (UNHCR)",
+"types": [
+"Survey",
+"Administrative data",
+"Census"
+],
+"url": "https://www.jointdatacenter.org/?p=68306",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+}
+},
+{
+"id": 83,
+"year": 2025,
+"country": "Côte d'Ivoire",
+"title": "Using Accessibility analytics to estimate service areas and numbers of uncovered people/settlements of government…",
+"org": "World Bank (WB)",
+"types": [
+"Survey",
+"Administrative data",
+"Data integration"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 85,
+"year": 2024,
+"country": "Central African Republic",
+"title": "MICS 2025 CAR",
+"org": "United Nations High Commissioner for Refugees (UNHCR)",
+"types": [
+"Survey",
+"Administrative data",
+"Census"
+],
+"url": "https://www.jointdatacenter.org/activites/displaced-and-stateless-populations-in-car/",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+}
+},
+{
+"id": 89,
+"year": 2025,
+"country": "Belgium",
+"title": "Development of new statistics related to the implementation of the new law on stateless persons (in particular…",
+"org": "Belgian Home Affairs Federal Public Service – Immigration Office",
+"types": [
+"Administrative data"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 91,
+"year": 2024,
+"country": "Ethiopia",
+"title": "Ministry of labor and Skills are provides different services and supports for refugees, IDPs, migrant returns…",
+"org": "Ministry of Labor and Skills",
+"types": [
+"Survey",
+"Administrative data",
+"Census",
+"Data integration"
+],
+"url": "https://www.ilo.org/resource/article/ethiopia-reviews-progress-reintegration-and-labour-migration-coordination",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.ilo.org/research-and-publications",
+"Research"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.ilo.org/research-and-publications",
+"Research"
+]
+]
+}
+},
+{
+"id": 92,
+"year": 2025,
+"country": "Belgium",
+"title": "Extension of publications on family members of refugees and persons benefiting from subsidiary protection",
+"org": "Belgian Home Affairs Federal Public Service – Immigration Office",
+"types": [
+"Administrative data"
+],
+"url": "https://dofi.ibz.be/sites/default/files/2025-05/Cartes%20RGF%20-%20statistiques%202017-2023.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://dofi.ibz.be/sites/default/files/2025-05/Cartes%20RGF%20-%20statistiques%202017-2023.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 94,
+"year": 2024,
+"country": "Kenya",
+"title": "all cases referred to Probation and Aftercare Service, statistics were disaggregated in terms of nationality (foreign…",
+"org": "Probation and Aftercare Service",
+"types": [
+"Administrative data"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 95,
+"year": 2025,
+"country": "Belgium",
+"title": "Development of statistics related to detention/alternative to detention (with a specific focus on asylum seekers)",
+"org": "Belgian Home Affairs Federal Public Service – Immigration Office",
+"types": [
+"Administrative data"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 96,
+"year": 2024,
+"country": "",
+"title": "WB Regional Survey",
+"org": "World Bank (WB)",
+"types": [
+"Survey"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 97,
+"year": 2025,
+"country": "El Salvador",
+"title": "Workshops, training and webinar on the topic of Human Mobility.",
+"org": "Ministry of Justice and Public Security / Directorate of Victim…",
+"types": [
+"Administrative data"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 99,
+"year": 2024,
+"country": "",
+"title": "Survey Reported 2024",
+"org": "World Bank (WB)",
+"types": [
+"Survey"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 100,
+"year": 2025,
+"country": "El Salvador",
+"title": "Guidelines on the issue of attention to cases of Human Mobility (Returnees in need of protection and Internal Forced…",
+"org": "Ministry of Justice and Public Security / Directorate of Victim…",
+"types": [
+"Administrative data"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 102,
+"year": 2024,
+"country": "Somalia",
+"title": "Somalia - developing a joint government and UN durable solution data toolkit with relevant guidance to produce IDP data…",
+"org": "Joint IDP Profiling Services (JIPS)",
+"types": [
+"Survey"
+],
+"url": "https://www.undp.org/sites/g/files/zskgke326/files/2026-08/context-analysis.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.undp.org/sites/g/files/zskgke326/files/2026-08/context-analysis.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 103,
+"year": 2025,
+"country": "Ethiopia",
+"title": "Organized technical working group on specific on refugees",
+"org": "Ethiopian Statistics Service (ESS)",
+"types": [
+"Administrative data",
+"Census",
+"Data integration"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 104,
+"year": 2024,
+"country": "Azerbaijan",
+"title": "Azerbaijan - supporting the State Committee for Affairs of Refugees and IDPs to strengthen their statistical capacity…",
+"org": "Joint IDP Profiling Services (JIPS)",
+"types": [
+"Administrative data"
+],
+"url": "https://www.jips.org/news/strengthening-the-data-systems-and-capacities-of-the-idp-committee-in-azerbaijan/",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"http://documents1.worldbank.org/curated/en/099062923164533460/pdf/P1781240984ec608108c7f0164f8d0b3c98.pdf",
+"Research and analysis"
+]
+]
+},
+"checked": {
+"report": [
+[
+"http://documents1.worldbank.org/curated/en/099062923164533460/pdf/P1781240984ec608108c7f0164f8d0b3c98.pdf",
+"Research and analysis"
+]
+]
+}
+},
+{
+"id": 105,
+"year": 2025,
+"country": "Jordan",
+"title": "A question was included in the labor force survey, the second round in 2025, question number 212: “What is the main…",
+"org": "Jordan Department of Statistics",
+"types": [
+"Survey"
+],
+"url": "https://dosweb.dos.gov.jo/DataBank/Labour_Force/Employment_Unemployment/Labor_Force_Survey_questionnaire_2024.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"questionnaire": [
+[
+"https://dosweb.dos.gov.jo/DataBank/Labour_Force/Employment_Unemployment/Labor_Force_Survey_questionnaire_2024.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 106,
+"year": 2024,
+"country": "Colombia",
+"title": "Colombia - support the government of Colombia developing a durable solutions progress measure as part of the upcoming…",
+"org": "Joint IDP Profiling Services (JIPS)",
+"types": [
+"Administrative data"
+],
+"url": "https://colombia.un.org/sites/default/files/2025-06/CIERRE%20IDSF%20Final.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://colombia.un.org/sites/default/files/2025-06/CIERRE%20IDSF%20Final.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 107,
+"year": 2025,
+"country": "",
+"title": "Created the SSA Refugee Camp Data Base",
+"org": "World Bank (WB)",
+"types": [
+"Administrative data"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 109,
+"year": 2024,
+"country": "",
+"title": "UNDP-JIPS publication: Monitoring progress towards solutions to internal displacement, a development oriented indicator…",
+"org": "Joint IDP Profiling Services (JIPS)",
+"types": [
+"Survey",
+"Administrative data",
+"Data integration"
+],
+"url": "https://www.jips.org/jips-publication/monitoring-progress-towards-solutions-to-internal-displacement-a-development-oriented-indicator-framework-undp-jips-2024/",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.jips.org/uploads/2024/09/undp-jips-monitoring-progress-towards-solutions-to-internal-displacement-sep24.pdf",
+"Download the Document"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.jips.org/uploads/2024/09/undp-jips-monitoring-progress-towards-solutions-to-internal-displacement-sep24.pdf",
+"Download the Document"
+]
+]
+}
+},
+{
+"id": 110,
+"year": 2025,
+"country": "Cameroon",
+"title": "Since August 2025, the INS has launched mapping work for the collection of data from the multiple indicator survey…",
+"org": "National Institute of Statistics of the Republic of Cameroon (INS)",
+"types": [
+"Survey"
+],
+"url": "https://ins-cameroun.cm/mics-7-au-cameroun/",
+"http": "200",
+"status": "page read",
+"found": {
+"data": [
+[
+"https://ins-cameroun.cm/manuel-de-lignes-directrices-pour-la-gestion-et-la-diffusion-des-donnees-microdonnees-et-metadonnees-au-cameroun-volume-03/",
+"Manuel de Lignes Directrices pour la Gestion et la Diffusion des Données, Microdonnées et Métadonnées au Cameroun v3"
+]
+],
+"report": [
+[
+"https://ins-cameroun.cm/wp-content/uploads/2026/06/ITV_MICS7_ameroun.pdf",
+"cliquer ici pour télécharger le fichier"
+]
+]
+},
+"checked": {
+"method": [
+[
+"https://ins-cameroun.cm/manuel-de-lignes-directrices-pour-la-gestion-et-la-diffusion-des-donnees-microdonnees-et-metadonnees-au-cameroun-volume-03/",
+"Manuel de Lignes Directrices pour la Gestion et la Diffusion des Données, Microdonnées et Métadonnées au Cameroun v3"
+]
+],
+"data": [
+[
+"https://ins-cameroun.cm/wp-content/uploads/2026/06/ITV_MICS7_ameroun.pdf",
+"cliquer ici pour télécharger le fichier"
+]
+]
+}
+},
+{
+"id": 112,
+"year": 2024,
+"country": "Kenya",
+"title": "Kenya National Bureau of Statistics (KNBS) has included two refugee camps namely, Kakuma and Daadab in the sampling…",
+"org": "Kenya National Bureau of Statistics",
+"types": [
+"Survey"
+],
+"url": "https://www.knbs.or.ke/wp-content/uploads/2025/01/2024-25-Kenya-Integrated-Household-Budget-Survey-Pilot-Report.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.knbs.or.ke/wp-content/uploads/2025/01/2024-25-Kenya-Integrated-Household-Budget-Survey-Pilot-Report.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 113,
+"year": 2025,
+"country": "Burkina Faso",
+"title": "Socio-economic survey of households of internally displaced persons and hosts in 6 regions of Burkina Faso",
+"org": "National Institute of Statistics and Demography (INSD)",
+"types": [
+"Survey"
+],
+"url": "https://www.insd.bf/sites/default/files/2026-02/Rapport%20Analyse_ESEP-PDI.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.insd.bf/sites/default/files/2026-02/Rapport%20Analyse_ESEP-PDI.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 114,
+"year": 2024,
+"country": "Kenya",
+"title": "UNHCR did a follow-up survey on the Shona community after acquisition of citizenship",
+"org": "Kenya National Bureau of Statistics",
+"types": [
+"Survey"
+],
+"url": "https://data.unhcr.org/en/documents/details/111718",
+"http": "200",
+"status": "page read",
+"data_access": "licensed, on request",
+"found": {
+"data": [
+[
+"https://microdata.unhcr.org/",
+"Microdata Library"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://microdata.unhcr.org/",
+"Microdata Library"
+]
+]
+}
+},
+{
+"id": 115,
+"year": 2025,
+"country": "Burkina Faso",
+"title": "Study on the living conditions of forced displaced persons: baseline survey",
+"org": "National Institute of Statistics and Demography (INSD)",
+"types": [
+"Survey"
+],
+"url": "https://www.insd.bf/sites/default/files/2026-02/Rapport%20Analyse_ESEP-PDI.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.insd.bf/sites/default/files/2026-02/Rapport%20Analyse_ESEP-PDI.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 116,
+"year": 2024,
+"country": "Kenya",
+"title": "KNBS is continuously collecting annual data on Registered Refugees and Asylum Seekers from the Department for Refugee…",
+"org": "Kenya National Bureau of Statistics",
+"types": [
+"Administrative data"
+],
+"url": "https://www.knbs.or.ke/wp-content/uploads/2024/05/2024-Economic-Survey.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.knbs.or.ke/wp-content/uploads/2024/05/2024-Economic-Survey.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 117,
+"year": 2025,
+"country": "Burkina Faso",
+"title": "Harmonized survey on household living conditions (EHCVM-3)",
+"org": "National Institute of Statistics and Demography (INSD)",
+"types": [
+"Survey"
+],
+"url": "https://www.insd.bf/sites/default/files/2024-10/EHCVM_2021_Rapport_General.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.insd.bf/sites/default/files/2024-10/EHCVM_2021_Rapport_General.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 119,
+"year": 2024,
+"country": "Yemen",
+"title": "Yemen Household Budget Survey 2025",
+"org": "World Bank (WB)",
+"types": [
+"Survey"
+],
+"url": "https://www.jointdatacenter.org/activites/internally-displaced-people-in-yemen/",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+],
+[
+"https://www.jointdatacenter.org/wp-content/uploads/2023/10/Surviving-in-the-Times-of-War_Jan.pdf?deliveryName=DM208064",
+"Surviving in the Time of War: How and Why Wellbeing is Evolving in the Conflict in Yemen"
+],
+[
+"https://www.jointdatacenter.org/literature_review/global-report-on-internal-displacement-2023-internal-displacement-and-food-insecurity/",
+"Global Report on Internal Displacement 2023: Internal Displacement and Food Insecurity"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+}
+},
+{
+"id": 120,
+"year": 2025,
+"country": "Burkina Faso",
+"title": "Multiple Indicator Cluster Survey (MICS-BFA 2026)",
+"org": "National Institute of Statistics and Demography (INSD)",
+"types": [
+"Survey"
+],
+"url": "https://www.insd.bf/sites/default/files/journal-2025-07/JBS%20017.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.insd.bf/sites/default/files/journal-2025-07/JBS%20017.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 123,
+"year": 2024,
+"country": "Georgia",
+"title": "Census collects information on refugees, idps and migrants by reason of migration",
+"org": "National Statistics Office of Georgia",
+"types": [
+"Census"
+],
+"url": "https://www.geostat.ge/en/modules/categories/909/the-geographical-distribution-of-the-population-and-internal-migration",
+"http": "200",
+"status": "page read",
+"found": {
+"questionnaire": [
+[
+"https://www.geostat.ge/en/modules/categories/555",
+"Questionnaires"
+]
+],
+"data": [
+[
+"https://geostat.ge/media/81091/1.Population-of-Georgia-by-administrative-territorial-units-and-sex.xlsx",
+"XLS"
+],
+[
+"https://geostat.ge/media/80611/2.-Population-of-Georgia-by-self-governed-units%2C-urban-rural-settlements-and-sex.xlsx",
+"XLS"
+],
+[
+"https://geostat.ge/media/80612/3.-Population-of-Georgia-by-place-of-birth%2C-5-year-age-groups-and-sex.xlsx",
+"XLS"
+],
+[
+"https://geostat.ge/media/80613/4.-Internal-migrants-by-usual-place-of-residence-and.xlsx",
+"XLS"
+]
+],
+"report": [
+[
+"https://www.geostat.ge/en/modules/categories/12",
+"2024 Population Census of Georgia results"
+]
+]
+},
+"checked": {
+"questionnaire": [
+[
+"https://www.geostat.ge/en/modules/categories/555",
+"Questionnaires"
+]
+],
+"data": [
+[
+"https://geostat.ge/media/80613/4.-Internal-migrants-by-usual-place-of-residence-and.xlsx",
+"XLS"
+]
+]
+}
+},
+{
+"id": 128,
+"year": 2025,
+"country": "Thailand",
+"title": "Thailand 2025 Labour Force Survey – Migration Module",
+"org": "International Organization for Migration (IOM)",
+"types": [
+"Survey"
+],
+"url": "https://www.nso.go.th/public/e-book/Analytical-Reports/Migration-survey-2562-2566-Eng/",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.nso.go.th/public/e-book/Analytical-Reports/Migration-survey-2562-2566-Eng/toc/",
+"Table of Contents"
+],
+[
+"https://www.nso.go.th/public/e-book/Analytical-Reports/Migration-survey-2562-2566-Eng/files/publication/",
+"Made with FlippingBook"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.nso.go.th/public/e-book/Analytical-Reports/Migration-survey-2562-2566-Eng/toc/",
+"Table of Contents"
+]
+]
+}
+},
+{
+"id": 132,
+"year": 2024,
+"country": "Norway",
+"title": "Statistics on refugees with collective protection who have completed the introduction program, employment:…",
+"org": "Statistics Norway",
+"types": [
+"Administrative data"
+],
+"url": "https://www.ssb.no/arbeid-og-lonn/sysselsetting/artikler/ukrainske-flyktninger-etter-introduksjonsprogram-pa-arbeidsmarkedet",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.ssb.no/innrapportering",
+"Svare på undersøkelse?"
+],
+[
+"https://www.ssb.no/en/utdanning/voksenopplaering/artikler/former-participants-in-the-introduction-programme-2005-2019/_/attachment/inline/1dedfc25-bad7-4718-a146-8555c39b19c3:ba4b2af9c3839c36917efb23167a26e98fb0a016/RAPP2022-52.pdf",
+"tidligere resultater for deltakere som har avsluttet introduksjonsprogrammet mellom 2005 og 2019"
+]
+],
+"method": [
+[
+"https://www.ssb.no/metadata/",
+"Metadata"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.ssb.no/en/utdanning/voksenopplaering/artikler/former-participants-in-the-introduction-programme-2005-2019/_/attachment/inline/1dedfc25-bad7-4718-a146-8555c39b19c3:ba4b2af9c3839c36917efb23167a26e98fb0a016/RAPP2022-52.pdf",
+"tidligere resultater for deltakere som har avsluttet introduksjonsprogrammet mellom 2005 og 2019"
+]
+],
+"method": [
+[
+"https://www.ssb.no/metadata/",
+"Metadata"
+]
+]
+}
+},
+{
+"id": 135,
+"year": 2024,
+"country": "Norway",
+"title": "Ukrainian refugees in employment: https://www.ssb.no/arbeid-og-lonn/sysselsetting/artikler/en-av-tre-ukrainere-er-i-jobb",
+"org": "Statistics Norway",
+"types": [
+"Administrative data"
+],
+"url": "https://www.ssb.no/arbeid-og-lonn/sysselsetting/artikler/en-av-tre-ukrainere-er-i-jobb",
+"http": "200",
+"status": "page read",
+"found": {
+"data": [
+[
+"https://stat.gov.ua/en/datasets/labour-force-survey",
+"Arbeidskraftundersøkelsen - Statistikkbyrået i Ukraina"
+]
+],
+"report": [
+[
+"https://www.ssb.no/innrapportering",
+"Svare på undersøkelse?"
+]
+],
+"method": [
+[
+"https://www.ssb.no/metadata/",
+"Metadata"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://stat.gov.ua/en/datasets/labour-force-survey",
+"Arbeidskraftundersøkelsen - Statistikkbyrået i Ukraina"
+]
+],
+"questionnaire": [
+[
+"https://www.ssb.no/innrapportering",
+"Svare på undersøkelse?"
+]
+],
+"method": [
+[
+"https://www.ssb.no/metadata/",
+"Metadata"
+]
+]
+}
+},
+{
+"id": 136,
+"year": 2025,
+"country": "Central African Republic",
+"title": "this is the case where ICASEES took these types of population into account in the RGPH-4",
+"org": "Central African Institute of Statistics and Economic and Social…",
+"types": [
+"Survey",
+"Census"
+],
+"url": "https://www.icasees.org/index.php/actualites/423-centrafrique-rgph-4-licasees-presente-les-resultats-provisoires-globaux-et-preliminaires-au-ctir",
+"http": "200",
+"status": "page read",
+"data_access": "licensed, on request",
+"found": {
+"data": [
+[
+"https://www.icasees.org/component/tags/tag/microdonnees-rca",
+"Microdonnées RCA"
+]
+],
+"report": [
+[
+"https://www.icasees.org/activites/rapports-d-activites-annuels",
+"RAPPORTS D'ACTIVITES ANNUELS"
+],
+[
+"https://icasees.org/index.php/publications/liste-des-publications?layout=columns",
+"NOUVELLES PUBLICATIONS"
+],
+[
+"https://www.icasees.org/actualites/434-icasees-publication-du-rapport-statistiques-sur-le-genre-dans-le-commerce-en-republique-centrafricaine",
+"ICASEES : Publication du rapport « Statistiques sur le genre dans le commerce » en République centrafricaine"
+],
+[
+"https://www.icasees.org/actualites/268-resultats-du-test-preliminaire-de-preselection-des-agents-recenseurs-du-rgph-4-du-8e-arrondissement-et-de-begoua-21-mars-2025",
+"Résultats du test préliminaire de présélection des agents recenseurs du RGPH-4 du 8e Arrondissement et de Begoua. 21 mar"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://www.icasees.org/component/tags/tag/microdonnees-rca",
+"Microdonnées RCA"
+]
+]
+}
+},
+{
+"id": 139,
+"year": 2025,
+"country": "Norway",
+"title": "Refugees in and outside the Labour Marked, 2023",
+"org": "Statistics Norway",
+"types": [
+"Administrative data"
+],
+"url": "https://www.ssb.no/arbeid-og-lonn/sysselsetting/artikler/flyktninger-i-og-utenfor-arbeidsmarkedet-2023/_/attachment/inline/346960db-ce5c-4305-ad52-637bc5ce8c55:94dcbfc7c9e1810dd8a36ce75fd16524ab739f03/RAPP2025-01.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.ssb.no/arbeid-og-lonn/sysselsetting/artikler/flyktninger-i-og-utenfor-arbeidsmarkedet-2023/_/attachment/inline/346960db-ce5c-4305-ad52-637bc5ce8c55:94dcbfc7c9e1810dd8a36ce75fd16524ab739f03/RAPP2025-01.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 141,
+"year": 2025,
+"country": "Norway",
+"title": "Unaccompanied Minor Refugees, 2023",
+"org": "Statistics Norway",
+"types": [
+"Administrative data"
+],
+"url": "https://www.ssb.no/befolkning/innvandrere/artikler/mange-enslige-mindrearige-flyktninger-fra-ukraina",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.ssb.no/innrapportering",
+"Svare på undersøkelse?"
+],
+[
+"https://app.cristin.no/results/show.jsf?id=1807700",
+"https://app.cristin.no/results/show.jsf?id=1807700"
+]
+],
+"method": [
+[
+"https://www.ssb.no/metadata/",
+"Metadata"
+]
+]
+},
+"checked": {
+"method": [
+[
+"https://www.ssb.no/metadata/",
+"Metadata"
+]
+]
+}
+},
+{
+"id": 143,
+"year": 2024,
+"country": "Nigeria",
+"title": "IDMC provided recommendations/advice for a survey by the Nigeria National Commission for Refugees, Migrants and IDPs…",
+"org": "Internal Displacement Monitoring Centre (IDMC)",
+"types": [
+"Survey"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 145,
+"year": 2024,
+"country": "South Africa",
+"title": "Government of South Africa (NSO): we provided an overview of internal displacement in the country and list of…",
+"org": "Internal Displacement Monitoring Centre (IDMC)",
+"types": [
+"Administrative data"
+],
+"url": "https://www.internal-displacement.org/countries/south-africa",
+"http": "200",
+"status": "page read",
+"found": {}
+},
+{
+"id": 147,
+"year": 2024,
+"country": "Honduras",
+"title": "IDMC provided recommendations to INE and its partners in Honduras during an in-person workshop based on IRIS in May.",
+"org": "Internal Displacement Monitoring Centre (IDMC)",
+"types": [
+"Survey"
+],
+"url": "https://ine.gob.hn/wp-content/uploads/2026/04/Estudio-Poblacion-Desplazada-Internamente-EPHPM-2024.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://ine.gob.hn/wp-content/uploads/2026/04/Estudio-Poblacion-Desplazada-Internamente-EPHPM-2024.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 148,
+"year": 2025,
+"country": "Norway",
+"title": "Resettlement refugees, 2024",
+"org": "Statistics Norway",
+"types": [
+"Administrative data"
+],
+"url": "https://www.ssb.no/befolkning/innvandrere/artikler/stor-andel-med-lavinntekt-blant-syriske-kvoteflyktninger",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.ssb.no/innrapportering",
+"Svare på undersøkelse?"
+],
+[
+"https://digib.no/wp-content/uploads/2020/01/94.pdf",
+"https://digib.no/wp-content/uploads/2020/01/94.pdf"
+],
+[
+"https://www.ssb.no/a/publikasjoner/pdf/rapp_201207/rapp_201207.pdf",
+"https://www.ssb.no/a/publikasjoner/pdf/rapp_201207/rapp_201207.pdf"
+],
+[
+"https://www.regjeringen.no/contentassets/47fe09b332c54f95aad990583df64da6/rundskriv-g-15-2020---retningslinjer-for-arbeidet-med-overforingsflyktninger.pdf",
+"https://www.regjeringen.no/contentassets/47fe09b332c54f95aad990583df64da6/rundskriv-g-15-2020---retningslinjer-for-arbei"
+]
+],
+"method": [
+[
+"https://www.ssb.no/metadata/",
+"Metadata"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://digib.no/wp-content/uploads/2020/01/94.pdf",
+"https://digib.no/wp-content/uploads/2020/01/94.pdf"
+]
+],
+"method": [
+[
+"https://www.ssb.no/metadata/",
+"Metadata"
+]
+]
+}
+},
+{
+"id": 150,
+"year": 2024,
+"country": "Panama",
+"title": "IDMC provided recommendations to the Panama's Ministry of Environment based on IRIS in an in person workshop in May.",
+"org": "Internal Displacement Monitoring Centre (IDMC)",
+"types": [
+"Administrative data"
+],
+"url": "https://disasterdisplacement.org/news-events/panama-workshop-may-2024/",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://disasterdisplacement.org/resource/climate-change-mobility-middle-east/",
+"Research Report – Climate Change Impacts and Mobility in the Middle East"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://disasterdisplacement.org/resource/climate-change-mobility-middle-east/",
+"Research Report – Climate Change Impacts and Mobility in the Middle East"
+]
+]
+}
+},
+{
+"id": 151,
+"year": 2025,
+"country": "Democratic Republic of the Congo",
+"title": "The Survey on Household Living Conditions",
+"org": "National Institute of Statistics (INS) - DRC",
+"types": [
+"Survey",
+"Administrative data"
+],
+"url": "https://www.ins.gouv.cd/publications/enquete-conditions-vie-menages-ecvm-2024",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.ins.gouv.cd/publications",
+"Retour aux publications"
+],
+[
+"https://www.ins.gouv.cd/publication/Rapport-Final-ECVM-RDC-2024.pdf",
+"Télécharger (PDF)"
+],
+[
+"https://www.ins.gouv.cd/publications?query=pauvreté",
+"# Pauvreté"
+],
+[
+"https://www.ins.gouv.cd/publications?query=conditions de vie",
+"# Conditions de vie"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.ins.gouv.cd/publication/Rapport-Final-ECVM-RDC-2024.pdf",
+"Télécharger (PDF)"
+]
+]
+}
+},
+{
+"id": 154,
+"year": 2025,
+"country": "",
+"title": "Data base",
+"org": "Scalabrini International Migration Network",
+"types": [
+"Administrative data"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 156,
+"year": 2024,
+"country": "",
+"title": "Information Management Working Group of West and Central Africa: Organizing an online workshop (this Thursday) to…",
+"org": "Internal Displacement Monitoring Centre (IDMC)",
+"types": [
+"Data integration"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 159,
+"year": 2024,
+"country": "",
+"title": "Africa Report 2024: To an extent, IDMC is also putting forth some (if not many) of the IRIS recommendations in its…",
+"org": "Internal Displacement Monitoring Centre (IDMC)",
+"types": [
+"Survey",
+"Administrative data",
+"Data integration"
+],
+"url": "https://api.internal-displacement.org/sites/default/files/publications/documents/idmc-2024-internal-displacement-in-africa.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://api.internal-displacement.org/sites/default/files/publications/documents/idmc-2024-internal-displacement-in-africa.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 162,
+"year": 2024,
+"country": "Syrian Arab Republic",
+"title": "IDP Taskforce of Syria: IDMC is providing technical support to the taskforce and sharing guidance (closely linked with…",
+"org": "Internal Displacement Monitoring Centre (IDMC)",
+"types": [
+"Data integration"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 165,
+"year": 2024,
+"country": "Somalia",
+"title": "IDP Working Group Somalia: IDMC continues to be an active member of the IDP Working Group of Somalia. It ensures the…",
+"org": "Internal Displacement Monitoring Centre (IDMC)",
+"types": [
+"Survey",
+"Administrative data"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 168,
+"year": 2024,
+"country": "Marshall Islands",
+"title": "October / Marshall Islands: Provided feedback and input to NDMO forms and surveys on disaster impacts shared by IOM.…",
+"org": "Internal Displacement Monitoring Centre (IDMC)",
+"types": [
+"Survey",
+"Administrative data"
+],
+"url": "https://www.internal-displacement.org/countries/marshall-islands",
+"http": "200",
+"status": "page read",
+"found": {}
+},
+{
+"id": 171,
+"year": 2025,
+"country": "Djibouti",
+"title": "Earlier this year (2025), INSTAD in collaboration with Ministries, Departments and Agencies (MDAs) that are members of…",
+"org": "National Institute of Statistics (INSTAD)",
+"types": [
+"Survey",
+"Administrative data",
+"Data integration"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 174,
+"year": 2025,
+"country": "Mexico",
+"title": "Intercensal Survey",
+"org": "National Institute of Statistics and Geography (INEGI)",
+"types": [
+"Survey"
+],
+"url": "https://www.inegi.org.mx/contenidos/programas/eic/2025/doc/eic2025_presentacion_00.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.inegi.org.mx/contenidos/programas/eic/2025/doc/eic2025_presentacion_00.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 177,
+"year": 2025,
+"country": "Mexico",
+"title": "National Survey of Victimization and Perception of Public Safety",
+"org": "National Institute of Statistics and Geography (INEGI)",
+"types": [
+"Survey"
+],
+"url": "https://www.inegi.org.mx/contenidos/programas/envipe/2025/doc/envipe2025_presentacion_nacional.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.inegi.org.mx/contenidos/programas/envipe/2025/doc/envipe2025_presentacion_nacional.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 180,
+"year": 2025,
+"country": "Ethiopia",
+"title": "[Ongoing] TF0C8360 - Unlocking Refugee Wage and Self-Employment in Ethiopia through Evidence, Piloting, and Capacity…",
+"org": "World Bank (WB)",
+"types": [
+"Survey"
+],
+"url": "https://microdata.worldbank.org/index.php/catalog/6251/variable/V133",
+"http": "200",
+"status": "page read",
+"catalogue": "https://microdata.worldbank.org/index.php/catalog/6251",
+"data_access": "licensed, on request",
+"found": {
+"data": [
+[
+"https://microdata.worldbank.org/",
+"Microdata Library"
+],
+[
+"https://microdata.worldbank.org//catalog/6251/variable/V133",
+"variable [V133]"
+],
+[
+"https://microdata.worldbank.org/catalog/6251/get-microdata",
+"Get Microdata"
+],
+[
+"https://microdata.worldbank.org/catalog/6251/data-dictionary",
+"Data Description"
+],
+[
+"https://microdata.worldbank.org//catalog/6251/download/97826",
+"https://microdata.worldbank.org//catalog/6251/download/97826"
+]
+],
+"method": [
+[
+"https://microdata.worldbank.org/catalog/6251/pdf-documentation",
+"Documentation in PDF"
+],
+[
+"https://microdata.worldbank.org/metadata/export/6251/ddi",
+"DDI/XML"
+],
+[
+"https://microdata.worldbank.org/metadata/export/6251/json",
+"JSON"
+],
+[
+"https://microdata.worldbank.org/catalog/6251/related-materials",
+"Documentation"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://microdata.worldbank.org//catalog/6251/variable/V133",
+"variable [V133]"
+],
+[
+"https://microdata.worldbank.org/catalog/6251/data-dictionary",
+"Data Description"
+]
+],
+"method": [
+[
+"https://microdata.worldbank.org/catalog/6251/pdf-documentation",
+"Documentation in PDF"
+],
+[
+"https://microdata.worldbank.org/metadata/export/6251/ddi",
+"DDI/XML"
+],
+[
+"https://microdata.worldbank.org/metadata/export/6251/json",
+"JSON"
+]
+]
+}
+},
+{
+"id": 183,
+"year": 2025,
+"country": "Ethiopia",
+"title": "[Planned] TF0C7841 - Pathways Towards Durable Solutions for Forcibly Displaced Groups in Ethiopia",
+"org": "World Bank (WB)",
+"types": [
+"Survey"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 184,
+"year": 2024,
+"country": "Jordan",
+"title": "Refugee questions were included in the labor force survey",
+"org": "Jordan Department of Statistics",
+"types": [
+"Survey"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 185,
+"year": 2025,
+"country": "Armenia",
+"title": "Digitalized Administrative source (Migration and Citizenship Service of the M-stry of Interior) of asylum seekers and…",
+"org": "Armstat",
+"types": [
+"Administrative data"
+],
+"url": "https://www.armstat.am/file/article/demog_2024_7.pdf",
+"http": "000",
+"status": "not reachable"
+},
+{
+"id": 186,
+"year": 2025,
+"country": "South Sudan",
+"title": "FDS South Sudan",
+"org": "United Nations High Commissioner for Refugees (UNHCR)",
+"types": [
+"Survey"
+],
+"url": "https://microdata.unhcr.org/index.php/catalog/1175/download/3826",
+"http": "200",
+"status": "page read",
+"catalogue": "https://microdata.unhcr.org/index.php/catalog/1175",
+"found": {
+"data": [
+[
+"https://microdata.unhcr.org/index.php",
+"Microdata Library"
+],
+[
+"https://microdata.unhcr.org/index.php/catalog/1175/get-microdata",
+"Get Microdata"
+],
+[
+"https://microdata.unhcr.org/index.php/catalog/1175/data-dictionary",
+"Data Dictionary"
+],
+[
+"https://microdata.unhcr.org/index.php/catalog/1175/download/3825",
+"https://microdata.unhcr.org/index.php/catalog/1175/download/3825"
+]
+],
+"report": [
+[
+"https://www.unhcr.org/what-we-do/reports-and-publications/data-and-statistics/forced-displacement-survey?_gl=1*otg635*_rup_ga*MTQzODMwODY0NC4xNzE3NDA3MjM0*_rup_ga_EVDQTJ4LMY*MTcyNzc4NTIwOS4yNjguMS4xNzI3Nzg5MDExLjYwLjAuMA..*_ga*MTQzODMwODY0NC4xNzE3NDA3MjM0",
+"Study website"
+],
+[
+"https://www.unhcr.org/igo-reporting-misconduct/",
+"Report misconduct or abuse"
+],
+[
+"https://www.unhcr.org/stay-informed.html",
+"Subscribe to our newsletter"
+]
+],
+"method": [
+[
+"https://microdata.unhcr.org/index.php/catalog/1175/pdf-documentation",
+"Documentation in PDF"
+],
+[
+"https://microdata.unhcr.org/index.php/metadata/export/1175/ddi",
+"DDI/XML"
+],
+[
+"https://microdata.unhcr.org/index.php/metadata/export/1175/json",
+"JSON"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://microdata.unhcr.org/index.php/catalog/1175/get-microdata",
+"Get Microdata"
+],
+[
+"https://microdata.unhcr.org/index.php/catalog/1175/download/3825",
+"https://microdata.unhcr.org/index.php/catalog/1175/download/3825"
+]
+],
+"method": [
+[
+"https://microdata.unhcr.org/index.php/catalog/1175/data-dictionary",
+"Data Dictionary"
+],
+[
+"https://microdata.unhcr.org/index.php/metadata/export/1175/ddi",
+"DDI/XML"
+]
+],
+"report": [
+[
+"https://microdata.unhcr.org/index.php/catalog/1175/pdf-documentation",
+"Documentation in PDF"
+]
+]
+}
+},
+{
+"id": 187,
+"year": 2024,
+"country": "Slovenia",
+"title": "All data are collected in administrative databases of Ministry of the Interior",
+"org": "Statistical Office of the Republic of Slovenia (SURS)",
+"types": [
+"Administrative data"
+],
+"url": "https://www.gov.si/assets/ministrstva/MNZ/Dokumenti/DM/porocilo-DM-2024/Porocilo-o-delu-Direktorata-za-migracije-za-leto-2024.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.gov.si/assets/ministrstva/MNZ/Dokumenti/DM/porocilo-DM-2024/Porocilo-o-delu-Direktorata-za-migracije-za-leto-2024.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 188,
+"year": 2025,
+"country": "Cameroon",
+"title": "FDS Cameroon",
+"org": "United Nations High Commissioner for Refugees (UNHCR)",
+"types": [
+"Survey"
+],
+"url": "https://ins-cameroun.cm/en/unhcr-seeks-the-expertise-of-the-ins/",
+"http": "200",
+"status": "page read",
+"found": {
+"data": [
+[
+"https://ins-cameroun.cm/en/manual-of-guidelines-for-the-management-and-dissemination-of-data-microdata-and-metadata-in-cameroon-volume-03/",
+"Manual of Guidelines for the Management and Dissemination of Data, Microdata and Metadata in Cameroon, Volume 03"
+]
+],
+"method": [
+[
+"https://ins-cameroun.cm/en/manual-of-guidelines-for-the-management-and-dissemination-of-data-microdata-and-metadata-in-cameroon-volume-03/",
+"Manual of Guidelines for the Management and Dissemination of Data, Microdata and Metadata in Cameroon, Volume 03"
+]
+]
+},
+"checked": {
+"method": [
+[
+"https://ins-cameroun.cm/en/manual-of-guidelines-for-the-management-and-dissemination-of-data-microdata-and-metadata-in-cameroon-volume-03/",
+"Manual of Guidelines for the Management and Dissemination of Data, Microdata and Metadata in Cameroon, Volume 03"
+]
+]
+}
+},
+{
+"id": 190,
+"year": 2024,
+"country": "Indonesia",
+"title": "Pilot Test for the 2025 Intercensal Population Survey",
+"org": "Bps-Statistics Indonesia",
+"types": [
+"Survey"
+],
+"url": "https://babel.bps.go.id/en/news/2024/10/30/450/post-enumeration-workshop-for-intercensal-population-survey-2025-pilot.html",
+"http": "403",
+"status": "refused automated access"
+},
+{
+"id": 191,
+"year": 2025,
+"country": "Pakistan",
+"title": "FDS Pakistan",
+"org": "United Nations High Commissioner for Refugees (UNHCR)",
+"types": [
+"Survey"
+],
+"url": "https://microdata.unhcr.org/index.php/catalog/1421/download/4229",
+"http": "200",
+"status": "page read",
+"catalogue": "https://microdata.unhcr.org/index.php/catalog/1421",
+"found": {
+"data": [
+[
+"https://microdata.unhcr.org/index.php",
+"Microdata Library"
+],
+[
+"https://microdata.unhcr.org/index.php/catalog/1421/get-microdata",
+"Get Microdata"
+],
+[
+"https://microdata.unhcr.org/index.php/catalog/1421/data-dictionary",
+"Data Dictionary"
+],
+[
+"https://microdata.unhcr.org/index.php/catalog/1421/download/4220",
+"https://microdata.unhcr.org/index.php/catalog/1421/download/4220"
+]
+],
+"report": [
+[
+"https://www.unhcr.org/publications/forced-displacement-survey-pakistan-2024",
+"Study website"
+],
+[
+"https://www.unhcr.org/igo-reporting-misconduct/",
+"Report misconduct or abuse"
+],
+[
+"https://www.unhcr.org/stay-informed.html",
+"Subscribe to our newsletter"
+]
+],
+"method": [
+[
+"https://microdata.unhcr.org/index.php/catalog/1421/pdf-documentation",
+"Documentation in PDF"
+],
+[
+"https://microdata.unhcr.org/index.php/metadata/export/1421/ddi",
+"DDI/XML"
+],
+[
+"https://microdata.unhcr.org/index.php/metadata/export/1421/json",
+"JSON"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://microdata.unhcr.org/index.php/catalog/1421/get-microdata",
+"Get Microdata"
+],
+[
+"https://microdata.unhcr.org/index.php/catalog/1421/download/4220",
+"https://microdata.unhcr.org/index.php/catalog/1421/download/4220"
+]
+],
+"method": [
+[
+"https://microdata.unhcr.org/index.php/catalog/1421/data-dictionary",
+"Data Dictionary"
+],
+[
+"https://microdata.unhcr.org/index.php/metadata/export/1421/ddi",
+"DDI/XML"
+],
+[
+"https://microdata.unhcr.org/index.php/metadata/export/1421/json",
+"JSON"
+]
+],
+"report": [
+[
+"https://microdata.unhcr.org/index.php/catalog/1421/pdf-documentation",
+"Documentation in PDF"
+]
+]
+}
+},
+{
+"id": 193,
+"year": 2025,
+"country": "Iraq",
+"title": "Planning to implement Livelihood Survey for Refugees in KR comparable to Iraq HH socio economic survey 2023-2024",
+"org": "Kurdistan Region Statistics Office",
+"types": [
+"Survey"
+],
+"url": "https://rudaw.net/english/categories/kurdistan/1078900",
+"http": "200",
+"status": "page read",
+"found": {}
+},
+{
+"id": 195,
+"year": 2024,
+"country": "Republic of Moldova",
+"title": "Creation of a new Information System,, Migration,,",
+"org": "General Inspectorate for Migration of the Ministry of Internal…",
+"types": [
+"Administrative data"
+],
+"url": "https://igm.gov.md/ro/statistica",
+"http": "200",
+"status": "page read",
+"data_access": "public",
+"found": {
+"data": [
+[
+"https://dataset.gov.md/",
+"Open data portal"
+]
+],
+"report": [
+[
+"https://igm.gov.md/sites/default/files/wp/2026/01/Cuantumurile-taxei-de-stat_adaptat-2026.pdf",
+"Cuantumurile taxei de stat (descarcă PDF)"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://igm.gov.md/sites/default/files/wp/2026/01/Cuantumurile-taxei-de-stat_adaptat-2026.pdf",
+"Cuantumurile taxei de stat (descarcă PDF)"
+]
+]
+}
+},
+{
+"id": 196,
+"year": 2025,
+"country": "",
+"title": "Training Course on \"Migration and Refugee Statistics\", Planned",
+"org": "Statistical, Economic and Social Research and Training Centre for…",
+"types": [
+"Administrative data"
+],
+"url": "https://sesric.org/event-detail.php?id=3771",
+"http": "200",
+"status": "page read",
+"found": {
+"data": [
+[
+"https://sesric.org/imgs/news/Price-List.xls",
+"Price List"
+]
+],
+"report": [
+[
+"https://sesric.org/sesric-department-publication.php",
+"Publication & IT"
+],
+[
+"https://sesric.org/publications-syb.php",
+"Statistical Yearbook on OIC Member Countries"
+],
+[
+"https://sesric.org/publications-oic-key-figures.php",
+"OIC in Key Figures Pocketbook"
+],
+[
+"https://sesric.org/publications-oso.php",
+"OIC Statistical Outlook"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://sesric.org/imgs/news/Price-List.xls",
+"Price List"
+]
+]
+}
+},
+{
+"id": 199,
+"year": 2025,
+"country": "Côte d'Ivoire",
+"title": "National survey on migration in Côte d'Ivoire 2025",
+"org": "National Institute of Statistics (INS) - Côte D'ivoire",
+"types": [
+"Survey"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 201,
+"year": 2025,
+"country": "Colombia",
+"title": "Massive events in Colombia: memory, figures and current dynamics",
+"org": "Victims Unit",
+"types": [
+"Administrative data"
+],
+"url": "https://datospaz.unidadvictimas.gov.co/wp-content/uploads/2025/11/ESPECIAL_EVENTOS_MASIVOS0007_ESP_0_NA_131125-2.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://datospaz.unidadvictimas.gov.co/wp-content/uploads/2025/11/ESPECIAL_EVENTOS_MASIVOS0007_ESP_0_NA_131125-2.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 203,
+"year": 2024,
+"country": "",
+"title": "Estimate the number of Palestine refugees and other people registered with UNRWA by place of residence",
+"org": "United Nations Relief and Works Agency for Palestine Refugees in the…",
+"types": [
+"Administrative data",
+"Census"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 204,
+"year": 2025,
+"country": "Colombia",
+"title": "FORCED DISPLACEMENT REPORT II SEMESTER 2024",
+"org": "Victims Unit",
+"types": [
+"Administrative data"
+],
+"url": "https://datospaz.unidadvictimas.gov.co/",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://datospaz.unidadvictimas.gov.co/home-publicaciones/",
+"PUBLICACIONES"
+],
+[
+"https://datospaz.unidadvictimas.gov.co/informes/",
+"INFORMES"
+],
+[
+"https://datospaz.unidadvictimas.gov.co/reportes/",
+"REPORTES"
+],
+[
+"https://datospaz.unidadvictimas.gov.co/wp-content/uploads/2026/11/Especial-Toma-del-Palacio-de-Justicia.pdf",
+"Ver más"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://datospaz.unidadvictimas.gov.co/informes/",
+"INFORMES"
+],
+[
+"https://datospaz.unidadvictimas.gov.co/reportes/",
+"REPORTES"
+]
+]
+}
+},
+{
+"id": 206,
+"year": 2025,
+"country": "Nigeria",
+"title": "L1&L2 registration of new arrival from Cameroon using BIMS, IRIS, etcRegistration, documentation refugees status…",
+"org": "National Commission for Refugees, Migrants and Internally Displaced…",
+"types": [
+"Administrative data"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 208,
+"year": 2024,
+"country": "Cambodia",
+"title": "Cambodia Inter-Censal Population Survey",
+"org": "National Institute of Statistics, Ministry of Planning Cambodia",
+"types": [
+"Survey",
+"Census"
+],
+"url": "https://www.nis.gov.kh/nis/CIPS/Cambodia%20Inter-censal%20Population%20Survey%202024.pdf",
+"http": "000",
+"status": "not reachable"
+},
+{
+"id": 209,
+"year": 2025,
+"country": "Nigeria",
+"title": "voluntary repatriation of over7000 Nigerian refugees in Chad Republic, Resettlement of over400 individual refugees and…",
+"org": "National Commission for Refugees, Migrants and Internally Displaced…",
+"types": [
+"Administrative data",
+"Data integration"
+],
+"url": "https://fmino.gov.ng/first-lady-commissions-resettlement-city-in-keffi-nasarawa-state/",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://fmino.gov.ng/departments/production-publication-and-documentation/",
+"Production, Publication and Documentation"
+]
+],
+"method": [
+[
+"https://fmino.gov.ng/departments/production-publication-and-documentation/",
+"Production, Publication and Documentation"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://fmino.gov.ng/departments/production-publication-and-documentation/",
+"Production, Publication and Documentation"
+]
+]
+}
+},
+{
+"id": 210,
+"year": 2024,
+"country": "South Africa",
+"title": "Continous Population Survey (CPS)",
+"org": "Statistics South Africa",
+"types": [
+"Survey"
+],
+"url": "https://www.statssa.gov.za/?p=14709",
+"http": "200",
+"status": "page read",
+"found": {}
+},
+{
+"id": 211,
+"year": 2025,
+"country": "",
+"title": "EAC MIGRATION STATISTICS REPORT EDITION THREE",
+"org": "East African Community (EAC)",
+"types": [
+"Administrative data"
+],
+"url": "https://data.unhcr.org/en/documents/details/99692",
+"http": "200",
+"status": "page read",
+"data_access": "licensed, on request",
+"found": {
+"data": [
+[
+"https://microdata.unhcr.org/",
+"Microdata Library"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://microdata.unhcr.org/",
+"Microdata Library"
+]
+]
+}
+},
+{
+"id": 214,
+"year": 2024,
+"country": "Ghana",
+"title": "2024 Ghana Registration Survey",
+"org": "International Organization for Migration (IOM)",
+"types": [
+"Survey",
+"Administrative data"
+],
+"url": "https://reliefweb.int/report/ghana/ghana-registration-report-mop-north-and-shai-osudoku-september-2024",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://dtm.iom.int/reports/ghana-registration-report-mop-north-and-shai-osudoku-september-2024",
+"View original"
+],
+[
+"https://reliefweb.int/attachments/f790252f-95db-43ee-9e4c-fb5481653055/Volta%20floods%20Registration%20Mopup%20Report%208-11%20CL%20revised.pdf",
+"Download Report (PDF | 173.19 KB)"
+],
+[
+"https://reliefweb.int/updates?list=Situation%20Report%20Updates&advanced-search=%28F10%29",
+"Situation Report"
+],
+[
+"https://reliefweb.int/report/somalia/snapshot-somalia-health-cluster-response-october-2026",
+"Snapshot for Somalia Health Cluster Response - October 2026"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://dtm.iom.int/reports/ghana-registration-report-mop-north-and-shai-osudoku-september-2024",
+"View original"
+]
+]
+}
+},
+{
+"id": 216,
+"year": 2024,
+"country": "",
+"title": "Data collection on internally displaced persons all over Chad",
+"org": "International Organization for Migration (IOM)",
+"types": [
+"Survey"
+],
+"url": "https://displacement.iom.int/sites/g/files/tmzbdl1461/files/reports/DTM%20Chad%20Round%2022%20Dashboard_V1.pdf",
+"http": "403",
+"status": "refused automated access"
+},
+{
+"id": 217,
+"year": 2025,
+"country": "Mali",
+"title": "Mali to be integrated in 2025 into the permanent modular survey of modules to collect data on the living conditions of…",
+"org": "Institute of Statistics (INSTAT)",
+"types": [
+"Survey",
+"Administrative data"
+],
+"url": "https://www.jointdatacenter.org/?p=68306",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+}
+},
+{
+"id": 219,
+"year": 2024,
+"country": "",
+"title": "Data collection and site management of Chadian returnees from Sudan",
+"org": "International Organization for Migration (IOM)",
+"types": [
+"Survey"
+],
+"url": "https://dtm.iom.int/sites/g/files/tmzbdl1461/files/reports/IOM%20Chap%20Sudan%20Update%2036_EN.pdf",
+"http": "403",
+"status": "refused automated access"
+},
+{
+"id": 220,
+"year": 2025,
+"country": "",
+"title": "Conducted a technical workshop with National Statistical Organizations in the Arab region in May 2025 emphasizing the…",
+"org": "United Nations Population Fund (UNFPA)",
+"types": [
+"Survey",
+"Administrative data",
+"Census",
+"Data integration"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 222,
+"year": 2024,
+"country": "",
+"title": "Alignment of UNHCR statistics with EGRISS recommendations",
+"org": "United Nations High Commissioner for Refugees (UNHCR)",
+"types": [
+"Survey",
+"Administrative data",
+"Census",
+"Data integration"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 223,
+"year": 2025,
+"country": "",
+"title": "Conducted in collaboration with the League of Arab States and ESCWA, an Expert Group Meeting of government…",
+"org": "United Nations Population Fund (UNFPA)",
+"types": [
+"Administrative data"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 225,
+"year": 2024,
+"country": "Somalia",
+"title": "Since it's re-establishment in 2012, NCRI collects, analayzes and verifies Refugee and Aslym seeker data biometrically…",
+"org": "The National Commission for Refugees and IDPS (NCRI)",
+"types": [
+"Survey",
+"Administrative data"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 226,
+"year": 2025,
+"country": "",
+"title": "Conducted an assessment in 10 selected countries in the Arab States region on CRVS, with a focus on marriage and…",
+"org": "United Nations Population Fund (UNFPA)",
+"types": [
+"Administrative data"
+],
+"url": "https://uaps2024.popconf.org/abstracts/192405",
+"http": "200",
+"status": "page read",
+"found": {}
+},
+{
+"id": 231,
+"year": 2024,
+"country": "Norway",
+"title": "Resettlement refugees",
+"org": "Statistics Norway",
+"types": [
+"Administrative data"
+],
+"url": "https://www.ssb.no/befolkning/innvandrere/artikler/overforingsflyktninger-i-norge-2023/_/attachment/inline/65b39e47-cbb6-485e-a2df-b6afc476224a:df489e76b5176126a3fb9cdd525c67f6b07f20d3/RAPP2023-45.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.ssb.no/befolkning/innvandrere/artikler/overforingsflyktninger-i-norge-2023/_/attachment/inline/65b39e47-cbb6-485e-a2df-b6afc476224a:df489e76b5176126a3fb9cdd525c67f6b07f20d3/RAPP2023-45.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 232,
+"year": 2025,
+"country": "Bangladesh",
+"title": "World Health Survey Plus (WHS+) - Cox's Bazar, Bangladesh",
+"org": "World Health Organization (WHO)",
+"types": [
+"Survey"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 234,
+"year": 2024,
+"country": "Norway",
+"title": "Unregistered Emigration from Norway: Mapping the Extent",
+"org": "Statistics Norway",
+"types": [
+"Administrative data"
+],
+"url": "https://www.ssb.no/befolkning/flytting/artikler/uregistrert-utvandring-fra-norge/_/attachment/inline/2b780628-56b2-400c-ad12-125a2b9894bc:a679064cdc81beb854dbbb730f1e0409780d1b7e/NOT2024-03.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.ssb.no/befolkning/flytting/artikler/uregistrert-utvandring-fra-norge/_/attachment/inline/2b780628-56b2-400c-ad12-125a2b9894bc:a679064cdc81beb854dbbb730f1e0409780d1b7e/NOT2024-03.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 235,
+"year": 2025,
+"country": "Poland",
+"title": "HEALTH OF REFUGEES IN UKRAINE",
+"org": "Statistics Poland",
+"types": [
+"Survey",
+"Administrative data"
+],
+"url": "https://rzeszow.new.stat.gov.pl/sites/default/files/2026-06/health_and_socio-economic_conditions_of_refugees_from_ukraine_in_poland_2022_2025%283%29.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://rzeszow.new.stat.gov.pl/sites/default/files/2026-06/health_and_socio-economic_conditions_of_refugees_from_ukraine_in_poland_2022_2025%283%29.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 236,
+"year": 2024,
+"country": "Norway",
+"title": "Refugees and the Labour Market, Monitor 2022",
+"org": "Statistics Norway",
+"types": [
+"Administrative data"
+],
+"url": "https://www.ssb.no/arbeid-og-lonn/sysselsetting/artikler/flyktninger-i-og-utenfor-arbeidsmarkedet-2021/_/attachment/inline/ca1260e8-ecf1-4ce9-b98c-b49fe377fc81:e56d0f1a7e2fca4bc090c4b4c1742fb7b342583a/RAPP2023-10.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.ssb.no/arbeid-og-lonn/sysselsetting/artikler/flyktninger-i-og-utenfor-arbeidsmarkedet-2021/_/attachment/inline/ca1260e8-ecf1-4ce9-b98c-b49fe377fc81:e56d0f1a7e2fca4bc090c4b4c1742fb7b342583a/RAPP2023-10.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 237,
+"year": 2025,
+"country": "Slovenia",
+"title": "In accordance with Regulation (EC) No 862/2007 and Regulation (EU) 2020/851 on Community statistics on migration and…",
+"org": "Statistical Office of the Republic of Slovenia (SURS)",
+"types": [
+"Administrative data"
+],
+"url": "https://www.gov.si/en/topics/mednarodna-zascita/",
+"http": "200",
+"status": "page read",
+"found": {}
+},
+{
+"id": 239,
+"year": 2024,
+"country": "Norway",
+"title": "Unaccompanied Minor Refugees 1996-2022, Monitor: Demographics, Education, Employment, and Income",
+"org": "Statistics Norway",
+"types": [
+"Administrative data"
+],
+"url": "https://www.ssb.no/befolkning/innvandrere/artikler/enslige-mindrearige-flyktninger-19962022/_/attachment/inline/329e70fc-153d-43cb-a735-d8d3344579d0:dbd9531252785fba0016b1b9633a3231b656430e/RAPP2024-10.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.ssb.no/befolkning/innvandrere/artikler/enslige-mindrearige-flyktninger-19962022/_/attachment/inline/329e70fc-153d-43cb-a735-d8d3344579d0:dbd9531252785fba0016b1b9633a3231b656430e/RAPP2024-10.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 242,
+"year": 2024,
+"country": "Norway",
+"title": "Transition to Norwegian Citizenship 1977-2023",
+"org": "Statistics Norway",
+"types": [
+"Administrative data"
+],
+"url": "https://www.ssb.no/befolkning/innvandrere/artikler/overgang-til-norsk-statsborgerskap-1977-2023",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.ssb.no/innrapportering",
+"Svare på undersøkelse?"
+],
+[
+"https://www.ssb.no/befolkning/innvandrere/artikler/overgang-til-norsk-statsborgerskap-1977-2021/_/attachment/inline/1130ffc0-5e70-429e-a07e-e450e5af695e:c18c1a4aba6726f6279d7922e4c001bbfe712bc3/RAPP2024-03.pdf",
+"https://www.ssb.no/befolkning/innvandrere/artikler/overgang-til-norsk-statsborgerskap-1977-2021/_/attachment/inline/1130"
+]
+],
+"method": [
+[
+"https://www.ssb.no/metadata/",
+"Metadata"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.ssb.no/befolkning/innvandrere/artikler/overgang-til-norsk-statsborgerskap-1977-2021/_/attachment/inline/1130ffc0-5e70-429e-a07e-e450e5af695e:c18c1a4aba6726f6279d7922e4c001bbfe712bc3/RAPP2024-03.pdf",
+"https://www.ssb.no/befolkning/innvandrere/artikler/overgang-til-norsk-statsborgerskap-1977-2021/_/attachment/inline/1130"
+]
+],
+"method": [
+[
+"https://www.ssb.no/metadata/",
+"Metadata"
+]
+]
+}
+},
+{
+"id": 243,
+"year": 2025,
+"country": "Cameroon",
+"title": "Sample based household survey in the West of Cameroon (5 Municipalities) targeting IDPs and non-displaced.",
+"org": "Joint IDP Profiling Services (JIPS)",
+"types": [
+"Survey",
+"Administrative data"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 245,
+"year": 2024,
+"country": "Norway",
+"title": "Ukrainians in Employment in Norway,",
+"org": "Statistics Norway",
+"types": [
+"Administrative data"
+],
+"url": "https://www.ssb.no/arbeid-og-lonn/sysselsetting/artikler/en-av-tre-ukrainere-er-i-jobb",
+"http": "200",
+"status": "page read",
+"found": {
+"data": [
+[
+"https://stat.gov.ua/en/datasets/labour-force-survey",
+"Arbeidskraftundersøkelsen - Statistikkbyrået i Ukraina"
+]
+],
+"report": [
+[
+"https://www.ssb.no/innrapportering",
+"Svare på undersøkelse?"
+]
+],
+"method": [
+[
+"https://www.ssb.no/metadata/",
+"Metadata"
+]
+]
+},
+"checked": {
+"method": [
+[
+"https://www.ssb.no/metadata/",
+"Metadata"
+]
+]
+}
+},
+{
+"id": 246,
+"year": 2025,
+"country": "Mozambique",
+"title": "Sample based household survey in metropolitan Pemba, Mozambique.",
+"org": "Joint IDP Profiling Services (JIPS)",
+"types": [
+"Survey"
+],
+"url": "https://unhabitat.org/sites/default/files/2026/09/pemba_urban_profile_2026.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://unhabitat.org/sites/default/files/2026/09/pemba_urban_profile_2026.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 248,
+"year": 2024,
+"country": "Norway",
+"title": "Income of Refugees Settled Between 2015 and 2018",
+"org": "Statistics Norway",
+"types": [
+"Administrative data"
+],
+"url": "https://www.ssb.no/inntekt-og-forbruk/inntekt-og-formue/artikler/inntektene-til-flyktninger-bosatt-mellom-2015-og-2018",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.ssb.no/innrapportering",
+"Svare på undersøkelse?"
+],
+[
+"https://www.ssb.no/befolkning/innvandrere/artikler/innvandrere-i-norge-2023/_/attachment/inline/80cac6c5-0945-4c2c-853d-5b58dba589f5:998a84e25c95b73184abb9db8cd1e7d4308e0697/SA-176_web.pdf",
+"https://www.ssb.no/befolkning/innvandrere/artikler/innvandrere-i-norge-2023/_/attachment/inline/80cac6c5-0945-4c2c-853d-"
+],
+[
+"https://www.ssb.no/befolkning/innvandrere/artikler/enslige-mindrearige-flyktninger-19962022/_/attachment/inline/329e70fc-153d-43cb-a735-d8d3344579d0:dbd9531252785fba0016b1b9633a3231b656430e/RAPP2024-10.pdf",
+"https://www.ssb.no/befolkning/innvandrere/artikler/enslige-mindrearige-flyktninger-19962022/_/attachment/inline/329e70fc"
+],
+[
+"https://arbeidogvelferd.nav.no/asset/issue/2018/03/arbeid_og_velferd-2018-03_art-1.pdf",
+"https://arbeidogvelferd.nav.no/asset/issue/2018/03/arbeid_og_velferd-2018-03_art-1.pdf"
+]
+],
+"method": [
+[
+"https://www.ssb.no/metadata/",
+"Metadata"
+]
+]
+},
+"checked": {
+"method": [
+[
+"https://www.ssb.no/metadata/",
+"Metadata"
+]
+]
+}
+},
+{
+"id": 249,
+"year": 2025,
+"country": "Mauritania",
+"title": "Permanent surveys on household living conditions (EPCV) - 2025-26",
+"org": "United Nations High Commissioner for Refugees (UNHCR)",
+"types": [
+"Survey"
+],
+"url": "https://ansade.mr/fr/category/operations-statistiques/epcv/",
+"http": "200",
+"status": "page read",
+"found": {}
+},
+{
+"id": 251,
+"year": 2025,
+"country": "Mauritania",
+"title": "Multiple Indicator Cluster Surveys (MICS) – 2026",
+"org": "United Nations High Commissioner for Refugees (UNHCR)",
+"types": [
+"Survey"
+],
+"url": "https://ansade.mr/fr/category/operations-statistiques/mics-5/",
+"http": "200",
+"status": "page read",
+"found": {}
+},
+{
+"id": 253,
+"year": 2024,
+"country": "Italy",
+"title": "We produced an integrated and longitudinal dataset using data derived from residence permits, from Population Register…",
+"org": "National Institute of Statistics (ISTAT)",
+"types": [
+"Administrative data",
+"Data integration"
+],
+"url": "https://unece.org/sites/default/files/2024-04/2.Refugees%20WP1%20ITA%20Conti%20Pangallo.pdf",
+"http": "403",
+"status": "refused automated access"
+},
+{
+"id": 254,
+"year": 2025,
+"country": "Mauritania",
+"title": "Quarterly employment survey (LFS) - Q3 and Q4 2025",
+"org": "United Nations High Commissioner for Refugees (UNHCR)",
+"types": [
+"Survey"
+],
+"url": "https://www.jointdatacenter.org/activites/refugees-in-mauritania/",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+}
+},
+{
+"id": 257,
+"year": 2025,
+"country": "South Sudan",
+"title": "Household Budget Survey 2025",
+"org": "National Bureau of Statistics (NBS)",
+"types": [
+"Survey"
+],
+"url": "https://www.jointdatacenter.org/activites/south-sudan-hbs/",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+],
+[
+"https://www.unhcr.org/publications/forced-displacement-survey-south-sudan-2023",
+"Forced Displacement Survey (2023)"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+}
+},
+{
+"id": 259,
+"year": 2024,
+"country": "Italy",
+"title": "We contributed to a study conducted by UNHCR in Italy about the socio-economic integration of refugees",
+"org": "National Institute of Statistics (ISTAT)",
+"types": [
+"Administrative data"
+],
+"url": "https://www.unhcr.org/sites/default/files/2025-06/study-of-socio-economic-conditions-of-refugees-in-italy.pdf",
+"http": "403",
+"status": "refused automated access"
+},
+{
+"id": 260,
+"year": 2025,
+"country": "South Sudan",
+"title": "MICS Round 7",
+"org": "National Bureau of Statistics (NBS)",
+"types": [
+"Survey"
+],
+"url": "https://www.nbs.gov.ss/assets/images/Key%20Findings%20Report%20(KFR)%202026.04.13.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.nbs.gov.ss/assets/images/Key%20Findings%20Report%20(KFR)%202026.04.13.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 261,
+"year": 2024,
+"country": "Italy",
+"title": "We included in a survey on children and young people (aged 11-19 years) a sample of young Ukrainians in Italy. We…",
+"org": "National Institute of Statistics (ISTAT)",
+"types": [
+"Survey",
+"Administrative data"
+],
+"url": "https://www.istat.it/informazioni-sulla-rilevazione/indagine-su-bambini-e-ragazzi-comportamenti-atteggiamenti-e-progetti-futuri/",
+"http": "200",
+"status": "page read",
+"data_access": "public",
+"found": {
+"data": [
+[
+"https://www.istat.it/dati/open-data/",
+"Open Data"
+],
+[
+"https://www.istat.it/dati/open-data/high-value-datasets/",
+"High value datasets"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://www.istat.it/dati/open-data/",
+"Open Data"
+],
+[
+"https://www.istat.it/dati/open-data/high-value-datasets/",
+"High value datasets"
+]
+]
+}
+},
+{
+"id": 262,
+"year": 2025,
+"country": "Honduras",
+"title": "module on PDI in the household survey",
+"org": "Instituto Nacional de Estadística",
+"types": [
+"Survey",
+"Census"
+],
+"url": "https://ine.gob.hn/wp-content/uploads/2026/04/Estudio-Poblacion-Desplazada-Internamente-EPHPM-2024.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://ine.gob.hn/wp-content/uploads/2026/04/Estudio-Poblacion-Desplazada-Internamente-EPHPM-2024.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 264,
+"year": 2024,
+"country": "State of Palestine",
+"title": "Field Surveys: Labor Force Survey",
+"org": "Palestinian Central Bureau of Statistics (PCBS)",
+"types": [
+"Survey",
+"Administrative data",
+"Census",
+"Data integration"
+],
+"url": "https://www.pcbs.gov.ps/portals/_pcbs/PressRelease/Press_En_LFSQ022024E.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.pcbs.gov.ps/portals/_pcbs/PressRelease/Press_En_LFSQ022024E.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 266,
+"year": 2024,
+"country": "State of Palestine",
+"title": "Social and economic conditions of Palestinian families in the Gaza Strip in light of the Israeli aggression on the Gaza…",
+"org": "Palestinian Central Bureau of Statistics (PCBS)",
+"types": [
+"Survey"
+],
+"url": "https://www.pcbs.gov.ps/",
+"http": "200",
+"status": "page read",
+"data_access": "public",
+"found": {
+"data": [
+[
+"https://www.pcbs.gov.ps/media/4a0pboo1/life-expectancy-at-birth-in-palestine.xlsx",
+"Life Expectancy At Birth In Palestine"
+],
+[
+"https://www.pcbs.gov.ps/media/mjuiee2o/estimated-population-growth-rate-in-palestine.xlsx",
+"Estimated Population Growth Rate In Palestine"
+],
+[
+"https://www.pcbs.gov.ps/media/jtyhnter/sex-ratio-in-palestine.xlsx",
+"Sex Ratio In Palestine"
+],
+[
+"https://www.pcbs.gov.ps/media/f4np1lnh/projected-population-in-the-palestine.xlsx",
+"Projected Population In The Palestine"
+]
+],
+"report": [
+[
+"https://www.pcbs.gov.ps/en/press-releases/?postId=23457&title=Press_Release_on_the_Results_of_the_Labour_Force_Survey__in_the_West_Bank_Fourth_Quarter__October___December__2025__Round",
+"3/31/2026"
+],
+[
+"https://www.pcbs.gov.ps/media/050dp4lf/book2756.pdf",
+"Read More"
+],
+[
+"https://www.pcbs.gov.ps/media/jk2jkgar/cci102026e.pdf",
+"Read More"
+],
+[
+"https://www.pcbs.gov.ps/media/tjqbhdyv/regextrade092026e.pdf",
+"Read More"
+]
+],
+"method": [
+[
+"https://www.pcbs.gov.ps/media/yvqat0b4/numbers-of-population-projections_en.doc",
+"Methodology"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://www.pcbs.gov.ps/media/4a0pboo1/life-expectancy-at-birth-in-palestine.xlsx",
+"Life Expectancy At Birth In Palestine"
+],
+[
+"https://www.pcbs.gov.ps/media/mjuiee2o/estimated-population-growth-rate-in-palestine.xlsx",
+"Estimated Population Growth Rate In Palestine"
+],
+[
+"https://www.pcbs.gov.ps/media/jtyhnter/sex-ratio-in-palestine.xlsx",
+"Sex Ratio In Palestine"
+],
+[
+"https://www.pcbs.gov.ps/media/f4np1lnh/projected-population-in-the-palestine.xlsx",
+"Projected Population In The Palestine"
+]
+]
+}
+},
+{
+"id": 268,
+"year": 2024,
+"country": "State of Palestine",
+"title": "Administrative records available at international organizations (UNRWA)",
+"org": "Palestinian Central Bureau of Statistics (PCBS)",
+"types": [
+"Administrative data",
+"Data integration"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 269,
+"year": 2025,
+"country": "Nigeria",
+"title": "Data collection for durable solutions analysis of IDPs in Sokoto town, Nigeria (EU project implemented by DRC)",
+"org": "Joint IDP Profiling Services (JIPS)",
+"types": [
+"Survey"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 270,
+"year": 2024,
+"country": "State of Palestine",
+"title": "Participation in a training workshop on international recommendations on statistics of refugees, internally displaced…",
+"org": "Palestinian Central Bureau of Statistics (PCBS)",
+"types": [
+"Survey",
+"Administrative data",
+"Census",
+"Data integration"
+],
+"url": "https://unescwa.org/events/international-recommendations-refugee-internally-displaced-persons-and-statelessness",
+"http": "403",
+"status": "refused automated access"
+},
+{
+"id": 271,
+"year": 2025,
+"country": "Germany",
+"title": "Project implemented to update of statistical matching between administrative and survey data to provide insights on…",
+"org": "Federal Statistical Office of Germany (DESTATIS)",
+"types": [
+"Data integration"
+],
+"url": "https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/_inhalt.html",
+"http": "200",
+"status": "page read",
+"data_access": "public",
+"found": {
+"data": [
+[
+"https://www.destatis.de/DE/Service/OpenData/_inhalt.html",
+"Open Data"
+],
+[
+"https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/Publikationen/Downloads-Migration/statistischer-bericht-einbuergerungen-2010210257005.xlsx?__blob=publicationFile&v=5",
+"Statistischer Bericht - Einbürgerungsstatistiken: Antragstellungen, Verfahrenserledigungen, Einbürgerungen - 2025 (xlsx,"
+],
+[
+"https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/Publikationen/Downloads-Migration/statistischer-bericht-schutzsuchende-2010240257005.xlsx?__blob=publicationFile&v=3",
+"Statistischer Bericht - Schutzsuchende - 2025 (xlsx, 3MB, Datei ist nicht barrierefrei)"
+],
+[
+"https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/Publikationen/Downloads-Migration/statistischer-bericht-einwanderungsgeschichte-erst-5122126257005.xlsx?__blob=publicationFile&v=2",
+"Statistischer Bericht - Mikrozensus - Bevölkerung nach Einwanderungsgeschichte - Erstergebnisse 2025 (xlsx, 18MB, Datei "
+]
+],
+"report": [
+[
+"https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/_inhalt.html#sprg416494",
+"Qualitätsberichte"
+],
+[
+"https://www.bpb.de/kurz-knapp/zahlen-und-fakten/sozialbericht-2024/553012/bevoelkerung-und-demografie/",
+"Kapitel 1.2"
+],
+[
+"https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/Publikationen/Downloads-Migration/statistischer-bericht-einwanderungsgeschichte-erst-5122126257005.html",
+"Statistischen Bericht"
+],
+[
+"https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/Publikationen/Downloads-Migration/statistischer-bericht-migrationshintergrund-erst-2010220257005.html",
+"Statistischen Bericht"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/Publikationen/Downloads-Migration/statistischer-bericht-einbuergerungen-2010210257005.xlsx?__blob=publicationFile&v=5",
+"Statistischer Bericht - Einbürgerungsstatistiken: Antragstellungen, Verfahrenserledigungen, Einbürgerungen - 2025 (xlsx,"
+],
+[
+"https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/Publikationen/Downloads-Migration/statistischer-bericht-schutzsuchende-2010240257005.xlsx?__blob=publicationFile&v=3",
+"Statistischer Bericht - Schutzsuchende - 2025 (xlsx, 3MB, Datei ist nicht barrierefrei)"
+],
+[
+"https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/Publikationen/Downloads-Migration/statistischer-bericht-einwanderungsgeschichte-erst-5122126257005.xlsx?__blob=publicationFile&v=2",
+"Statistischer Bericht - Mikrozensus - Bevölkerung nach Einwanderungsgeschichte - Erstergebnisse 2025 (xlsx, 18MB, Datei "
+]
+]
+}
+},
+{
+"id": 272,
+"year": 2024,
+"country": "Greece",
+"title": "Monthly report regarding receptiom, asylum and integration procedures that is being uploaded on the website of ministry…",
+"org": "Ministry of Migration and Asylum",
+"types": [
+"Administrative data",
+"Data integration"
+],
+"url": "https://migration.gov.gr/en/statistika/",
+"http": "200",
+"status": "page read",
+"data_access": "licensed, on request",
+"found": {
+"data": [
+[
+"https://migration.gov.gr/wp-content/uploads/2022/10/Πολιτικής-ποιότητας-Στατιστικών-ΥΜΑ.zip",
+"Privacy and Quality Policies"
+],
+[
+"https://migration.gov.gr/wp-content/uploads/2022/04/2021-α-3μηνο-Ελληνικά.zip",
+"A’ Τρίμηνο 2021"
+],
+[
+"https://migration.gov.gr/wp-content/uploads/2022/04/2021-α-quarter-English.zip",
+"Α’ Quarter 2021 – English"
+],
+[
+"https://migration.gov.gr/wp-content/uploads/2022/04/2021_6μηνο-pdf_el.zip",
+"A’ Εξάμηνο 2021"
+]
+],
+"report": [
+[
+"https://migration.gov.gr/wp-content/uploads/2026/02/Report_A_January-2026_International-Protection_NEW.pdf",
+"January 2026 - International Protection"
+],
+[
+"https://migration.gov.gr/wp-content/uploads/2026/02/Report_A_January-2026_International-Protection_Appendix-A_NEW.pdf",
+"January 2026 - International Protection | APPENDIX A"
+],
+[
+"https://migration.gov.gr/wp-content/uploads/2026/02/Ιανουάριος-2026_ΥΜΑ-GR-Ενημερωτικό-Ιανουάριος-Β-Νόμιμη-Μετανάστευση_ΝΕΑ-ΕΚΔΟΣΗ.pdf",
+"Ιανουάριος 2026 – Νόμιμη Μετανάστευση"
+],
+[
+"https://migration.gov.gr/wp-content/uploads/2026/02/ΠΑΡΑΡΤΗΜΑ-Β_Ιανουάριος_2026_ΥΜΑ-GR-Ενημερωτικό-Ιανουάριος-Β-Νόμιμη-Μετανάστευση.pdf",
+"Ιανουάριος 2026 – Νόμιμη Μετανάστευση | Παράρτημα Β"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://migration.gov.gr/wp-content/uploads/2022/04/2021-α-3μηνο-Ελληνικά.zip",
+"A’ Τρίμηνο 2021"
+],
+[
+"https://migration.gov.gr/wp-content/uploads/2022/04/2021-α-quarter-English.zip",
+"Α’ Quarter 2021 – English"
+],
+[
+"https://migration.gov.gr/wp-content/uploads/2022/04/2021_6μηνο-pdf_el.zip",
+"A’ Εξάμηνο 2021"
+]
+]
+}
+},
+{
+"id": 273,
+"year": 2025,
+"country": "Azerbaijan",
+"title": "Administrative database",
+"org": "State Statistical Committee of the Republic of Azerbaijan",
+"types": [
+"Administrative data"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 274,
+"year": 2024,
+"country": "Poland",
+"title": "Health of refugees from Ukraine. A comparative analysis of 2022-2023 surveys and data innovations.",
+"org": "Statistical Office in Rzeszów",
+"types": [
+"Survey",
+"Administrative data"
+],
+"url": "https://stat.gov.pl/download/gfx/portalinformacyjny/en/defaultaktualnosci/3595/7/1/1/health_of_refugees_in_poland_2022-2023.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://stat.gov.pl/download/gfx/portalinformacyjny/en/defaultaktualnosci/3595/7/1/1/health_of_refugees_in_poland_2022-2023.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 275,
+"year": 2025,
+"country": "",
+"title": "1. Strengthening CRVS & Legal Identity Data Systems",
+"org": "United Nations Development Programme (UNDP)",
+"types": [
+"Survey",
+"Administrative data",
+"Census"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 276,
+"year": 2025,
+"country": "",
+"title": "2. Durable Solutions Monitoring Frameworks",
+"org": "United Nations Development Programme (UNDP)",
+"types": [
+"Survey",
+"Census",
+"Data integration"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 277,
+"year": 2024,
+"country": "",
+"title": "Training Course on 'Migration and Refugee Statistics'",
+"org": "Statistical, Economic and Social Research and Training Centre for…",
+"types": [
+"Survey",
+"Administrative data",
+"Census"
+],
+"url": "https://content-api.sesric.org/event-detail.php?id=3240",
+"http": "404",
+"status": "not reachable"
+},
+{
+"id": 279,
+"year": 2024,
+"country": "Colombia",
+"title": "Diagnosis on the Single Registry of Victims",
+"org": "Victims Unit",
+"types": [
+"Administrative data"
+],
+"url": "https://www.unidadvictimas.gov.co/registro-unico-de-victimas-ruv/",
+"http": "200",
+"status": "page read",
+"data_access": "licensed, on request",
+"found": {
+"questionnaire": [
+[
+"https://www.unidadvictimas.gov.co/formulario-encuesta-de-satisfaccion/",
+"RESPONDER"
+]
+],
+"data": [
+[
+"https://www.unidadvictimas.gov.co/publicacion-de-datos-abiertos/",
+"Publicación de datos abiertos"
+]
+],
+"report": [
+[
+"https://www.unidadvictimas.gov.co/informes-proyectos-y-planes/",
+"Informes, Proyectos y Planes"
+],
+[
+"https://www.unidadvictimas.gov.co/publicacion-de-datos-abiertos/",
+"Publicación de datos abiertos"
+],
+[
+"https://www.unidadvictimas.gov.co/informes-canal-escrito/",
+"Informes Canal Escrito"
+],
+[
+"https://www.unidadvictimas.gov.co/informe-registro-publico-de-peticiones/",
+"Informe Registro Público de Peticiones"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://www.unidadvictimas.gov.co/publicacion-de-datos-abiertos/",
+"Publicación de datos abiertos"
+]
+],
+"report": [
+[
+"https://www.unidadvictimas.gov.co/informes-proyectos-y-planes/",
+"Informes, Proyectos y Planes"
+]
+]
+}
+},
+{
+"id": 280,
+"year": 2025,
+"country": "",
+"title": "4. Municipal and Local Governance Data Systems",
+"org": "United Nations Development Programme (UNDP)",
+"types": [
+"Survey",
+"Administrative data",
+"Data integration"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 281,
+"year": 2024,
+"country": "Ghana",
+"title": "proGres Version 4",
+"org": "Ghana Refugee Board",
+"types": [
+"Administrative data"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 282,
+"year": 2025,
+"country": "Italy",
+"title": "Acquisition of new data sources - microdata on asylum applications and decisions",
+"org": "National Institute of Statistics (ISTAT)",
+"types": [
+"Administrative data"
+],
+"url": "https://www.istat.it/infografiche/giornata-internazionale-dei-migranti-18-dicembre-2025/",
+"http": "200",
+"status": "page read",
+"data_access": "public",
+"found": {
+"data": [
+[
+"https://www.istat.it/dati/open-data/",
+"Open Data"
+],
+[
+"https://www.istat.it/dati/open-data/high-value-datasets/",
+"High value datasets"
+]
+],
+"report": [
+[
+"https://www.istat.it/wp-content/uploads/2025/12/Giornata-Migranti-18-dicembre2025_completo.pdf",
+"Infografica completa"
+],
+[
+"https://www.istat.it/wp-content/uploads/2025/12/Giornata-Migranti-18-dicembre2025_Card1.pdf",
+"pdf"
+],
+[
+"https://www.istat.it/wp-content/uploads/2025/12/Giornata-Migranti-18-dicembre2025_Card2.pdf",
+"pdf"
+],
+[
+"https://www.istat.it/wp-content/uploads/2025/12/Giornata-Migranti-18-dicembre2025_Card3.pdf",
+"pdf"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://www.istat.it/dati/open-data/",
+"Open Data"
+],
+[
+"https://www.istat.it/dati/open-data/high-value-datasets/",
+"High value datasets"
+]
+]
+}
+},
+{
+"id": 283,
+"year": 2024,
+"country": "Mali",
+"title": "SURVEYS ON SOCIO ECONOMIC CONDITIONS OF IDS, RETURN INTENTION",
+"org": "International Organization for Migration (IOM)",
+"types": [
+"Survey"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 284,
+"year": 2025,
+"country": "Italy",
+"title": "Enhanced the use of record linkage techniques to connect administrative data with other databases (marriages and…",
+"org": "National Institute of Statistics (ISTAT)",
+"types": [
+"Data integration"
+],
+"url": "https://www.istat.it/wp-content/uploads/2025/09/Conti_Cinzia_23_settembre.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.istat.it/wp-content/uploads/2025/09/Conti_Cinzia_23_settembre.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 285,
+"year": 2024,
+"country": "Mexico",
+"title": "Integrate and calibrate the expansion factors from both ENVIPE 2018 and ENADID 2018",
+"org": "National Institute of Statistics and Geography (INEGI)",
+"types": [
+"Data integration"
+],
+"url": "https://www.inegi.org.mx/programas/envipe/2018/",
+"http": "200",
+"status": "page read",
+"found": {}
+},
+{
+"id": 286,
+"year": 2025,
+"country": "",
+"title": "2025 Socio-Economic Insights Survey (SEIS) with Refugees from Ukraine",
+"org": "United Nations High Commissioner for Refugees (UNHCR)",
+"types": [
+"Survey"
+],
+"url": "https://data.unhcr.org/en/documents/details/124274",
+"http": "200",
+"status": "page read",
+"data_access": "licensed, on request",
+"found": {
+"data": [
+[
+"https://microdata.unhcr.org/",
+"Microdata Library"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://microdata.unhcr.org/",
+"Microdata Library"
+]
+]
+}
+},
+{
+"id": 287,
+"year": 2024,
+"country": "Republic of Moldova",
+"title": "NBS has included in the 2024 Population and Housing Census dedicated questions to be able to estimate de number of…",
+"org": "National Bureau of Statistics",
+"types": [
+"Census"
+],
+"url": "https://statistica.gov.md/en/final-results-of-the-2024-population-and-housing-census-migration-10121_61958.html",
+"http": "200",
+"status": "page read",
+"found": {
+"data": [
+[
+"https://statistica.gov.md/en/request-for-access-to-microdata-205.html",
+"Request for access to microdata"
+],
+[
+"https://statistica.gov.md/files/files/ComPresa/Recensamant/2024/En/Data_Press_Release_Final_Migration_Results_2024.xlsx",
+"Chart data in format .xlsx"
+],
+[
+"https://statistica.gov.md/files/files/serii_de_timp/recensamant_2024/date_finale/Anexa_Caracteristici_Migra%C8%9Bionale_RPL2024_en.xlsx",
+"Tables on the migration characteristics of the population with usual residence RPL 2024: population born in other countr"
+]
+],
+"report": [
+[
+"https://statistica.gov.md/en/reports-of-activity-30.html",
+"Reports of activity"
+],
+[
+"https://statistica.gov.md/en/final-results-of-the-population-and-housing-census-2024-10118.html",
+"Final Results of the Population and Housing Census 2024"
+],
+[
+"https://statistica.gov.md/en/final-results-of-the-2024-population-and-housing-census-migration-10121_61958.html",
+"Final Results of the 2024 Population and Housing Census: Migration Characteristics of the Population"
+],
+[
+"https://statistica.gov.md/en/final-results-of-the-2024-population-and-housing-census-economic-10121_62102.html",
+"Final Results of the 2024 Population and Housing Census: Economic Characteristics of the Population"
+]
+],
+"method": [
+[
+"https://statistica.gov.md/en/metadata-96.html",
+"Metadata and classifications"
+],
+[
+"https://statistica.gov.md/files/files/Recensamint/Recesamint_2024/Chestionare/Acte_normative/Metodologia_RPL_de_recenzare_prelucrare.pdf",
+"Methodology for 2024 PHC enumeration and data processing"
+],
+[
+"https://statistica.gov.md/en/metadata",
+"Metadata"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://statistica.gov.md/en/request-for-access-to-microdata-205.html",
+"Request for access to microdata"
+],
+[
+"https://statistica.gov.md/files/files/ComPresa/Recensamant/2024/En/Data_Press_Release_Final_Migration_Results_2024.xlsx",
+"Chart data in format .xlsx"
+],
+[
+"https://statistica.gov.md/files/files/serii_de_timp/recensamant_2024/date_finale/Anexa_Caracteristici_Migra%C8%9Bionale_RPL2024_en.xlsx",
+"Tables on the migration characteristics of the population with usual residence RPL 2024: population born in other countr"
+]
+],
+"report": [
+[
+"https://statistica.gov.md/en/final-results-of-the-population-and-housing-census-2024-10118.html",
+"Final Results of the Population and Housing Census 2024"
+],
+[
+"https://statistica.gov.md/en/final-results-of-the-2024-population-and-housing-census-migration-10121_61958.html",
+"Final Results of the 2024 Population and Housing Census: Migration Characteristics of the Population"
+],
+[
+"https://statistica.gov.md/en/final-results-of-the-2024-population-and-housing-census-economic-10121_62102.html",
+"Final Results of the 2024 Population and Housing Census: Economic Characteristics of the Population"
+]
+],
+"method": [
+[
+"https://statistica.gov.md/en/metadata-96.html",
+"Metadata and classifications"
+],
+[
+"https://statistica.gov.md/files/files/Recensamint/Recesamint_2024/Chestionare/Acte_normative/Metodologia_RPL_de_recenzare_prelucrare.pdf",
+"Methodology for 2024 PHC enumeration and data processing"
+]
+]
+}
+},
+{
+"id": 288,
+"year": 2025,
+"country": "Ukraine",
+"title": "Building foundations for implementing surveys representative of forcibly displaced people during and after wartime in…",
+"org": "United Nations High Commissioner for Refugees (UNHCR)",
+"types": [
+"Survey"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 289,
+"year": 2024,
+"country": "Zambia",
+"title": "Forced displacement survey for Zambia",
+"org": "United Nations High Commissioner for Refugees (UNHCR)",
+"types": [
+"Survey"
+],
+"url": "https://data.unhcr.org/en/documents/details/119726",
+"http": "200",
+"status": "page read",
+"data_access": "licensed, on request",
+"found": {
+"data": [
+[
+"https://microdata.unhcr.org/",
+"Microdata Library"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://microdata.unhcr.org/",
+"Microdata Library"
+]
+]
+}
+},
+{
+"id": 290,
+"year": 2025,
+"country": "",
+"title": "Promoting statistical Inclusion of refugees, other forcibly displaced and stateless people in Europe: Guidance for…",
+"org": "United Nations High Commissioner for Refugees (UNHCR)",
+"types": [
+"Survey",
+"Administrative data",
+"Census",
+"Data integration"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 292,
+"year": 2024,
+"country": "Sudan",
+"title": "Sudan: Inclusion of IDPs and Refugees in Sudan High-Frequency Households' Welfare Monitoring Survey",
+"org": "World Bank-UNHCR Joint Data Center on Forced Displacement (JDC)",
+"types": [
+"Survey"
+],
+"url": "https://www.jointdatacenter.org/activites/refugees-and-idps-in-sudan/",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+}
+},
+{
+"id": 294,
+"year": 2024,
+"country": "Burundi",
+"title": "Burundi: Data and analytics for improved FDPS understanding in Burundi: Support for the inclusion of FDPs in the 2024…",
+"org": "World Bank-UNHCR Joint Data Center on Forced Displacement (JDC)",
+"types": [
+"Census"
+],
+"url": "https://www.jointdatacenter.org/activites/fdps-burundi/",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+}
+},
+{
+"id": 295,
+"year": 2025,
+"country": "Bangladesh",
+"title": "MICS",
+"org": "United Nations High Commissioner for Refugees (UNHCR)",
+"types": [
+"Survey"
+],
+"url": "https://www.jointdatacenter.org/activites/refugees-in-bangladesh/",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+}
+},
+{
+"id": 296,
+"year": 2024,
+"country": "Central African Republic",
+"title": "Central African Republic: Building Inclusive Statistics: Integrating Forced Displacement and people at risk of…",
+"org": "World Bank-UNHCR Joint Data Center on Forced Displacement (JDC)",
+"types": [
+"Survey"
+],
+"url": "https://www.jointdatacenter.org/activites/displaced-and-stateless-populations-in-car/",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+}
+},
+{
+"id": 297,
+"year": 2025,
+"country": "Colombia",
+"title": "Colombia: Data-Driven Approaches to Durable Solutions for Forced Displacement in Colombia",
+"org": "World Bank-UNHCR Joint Data Center on Forced Displacement (JDC)",
+"types": [
+"Survey",
+"Administrative data",
+"Data integration"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 298,
+"year": 2024,
+"country": "Iraq",
+"title": "Iraq: Including Refugees into the Iraq Household and Socioeconomic Survey (IHSES- III)",
+"org": "World Bank-UNHCR Joint Data Center on Forced Displacement (JDC)",
+"types": [
+"Survey"
+],
+"url": "https://www.jointdatacenter.org/activites/refugees-in-iraq/",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+}
+},
+{
+"id": 299,
+"year": 2025,
+"country": "Uganda",
+"title": "Uganda: Inclusion of Refugees in National Household Survey",
+"org": "World Bank-UNHCR Joint Data Center on Forced Displacement (JDC)",
+"types": [
+"Survey"
+],
+"url": "https://www.jointdatacenter.org/wp-content/uploads/2025/08/Uganda-National-Household-Survey-Report-20232024.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.jointdatacenter.org/wp-content/uploads/2025/08/Uganda-National-Household-Survey-Report-20232024.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 300,
+"year": 2024,
+"country": "Turkiye",
+"title": "Turkiye: Inclusion of Forcibly Displaced Persons in the World Bank's Enterprise Surveys Series Enterprise Surveys Series",
+"org": "World Bank-UNHCR Joint Data Center on Forced Displacement (JDC)",
+"types": [
+"Survey"
+],
+"url": "https://www.jointdatacenter.org/activites/refugees-in-turkiye/",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+}
+},
+{
+"id": 301,
+"year": 2025,
+"country": "Guatemala",
+"title": "Guatemala: Building the Evidence Base on Internal Displacement in Guatemala",
+"org": "World Bank-UNHCR Joint Data Center on Forced Displacement (JDC)",
+"types": [
+"Survey"
+],
+"url": "https://www.jointdatacenter.org/activites/internally-displaced-guatemala/",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+],
+[
+"https://reliefweb.int/report/guatemala/desplazamiento-interno-en-guatemala-situacion-de-las-personas-desplazadas-partir-de-la-encovi-2023",
+"Internal Displacement in Guatemala (Infographic)"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+}
+},
+{
+"id": 302,
+"year": 2024,
+"country": "",
+"title": "Pakistan/Cameroon: Data integration and machine learning to enhance the measurement of living conditions of those…",
+"org": "World Bank-UNHCR Joint Data Center on Forced Displacement (JDC)",
+"types": [
+"Data integration"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 305,
+"year": 2025,
+"country": "",
+"title": "Project to better identify returned migrants in the household surveys of Northern Central America (El Salvador…",
+"org": "Inter-American Development Bank (IDB)",
+"types": [
+"Survey",
+"Administrative data"
+],
+"url": "https://www.iadb.org/en/project/RG-T4896",
+"http": "403",
+"status": "refused automated access"
+},
+{
+"id": 307,
+"year": 2025,
+"country": "Belize",
+"title": "Support to the Statistical Institute of Belize in the preparation of a thematic report on migration based on the 2022…",
+"org": "Inter-American Development Bank (IDB)",
+"types": [
+"Census"
+],
+"url": "https://sib.org.bz/wp-content/uploads/20251020_BelizeCensusMigrationReport.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://sib.org.bz/wp-content/uploads/20251020_BelizeCensusMigrationReport.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 308,
+"year": 2024,
+"country": "",
+"title": "Regional: EHCMV+: including FDP strata in 11 EHCVM surveys in West and Central Africa: Benin, Burkina Faso, Chad…",
+"org": "World Bank-UNHCR Joint Data Center on Forced Displacement (JDC)",
+"types": [
+"Survey"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 309,
+"year": 2025,
+"country": "Honduras",
+"title": "Production of two studies on returnees in Honduras using administrative data gathered at reception centers and in…",
+"org": "Inter-American Development Bank (IDB)",
+"types": [
+"Survey",
+"Administrative data"
+],
+"url": "https://publications.iadb.org/publications/english/document/Return-Migrants-in-Honduras.pdf",
+"http": "403",
+"status": "refused automated access"
+},
+{
+"id": 310,
+"year": 2024,
+"country": "Zimbabwe",
+"title": "Zimbabwe: Inclusion of Tongogara Refugee Settlement in the Multiple Indicator Cluster Survey",
+"org": "World Bank-UNHCR Joint Data Center on Forced Displacement (JDC)",
+"types": [
+"Survey"
+],
+"url": "https://www.jointdatacenter.org/data-activities/inclusion/",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+}
+},
+{
+"id": 311,
+"year": 2024,
+"country": "Mauritania",
+"title": "Mauritania: Quantifying refugee's return to the labor market & local economy: Inclusion of refugees & asylum seekers…",
+"org": "World Bank-UNHCR Joint Data Center on Forced Displacement (JDC)",
+"types": [
+"Survey"
+],
+"url": "https://www.jointdatacenter.org/activites/refugees-in-mauritania/",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+]
+]
+}
+},
+{
+"id": 313,
+"year": 2024,
+"country": "Mozambique",
+"title": "Mozambique: Inclusion of IDPs in the 2025 Mozambique Household Budget Survey (IOF2025)",
+"org": "World Bank-UNHCR Joint Data Center on Forced Displacement (JDC)",
+"types": [
+"Survey"
+],
+"url": "https://openknowledge.worldbank.org/entities/publication/98f29351-1fac-4aac-a0dd-1b6886941a0a",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://openknowledge.worldbank.org/entities/publication/98f29351-1fac-4aac-a0dd-1b6886941a0a/full",
+"Full item page"
+],
+[
+"https://openknowledge.worldbank.org/entities/publication/3344f37f-508e-568f-ba1f-a4cba725895f",
+"Assessing the Impacts and Costs of Forced Displacement : Volume 1. A Mixed Methods Approach"
+],
+[
+"https://openknowledge.worldbank.org/entities/publication/15584de0-c8c6-5224-953f-35b0d7a9468a",
+"Forced Displacement of and Potential Solutions for IDPs and Refugees in the Sahel : Burkina Faso, Chad, Mali, Mauritania"
+],
+[
+"https://openknowledge.worldbank.org/entities/publication/11ba8886-7bdb-554b-8c43-c4dc19c37c22",
+"Political Economy and Forced Displacement : Guidance and Lessons from Nine Country Case Studies"
+]
+]
+},
+"checked": {
+"questionnaire": [
+[
+"https://openknowledge.worldbank.org/entities/publication/98f29351-1fac-4aac-a0dd-1b6886941a0a/full",
+"Full item page"
+]
+]
+}
+},
+{
+"id": 315,
+"year": 2024,
+"country": "Malawi",
+"title": "Malawi: Inclusion of refugees in Malawi's Demographic and Health Survey 2023/24",
+"org": "World Bank-UNHCR Joint Data Center on Forced Displacement (JDC)",
+"types": [
+"Survey"
+],
+"url": "https://www.jointdatacenter.org/malawi-dhs-2024/",
+"http": "200",
+"status": "page read",
+"found": {
+"report": [
+[
+"https://www.jointdatacenter.org/resources/publications-and-reports/",
+"Publications and Reports"
+],
+[
+"https://dhsprogram.com/pubs/pdf/FR398/FR398.pdf",
+"Read the report"
+]
+]
+},
+"checked": {
+"report": [
+[
+"https://dhsprogram.com/pubs/pdf/FR398/FR398.pdf",
+"Read the report"
+]
+]
+}
+},
+{
+"id": 316,
+"year": 2024,
+"country": "Malawi",
+"title": "Malawi: Inclusion of refugees in Malawi's Integrated Household Survey (IHS) 2024",
+"org": "World Bank-UNHCR Joint Data Center on Forced Displacement (JDC)",
+"types": [
+"Survey"
+],
+"url": "https://www.jointdatacenter.org/wp-content/uploads/2026/07/IHS6_Cross_Section-Report-1.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.jointdatacenter.org/wp-content/uploads/2026/07/IHS6_Cross_Section-Report-1.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 317,
+"year": 2024,
+"country": "Mauritania",
+"title": "Permanent Survey on Household Living Conditions (EPCV) 2024/25 in Mauritania",
+"org": "United Nations High Commissioner for Refugees (UNHCR)",
+"types": [
+"Survey",
+"Administrative data",
+"Census"
+],
+"url": "",
+"status": "no link"
+},
+{
+"id": 318,
+"year": 2024,
+"country": "Iraq",
+"title": "Census",
+"org": "Kurdistan Region Statistics Office",
+"types": [
+"Census"
+],
+"url": "https://krso.gov.krd/en/indicator",
+"http": "403",
+"status": "refused automated access"
+},
+{
+"id": 319,
+"year": 2024,
+"country": "Uganda",
+"title": "THE 2024 NATIONAL POPULATION AND HOUSING CENSUS (NPHC 2024)",
+"org": "Uganda Bureau of Statistics (UBOS)",
+"types": [
+"Census"
+],
+"url": "https://statistics.ubos.org/nphc/reports/National-Population-and-Housing-Census-2024-Final-Report-Volume-1-Main.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://statistics.ubos.org/nphc/reports/National-Population-and-Housing-Census-2024-Final-Report-Volume-1-Main.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 320,
+"year": 2024,
+"country": "Uganda",
+"title": "THE UGANDA NATIONAL INTEGRATED SURVEY, 2024/25 (UHIS 2024/25)",
+"org": "Uganda Bureau of Statistics (UBOS)",
+"types": [
+"Survey"
+],
+"url": "https://www.ubos.org/wp-content/uploads/publications/05_2026Uganda_Harmonised_Integrated_Survey_2021-22_to_2024-25-Presentation.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.ubos.org/wp-content/uploads/publications/05_2026Uganda_Harmonised_Integrated_Survey_2021-22_to_2024-25-Presentation.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 321,
+"year": 2024,
+"country": "Uganda",
+"title": "THE UGANDA MALARIA INDICATOR SURVEY, 2024/25 (UMIS, 2024/25)",
+"org": "Uganda Bureau of Statistics (UBOS)",
+"types": [
+"Survey"
+],
+"url": "https://www.ubos.org/the-uganda-malaria-indicator-survey-2024-25-report-released/",
+"http": "200",
+"status": "page read",
+"data_access": "public",
+"found": {
+"data": [
+[
+"https://microdata.ubos.org:7070/",
+"UBOS Microdata Archive"
+],
+[
+"https://ons-sdg-ug-ubos.github.io/site/",
+"SDG Open Data Portal"
+],
+[
+"https://nso-uganda.opendataforafrica.org/",
+"NSO – Open data"
+]
+],
+"report": [
+[
+"https://www.ubos.org/wp-content/uploads/publications/09_2026UBOS_CHARTER_2026_26_-_2029_30.pdf",
+"UBOS Clients Charter 2025/2026 – 2029/30"
+],
+[
+"https://www.ubos.org/wp-content/uploads/publications/09_2026UBOS_-_Service_Delivery_Standards_REVISED_260915_133309.pdf",
+"UBOS Service Delivery Standards 2025/26 – 2029/30"
+],
+[
+"https://www.ubos.org/publications/statistical/",
+"Publications –"
+],
+[
+"https://www.ubos.org/?pagename=explore-publications&p_id=78",
+"Environment"
+]
+]
+},
+"checked": {
+"data": [
+[
+"https://microdata.ubos.org:7070/",
+"UBOS Microdata Archive"
+]
+]
+}
+},
+{
+"id": 322,
+"year": 2024,
+"country": "Uganda",
+"title": "THE UGANDA NATIONAL GOVERNANCE, PEACE AND SECURITY SURVEY, 2024/25 (UNGPS 2024/25)",
+"org": "Uganda Bureau of Statistics (UBOS)",
+"types": [
+"Survey"
+],
+"url": "https://www.ubos.org/wp-content/uploads/publications/02_2026NGPSS_REPORT_2024-2025.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://www.ubos.org/wp-content/uploads/publications/02_2026NGPSS_REPORT_2024-2025.pdf",
+"the linked PDF"
+]
+]
+}
+},
+{
+"id": 323,
+"year": 2024,
+"country": "Mauritania",
+"title": "EPCV",
+"org": "National Agency for Statistics, Demographic and Economic Analysis…",
+"types": [
+"Survey"
+],
+"url": "https://ansade.mr/",
+"http": "200",
+"status": "page read",
+"found": {}
+},
+{
+"id": 324,
+"year": 2024,
+"country": "Philippines",
+"title": "Birth Registration Assistance Project",
+"org": "Philippine Statistics Authority",
+"types": [
+"Administrative data",
+"Census"
+],
+"url": "https://rsso03.psa.gov.ph/content/psa-nueva-ecija-and-lgu-cabanatuan-city-awards-certificate-live-birth-secpa-59-sama-bajau",
+"http": "403",
+"status": "refused automated access"
+},
+{
+"id": 325,
+"year": 2024,
+"country": "Philippines",
+"title": "2024 Census of Population and Community Based Monitoring System",
+"org": "Philippine Statistics Authority",
+"types": [
+"Census"
+],
+"url": "https://psa.gov.ph/system/files/cbms/Press%20Release_National%20Press%20Launch%20for%20the%202024%20POPCEN-CBMS.pdf",
+"http": "403",
+"status": "refused automated access"
+},
+{
+"id": 326,
+"year": 2024,
+"country": "Philippines",
+"title": "Registration of Undocumented Filipinos in Sabah",
+"org": "Philippine Statistics Authority",
+"types": [
+"Administrative data"
+],
+"url": "https://psa.gov.ph/content/filipino-special-consular-mission-sabah",
+"http": "403",
+"status": "refused automated access"
+},
+{
+"id": 327,
+"year": 2024,
+"country": "Kosovo*",
+"title": "Kosovo Census 2024",
+"org": "Kosovo Agency of Statistics",
+"types": [
+"Census"
+],
+"url": "https://askapi.rks-gov.net/Custom/c973a3e6-790c-47e7-924b-4e9f5d745aec.pdf",
+"http": "200",
+"status": "document",
+"found": {
+"report": [
+[
+"https://askapi.rks-gov.net/Custom/c973a3e6-790c-47e7-924b-4e9f5d745aec.pdf",
+"the linked PDF"
+]
+]
+}
+}
+],
+"judged": "qwen2.5-7b-instruct-1m"
+}

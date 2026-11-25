@@ -63,6 +63,16 @@ for x in rows:
 data["surveys"] = surveys; data["bank"] = bank
 _simf = os.path.join(HERE, "similarity.json")
 data["sim"] = json.load(open(_simf, encoding="utf-8"))["rows"] if os.path.exists(_simf) else {}
+# where each data-source GAIN example's questionnaire, report, data and methodology were found (build/mk_gain_docs.py)
+_docf = os.path.join(HERE, "gain_docs.json"); data["docs"] = {}; data["docsDate"] = ""
+if os.path.exists(_docf):
+    _dj = json.load(open(_docf, encoding="utf-8")); data["docsDate"] = _dj.get("scanned", "")
+    _ST = {"page read": "ok", "document": "ok", "no link": "nolink", "refused automated access": "refused", "not reachable": "down", "error": "down"}
+    _BAD = ("responder", "satisfacci")
+    for _x in _dj["rows"]:
+        _src = _x["checked"] if _x.get("status") == "page read" and _x.get("checked") is not None else ({} if _x.get("status") == "page read" and "judged" in _dj else _x.get("found", {}))
+        _f = {k[0]: [[u, t[:70]] for u, t in v if not any(w in (u + t).lower() for w in _BAD)][:2] for k, v in _src.items()}
+        data["docs"][str(_x["id"])] = [_ST.get(_x["status"], "down"), _x.get("data_access", ""), {k: v for k, v in _f.items() if v}]
 
 # ---- the questions as printed: crops of the original questionnaire (PDF) or its rows (spreadsheet, text file) ----
 # made by mk_excerpts.py; keyed by the row number of the bank file

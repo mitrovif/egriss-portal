@@ -412,7 +412,7 @@ const tiles=c=>c.pop?`<div class="ptiles">${[['Refugees and asylum-seekers',c.po
 function exCard(e,iso,btn){ const k=exLinks(iso,e[0]);
   return `<article class="exc ${btn&&e[0]===fEx?'cur':''}" ${e[10]?tipA('What it is',esc(e[10])+(e[10].length>=260?'…':'')):''}>${e[9]?`<img src="covers/ex${e[0]}.jpg" alt="" loading="lazy" onerror="this.style.visibility='hidden'">`:'<div class="noc">no cover</div>'}
     <div class="exb"><span class="exmeta">${e[1]} · ${e[5]==='C'?'COUNTRY-LED':'INSTITUTION-LED'} · EXAMPLE ${e[0]}</span><b>${esc(e[2])}</b><span class="org">${esc(e[3])}</span>
-    <div class="tags">${e[4]?'<i class="pill ok">Uses the Recommendations</i>':'<i class="pill plain">Not using or not known</i>'}${(e[6]?e[6].split(', '):[]).concat(e[7]?e[7].split(', '):[]).map(t=>`<i class="pill plain">${esc(t)}</i>`).join('')}${k.bs!=null?`<i class="pill" style="background:${LAYER.idq.col};color:var(--night)">Questionnaire</i>`:''}</div>
+    <div class="tags">${e[4]?'<i class="pill ok">Uses the Recommendations</i>':'<i class="pill plain">Not using or not known</i>'}${(e[6]?e[6].split(', '):[]).concat(e[7]?e[7].split(', '):[]).map(t=>`<i class="pill plain">${esc(t)}</i>`).join('')}${k.bs!=null?`<i class="pill" style="background:${LAYER.idq.col};color:var(--night)">Questionnaire</i>`:''}${findDots(e)}</div>
     <div class="exl">${e[8]?`<a href="${esc(e[8])}" target="_blank" rel="noopener">Open the source ↗</a>`:''}${btn?act('ex',e[0],e[0]===fEx?'Card open below ↓':'Open its card'):''}</div></div></article>` }
 const GN=['Refugees','Returnees','IDPs','Asylum-seekers','Stateless people','Others of concern'], GCOL=['#7df3f7','#8b98b3','#ffd166','#7df3f7','#b48ef0','#8b98b3'];
 function miniMap(iso){
@@ -446,6 +446,19 @@ function coverMap(id){
 }
 function recSet(e){ const x=Q.gx[e[0]]; if(x&&x.rc) return x.rc; const r=e[12]; if(r==='IRRS'||r==='IRIS'||r==='IROSS') return [r]; if(!e[4]) return []; const g=e[7]||''; const o=[]; if(/Refugees|Asylum/.test(g)) o.push('IRRS'); if(/IDPs/.test(g)) o.push('IRIS'); if(/Stateless/.test(g)) o.push('IROSS'); return r==='Mixed use'?o:[] }
 const RECS={IRRS:'International Recommendations on Refugee Statistics (IRRS)',IRIS:'International Recommendations on IDP Statistics (IRIS)',IROSS:'International Recommendations on Statelessness Statistics (IROSS)','Mixed use':'More than one set of Recommendations',Undetermined:'Not determined'};
+/* GAIN as an index card: where the questionnaire, report, data and methodology of a data-source example can be found */
+const DOCK=[['q','Questionnaire'],['r','Report'],['d','Data'],['m','Methodology']];
+function findBlock(e,k){ const D=(Q.docs||{})[e[0]]; if(!D) return ''; const [st,acc,f]=D, org=esc(e[3]||'the organisation that reported it');
+  const none=st==='refused'?'Not checked: the site did not allow an automatic scan':st==='nolink'?'Not located: GAIN has no link for this example':st==='down'?'Not checked: the link did not open':'Not located on the linked page';
+  const line=(c,n)=>{ let v=(f[c]||[]).map(x=>`<a href="${esc(x[0])}" target="_blank" rel="noopener">${esc(x[1]&&x[1].length>3?x[1]:'Open')} ↗</a>`).join('<br>');
+    if(c==='q'&&k.bs!=null) v=act('open-idq',k.bs,'Compared in ID Questions →','lk')+(v?'<br>'+v:'');
+    if(c==='d'){ if(k.src) v=act('ds',k.src,'Where to get the dataset →','lk')+(v?'<br>'+v:''); if(v&&acc) v+=`<br><small class="lnote">Access: ${esc(acc)}</small>` }
+    const ask=!v&&(c==='q'||c==='d');
+    return `<tr class="${v?'has':'no'}"><th><i class="fd ${v?'on':''}"></i>${n}</th><td>${v||`<span class="lnote">${none}${ask?' · to request from '+org:''}</span>`}</td></tr>` };
+  const feeds=[k.rows?'SDG':'',k.bs!=null?'ID Questions':''].filter(Boolean);
+  return `<div class="findb"><h3>Where to find it</h3><table class="meta fnd">${DOCK.map(x=>line(x[0],x[1])).join('')}<tr><th>Held by</th><td>${esc(e[3]||'not recorded')}</td></tr>${feeds.length?`<tr><th>Feeds</th><td>${feeds.join(' · ')}</td></tr>`:''}</table>
+    <p class="lnote">Links found by an automatic scan of this example's source${Q.docsDate?' on '+esc(Q.docsDate):''}, by the wording of the links. Not checked by a person.</p></div>` }
+const findDots=e=>{ const D=(Q.docs||{})[e[0]]; return D?`<span class="fdots" ${tipA('Where to find it',DOCK.map(x=>x[1]+': '+((D[2][x[0]]||[]).length?'link found':'not located')).join('<br>'))}>${DOCK.map(x=>`<i class="${(D[2][x[0]]||[]).length?'on':''}">${x[1][0]}</i>`).join('')}</span>`:'' };
 function exOpen(e,iso,noBack){ const k=exLinks(iso,e[0]), c=Q.ctry[iso], x=Q.gx[e[0]]||{}, pills=a=>a.map(t=>`<i class="pill plain">${esc(t)}</i>`).join(' ');
   const row=(k_,v,tip)=>v?`<tr><th>${k_}</th><td ${tip?tipA(k_,tip)+' tabindex="0" style="cursor:help"':''}>${v}</td></tr>`:'';
   const basis=b=>b==='title'?'Read from the title of the example.':b==='none'?'':b?'Assigned from: '+esc(b)+'.':'';
@@ -455,6 +468,7 @@ function exOpen(e,iso,noBack){ const k=exLinks(iso,e[0]), c=Q.ctry[iso], x=Q.gx[
     <div class="cover full">${e[9]?`<a href="covers/ex${e[0]}.jpg" target="_blank" rel="noopener" ${tipA('Cover','Open the full-size cover')}><img src="covers/ex${e[0]}.jpg" alt="Cover of the example" onerror="this.parentNode.style.display='none'"></a>`:''}<div style="display:flex;flex-direction:column;gap:6px;min-width:0"><span class="exmeta">GAIN ${e[1]} · EXAMPLE ${e[0]} · ${esc(c.n).toUpperCase()}</span><h2>${esc(e[2])}</h2><span style="font-size:13.5px;color:var(--soft)">${esc(e[3])}</span>
       <div>${e[4]?'<i class="pill ok">Uses the Recommendations</i>':'<i class="pill plain">Not using them, or not known</i>'}</div></div></div>
     ${e[10]?`<div><h3 style="margin-bottom:6px">What was reported</h3><p style="font-size:14px;color:var(--soft)">${esc(e[10])}${e[10].length>=400?'…':''}</p></div>`:''}
+    ${findBlock(e,k)}
     <table class="meta gx">
       ${row('Reported in','GAIN Survey '+e[1])}
       ${row('Led by',e[5]==='C'?'Country-led':'Institution-led')}
@@ -942,7 +956,7 @@ function pWorld(){
 
 /* ---- GAIN at country level ---- */
 function exLinks(iso,id){const src=Q.exsrc[id], rows=src?surveysOf(iso).get(src):null, rep=Q.sub.rep[iso]&&Q.sub.rep[iso].ex===id?Q.sub.rep[iso]:null; return {src,rows,rep,bs:src!=null?Q.link[src]:undefined,hold:src?HOLD[src]:null}}
-function exRows(iso){ const c=Q.ctry[iso], X=exF(iso); return (gfOn()?`<p class="lnote" style="margin:0 0 6px">Showing ${X.length} of ${c.ex.length}: ${esc(gfText())}. ${act('gf','clear','Clear filters','lk')}</p>`:'')+X.map(e=>{const k=exLinks(iso,e[0]); return `<button class="exr" type="button" data-act="ex" data-v="${e[0]}" data-exh="${e[0]}">${e[9]?`<img class="th" src="covers/ex${e[0]}.jpg" alt="" loading="lazy" onerror="this.style.visibility='hidden'">`:'<span class="th none"></span>'}<span class="tt"><span class="yr">${e[1]}</span><b>${esc(e[2])}</b><small>${esc(e[3])}</small><small class="gr">${e[7]?esc(e[7]):'groups not recorded'}${recSet(e).length?' · '+recSet(e).join(' + '):''}</small></span><span class="mk"><i class="bd ${e[4]?'f':''}" ${tipA(e[4]?'Uses the Recommendations':'Not using them, or not known','')}></i>${k.bs!=null?`<i class="bd f" style="--c:${LAYER.idq.col}"></i>`:''}</span></button>`}).join('') }
+function exRows(iso){ const c=Q.ctry[iso], X=exF(iso); return (gfOn()?`<p class="lnote" style="margin:0 0 6px">Showing ${X.length} of ${c.ex.length}: ${esc(gfText())}. ${act('gf','clear','Clear filters','lk')}</p>`:'')+X.map(e=>{const k=exLinks(iso,e[0]); return `<button class="exr" type="button" data-act="ex" data-v="${e[0]}" data-exh="${e[0]}">${e[9]?`<img class="th" src="covers/ex${e[0]}.jpg" alt="" loading="lazy" onerror="this.style.visibility='hidden'">`:'<span class="th none"></span>'}<span class="tt"><span class="yr">${e[1]}</span><b>${esc(e[2])}</b><small>${esc(e[3])}</small><small class="gr">${e[7]?esc(e[7]):'groups not recorded'}${recSet(e).length?' · '+recSet(e).join(' + '):''}</small>${findDots(e)}</span><span class="mk"><i class="bd ${e[4]?'f':''}" ${tipA(e[4]?'Uses the Recommendations':'Not using them, or not known','')}></i>${k.bs!=null?`<i class="bd f" style="--c:${LAYER.idq.col}"></i>`:''}</span></button>`}).join('') }
 function pGain(){
   const iso=gSel, c=Q.ctry[iso], open=fEx!=null?c.ex.find(e=>e[0]===fEx):null;
   const n=c.ex.reduce((o,e)=>{recSet(e).forEach(k=>o[k]=(o[k]||0)+1); return o},{});
