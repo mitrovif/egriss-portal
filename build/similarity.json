@@ -1,0 +1,1162 @@
+{
+"model": "qwen2.5-7b-instruct (local, LM Studio)",
+"date": "2026-11-25",
+"scale": "each part 0-3: concept, asked of, answer options, time and place",
+"rows": {
+"3": [
+1,
+2,
+0,
+1,
+"The reference question covers a broader range of threats and is asked to everyone, while the survey question focuses specifically on events in Afghanistan and only asks the household head for all members."
+],
+"4": [
+2,
+3,
+2,
+1,
+"The reference question asks about ever fleeing due to various threats, while the survey question focuses on the most recent forced displacement and only allows for one primary reason. The asked-of population differs as well."
+],
+"7": [
+3,
+2,
+3,
+2,
+"The survey question closely aligns with the reference in measuring the place lived before fleeing, but it includes additional options like 'Other country' and 'Prefer not to say'. The scope is slightly broader as it asks about a specific event (IDP05) rather t"
+],
+"9": [
+2,
+3,
+2,
+1,
+"The reference question asks about moving to another country, while the survey question inquires about leaving Afghanistan after a specific event. The concept is similar but not identical. Additionally, the asked_of criteria differ as the reference applies univ"
+],
+"10": [
+2,
+3,
+1,
+0,
+"The concept is similar but not fully equivalent due to the different time frames (less than 12 months vs. less than 6 months, 6-12 months, more than 1 year). The asked_of condition also differs as the survey question implies a different routing."
+],
+"11": [
+2,
+1,
+0,
+0,
+"The reference question asks about the outcome of an application for international protection, while the survey question inquires if someone is recognized as a refugee. The scope and asked-of populations differ significantly."
+],
+"14": [
+2,
+3,
+2,
+0,
+"The reference question focuses on the main document allowing stay in a country, while the survey question asks about identity documents from one's own country. The scope and concept are different."
+],
+"15": [
+2,
+3,
+2,
+2,
+"The survey question focuses on current migration permits for being in Peru, while the reference question asks about a document that allows staying in any country. The scope and concept are closely related but not identical."
+],
+"17": [
+3,
+3,
+3,
+3,
+"Both questions are asking about the application for refugee status, and both cover a similar range of scenarios. The survey question slightly expands on the concept by providing more detailed options but still captures the core idea."
+],
+"18": [
+3,
+2,
+2,
+2,
+"The survey question focuses on reasons for not applying, while the reference is about planning to apply. The scope and asked-of groups differ slightly, but both questions aim at understanding non-applicants."
+],
+"33": [
+3,
+0,
+2,
+0,
+"The survey question closely aligns with the reference but is not fully equivalent. It asks about identification documents for all household members, which differs from asking everyone as in the reference. The options are mostly similar but include specific Cos"
+],
+"40": [
+0,
+3,
+1,
+0,
+"The reference question focuses on the main document that allows a person to stay in the country, while the survey question asks about identity documents. The scope and asked-to groups are identical (everyone), but the concepts differ significantly."
+],
+"41": [
+3,
+1,
+2,
+2,
+"The survey question closely aligns with the reference, but there are minor differences in scope and options. The concept is similar, both asking about time spent abroad after fleeing home, but the survey includes a 'Not Specified' option (99) which isn't prese"
+],
+"45": [
+1,
+2,
+1,
+1,
+"The reference question focuses on fleeing due to specific threats, including armed conflict, violence, discrimination, and natural disasters. The survey question is more general, asking about changing residence due to feeling unsafe in the neighborhood. While "
+],
+"46": [
+2,
+3,
+1,
+3,
+"The survey question captures the core concept of forced displacement but lacks specificity in defining threats and does not include all options from the reference. It is asked to everyone, aligning with the reference."
+],
+"47": [
+3,
+2,
+3,
+2,
+"The survey question closely aligns with the reference, capturing similar concepts of forced displacement due to threats. However, it excludes some specific categories like 'widespread violence or breakdown of public order' and 'threat of human rights violation"
+],
+"49": [
+3,
+2,
+2,
+0,
+"The survey question closely aligns with the reference in measuring the same concept, but it asks for multiple instances and includes additional location types. It is not clear if the reference question allows for multiple responses or a time frame."
+],
+"50": [
+3,
+2,
+2,
+0,
+"The survey question closely aligns with the reference in measuring the first place moved to after fleeing. However, it does not specify 'first' and lacks a direct option for 'No', which is implied by the reference's condition. The asked_of criteria differ slig"
+],
+"54": [
+3,
+0,
+1,
+3,
+"The survey question conceptually aligns with the reference by asking about forced abandonment of a home due to threats. However, it lacks specific options and is superseded, making its scope unclear. The asked_of field is missing, which is a significant issue."
+],
+"55": [
+3,
+2,
+3,
+0,
+"The concept is very similar as both questions ask about forced abandonment of home due to threats. The options are nearly identical, but the asked-of population differs slightly."
+],
+"56": [
+3,
+2,
+3,
+2,
+"The concept is very similar, both asking about reasons for leaving a home due to threats. The options are nearly identical, with only minor differences in wording. However, the survey asks only a subset of people (treatment group), while the reference question"
+],
+"58": [
+1,
+0,
+2,
+1,
+"The reference question covers a broader range of threats and includes natural disasters, human rights violations by authorities, and discrimination/persecution. The survey question is more specific to internal displacement due to crime and violence within the "
+],
+"59": [
+2,
+0,
+1,
+1,
+"The survey question captures the essence of being forced to change residence due to threats, but it lacks specificity in defining what constitutes a threat. The reference question provides more detailed categories and explicitly mentions 'forced' or 'obliged,'"
+],
+"60": [
+1,
+0,
+2,
+1,
+"The survey question focuses narrowly on leaving home due to crime and violence, omitting other threats like armed conflict or natural disasters. It is only asked of IDPs in qualitative testing, not everyone as per the reference."
+],
+"61": [
+1,
+0,
+2,
+0,
+"The reference question focuses on fleeing due to specific threats like armed conflict, violence, or human rights violations, while the survey question is more general about not feeling safe in one's neighborhood. The scope and asked_of criteria are also differ"
+],
+"62": [
+1,
+0,
+2,
+1,
+"The survey question focuses narrowly on crime and violence, omitting other threats like armed conflict or natural disasters. It is only asked of IDPs in qualitative testing, not everyone as the reference suggests."
+],
+"63": [
+1,
+0,
+2,
+1,
+"The survey question focuses more on personal safety and forced abandonment due to various reasons, including natural disasters and crimes, while the reference question specifically targets forced displacement due to threats of violence or human rights violatio"
+],
+"64": [
+1,
+3,
+0,
+0,
+"The reference question focuses on fleeing due to specific threats like armed conflict, violence, or human rights violations, while the survey question is more general about feeling unsafe in one's neighborhood. The answer options are binary and do not provide "
+],
+"65": [
+2,
+3,
+0,
+2,
+"The survey question captures the core concept of being forced to change dwelling, but it lacks specificity about threats to safety and does not cover all options from the reference. It also only asks those who initially answer 'no' to a previous question."
+],
+"66": [
+1,
+1,
+1,
+1,
+"The reference question asks about ever fleeing due to threats, while the survey question specifically asks about changing residence in 2022 for safety reasons. The concept and time frame differ significantly."
+],
+"77": [
+2,
+3,
+1,
+0,
+"The survey question captures a broader concept of forced displacement, including persecution and human rights violations, but excludes other threats like natural disasters or man-made events. It also asks about the respondent and their household members rather"
+],
+"90": [
+0,
+3,
+0,
+0,
+"The reference question focuses on the experience of fleeing due to threats, while the survey question asks about residence status over a specific time frame. The asked-of population differs as well, and there are no answer options that match."
+],
+"92": [
+3,
+2,
+3,
+2,
+"The survey question closely aligns with the reference, but there are minor differences in scope and asked-of criteria."
+],
+"93": [
+3,
+0,
+2,
+0,
+"The reference question asks about the first place moved to when fleeing, while the survey question specifically asks about the first province in Burundi. The concept is similar but not identical."
+],
+"105": [
+0,
+1,
+0,
+0,
+"The reference question asks about applying for international protection or refugee status, while the survey question inquires about registration upon arrival. These are different concepts."
+],
+"106": [
+0,
+1,
+0,
+0,
+"The reference question asks about applying for international protection, which is a process that can be applied to anyone who has fled or considers fleeing. The survey question instead checks if someone is registered with UNHCR/RRS, which is specific to those "
+],
+"107": [
+0,
+1,
+0,
+0,
+"The reference question asks about the outcome of an application for international protection, with options covering different possible results. The survey question instead inquires specifically about the year when refugee status was received and only applies t"
+],
+"108": [
+0,
+0,
+0,
+0,
+"The reference question asks about the intention to apply for international protection, while the survey question focuses on reasons for not registering. The concepts and scopes are different."
+],
+"121": [
+0,
+0,
+0,
+0,
+"The reference question asks about the main document that allows a person to stay in the country, covering various types of documentation. The survey question instead asks specifically about living under the Out-Of Camp Policy (OCP) for Addis Ababa refugees onl"
+],
+"126": [
+0,
+2,
+1,
+0,
+"The reference question asks about applying for international protection or refugee status, while the survey question inquires specifically about registration with UNHCR in South Sudan. The concept and scope differ significantly."
+],
+"127": [
+2,
+3,
+1,
+0,
+"The survey question lacks specificity in the concept, does not cover all options from the reference, and has no time or place scope. It is asked of everyone but provides a binary response without detail."
+],
+"128": [
+2,
+3,
+2,
+2,
+"The survey question captures a similar concept but lacks the specificity of identifying 'other threats to safety' as in the reference. It also asks everyone rather than only those who fled due to a different threat."
+],
+"129": [
+0,
+2,
+1,
+0,
+"The reference question asks about the country of origin that was fled, while the survey question inquires whether the home was inside or outside South Sudan's current boundaries at the time of displacement. The scope and asked_of conditions are also different."
+],
+"130": [
+3,
+3,
+3,
+2,
+"The survey question closely aligns with the reference, asking about moving to another country after fleeing. However, it lacks a time frame, which is present in the reference."
+],
+"132": [
+2,
+3,
+2,
+1,
+"The reference question focuses on applying for international protection or refugee status, while the survey question asks about registering as a refugee with UNHCR or living in a camp. The asked-of condition is different, and the scope of time is not specified"
+],
+"147": [
+0,
+1,
+2,
+0,
+"The reference question asks about the main document allowing someone to stay in a country, while the survey question checks if an individual has been registered with the government of Uganda. The concepts are different, and the scope is limited to those who ha"
+],
+"151": [
+2,
+1,
+2,
+1,
+"The survey question focuses on households in specific settings (refugee camps or IDP sites) and asks about the main reason for displacement, which is a subset of the broader concept of having to flee. The reference question covers a wider range of scenarios an"
+],
+"168": [
+0,
+1,
+1,
+0,
+"The reference question focuses on the main document allowing someone to stay in a country, while the survey question asks about various documents one might have. The concepts are different."
+],
+"169": [
+1,
+0,
+2,
+0,
+"The reference question asks about the outcome of an application for international protection, while the survey question classifies individuals as part of a refugee population. The concept and scope are different."
+],
+"170": [
+0,
+3,
+2,
+0,
+"The reference question asks about applying for international protection, which is a broader concept of seeking refugee status or similar protection. The survey question focuses specifically on registration with ONARS or UNHCR and does not capture the full scop"
+],
+"171": [
+0,
+1,
+0,
+0,
+"The reference question asks about the outcome of an application for international protection, while the survey question inquires whether a person is an asylum seeker. The concepts are different."
+],
+"191": [
+0,
+2,
+3,
+0,
+"The reference question focuses on the main document allowing someone to stay in a country, while the survey question asks about the type of official identification document. The scope and asked-of populations differ as well."
+],
+"194": [
+0,
+0,
+0,
+0,
+"The reference question asks about the main document allowing someone to stay in a country, while the survey question is asking whether parents are alive or have legal residence in Rwanda. The concepts and asked groups are entirely different."
+],
+"203": [
+0,
+2,
+1,
+0,
+"The reference question asks about the outcome of an application for international protection, while the survey question inquires about registration with the government. The concept and scope differ significantly."
+],
+"205": [
+0,
+1,
+2,
+0,
+"The reference question focuses on the main document allowing a person to stay in the country, while the survey question asks about types of personal identification documents. The scope and asked-to populations differ as well."
+],
+"207": [
+1,
+0,
+1,
+0,
+"The reference question is broader, covering multiple specific threats and natural/man-made events. The survey question only asks about feeling unsafe without specifying the reason or context."
+],
+"208": [
+0,
+0,
+0,
+0,
+"The reference question asks about ever having to flee due to specific threats, while the survey question only asks if someone has ever had to flee. The reference provides a detailed list of reasons for fleeing and is asked of all respondents, whereas the surve"
+],
+"209": [
+3,
+3,
+2,
+3,
+"The survey question closely aligns with the reference, asking about place of residence before fleeing. However, it specifies a particular country and provides more detailed district options for Cabo Delgado."
+],
+"213": [
+2,
+1,
+2,
+0,
+"The concept is similar but not fully equivalent. The reference question covers a broader range of threats, including human rights violations and discrimination, which are missing in the survey question. Additionally, the survey question only asks about the las"
+],
+"215": [
+0,
+1,
+2,
+1,
+"The reference question asks about the first place moved to after fleeing, while the survey question inquires if someone came directly to the current location after a recent flight. The concept and scope differ significantly."
+],
+"216": [
+0,
+2,
+2,
+0,
+"The reference question asks about the first place moved to when fleeing, while the survey question inquires about the last place of residence before moving to the current location. The asked_of condition also differs as the survey question targets members who "
+],
+"229": [
+1,
+2,
+0,
+1,
+"The reference question asks about the place lived before fleeing, without specifying a region. The survey question, however, is limited to specific regions within Mali and only applies to those who fled due to insecurity (M14 = 5). This makes it not equivalent"
+],
+"233": [
+3,
+2,
+3,
+2,
+"The survey question closely aligns with the reference but is more specific to Mali and uses a different time frame ('Has applied' vs. 'Did you ever apply'). The concept is similar, but not identical."
+],
+"234": [
+3,
+3,
+2,
+3,
+"The survey question closely aligns with the reference, but uses different terminology and one additional option ('NSP'). The scope is equivalent."
+],
+"235": [
+2,
+1,
+3,
+2,
+"The survey question focuses on identity documents, while the reference question asks about a document that allows staying in the country. The scope and asked-of differ significantly."
+],
+"236": [
+1,
+2,
+0,
+1,
+"The reference question is broader, covering multiple reasons for fleeing and including specific threats like human rights violations. The survey question only asks about feeling unsafe due to lack of safety, which is a narrower concept. Additionally, the asked"
+],
+"237": [
+1,
+0,
+0,
+0,
+"The reference question asks about fleeing due to various threats to safety, including armed conflict, violence, discrimination, and natural/man-made events. The survey question focuses specifically on leaving Mali because conditions made life impossible, which"
+],
+"238": [
+2,
+3,
+2,
+1,
+"The survey question closely aligns with the reference but is more specific to Mali and does not cover all threats listed in the reference. It also uses a binary yes/no format without detailed options."
+],
+"239": [
+3,
+2,
+3,
+3,
+"The survey question closely aligns with the reference, covering similar concepts and options. However, it excludes 'discrimination or persecution' and 'threat of human rights violations by authorities,' which are included in the reference. The scope is also sl"
+],
+"240": [
+3,
+3,
+3,
+3,
+"The survey question and the reference question both ask about moving to another country after fleeing, which is the same concept. The asked-of population is also the same (those who have fled). The answer options are binary with a follow-up for 'no', matching "
+],
+"241": [
+3,
+2,
+2,
+3,
+"The concept is similar, both asking about the duration of stay abroad. However, the asked-of criteria differ slightly as the survey asks specifically about a named individual rather than anyone who fled (FleeCross = Yes). The answer options are also different,"
+],
+"242": [
+3,
+3,
+3,
+2,
+"The survey question closely aligns with the reference, asking about applying for international protection or refugee status. However, there is a minor difference in scope: the reference uses 'ever' while the survey asks about a specific instance in another cou"
+],
+"243": [
+3,
+3,
+2,
+3,
+"The survey question closely aligns with the reference, but uses different terminology and one additional option ('NSP'). The scope is equivalent."
+],
+"246": [
+2,
+3,
+1,
+2,
+"The survey question captures a similar concept of leaving due to safety concerns, but it does not cover all the specific threats mentioned in the reference. It is asked of everyone in the household rather than individuals, and lacks detailed options."
+],
+"247": [
+1,
+0,
+1,
+0,
+"The concept is different as the reference question asks about fleeing due to specific threats, while the survey question focuses on leaving because of conditions making life impossible. The asked-of population differs significantly (everyone vs. households wit"
+],
+"250": [
+2,
+0,
+3,
+0,
+"The survey question focuses on whether someone had to leave their home against their will, which is a narrower concept than the reference question that covers various threats to safety. The asked_of condition also differs as it only includes Malians."
+],
+"251": [
+3,
+2,
+3,
+0,
+"The concept is very similar, focusing on whether the respondent has ever had to flee their home due to threats. The Survey Question asks about fleeing during a stay in another country, which implies a more recent timeframe compared to the Reference's 'in your "
+],
+"252": [
+2,
+2,
+2,
+2,
+"Both questions aim to identify reasons for fleeing, but the survey question is more specific and limited in its options compared to the reference. The reference includes broader categories like 'discrimination or persecution' and 'threat of human rights violat"
+],
+"253": [
+3,
+3,
+3,
+3,
+"Both questions ask about the place of residence just before fleeing, are asked to those who fled (Q3 = 1 or Q4 = 1), and use similar wording. The answer format is also consistent with the reference question."
+],
+"254": [
+2,
+3,
+3,
+3,
+"The survey question asks if the respondent crossed an international border, which implies moving to another country. The reference question explicitly asks about moving to another country after fleeing home. While both questions are related and measure a simil"
+],
+"255": [
+3,
+3,
+2,
+3,
+"The concept and scope are equivalent, as both questions ask about the duration of stay in a foreign country before returning to Mali. The asked-of criteria match since both target those who have fled their home (indicated by Q7 = 1). However, there is a minor "
+],
+"256": [
+2,
+0,
+3,
+1,
+"The concept is similar but not identical. The reference question asks about the document that allows someone to stay in any country, while the survey question specifically asks about a document allowing someone to stay abroad if they fled from Mali. Additional"
+],
+"257": [
+3,
+3,
+3,
+3,
+"Both questions aim to identify the first place moved to when fleeing, and they are asked of the same population. The answer options and scope are also aligned."
+],
+"258": [
+3,
+3,
+2,
+3,
+"The survey question closely aligns with the reference, both asking about official registration for international protection. However, the wording and some aspects of how it is asked differ slightly."
+],
+"259": [
+3,
+3,
+3,
+3,
+"Both questions are asking about the intention or past action of applying for international protection, such as refugee status. The scope and time frame appear to be similar ('ever' in both cases). The asked-of criteria match since it is directed at individuals"
+],
+"260": [
+3,
+3,
+3,
+3,
+"Both questions are asking about the outcome of an application for international protection, and they cover the same response categories. The asked-of criteria match as well."
+],
+"269": [
+0,
+1,
+1,
+0,
+"The reference question asks about fleeing due to various threats in one's lifetime, while the survey question specifically asks if someone has moved within Mali due to insecurity or armed conflict since 2009. The concept and scope are different."
+],
+"271": [
+3,
+3,
+3,
+2,
+"The survey question asks about the place lived before displacement due to insecurity or armed conflict, which is conceptually equivalent to the reference question. Both are asked of individuals who have fled their homes for the first time due to forced displac"
+],
+"277": [
+3,
+1,
+3,
+0,
+"The concept is similar, both questions are about identity documents. However, the asked-of population differs (everyone vs. head of household), and the scope is not comparable as one asks for current situation while the other does not specify a time frame."
+],
+"278": [
+3,
+2,
+0,
+2,
+"The concept is similar, focusing on leaving due to safety concerns or life-impossible conditions. However, the asked-of population differs (everyone vs. only the head of household), and the answer options are limited to 'yes' or 'no,' which does not capture th"
+],
+"279": [
+2,
+0,
+2,
+1,
+"The survey question includes terrorism as a reason and excludes some options like 'discrimination or persecution' and 'threat of human rights violations by authorities'. It also lacks the option for 'different threats to you or your family's safety'. The asked"
+],
+"281": [
+2,
+0,
+2,
+0,
+"The reference question focuses on the main document allowing someone to stay in a country, while the survey question asks about legal status. The asked-of population differs (everyone vs. non-Burkinabè heads), and the options are not fully equivalent."
+],
+"282": [
+3,
+2,
+3,
+3,
+"The concept is very similar, both asking about moving to another country after fleeing. The answer options are the same, and the time frame is implied as 'ever' in both cases. However, there's a minor difference in who is asked the question: the reference asks"
+],
+"283": [
+2,
+3,
+0,
+2,
+"The reference question asks about the duration of stay abroad after fleeing, while the survey question inquires about the length of time someone lived in another country. The asked-of criteria differ as well: the reference is for those who fled (FleeCross = Ye"
+],
+"284": [
+3,
+3,
+3,
+2,
+"The survey question closely aligns with the reference, asking about applying for international protection or asylum. However, it specifies UNHCR and a particular country, which may not cover all forms of international protection."
+],
+"285": [
+2,
+0,
+2,
+0,
+"The reference question focuses solely on the outcome of an application for international protection, while the survey question includes additional options such as 'protection temporaire accordée' and 'Ne sait pas'. The asked_of criteria also differ significant"
+],
+"296": [
+0,
+2,
+0,
+0,
+"The reference question is more specific about the reasons for fleeing and includes a broader range of threats, while the survey question only asks if someone in the household ever left due to not feeling safe. The concept is similar but not equivalent."
+],
+"297": [
+2,
+3,
+2,
+0,
+"The survey question captures a broader concept of leaving due to life-threatening conditions, which includes but is not limited to threats posed by events like armed conflict or violence. The reference question specifically asks about fleeing due to safety thr"
+],
+"298": [
+0,
+2,
+0,
+0,
+"The reference question specifically asks about fleeing due to threats to safety, including armed conflict, violence, discrimination, and other specific reasons. The survey question is more general, asking if someone had to leave their place of residence agains"
+],
+"300": [
+0,
+2,
+3,
+0,
+"The reference question focuses on the document that allows a person to stay in the country, while the survey question asks about an identity document. The scope and asked-of populations differ significantly."
+],
+"302": [
+3,
+3,
+3,
+3,
+"Both questions are asking about moving to another country after fleeing, and the scope is similar. The asked-of population is also consistent. The answer options fit well."
+],
+"303": [
+2,
+3,
+0,
+0,
+"The reference question asks about the duration of stay abroad after fleeing, while the survey question simply checks if someone lived in another country for more than 6 months. The concept and scope differ significantly."
+],
+"304": [
+3,
+3,
+2,
+3,
+"The survey question asks for the same concept as the reference, which is identifying the place lived before fleeing. The scope and asked-of criteria are also equivalent. However, the answer options differ; the survey provides specific categories (country, regi"
+],
+"305": [
+3,
+2,
+2,
+2,
+"The survey question closely aligns with the reference but has some minor differences. It covers similar concepts and asks of a broader group, but lacks one option (human rights violations by authorities) and includes additional natural disasters."
+],
+"306": [
+2,
+3,
+2,
+3,
+"The survey question closely aligns with the reference but has some differences. It focuses on those who fled to another country, whereas the reference is broader and asks about anyone's current situation. The answer options are more specific and include additi"
+],
+"312": [
+0,
+3,
+0,
+0,
+"The reference question asks about applying for international protection or refugee status, while the survey question inquires specifically about requesting papers from UNHCR and/or the government to stay in a country. The concept is different."
+],
+"313": [
+3,
+3,
+2,
+0,
+"The survey question asks about the intention to request papers from UNHCR or the government, which is related but not identical to planning to apply for international protection. The concept is close but not exactly the same."
+],
+"314": [
+3,
+3,
+3,
+3,
+"Both questions are conceptually equivalent, asking about the outcome of an application for international protection. They cover similar answer options and are asked to individuals who have applied."
+],
+"352": [
+2,
+0,
+2,
+0,
+"The reference question asks about applying for international protection or refugee status, while the survey question specifically inquires about applying for asylum to either the Government or UNHCR. The scope and asked-of criteria differ significantly."
+],
+"353": [
+2,
+1,
+3,
+2,
+"The survey question asks about applying for asylum in another country, which is broader than the reference question that specifically asks about international protection. The scope and asked-of criteria differ significantly."
+],
+"354": [
+0,
+1,
+0,
+0,
+"The reference question asks about the outcome of an application for international protection, while the survey question inquires whether someone has ever been recognized as a refugee. The concepts are different, and the answer options do not align."
+],
+"355": [
+3,
+3,
+2,
+3,
+"The concept is very similar, both asking about the outcome of an asylum application. The asked-of population is slightly different as the survey includes those who abandoned their applications, while the reference excludes this group. The answer options are cl"
+],
+"356": [
+0,
+1,
+2,
+0,
+"The reference question focuses on the main document that allows someone to stay in a country, while the survey question asks about current status. The asked population differs (everyone vs. only MQ-5 respondents), and answer options are not equivalent."
+],
+"357": [
+2,
+3,
+1,
+0,
+"The survey question focuses on identity documents, while the reference question asks about a document that allows staying in the country. The scope and asked-of groups are similar but not identical."
+],
+"369": [
+0,
+2,
+1,
+0,
+"The reference question asks about the main document that allows staying in a country, while the survey question lists specific documents one might have. The concepts are different and not comparable."
+],
+"374": [
+0,
+1,
+0,
+0,
+"The reference question focuses on forced displacement due to threats to safety, while the survey question asks about a change in residence since February 2014. The concept and scope are different."
+],
+"375": [
+0,
+1,
+1,
+0,
+"The reference question asks about ever having to flee due to various threats, while the survey question specifically inquires about relocation related to events in Donbas and Crimea. The concept, asked population, options, and time frame are all substantially "
+],
+"377": [
+2,
+3,
+3,
+2,
+"The reference question asks about the place lived before fleeing, while the survey question asks about permanent residence before a specific date. The concept is similar but not identical. The asked_of criteria are met as both questions target those who fled. "
+],
+"378": [
+0,
+2,
+1,
+0,
+"The reference question is broader, covering various reasons for fleeing due to threats to safety, while the survey question specifically asks about a single event (the invasion of Ukraine by Russia). The asked_of condition also differs as it only targets those"
+],
+"380": [
+2,
+3,
+3,
+2,
+"The reference question asks about the place lived before fleeing, while the survey question asks about permanent residence before a specific date. The concept is similar but not identical. The asked_of criteria are met as both questions target those who fled. "
+],
+"381": [
+0,
+1,
+1,
+0,
+"The reference question asks about moving to another country after fleeing, while the survey question focuses specifically on leaving Ukraine due to a Russian invasion. The concepts and time frames are different."
+],
+"383": [
+0,
+2,
+0,
+0,
+"The reference question asks about the duration of stay abroad after fleeing, while the survey question asks for the date of return to Ukraine. These are different concepts and do not measure the same thing."
+],
+"386": [
+0,
+1,
+0,
+0,
+"The reference question focuses on forced displacement due to threats to safety, while the survey question asks about moving for protection from crime. The concepts are different, and the scope is limited to a specific year (2024) rather than lifetime."
+],
+"388": [
+0,
+0,
+0,
+0,
+"The reference question specifically asks about fleeing due to threats to safety, including armed conflict, violence, discrimination, and other specific reasons. The survey question is more general, asking only if someone was obliged or forced to leave their us"
+],
+"391": [
+1,
+0,
+2,
+0,
+"The reference question asks about the main document allowing someone to stay in a country, covering various types of documentation. The survey question only checks for possession of a refugee card and does not cover other possible documents. Additionally, it i"
+],
+"397": [
+0,
+1,
+1,
+0,
+"The reference question asks about fleeing due to threats to safety, covering a broader range of reasons and is not time-limited. The survey question specifically asks about fleeing while living in Pakistan and only includes two options."
+],
+"398": [
+0,
+1,
+1,
+0,
+"The reference question asks about fleeing due to threats to safety, including various specific reasons and a broad 'other' category. The survey question only asks if someone had to abandon their home while living in Pakistan, with no mention of the reason or b"
+],
+"399": [
+0,
+1,
+1,
+0,
+"The reference question asks about fleeing due to threats to safety, covering a broader range of reasons and including specific options like discrimination or persecution. The survey question is more restrictive, only asking if someone fled while living outside"
+],
+"400": [
+2,
+0,
+1,
+0,
+"The reference question focuses on reasons for fleeing due to threats to safety, while the survey question asks about the main reason for fleeing or abandoning home. The options in the survey are broader and include non-threat-related reasons such as job opport"
+],
+"401": [
+3,
+3,
+2,
+2,
+"The concept is very similar, both asking about moving to another country after fleeing. However, the survey question includes additional options that are not present in the reference (specifically 'just went to another location in Pakistan' and 'Refuse to answ"
+],
+"402": [
+3,
+2,
+3,
+0,
+"The survey question lacks the condition 'after fleeing your home' and includes additional response options (Don't know, Refuse to answer). The time frame is not specified in the survey question."
+],
+"403": [
+2,
+2,
+1,
+0,
+"The survey question adds a location specification ('while abroad/In Pakistan') and includes additional answer options, particularly the volunteered response about prima facie recognition. The concept is similar but not identical."
+],
+"404": [
+2,
+3,
+2,
+1,
+"The survey question specifies a location (abroad/Pakistan) and a time frame ('while abroad'), which are not present in the reference. The concept is similar but not identical, as the reference does not specify a place or timeframe."
+],
+"405": [
+3,
+2,
+3,
+2,
+"The concept and the core asked_of criteria are equivalent, but there are minor differences in scope and options."
+],
+"408": [
+3,
+2,
+3,
+2,
+"The survey question closely aligns with the reference but includes more specific options and a broader range of documents. It also asks about staying in Pakistan instead of [country], which is a minor difference."
+],
+"411": [
+1,
+1,
+1,
+0,
+"The reference question asks about fleeing due to various threats in one's lifetime, while the survey question specifically asks about fleeing from South Sudan. The concept is similar but not identical."
+],
+"412": [
+3,
+1,
+2,
+1,
+"The concept is similar but not identical. The reference question specifies threats to safety, while the survey question only asks about abandoning home due to events that posed a threat. The asked_of condition also differs; the survey question excludes those w"
+],
+"413": [
+3,
+2,
+3,
+3,
+"The survey question closely aligns with the reference, capturing similar concepts and options. However, it excludes some specific threats like discrimination or persecution by authorities and does not cover all listed options from the reference."
+],
+"414": [
+2,
+3,
+2,
+1,
+"The survey question asks about crossing an international border, which implies moving to another country. The reference question is more specific about 'moving to another country,' including temporary moves. The asked_of criteria differ slightly in scope and t"
+],
+"415": [
+3,
+0,
+2,
+1,
+"The concept is very similar, but the survey question includes additional answer options (Don't know and Refused to answer) which are not present in the reference. The asked_of field indicates a routing issue as appendix A is missing."
+],
+"416": [
+3,
+2,
+3,
+2,
+"The survey question closely aligns with the reference, but there are minor differences in scope and asked-of criteria. The survey specifically asks about applying while abroad or in South Sudan, which is a more precise time frame than 'ever.' Additionally, it "
+],
+"417": [
+3,
+2,
+3,
+1,
+"The survey question closely aligns with the reference, but there are minor differences in scope and asked-of criteria. The survey specifically asks about intentions while abroad or in South Sudan, which is a more narrow time frame than 'ever' in the reference."
+],
+"418": [
+3,
+3,
+2,
+3,
+"The concept and scope are the same, as both questions inquire about the outcome of an application for international protection. The asked-of criteria match since they target those who have applied (ID_05 = 1). However, there is a minor difference in options: t"
+],
+"421": [
+3,
+3,
+2,
+3,
+"The survey question closely aligns with the reference, but it excludes some options like 'International agreements' and 'Protected status'. The asked-of criteria are slightly different as well."
+],
+"424": [
+0,
+1,
+1,
+1,
+"The reference question asks about the main document allowing someone to stay in a country, covering various types of documentation. The survey question only checks for a valid residence permit and is asked of a subset (S2Q4 = no)."
+],
+"426": [
+0,
+0,
+0,
+0,
+"The reference question asks about the country of origin that was fled, while the survey question inquires about internal displacement within Cameroon. The concepts and scopes are entirely different."
+],
+"429": [
+3,
+2,
+3,
+2,
+"The survey question closely aligns with the reference in terms of concept and scope, but there are minor differences in how it is asked and to whom."
+],
+"433": [
+0,
+3,
+1,
+0,
+"The reference question asks about a document that allows someone to stay in the country, while the survey question asks about personal identification documents. The concepts and scopes are different."
+],
+"438": [
+2,
+1,
+2,
+0,
+"The reference question asks about the place lived before fleeing, while the survey question asks about where someone lived just before moving to a specific location. The concept is similar but not identical. Additionally, the asked_of criteria differ as the re"
+],
+"439": [
+3,
+2,
+0,
+0,
+"The reference question asks about fleeing due to specific threats, including armed conflict, violence, discrimination, and natural disasters, while the survey question is more general and does not specify reasons. The reference question is asked of everyone, w"
+],
+"440": [
+2,
+3,
+2,
+3,
+"The survey question captures similar concepts but with fewer options and a more specific focus on the individual named [NAME]. The reference question is broader, asking about any threat to safety in one's lifetime, while the survey focuses on a single reason f"
+],
+"441": [
+0,
+2,
+1,
+0,
+"The reference question asks about fleeing due to specific threats in one's lifetime, while the survey question is more general and only asks if someone had to flee while living in Kenya. The concept of forced displacement is broader in the reference, including"
+],
+"442": [
+3,
+3,
+3,
+2,
+"The survey question closely aligns with the reference, capturing the same concept and using identical options. However, it asks about a specific individual rather than everyone, which is a minor difference."
+],
+"443": [
+3,
+3,
+3,
+2,
+"The survey question closely aligns with the reference by asking about moving to another country after fleeing, but it uses 'crossed an international border' instead of explicitly mentioning 'another country'. The scope is slightly different as the survey focus"
+],
+"444": [
+3,
+3,
+2,
+3,
+"The concept and scope are equivalent, as both questions ask about the duration of stay abroad after fleeing. The asked-of criteria match since they target those who have fled their home (FleeCross = Yes). However, there is a minor difference in options: the su"
+],
+"445": [
+1,
+0,
+2,
+0,
+"The reference question asks about applying for international protection ever, while the survey question specifically inquires about applying during a stay in Kenya. The asked-of criteria differ significantly as well, with the reference targeting those who fled"
+],
+"446": [
+2,
+1,
+2,
+0,
+"The reference question asks about applying for international protection ever, while the survey question specifies 'while abroad'. The asked-of criteria also differ significantly. Additionally, the answer options in the survey include extra categories (98 and 9"
+],
+"447": [
+3,
+3,
+2,
+3,
+"The concept and scope are equivalent, as both questions inquire about the outcome of an application for international protection. The 'asked_of' criteria match since they target individuals who have applied. However, there is a minor difference in the options:"
+],
+"448": [
+2,
+3,
+0,
+2,
+"The concept is similar but not fully equivalent. The survey includes more specific document types, some of which are not covered in the reference question (e.g., eTA, student pass). Additionally, the asked_of criteria differ: the reference asks about everyone,"
+],
+"451": [
+0,
+2,
+1,
+0,
+"The reference question asks about the main document allowing someone to stay in a country, covering various types of documentation and protected statuses. The survey question, on the other hand, is focused specifically on whether non-Malians have documents nee"
+],
+"453": [
+2,
+3,
+0,
+0,
+"The reference question asks about the place lived before fleeing to any location, while the survey question specifically asks about living situation before coming to a particular locality. The concept and scope differ significantly."
+],
+"454": [
+0,
+3,
+0,
+0,
+"The reference question is more specific about the reasons for fleeing and includes a broader range of scenarios, while the survey question only asks if someone left their residence due to an impossible or dangerous situation. The concept is not fully captured "
+],
+"457": [
+3,
+3,
+3,
+2,
+"The survey question closely aligns with the reference by asking about moving to another country after fleeing. However, it specifies a list of countries which may not cover all possibilities and thus has a slightly narrower scope."
+],
+"458": [
+3,
+2,
+3,
+2,
+"The concept is very similar, both asking about the duration of stay abroad before returning to a home country. The asked-of population is slightly different (everyone vs. those who fled), and there are additional options in the survey question."
+],
+"459": [
+0,
+2,
+3,
+1,
+"The reference question asks about applying for international protection or refugee status, while the survey question inquires specifically about official registration with a government or organization as someone who fled Mali and needed protection. The concept"
+]
+}
+}

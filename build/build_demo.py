@@ -61,6 +61,8 @@ for x in rows:
                  x["language"], x["text_en"] if x["language"] != "en" else "", 1 if x["translation_by"] != "original" else 0,
                  x["response_options"], x["notes"], x["universe_skip"]])
 data["surveys"] = surveys; data["bank"] = bank
+_simf = os.path.join(HERE, "similarity.json")
+data["sim"] = json.load(open(_simf, encoding="utf-8"))["rows"] if os.path.exists(_simf) else {}
 
 # ---- the questions as printed: crops of the original questionnaire (PDF) or its rows (spreadsheet, text file) ----
 # made by mk_excerpts.py; keyed by the row number of the bank file
